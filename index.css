@@ -5,13 +5,19 @@
   --viewBg: #272727;
   
   --homeBg: #272727;
+  --webBg: #002727;
   --codeBg: #002727;
-  --scienceBg: #002700;
+  --mobileBg: #002700;
+  --cloudBg: #002700;
   --mathBg: #444444;
-  --planeBg: #66AA88;
-  --datavizBg: #86BA88;
-  --jobsBg: #8B5C77;
   --mlBg: #0000CC;
+  --datavizBg: #86BA88;
+  --scienceBg: #002700;
+  --planeBg: #66AA88;
+  --securityBg: #0000CC;
+  --crowdfundingBg: #0220CC;
+  --jobsBg: #8B5C77;
+  --toolsBg: #005C77;
   
   --fontFamily: 'Roboto Mono', monospace;
   --viewTitle: gold;
@@ -52,33 +58,58 @@ body {
   background-color: var(--homeBg);
 }
 
+#web {
+  background-color: var(--webBg);
+}
+
+#cloud {
+  background-color: var(--cloudBg);
+}
+
 #code {
   background-color: var(--codeBg);
 }
 
-#science {
-  background: var(--scienceBg);  
+#mobile {
+  background-color: var(--mobileBg);
 }
 
 #math {
   background: var(--mathBg);  
 }
 
-#plane {
-  background: var(--planeBg);  
+#ml {
+  background: var(--mlBg);  
 }
 
 #dataviz {
   background: var(--datavizBg);  
 }
 
+#science {
+  background: var(--scienceBg);  
+}
+
+#plane {
+  background: var(--planeBg);  
+}
+
+#security {
+  background: var(--securityBg);  
+}
+
+#crowdfunding {
+  background: var(--crowdfundingBg);  
+}
+
 #jobs {
   background: var(--jobsBg);  
 }
 
-#ml {
-  background: var(--mlBg);  
+#tools {
+  background: var(--toolsBg);  
 }
+
 
 
 /* CONTAINER */ 

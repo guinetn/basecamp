@@ -117,6 +117,11 @@ async function copyToClipboard(stringToCopy) {
 	}
 }
 
+function initTools() {
+	document.querySelector("#timestamp").value = Math.floor(new Date().getTime()/1000.0);		
+	document.querySelector("#timestampDecode").value = Math.floor(new Date().getTime()/1000.0);		
+	document.querySelector("#timestampEncode").value = new Date().toISOString();
+}
 
 const getTime = () => new Date().toLocaleTimeString();
 
@@ -125,5 +130,6 @@ window.onload = () => {
 	setInterval(()=> clock.innerText = getTime(), 1000 );
 
 	getLinks();
+	initTools();
 	// weather()
 }

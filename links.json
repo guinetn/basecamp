@@ -9,72 +9,99 @@
 	 	 { "name": "facebook", "ref":"https://www.facebook.com/profile.php?id=100008401895918", "class":"fab fa-facebook" },
 	 	 { "name": "youtube", "ref":"https://youtube.com", "class":"fab fa-youtube" }],
 
+
+
+	"vlinks_tasks": [
+		{ "name": "", "ref": "" },
+		{ "name": "developer roadmap", "ref": "https://roadmap.sh" },
+		 { "name": "trello", "ref":"https://trello.com/guinetn" },
+		 { "name": "az devops/<user>.visualstudio.com", "ref":"https://nguinet.visualstudio.com"}
+		],	
+
+	"vlinks_blogs": [
+		 { "name": "", "ref": "" },
+		 { "name": "medium.com", "ref": "https://medium.com" },
+		 { "name": "guinetn.github.io", "ref":"https://guinetn.github.io" }
+		],	
+
+	"vlinks_news": [
+		 { "name": "", "ref": "" },
+		 { "name": "wsj.com", "ref": "https://www.wsj.com/" },
+		 { "name": "nytimes.com", "ref": "https://www.nytimes.com/" },
+		 { "name": "washingtonpost.com", "ref": "https://www.washingtonpost.com/" },
+		 { "name": "lefigaro.fr", "ref":"http://www.lefigaro.fr/" },
+		 { "name": "nasaspaceflight.com", "ref": "https://www.nasaspaceflight.com" }
+		],	
+
+	"vlinks_google": [
+		{ "name": "", "ref": "" },		 		 
+		{ "name": "translate.google.com", "ref": "https://translate.google.com" },		 		 
+		{ "name": "trends.google.com", "ref": "https://trends.google.com" },		 		 
+		{ "name": "photos.google.com", "ref":"https://photos.google.com" },
+		{ "name": "drive.google.com", "ref":"https://drive.google.com" },
+		{ "name": "developers.google.com", "ref": "https://developers.google.com" },		 		 
+		{ "name": "developers.google.com/products", "ref": "https://developers.google.com/products/" },		 		 
+		{ "name": "myaccount.google.com", "ref":"https://myaccount.google.com" },
+		{ "name": "google maps timeline", "ref":"https://www.google.com/maps/timeline" },
+		{ "name": "google ads settings", "ref":"https://adssettings.google.com" },
+		{ "name": "developers.google.com/analytics", "ref":"https://developers.google.com/analytics" }
+	],
+	"vlinks_microsoft": [
+		{ "name": "", "ref": "" },		 		 		 
+		{ "name": "visualstudiomagazine.com", "ref": "https://visualstudiomagazine.com/" },		 		 		 
+		{ "name": "msdn-magazine", "ref": "https://docs.microsoft.com/en-us/archive/msdn-magazine/msdn-magazine-issues" },		 		 		 
+		 { "name": "microsoftonline.com/office.com", "ref":"https://login.microsoftonline.com" },
+		 { "name": "developer.microsoft.com", "ref": "https://developer.microsoft.com" }
+		],	
+
+	"vlinks_social": [
+		{ "name": "", "ref": "" },
+		{ "name": "meetup.com", "ref": "https://www.meetup.com" },
+		{ "name": "whatsapp.com", "ref": "https://web.whatsapp.com" },
+		{ "name": "instagram", "ref": "https://www.instagram.com/" },
+		{ "name": "skype", "ref": "http://www.skype.com" },
+	    { "name": "discord", "ref":"https://discord.com/channels/@me" }
+		],
+
+	"vlinks_help": [
+		{ "name": "", "ref": "" },
+		{ "name": "gitter.im", "ref": "https://gitter.im" },
+		{ "name": "quora.com", "ref": "https://www.quora.com" },
+		{ "name": "stackoverflow", "ref":"https://stackoverflow.com" }
+		],	
+	
+	"vlinks_online": [
+		{ "name": "", "ref": "" },
+		{ "name": "asciiflow", "ref": "http://asciiflow.com/" },
+		{ "name": "draw.io", "ref": "https://app.diagrams.net" },
+		{ "name": "code flow", "ref": "https://app.code2flow.com" },
+		{ "name": "pastebin.com", "ref": "https://pastebin.com" },
+		{ "name": "cloud.mongodb.com", "ref": "https://cloud.mongodb.com" },
+		{ "name": "fauna DB", "ref": "https://dashboard.fauna.com" }
+		],	
 	"vlinks_notebooks": [
 		{ "name": "", "ref": "" },
 		{ "name": "wolframcloud.com", "ref": "https://wolframcloud.com" },
 		{ "name": "observablehq.com", "ref": "https://observablehq.com/@guinetn" },
 		 { "name": "colab google", "ref":"https://colab.research.google.com" }
-		],	
-	
-	"vlinks_social": [
-		{ "name": "", "ref": "" },
-		{ "name": "instagram", "ref": "https://www.instagram.com/" },
-		{ "name": "skype.com", "ref": "http://www.skype.com" },
-		 { "name": "discord", "ref":"https://discord.com/channels/@me" }
-		],
-
-	"vlinks_mywebsites": [
-		{ "name": "", "ref": "" },
-		 { "name": "hotellespalmiers.com", "ref":"https://hotellespalmiers.com/" }
-		],
-
-	"vlinks_seo": [
-		{ "name": "", "ref": "" },
-		 { "name": "woorank.com", "ref":"https://www.woorank.com/en/www/hotellespalmiers.com" }
 		],		
-
-	"vlinks_node": [
+	"vlinks_videos": [
 		{ "name": "", "ref": "" },
-		 { "name": "npmjs", "ref":"https://www.npmjs.org" }
+		{ "name": "youtube", "ref":"https://youtube.com" },
+		{ "name": "TEDx", "ref":"https://www.ted.com" }
 		],		
-
-	"vlinks_aaa": [
+	"vlinks_games": [
+		{ "name": "", "ref": "" },		
+		{ "name": "countries", "ref": "https://fable.io/samples-browser/d3map/" },		
+		{ "name": "doom like", "ref": "https://kripken.github.io/BananaBread/cube2/bb.html" },		
+		{ "name": "duck hunt with facial rec", "ref": "https://duckface-hunt.glitch.me/" },		
+		{ "name": "chess jsfiddle", "ref": "https://jsfiddle.net/q76uzxwe/1/" }
+		],	
+	"vlinks_crowdfunding": [
 		{ "name": "", "ref": "" },
-		 { "name": "aa", "ref":"aa" }
-		],	
-
-	"vlinks_maths": [
-		{ "name": "", "ref": "" }
-		 ],
-
-	"vlinks_maths_latex": [
-		{ "name": "", "ref": "" },
-		 { "name": ".tex files: overleaf.com", "ref":"https://www.overleaf.com/" }
-		],		
-
-	"vlinks_science": [
-		{ "name": "", "ref": "" }
-		 ],
-
-
-	"vlinks_online": [
-		{ "name": "", "ref": "" },
-		{ "name": "cloud.mongodb.com", "ref": "https://cloud.mongodb.com" },
-		{ "name": "fauna DB", "ref": "https://dashboard.fauna.com" }
-		],		
-
-
-
-
-
-	"vlinks_mobile": [
-		{ "name": "", "ref": "" }
-		 ],
-
-	"vlinks_mobile_android": [
-		 { "name": "", "ref": "" },
-		 { "name": "swiftic.com (como)", "ref": "https://my.swiftic.com" },
-		 { "name": "appsgeyser.com", "ref":"https://appsgeyser.com" }
+		{ "name": "patreon.com", "ref": "https://www.patreon.com" },
+		{ "name": "tudigo.co", "ref":"https://www.tudigo.co" },
+		{ "name": "kickstarter.com", "ref":"http://www.kickstarter.com" }
 		],	
 
 
@@ -82,58 +109,6 @@
 
 
 
-	"vlinks_ml": [
-		 { "name": "", "ref": "" },
-		 { "name": "Anaconda", "ref":"https://anaconda.org" }
-		],	
-
-
-
-	"vlinks_blogs": [
-		 { "name": "", "ref": "" },
-		 { "name": "guinetn.github.io/", "ref":"https://guinetn.github.io" }
-		],	
-
-	"vlinks_tasks": [
-		{ "name": "", "ref": "" },
-		 { "name": "trello", "ref":"https://trello.com/guinetn" },
-		 { "name": "az devops/<user>.visualstudio.com", "ref":"https://nguinet.visualstudio.com"}
-		],	
-
-	"vlinks_accounts": [
-		{ "name": "", "ref": "" },		 		 
-		 { "name": "myaccount.google.com", "ref":"https://myaccount.google.com" },
-		 { "name": "google timeline", "ref":"https://www.google.com/maps/timeline" },
-		 { "name": "google ads settings", "ref":"https://adssettings.google.com/" },
-		 { "name": "office.com/microsoftonline.com", "ref":"https://login.microsoftonline.com" }
-		],	
-
-	"vlinks_help": [
-		{ "name": "", "ref": "" },
-		{ "name": "stackoverflow", "ref":"https://stackoverflow.com" }
-		],	
-	
-	"vlinks_jobs": [
-		 { "name": "", "ref": "" },
-		 { "name": "viadeo", "ref":"http://www.viadeo.com" },
-		 { "name": "hired", "ref":"https://hired.com" },
-		 { "name": "humaniance", "ref":"www.humaniance.com" },
-		 { "name": "dogfinance", "ref":"https://www.dogfinance.com" },
-		 { "name": "codingame", "ref":"https://www.codingame.com" }
-		],	
-
-	"vlinks_dataviz": [
-		 { "name": "", "ref": "" },
-		 { "name": "canva", "ref":"https://www.canva.com" }
-		],	
-	"vlinks_hosting": [
-		 { "name": "", "ref": "" },
-		 { "name": "Netlify.com", "ref": "https://nguinet.netlify.com" },
-		 { "name": "Firebase", "ref":"https://console.firebase.google.com" },
-		 { "name": "Aws", "ref":"https://console.aws.amazon.com" },
-		 { "name": "Google Cloud platform", "ref":"https://cloud.google.com" },
-	 	 { "name": "Google Search Console", "ref":"https://search.google.com" }],
-	
 	"text_chrome": [
 	    { "name": "", "ref": "" },		 
 		{"name": "chrome://bookmarks", "class": "copy"},
@@ -149,43 +124,310 @@
 		{"name": "chrome://inspect", "class":"copy"},
 		{"name": "chrome://nacl", "class":"copy"},
 		{"name": "chrome://omnibox", "class":"copy"},		
-		{"name": "chrome://tracing", "class":"copy"}],
-	
-	"vlinks_plane": [
-		{ "name": "", "ref": "" },
-		{ "name": "aviation-civile.gouv.fr", "ref": "https://www.sia.aviation-civile.gouv.fr" }
+		{"name": "chrome://tracing", "class":"copy"},
+		{"name": "https://v8.dev", "class":"copy"},
+		{"name": "https://github.com/GoogleChrome", "class":"copy"},
+		{"name": "chromeexperiments.com", "ref": "http://www.chromeexperiments.com"},
+		{"name": "chrome web store", "ref": "https://chrome.google.com/webstore/category/extensions"}
 	],
 
+	"vlinks_mywebsites": [
+		{ "name": "", "ref": "" },
+		 { "name": "hotellespalmiers.com", "ref":"https://hotellespalmiers.com/" }
+		],
+
+	"vlinks_seo": [
+		{ "name": "", "ref": "" },
+		 { "name": "woorank.com", "ref":"https://www.woorank.com/en/www/hotellespalmiers.com" }
+		],			
+	"vlinks_analytics": [
+		{ "name": "", "ref": "" },
+		 { "name": "developers.google.com/analytics", "ref":"https://developers.google.com/analytics" }
+		],		
+	"vlinks_node": [
+		{ "name": "", "ref": "" },
+		 { "name": "npmjs", "ref":"https://www.npmjs.org" }
+		],	
+	"vlinks_html": [
+		{ "name": "", "ref": "" },
+		{ "name": "simpl.info", "ref": "https://simpl.info" }
+	],
+	"vlinks_css": [
+		{ "name": "", "ref": "" },
+		{ "name": "css-tricks.com", "ref": "https://css-tricks.com" }
+	],
+	"vlinks_javascript": [
+		{ "name": "", "ref": "" },
+		{ "name": "You-Dont-Need-JavaScript", "ref": "https://github.com/you-dont-need/You-Dont-Need-JavaScript" },
+		{ "name": "Airbnb JavaScript Style Guide", "ref": "https://github.com/airbnb/javascript" }
+	],
+	"vlinks_webPlayground": [
+		 { "name": "Playground: css-transformations", "ref":"https://css-transform.moro.es/" }
+		],		
+	"vlinks_json": [
+		{ "name": "", "ref": "" },
+		{ "name": "jwt.io", "ref": "https://jwt.io" },
+		 { "name": "jsonlint.com", "ref":"https://jsonlint.com" }
+		],	
+	"vlinks_localhost": [
+		{ "name": "", "ref": "" },
+		{ "name": "192.168.0.1", "ref": "http://192.168.0.1" },
+		{ "name": ":1234", "ref": "localhost:1234" },
+		{ "name": ":1313", "ref": "localhost:1313" },
+		{ "name": ":1337", "ref": "localhost:1337" },
+		{ "name": ":3000", "ref": "localhost:3000" },
+		{ "name": ":3333", "ref": "localhost:3333" },
+		{ "name": ":4444", "ref": "localhost:4444" },
+		{ "name": ":5000", "ref": "localhost:5000" },
+		{ "name": ":8000", "ref": "localhost:8000" },
+		{ "name": ":8080", "ref": "localhost:8080" },
+		{ "name": ":8888", "ref": "localhost:8888" },
+		{ "name": ":10000", "ref": "localhost:10000" },
+		{ "name": "View my ip, request header", "ref": "http://www.locallhost.com" }		
+	],	
+
+
+
+
+	"vlinks_providers": [
+		 	{ "name": "", "ref": "" },
+			{ "name": "Amazon Web Services (AWS)", "ref": "https://"},
+			{ "name": "Microsoft Azure", "ref": "https://portal.azure.com" },
+			{ "name": "Google Cloud", "ref": "https://"},
+			{ "name": "Alibaba Cloud", "ref": "https://"},
+			{ "name": "IBM Cloud", "ref": "https://"},
+			{ "name": "Oracle", "ref": "https://"},
+			{ "name": "Salesforce", "ref": "https://"},
+			{ "name": "SAP", "ref": "https://"},
+			{ "name": "Rackspace Cloud", "ref": "https://"},
+			{ "name": "VMWare", "ref": "https://"}		 	
+	],	
+	"vlinks_azure": [
+		 { "name": "", "ref": "" },
+		 { "name": "azure.com", "ref": "https://portal.azure.com" }
+	],
+	"vlinks_serverless": [
+		 { "name": "", "ref": "" },
+		 { "name": "Firebase cloud.google.com", "ref": "https://console.cloud.google.com/functions" }
+	],
+	"vlinks_hosting": [
+		 { "name": "", "ref": "" },
+		 { "name": "Netlify.com", "ref": "https://nguinet.netlify.com" },
+		 { "name": "Firebase", "ref":"https://console.firebase.google.com" },
+		 { "name": "Aws", "ref":"https://console.aws.amazon.com" },
+		 { "name": "Google Cloud platform", "ref":"https://cloud.google.com" },
+	 	 { "name": "Google Search Console", "ref":"https://search.google.com" },
+		 { "name": "gandi.net", "ref": "https://www.gandi.net" }],
 	"vlinks_code_api": [
 	 	{ "name": "", "ref": "" },
+	 	{ "name": "developers.google.com/api-client-library", "ref": "https://developers.google.com/api-client-library" },
+	 	{ "name": "console.developers.google.com", "ref": "https://console.developers.google.com" },
 	 	{ "name": "swaggerhub.com", "ref": "https://app.swaggerhub.com" }
 		],	
-
-	"vlinks_code_api_auth": [
-	 	{ "name": "", "ref": "" },
-	 	{ "name": "", "auth0.com": "https://manage.auth0.com/#/" },
+	"vlinks_tokens": [
+		{ "name": "", "ref": "" },
+		{ "name": "github", "ref": "https://github.com/settings/tokens" },
+		{ "name": "mapbox", "ref": "https://www.mapbox.com/account" },
+		{ "name": "openweathermap", "ref": "https://openweathermap.org" },
+		{ "name": "", "auth0.com": "https://manage.auth0.com/#/" },
 	 	{ "name": "oktapreview.com", "ref": "https://dev-589321.oktapreview.com" }
-		],	
-
-	"vlinks_microsoft": [
-	 	{ "name": "", "ref": "" },
-	 	{ "name": "developer.microsoft.com", "ref": "https://developer.microsoft.com" }
 	],
+	"vlinks_maps": [
+		{ "name": "", "ref": "" },
+		{ "name": "developers.google.com/maps", "ref": "https://developers.google.com/maps" }
+	],
+
+
+
+
+
 
 	"vlinks_code_sample": [
 	 	{ "name": "", "ref": "" },
 	 	{ "name": "microsoft samples", "ref": "https://docs.microsoft.com/fr-fr/samples/" }
 	],
 	
-	"vlinks_code": [
+	"vlinks_codenews": [
 		{ "name": "", "ref": "" },
-	 	{ "name": "dotnet", "ref":"https://docs.microsoft.com/en-us/dotnet/core/introduction" }
+		{ "name": "vas3k.com", "ref": "https://vas3k.com" },
+		{ "name": "anthonychu.ca", "ref": "https://anthonychu.ca" },
+		{ "name": "codeproject.com", "ref": "http://www.codeproject.com" },
+		{ "name": "neelbhatt.com", "ref": "https://neelbhatt.com/" },
+		{ "name": "gunnarpeipman.com", "ref": "https://gunnarpeipman.com" },
+		{ "name": "johnpapa.net", "ref": "http://www.johnpapa.net/" },
+		{ "name": "hanselman.com", "ref": "http://www.hanselman.com/blog/" },
+		{ "name": "martinfowler.com", "ref": "https://martinfowler.com" },
+		{ "name": "dev.to", "ref": "https://dev.to" },
+		{ "name": "tutorialzine.com", "ref": "https://tutorialzine.com" },
+		{ "name": "alligator.io", "ref": "https://alligator.io/explore" },
+		{ "name": "dzone.com", "ref": "https://dzone.com" },
+		{ "name": "toptal.com", "ref": "https://www.toptal.com/developers/blog" },
+		{ "name": "blinkingcaret.com", "ref": "https://www.blinkingcaret.com" },
+		{ "name": "blog.soat.fr", "ref": "https://blog.soat.fr" },
+		{ "name": "smashingmagazine.com", "ref": "https://www.smashingmagazine.com" },
+		{ "name": "https://scotch.io", "ref": "https://scotch.io"},
+		{ "name": "https://www.telerik.com/blogs", "ref": "https://www.telerik.com/blogs"},
+		{ "name": "https://hackaday.com", "ref": "https://hackaday.com"},
+		{ "name": "http://www.dotnetcurry.com", "ref": "http://www.dotnetcurry.com"},
+		{ "name": "https://freecodecamp.com", "ref": "https://freecodecamp.com"},
+		{ "name": "https://www.hackster.io", "ref": "https://www.hackster.io"},
+		{ "name": "https://hackernoon.com", "ref": "https://hackernoon.com"},
+		{ "name": "pioneercode.com", "ref": "https://pioneercode.com" },
+		{ "name": "https://developpez.com", "ref": "https://developpez.com"},
+		{ "name": "https://www.hongkiat.com", "ref": "https://www.hongkiat.com"}
+ 	 	],
+
+
+	"vlinks_dotnet": [
+		{ "name": "", "ref": "" },
+		{ "name": "c-sharpcorner.com", "ref": "https://www.c-sharpcorner.com" },
+	 	{ "name": "dotnet.microsoft.com", "ref":"https://dotnet.microsoft.com" },
+	 	{ "name": "dotnet intro", "ref":"https://docs.microsoft.com/en-us/dotnet/core/introduction" },
+	 	{ "name": "dotnet learn", "ref":"https://dotnet.microsoft.com/learn" },
+		{ "name": "anthonygiretti.com", "ref": "http://anthonygiretti.com" }
  	 	],
 
 	"vlinks_repos": [
 		 { "name": "", "ref": "" },
 		 { "name": "github.io", "ref":"https://github.io" }
-		]
+		],
+
+
+
+
+
+
+
+	"vlinks_mobile": [
+		{ "name": "", "ref": "" }
+		 ],
+
+	"vlinks_mobile_android": [
+		 { "name": "", "ref": "" },
+		 { "name": "appgyver.com", "ref": "https://platform.appgyver.com" },
+		 { "name": "swiftic.com (como)", "ref": "https://my.swiftic.com" },
+		 { "name": "appsgeyser.com", "ref":"https://appsgeyser.com" }
+		],	
+
+
+
+
+
+
+	"vlinks_maths": [
+		{ "name": "", "ref": "" }
+		 ],
+
+	"vlinks_maths_latex": [
+		{ "name": "", "ref": "" },
+		 { "name": ".tex files: overleaf.com", "ref":"https://www.overleaf.com/" }
+		],		
+
+
+
+
+
+
+
+	"vlinks_ml": [
+		 { "name": "", "ref": "" },
+		 { "name": "datasciencecentral.com", "ref": "https://www.datasciencecentral.com/profiles/blogs/data-science-cheat-sheet" },
+		 { "name": "analyticsvidhya.com", "ref": "https://www.analyticsvidhya.com" },
+		 { "name": "Anaconda", "ref":"https://anaconda.org" }
+		],	
+
+
+
+
+	"vlinks_dataviz": [
+		 { "name": "", "ref": "" },
+		 { "name": "setosa.io", "ref": "https://setosa.io" },
+		 { "name": "draw.io", "ref": "https://app.diagrams.net" },
+		 { "name": "particles field weather ****", "ref": "https://codepen.io/DonKarlssonSan/post/particles-in-simplex-noise-flow-field" },
+		 { "name": "css-tricks.com", "ref": "https://css-tricks.com/exploring-data-with-serverless-and-vue-part-2/" },		 
+		 { "name": "webdesigner.withgoogle.com", "ref": "https://webdesigner.withgoogle.com" },
+		 { "name": "canva", "ref":"https://www.canva.com" }
+		],	
+	
+
+
+
+
+	"vlinks_science": [
+		{ "name": "", "ref": "" },
+		{ "name": "arxiv.org", "ref": "https://arxiv.org" },
+		{ "name": "eos.org", "ref": "https://eos.org" },
+		{ "name": "newscientist.com", "ref": "https://www.newscientist.com" }
+		],	
+	"vlinks_geology": [
+		{ "name": "", "ref": "" },
+		{ "name": "geologycafe.com", "ref": "http://www.geologycafe.com" }		
+		],	
+	"vlinks_physic": [
+		{ "name": "", "ref": "" },
+		{ "name": "splung.com", "ref": "http://www.splung.com" }		
+		],	
+	"vlinks_mechanic": [
+		{ "name": "", "ref": "" },
+		{ "name": "biomechanic ****", "ref": "https://github.com/rajathkmp/BMC" }		
+		],
+
+
+
+
+
+	
+	"vlinks_plane": [
+		{ "name": "", "ref": "" },
+		{ "name": "aviation-civile.gouv.fr", "ref": "https://www.sia.aviation-civile.gouv.fr" }
+	],
+
+	
+
+
+	"vlinks_security": [
+		{ "name": "", "ref": "" },		
+		{ "name": "paypal.com", "ref": "https://www.paypal.com" }		
+	],
+
+
+
+
+
+	
+
+	"vlinks_jobs": [
+		 { "name": "", "ref": "" },
+		 { "name": "verduron.com", "ref": "https://verduron.com" },
+		 { "name": "viadeo", "ref":"http://www.viadeo.com" },
+		 { "name": "hired", "ref":"https://hired.com" },
+		 { "name": "humaniance", "ref":"www.humaniance.com" },
+		 { "name": "dogfinance", "ref":"https://www.dogfinance.com" },
+		 { "name": "codingame", "ref":"https://www.codingame.com" }
+		],	
+
+
+	"vlinks_freelance": [
+		{ "name": "", "ref": "" },
+		{ "name": "freelancer.com", "ref": "https://www.freelancer.com/jobs" }		
+	],
+
+	
+
+
+
+	"vlinks_tools": [
+		{ "name": "", "ref": "" },
+		{ "name": "", "ref":"aa" }
+		],
+
+
+	"vlinks_aaa": [
+		{ "name": "", "ref": "" },
+		 { "name": "aa", "ref":"aa" }
+		]	
+
+
 }
 
 
