@@ -9,9 +9,19 @@ Include many pages having links, tools (B64, Timestamp)
 - [+] [-]  
 - First letter of the name of the page you want to navigate to [h]omepage [w]eb [c]ode…  
 
+# How to use
+
+Host it for free as a github page then set it as your browser's homepage  
+
+>chrome::settings  
+>Appearance  
+>Welcome button  
+>Set your repo <cite><you>.github.io/browserLocalHomepage</cite> as you're browser homepage
+
 # Configuration
 
-Add your own pages, links...
+Add your own pages, links...  
+I have to do a code review to improve it, it's just a draft version  
 
 ### pages
 
@@ -34,7 +44,7 @@ Add your own pages, links...
 >  
 >&lt;/div&gt;  
 
->links.json  
+### links.json  
 * vlinks_&lt;my_topic&gt;  for vertical links list  
 * links_&lt;my_topic&gt;   for horizontal links list  
 
@@ -50,18 +60,5 @@ Add your own pages, links...
 >cd <my_folder>  
 >serve   	(npm i -g serve)  
 >or live-server from vs code…  
-
-# How to use
-
-Host it for free as a github page  
-
->chrome::settings  
->Appearance  
->Welcome button  
->Set your repo <cite><you>.github.io/browserLocalHomepage</cite> as you're browser homepage
-
-
-
-
 
 
