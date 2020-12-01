@@ -2,6 +2,7 @@
 @import url('fontawesome/css/all.min.css');
 
 :root {
+  --headerBg: #272727;
   --viewBg: #272727;
   
   --homeBg: #272727;
@@ -170,26 +171,35 @@ a, u {
 
 
 
-
-#clock {
+#header {
+  position: fixed;
+  z-index: 1;
+  background-color: var(--headerBg);
+  width: 100%;
   color:white;
-  position: absolute;
+}
+#clock {
+  
+  position: relative;
   top:0.1em;
-  left: 4em;
-  z-index: 1;  
+  left: 4em;  
   font-size: x-large;
 }
-
-
-/* LINKS */
-
 #hlinks_header {  
-  position: absolute;
+  position: relative;
   top:0.1em;
-  left: 10em;
-  z-index: 1; 
+  left:4.7em;  
   font-size: 1.5em;
 }
+#help {
+  position: relative;
+  float: right;
+  margin: 3px;      
+  font-size: 1.5em;  
+}
+/* LINKS */
+
+
 
 .text {
 }
@@ -206,3 +216,99 @@ a, u {
   content: ' ← clickopy';
   font-size: 0.7em;
 }
+
+
+
+/* SNACKBAR */
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+
+#snackbar.show {
+  visibility: visible;  
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+
+
+/* MODAL */
+
+
+  .mainbox {
+    position: absolute;
+    background-color: #CCCCCC;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    visibility: hidden;
+  }
+  
+  .visible {
+    visibility: visible;
+  }
+
+  .modal {
+    font-family: 'Roboto', sans-serif;
+    position: fixed;
+    opacity: 0.5;
+
+    transition: 0.4s;
+
+    width: 50%;
+    height: 70vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 30px 70px rgba(0,0,0,0.3);
+  }
+  .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #2196F3;
+  }
+  .modal-close:hover {
+    color: #2b8fdb;
+  }

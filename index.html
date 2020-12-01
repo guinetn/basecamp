@@ -13,6 +13,7 @@
 
 <body>
 
+ 
 <template id="linkTemplate">
   <a id="link" target="_blank"></a>
 </template>
@@ -21,7 +22,11 @@
    <div>• <a id="link" target="_blank"></a></div>  
 </template>
 
-<div><div id="clock">--:--:--</div> <div id="hlinks_header"></div> </div>
+<header id="header">
+  <span id="clock">--:--:--</span> 
+  <span id="hlinks_header"></span> 
+  <div id="help" class="far fa-question-circle"></div>
+</header>
 
 
 <div id="main">
@@ -333,6 +338,24 @@
   </template>
 
 </div>
+
+<div class="mainbox">
+
+  <div class="modal">
+    <span class="modal-close far fa-times"></span>
+    <div>
+      <h1 id="modalTitle"></h1>      
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+</div>
+
+<div id="snackbar"><div>  
+
+
+
+
 <script src="weather.js"></script>
 <script type="module" src="views.js"></script>
 <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>

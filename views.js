@@ -18,30 +18,34 @@ class app {
 	}
 
 	onViewKeydown(e) {
-		if (e.ctrlKey || e.shiftKey)
+		if (e.shiftKey)
 			return;
 
 		let key = e.key.toLowerCase();
-		if (e.key=="+") { // Navigate by "+"	
+		
+		// Navigate in views by [+] or [CTRL + →]
+		if (e.key=="+" || (e.ctrlKey && e.keyCode==39  /*right*/)) { 
 			this.currentView = this.views[this.views.length <= this.currentView.id+1 ? 0 : this.currentView.id+1];	
 			key = this.currentView.name.slice(0,2);
 		}
-		else if (e.key=="-") { // Navigate by "+"	
+		// Navigate in views by "-" or [CTRL + ←]	
+		else if (e.key=="-" || (e.ctrlKey && e.keyCode==37  /*left*/)) { 
 			this.currentView = this.views[this.currentView.id-1 < 0 ? this.views.length-1 : this.currentView.id-1];	
 			key = this.currentView.name.slice(0,2);
 		}
-		else if (! [...this.views].some(v=>v.name[0]==key))
+		else if (e.ctrlKey || ! [...this.views].some(v=>v.name[0]==key))
 			return; // no key match a view name
 		
+		e.preventDefault();
 		// hide slides
 		this.toggleSlidesVisibility(false);				
 		// display view
-		this.views.forEach(v=> v.name.slice(0,key.length)==key ? v.dom.classList.add("active") : v.dom.classList.remove("active"));
+		this.views.forEach(view=> view.name.slice(0,key.length)==key ? view.dom.classList.add("active") : view.dom.classList.remove("active"));
 	}
 
 	onSlideKeydown(e) {
-		if (e.keyCode == 27) {
-		 	// esc	 	
+		if (e.keyCode == 27 || e.shiftKey) {
+		 	// [ESC] or [shift]	 	
 		 	this.toggleSlidesVisibility(false);		 	
 		 	if (this.currentSlide>0)
 		 		this.currentSlide--; // to come back on the same slide after [esc]] (as we do [→] to show it again, we don't want slide+0)
@@ -154,17 +158,38 @@ class app {
 	}	
 }
 
+let utils = {
 
+	mainbox : document.querySelector(".mainbox"),
+	modalContent: document.getElementById("modalContent"),
+	modalTitle: document.getElementById("modalTitle"),
 
-function fullScreen() {
-    const el = views[currView];
-    const request = el.requestFullscreen
-                 || el.webkitRequestFullScreen
-                 || el.mozRequestFullScreen
-                 || el.msRequestFullscreen;
-    request.call(el);
+	modal: function(title, content) {	  
+	  this.modalTitle.innerText = title;
+	  this.modalContent.innerHTML = content;
+	  this.mainbox.classList.add("visible");
+	},
+
+	modalClose: function() {
+		this.mainbox.classList.remove("visible");
+	},
+
+	snackbar: function(msg) {
+	  var x = document.getElementById("snackbar");
+	  x.innerText = msg;
+	  x.className = "show";
+	  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2500);
+	},
+
+	fullScreen: function(elem) {	    
+	    const request = elem.requestFullscreen
+	                 || elem.webkitRequestFullScreen
+	                 || elem.mozRequestFullScreen
+	                 || elem.msRequestFullscreen;
+	    request.call(elem);
+	}
+	  
 }
-  
 
 
 async function getLinks() {
@@ -265,20 +290,26 @@ function initTools() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-	//const clock = document.querySelector("#clock");		
-	//setInterval(()=> clock.innerText = getTime(), 1000 );
+	const clock = document.querySelector("#clock");		
+	setInterval(()=> clock.innerText = getTime(), 1000 );
 	let application = new app('.view');
 	
 	document.addEventListener("keydown", function(e) {
 		application.onViewKeydown(e);
-		application.onSlideKeydown(e);
+		if (! e.defaultPrevented)
+			application.onSlideKeydown(e);
 	});
 	document.addEventListener("click", function(e) {
 		if (e.target.matches('.copy')) {
 			copyToClipboard(e.target.innerText);		
 		}
+		else if (e.target.matches('#help')) {
+			utils.modal("Hey", "help....aa");
+		}
+		else if (e.target.matches('.modal-close')) {
+			utils.modalClose();
+		}
 	});
-
 
 	getLinks();
 	initTools();
