@@ -1,13 +1,13 @@
 # Browser Local Homepage
 
 A custom homepage for use locally in your browser as a tool   
-Include many pages having links, tools (B64, Timestamp)  
+Include many pages having links, tools, (B64, Timestamp), pictures  
 
 ![screenshoot](screenshoot01.png)
 
-### Navigation 
-- [+] [-]  
-- First letter of the name of the page you want to navigate to [h]omepage [w]eb [c]ode…  
+### Pages Navigation 
+- [+] [-] 
+- First letter of the name of the page you want to navigate to: [h]omepage [w]eb [c]ode…  
 
 # How to use
 
@@ -62,3 +62,5 @@ I have to do a code review to improve it, it's just a draft version
 >or live-server from vs code…  
 
 
+# License
+Released under the [MIT License][http://www.opensource.org/licenses/MIT]

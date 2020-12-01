@@ -1,0 +1,111 @@
+:root {
+  --slideBg: #1d1b18;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--slideBg);
+  position:absolute;
+  color: white;  
+}
+
+.current {
+  display: block;
+}  
+
+
+.slide a {
+  text-decoration: underline;
+  color: white;
+}
+
+.slide h1,
+.slide h2,
+.slide h3,
+.slide h4,
+.slide h5,
+.slide p {
+  text-align: center;
+}
+
+.slide h1 {
+  margin-bottom: 14px;
+}
+.slide h2 {
+  margin-bottom: 6px;
+}
+.slide h3 {
+  margin-bottom: 4px;
+}
+
+/*
+.slide p {
+  font-size: 2em;
+}
+.slide h1 {
+  font-size: 5em;
+}
+.slide h2 {
+  font-size: 4em;
+}
+.slide h3 {
+  font-size: 3em;
+}
+.slide h4 {
+  font-size: 2em;
+}
+.slide h5 {
+  font-size: 1em;
+}*/
+
+.slide table {
+  margin: 5px auto;
+  color: inherit;
+}
+
+.slide table th,
+.slide table td {
+  border: 1px solid white;
+  padding: 6px 12px;
+  font-size: 1.1em;
+}
+
+.slide ul {
+  margin: 5px 5px;
+  font-size: 2em;
+}
+
+.slide pre {
+  margin: 5px;
+}
+
+#progress {  
+  position: fixed !important;
+  position: absolute; 
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+}
+
+#progress-page {
+  background-color: lightblue;
+  height: 50%;
+  width: 1%;
+}
+
+#progress-time {
+  background-color: brown;
+  height: 50%;
+  width: 1%;
+}
+
+@media print {
+  #progress {
+    display: none;
+  }
+}

@@ -1,29 +1,171 @@
 import * as assets from "./aaa.js"
 
-let currView = -1;
-const views = document.querySelectorAll(".view");
-document.addEventListener("keydown", (e) => onKeydown(e));
-document.addEventListener("click", (e) => onClick(e));
+const getTime = () => new Date().toLocaleTimeString();
 
-function onKeydown(e) {
+class app {
+
+	currentSlide = 0;
+	currentSlidesFile = null;
+	slidesVisible = null;
+	slides = [];
 	
-	if (e.ctrlKey || e.shiftKey)
-		return;
+	currentView = null;
+	views = []; // [{ id:0, dom: null, name: '', slideId: 0 }, …]
 
-	let key = e.key.toLowerCase();
-	if (e.key=="+") { // Navigate by "+"	
-		currView = views.length <= currView+1 ? 0 : currView+1;	
-		key = views[currView].id.slice(0,2);
+	constructor(elem) { 		
+		document.querySelectorAll(elem).forEach((v,i) => this.views.push( {'id':i, 'name':v.id, 'dom':v, 'slideId':0} ));
+		this.currentView = this.views[0];
 	}
-	else if (e.key=="-") { // Navigate by "+"	
-		currView = currView-1 < 0 ? views.length-1 : currView-1;	
-		key = views[currView].id.slice(0,2);
-	}
-	else if (! [...views].some(v=>v.id[0]==key))
-		return;
 
-	[...views].map(v=> v.id.slice(0,key.length)==key ? v.classList.add("active") : v.classList.remove("active"));
+	onViewKeydown(e) {
+		if (e.ctrlKey || e.shiftKey)
+			return;
+
+		let key = e.key.toLowerCase();
+		if (e.key=="+") { // Navigate by "+"	
+			this.currentView = this.views[this.views.length <= this.currentView.id+1 ? 0 : this.currentView.id+1];	
+			key = this.currentView.name.slice(0,2);
+		}
+		else if (e.key=="-") { // Navigate by "+"	
+			this.currentView = this.views[this.currentView.id-1 < 0 ? this.views.length-1 : this.currentView.id-1];	
+			key = this.currentView.name.slice(0,2);
+		}
+		else if (! [...this.views].some(v=>v.name[0]==key))
+			return; // no key match a view name
+		
+		// hide slides
+		this.toggleSlidesVisibility(false);				
+		// display view
+		this.views.forEach(v=> v.name.slice(0,key.length)==key ? v.dom.classList.add("active") : v.dom.classList.remove("active"));
+	}
+
+	onSlideKeydown(e) {
+		if (e.keyCode == 27) {
+		 	// esc	 	
+		 	this.toggleSlidesVisibility(false);		 	
+		 	if (this.currentSlide>0)
+		 		this.currentSlide--; // to come back on the same slide after [esc]] (as we do [→] to show it again, we don't want slide+0)
+		 }
+		 else {	 	
+			switch (e.keyCode) {
+		        case 37: // left          	        	          
+		          this.changeSlide(-1);
+		          break;
+		        case 39: // right	        	          
+		          this.changeSlide(+1);	          
+		          break;
+		        case 70: // f
+		          this.fullScreen();
+		          break;
+		        // case 80: // p
+		        // case 83: // s
+		        //   toggleProgress();
+		    }
+		 } 
+	}
+	async changeSlide(direction) { 
+
+		if (this.currentSlidesFile != this.currentView.name)
+		{	    		
+	    	this.createSlidesInDom(this.currentSlidesFile);
+			return;
+		}
+		
+		// Press [←] while on first slide: hide		
+		if (this.currentSlide==0 && direction==-1)  
+		{
+			this.toggleSlidesVisibility(false);					
+			return;
+		}
+		// Press [→] while slides are not visible: show			
+		else if (!this.slidesVisible && this.currentSlide==0 && direction==+1)	
+		{
+			this.toggleSlidesVisibility(true);
+			return;
+		}
+
+		 this.currentSlide += direction;
+		if (this.slides.length <= this.currentSlide)
+	       this.currentSlide = 0;   
+	 	else if (this.currentSlide < 0) 
+	       this.currentSlide = 0;   
+	    
+	    this.toggleSlidesVisibility(true);
+	}
+	async downloadViewSlides(slideFile) {
+	  try {	  		  	
+	    let response = await fetch(`slides/${slideFile}.md`);
+	    let markdown = await response.text();		
+	    
+	    const html = this.markdownToHtml(markdown);
+	    const htmlSides = html.split("<hr />");		
+	    return htmlSides;
+	  }
+	  catch(e) {
+	    console.log(`Error in downloadViewSlides(${section})`, e);
+	  }
+	}
+	createSlidesInDom() {
+		
+		this.deleteExistingSlides();
+
+		this.currentSlidesFile = this.currentView.name;		
+		
+		this.downloadViewSlides(this.currentSlidesFile)
+	        .then((htmlSlides)=>{         
+	          this.appendSlides(htmlSlides);                  
+			  this.slides = document.querySelectorAll(".slide");          
+	          this.toggleSlidesVisibility(true);
+	          this.renderCurrentSlide();
+	        });
+	}
+	appendSlides(slides) {
+	    slides.forEach((html, i) => {
+	      const slide = document.createElement("div");
+	      slide.innerHTML = `<div>${slides[i]}</div>`;
+	      slide.id = `p${i+1}`;
+	      slide.className = "slide";
+	      document.querySelector("#main").appendChild(slide);
+	    });
+	} 
+	markdownToHtml(data) {
+	  // Transform md → html
+	  var converter = new showdown.Converter();
+	  return converter.makeHtml(data);
+	}
+	renderCurrentSlide() { 		
+		this.slides.forEach((s,i)=> (this.slidesVisible && i==this.currentSlide) ? s.classList.add("current") : s.classList.remove("current"));
+	}
+	toggleSlidesVisibility(forceVisibility) { 		
+		if (forceVisibility!=undefined)
+			this.slidesVisible = forceVisibility;
+		else
+			this.slidesVisible = ! this.slidesVisible;				
+	    
+	    this.renderCurrentSlide();		
+		// this.progress.setProgress("#progress-page", this.pageCount(), this.current);
+	}
+	deleteExistingSlides() {
+		if (this.slides.length>0)
+			this.slides.forEach(s=>s.remove());
+
+		this.slides = null;				
+		this.currentSlide = 0;	
+	}	
 }
+
+
+
+function fullScreen() {
+    const el = views[currView];
+    const request = el.requestFullscreen
+                 || el.webkitRequestFullScreen
+                 || el.mozRequestFullScreen
+                 || el.msRequestFullscreen;
+    request.call(el);
+}
+  
+
 
 async function getLinks() {
   try {
@@ -51,7 +193,7 @@ function createLink(l, prefix) {
     	a.classList.add("mark");
     a.title = l.name;
     if (l.class != undefined)
-    	l.class.split(' ').map(cl => a.classList.add(cl)); // classlist doesn't accept spaces...  
+    	l.class.split(' ').forEach(cl => a.classList.add(cl)); // classlist doesn't accept spaces...  
     else 
     	a.innerText=l.name;  
     
@@ -63,48 +205,46 @@ function createText(l) {
 	elem.innerText = l.name;
 	elem.classList.add("text");
 	if (l.class != undefined)
-    	l.class.split(' ').map(cl => elem.classList.add(cl));
+    	l.class.split(' ').forEach(cl => elem.classList.add(cl));
     return elem;
 }
 
 function extractLinks(links) {
 	  		
-  		for (var key in links) {
-          if (typeof links[key] == "object" || typeof links[key] == "array") {          	
-			const target = document.querySelector(`#${key}`);		
-			const isVLinks = (key.slice(0,6) == 'vlinks' || key.slice(0,4)=="text");
-			if (isVLinks && target!=undefined)
-			{
-				let h3 = document.createElement("h3");				
-				h3.innerText = key.split("_").pop().toUpperCase();
-				target.appendChild(h3);
-			}
+	for (var key in links) {
+      if (typeof links[key] == "object" || typeof links[key] == "array") {          	
+		const target = document.querySelector(`#${key}`);		
+		const isVLinks = (key.slice(0,6) == 'vlinks' || key.slice(0,4)=="text");
+		if (isVLinks && target!=undefined)
+		{
+			let h3 = document.createElement("h3");				
+			h3.innerText = key.split("_").pop().toUpperCase();
+			target.appendChild(h3);
+		}
 
-			if (target==undefined)
-				continue;
-			links[key].forEach(function(l){ 		
-				let elem = null;
-				switch(key.split('_')[0])
-				{
-	        		case "text":
-						elem = createText(l);
-	        			break;
-	        		case "hlinks":
-	        		case "vlinks":
-						elem = createLink(l, isVLinks ? "V" : "");
-	        			break;
-				}
-				if (elem != null)
-	        		target.appendChild(elem);
-			});
-		  }
-        }	
+		if (target==undefined)
+			continue;
+		links[key].forEach(function(l){ 		
+			let elem = null;
+			switch(key.split('_')[0])
+			{
+        		case "text":
+					elem = createText(l);
+        			break;
+        		case "hlinks":
+        		case "vlinks":
+					elem = createLink(l, isVLinks ? "V" : "");
+        			break;
+			}
+			if (elem != null)
+        		target.appendChild(elem);
+		});
+	  }
+    }	
 }		
 
 function onClick(e) {
-	if (e.target.matches('.copy')) {
-		copyToClipboard(e.target.innerText);		
-	}
+
 }
 
 async function copyToClipboard(stringToCopy) {
@@ -123,13 +263,29 @@ function initTools() {
 	document.querySelector("#timestampEncode").value = new Date().toISOString();
 }
 
-const getTime = () => new Date().toLocaleTimeString();
 
-window.onload = () => {
-	const clock = document.querySelector("#clock");		
-	setInterval(()=> clock.innerText = getTime(), 1000 );
+document.addEventListener('DOMContentLoaded', function () {
+	//const clock = document.querySelector("#clock");		
+	//setInterval(()=> clock.innerText = getTime(), 1000 );
+	let application = new app('.view');
+	
+	document.addEventListener("keydown", function(e) {
+		application.onViewKeydown(e);
+		application.onSlideKeydown(e);
+	});
+	document.addEventListener("click", function(e) {
+		if (e.target.matches('.copy')) {
+			copyToClipboard(e.target.innerText);		
+		}
+	});
+
 
 	getLinks();
 	initTools();
+	
+	//resetHash();
+
+	if (showdown)
+		showdown.setFlavor('github');
 	// weather()
-}
+});

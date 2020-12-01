@@ -203,6 +203,6 @@ a, u {
 }
 
 .copy:hover:after {
-  content: ' ← click to copy';
+  content: ' ← clickopy';
   font-size: 0.7em;
 }
