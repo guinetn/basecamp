@@ -159,7 +159,7 @@ a, u {
 }
 
 .jsonlink:hover {  
-  border-bottom: solid 2px var(--containerTitle);  
+  border-bottom: solid 1px var(--containerTitle);  
 }
 
 

@@ -17,6 +17,10 @@ class app {
 		this.currentView = this.views[0];
 	}
 
+	scrollTo(y=0) {
+		document.documentElement.scrollTo({top: y,behavior: "smooth"});			
+	}
+
 	onViewKeydown(e) {
 		if (e.shiftKey)
 			return;
@@ -37,6 +41,7 @@ class app {
 			return; // no key match a view name
 		
 		e.preventDefault();
+		this.scrollTo(0);
 		// hide slides
 		this.toggleSlidesVisibility(false);				
 		// display view
@@ -86,7 +91,8 @@ class app {
 		// Press [→] while slides are not visible: show			
 		else if (!this.slidesVisible && this.currentSlide==0 && direction==+1)	
 		{
-			this.toggleSlidesVisibility(true);
+			this.scrollTo(0);
+			this.toggleSlidesVisibility(true);      		
 			return;
 		}
 
@@ -95,7 +101,8 @@ class app {
 	       this.currentSlide = 0;   
 	 	else if (this.currentSlide < 0) 
 	       this.currentSlide = 0;   
-	    
+	    	    
+	   	this.scrollTo(0);
 	    this.toggleSlidesVisibility(true);
 	}
 	async downloadViewSlides(slideFile) {
@@ -371,6 +378,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			application.onSlideKeydown(e);
 	});
 	document.addEventListener("click", function(e) {
+		
 		if (e.target.matches('.copy')) {
 			copyToClipboard(e.target.innerText);		
 		}
@@ -380,7 +388,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		else if (e.target.matches('.modal-close')) {
 			utils.modalClose();		
 		}
-		else if (e.target.matches('#clock') || e.target.matches('#alarm') ) {
+		else if ( e.target.matches('#clock') || e.target.matches('#alarm')) {
 			utils.alarmOpenClose();			
 		}				
 		else if (e.target.matches('.alarmItem') ) {
@@ -402,7 +410,6 @@ document.addEventListener('DOMContentLoaded', function () {
 			utils.speak(`Alarm in ${alarmDurationMin} min`);	
 			utils.alarmSet(alarmDurationMin, alarmReason);
 		}		
-		
 	});
 
 	getLinks();

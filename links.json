@@ -1,10 +1,10 @@
 {
 	"hlinks_header": [
 	 	 { "name": "gmail", "ref":"https://gmail.com", "class":"fas fa-envelope" },
+		 { "name": "linkedin", "ref":"https://www.linkedin.com", "class":"fab fa-linkedin" }, 	 
 		 { "name": "twitter", "ref":"https://twitter.com", "class":"fab fa-twitter" },
 		 { "name": "github", "ref":"https://github.com/guinetn", "class":"fab fa-github" },
 		 { "name": "coggle", "ref":"https://coggle.it", "class":"fas fa-sitemap" },
-		 { "name": "linkedin", "ref":"www.linkedin.com", "class":"fab fa-linkedin" }, 	 
 	 	 { "name": "pinterest", "ref":"https://www.pinterest.fr/nguinet", "class":"fab fa-pinterest" },
 	 	 { "name": "facebook", "ref":"https://www.facebook.com/profile.php?id=100008401895918", "class":"fab fa-facebook" },
 	 	 { "name": "youtube", "ref":"https://youtube.com", "class":"fab fa-youtube" }
@@ -128,7 +128,8 @@
 		{"name": "chrome://omnibox", "class":"copy"},		
 		{"name": "chrome://tracing", "class":"copy"},
 		{"name": "https://v8.dev", "class":"copy"},
-		{"name": "https://github.com/GoogleChrome", "class":"copy"},
+		{"name": "https://github.com/GoogleChrome", "ref": "https://github.com/GoogleChrome"},
+		{"name": "https://github.com/samdutton/samples", "ref": "https://github.com/samdutton/samples"},
 		{"name": "chromeexperiments.com", "ref": "http://www.chromeexperiments.com"},
 		{"name": "chrome web store", "ref": "https://chrome.google.com/webstore/category/extensions"}
 	],
@@ -280,6 +281,11 @@
  	 	],
 
 
+	"vlinks_cpluplus": [
+		{ "name": "", "ref": "" },  
+		{ "name": "onelonecoder", "ref": "https://github.com/onelonecoder" }
+	],
+
 	"vlinks_dotnet": [
 		{ "name": "", "ref": "" },
 		{ "name": "c-sharpcorner.com", "ref": "https://www.c-sharpcorner.com" },
@@ -425,15 +431,5 @@
 	"vlinks_tools": [
 		{ "name": "", "ref": "" },
 		{ "name": "", "ref":"aa" }
-		],
-
-
-	"vlinks_aaa": [
-		{ "name": "", "ref": "" },
-		 { "name": "aa", "ref":"aa" }
-		]	
-
-
+		]
 }
-
-
