@@ -11,6 +11,7 @@
   background-color: var(--slideBg);
   position:absolute;
   color: white;  
+  font-size: 1em;  
 }
 
 .current {
@@ -71,12 +72,12 @@
 .slide table td {
   border: 1px solid white;
   padding: 6px 12px;
-  font-size: 1.1em;
+  font-size: 0.8em;
 }
 
 .slide ul {
   margin: 5px 5px;
-  font-size: 2em;
+  font-size: 0.9em;
 }
 
 .slide pre {

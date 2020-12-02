@@ -4,13 +4,13 @@ const getTime = () => new Date().toLocaleTimeString();
 
 class app {
 
+	currentView = null;
+	views = []; // [{ id:0, dom: null, name: '', slideId: 0 }, …]
+
 	currentSlide = 0;
 	currentSlidesFile = null;
 	slidesVisible = null;
-	slides = [];
-	
-	currentView = null;
-	views = []; // [{ id:0, dom: null, name: '', slideId: 0 }, …]
+	slides = [];	
 
 	constructor(elem) { 		
 		document.querySelectorAll(elem).forEach((v,i) => this.views.push( {'id':i, 'name':v.id, 'dom':v, 'slideId':0} ));
@@ -49,6 +49,7 @@ class app {
 		 	this.toggleSlidesVisibility(false);		 	
 		 	if (this.currentSlide>0)
 		 		this.currentSlide--; // to come back on the same slide after [esc]] (as we do [→] to show it again, we don't want slide+0)
+		 	 this.currentView.slideId = this.currentSlide+1; // memo slide id to retrieve afer anothers view navigation and come back 
 		 }
 		 else {	 	
 			switch (e.keyCode) {
@@ -72,6 +73,7 @@ class app {
 		if (this.currentSlidesFile != this.currentView.name)
 		{	    		
 	    	this.createSlidesInDom(this.currentSlidesFile);
+	    	this.currentSlide = this.currentView.slideId;
 			return;
 		}
 		
@@ -160,11 +162,34 @@ class app {
 
 let utils = {
 
+	clock: document.querySelector("#clock"),
+	
+	snackbar: document.getElementById("snackbar"),
+
 	mainbox : document.querySelector(".mainbox"),
 	modalContent: document.getElementById("modalContent"),
 	modalTitle: document.getElementById("modalTitle"),
 	
 	alarm: document.getElementById("alarm"),
+	alarmSign: document.getElementById("alarmSign"),
+	alarmTimer: null,	
+	alarmReason: 0,
+	alarmVisible: false,
+	alarmRate:0,
+	alarmRemainder:0,
+
+	init: function(){
+		setInterval(()=> this.heartbeat(), 1000 );
+	},
+
+	heartbeat: function() {		
+		clock.innerText = getTime();
+		if (this.alarmTimer)
+		{
+			this.alarmRemainder -= this.alarmRate;
+			this.alarmSign.style.width = `${Math.trunc(this.alarmRemainder)}%`;				
+		}
+	},
 
 	modal: function(title, content) {	  
 	  this.modalTitle.innerText = title;
@@ -176,15 +201,51 @@ let utils = {
 		this.mainbox.classList.remove("visible");
 	},
 
-	remainderOpenClose: function() {
+	alarmOpenClose: function() {
 		this.alarm.classList.toggle("alarm");
+		this.alarmVisible = this.alarm.classList.contains("alarm");
 	},
 
-	snackbar: function(msg) {
-	  var x = document.getElementById("snackbar");
-	  x.innerText = msg;
-	  x.className = "show";
-	  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2500);
+	alarmSet: function(minutes, reason) {
+
+		if (minutes==0) {
+			clearTimeout(this.alarmTimer);
+			const msg = `Alarm canceled: ${this.alarmReason}`;
+			document.querySelector(".alarmItem.alarm-active").classList.remove("alarm-active");
+			this.speak(msg);
+			this.snackbar(msg);			
+			this.alarmSign.classList.remove("active");
+			this.alarmRate = 0;
+			return;
+		}
+
+		// Start Countdown
+		this.alarmSign.classList.add("active");		
+		this.alarmRemainder = 100;	
+		this.alarmRate = 100/(minutes*60); // rate at wich, each sec, thecountdown progressbar must be reduced
+
+		this.alarmReason = reason;
+		this.alarmTimer = setTimeout(() => {  
+						const msg = `Alarm (${minutes} min elapsed)<br/>${reason != '' ? '"'+reason+'"' : ''}`;
+					 	this.snackbar(msg, 5000);	
+						if (msg.trim().slice(0,2)!="//") // dot not speak msg prefixed by //
+							this.speak(msg.replace("<br/>",""));					 	
+						document.querySelector(".alarmItem.alarm-active").classList.remove("alarm-active");
+						this.alarmSign.classList.remove("active");						
+					 }, minutes*60*1000);						      
+	},
+
+	speak: function(msg) {                
+		if (msg != "" && window.speechSynthesis) {
+        	var to_speak = new SpeechSynthesisUtterance(msg);
+     	   	window.speechSynthesis.speak(to_speak);
+        }
+    },
+
+	snackbar: function(msg, duration=2500) {
+	  snackbar.innerHTML = msg;
+	  snackbar.classList.add('show');
+	  setTimeout(() => snackbar.classList.remove('show'), duration);
 	},
 
 	fullScreen: function(elem) {	    
@@ -296,11 +357,15 @@ function initTools() {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-	const clock = document.querySelector("#clock");		
-	setInterval(()=> clock.innerText = getTime(), 1000 );
+	
+	utils.init();
+
 	let application = new app('.view');
 	
 	document.addEventListener("keydown", function(e) {
+		if (utils.alarmVisible)
+			return; // we need all the keys to enter alarm msg
+
 		application.onViewKeydown(e);
 		if (! e.defaultPrevented)
 			application.onSlideKeydown(e);
@@ -316,11 +381,26 @@ document.addEventListener('DOMContentLoaded', function () {
 			utils.modalClose();		
 		}
 		else if (e.target.matches('#clock') || e.target.matches('#alarm') ) {
-			utils.remainderOpenClose();			
+			utils.alarmOpenClose();			
 		}				
 		else if (e.target.matches('.alarmItem') ) {
-			utils.remainderOpenClose();			
-			utils.snackbar(`Alarm in ${e.target.innerText}`);	
+
+			// alarm already set ? → Cancel it
+			if (e.target.classList.contains("alarm-active")) {
+				utils.alarmSet(0);
+				document.querySelector(".alarmItem.alarm-active").classList.remove("alarm-active");
+				return;
+			}
+
+			// set alarm
+			const alarmSelected = document.querySelector(".alarmMessage");
+			const alarmReason = alarmSelected.value || "";
+			const alarmDurationMin = e.target.getAttribute("data-duration");
+			e.target.classList.toggle("alarm-active");
+			utils.alarmOpenClose();			
+			utils.snackbar(`Alarm in ${alarmDurationMin} min<br/>${alarmReason}`);	
+			utils.speak(`Alarm in ${alarmDurationMin} min`);	
+			utils.alarmSet(alarmDurationMin, alarmReason);
 		}		
 		
 	});

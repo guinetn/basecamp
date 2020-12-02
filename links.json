@@ -1,10 +1,10 @@
 {
 	"hlinks_header": [
+	 	 { "name": "gmail", "ref":"https://gmail.com", "class":"fas fa-envelope" },
+		 { "name": "twitter", "ref":"https://twitter.com", "class":"fab fa-twitter" },
 		 { "name": "github", "ref":"https://github.com/guinetn", "class":"fab fa-github" },
 		 { "name": "coggle", "ref":"https://coggle.it", "class":"fas fa-sitemap" },
-		 { "name": "twitter", "ref":"https://twitter.com", "class":"fab fa-twitter" },
 		 { "name": "linkedin", "ref":"www.linkedin.com", "class":"fab fa-linkedin" }, 	 
-	 	 { "name": "gmail", "ref":"https://gmail.com", "class":"fas fa-envelope" },
 	 	 { "name": "pinterest", "ref":"https://www.pinterest.fr/nguinet", "class":"fab fa-pinterest" },
 	 	 { "name": "facebook", "ref":"https://www.facebook.com/profile.php?id=100008401895918", "class":"fab fa-facebook" },
 	 	 { "name": "youtube", "ref":"https://youtube.com", "class":"fab fa-youtube" }
@@ -73,6 +73,7 @@
 	
 	"vlinks_online": [
 		{ "name": "", "ref": "" },
+		{ "name": "countdown, alarm", "ref": "https://vclock.com" },
 		{ "name": "asciiflow", "ref": "http://asciiflow.com/" },
 		{ "name": "draw.io", "ref": "https://app.diagrams.net" },
 		{ "name": "code flow", "ref": "https://app.code2flow.com" },
@@ -291,6 +292,10 @@
 	"vlinks_repos": [
 		 { "name": "", "ref": "" },
 		 { "name": "github.io", "ref":"https://github.io" }
+		],
+	"vlinks_documentation": [
+		 { "name": "", "ref": "" },
+		 { "name": "readthedocs.io", "ref":"https://readthedocs.io" }
 		],
 
 

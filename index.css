@@ -19,10 +19,12 @@
   --crowdfundingBg: #0220CC;
   --jobsBg: #8B5C77;
   --toolsBg: #005C77;
+
+  --jsonlink: #FFF;
   
   --fontFamily: 'Roboto Mono', monospace;
   --viewTitle: gold;
-  --containerTitle: aqua;
+  --containerTitle: aqua; /* #0ebeff*/
   --textHover: gold;
 }
 
@@ -52,7 +54,7 @@ body {
 }
 
 .active {
-  display:block;  
+  display:block !important;  
 }
 
 #home {
@@ -153,16 +155,16 @@ a, u {
 }
 
 .jsonlink {
-  color: white;
+  color: var(--jsonlink);
 }
 
 .jsonlink:hover {  
-  border-bottom: solid 2px cyan;  
+  border-bottom: solid 2px var(--containerTitle);  
 }
 
 
 .jsonlink:visited {
-  color: white;
+  color: var(--jsonlink);
 }
     
 .view .jsonlink {
@@ -178,29 +180,39 @@ a, u {
   width: 100%;
   color:white;
 }
-#clock {
-  
+.clockDiv {
+  position: absolute;  
+  font-size: x-large;
+}
+#clock {  
   position: relative;
   top:0.1em;
   left: 4em;  
-  font-size: x-large;
+  cursor: pointer;
+}
+#alarmSign {
+  display: none;
+  position: relative;
+  background-color: goldenrod;  
+  height: 2px;
+  left: 4em;
 }
 #hlinks_header {  
   position: relative;
-  top:0.1em;
-  left:4.7em;  
+  top: 0.21em;
+  left: 10em;
   font-size: 1.5em;
 }
 #help {
   position: relative;
   float: right;
-  margin: 3px;      
+  margin: 5px 10px;      
   font-size: 1.5em;  
 }
+
+
+
 /* LINKS */
-
-
-
 .text {
 }
 
@@ -222,32 +234,33 @@ a, u {
 /* SNACKBAR */
 
 #snackbar {
-  visibility: hidden;
+  display: none;
   min-width: 250px;
   margin-left: -125px;
   background-color: #e8d232;
   color: #000;
   text-align: center;
-  border-radius: 2px;
+  border-radius: 8px;
   padding: 16px;
   position: fixed;
   z-index: 1;
   left: 50%;
   top: 3em;
   font-size: 17px;
+  border: solid 3px white;
 }
 
 #snackbar.show {
-  visibility: visible;  
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  display: block;  
+  animation: snackbar-fadein 0.5s, snackbar-fadeout 0.5s 10s; /* 10s to avoid display issues */
 }
 
-@keyframes fadein {
+@keyframes snackbar-fadein {
   from {top: 0; opacity: 0;}
   to {top: 3em; opacity: 1;}
 }
 
-@keyframes fadeout {
+@keyframes snackbar-fadeout {
   from {top: 3em; opacity: 1;}
   to {top: 0; opacity: 0;}
 }
@@ -308,28 +321,46 @@ a, u {
 #alarm {
     position: fixed;
     top: 2.2em;
-    left: -280px;
-    width: 250px;    
-    border: solid 1px grey;
-    background: #2980b9;
+    left: -240px;
+    width: 200px;    
+    border: solid 2px white;
+    border-radius: 4px;    
+    color: white;
+    background: #a51919;
     display: flex;
-    flex-flow: column;
-    flex-wrap: wrap;
+    flex-flow: wrap;    
     padding: 16px;
     transition: 0.62s;
 }
 #alarm.alarm {
   left: 0;
 }
-#alarm ul li {
-    font-size: 1.2em;
+#alarm h3 {
+  position: relative;
+  top:4px;
+  width: 3em;
+  font-size: xx-large;
 }
-
 .alarmItem {
     background: #000;
-    color: white;
     width: 5em;
-    border: solid 1px grey;    
+    border: solid 1px white;    
+    border-radius: 6px;
+    text-align: center;
+    margin: 3px;
+    padding: 5px;
+}
+.alarmItem:hover {
+  color: yellow;
+}
+.alarm-active {
+     background: #FFEB3B;
+     color:black;
+}
+.alarmMessage {    
+    width: 100%;
+    border: solid 1px white;    
+    border-radius: 2px;
     text-align: center;
     margin: 3px;
     padding: 5px;

@@ -23,7 +23,10 @@
 </template>
 
 <header id="header">
-  <span id="clock">--:--:--</span> 
+  <div class="clockDiv">
+    <span id="clock" title="click to set up alarms">--:--:--</span> 
+    <div id="alarmSign"></div>
+  </div>
   <span id="hlinks_header"></span> 
   <div id="help" class="far fa-question-circle"></div>
 </header>
@@ -102,6 +105,7 @@
       <div id="vlinks_code_sample" class="containerItem"></div>        
       <div id="vlinks_repos" class="containerItem"></div>        
       <div id="vlinks_dotnet" class="containerItem"></div>        
+      <div id="vlinks_documentation" class="containerItem"></div>        
     </div>
 
   </div>
@@ -355,16 +359,17 @@
 
 
 <div id="alarm">
-  <h3>Alarms</h3>
-  <div class="alarmItem">5 min</div>
-  <div class="alarmItem">10 min</div>
-  <div class="alarmItem">15 min</div>
-  <div class="alarmItem">20 min</div>
-  <div class="alarmItem">30 min</div>
-  <div class="alarmItem">45 min</div>
-  <div class="alarmItem">1h</div>
-  <div class="alarmItem">1h30</div>
-  <div class="alarmItem">2h00</div>    
+  <h3 class="fa fa-business-time" title="Alarms set up"></h3>
+  <div class="alarmItem" data-duration='5'>5 min</div>
+  <div class="alarmItem" data-duration='10'>10 min</div>
+  <div class="alarmItem" data-duration='15'>15 min</div>
+  <div class="alarmItem" data-duration='20'>20 min</div>
+  <div class="alarmItem" data-duration='30'>30 min</div>
+  <div class="alarmItem" data-duration='45'>45 min</div>
+  <div class="alarmItem" data-duration='60'>1h</div>
+  <div class="alarmItem" data-duration='90'>1h30</div>
+  <div class="alarmItem" data-duration='120'>2h00</div>    
+  <input class="alarmMessage" type="text" placeholder="msg to show & speak" title="msg to show & to speak (// prefix to not speak)"></input>
 </div>
 
 
