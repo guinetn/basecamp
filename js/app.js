@@ -1,4 +1,4 @@
-import * as assets from "./aaa.js"
+import * as assets from "./addons.js"
 
 const getTime = () => new Date().toLocaleTimeString();
 
@@ -6,15 +6,16 @@ class app {
 
 	currentView = null;
 	views = []; // [{ id:0, dom: null, name: '', slideId: 0 }, …]
-
 	currentSlide = 0;
 	currentSlidesFile = null;
 	slidesVisible = null;
 	slides = [];	
+	slidesFolder = '';
 
-	constructor(elem) { 		
+	constructor(slidesFolder, elem) { 		
 		document.querySelectorAll(elem).forEach((v,i) => this.views.push( {'id':i, 'name':v.id, 'dom':v, 'slideId':0} ));
 		this.currentView = this.views[0];
+		this.slidesFolder = slidesFolder;
 	}
 
 	scrollTo(y=0) {
@@ -105,9 +106,9 @@ class app {
 	   	this.scrollTo(0);
 	    this.toggleSlidesVisibility(true);
 	}
-	async downloadViewSlides(slideFile) {
+	async downloadViewSlides(folder, slideFile) {
 	  try {	  		  	
-	    let response = await fetch(`slides/${slideFile}.md`);
+	    let response = await fetch(`${folder}/${slideFile}.md`);
 	    let markdown = await response.text();		
 	    
 	    const html = this.markdownToHtml(markdown);
@@ -115,7 +116,7 @@ class app {
 	    return htmlSides;
 	  }
 	  catch(e) {
-	    console.log(`Error in downloadViewSlides(${section})`, e);
+	    console.log(`Error in downloadViewSlides(${slideFile})`, e);
 	  }
 	}
 	createSlidesInDom() {
@@ -124,7 +125,7 @@ class app {
 
 		this.currentSlidesFile = this.currentView.name;		
 		
-		this.downloadViewSlides(this.currentSlidesFile)
+		this.downloadViewSlides(this.slidesFolder, this.currentSlidesFile)
 	        .then((htmlSlides)=>{         
 	          this.appendSlides(htmlSlides);                  
 			  this.slides = document.querySelectorAll(".slide");          
@@ -273,33 +274,15 @@ let utils = {
 	}	  
 }
 
-async function getLinks() {
+async function downloadLinks(file) {
   try {
-    let response = await fetch('links.json');
+    let response = await fetch(file);
     let jsonLinks = await response.json();		    
     extractLinks(jsonLinks);
   }
   catch(e) {
     console.log('Error!', e);
   }
-}
-
-function createLink(link, classes, description) {
-
-	const prefix = (classes || 'block').indexOf('inline') >=0 ? "inline" : "block";
-	const fragment = document.getElementById( `${prefix}LinkTemplate`);        
-    const instance = document.importNode(fragment.content, true);
-
-    let a = instance.querySelector(".link");
-    a.href = link;                     
-    a.title = description || '';
-    if (classes != undefined)
-    	classes.split(' ').forEach(cl => a.classList.add(cl)); // classlist doesn't accept spaces...  
-    
-    if (prefix != 'inline')
-    	a.innerText = description || link || '???';  
-    
-    return instance;
 }
 
 function extractLinks(links) {
@@ -336,11 +319,31 @@ function extractLinks(links) {
 	        		container.appendChild(elem);
         	}
         	else
-        		console.log(`Error in parsing ${item}`);
+        		console.log(`ExtractLinks(): Error in parsing ${item}`);
 		});
 	  }
     }	
-}		
+}	
+function createLink(link, classes, description) {
+
+	const prefix = (classes || 'block').indexOf('inline') >=0 ? "inline" : "block";
+	const fragment = document.getElementById( `${prefix}LinkTemplate`);        
+    const instance = document.importNode(fragment.content, true);
+
+    let a = instance.querySelector(".topicLink");
+    a.href = link;                     
+    if (description!=null)
+    	a.title = description;
+    if (classes != undefined)
+    	classes.split(' ').forEach(cl => a.classList.add(cl)); // classlist doesn't accept spaces...  
+    
+    if (prefix != 'inline')
+    	a.innerText = description || link || '???';  
+    
+    return instance;
+}
+
+	
 
 function initTools() {
 	document.querySelector("#timestamp").value = Math.floor(new Date().getTime()/1000.0);		
@@ -352,7 +355,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	
 	utils.init();
 
-	let application = new app('.view');
+	let application = new app('assets/slides', '.view');
 	
 	document.addEventListener("keydown", function(e) {
 		if (utils.alarmVisible)
@@ -368,12 +371,15 @@ document.addEventListener('DOMContentLoaded', function () {
 			utils.copyToClipboard(e.target.innerText);		
 		}
 		else if (e.target.matches('#help')) {
-			utils.modal("Hey", "help....aa");
+			if (utils.mainbox.classList.contains("visible"))
+				utils.modalClose();		
+			else
+				utils.modal("Hey", "help....aa");
 		}
-		else if (e.target.matches('.modal-close')) {
+		else if (e.target.matches('.modal-close') || e.target.className=='mainbox visible') {
 			utils.modalClose();		
 		}
-		else if ( e.target.matches('#clock') || e.target.matches('#alarm')) {
+		else if ( e.target.matches('#clock') || e.target.matches('#alarm') || (utils.alarmVisible && e.target.className=='active view')) {
 			utils.alarmOpenClose();			
 		}				
 		else if (e.target.matches('.alarmItem') ) {
@@ -397,7 +403,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}		
 	});
 
-	getLinks();
+	downloadLinks('assets/topics.json');
 	initTools();
 	
 	if (showdown)

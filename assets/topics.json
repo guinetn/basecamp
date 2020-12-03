@@ -146,7 +146,7 @@
 		"https://jsonlint.com"
 	],	
 	"localhost": [
-		"192.168.0.1",
+		"http://192.168.0.1",
 		"localhost:1234(:1234)",
 		"localhost:1313(:1313)",
 		"localhost:1337(:1337)",

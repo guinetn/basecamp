@@ -3,23 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>central</title>    
+    <title>nex</title>    
     <meta name="description" content="browser's customized homepage"/>
     <meta name="keyword" content="custom homepage tool">
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <link rel="stylesheet" type="text/css" href="slides.css">
-    <link rel="stylesheet" type="text/css" href="weather.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/slides.css">
+    <link rel="stylesheet" type="text/css" href="css/weather.css">
   </head>
 
 <body>
 
  
 <template id="inlineLinkTemplate">
-  <a class="link" target="_blank"></a>
+  <a class="topicLink" target="_blank"></a>
 </template>
 
 <template id="blockLinkTemplate">  
-   <div>• <a class="link" target="_blank"></a></div>  
+   <div>• <a class="topicLink" target="_blank"></a></div>  
 </template>
 
 <header id="header">
@@ -37,47 +37,45 @@
   <div id="home" class="active view">
     <h1>Home</h1>           
 
-    <div class="container">    
-      <div id="tasks" class="containerItem"></div>        
-      <div id="notebooks" class="containerItem"></div>        
-      <div id="online" class="containerItem"></div>        
-      <div id="news" class="containerItem"></div>        
-      <div id="social" class="containerItem"></div>        
-      <div id="videos" class="containerItem"></div>        
-      <div id="blogs" class="containerItem"></div>        
-      <div id="microsoft" class="containerItem"></div>        
-      <div id="google" class="containerItem"></div>        
-      <div id="helpers" class="containerItem"></div>        
-      <div id="games" class="containerItem"></div>     
+    <div class="topics">    
+      <div id="tasks"></div>        
+      <div id="notebooks"></div>        
+      <div id="online"></div>        
+      <div id="news"></div>        
+      <div id="social"></div>        
+      <div id="videos"></div>        
+      <div id="blogs"></div>        
+      <div id="microsoft"></div>        
+      <div id="google"></div>        
+      <div id="helpers"></div>        
+      <div id="games"></div>     
     </div>
 
   </div>
-
 
 
 
   <div id="web" class="view">
     <h1>Web</h1>  
 
-    <div class="container">    
-      <div id="chrome" class="containerItem">    
-      <h4>Tips</h4>Shift+ESC: Viewing RAM<br>CTRL+Shift+B: hide bookmarks</div>
-
-      <div id="localhost" class="containerItem"></div>        
-      <div id="json" class="containerItem"></div>        
-      <div id="seo" class="containerItem"></div>        
-      <div id="analytics" class="containerItem"></div>        
-      <div id="node" class="containerItem"></div>       
-      <div id="webplayground" class="containerItem"></div>       
-      <div id="html" class="containerItem"></div>       
-      <div id="javascript" class="containerItem"></div>       
-      <div id="css" class="containerItem"></div>       
-      <div id="mywebsites" class="containerItem"></div>        
+    <div class="topics">    
+      <div id="chrome">    
+       <h4>Tips</h4>
+       Shift+ESC: Viewing RAM<br>CTRL+Shift+B: hide bookmarks
+     </div>     
+      <div id="localhost"></div>        
+      <div id="json"></div>        
+      <div id="seo"></div>        
+      <div id="analytics"></div>        
+      <div id="node"></div>       
+      <div id="webplayground"></div>       
+      <div id="html"></div>       
+      <div id="javascript"></div>       
+      <div id="css"></div>       
+      <div id="mywebsites"></div>        
     </div>
 
   </div>
-
-
 
 
 
@@ -85,17 +83,16 @@
     <h1>Code</h1>  
     <p>“Learn concepts and not languages”</p>
 
-    <div class="container">
-      <div id="codenews" class="containerItem"></div>            
-      <div id="code_sample" class="containerItem"></div>        
-      <div id="repos" class="containerItem"></div>        
-      <div id="dotnet" class="containerItem"></div>        
-      <div id="cpluplus" class="containerItem"></div>        
-      <div id="documentation" class="containerItem"></div>        
+    <div class="topics">
+      <div id="codenews"></div>            
+      <div id="code_sample"></div>        
+      <div id="repos"></div>        
+      <div id="dotnet"></div>        
+      <div id="cpluplus"></div>        
+      <div id="documentation"></div>        
     </div>
 
   </div>
-
 
 
 
@@ -103,19 +100,17 @@
   <div id="cloud" class="view">
     <h1>Cloud</h1>  
 
-    <div class="container">    
-      <div id="providers" class="containerItem"></div>
-      <div id="hosting" class="containerItem"></div>
-      <div id="serverless" class="containerItem"></div>
-      <div id="azure" class="containerItem"></div>
-      <div id="tokens" class="containerItem"></div>        
-      <div id="maps" class="containerItem"></div>        
-      <div id="code_api" class="containerItem"></div>        
+    <div class="topics">    
+      <div id="providers"></div>
+      <div id="hosting"></div>
+      <div id="serverless"></div>
+      <div id="azure"></div>
+      <div id="tokens"></div>        
+      <div id="maps"></div>        
+      <div id="code_api"></div>        
     </div>
 
   </div>
-
-
 
 
 
@@ -123,15 +118,12 @@
   <div id="mobiles" class="view">
     <h1>Mobile</h1>  
 
-    <div class="container">
-      <div id="mobile" class="containerItem"></div>            
-      <div id="android" class="containerItem"></div>            
+    <div class="topics">
+      <div id="mobile"></div>            
+      <div id="android"></div>            
     </div>
 
   </div>
-
-
-
 
 
 
@@ -141,21 +133,20 @@
   <div id="math" class="view">
     <h1>Maths</h1>  
 
-    <div class="container">
-      <div id="maths" class="containerItem"></div>        
-      <div id="latex" class="containerItem"></div>        
+    <div class="topics">
+      <div id="maths"></div>        
+      <div id="latex"></div>        
     </div>
 
   </div>
 
 
 
-
   <div id="ia" class="view">
     <h1>ML</h1>  
 
-    <div class="container">    
-      <div id="ml" class="containerItem"></div>            
+    <div class="topics">    
+      <div id="ml"></div>            
     </div>
 
   </div>
@@ -165,12 +156,11 @@
   <div id="dataviz" class="view">
     <h1>Dataviz</h1>  
 
-    <div class="container">
-      <div id="data_vizu" class="containerItem"></div>        
+    <div class="topics">
+      <div id="data_vizu"></div>        
     </div>
 
   </div>
-
 
 
 
@@ -178,16 +168,14 @@
   <div id="sciences" class="view">
     <h1>Science</h1>  
 
-    <div class="container">
-      <div id="science" class="containerItem"></div>        
-      <div id="physic" class="containerItem"></div>        
-      <div id="geology" class="containerItem"></div>        
-      <div id="mechanic" class="containerItem"></div>        
+    <div class="topics">
+      <div id="science"></div>        
+      <div id="physic"></div>        
+      <div id="geology"></div>        
+      <div id="mechanic"></div>        
     </div>
 
   </div>
-
-
 
 
 
@@ -196,8 +184,8 @@
   <div id="aviation" class="view">
     <h1>Aviation</h1>  
 
-    <div class="container">
-      <div id="plane" class="containerItem"></div>        
+    <div class="topics">
+      <div id="plane"></div>        
     </div>
   </div>
 
@@ -205,18 +193,20 @@
   <div id="securisation" class="view">
     <h1>Security</h1>  
 
-    <div class="container">
-      <div id="security" class="containerItem"></div>            
-      <div id="online_paiement" class="containerItem"></div>            
+    <div class="topics">
+      <div id="security"></div>            
+      <div id="online_paiement"></div>            
     </div>
 
   </div>
 
+
+
   <div id="money" class="view">
     <h1>Crowdfunding</h1>  
 
-    <div class="container">      
-      <div id="crowdfunding" class="containerItem"></div>            
+    <div class="topics">      
+      <div id="crowdfunding"></div>            
     </div>
 
   </div>
@@ -225,36 +215,36 @@
   <div id="job" class="view">
     <h1>Jobs</h1>  
 
-    <div class="container">
-      <div id="jobs" class="containerItem"></div>        
-      <div id="freelance" class="containerItem"></div>        
+    <div class="topics">
+      <div id="jobs"></div>        
+      <div id="freelance"></div>        
     </div>
 
   </div>
 
 
-  <div id="tools" class="view">
-    <h1>Tools</h1>  
+  <div id="toolbox" class="view">
+    <h1>Toolbox</h1>  
 
-    <div> 
+    <div class="mgl20"> 
 
-      <h4>Unix Timestamp (Unix epoch, Unix time, POSIX time)</h4>
-      <small>Seconds elapsed since 01/01/1970 (midnight UTC/GMT). ! Issue on 32bits after 19/01/2038</small><br>
+      <h4>⚙️ Unix Timestamp (Unix epoch, Unix time, POSIX time)</h4>
+      <small>Seconds elapsed since 01/01/1970 (midnight UTC/GMT). ⚠ Issue on 32bits after 19/01/2038</small><br>
       <input type="text" id="timestamp"><button onclick="this.previousSibling.value=Math.floor(new Date().getTime()/1000.0)">Get current timestamp</button><br>
       <input type="text" id="timestampDecode"><button onclick="this.nextSibling.innerText=(new Date(1000*this.previousSibling.value)).toISOString()">Decode unixtimestamp</button><cite></cite><br>
       <input type="text" id="timestampEncode"><button onclick="this.nextSibling.innerText=Date.parse(this.previousSibling.value)/1000">Encode to unixtimestamp</button><cite></cite><br>
-      <small>&nbsp; &nbsp; &nbsp;\___ Iso 8601 Date: 2020-11-29T14:09:25.333Z<br><a href="https://www.epochconverter.com" target="_blank">epochconverter.com</a></small>
+      <small>&nbsp; &nbsp; &nbsp;└── Iso 8601 Date: 2020-11-29T14:09:25.333Z</small><br>
+      <small>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="https://www.epochconverter.com" target="_blank">epochconverter.com</a></small>
       
-      <h4>Base64</h4>
+      <h4>⚙️ Base64</h4>
       <input type="text" name=""><button>Encode</button>
       <input type="text" name=""><button>Decode</button>
       <pre></pre>
     </div>
 
-    <div class="container">
-      <div id="tools" class="containerItem"></div>        
+    <div class="topics">
+      <div id="tools"></div>        
     </div>
-
 
   </div>
 
@@ -354,8 +344,7 @@
 
 <div class="mainbox">
 
-  <div class="modal">
-    <span class="modal-close far fa-times"></span>
+  <div class="modal">   
     <div>
       <h1 id="modalTitle"></h1>      
       <div id="modalContent"></div>
@@ -365,7 +354,6 @@
 </div>
 
 <div id="snackbar"></div>  
-
 
 <div id="alarm">
   <h3 class="fa fa-business-time" title="Alarms set up"></h3>
@@ -381,11 +369,9 @@
   <input class="alarmMessage" type="text" placeholder="msg to show & speak" title="msg to show & to speak (// prefix to not speak)"></input>
 </div>
 
-
-
-<script src="weather.js"></script>
-<script type="module" src="views.js"></script>
-<script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+<script src="js/showdown.min.js"></script>
+<script src="js/weather.js"></script>
+<script type="module" src="js/app.js"></script>
 
 </body>
 
