@@ -36,7 +36,6 @@ body {
   margin:0;
 }
 
-
 /* VIEW */
 
 .view {
@@ -137,6 +136,10 @@ a {
   left: 4em;  
   cursor: pointer;
 }
+.logoNex {
+  float: left;
+  margin: 3px 0 0 10px;
+}
 #alarmSign {
   display: none;
   position: relative;
@@ -148,7 +151,7 @@ a {
 #headerIcons {  
   position: relative;
   top: 0.21em;
-  left: 10em;
+  left: 6.5em;
   font-size: 1.5em;
 }
 #help {
@@ -345,4 +348,16 @@ a {
 
 .mgl20 {
   margin-left:20px;
+}
+
+kbd {
+  font-size: 0.85em;
+  border: 1px solid;
+  border-bottom-width: 2px;
+  border-color: #ddd #bbb #bbb #ddd;
+  background: #000;
+  padding: 1px 3px;
+  white-space: nowrap;
+  border-radius: 3px;
+  color: #fff;
 }

@@ -13,26 +13,18 @@
 
 <body>
 
- 
-<template id="inlineLinkTemplate">
-  <a class="topicLink" target="_blank"></a>
-</template>
-
-<template id="blockLinkTemplate">  
-   <div>• <a class="topicLink" target="_blank"></a></div>  
-</template>
-
 <header id="header">
   <div class="clockDiv">
     <span id="clock" title="click to set up alarms">……:……:……</span> 
     <div id="alarmSign"></div>
   </div>
+  <img src="assets/img/nex.png" class="logoNex">
   <span id="headerIcons" data-info='-t'></span> 
   <div id="help" class="far fa-question-circle"></div>
 </header>
 
 
-<div id="main">
+<div id='main'>
 
   <div id="home" class="active view">
     <h1>Home</h1>           
@@ -54,7 +46,6 @@
   </div>
 
 
-
   <div id="web" class="view">
     <h1>Web</h1>  
 
@@ -74,10 +65,7 @@
       <div id="css"></div>       
       <div id="mywebsites"></div>        
     </div>
-
   </div>
-
-
 
   <div id="code" class="view">
     <h1>Code</h1>  
@@ -91,11 +79,7 @@
       <div id="cpluplus"></div>        
       <div id="documentation"></div>        
     </div>
-
   </div>
-
-
-
 
   <div id="cloud" class="view">
     <h1>Cloud</h1>  
@@ -109,11 +93,7 @@
       <div id="maps"></div>        
       <div id="code_api"></div>        
     </div>
-
   </div>
-
-
-
 
   <div id="mobiles" class="view">
     <h1>Mobile</h1>  
@@ -122,13 +102,7 @@
       <div id="mobile"></div>            
       <div id="android"></div>            
     </div>
-
   </div>
-
-
-
-
-
 
   <div id="math" class="view">
     <h1>Maths</h1>  
@@ -137,10 +111,7 @@
       <div id="maths"></div>        
       <div id="latex"></div>        
     </div>
-
   </div>
-
-
 
   <div id="ia" class="view">
     <h1>ML</h1>  
@@ -148,9 +119,7 @@
     <div class="topics">    
       <div id="ml"></div>            
     </div>
-
   </div>
-
 
 
   <div id="dataviz" class="view">
@@ -347,7 +316,8 @@
   <div class="modal">   
     <div>
       <h1 id="modalTitle"></h1>      
-      <div id="modalContent"></div>
+      <div id="modalContent">       
+      </div>
     </div>
   </div>
 
@@ -372,6 +342,31 @@
 <script src="js/showdown.min.js"></script>
 <script src="js/weather.js"></script>
 <script type="module" src="js/app.js"></script>
+
+<template id="inlineLinkTemplate">
+  <a class="topicLink" target="_blank"></a>
+</template>
+
+<template id="blockLinkTemplate">  
+   <div>• <a class="topicLink" target="_blank"></a></div>  
+</template>
+
+<template id="helpTemplate">  
+ <p>Navigate in views</p>
+        <ul> 
+          <li><kbd>CTRL</kbd>+<kbd>←</kbd> or <kbd>-</kbd></li>
+          <li><kbd>CTRL</kbd>+<kbd>→</kbd> or <kbd>+</kbd></li>
+        </ul>
+        
+        <p>Navigate in slides</p>
+        <ul>
+          <li><kbd>→</kbd> Slide view: on</li>
+          <li><kbd>→</kbd> Next slide</li>
+          <li><kbd>←</kbd> Previous slide</li>
+          <li><kbd>←</kbd> Slide view: off (when on 1<sup>st</sup> slide)</li>
+          <li><kbd>Shift</kbd> Slide view: off</li>
+        </ul>   
+</template>
 
 </body>
 

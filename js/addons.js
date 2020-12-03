@@ -1,1 +1,1 @@
-export const assets = `aaa`;
+export const assets = `not used`;

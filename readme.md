@@ -1,65 +1,173 @@
-# Browser Local Homepage
+# Basecamp: new explorer
 
-A custom homepage for use locally in your browser as a tool   
-Include many pages having links, tools, (B64, Timestamp), pictures  
+![](assets/img/nex.png)  
+You dream about this basecamp that offers a huge time savings.   
+Never open you're .md notes again, it's automatic and as fast as your fingers.  
 
 ![screenshoot](assets/img/screenshoot01.png)
 
-### Pages Navigation 
-- [+] [-] 
-- First letter of the name of the page you want to navigate to: [h]omepage [w]eb [c]ode…  
+# Features
+* Navigate in views   
+* Navigate in view's slides 
+* Set alarms
+* Customize & enrich: add views, topics, links, slides to views
 
-# How to use
-
-Host it for free as a github page then set it as your browser's homepage  
-
->chrome::settings  
->Appearance  
->Welcome button  
->Set your repo <cite><you>.github.io/browserLocalHomepage</cite> as you're browser homepage
+|Key|Action|  
+|---|---|  
+|<kbd>CTRL</kbd><kbd>→</kbd> or <kbd>+</kbd><br/><kbd>CTRL</kbd><kbd>←</kbd> or <kbd>-</kbd>  | Navigate in views|   
+|<kbd>a…z</kbd> key | Go to view with a name starting by…|  
+|<kbd>→</kbd> | Start slides navigation for current view|  
+|<kbd>←</kbd> <kbd>→</kbd> | Navigate in slides of the current view|   
+|<kbd>SHIFT</kbd><br>or <kbd>←</kbd> on 1st slide | Exit slide navigation<br>Slide page is memorized: come back to it with <kbd>→</kbd> |  
 
 # Configuration
 
-Add your own pages, links...  
-I have to do a code review to improve it, it's just a draft version  
+![configuration](assets/img/config.png)
 
-### pages
+### Use from server side
+1. Clone-it on github  
+2. Activate the github page  
+2. Link it to your browser's homepage  (or as a bookmark)
+>chrome::settings  
+>└──Appearance  
+>└────Welcome button  
+>└─────Set this repo as you're browser homepage
 
-* Pages are defined in index.html
+### Use locally
+1. Clone-it locally then starts a server…
+2. npm i -g serve
+3. cd <...repo...>
+4. serve
+5. http://localhost:5000
 
-* Basic
->&lt;div id="web" class="view"&gt;  
->add content here   
->&lt;/div&gt;  
+# Customize
 
-* Related to links in links.json  
->&lt;div id="&lt;my_topic&gt;" class="view"&gt;  
->&lt;h1&gt;a name for my topic&lt;/h1&gt;   
->
->  &lt;div class="container"&gt;  
->    &lt;div id="vlinks_xxx1" class="containerItem"&gt;&lt;/div&gt;  <mark>vlinks_xxx or hlinks_xxx are defined in links.json</mark>  
->    &lt;div id="vlinks_xxx2" class="containerItem"&gt;&lt;/div&gt;  
->    &lt;div id="links_xxxx" class="containerItem"&gt;&lt;/div&gt;         
->  &lt;/div&gt;  
->  
->&lt;/div&gt;  
+Refer to config.png for a global view of the process.
 
-### links.json  
-* vlinks_&lt;my_topic&gt;  for vertical links list  
-* links_&lt;my_topic&gt;   for horizontal links list  
+## Adding a view
 
-* Then links_<my_topic> is placed as a placeholder in index.html  
->	"vlinks_help": [  
->		{ "name": "gitter", "ref": "https://gitter.im" },  
->		{ "name": "quora", "ref": "https://www.quora.com" },  
->		{ "name": "stackoverflow", "ref":"https://stackoverflow.com" }  
->		],	
+* View contains topics (grouped links) or custom html  
+* Views are defined inside &lt;div id="main"&gt; in index.html
+* Each view can have a markdown file (.md) in assets/slides
+
+***Empty view***     
+```html
+ <div id="Name_Of_My_View" class="view">  ← Change 'Name_Of_My_View'
+    <h1>Title_Of_My_View</h1>             ← Change (or remove) 'Title_Of_My_View' 
+    <div class="topics">   
+       ...add topics here     
+    </div>
+    ...add any other html content here
+</div>
+```
+***Add topics***   
+
+```json
+Topics are defined in assets/topics.json
+
+…
+"news": [		
+		"https://www.nytimes.com",
+		"https://www.washingtonpost.com"		
+        ], 
+…
+```
+***Connect topic to view***
+```html
+ index.html
+
+ <div id="Name_Of_My_View" class="view">
+    <h1>Title_Of_My_View</h1>           
+    <div class="topics">   
+       <div id="news"></div>   ← This is how to inject the topic 'news' in a view
+    </div>    
+</div>
+
+an unique option: 
+ 
+    <div class="topics">   
+       <div id="news" data-info='-t'></div>   ← '-t' will remove the topic's title (it display online the links, tou won't see the "News" in aqua color below)
+    </div>    
+
+
+```
+***Result***  
+![view+topic](assets/img/view-topic.png)      
+
+> You can change colors in ```css/index.css```
+
+***Topics options***  
+* Replace links by a friendly name
+* Add icons from [fontawesome](https://fontawesome.com/icons?d=gallery)
+
+```json
+"news": [		
+		"https://www.nytimes.com",                      ← Display "https://www.nytimes.com"  
+		"https://www.nytimes.com(THE NY TIMES)",        ← Display "THE NY TIMES"
+        "https://www.nytimes.com[fas fa-newspaper]",  ← Display an icon
+        "https://www.nytimes.com[inline fab fa-newspaper]",  ← To have icon inline (no rows)..hmm buggy
+        "https://www.washingtonpost.com"		
+        ], 
+…	
+```
+## Adding slides to a view...takes 10 sec
+
+Just create a .md file having the same name of the view in ```assets/slides```
+
+* Each view can have a markdown file (.md) 
+* This .md file is converted in html on the fly when you press <kbd>→</kbd>     
+* The sequence '----' is the slide separator. Slides are not limited in size.  
+
+```md
+home.md
+
+# My Awesome Slide #1
+
+How to add an image with the right path to:
+![](assets/img/cloud.png)
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+----     ← Slides separator. Slides are not limited in size.
+
+## My better Slide #2
+**"abcdef"** is a tool to create a simple and beautiful slide
+…
+----
+…
+
+```
+
+# Alarms
+
+* Audio (speaker)
+* Visual message
+
+![](assets/img/alarms.png)
+
+* Click the clock  
+* Optionally enter a text in relation to the alarm  
+* Click a duration  
+* To close the alarm selection, click the clock again or somewhere in the red square  
+* A progressbar is displayed below the clock  
+* Now, wait for the speaker and the snackbar!
+
+***Cancelling an alarm***  
+* Click the clock  
+* Click the duration with a yellow background 
 
 # Development
 
+> git clone ...  
 >cd <my_folder>  
->serve   	(npm i -g serve)  
->or live-server from vs code…  
+>Start a server: 
+>* serve (npm i -g serve)   
+>* or live-server from vs code…  
 
 
 # License

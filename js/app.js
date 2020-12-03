@@ -55,7 +55,7 @@ class app {
 		 	this.toggleSlidesVisibility(false);		 	
 		 	if (this.currentSlide>0)
 		 		this.currentSlide--; // to come back on the same slide after [esc]] (as we do [→] to show it again, we don't want slide+0)
-		 	 this.currentView.slideId = this.currentSlide+1; // memo slide id to retrieve afer anothers view navigation and come back 
+		 	 this.currentView.slideId = this.currentSlide+1; // memo thz slide id to retrieve after anothers view navigation and come back 
 		 }
 		 else {	 	
 			switch (e.keyCode) {
@@ -66,11 +66,8 @@ class app {
 		          this.changeSlide(+1);	          
 		          break;
 		        case 70: // f
-		          this.fullScreen();
+		          utils.fullScreen(this.currentView);
 		          break;
-		        // case 80: // p
-		        // case 83: // s
-		        //   toggleProgress();
 		    }
 		 } 
 	}
@@ -210,7 +207,8 @@ let utils = {
 
 	modal: function(title, content) {	  
 	  this.modalTitle.innerText = title;
-	  this.modalContent.innerHTML = content;
+	  this.modalContent.querySelectorAll("*").forEach((n) => n.remove());
+	  this.modalContent.appendChild(content);
 	  this.mainbox.classList.add("visible");
 	},
 
@@ -374,7 +372,11 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (utils.mainbox.classList.contains("visible"))
 				utils.modalClose();		
 			else
-				utils.modal("Hey", "help....aa");
+			{				
+				const fragment = document.getElementById('helpTemplate');        
+    			const instance = document.importNode(fragment.content, true);    			
+				utils.modal("HELP", instance);
+			}
 		}
 		else if (e.target.matches('.modal-close') || e.target.className=='mainbox visible') {
 			utils.modalClose();		
