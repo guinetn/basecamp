@@ -53,8 +53,8 @@ Refer to config.png for a global view of the process.
 ***Empty view***     
 ```html
  <div id="Name_Of_My_View" class="view">  ← Change 'Name_Of_My_View'
-    <h1>Title_Of_My_View</h1>             ← Change (or remove) 'Title_Of_My_View' 
-    <div class="topics">   
+    <h1>Title_Of_My_View</h1>             ← Change (or remove the h1) 'Title_Of_My_View'
+    <div class="topics">                   
        ...add topics here     
     </div>
     ...add any other html content here
@@ -79,8 +79,8 @@ Topics are defined in assets/topics.json
  <div id="Name_Of_My_View" class="view">
     <h1>Title_Of_My_View</h1>           
     <div class="topics">   
-       <div id="news"></div>   ← This is how to inject the topic 'news' in a view
-    </div>    
+       <div id="news"></div>   ← This is how to inject the topic 'news' in a view. In the topic title, char _ will be replaced by a space  
+    </div>                        Ex: "Productivity_Tools" → "Productivity Tools"   
 </div>
 
 an unique option: 

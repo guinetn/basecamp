@@ -299,7 +299,7 @@ function extractLinks(links) {
 		{
 			// Add title
 			let h3 = document.createElement("h3");				
-			h3.innerText = key.toUpperCase();
+			h3.innerText = key.toUpperCase().replace('_',' ');
 			container.appendChild(h3);
 		}
 
@@ -322,6 +322,19 @@ function extractLinks(links) {
 	  }
     }	
 }	
+let simplifyLink = (link) => {
+  /*
+	https://developers.google.com/analytics → developers.google.com/analytics
+	https://www.nasaspaceflight.com			→ nasaspaceflight.com 
+
+	*/ 
+	let match = /((?<prot>https?):\/{2}(w{3})?\.?(?<domain>[^/]*)\/?(?<query>.*)?|(?<link>.*))?/.exec(link);
+	if (match != null)
+	{
+		if (match.groups["link"] != undefined) return match.groups["link"];
+    else return match.groups["domain"];
+	}
+}
 function createLink(link, classes, description) {
 
 	const prefix = (classes || 'block').indexOf('inline') >=0 ? "inline" : "block";
@@ -330,13 +343,12 @@ function createLink(link, classes, description) {
 
     let a = instance.querySelector(".topicLink");
     a.href = link;                     
-    if (description!=null)
-    	a.title = description;
+    a.title = link;
     if (classes != undefined)
     	classes.split(' ').forEach(cl => a.classList.add(cl)); // classlist doesn't accept spaces...  
     
     if (prefix != 'inline')
-    	a.innerText = description || link || '???';  
+    	a.innerText = description || simplifyLink(link) || "???";  
     
     return instance;
 }
