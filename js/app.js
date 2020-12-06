@@ -162,7 +162,9 @@ class bka {
 	}
 	markdownToHtml (data) {
 		// Transform md → html
-		var converter = new showdown.Converter();
+		var converter = new showdown.Converter({extensions: ["BkaCodeExtension"],
+    });
+		// var converter = new showdown.Converter();
 		return converter.makeHtml(data);
 	}
 	renderCurrentSlide () {

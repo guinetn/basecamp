@@ -118,9 +118,13 @@ Just create a .md file having the same name of the view in ```assets/slides```
 * Each view can have a markdown file (.md) 
 * This .md file is converted in html on the fly when you press <kbd>→</kbd>     
 * The sequence '----' is the slide separator. Slides are not limited in size.  
+* Slides can contains youtube video (and kind of by extension):
 
 ```md
 home.md
+
+Next <iFrame> show you a playable/fullscrennable video:
+<iframe src="//www.youtube.com/embed/I0eVwo1VCuU?rel=0" frameborder="0" allowfullscreen></iframe>
 
 # My Awesome Slide #1
 
