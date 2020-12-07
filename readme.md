@@ -113,7 +113,8 @@ an unique option:
 ```
 ## Adding slides to a view...takes 10 sec
 
-Just create a .md file having the same name of the view in ```assets/slides```
+1. In ```assets/slides``` folder, create a .md file having the same name that the targeted view 
+2. Write some markdown
 
 * Each view can have a markdown file (.md) 
 * This .md file is converted in html on the fly when you press <kbd>→</kbd>     
@@ -137,14 +138,13 @@ Slide 2.
 ### Add a video
 <iframe src="//www.youtube.com/embed/I0eVwo1VCuU?rel=0" frameborder="0" allowfullscreen></iframe>
 
-
 ### Add a markdown file   
 download.md(assets/slides/code.md)
 
 ### Add raw data   
-download.div(https://raw.githubusercontent.com/mortennobel/cpp-cheatsheet/master/cheatsheet-as-sourcefile.cpp)
+download.div(https://httpbin.org/ip)
 
-### Add a code file  
+### Add a code file (will be prettyfied)
 download.code(https://raw.githubusercontent.com/mortennobel/cpp-cheatsheet/master/cheatsheet-as-sourcefile.cpp)
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -184,12 +184,18 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 # Development
 
-> git clone ...  
->cd <my_folder>  
+> git clone https://github.com/guinetn/braincache.git 
+>cd braincache
 >Start a server: 
 >* serve (npm i -g serve)   
 >* or live-server from vs code…  
 
+## Markdown parser
+> [showdownjs](https://github.com/showdownjs/showdown)
+## Code prettyfier
+* [Google code-prettify (Powers https://code.google.com/ and http://stackoverflow.com/)](https://github.com/googlearchive/code-prettify)  
+* [skin Gallery is here. ](https://raw.githack.com/google/code-prettify/master/styles/index.html) Inject skin name in index.html → at the end of 
+```<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=sunburst" defer></script>```
 
 # License
 Released under the [MIT License][http://www.opensource.org/licenses/MIT]

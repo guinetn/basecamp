@@ -148,7 +148,8 @@ class bka {
 				this.appendSlides(htmlSlides);
 				this.slides = document.querySelectorAll(".slide");
 				this.toggleSlidesVisibility(true);
-				this.renderCurrentSlide();
+				this.renderCurrentSlide();	
+				PR.prettyPrint();			 
 			});
 	}
 	appendSlides (slides) {
@@ -162,8 +163,7 @@ class bka {
 	}
 	markdownToHtml (data) {
 		// Transform md → html
-		var converter = new showdown.Converter({extensions: ["BkaCodeExtension"],
-    });
+		var converter = new showdown.Converter({extensions: ["BkaShowDownExtension"]});
 		// var converter = new showdown.Converter();
 		return converter.makeHtml(data);
 	}
@@ -462,10 +462,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (e.target.matches(".alarmItem")) {
       // alarm already set ? → Cancel it
       if (e.target.classList.contains("alarm-active")) {
-        utils.alarmSet(0);
-        document
-          .querySelector(".alarmItem.alarm-active")
-          .classList.remove("alarm-active");
+        utils.alarmSet(0);       
         return;
       }
 
