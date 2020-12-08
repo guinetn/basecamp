@@ -191,11 +191,14 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 >* or live-server from vs code…  
 
 ## Markdown parser
-> [showdownjs](https://github.com/showdownjs/showdown)
+> [ShowdownJs](https://github.com/showdownjs/showdown)  
+> [Markdown syntax](https://github.com/showdownjs/showdown/wiki)
+> [Emoji supported, ex: :dog:](https://github.com/showdownjs/showdown/wiki/emojis)
 ## Code prettyfier
 * [Google code-prettify (Powers https://code.google.com/ and http://stackoverflow.com/)](https://github.com/googlearchive/code-prettify)  
 * [skin Gallery is here. ](https://raw.githack.com/google/code-prettify/master/styles/index.html) Inject skin name in index.html → at the end of 
 ```<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true&amp;skin=sunburst" defer></script>```
+* https://jmblog.github.io/color-themes-for-google-code-prettify/
 
 # License
 Released under the [MIT License][http://www.opensource.org/licenses/MIT]

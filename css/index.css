@@ -11,6 +11,8 @@
   --topicLinkFg: #FFF;
   --topicLinkHoverFg: aqua;
   --otherLinksFg: pink;
+  --originOfLinkFg:  rgb(5 ,224,251);
+  --originOfLinkHoverFg:  rgb(240, 209, 73);
 
   --homeBg: #272727;
   --webBg: #272727;
@@ -38,6 +40,9 @@ body {
 
 /* VIEW */
 
+.view * {
+   padding-left: 15px; 
+}
 .view {
   display:none;
   background-color: var(--viewBg);
@@ -52,7 +57,7 @@ body {
 }
 .view > h1 {
   color: var(--viewTitleFg);
-  margin: 1.4em 0 0.3em 0.6em
+  margin: 1.4em 0 0.3em 0;
 }
 
 .active {
@@ -62,23 +67,15 @@ body {
 
 .topics {  
   column-count: 4;
-  column-gap: 10px;
-  padding-left: 20px;  
+  column-gap: 10px; 
 }
 .topics > div {    
   min-width: 200px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   padding: 5px;
-  border: solid 1px #cccccc63;
+  /* border: solid 1px #cccccc63; */
   border-radius: 5px;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.11), 
-              0 2px 2px rgba(0,0,0,0.11), 
-              0 4px 4px rgba(0,0,0,0.11), 
-              0 6px 8px rgba(0,0,0,0.11),
-              0 8px 16px rgba(0,0,0,0.11);
-  display: grid;
-  grid-template-rows: 1fr auto;
-
+  box-shadow: 0 1px 1px rgb(0 0 0), 0 3px 12px rgb(0 0 0), 0 4px 4px rgba(0,0,0,0.11), 0 6px 8px rgba(0,0,0,0.11), 0 8px 16px rgba(0,0,0,0.11);   
   break-inside: avoid;
 }
 .topics > div > h3 {
@@ -95,6 +92,16 @@ a {
  color: var(--otherLinksFg);
 }
 
+.originOfLink, .originOfLink:visited  {
+  color: var(--originOfLinkFg) !important;
+  font-size: small;  
+}
+.originOfLink:before {
+  content: '↖ '
+}
+.originOfLink:hover {  
+  color: var(--originOfLinkHoverFg) !important;
+}
 .topicLink {
   color: var(--topicLinkFg);
 }

@@ -8,6 +8,10 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 ![](assets/img/cloud.png)
 
+Emojis are supported  
+:+1:  
+:dog:  
+Details: https://github.com/showdownjs/showdown/wiki/emojis
 
 ```js
 var a = 1;
