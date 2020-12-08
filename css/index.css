@@ -40,7 +40,7 @@ body {
 
 /* VIEW */
 
-.view * {
+.view > * {
    padding-left: 15px; 
 }
 .view {
@@ -55,6 +55,9 @@ body {
   padding: 5px;
   margin:0;
 }
+.view h4,h5,h6 {
+  text-align: left;
+}
 .view > h1 {
   color: var(--viewTitleFg);
   margin: 1.4em 0 0.3em 0;
@@ -65,9 +68,12 @@ body {
 }
 
 
-.topics {  
-  column-count: 4;
-  column-gap: 10px; 
+.topics {    
+  display: flex;
+  flex-direction: row;
+	flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: baseline;  
 }
 .topics > div {    
   min-width: 200px;
@@ -80,7 +86,7 @@ body {
 }
 .topics > div > h3 {
   color: var(--topicTitleFg);
-  margin: 0 0 0 1em;
+  margin: 0;
   font-variant: all-small-caps;
 } 
 
@@ -97,7 +103,10 @@ a {
   font-size: small;  
 }
 .originOfLink:before {
-  content: '↖ '
+  content: '💾 '    
+}
+.originOfLink:after {
+  content: ' ↗'
 }
 .originOfLink:hover {  
   color: var(--originOfLinkHoverFg) !important;
@@ -351,6 +360,7 @@ a {
 #toolbox {
   background: var(--toolboxBg);  
 }
+
 
 
 .mgl20 {
