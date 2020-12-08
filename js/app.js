@@ -1,5 +1,7 @@
 import * as assets from "./addons.js"
 
+( function() {
+	
 const getTime = () => new Date().toLocaleTimeString();
 
 const config = {
@@ -484,6 +486,7 @@ document.addEventListener("DOMContentLoaded", function () {
   	showdown.setFlavor("github");  
 });
 
+})();
 
 /* CUSTOMIZE VIEWS */ 
 
