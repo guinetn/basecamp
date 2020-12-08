@@ -20,8 +20,8 @@ const pi = 3.14;
 
 ----
 
-## sliderify
-**"sliderify"** is a tool to create a simple and beautiful slide easily by markdown.
+## Title
+**"BKA"** is a tool to create a simple and beautiful slide easily by markdown.
 
 ----
 
@@ -70,12 +70,6 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ----
 
-### Press "p" key
-
-Progress bar like [Rabbit](https://rabbit-shocker.org/) displayed.
-
-----
-
 ### Press "f" key
 
 Full screen.
@@ -99,11 +93,9 @@ time     | progress start minutes | 0
 
 ----
 
-### Custom CSS
+### CSS
 
-write _custom.css_
-
-```
+```css
  #p8 {
    background-image: url(background-image.jpg);
    background-size: cover;
@@ -111,12 +103,3 @@ write _custom.css_
  }
 ````
 
-----
-
-![image](slides/cloud.png)
-
-Auther: [yatemmma](https://twitter.com/yatemmma)
-
-----
-
-Powered by [sliderify](https://github.com/yatemmma/sliderify).

@@ -22,36 +22,48 @@
       try {
         const response = await fetch(file);
         let res = await response.text();
-        callback(res, file, converter);		
+        callback(res, file, converter);
       } catch (e) {
         console.log(`downloadTextFile: error: ${file}`, e);
       }
-	};
-	
+    };
+
+    // usage:
     // download.md(assets/slides/code.md)
     // download.div(https://raw.githubusercontent.com/mortennobel/cpp-cheatsheet/master/cheatsheet-as-sourcefile.cpp)
     // download.code(https://raw.githubusercontent.com/mortennobel/cpp-cheatsheet/master/cheatsheet-as-sourcefile.cpp)
-    // var converter = new showdown.Converter({extensions: ["BkaShowDownExtension"],
-    // 	<script src="js/showdown.extension.bka.js"></script>
+    // [video title](https://www.youtube.com/watch?xyzabc)  --> <iframe src="//www.youtube.com/embed/xyzabc" frameborder="0" allowfullscreen=""></iframe>
+    // setup:[The Map of Physics](ZihywtixUYo)
+    // <script src="js/showdown.extension.bka.js"></script>
+    // var converter = new showdown.Converter({extensions: ["BkaShowDownExtension"])
 
-    var bkaRawRegex = /(?:download\.)(?<bkatype>div)\((?<link>[^)]*)\)/gi,
-        bkaCodeRegex = /(?:download\.)(?<bkatype>code)\((?<link>[^)]*)\)/gi,
-        bkaMdRegex = /(?:download\.)(?<bkatype>md)\((?<link>[^)]*)\)/gi,
-        bkaPrettyPrintRegex = /(<pre[^>]*>)?[\n\s]?<code([^>]*)>/gi;
+    var bkaRawRegex = /(?:download\.)(?<bkatype>raw)\((?<link>[^)]*)\)/gi,
+      bkaCodeRegex = /(?:download\.)(?<bkatype>code)\((?<link>[^)]*)\)/gi,
+      bkaMdRegex = /(?:download\.)(?<bkatype>md)\((?<link>[^)]*)\)/gi,
+      bkaPrettyPrintRegex = /(<pre[^>]*>)?[\n\s]?<code([^>]*)>/gi,
+      bkaYoutubeRegex = /<a href="(?:(?:https?:)?(?:\/\/)?)(?:(?:www)?\.)?youtube\.(?:.+?)\/(?:(?:watch\?v=)|(?:embed\/))(?<videoid>[a-zA-Z0-9_-]{11})(?:[^"'])*(?:"|')+\s*>(?<videotitle>[^<]*)/gi;
+
+    var bkaYoutubeExtension = {
+      type: "output",
+      regex: bkaYoutubeRegex,
+      replace: function (s, videoid, videotitle) {
+        return `<h4>${videotitle}</h4><iframe src='//www.youtube.com/embed/${videoid}' frameborder="0" allowfullscreen></iframe>`;
+      },
+    };
 
     var bkaDownloadMarkdownExtension = {
       type: "lang",
       filter: function (text, converter, options) {
         return text.replace(bkaMdRegex, function (s, bkatype, link) {
-        var hash = getHash(link);
-        downloadFile(link, hash, converter, function (res, file, converter) {
-          document.getElementById(hash).innerHTML = converter.makeHtml(res);
+          var hash = getHash(link);
+          downloadFile(link, hash, converter, function (res, file, converter) {
+            document.getElementById(hash).innerHTML = converter.makeHtml(res);
+          });
+          return `<div id='${hash}'></div>`;
         });
-        return `<div id='${hash}'></div>`;
-        });
-      }
+      },
     };
-	
+
     var bkaDownloadRawExtension = {
       type: "lang",
       regex: bkaRawRegex,
@@ -70,7 +82,7 @@
       replace: function (s, bkatype, link) {
         var hash = getHash(link);
         downloadFile(link, hash, null, function (res, file) {
-          const filExt = file.substring(file.length - 3, file.length);                
+          const filExt = file.substring(file.length - 3, file.length);
           let resCode = `<p><a title='download item' class='originOfLink' target='_blank' href='${file}'>${file}</a></p><?prettify ...?><pre><code id='${hash}' class='language-${filExt}'>${res}</code></pre>`;
           document.getElementById(hash).innerHTML = resCode;
           PR.prettyPrint();
@@ -89,6 +101,12 @@
       },
     };
 
-    return [bkaDownloadMarkdownExtension, bkaDownloadRawExtension, bkaDownloadCodeExtension, bkaPrettyPrintExtension];
+    return [
+      bkaDownloadMarkdownExtension,
+      bkaDownloadRawExtension,
+      bkaDownloadCodeExtension,
+      bkaPrettyPrintExtension,
+      bkaYoutubeExtension,
+    ];
   });
 });
