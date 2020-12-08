@@ -44,9 +44,9 @@ class bka {
 	}
 
 	onViewKeydown (e) {
-		if (e.shiftKey)
-			return;
-
+		if (e.shiftKey) 
+			return;		
+			
 		let key = e.key.toLowerCase();
 
 		// Navigate in views by [+] or [CTRL + →]
@@ -425,12 +425,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	  app.onMouseUp(e);
   });
   document.addEventListener("keydown", function (e) {
-	if (utils.alarmVisible || utils.isModalVisible()) 
-		return; // we need all the keys to enter alarm msg
+    if (utils.alarmVisible || utils.isModalVisible() || e.target.type == "text")
+      return; // we need all the keys to enter alarm msg. Exit if on a form input)
 
     app.onViewKeydown(e);
-	if (!e.defaultPrevented) 
-		app.onSlideKeydown(e);
+    if (!e.defaultPrevented) app.onSlideKeydown(e);
   });
   document.addEventListener("click", function (e) {
     if (e.target.matches(".copy")) {
