@@ -144,6 +144,9 @@
 	"webplayground": [
 		"https://css-transform.moro.es(css-transformations)"
 	],		
+	"network": [
+		"https://httpstat.us(httpstat.us APi: HTTP codes generator)"
+	],
 	"json": [
 		"https://jwt.io",
 		"https://jsonlint.com"
