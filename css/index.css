@@ -358,6 +358,33 @@ kbd {
   color: #fff;
 }
 
+
+
+
+/* TOOLBOX */
+
+.bka-bt {
+  width: 150px;
+  height: 30px;
+  margin: 5px 0;
+  background-color: #FFEB3B;
+  border-radius: 4px;
+  font-size: large; 
+}
+
+.bka-bt2 {
+  width: 200px;
+  height: 27px;
+  margin: 5px 10px;
+  background-color: #FFEB3B;
+  border-radius: 4px;
+}
+
+input[id^=timestamp] {
+  font-size: large; 
+}
+
+
 /* VIEWS */
 
 #home {
