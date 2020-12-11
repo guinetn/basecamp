@@ -533,9 +533,67 @@ function view_tools_init() {
     b64PlainText.value = atob(b64EncodedText.value);
   });
 
-  btoa(text);
-  atob(text);  
+  /* Drag-Drop image */
+  const canvas = document.getElementById("b64Canvas");
+  const context = canvas.getContext("2d");
+  initCanvas(context);
 
+  function initCanvas(ctx) {    
+    ctx.fillStyle = "#FFEB3B";
+    ctx.font = "16px Courier";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText('Drop image here', 100, 10);
+  }
+  function imageError(img) {
+    img.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";    
+  }
+
+  function createImage() {
+     const image = new Image();
+     image.crossOrigin = "Anonymous";
+     image.onload = () => {
+       context.drawImage(image, 0, 0, 200, 150);
+     };
+     return image; 
+  }
+
+
+  const onImageDrop = (e) => {
+    e.preventDefault();
+
+    let imageFile = null;
+     if (e.dataTransfer.files.length > 0) {
+       imageFile = e.dataTransfer.files[0];
+     } else {
+       imageFile = e.dataTransfer.getData("URL");
+       
+       fetch(imageFile)
+         .then((response) => response.blob())
+         .then(function (myBlob) {
+           imageFile = URL.createObjectURL(myBlob);           
+           const image = createImage();   
+           image.src = imageFile;           
+           b64EncodedText.value = canvas.toDataURL();
+         });
+         return;
+     }
+
+
+    const imageReader = new FileReader();
+    imageReader.onload = (imageFile) => {      
+      const image = createImage();            
+      image.src = imageFile.target.result;
+       if (image.complete || image.complete === undefined) {
+         imageError(image);
+       }
+    };
+    imageReader.readAsDataURL(imageFile);
+    b64EncodedText.value = canvas.toDataURL();
+  };
+
+  canvas.addEventListener("dragover", (e) => e.preventDefault(), false);
+  canvas.addEventListener("drop", onImageDrop, false);  
 }
 
 

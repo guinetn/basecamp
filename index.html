@@ -221,8 +221,13 @@
         <h4>⭐ Base64</h4>
         <div style="display: flex; flex-direction: column">
           <textarea type="textarea" rows="4" cols="96" id="b64PlainText" placeholder="Text to encode"></textarea>
-          <button class='bka-bt' id='b64Encode'>Encode ↓</button> 
-          <button class='bka-bt' id='b64Decode'>Decode ↑</button>
+          <div style="display:flex; flex-direction: row">
+            <div>
+              <button class='bka-bt' id='b64Encode'>Encode ↓</button> 
+              <button class='bka-bt' id='b64Decode'>Decode ↑</button>
+            </div>
+            <canvas id="b64Canvas" title="Drop image to convert to base64 here"></canvas>
+          </div>
           <textarea type="textarea" rows="4" cols="96" id="b64EncodedText" placeholder="Text to decode"></textarea>
         </div>
       </div>
