@@ -11,10 +11,10 @@
     <link rel="stylesheet" type="text/css" href="css/weather.css">    
     
     <!-- skins for code-prettier -->
-    <!-- <link rel="stylesheet" type="text/css" href="css/codeskins/desert.css">     -->
-    <!-- <link rel="stylesheet" type="text/css" href="css/codeskins/sons-of-obsidian.css">     -->
-    <!-- <link rel="stylesheet" type="text/css" href="css/codeskins/doxy.css">     -->
-    <link rel="stylesheet" type="text/css" href="css/codeskins/sunburst.css">    
+    <!-- <link rel="stylesheet" type="text/css" href="css/from_others/codeskins/desert.css">     -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/from_others/codeskins/sons-of-obsidian.css">     -->
+    <!-- <link rel="stylesheet" type="text/css" href="css/from_others/codeskins/doxy.css">     -->
+    <link rel="stylesheet" type="text/css" href="css/from_others/codeskins/sunburst.css">    
   </head>
 
 <body>
@@ -28,7 +28,7 @@
   <span id="headerIcons" data-info='-t'></span>   
   <div id="help" class="far fa-question-circle"></div>
 </header>
-<div id="viewName"><div></div><progress id='viewMeter' min=0 max=10 value="7"></progress></div>   
+<div id="viewName"><div></div><progress id='slideMeter' min=0 max=10 value="7"></progress></div>   
 
 <div id='main'>
 
@@ -76,8 +76,7 @@
 
   <div id="code" class="view">
     <h1>Code</h1>  
-    <p>“Learn concepts and not languages”</p>
-
+    
     <div class="topics">
       <div id="codenews"></div>            
       <div id="code_sample"></div>        
@@ -400,9 +399,12 @@
   <input class="alarmMessage" type="text" placeholder="msg to show & speak" title="msg to show & to speak (// prefix to not speak)"></input>
 </div>
 
-<script src="js/prettify.min.js"></script>
-<script src="js/run_prettify.min.js"></script>
-<script src="js/showdown.min.js"></script>
+<!-- thirds parts scripts -->
+<script src="js/from_others/prettify.min.js"></script>
+<script src="js/from_others/run_prettify.min.js"></script>
+<script src="js/from_others/showdown.min.js"></script>
+
+<!-- bka scripts -->
 <script src="js/showdown.extension.bka.js"></script>
 <script src="js/weather.js"></script>
 <script type="module" src="js/app.js"></script>

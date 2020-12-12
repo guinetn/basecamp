@@ -1,5 +1,3 @@
-import * as assets from "./addons.js"
-
 ( function() {
 	
 const getTime = () => new Date().toLocaleTimeString();
@@ -11,12 +9,14 @@ class bka {
   currentView = null;
   views = []; // [{ id:0, dom: null, name: '', slideId: 0 }, …]  slideId allow to retrieve the last slide viewed before leaving the view
   viewName = null;
-  viewMeter = null;
+
   currentSlideId = 0;
   currentSlidesFile = null;
+  slidesFolder = "";
+  slideHasError = false;
   slidesVisible = null;
   slides = [];
-  slidesFolder = "";
+  slideMeter = null;
 
   isMouseDown = false;
   mouseDownTime = null;
@@ -31,8 +31,8 @@ class bka {
     this.slidesFolder = slidesFolder;
 
     this.viewName = document.getElementById("viewName");
-    this.viewMeter = document.getElementById("viewMeter");
-    utils.downloadJsonFile("assets/topics.json", this.extractTopics);
+    this.slideMeter = document.getElementById("slideMeter");
+    utils.downloadJsonFile("assets/topics.json", null, this.extractTopics);
   }
 
   heartbeat() {
@@ -97,13 +97,13 @@ class bka {
       ); // memo thz slide id to retrieve after anothers view navigation and come back
     } else {
       switch (e.keyCode) {
-        case 37: // left arrow key
+        case 37: // [←] key
           this.changeSlide(-1);
           break;
-        case 39: // right arrow key
+        case 39: // [→] key
           this.changeSlide(+1);
           break;
-        case 70: // f key
+        case 70: // [F]ullscreen key
           if (this.slidesVisible)
             utils.fullScreen(this.slides[this.currentSlideId]);
           else utils.fullScreen(this.currentView.dom);
@@ -148,7 +148,8 @@ class bka {
       let markdown = await response.text();
       let html = null;
       let htmlSides = null;
-      if (!response.ok) {
+      this.slideHasError = !response.ok;
+      if (this.slideHasError) {
         htmlSides = [
           `⚠️ ${response.statusText} (${response.status}): ${relativePath}`,
         ];
@@ -157,9 +158,9 @@ class bka {
         htmlSides = html.split("<hr />");
       }
 
-      // slides meter
-      this.viewMeter.value = 0;
-      this.viewMeter.max = response.ok ? htmlSides.length : 1e5;
+      // Configure slide meter [min-value-max]
+      this.slideMeter.value = 0;
+      this.slideMeter.max = this.slideHasError ? 0 : htmlSides.length;
 
       return htmlSides;
     } catch (e) {
@@ -198,8 +199,12 @@ class bka {
     return converter.makeHtml(data);
   }
   renderCurrentSlide() {
-    this.viewMeter.value = this.currentSlideId + 1;
-    this.viewName.childNodes[0].innerHTML = `${this.currentView.name}'s slides <sup><small>${this.viewMeter.value}/${this.slides.length}</small></sup>`;
+    this.slideMeter.value = this.currentSlideId + 1;
+    const slideTitle = `${this.currentView.name}'s slides`;
+    const slideNav = this.slideHasError
+      ? "⚠️"
+      : ` <sup><small>${this.slideMeter.value}/${this.slides.length}</small></sup>`;
+    this.viewName.childNodes[0].innerHTML = `${slideTitle} ${slideNav}`;
     this.slides.forEach((s, i) =>
       this.slidesVisible && i == this.currentSlideId
         ? s.classList.add("current")
@@ -225,7 +230,7 @@ class bka {
     this.currentSlideId = 0;
   }
 
-  extractTopics(topics, callback) {
+  extractTopics(options, topics) {
     const regex = /(?<link>[^\[\(]*)+(\[+(?<classes>[^\]]*)?\]+)*(\(+(?<description>[^\)]*)?\)+)*/;
 
     for (var topic in topics) {
@@ -276,9 +281,55 @@ class bka {
     }
   }
 
+  static createTopicFromApi(prefix, typeOfCall ,link, classes) {
+    var hash = `api_${utils.getHash(link)}`;
+    let apiElement =
+      prefix == "block" ? document.createElement("div") : document.createElement("span");
+    apiElement.id = hash;
+    apiElement.className = "topicLink";
+
+    switch(typeOfCall) {
+      
+      case 'json':
+        utils.downloadJsonFile(link, [hash, classes], function (options, res) {    
+        const hash = options[0];
+        const classes = options[1];
+        const tag = document.getElementById(hash);
+
+        const regex = /(?<=\=)\w*/g;
+        let matches = classes.match(regex);
+        if (matches != null) {
+            matches.forEach((classKey) => {
+              for (var k in res) {
+                if (k == classKey) tag.innerHTML += res[classKey];
+              }
+            });
+          }
+        });
+        break;
+        
+      case 'text':
+          utils.downloadTextFile(link, [hash, classes], function (options, res) {    
+            const hash = options[0];        
+            const tag = document.getElementById(hash);
+            tag.innerHTML = res;        
+          });
+          break;
+
+    }
+    return apiElement;
+  }
+
   static createTopic(link, classes, description) {
     const prefix =
       (classes || "block").indexOf("inline") >= 0 ? "inline" : "block";
+
+    if (classes && classes.indexOf("!getjson") >= 0)
+      return this.createTopicFromApi( prefix, 'json', link, classes );
+    else if (classes && classes.indexOf("!gettext") >= 0)
+      return this.createTopicFromApi(prefix, "text", link, classes);      
+    
+
     const fragment = document.getElementById(`${prefix}LinkTemplate`);
     const instance = document.importNode(fragment.content, true);
 
@@ -322,25 +373,26 @@ let utils = {
   alarmRemainder: 0,
   externalHeartbeat: null,
 
-  init: function(context=null) {
-	this.externalHeartbeat = context.heartbeat.bind(context);
-    setInterval( () => this.heartbeat(), 1000);    
+  init: function (context = null) {
+    this.externalHeartbeat = context.heartbeat.bind(context);
+    setInterval(() => this.heartbeat(), 1000);
   },
 
-  heartbeat: function() {
-	this.clock.innerText = getTime();
-	if (this.externalHeartbeat != null) 
-		this.externalHeartbeat();
+  heartbeat: function () {
+    this.clock.innerText = getTime();
+    if (this.externalHeartbeat != null) this.externalHeartbeat();
     if (this.alarmTimer) {
       this.alarmRemainder -= this.alarmRate;
       this.alarmSign.style.width = `${Math.trunc(this.alarmRemainder)}%`;
     }
   },
 
-  copyToClipboard: async function (stringToCopy, show=null) {
+  getHash: (str) => window.btoa(str),
+
+  copyToClipboard: async function (stringToCopy, show = null) {
     try {
       await navigator.clipboard.writeText(stringToCopy);
-      this.snackbar(`copied ${show==true ? stringToCopy : ''}`);
+      this.snackbar(`copied ${show == true ? stringToCopy : ""}`);
     } catch (err) {
       console.error(`Failed to copy ${stringToCopy}`, err);
     }
@@ -423,29 +475,28 @@ let utils = {
     request.call(elem);
   },
 
-  downloadJsonFile: async function (file, callback) {
+  downloadJsonFile: async function (file, options, callback) {
     try {
       let response = await fetch(file);
       let jsonData = await response.json();
-      callback(jsonData);
+      callback(options, jsonData);
     } catch (e) {
       console.log(`downloadJsonFile: error: ${file}`, e);
     }
   },
-  downloadTextFile: function (file, callback) {
+  downloadTextFile: function (file, options, callback) {
     try {
       fetch(file)
         .then((resp) => {
           return resp.text();
         })
         .then(function (text) {
-          callback(text);
+          callback(options, text);
         });
     } catch (e) {
       console.log(`downloadTextFile: error: ${file}`, e);
     }
-  }
-
+  },
 };
 
 
@@ -483,7 +534,7 @@ document.addEventListener("DOMContentLoaded", function () {
       else {
         // show help
 
-        // let res = downloadTextFile("readme.md", function(res) {
+        // let res = downloadTextFile("readme.md", null, function(data, res) {
         // 	const instance = document.createElement("div");
         // 	instance.innerHTML = application.markdownToHtml(res);
         // 	utils.modalShow("HELP", instance);

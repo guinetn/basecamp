@@ -7,7 +7,8 @@
 		"https://coggle.it[inline fas fa-sitemap]",
 		"https://www.pinterest.fr/nguinet[inline fab fa-pinterest]",
 		"https://www.facebook.com/profile.php?id=100008401895918[inline fab fa-facebook]",
-		"https://youtube.com[inline fab fa-youtube]"
+		"https://youtube.com[inline fab fa-youtube]",
+		"https://httpbin.org/ip[inline !getjson =origin]"
 	],
 
 	"Productivity_Tools": [
