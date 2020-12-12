@@ -9,7 +9,7 @@ const config = {
 };
 class bka {
   currentView = null;
-  views = []; // [{ id:0, dom: null, name: '', slideId: 0 }, …]
+  views = []; // [{ id:0, dom: null, name: '', slideId: 0 }, …]  slideId allow to retrieve the last slide viewed before leaving the view
   viewName = null;
   viewMeter = null;
   currentSlideId = 0;
@@ -91,7 +91,10 @@ class bka {
       // [ESC] or [shift]	key
       this.toggleSlidesVisibility(false);
       if (this.currentSlideId > 0) this.currentSlideId--; // to come back on the same slide after [esc]] (as we do [→] to show it again, we don't want slide+0)
-      this.currentView.slideId = this.currentSlideId + 1; // memo thz slide id to retrieve after anothers view navigation and come back
+      this.currentView.slideId = Math.min(
+        this.currentSlideId + 1,
+        this.slides.length - 1
+      ); // memo thz slide id to retrieve after anothers view navigation and come back
     } else {
       switch (e.keyCode) {
         case 37: // left arrow key
@@ -121,7 +124,11 @@ class bka {
       return;
     }
     // Press [→] while slides are not visible: show
-    else if (!this.slidesVisible && this.currentSlideId == 0 && direction == +1) {
+    else if (
+      !this.slidesVisible &&
+      this.currentSlideId == 0 &&
+      direction == +1
+    ) {
       this.scrollTo(0);
       this.toggleSlidesVisibility(true);
       return;
@@ -138,16 +145,22 @@ class bka {
     try {
       let relativePath = `${folder}/${slideFile}.md`;
       let response = await fetch(relativePath);
-      let markdown = await response.text();      
-      if (!response.ok)
-        markdown = markdown.replace(relativePath, `${relativePath} ⚠️`);
-      const html = this.markdownToHtml(markdown);
-      const htmlSides = html.split("<hr />");
-      
+      let markdown = await response.text();
+      let html = null;
+      let htmlSides = null;
+      if (!response.ok) {
+        htmlSides = [
+          `⚠️ ${response.statusText} (${response.status}): ${relativePath}`,
+        ];
+      } else {
+        html = this.markdownToHtml(markdown);
+        htmlSides = html.split("<hr />");
+      }
+
       // slides meter
-	    this.viewMeter.value = 0;
-	    this.viewMeter.max = response.ok ? htmlSides.length : 1e5;
-      
+      this.viewMeter.value = 0;
+      this.viewMeter.max = response.ok ? htmlSides.length : 1e5;
+
       return htmlSides;
     } catch (e) {
       console.log(`Error in downloadViewSlides(${slideFile})`, e);
@@ -181,13 +194,13 @@ class bka {
     // Transform md → html
     var converter = new showdown.Converter({
       extensions: ["BkaShowDownExtension"],
-    });    
+    });
     return converter.makeHtml(data);
   }
   renderCurrentSlide() {
-  this.viewMeter.value = this.currentSlideId+1;
-  this.viewName.childNodes[0].innerHTML = `${this.currentView.name}'s slides <sup><small>${this.currentSlideId+1}/${this.slides.length}</small></sup>`;
-  this.slides.forEach((s, i) =>
+    this.viewMeter.value = this.currentSlideId + 1;
+    this.viewName.childNodes[0].innerHTML = `${this.currentView.name}'s slides <sup><small>${this.viewMeter.value}/${this.slides.length}</small></sup>`;
+    this.slides.forEach((s, i) =>
       this.slidesVisible && i == this.currentSlideId
         ? s.classList.add("current")
         : s.classList.remove("current")
@@ -203,7 +216,7 @@ class bka {
       ? this.viewName.classList.add("visible")
       : this.viewName.classList.remove("visible");
 
-    this.renderCurrentSlide();    
+    this.renderCurrentSlide();
   }
   deleteExistingSlides() {
     if (this.slides.length > 0) this.slides.forEach((s) => s.remove());
@@ -533,7 +546,49 @@ function view_tools_init() {
     b64PlainText.value = atob(b64EncodedText.value);
   });
 
+  
+  /* Regex */
+  var regexPattern = document.getElementById("regexPattern");
+  var regexInput = document.getElementById("regexInput");
+  var regexOutput = document.getElementById("regexOutput");
+ 
+  regexPattern.addEventListener("keydown", e => parseRegex());
+  regexInput.addEventListener("keydown", e => parseRegex());
+
+  function regexMatch(input, expression, flags = "g") {
+    let regex = expression instanceof RegExp ? expression : new RegExp(expression, flags);
+    let matches = input.matchAll(regex);
+    matches = [...matches];
+    return matches.map((item) => {
+      return {
+        match: item[0],
+        matchAtIndex: item.index,
+        capturedGroups: item.length > 1 ? item.slice(1) : undefined,
+      };
+    });
+  }
+
+  function parseRegex() {
+    try {
+      let flags = '';
+      [...document.querySelectorAll(".regex")].map((r) => { 
+        if (r.checked) 
+          flags += r.nextSibling.nodeValue[0]
+      });
+      const regex = new RegExp(regexPattern.value, flags);
+      let matches = regexMatch(regexInput.value, regex);
+      regexOutput.value = `Flags: ${flags}\r\n` +JSON.stringify(matches)
+          .replace(/(?<sep>["}],)/g, "$1\r\n")
+          .replace(/]},/g, "]},\r\n");                                  
+    }
+    catch(e){
+      regexOutput.value = `Error Regex ${e}`;        
+    }
+
+  }
+  
   /* Drag-Drop image */
+
   const canvas = document.getElementById("b64Canvas");
   const context = canvas.getContext("2d");
   initCanvas(context);

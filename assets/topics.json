@@ -190,7 +190,10 @@
 		"https://console.cloud.google.com/functions(Firebase cloud.google.com)"
 	],
 	"hosting": [
-		"https://nguinet.netlify.com",
+		"https://www.netlify.com",
+		"https://surge.sh(surge.sh: publish static web)",
+		"https://vercel.com(websites, serverless APIs. Free, easy)",
+		"https://render.com(Render.com host static, APIs, db...)",
 		"https://console.firebase.google.com(Firebase)",
 		"https://console.aws.amazon.com(Aws)",
 		"https://cloud.google.com(Google Cloud platform)",
