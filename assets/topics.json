@@ -68,7 +68,7 @@
 	"online": [
 		"https://httpbin.org/ip[!getjson =origin](my ip: $origin)",
 		"http://ip-api.com/json/[!getjson =lat =lon](my lat/lon: $lat $lon)",
-		"http://api.open-notify.org/iss-now.json[!getjson =latitude =longitude](iss: $latitudeN $longitude)",
+		"https://api.wheretheiss.at/v1/satellites/25544[!getjson =latitude =longitude](iss: $latitudeN $longitude)",
 
 		"https://docs.w3cub.com",
 		"https://vclock.com(countdown, alarms)",
