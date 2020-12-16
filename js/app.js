@@ -300,11 +300,17 @@ class bka {
           link,
           [hash, classes, description, this],
           function (options, jsonObject) {
+            
             const hash = options[0];
-            const classes = options[1];
-            const description = options[2];
+            const classes = options[1];            
             const tag = document.getElementById(hash);
 
+            if (jsonObject.error) {
+              tag.innerHTML += ' ❌';            
+              tag.title = jsonObject.error;
+              return;
+            }
+                      
             const regex = /(?<=\=)\w*/g;
             let matches = classes.match(regex);
             if (matches != null) {
@@ -317,10 +323,9 @@ class bka {
                     if (content.indexOf(stringToExtract) >= 0) {
                       content = content.replace(`$${stringToExtract}`, found);
                       tag.innerHTML = content;
-                    } else 
-                      tag.innerHTML += found;
-                    
-                    tag.title = link;                    
+                    } else tag.innerHTML += found;
+
+                    tag.title = link;
                   }
                 );
               });
@@ -522,12 +527,20 @@ let utils = {
   },
 
   downloadJsonFile: async function (file, options, callback) {
+    let response = null;
+    let jsonData = null;
     try {
-      let response = await fetch(file);
-      let jsonData = await response.json();
-      callback(options, jsonData);
+      response = await fetch(file);
+      jsonData = await response.json();
     } catch (e) {
       console.log(`downloadJsonFile: error: ${file}`, e);
+      if (response)
+        jsonData = {'error': `${file} FAILED - ${response.status} - ${response.statusText}`};
+      else
+        jsonData = {error: `Error with ${file}: ${e}`};
+    }
+    finally {
+      callback(options, jsonData);
     }
   },
   downloadTextFile: function (file, options, callback) {
@@ -842,7 +855,7 @@ function handleObserver(entries, observer, $links) {
 
 function createObserver($links) {
   const options = {
-    rootMargin: "0px 0px 0px 0px",
+    rootMargin: "0px 0px 0px 0px", // rootMargin: target area limits = top of viewport here
     threshold: 1,
   };
 

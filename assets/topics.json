@@ -128,6 +128,9 @@
 		"https://hotellespalmiers.com"
 	],
 
+	"cors": [
+		"https://flaviocopes.com/cors"
+	],
 	"seo": [
 		"https://www.woorank.com/en/www/hotellespalmiers.com(woorank.com)"
 	],			
@@ -234,6 +237,8 @@
 	],
 
 	"codenews": [
+		"https://dev.to",
+		"https://www.sitepoint.com",
 		"https://vas3k.com",
 		"https://anthonychu.ca",
 		"http://www.codeproject.com",
@@ -242,7 +247,6 @@
 		"http://www.johnpapa.net",
 		"http://www.hanselman.com/blog",
 		"https://martinfowler.com",
-		"https://dev.to",
 		"https://tutorialzine.com",
 		"https://alligator.io/explore",
 		"https://dzone.com",
