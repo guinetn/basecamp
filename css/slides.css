@@ -23,7 +23,7 @@
 .stickyBlog h1:before, .stickyBlog h2:before, .stickyBlog h3:before,  
 .slide h1:before, .slide h2:before, .slide h3:before 
 {
-  content: '⚜️ '
+  content: '• '
 }
 
 .stickyBlog h1, .stickyBlog h2, .stickyBlog h3, .stickyBlog h4, .stickyBlog h5, .stickyBlog h6, 
