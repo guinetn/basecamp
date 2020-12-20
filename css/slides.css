@@ -20,14 +20,20 @@
   font-family: Cabin;
 }
 
-.slide h1, h2, h3, h4,h5,h6 {
-    color:gold;
-    text-align: center;
+.stickyBlog h1:before, .stickyBlog h2:before, .stickyBlog h3:before,  
+.slide h1:before, .slide h2:before, .slide h3:before 
+{
+  content: '⚜️ '
+}
+
+.stickyBlog h1, .stickyBlog h2, .stickyBlog h3, .stickyBlog h4, .stickyBlog h5, .stickyBlog h6, 
+.slide h1, .slide h2, .slide h3, .slide h4, .slide h5, .slide h6 {
+    color:gold;    
 }
 .slide h1 {
     border-bottom:inset 1px gold;
     width: fit-content;
-    margin: 0 auto 7px auto;
+    margin: 0 0 7px 0;
 }
 .slide h1 {
   margin-bottom: 14px;
@@ -38,8 +44,6 @@
 .slide h3 {
   margin-bottom: 4px;
 }
-
-
 
 .slide a {  
   color: white;

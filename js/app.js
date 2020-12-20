@@ -457,7 +457,16 @@ class bka {
       this.currentBlog.classList.toggle("active");
       let response = await fetch(target.href);
       let markdown = await response.text();
-      const preMarkdown = `<h4><a href='${target.tag}' class='blogLinkEdit' title='edit blog' target='_blank'>${target.innerText}</a></h4>`;
+      
+      let blogTitle = target.innerText.replace(/(_|\.md)/g, " ");
+      let blogDate = '';
+      let date = target.innerText.match(/(?<year>\d{4})-?(?<month>\d{2})-?(?<day>\d{2})-?/);
+      if (date) {
+        blogDate = `${date.groups["day"]}.${date.groups["month"]}.${date.groups["year"]}`;
+        blogTitle = blogTitle.replace(date[0], "").toUpperCase();     
+      }           
+
+      const preMarkdown = `<p><a href='${target.tag}' class='blogLinkEdit' title='edit blog' target='_blank'>${blogTitle}<sub class='fs-medium'>  ${blogDate}</sub></a></p>`;
       let html = this.markdownToHtml(`${preMarkdown}${markdown}`);
       this.currentBlog.innerHTML = html;
       setTableOfContentVisibility(
@@ -467,7 +476,7 @@ class bka {
       );
 
     } catch (e) {
-        console.log(`Error in downloadViewSlides(${slideFile})`, e);
+        console.log(`Error in ShowBlog`, e);
       }
   }
 

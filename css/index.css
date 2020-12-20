@@ -140,7 +140,7 @@ a {
 .topicLink:visited, .blogLink:visited, .blogLinkEdit:visited {
   color: var(--topicLinkFg);
 }    
-.view .topicLink, .view .blogLink, .view .blogLinkEdit {
+.view .topicLink {
   font-size: small;
 }
 
@@ -152,15 +152,18 @@ a {
   font-size: 0.9em;
 }
 
+.view .blogLink {
+  font-size: larger;
+}
 .blogLink:before {
-  content:'⭐ '
+  content:'⭐ ';  
 }
 
-.blogLinkEdit:before {
-  content:'⭐ '
+.blogLinkEdit {
+  font-size: xx-large;
 }
 
-.blogLinkEdit:after {
+.blogLinkEdit:hover:after {
   content:' ✏️'
 }
 
@@ -178,7 +181,7 @@ ul#blog_items li {
   min-width: 50%;
   max-width: 75%;
   padding: 10px;
-  background-color: #0008;  
+  background-color: #000000c9;  
   height: 90vh;
   font-family: 'Cabin';
   border: solid 1px #7f807c;
@@ -413,6 +416,10 @@ kbd {
 
 
 /* TOOLBOX */
+
+.fs-medium {
+  font-size: medium;
+}
 
 .bka-bt {
   width: 150px;
