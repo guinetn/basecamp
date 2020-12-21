@@ -123,4 +123,4 @@ function getWeather() {
   getForecastWeather(config, displayForecast);
 }
 
-getWeather();
+//getWeather();

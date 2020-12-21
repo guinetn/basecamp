@@ -60,8 +60,24 @@ class bka {
 
   onViewKeydown(e) {
     if (e.shiftKey) return;
-
+    console.log(e.keyCode, e.charCode);
+    // Keys = shortcuts to views
     let key = e.key.toLowerCase();
+    if (!e.ctrlKey && !e.altKey) {
+      
+      // 1st Letter of the view
+      if ('a' <= key && key <= 'z') {
+        // user press a key [a-z]: find first view having a name starting with that letter
+          let view = this.views.filter( (view) => view.name.slice(0, key.length) == key);
+          if (view.length==0)
+            return;
+          this.currentView = view[0];
+      }
+      else if ('0' <= key && key <= '9') {
+        // Numpad keys
+        this.currentView =this.views[e.key];
+      }
+    }
 
     // Navigate in views by [+] or [CTRL + →]
     if (e.key == "+" || (e.ctrlKey && e.keyCode == 39) /*right*/) {
@@ -69,8 +85,7 @@ class bka {
         this.views.length <= this.currentView.id + 1
           ? 0
           : this.currentView.id + 1
-      ];
-      key = this.currentView.name.slice(0, 3);
+      ];      
     }
     // Navigate in views by "-" or [CTRL + ←]
     else if (e.key == "-" || (e.ctrlKey && e.keyCode == 37) /*left*/) {
@@ -78,9 +93,8 @@ class bka {
         this.currentView.id - 1 < 0
           ? this.views.length - 1
           : this.currentView.id - 1
-      ];
-      key = this.currentView.name.slice(0, 3);
-    } else if (e.ctrlKey || ![...this.views].some((v) => v.name[0] == key))
+      ];      
+    } else if (e.ctrlKey || ![...this.views].some((v) => v.name == this.currentView.name))
       return; // no key match a view name
 
     e.preventDefault();
@@ -89,7 +103,7 @@ class bka {
     this.toggleSlidesVisibility(false);
     // display view
     this.views.forEach((view) =>
-      view.name.slice(0, key.length) == key
+      view.name == this.currentView.name
         ? view.dom.classList.add("active")
         : view.dom.classList.remove("active")
     );
@@ -476,7 +490,7 @@ class bka {
       );
 
     } catch (e) {
-        console.log(`Error in ShowBlog`, e);
+        console.log('Error in ShowBlog ', e);
       }
   }
 
@@ -724,8 +738,12 @@ function initApplication(options, mainContent) {
       app.ShowBlog(e.target);
     } else if (e.target.matches(".copy")) {
       utils.copyToClipboard(e.target.innerText);
-    } else if (e.target.matches(".view.active")) {
+    } else if (e.target.matches(".view.active") 
+              || e.target.parentNode.matches(".view.active, .topics")) {
+      // Click on empty element => close opened windows (alarm, blog)
       app.HideBlog();
+      if (utils.alarmVisible) 
+        utils.alarmOpenClose();
     } else if (e.target.matches("#help")) {
       if (utils.isModalVisible()) utils.modalClose();
       else {
