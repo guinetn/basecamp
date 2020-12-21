@@ -60,7 +60,7 @@ class bka {
 
   onViewKeydown(e) {
     if (e.shiftKey) return;
-    console.log(e.keyCode, e.charCode);
+    
     // Keys = shortcuts to views
     let key = e.key.toLowerCase();
     if (!e.ctrlKey && !e.altKey) {
