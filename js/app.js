@@ -223,11 +223,7 @@ class bka {
   }
   renderCurrentSlide() {
     this.slideMeter.value = this.currentSlideId + 1;
-    const slideTitle = `${this.currentView.name}'s slides`;
-    const slideNav = this.slideHasError
-      ? "⚠️"
-      : ` <sup><small>${this.slideMeter.value}/${this.slides.length}</small></sup>`;
-    this.viewName.childNodes[0].innerHTML = `${slideTitle} ${slideNav}`;
+    this.renderViewHeader();
     this.slides.forEach((s, i) =>
       this.slidesVisible && i == this.currentSlideId
         ? s.classList.add("current")
@@ -235,15 +231,20 @@ class bka {
     );
     setTableOfContentVisibility(".slide.current", "#slide_toc");
   }
+  renderViewHeader() {
+    const slideTitle = this.currentView.name.toUpperCase().replace('_',' ');
+    const slideNav = this.slideHasError
+      ? "⚠️"
+      : ` <sup><small>${this.slideMeter.value}/${this.slides.length}</small></sup>`;
+    this.viewName.childNodes[0].innerHTML = `${slideTitle} ${slideNav}`;
+  }
   toggleSlidesVisibility(forceVisibility) {
 
     this.HideBlog();
 
     if (forceVisibility != undefined) this.slidesVisible = forceVisibility;
     else this.slidesVisible = !this.slidesVisible;
-
-    // ViewName animation
-    this.viewName.childNodes[0].innerText = `${this.currentView.name}'s slides`;
+        
     this.slidesVisible
       ? this.viewName.classList.add("visible")
       : this.viewName.classList.remove("visible");
