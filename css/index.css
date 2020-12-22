@@ -40,6 +40,38 @@ body {
   margin:0;
 }
 
+.logobka {
+  float: left;
+  margin: 3px 0 0 10px;
+  background-image: url(../assets/img/bka.png);
+  width:65px;
+  height: 38px;
+}
+
+.viewsListBox {
+  top: 90%;
+  background-color: rgb(255 204 0);
+  color:black;
+}
+.slidesListBox {
+  top: 60%;
+  background-color: rgb(161, 47, 47);
+  font-size:0.6em;
+}
+.viewsListBox, .slidesListBox {
+  display:none;
+  position: absolute;
+  border: solid 1px gray;
+  border-radius: 8px;
+  padding: 5px;  
+  text-align: left;
+}
+
+#viewName:hover .slidesListBox, .logobka:hover .viewsListBox {  
+  display:block;
+}
+
+
 /* VIEW */
 
 .view > * {
@@ -208,10 +240,7 @@ ul#blog_items li {
   left: 4em;  
   cursor: pointer;
 }
-.logobka {
-  float: left;
-  margin: 3px 0 0 10px;
-}
+
 #alarmSign {
   display: none;
   position: relative;
@@ -262,6 +291,9 @@ ul#blog_items li {
   position:relative;
   top:-6px;  
 }
+
+
+
 #help {
   position: relative;
   float: right;

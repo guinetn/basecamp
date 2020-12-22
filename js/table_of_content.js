@@ -1,7 +1,7 @@
 async function setTableOfContentVisibility(
   source,
   tocContainer,
-  elementToToc = "h1, h2"
+  elementToToc = "h1, h2, h3"
 ) {
   // Part 1  ".slide.current", "#slide_toc"
   const currentSource = document.querySelector(source);

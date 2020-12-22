@@ -13,26 +13,53 @@ import { utils } from "./utils.js";
     slideHasError = false;
     slidesVisible = null;
     slides = [];
+    slidesToc = null;
     slideMeter = null;
-    
+
     currentBlog = null;
 
     isMouseDown = false;
     mouseDownTime = null;
 
     constructor() {
-      document.querySelectorAll(config.viewsCssSelector)
+      document
+        .querySelectorAll(config.viewsCssSelector)
         .forEach((v, i) =>
           this.views.push({ id: i, name: v.id, dom: v, slideId: 0 })
         );
       this.currentView = this.views[0];
-      
-      this.currentBlog = document.getElementById("blogItem");
+
       document.getElementById("blogRepoLink").href = config.blogRepo;
+      this.currentBlog = document.getElementById("blogItem");
       this.viewName = document.getElementById("viewName");
+      this.slidesToc = document.querySelector(".slidesListBox");
       this.slideMeter = document.getElementById("slideMeter");
 
       utils.downloadJsonFile(config.topicsFile, null, this.extractTopics);
+      this.renderViewsList();
+    }
+
+    renderViewsList() {
+      let viewsListBox = document.querySelector(".viewsListBox");
+
+      [...document.querySelectorAll(".view")].forEach((v, i) => {
+        [...v.querySelectorAll("h1")].map((x) => {
+          let div = document.createElement("div");
+          div.innerText = `${("0" + i).slice(-2)}. ${x.innerText}`;
+          viewsListBox.appendChild(div);
+        });
+      });
+    }
+
+    renderSlidesListBox() {
+      this.slidesToc.innerHTML = null;
+      [...document.querySelectorAll(".slide")].forEach((s, i) => {
+        [...s.querySelectorAll("h1")].map((x) => {
+          let div = document.createElement("div");
+          div.innerText = `${("0" + i).slice(-2)}. ${x.innerText}`;
+          this.slidesToc.appendChild(div);
+        });
+      });
     }
 
     tick() {
@@ -51,22 +78,21 @@ import { utils } from "./utils.js";
 
     onViewKeydown(e) {
       if (e.shiftKey) return;
-      
+
       // Keys = shortcuts to views
       let key = e.key.toLowerCase();
       if (!e.ctrlKey && !e.altKey) {
-        
         // 1st Letter of the view
-        if ('a' <= key && key <= 'z') {
+        if ("a" <= key && key <= "z") {
           // user press a key [a-z]: find first view having a name starting with that letter
-            let view = this.views.filter( (view) => view.name.slice(0, key.length) == key);
-            if (view.length==0)
-              return;
-            this.currentView = view[0];
-        }
-        else if ('0' <= key && key <= '9') {
+          let view = this.views.filter(
+            (view) => view.name.slice(0, key.length) == key
+          );
+          if (view.length == 0) return;
+          this.currentView = view[0];
+        } else if ("0" <= key && key <= "9") {
           // Numpad keys
-          this.currentView =this.views[e.key];
+          this.currentView = this.views[e.key];
         }
       }
 
@@ -76,7 +102,7 @@ import { utils } from "./utils.js";
           this.views.length <= this.currentView.id + 1
             ? 0
             : this.currentView.id + 1
-        ];      
+        ];
       }
       // Navigate in views by "-" or [CTRL + ←]
       else if (e.key == "-" || (e.ctrlKey && e.keyCode == 37) /*left*/) {
@@ -84,8 +110,11 @@ import { utils } from "./utils.js";
           this.currentView.id - 1 < 0
             ? this.views.length - 1
             : this.currentView.id - 1
-        ];      
-      } else if (e.ctrlKey || ![...this.views].some((v) => v.name == this.currentView.name))
+        ];
+      } else if (
+        e.ctrlKey ||
+        ![...this.views].some((v) => v.name == this.currentView.name)
+      )
         return; // no key match a view name
 
       e.preventDefault();
@@ -161,22 +190,22 @@ import { utils } from "./utils.js";
         let response = await fetch(relativePath);
         let markdown = await response.text();
         let html = null;
-        let htmlSides = null;
+        let htmlSlides = null;
         this.slideHasError = !response.ok;
         if (this.slideHasError) {
-          htmlSides = [
+          htmlSlides = [
             `⚠️ ${response.statusText} (${response.status}): ${relativePath}`,
           ];
         } else {
           html = this.markdownToHtml(markdown);
-          htmlSides = html.split("<hr />");
+          htmlSlides = html.split("<hr />");
         }
 
         // Configure slide meter [min-value-max]
         this.slideMeter.value = 0;
-        this.slideMeter.max = this.slideHasError ? 0 : htmlSides.length;
+        this.slideMeter.max = this.slideHasError ? 0 : htmlSlides.length;
 
-        return htmlSides;
+        return htmlSlides;
       } catch (e) {
         console.log(`Error in downloadViewSlides(${slideFile})`, e);
       }
@@ -205,17 +234,20 @@ import { utils } from "./utils.js";
         document.querySelector("#main").appendChild(slide);
       });
     }
-    markdownToHtml(data, useExtensions=true) {
+    markdownToHtml(data, useExtensions = true) {
       // Transform md → html
       // useExtensions allow to avoid to trasnform files like help wich can include extensions syntax themselves (so not to render)
-      const extensions = useExtensions ? {
-        extensions: ['BkaShowDownExtension'] } : null;
+      const extensions = useExtensions
+        ? {
+            extensions: ["BkaShowDownExtension"],
+          }
+        : null;
       var converter = new showdown.Converter(extensions);
       return converter.makeHtml(data);
     }
     renderCurrentSlide() {
       this.slideMeter.value = this.currentSlideId + 1;
-      this.renderViewHeader();
+      this.renderViewname();
       this.slides.forEach((s, i) =>
         this.slidesVisible && i == this.currentSlideId
           ? s.classList.add("current")
@@ -223,26 +255,29 @@ import { utils } from "./utils.js";
       );
       setTableOfContentVisibility(".slide.current", "#slide_toc");
     }
-    renderViewHeader() {
-      const slideTitle = this.currentView.name.toUpperCase().replace('_',' ');
+
+    renderViewname() {
+      const slideTitle = this.currentView.name.toUpperCase().replace("_", " ");
       const slideNav = this.slideHasError
         ? "⚠️"
         : ` <sup><small>${this.slideMeter.value}/${this.slides.length}</small></sup>`;
-      this.viewName.childNodes[0].innerHTML = `${slideTitle} ${slideNav}`;
+      this.viewName.children[0].innerHTML = `${slideTitle} ${slideNav}`;
+      this.renderSlidesListBox();
     }
-    toggleSlidesVisibility(forceVisibility) {
 
+    toggleSlidesVisibility(forceVisibility) {
       this.HideBlog();
 
       if (forceVisibility != undefined) this.slidesVisible = forceVisibility;
       else this.slidesVisible = !this.slidesVisible;
-          
+
       this.slidesVisible
         ? this.viewName.classList.add("visible")
         : this.viewName.classList.remove("visible");
 
-      this.renderCurrentSlide();
+      this.renderCurrentSlide();      
     }
+
     deleteExistingSlides() {
       if (this.slides.length > 0) this.slides.forEach((s) => s.remove());
 
@@ -306,7 +341,7 @@ import { utils } from "./utils.js";
         link,
         [hash, classes, description, this],
         function (options, jsonObject) {
-          const hash = options[0];        
+          const hash = options[0];
           let cronInterval = null;
           if (typeof description == "array" || typeof description == "object") {
             cronInterval = description[1];
@@ -324,31 +359,35 @@ import { utils } from "./utils.js";
             return;
           }
 
-          // Look for variables prefixed by '$' 
+          // Look for variables prefixed by '$'
           // http://ip-api.com/json/[!getjson](my lat/lon: $lat $lon)
-          const regex = /(?<=\$)\w*/g; 
+          const regex = /(?<=\$)\w*/g;
           let variablesFound = description.match(regex);
-          if (variablesFound != null) {          
+          if (variablesFound != null) {
             let tagContent = description;
-            
+
             variablesFound.forEach((stringToExtract) => {
-              options[3].jsonExplorer(jsonObject, stringToExtract, 
-                
+              options[3].jsonExplorer(
+                jsonObject,
+                stringToExtract,
+
                 function (found) {
                   if (tagContent.indexOf(stringToExtract) >= 0) {
-                    tagContent = tagContent.replace(`$${stringToExtract}`, found);
+                    tagContent = tagContent.replace(
+                      `$${stringToExtract}`,
+                      found
+                    );
                     tagAnchor.innerHTML = tagContent;
-                  } 
-                  else {
+                  } else {
                     tagAnchor.innerHTML += found;
                   }
                   tagAnchor.href = link;
                   tagAnchor.target = "_blank";
                   tagAnchor.className = "topicLink";
-                  tag.title = link + (cronInterval == null ? "" : `${cronInterval}`);
+                  tag.title =
+                    link + (cronInterval == null ? "" : `${cronInterval}`);
                   tag.appendChild(tagAnchor);
                 }
-
               );
             });
           }
@@ -391,18 +430,31 @@ import { utils } from "./utils.js";
           let cronInterval = classes.match(/(?<=!getjson)\d+/);
           let enrichedDescription = description;
           if (cronInterval != null) {
-            enrichedDescription = [description, `. Fetch frequency: ${cronInterval[0]} sec`];
+            enrichedDescription = [
+              description,
+              `. Fetch frequency: ${cronInterval[0]} sec`,
+            ];
             setInterval(() => {
-              this.createTopicFromApiWithJson( hash, link, classes, enrichedDescription ); 
-            }, cronInterval[0] * 1000);                            
-          } 
+              this.createTopicFromApiWithJson(
+                hash,
+                link,
+                classes,
+                enrichedDescription
+              );
+            }, cronInterval[0] * 1000);
+          }
 
-          this.createTopicFromApiWithJson( hash, link, classes, enrichedDescription );
-        break;
+          this.createTopicFromApiWithJson(
+            hash,
+            link,
+            classes,
+            enrichedDescription
+          );
+          break;
 
         case "text":
           this.createTopicFromApiWithText(hash, link, classes, description);
-        break;
+          break;
       }
       return apiElement;
     }
@@ -467,23 +519,25 @@ import { utils } from "./utils.js";
     }
 
     HideBlog() {
-      this.currentBlog.classList.remove('active');
-      setTableOfContentVisibility(".stickyBlog.active", "#slide_toc" );
+      this.currentBlog.classList.remove("active");
+      setTableOfContentVisibility(".stickyBlog.active", "#slide_toc");
     }
 
-    async ShowBlog(target){
+    async ShowBlog(target) {
       try {
         this.currentBlog.classList.toggle("active");
         let response = await fetch(target.href);
         let markdown = await response.text();
-        
+
         let blogTitle = target.innerText.replace(/(_|\.md)/g, " ");
-        let blogDate = '';
-        let date = target.innerText.match(/(?<year>\d{4})-?(?<month>\d{2})-?(?<day>\d{2})-?/);
+        let blogDate = "";
+        let date = target.innerText.match(
+          /(?<year>\d{4})-?(?<month>\d{2})-?(?<day>\d{2})-?/
+        );
         if (date) {
           blogDate = `${date.groups["day"]}.${date.groups["month"]}.${date.groups["year"]}`;
-          blogTitle = blogTitle.replace(date[0], "").toUpperCase();     
-        }           
+          blogTitle = blogTitle.replace(date[0], "").toUpperCase();
+        }
 
         const preMarkdown = `<p><a href='${target.tag}' class='blogLinkEdit' title='edit blog' target='_blank'>${blogTitle}<sub class='fs-medium'>  ${blogDate}</sub></a></p>`;
         let html = this.markdownToHtml(`${preMarkdown}${markdown}`);
@@ -493,12 +547,10 @@ import { utils } from "./utils.js";
           "#slide_toc",
           "h1, h2, h3"
         );
-
       } catch (e) {
-          console.log('Error in ShowBlog ', e);
-        }
+        console.log("Error in ShowBlog ", e);
+      }
     }
-
   }
 
   function initViews() {
