@@ -1,5 +1,14 @@
 # Cloud
 
+• Virtualisation
+• Datacenter software-defined (SDDC)
+• Architecture orientée service (SOA)
+• Services Cloud
+• Types de Cloud
+
+----
+download.md(assets/slides/cloud/cloud_models.md)
+----
 download.md(assets/slides/cloud/containers.md)
 ----
 download.md(assets/slides/cloud/docker.md)

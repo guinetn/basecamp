@@ -1,5 +1,7 @@
 # AWS
 
+https://aws.amazon.com
+
 |Concepts| Meaning | |
 |---|---|
 |Image  | An image is a complete copy of a hard disk that includes the operating system and a lot of installed software. Server comes alive With this disk. |
@@ -31,21 +33,23 @@ set up serverless applications on AWS
 https://aws.amazon.com/serverless/sam/
 
 
+## microservices
 
 
 ## Deploying a .NET Core 3.1 App to AWS Beanstalk
 
-Creating the deployment package
 |||
 |---|---|
-|dotnet publish -o my-app||
+|Creating the deployment package|dotnet publish -o my-app|
 ||Compress the newly created my-app folder to a zip archive. This will be our deployment package|
 |Deploying the package||
-||Visit the AWS Elastic Beanstalk Console|
-||Go ahead and Create Application: name, select platform|
-||Upload deployment package by hand: press 'Choose file', select .zip file|
-||Create Application|
+|Visit the AWS Elastic Beanstalk Console|https://console.aws.amazon.com/elasticbeanstalk|
+||Go ahead and Create Application: give a name, select platform|
+||Set Application Code to Upload your code<br/>Upload deployment package by hand: press 'Choose file', select .zip file|
+||Create Application.<br/>wait a few minutes for the deployment to complete|
 
 ##### ARTICLES
 
 - [node-js-to-display-images-in-a-private-aws-s3-bucket](https://medium.com/javascript-in-plain-english/using-node-js-to-display-images-in-a-private-aws-s3-bucket-4c043ed5c5d0)
+- https://developer.okta.com/blog/2019/04/16/graphql-api-with-aspnetcore
+- https://developer.okta.com/blog/2019/03/21/build-secure-microservices-with-aspnet-core

@@ -22,3 +22,5 @@ download.md(assets/slides/data/flux.md)
 download.md(assets/slides/data/redux.md)
 ----
 download.md(assets/slides/data/geodata.md)
+----
+download.md(assets/slides/data/infludb.md)

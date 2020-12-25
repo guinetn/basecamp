@@ -62,6 +62,8 @@ download.md(assets/slides/code/dotnet/powershell.md)
 ----
 download.md(assets/slides/code/dotnetcore/dotnetcore.md)
 ----
+download.md(assets/slides/code/net/net5_replace_dotnetcore.md)
+----
 download.md(assets/slides/code/langs/C++.md)
 ----
 download.md(assets/slides/code/langs/elm.md)
@@ -92,3 +94,5 @@ download.md(assets/slides/code/langs/rust.md)
 download.md(assets/slides/code/langs/scala.md)
 ----
 download.md(assets/slides/code/langs/vb.md)
+----
+download.md(assets/slides/code/langs/scheduling.md)

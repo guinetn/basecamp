@@ -36,3 +36,5 @@ download.md(assets/slides/web/front/react.md)
 download.md(assets/slides/web/front/vue.md)
 ---- 
 download.md(assets/slides/web/front/svelte.md)
+---- 
+download.md(assets/slides/web/front/blazor.md)
