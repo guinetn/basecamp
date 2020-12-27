@@ -227,7 +227,7 @@ ul#blog_items li {
 
 #header {
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   background-color: var(--headerBg);
   width: 100%;
   color:white;
@@ -265,7 +265,7 @@ ul#blog_items li {
   font-size: 5.1em;
   color: var(--viewTitleFg);
   animation: viewNameAnimation ease 0.25s;  
-  z-index: 1001;
+  z-index: 15;
   opacity: 0;
   text-align: center;
 }
@@ -298,6 +298,7 @@ ul#blog_items li {
 
 #help {
   position: relative;
+  z-index: 16;
   float: right;
   margin: 9px 10px;      
   font-size: 1.5em;  
@@ -349,6 +350,7 @@ ul#blog_items li {
 
   .modalContainer {
     position: absolute;
+    z-index: 16;
     background-color: var(--viewBg);    
     display: flex;
     justify-content: center;

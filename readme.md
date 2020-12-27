@@ -183,17 +183,29 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ```
 
+### SLIDES SYNTAX
 
-Slides syntax: standard markdown + additional syntax to include…
+Standard markdown + additional syntax to include…
     
-* <strong>download.md(assets/slides/myfile.md)</strong> : a markdown file:
-* <strong>download.raw(https://<span>githubusercontent.com/abcdef/sourcefile.txt</span>)</strong> : a file as it is (raw, not prettified)
-* <strong>download.html(https://<span>githubusercontent.com/abcdef/sourcefile.txt</span>)</strong> : an html (interpreted in innerHTML)
-* <strong>download.code(https://<span>githubusercontent.com/abcdef.cpp</span>)</strong> : a code file (prettified by extension)
-* <strong>download.iframe(url,[w,h])</strong> : an iframe 
-* &nbsp; download.iframe(assets/slides/web/front/react_samples/react01/index.html)
-* &nbsp; download.iframe(assets/slides/web/front/react_samples/react01/index.html,500,200)
+* <strong>download.md</strong>(assets/slides/myfile.md) : a markdown file (html rendered)
+* <strong>download.raw</strong>(https://<span>githubusercontent.com/abcdef/sourcefile.txt</span>) : a file as it is (raw, not transformed)
+* <strong>download.html</strong>(https://<span>githubusercontent.com/abcdef/sourcefile.txt</span>) : an html file (interpreted in innerHTML)
+* <strong>download.code</strong>(https://<span>githubusercontent.com/abcdef.cpp</span>) : a code file (prettified by its extension)
+* <strong>download.iframe(url,[w,h])</strong> : an iframe + width/height in px
+* <strong>download.iframe</strong>(assets/slides/web/front/react_samples/react01/index.html)
+* <strong>download.iframe</strong>(assets/slides/web/front/react_samples/react01/index.html,500,200)
 * <strong>[video_title]<span>(https://www.</span><span>youtube.com/watch?xyzabc)</span></strong> : a youtube video: any link containing 'youtube' 
+* Horizontal Slide Show: a slideShowContainer that contains slideShowSlide items
+```html
+<div class="slideShowContainer">   
+   <div class="slideShowSlide">  
+      ...  content #1
+   </div>  
+   <div class="slideShowSlide">  
+      ...  content #2
+   </div>  
+</div>  
+```
 
 
 
@@ -217,16 +229,16 @@ Slides syntax: standard markdown + additional syntax to include…
 
 # Development
 
-> git clone https://github.com/guinetn/braincache.git 
->cd braincache
->Start a server: 
+>> git clone https://github.com/guinetn/braincache.git   
+>cd braincache  
+>Start a server:  
 >* serve (npm i -g serve)   
 >* or live-server from vs code…  
 
 ## Markdown parser
 > [ShowdownJs](https://github.com/showdownjs/showdown)  
 > [Markdown syntax](https://github.com/showdownjs/showdown/wiki)
-> [Emoji supported, ex: :dog:](https://github.com/showdownjs/showdown/wiki/emojis)
+> [Emoji supported, ex: ```:dog:```](https://github.com/showdownjs/showdown/wiki/emojis)
 ## Code prettyfier
 * [Google code-prettify (Powers https://code.google.com/ and http://stackoverflow.com/)](https://github.com/googlearchive/code-prettify)  
 * [skin Gallery is here. ](https://raw.githack.com/google/code-prettify/master/styles/index.html) Inject skin name in index.html → at the end of 

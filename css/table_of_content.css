@@ -3,6 +3,7 @@
 .stickytoc {
   display: none; 
   position: fixed;
+  z-index: 15;
   top: 3.2em;
   left: 80%;
   width: 250px;
@@ -12,7 +13,6 @@
   border: solid 1px #707164;
   border-radius: 20px;
   font-size: medium;
-  z-index: 1011;
   font-family: monospace;
 }  
 
