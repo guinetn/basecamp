@@ -3,7 +3,7 @@
 There is No More .NET Core, it’s .NET 5
 
 .Net 5.0
-.NET Core 4.0   ✖ Team omit 4.x and go straight to .NET 5.0 to avoid confusion with .NET Framework 4.x
+.NET Core 4.0   ❌ Team omit 4.x and go straight to .NET 5.0 to avoid confusion with .NET Framework 4.x
 .NET Core 3.0	2019 September
 .NET Core 2.2	2018 December 
 .NET Core 2.0	2017 August

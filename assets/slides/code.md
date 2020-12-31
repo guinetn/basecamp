@@ -1,22 +1,10 @@
 # CODE
 
 
-```js
-var a = 1;
-const pi = 3.14;
-
-```
-----
-
-# c++ 2.0 CODE
-
-download.code(https://raw.githubusercontent.com/mortennobel/cpp-cheatsheet/master/cheatsheet-as-sourcefile.cpp)
-----
-download.md(assets/slides/code/microsoft.md)
-----
-download.md(assets/slides/code/repos.md)
 ----
 download.md(assets/slides/code/hello_worlds.md)
+----
+download.md(assets/slides/code/repos.md)
 ----
 download.md(assets/slides/code/uml.md)
 ----
@@ -28,12 +16,19 @@ download.md(assets/slides/code/internationalization.md)
 ----
 download.md(assets/slides/code/testing.md)
 ----
-
 download.md(assets/slides/code/langs/assembler.md)
 ----
 download.md(assets/slides/code/langs/c.md)
 ----
+download.md(assets/slides/code/langs/C++.md)
+----
 download.md(assets/slides/code/dotnet/dotnet.md)
+----
+download.md(assets/slides/code/dotnet/dotnet_standard.md)
+----
+download.md(assets/slides/code/dotnetcore/dotnetcore.md)
+----
+download.md(assets/slides/code/net/net5_replace_dotnetcore.md)
 ----
 download.md(assets/slides/code/dotnet/csharp.md)
 ----
@@ -47,8 +42,7 @@ download.md(assets/slides/code/dotnet/csharp4.0.md)
 ----
 download.md(assets/slides/code/dotnet/csharp5.0.md)
 ----
-download.md(assets/slides/code/dotnet/csharp6.0.
-md)
+download.md(assets/slides/code/dotnet/csharp6.0.md)
 ----
 download.md(assets/slides/code/dotnet/csharp7.0.md)
 ----
@@ -60,16 +54,9 @@ download.md(assets/slides/code/dotnet/fsharp.md)
 ----
 download.md(assets/slides/code/dotnet/powershell.md)
 ----
-download.md(assets/slides/code/dotnetcore/dotnetcore.md)
-----
-download.md(assets/slides/code/net/net5_replace_dotnetcore.md)
-----
-download.md(assets/slides/code/langs/C++.md)
-----
 download.md(assets/slides/code/langs/elm.md)
 ----
 download.md(assets/slides/code/langs/erlang.md)
-
 ----
 download.md(assets/slides/code/langs/go.md)
 ----
@@ -95,4 +82,8 @@ download.md(assets/slides/code/langs/scala.md)
 ----
 download.md(assets/slides/code/langs/vb.md)
 ----
-download.md(assets/slides/code/langs/scheduling.md)
+download.md(assets/slides/code/scheduling.md)
+----
+download.md(assets/slides/code/microsoft.md)
+----
+download.md(assets/slides/code/bot.md)

@@ -123,5 +123,10 @@ GitHub Personal Access Token.
 - https://www.azuredevopslabs.com/labs/vstsextend/azuredevopsprojectdotnet
 - [Azure API Management](https://www.youtube.com/playlist?list=PLDUPL1iASgCwBa00t1fTqZrclVWip4THZ)
 - https://www.compilemode.com/2020/12/what-is-azure-resource-and-resource-group.html
+- https://dotnet.developpez.com/actu/311473/Apprendre-a-deployer-un-bot-sur-Microsoft-Azure-avec-le-CLI-un-billet-blog-d-Hinault-Romaric/
 
+- https://www.thomasmaurer.ch/2020/12/how-to-learn-microsoft-azure-in-2021/
+- https://docs.microsoft.com/en-gb/learn/?WT.mc_id=modinfra-12190-thmaure
 
+## API Management
+https://www.youtube.com/watch?v=k_1391989z0

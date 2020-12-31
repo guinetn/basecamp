@@ -1,6 +1,6 @@
-# Cloud Computing Services Delivery Models
+# Cloud Services Models
 
-## Infrastructure as a Service (IaaS)
+## 🔱 IaaS - Infrastructure as a Service 
 
 Provides compute resources required for application development... 
 pay as go or fixed rate model
@@ -11,26 +11,23 @@ end user has only responsibility to manage the created the infrastructure in ter
 - Azure Virtual Machines
 - Azure Networking
 - Azure Storage
-- Amazon EC2 etc.
-- 
-## Platform as a Service (PaaS)
+- Amazon EC2 etc
+
+## 🔱 PaaS - Platform as a Service
 
 focus on your application/product
 provides the environment to build, test and manage the application without worrying about the underlaying infrastructure
 manage the data and created resources
 
-- Development tools
 - Middleware
+- Development tools
 - Operating systems
 - Database management
 - Infrastructure
 
-- Examples
-- Azure App Service
-- Amazon Web Service
-- Google App Engine etc.
- 
-## Software as a Service (SaaS)
+Examples: Azure App Service, Amazon Web Service, Google App Engine…
+
+ ## 🔱 SaaS - Software as a Service 
 
 use as service by pay as go or fixed pay model without worrying about building, deploying and managing the application. 
 

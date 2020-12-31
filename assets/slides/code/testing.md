@@ -1,7 +1,8 @@
-# Testing
+# TESTING
 
 ## unit tests
 ## integration tests
-    when pass combined united tests failed
+
+combination of united tests
 
 

@@ -35,55 +35,200 @@ Common Ports to Remember
 - 25: SMTP (mail)
 - 22: SSH (remote shell connections)
 
+http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-sg-en-4/ch-ports.html
+
 download.iframe(https://packetlife.net/media/library/23/common_ports.pdf,800,300)
 
+## DNS - DOMAIN NAME SYSTEM 
+
+DNS convert a name (like www.google.com) into an IP address (like 192.168.2.1) which is used by computers to communicate on a network such as the Internet.
+
+web browser 'domain name' request
+↓
+Resolving the hostname:
+* Local DNS cache  
+    look for the IP address associated with the domain name
+    This cache stores this information that our computer has recently saved. 
+* Query another server
+    Recursive DNS servers have their local cache too
+    It then stores the record in its local cache (All DNS records have a TTL (time-to-live value), which shows when a record will expire)
+    The Recursive DNS server has the information and returns the A record to your computer. Our computer then stores the record in its local cache. It reads the IP address from the DNS record and passed it to our browser. The web browser will connect to the web server associated with the A records IP and display the website.
+* Query the Authoritative DNS Servers
+    Query the 'A record' to locate the IP address
+
+## Reverse DNS (rDNS)
+    
+Resolving an IP address back to a domain name.
+- To block spam
+Email Servers commonly use rDNS to block incoming SPAM messages. Many mail servers are set to automatically reject messages from an IP address that does not have rDNS in place
+- analytics/logging: IP addresses are not human-readable. Addresses are more readable.
+
+Perform a rDNS lookup manually:   
+>Linux: $dig -x 8.8.8.8
+>8.8.8.8.in-addr.arpa. 21599 IN PTR google-public-dns-a.google.com.
+>ip + server_name: 132.254.231.138.in-addr.arpa
+## Hosts file
+
+local plain text file
+maps servers or hostnames to IP addresses
+in use since the time of ARPANET. It was the original method to resolve hostnames to a specific IP address. The hosts file is usually the first process in the domain name resolution procedure (Firefox now uses DNS over HTTPS (or DOH) by default. That means instead of checking your local hosts file or even your DNS resolver)
+
+The hosts file is used to map domain names to IP addresses, and can be used as an alternative to DNS. It also allows you to specify the IP address to which a website resolves on your computer, regardless of what may be published in the site’s DNS zone file.
+
+you view and test a site on one server while the rest of the world continues to see the site on another. That makes it an essential tool when migrating your website. 
+
+* It must be edited with administrative privileges (is a protected file)
+* Computer’s hosts file location depends on your operating system
+
+Windows     C:\Windows\System32\drivers\etc\hosts
+            Flush your dns cache: ipconfig /flushdns
+
+Linux       /etc/hosts
+            Unbutu: service dns-clean restart
+            NSCD (Name Service Caching Daemon) may need to use one of the following commands.
+                service nscd restart 
+                systemctl restart nscd.service
+                nscd -I hosts
+
+Mac         /private/etc/hosts
+            dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+
+ IP   space or \t    domain(s)  to resolve to the specified IP address
+ ↓         ↓         ↓
+127.0.0.1           localhosts                              #loopback
+127.0.1.1	        mycomputer.localdomain	mycomputer
+
+255.255.255.255     broadcasthost
+123.123.123.123     liquidweb.com www.liquidweb.com
+#67.225.187.61      liquidweb.com #Liquid Web
+72.30.35.10         liquidweb.com #this is the new liquidweb.com
+
+\# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+DOH (DNS over HTTPS): some browser use dns and not hosts file by default (Firefox). Edit options to unable DoH
+
+## DNS Servers
+
+Authoritative DNS Server  
+
+    Stores DNS records (A, CNAME, MX, TXT, etc.) for domain names. Only respond to queries for locally stored DNS zone files. Say a server in our network has stored an A record for example.com. That server is the authoritative server for the example.com domain name.
+
+Recursive Name Server  
+    
+    Receives queries for informational purposes. 
+    Don't store DNS records. When a query is received, it will search the cache memory for an address linked to the IP address. If the recursive name server has the information, then it will return a response to query sender. If it does not have the record, then the query will be sent to other recursive name servers. This continues until it reaches an authoritative DNS server that can supply the IP address.
+
+DNS Zones
+    
+    Administrative space within the Domain Name System. A zone forms one part of the DNS namespace delegated to administrators or specific entities. Each zone contains the resource records for all of its domain names.
+
+DNS Zone File
+    
+    A text file stored on a server. 
+    It contains all the records for every domain within that zone. 
+    It is mandatory for the zone file to have the TTL (Time to Live) listed before any other information. The TTL specifies how long a DNS record is in the server’s cache memory. The zone file can only list one record per line. It will display the Start of Authority (SOA) record listed first. The SOA record contains essential domain name information including the primary authoritative name server for the DNS Zone.
+
+# DNS RECORD (A, CNAME, MX, TXT…)
+	
+- Stored in authoritative servers
+- Information about a domain (associated IP address)
+
+	A - ADDRESS RECORD
+        Assigns an IP address to a domain or subdomain name
+        web browser "www.google.com" → the DNS system will translate that domain name to the IP address of 172.217.12.46 using the A record information stored in a DNS Zone file.
+
+	CNAME - CANONICAL NAME
+        Forwards a domain name to a different domain name (alias)
+		The CNAME record makes one domain name an alias of another. The aliased domain gets all the subdomains and DNS records of the original. To put this in simple terms, a CNAME redirects requests to another record.  A CNAME record will always be a fully qualified domain name.
+
+	MX - MAIL EXCHANGE RECORD 
+        To set email servers and their priority.
+        Routes email messages to a specific mail server linked to a domain from a designated mail host on a different server. MX records use a priority system if there is more than one MX record used for a domain that is using more than one mail server. The lower the number is, the higher the priority
+		The MX record state the location that mail directed at the domain will be sent. MX records should always be fully qualified domain names, never just an IP address.
+
+	TTL - TIME TO LIVE
+		The time to live value sets how long this information will be good for when a recursive DNS server queries for information on your domain name.  The value is typically set in seconds.
+
+        A record has a default TTL value of 86400 seconds (24 hours). If we update the an A record, propagation will take 24  to 48 hours to disperse. It is better to change the TTL value to 300 seconds which is 5 minutes
+
+	SOA - SATE OF AUTHORITY
+		The state of authority record specifies the DNS server providing authoritative information about an Internet domain, the email of the domain administrator, the domain serial number, and several timers relating to refreshing the zone.
+
+	NS - NAMESERVER
+        Store the authoritative nameserver
+		The servers listed in the NS record are the authoritative nameservers for the domain.
+
+    PTR record (Reverse DNS)
+        opposite of an A record. It resolves an IP address to a domain name. The purpose of this record is mainly administrative. It verifies that an IP address links to a domain name. Not all DNS hosting providers offer this type of record.
+
+	TXT - TEXT RECORD
+		A TXT record allows an administrator to insert arbitrary text into a DNS record.  The most common implementation of TXT records are for adding SPF records to a domain.
+
+    SRV - SERVICE RECORD
+        Establish connections between services and hostnames
+        For example, if an application is searching for a location of a service that it needs, it will look for an SRV record with that information.  When the app finds the correct SRV record, it will filter through the list of services to find the following information:
+        Hostname
+        Ports
+        Priority and Weight
+        IP Addresses
+
+        _sip._tcp.example.com.   3600 IN SRV 10 50 5060 serviceone.example.com.
+        _sip is the name of the service and _tcp is the transport protocol.
+
 ## Computer Network cli
-    // check the DNS solution
-    $ nslookup www.dgate.org
-    // get the laptop's host name
-    $ hostname
-    
-    // connect via telnet and then send a request
-    $ telnet www.dgate.org 80
-    GET / HTTP/1.1
-    Host: www.dgate.org
-    $telnet www.openpayments.us 80
-    GET / HTTP/1.1
-    Host: www.openpayments.us
-    $ telnet stackoverflow.com 80
-    GET / HTTP/1.1
-    Host: stackoverflow.com     → 300 Moved Permanently, switch to https:
-    $ telnet stackoverflow.com 80
-    GET / HTTPS/1.1
-    Host: stackoverflow.com
+// check the DNS solution
+$ nslookup www.dgate.org
+// get the laptop's host name
+$ hostname
+
+// connect via telnet and then send a request
+$ telnet www.dgate.org 80
+GET / HTTP/1.1
+Host: www.dgate.org
+$telnet www.openpayments.us 80
+GET / HTTP/1.1
+Host: www.openpayments.us
+$ telnet stackoverflow.com 80
+GET / HTTP/1.1
+Host: stackoverflow.com     → 300 Moved Permanently, switch to https:
+$ telnet stackoverflow.com 80
+GET / HTTPS/1.1
+Host: stackoverflow.com
 
 
-    // Create a socket that can be used to communicate the different processes
-    $ nc -l 11223       this    Set a process that listens to port 11213
-    $ nc localhost 11211    Then we open another terminal and write
-    
+// Create a socket that can be used to communicate the different processes
+$ nc -l 11223       this    Set a process that listens to port 11213
+$ nc localhost 11211    Then we open another terminal and write
 
-    // get and save an webpage
-    $ curl https://www.cnn.com > cnn.html  
 
-    $ wget -O cnn.html https://www.cnn.com  // note that wget not support socket5
-    // recursively wget a server
-    $ wget -r -np -R "index.html*" {{URL}}  
-    
-    // find IP address assigned by NAT (internal IP)
-    $ ipconfig getifaddr en0
-    // find external IP address
-    $ curl ifconfig.me
-    
-    // SSH connection (especially for AWS)
-    $ ssh -i foo.pem ubuntu@xyz.com
-    // SSH copy (especially for AWS)
-    $ scp /path/to/file username@a:/path/to/destination
+// get and save an webpage
+$ curl https://www.cnn.com > cnn.html  
 
-    // Open SSL
-    $openssl s_client -connect stackoverflow.com:443  
+$ wget -O cnn.html https://www.cnn.com  // note that wget not support socket5
+// recursively wget a server
+$ wget -r -np -R "index.html*" {{URL}}  
 
-    // Python
-    import requests
-    cnn = requests.get('http://www.cnn.com')
-    print(cnn.text)
+// find IP address assigned by NAT (internal IP)
+$ ipconfig getifaddr en0
+// find external IP address
+$ curl ifconfig.me
+
+
+// SSH connection (especially for AWS)
+$ ssh -i foo.pem ubuntu@xyz.com
+// SSH copy (especially for AWS)
+$ scp /path/to/file username@a:/path/to/destination
+
+
+// Open SSL
+$openssl s_client -connect stackoverflow.com:443  
+
+// Python
+import requests
+cnn = requests.get('http://www.cnn.com')
+print(cnn.text)

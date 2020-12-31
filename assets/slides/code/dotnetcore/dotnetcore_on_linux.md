@@ -20,3 +20,5 @@ Since Microsoft started moving away from closed-source and platform-dependent so
 >dotnet --version
 >dotnet build
 >dotnet run
+
+- https://www.roundthecode.com/dotnet/asp-net-core-web-hosting/how-to-install-an-asp-net-core-in-net-5-app-on-ubuntu-20-04

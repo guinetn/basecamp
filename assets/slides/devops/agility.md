@@ -1,3 +1,4 @@
 # AGILITY
 
-team work on iterations
+Team work on iterations
+

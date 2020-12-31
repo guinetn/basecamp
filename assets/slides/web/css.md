@@ -4,42 +4,43 @@
 
 ### APPLYING CSS
 
-* IN-LINE
+IN-LINE
 ```css
 <p style="color: red">text</p>
 ```
-* EMBEDDED
+EMBEDDED
 ```css
-    <head>
-        <style>p { color: red; }
-        </style>
+<head>
+    <style>p { color: red; }
+    </style>
 
-        <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 ```
-* SCOPED (style in &lt;body&gt;)
+SCOPED (style in &lt;body&gt;)
 ```css
-    <body>
-      <div id="scoped-content">
-        <style type="text/css" scoped>
-            h1 { color: red; } 
-        </style>
+<body>
+    <div id="scoped-content">
+    <style type="text/css" scoped>
+        h1 { color: red; } 
+    </style>
 ```
-* IMPORTING
+IMPORTING
 ```css
-    @import url(morestyles.css);	
-        Another stylesheet onto your existing one.
-        Must be placed at the top of a stylesheet, before any other rules
+@import url(morestyles.css);	
+    Another stylesheet onto your existing one.
+    Must be placed at the top of a stylesheet, before any other rules
 
-    @import "mystyle.css";
-    @import url("mystyle.css");
-```    
+@import "mystyle.css";
+@import url("mystyle.css");
+```
+
 ### TYPE OF ELEMENTS 
 * BLOCK 
 >boxes are laid out one after the other vertically.
 >Generate a line break before and after the content
 >Occupies entire space of its parent element (container): stretch the full width
 >Centering: { margin: 0 auto; }
-><pre>
+><pre>Elements:
 address article aside audio blockquote canvas dd
 div dl fieldset figcaption figure figcaption footer form
 h1, h2, h3, h4, h5, h6  header hgroup hr noscript ol
@@ -54,14 +55,25 @@ output p pre section table tfoot ul video
 > Margin and padding properties only have an effect horizontally.
 > Wrap onto the next line when they run out of space in their container
 > Centering: text-align:center;
-><pre>b big i small tt abbr acronym cite code dfn em kbd strong samp var
+><pre>Elements: b big i small tt abbr acronym cite code dfn em kbd strong samp var
 a bdo br img map object q script span sub sup button input label select textarea
 </pre>
 
 * INLINE-BLOCK 
 > Make elements inline but preserving their block capabilities (tipically a div without width)
 > Used to give an inline element a width
-><pre>button textarea input
+><pre>Elements: button textarea input
+>
+> Use case:
+>
+> li {
+> display: inline-block;
+> }
+> ul {  
+> padding: 1em;    
+> width: fit-content;  
+> margin: 1em auto; /* move the container to the center on the X-axis */
+> }
 </pre>
 
 ### POSITIONING ELEMENTS
@@ -221,11 +233,11 @@ font-size: var(--size);
 div:hover {  animation: myAnim 5s linear 2s;  }
                          /     \______________  animation-timing-function               
                 animation-name				      . interpolation method (acceleration, deceleration)
-                    ↓					               linear 		No accelleration   
-        @keyframes myAnim {                             ease         Start with gradual acceleration/End with a gradual deceleration   
-                from { color:blue;   	              ease-in 	    Acceleration
-                35%  { color:green; }                  ease-out 	Deceleration
-                ...n STEPS IN %                        ease-in-out
+                    ↓					              linear 		No accelleration   
+        @keyframes myAnim {                            ease         Start with gradual acceleration/End with a gradual deceleration   
+                from { color:blue;   	              ease-in 	    acceleration on the start
+                35%  { color:green; }                  ease-out 	decceleration on the end
+                ...n STEPS IN %                        ease-in-out  acceleration on start & deceleration on end
                 to   { color:red; }                    steps (nombre, start | end)
         }                                              cubic-bezier( p1, p2, p3, p4)                                            
 ```
@@ -318,8 +330,8 @@ First were hacks (tables, then floats, then positioning and inline-block) that i
 
 Css grid and flexbox: 
 - define a container element
-- align items inside container axes/cells: [justify (horizontal) | align (vertical)]-content 
-- align items content: [justify|align]-items 
+- align items inside container axes/cells: [```justify (horizontal)``` | ```align (vertical)```]-```content```
+- align items content: [justify|align]-```items``` 
 
 download.md(assets/slides/web/css_layout_grid.md)
 
