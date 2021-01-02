@@ -205,7 +205,7 @@ class Animal {
 const instance = new Animal('xxx')
 instance.#count = 42 // Error
 
-class Cat extends Animal {{
+class Cat extends Animal {
   constructor (name, el) {
 	super('joe');
     this.el = el

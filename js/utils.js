@@ -35,6 +35,10 @@ export let utils = {
     }
   },
 
+   scrollTo: function(y=0, behaviour="smooth") {       
+      document.documentElement.scrollTo({ top: y, behavior: behaviour });
+    },
+
   getHash: (str) => window.btoa(str),
 
   copyToClipboard: async function (stringToCopy, show = null) {

@@ -3,6 +3,37 @@
 https://cloud.google.com/
 https://cloud.google.com/sdk
 
+## GCP - Google Cloud Platform
+
+## GCP data processing/analytics products
+
+### Cloud Dataproc
+Google's internal Flume (Flume and Spark = next generation Hadoop/MapReduce)
+### Cloud DataFlow
+large scale data processing 
+
+## API Gateway
+a replacement for Cloud Endpoint
+API Gateway reduces the complexity of deploying and managing APIs, and it is comparable to Amazon API Gateway and Azure API Management
+
+## GCP serverless products
+### App Engine (2008)
+PaaS 
+Serverless
+
+### Cloud Functions (2016)
+Functions as a Service
+Serverless
+
+### Cloud Run (2019)
+Code is packaged into standard Docker containers
+Knative (open source) under the hood
+    https://knative.dev/
+    Kubernetes-based platform to deploy and manage modern serverless workloads.
+    Serverless users are afraid of vendor lock-in, so Knative is created to make serverless standardized and portable.
+    Google Cloud Run is a re-implementation of the same Knative Serving API.
+
+
 # Deploying a .NET Core 3.1 App to Google App Engine
 |||
 |---|---|

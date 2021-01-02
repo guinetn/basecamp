@@ -1,5 +1,7 @@
 # Security
 
+download.md(assets/slides/security/terms.md)
+----
 download.md(assets/slides/security/firewalls.md)
 ----
 download.md(assets/slides/security/ssh.md)

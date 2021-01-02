@@ -74,10 +74,6 @@ import { slideShow } from "./slideshow.js";
       }
     }
 
-    scrollTo(y = 0) {
-      document.documentElement.scrollTo({ top: y, behavior: "smooth" });
-    }
-
     onViewKeydown(e) {
       if (e.shiftKey) return;
 
@@ -120,7 +116,7 @@ import { slideShow } from "./slideshow.js";
         return; // no key match a view name
 
       e.preventDefault();
-      this.scrollTo(0);
+      utils.scrollTo(0);
       // hide slides
       this.toggleSlidesVisibility(false);
       // display view
@@ -143,9 +139,11 @@ import { slideShow } from "./slideshow.js";
       } else {
         switch (e.keyCode) {
           case 37: // [←] key
+            e.preventDefault(); // to have scrollTo() working
             this.changeSlide(-1);
             break;
-          case 39: // [→] key
+          case 39: // [→] key      
+            e.preventDefault();
             this.changeSlide(+1);
             break;
           case 70: // [F]ullscreen key
@@ -174,8 +172,8 @@ import { slideShow } from "./slideshow.js";
         this.currentSlideId == 0 &&
         direction == +1
       ) {
-        this.scrollTo(0);
-        this.toggleSlidesVisibility(true);
+        this.toggleSlidesVisibility(true);        
+        utils.scrollTo(0, "auto");
         return;
       }
 
@@ -183,8 +181,8 @@ import { slideShow } from "./slideshow.js";
       if (this.slides.length <= this.currentSlideId) this.currentSlideId = 0;
       else if (this.currentSlideId < 0) this.currentSlideId = 0;
 
-      this.scrollTo(0);
-      this.toggleSlidesVisibility(true);
+      this.toggleSlidesVisibility(true);      
+      utils.scrollTo(0, "auto");
 
       if (slideShow) slideShow.init();
     }

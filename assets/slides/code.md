@@ -8,6 +8,10 @@ download.md(assets/slides/code/repos.md)
 ----
 download.md(assets/slides/code/uml.md)
 ----
+download.md(assets/slides/code/oop.md)
+----
+download.md(assets/slides/code/objects.md)
+----
 download.md(assets/slides/code/depency_injection_ioc.md)
 ----
 download.md(assets/slides/code/rx.md)
@@ -87,3 +91,5 @@ download.md(assets/slides/code/scheduling.md)
 download.md(assets/slides/code/microsoft.md)
 ----
 download.md(assets/slides/code/bot.md)
+----
+download.md(assets/slides/code/sdk.md)

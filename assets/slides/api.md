@@ -1,6 +1,10 @@
 # API
 
 ----
+download.md(assets/slides/api/rest.md)
+
+download.md(assets/slides/api/soap.md)
+----
 download.md(assets/slides/api/cors.md)
 ----    
 download.md(assets/slides/web/back/node.md)

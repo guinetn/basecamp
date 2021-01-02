@@ -232,3 +232,15 @@ $openssl s_client -connect stackoverflow.com:443
 import requests
 cnn = requests.get('http://www.cnn.com')
 print(cnn.text)
+
+----
+
+### TCP (Transmission Control Protocol)
+A connection-based protocol that provides a reliable flow of data between two computers.
+Example: HTTP, FTP, Telnet
+Use socket
+
+### UDP (User Datagram Protocol)
+A protocol that sends independent packets of data, called datagrams, from one computer to another with no guarantees about arrival. UDP is not connection-based like TCP.
+Example: time request, ping
+Use datagram

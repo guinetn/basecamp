@@ -38,7 +38,7 @@ export let slideShow = {
          dots[i].classList.remove("activeSlideshow");
     }
     slides[this.slideIndex[id] - 1].style.display = "block";
-    dots[this.slideIndex[id] - 1].classList.add('activeSlideshow');
+    dots[this.slideIndex[id] - 1].classList.add('activeSlideshow');    
     },
 
     init: function() {
