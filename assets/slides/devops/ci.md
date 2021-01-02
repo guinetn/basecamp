@@ -9,7 +9,7 @@ When working with websites and web-apps, it is essential to ensure that the opti
 
 
 
-download.md(assets/slides/devops/cicd_Jenkins.md)
+download.md(assets/slides/devops/cicd_jenkins.md)
 
 download.md(assets/slides/devops/cicd_travis.md)
 

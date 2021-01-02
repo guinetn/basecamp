@@ -24,7 +24,7 @@ download.md(assets/slides/code/langs/assembler.md)
 ----
 download.md(assets/slides/code/langs/c.md)
 ----
-download.md(assets/slides/code/langs/C++.md)
+download.md(assets/slides/code/langs/c++.md)
 ----
 download.md(assets/slides/code/dotnet/dotnet.md)
 ----
