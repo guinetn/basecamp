@@ -42,6 +42,7 @@ From agility to Move fast in a stable infrastructure:
 
 Improve speed+quality of the entire production process
 
+Cloud providers such as AWS, Google Cloud Platform (GCP), Azure... offer DevOps tools directly integrated into their services (source code managers, integration chains…)
 
 ![devops](assets/slides/devops/assets/devops.png)
 

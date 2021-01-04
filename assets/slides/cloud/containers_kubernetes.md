@@ -2,7 +2,9 @@
 
 https://kubernetes.io/
 
-open-source orchestration tool for automation: deployment, management and monitoring of containerized applications, workloads and services. All cloud providers are offering their own branded versions of Kubernetes, including Google, Microsoft, Amazon
+2015 Google open-source orchestration tool for automation: deployment, management and monitoring of containerized applications, workloads and services. All cloud providers are offering their own branded versions of Kubernetes, including Google, Microsoft, Amazon
+
+Automate deployments, management, networking, scaling and availability of containerized applications.
 
 - kubernetes master
     API server that communicates with kubelets to ensure that packages are running as it should. 
@@ -11,9 +13,20 @@ open-source orchestration tool for automation: deployment, management and monito
 
 open-source system for automation used to manage containerized workloads and services. All cloud providers are offering their own branded versions of Kubernetes, including Google, Microsoft, Amazon
 
+Applications are built using containers (Docker...) allowing you to segment your application into microservices and thus have different configurations for each, making it possible to deploy these microservices independently of each other to speed up certain functionality deliveries.
+
 ### Package management
 
 download.md(assets/slides/cloud/pm_helm.md)
+
+- Scaling
+CPU, RAM +- => automatic new/remove containers instances 
+- Standardisation
+Templating tools (Helm) allow standardized resource configuration files
+This makes it possible to standardize all the applications deployed in a Kubernetes cluster, and thus maintain a consistent quality standard.
+Versioning of K8s resource files also allows for an automated code review and deployment process to significantly reduce the introduction of bugs.
+- Disponibilité, stabilité
+rolling update: progressive deployment: deploy pods, keep old pods sometimes to rollback if a bug occurs
 
 ### Kubernetes Applications
 

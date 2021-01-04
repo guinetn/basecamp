@@ -1,5 +1,9 @@
 # CRYPTOGRAPHY
 
+Secure against an adversary with enormous amounts of computational power. Estimating how much work certain computations (number factoring, finding a discrete logarithm) require, and choosing cryptographic parameters based on our best estimate of how much work would be required to break the system.
+
+To protect against pirate, nation-state adversary ("NSA" for short..) 
+
 ## ASYMMETRIC CRYPTOGRAPHY (public-key encryption)
 For authentication
 

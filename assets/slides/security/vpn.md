@@ -2,7 +2,8 @@
 
 Remote locations are by their nature insecure
 VPN permit secure and invisible remote connections
-Provides a direct connection between remote clients and a server in a way that hides data as it’s transferred across an insecure network
+Provides a *direct connection between remote clients and a server* in a way that hides data as it’s transferred across an insecure network
+Has a dedicated subnet and VLAN accessible only from VPC's client.
 
 ||| 
 |---|---| 

@@ -1,9 +1,26 @@
 # Cloud
 
+Pool of configurable shared resources (vm, network, storage, applications, services) that can be quickly created with a minimal interaction with the cloud provider
+
+![what-is-the-cloud](assets/slides/cloud/assets/what-is-the-cloud.png)
+
+- Scalable (unlimited capacity of processing/storage)
+- Reliabe (from everywhere, redondant)
+- Efficient (free up resources for innovation/development)
+
 Systems (most distributed systems), with the hardware procurement and maintenance and many other things abstracted away from software developers.
 Evolution: bare metal → virtualized → containerized → cloud → serverless
 
-• Virtualisation
+Cloud services are popular because they reduce the cost and complexity of owning and operating infrastructure, computers and networks. And some cloud providers offers advanced services that a single company might not be able to afford or develop.
+
+
+• Characteristics
+- service on demand
+- access to resources by the network
+- Shared resources
+- resources flexibility
+- Realtime service consumption measure
+• Key concept: Virtualisation
     The key enabler of the Cloud so that the resources can be split and re-packaged to sell: 
     virtual machine(hypervisor)
     virtualized (software-defined) storage and network
@@ -18,8 +35,14 @@ Evolution: bare metal → virtualized → containerized → cloud → serverless
     - COMPUTE: VM, containers, serverless functions…
     - STORAGE: databases, datawarehouses, object stores…
     - NETWORKING: DNS, VPC, load balancing…
-• Cloud Types
-    
+• Cloud models
+    IaaS (Infrastructure as a Service) : hardware infrastructure location
+    PaaS (Platform as a Service): hardware infrastructure + applications location
+    SaaS (Software as a Service) : service Cloud all inclusive
+
+    ![saas-paas-iaas](assets/slides/cloud/assets/saas-paas-iaas-diagram.svg)
+
+• Cloud Deployment Types    
     PUBLIC: your infrastructure is running by...
         - Amazon AWS
         - Microsoft Azure
@@ -33,10 +56,14 @@ Evolution: bare metal → virtualized → containerized → cloud → serverless
     
     PRIVATE: you own your data center but resource request and allocation is done through software UI
     
-    HYBRID: taking the best parts of public and private cloud
+    HYBRID: taking the best parts of public and private cloud (+on premises)
 
+    MULTICLOUD: use several public clouds
+
+![cloud-devops-modele-deploiement](assets/slides/cloud/assets/cloud-devops-modele-deploiement.webp)
 ----
-
+download.md(assets/slides/cloud/cloud_models.md)
+----
 ## The Stack
 * Servers (including bare metal, VMs, containers, serverless functions to run the applications and backends: AWS EC2 or GCP GCE
 * Databases to store data and make them readily available for appliations, and indexes to speed up searches and filters.
@@ -54,7 +81,19 @@ Evolution: bare metal → virtualized → containerized → cloud → serverless
 ----
 download.md(assets/slides/cloud/edge_computing.md)
 ----
-download.md(assets/slides/cloud/cloud_models.md)
+## CLOUD ROLES
+
+- System administrator
+Manage cloud plateforms: operational condition, issues/support L1-L3
+- Development Engineer
+develop software solutions, new functionalities
+- Cloud architect
+Design architectures, app deployment plan on cloud environnemnts
+- QA engineer
+Define functionnal tests strategy and tests automation
+- DevOps
+Define integration systems automation and continuous deployement. Guide development teams and daily collaborate with operations for a better quality service
+
 ----
 download.md(assets/slides/cloud/infrastructure_as_code.md)
 ----

@@ -1,8 +1,22 @@
 # TLS - Transport Layer Security
 
-"Protocol": we've agreed to do things like this
-Cryptographic protocol for providing secure Host-to-Host communication
-HTTPS communication protocol is encrypted using TLS (lock icon in url)
+"Protocol" =  we've agreed to do things like this
+Cryptographic protocol for providing secure Host-to-Host communication, ie client-server
+
+Can use for 
+- Serve websites: HTTPS communication protocol is encrypted using TLS (lock icon in url)
+- Internal inter-datacenter communication on our backend
+
+**Authenticity**
+the server needs to prove to the client that it is the real server (and optionally, the client can prove to the server that it's the real client)
+Authenticity protects against active attackers
+
+**Key agreement**
+the server and client need to agree, over an insecure connection, on a temporary shared secret known only to them
+
+**Symmetric encryption**
+the server and client need to use their shared secret to encrypt the data they want to send over a secure connection
+
 
 1. TLS HANDSHAKE: Hi! Hola! Exchange encryption keys
 

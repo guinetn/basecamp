@@ -17,8 +17,7 @@
 			Au niveau matériel, la majorité des CPU ont des jeux d’instruction qui proposent deux modes d’exécution. Le premier est un mode privilégié dans lequel toutes les instructions sont disponibles tandis que le second est un mode non privilégié, ne donnant accès qu’à une partie des instructions.
 			Au niveau logiciel, le kernel s’arrange pour avoir accès aux plages mémoires de tous les processus en cours d’exécution, tout en interdisant l’accès de sa propre plage mémoire aux autre processus. La plage mémoire du kernel est appelée Kernel-Land, tandis que la plage mémoire que voit chaque processus est appelée User-Land
 
-			Multiuser --> tous les utilisateurs ont un identifiant unique appelé UID (User ID), mais il y a un UID 
-			qui est spécial, et qui permet d’avoir des droits plus élevés que tous les autres. 
+			Multiuser --> tous les utilisateurs ont un identifiant unique appelé UID (User ID), mais il y a un UID 	qui est spécial, et qui permet d’avoir des droits plus élevés que tous les autres. 
 			C’est celui de l’administrateur chez windows, ou du root chez Unix, généralement le 0. 
 
 
@@ -37,6 +36,13 @@
 			This separation prevents user data and kernel data from interfering with each other and thereby diminishing performance or causing the system to become unstable
 			system call: a process makes a request of the kernel
 			IPC (interprocess communication): Kernels methods for synchronization and communication between processes
+
+ 		kernel mode
+		 	Processor execute code having limited access to components/memory
+			For basic and safe operations
+		user mode
+			Executed code have not access to components/memory
+			Delegate it to system API
 
 		Virtual memory
 			La mémoire physique est divisée en frames

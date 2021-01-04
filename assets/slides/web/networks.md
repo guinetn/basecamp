@@ -41,21 +41,32 @@ download.iframe(https://packetlife.net/media/library/23/common_ports.pdf,800,300
 
 ## DNS - DOMAIN NAME SYSTEM 
 
-DNS convert a name (like www.google.com) into an IP address (like 192.168.2.1) which is used by computers to communicate on a network such as the Internet.
+Internet directory (phone book)
 
-web browser 'domain name' request
+DNS translate domain names (nytimes.com, www.google.com) into an IP address (like 192.168.2.1) which is used by computers to communicate on a network such as the Internet.
+This avoid to memorize IP addresses as 192.168.1.1 (IPv4) or 2400:cb00:2048:1::c629:d7a2 (IPv6)
+
+Browser 'domain name' request
 ↓
 Resolving the hostname:
 * Local DNS cache  
-    look for the IP address associated with the domain name
+    Look for the IP address associated with the domain name
     This cache stores this information that our computer has recently saved. 
 * Query another server
-    Recursive DNS servers have their local cache too
-    It then stores the record in its local cache (All DNS records have a TTL (time-to-live value), which shows when a record will expire)
-    The Recursive DNS server has the information and returns the A record to your computer. Our computer then stores the record in its local cache. It reads the IP address from the DNS record and passed it to our browser. The web browser will connect to the web server associated with the A records IP and display the website.
+    **Recursive DNS servers** 
+        Have their local cache too
+        It stores the record in its local cache (All DNS records have a TTL (time-to-live value), which shows when a record will expire)
+        The Recursive DNS server has the information and returns the A record to your computer. Our computer then stores the record in its local cache. It reads the IP address from the DNS record and passed it to our browser. The web browser will connect to the web server associated with the A records IP and display the website.
+        ↓
+    **Root server**
+        Libraries addresses
+        ↓
+    **TLD server**   
+        ↓ 
 * Query the Authoritative DNS Servers
     Query the 'A record' to locate the IP address
 
+![dns-lookup-diagram](assets/slides/web/assets/dns-lookup-diagram.webp)
 ## Reverse DNS (rDNS)
     
 Resolving an IP address back to a domain name.
@@ -270,9 +281,16 @@ Get my private IP:
 
 ### LAN - LOCAL AREA NETWORK
 
+Local network or group of devices connected without usig Internet
 Organize and protect network communications for devices running within a single home or office.
 
+### VLAN 
+Local virtual network
+Split a network at osi layer level
+
 ### NAT - Network Address Translation
+
+Translate network addresses from Private IP ---→ Public IP for connections to public Internet
 
 Organize devices within a private LAN
 Enables instances inside Private Subnet to get Internet access.
@@ -286,10 +304,25 @@ Hexadecimal
 Forever we won't running out of addresses 
 That means from the perspective of address allocation, there's no longer any need for private NAT networks. But, for security, you can give your devices some protection within your LAN.
 
+**NAT gateway** 
+gateway translating network address to allow private subnet instances to connect to Internet while blocking inbound connections from Internet.
+
+**Internet gateway**
+Allow communication instances ←--→ Internet.
+
 #### Subnet notation (IPv4)
 A subnet is a sub section of a network, a 'logical' partition.
-Break a Network into multiple small Network Segments called subnets.
+Break a network into multiple small Network Segments called subnets.
+Series of ip addresses reserved wich are not available for everyone, separating a part of the network for a private usage. Private id addresses not accesbiles from Internet.
 Split IPv4 addresses: wich octets are part of the network and which are available for devices
+
+IP addresses range in a VPC
+
+**Public subnet**
+For resources accessible from Internet 
+
+**Private subnet**
+For resources accessible from a vpn (private = isolated: dedicated to client with sensible data)
 
 * CIDR (Classless Inter-Domain Routing)
 A way to represent a Subnet mask: / + subnet mask's number of bits
@@ -321,7 +354,21 @@ A NAT-enabled router will take the private IP addresses used in traffic requests
 
 #### VPC - Virtual Private Cloud 
 
-Within a vpc all your Subnets can communicate.
+![](assets/slides/cloud/assets/vpc.png)
+
+A private cloud isolated and securized hosted in a public cloud (a cloud in a cloud)
+Isolate resources from public cloud
+Configure subnets with IP addresses range, configure routage tables and gateways
+
+**Applications**
+- More secure (isolate instances in private subnets not accessible from Internet)
+- For networks interconnetion
+- Database
+- Recovery
+
+Some VPC has a NAT: a public website/app can works in a VPC
+
+Amazon Virtual Private Cloud create connections between Amazon EC2 (Elastic Compute Cloud) and others networks trough a VPN ( IPsec protocol)
 
 download.md(assets/slides/security/vpn.md)
 

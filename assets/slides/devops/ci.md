@@ -1,13 +1,13 @@
 # CI - CONTINUOUS INTEGRATION
 
+Practice of automatically testing each code revision before deploying it to production: speed up developments and releases into production.
+
 seamless integration with GitHub: Travis CI, CircleCI, Semaphore
 
 CI/CD tools that can be integrated with different cloud providers. Some of the CI/CD DevOps tools are built on Kubernetes, and we recommend having a look at the same, as these tools are evolving with time.
 
 When opting for a CI/CD pipeline tool, it is essential to look at whether it offers on-premises and cloud-based options. As many CI/CD tools are open-source, you have to make a conscious decision whether to opt for an open-source tool or one with a commercial license.
 When working with websites and web-apps, it is essential to ensure that the optimal user experience is offered, independent of the browser (or its version) and platform that is used to access the same. CI/CD tools like Jenkins, CircleCI, Travis CI, GitLab CI, etc. that can be integrated with cross browser testing (CBT) tools like LambdaTest can accelerate the CBT activity.
-
-
 
 download.md(assets/slides/devops/cicd_jenkins.md)
 
