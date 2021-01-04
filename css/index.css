@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 @import url('from_others/fontawesome/css/all.min.css');
+@import url('customized_prettyprint.css');
 
 :root {
   --headerBg: #272727;
@@ -495,12 +496,9 @@ input[id^=timestamp] {
   margin: auto;   
 }
  
-/* adjustments for code prettify */
-pre.prettyprint {
-  width:fit-content;
-  padding: 8px 40px  8px 0 !important;
-  text-align: left;
-  margin: 0 30px;
+/* HTML ELEMENTS */
+em {
+    color: #FF5722;
 }
 
 /* VIEWS */
