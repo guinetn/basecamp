@@ -196,19 +196,9 @@ export let utils = {
     });
   },
 
-  fetchGithub: async function (repo) {
+  fetchGithubRepo: async function (repo, callback) {
     this.downloadJsonFile(repo, null, function (options, filesList) {
-      const blogContainer = document.getElementById("blog_items");
-      filesList.map((x) => {
-        let liElement = document.createElement("li");
-        let aElement = document.createElement("a");
-        aElement.innerText = x["name"];
-        aElement.classList = "blogLink";
-        aElement.href = x["download_url"];
-        aElement.tag = x["html_url"];
-        liElement.appendChild(aElement);
-        blogContainer.appendChild(liElement);
-      });
+      callback(filesList);
     });
   },
 };

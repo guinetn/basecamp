@@ -553,7 +553,23 @@ import { slideShow } from "./slideshow.js";
         console.log("Error in ShowBlog ", e);
       }
     }
+    
+    showDownloadedBlogs(filesList) {
+      const blogContainer = document.getElementById("blog_items");
+      filesList.map((x) => {
+        let liElement = document.createElement("li");
+        let aElement = document.createElement("a");
+        aElement.innerText = x["name"];
+        aElement.classList = "blogLink";
+        aElement.href = x["download_url"];
+        aElement.tag = x["html_url"];
+        liElement.appendChild(aElement);
+        blogContainer.appendChild(liElement);
+      });
+    }
+   
   }
+
 
   function initViews() {
     view_tools_init();
@@ -658,8 +674,10 @@ import { slideShow } from "./slideshow.js";
     if (slideShow) slideShow.showSlides();
 
     utils.fetchMasonry(".topics", config.masonryColumns);
-    utils.fetchGithub(config.blogRepoApi);
+    utils.fetchGithubRepo(config.blogRepoApi, app.showDownloadedBlogs);
   }
+  
+
 
   document.addEventListener("DOMContentLoaded", function () {
     utils.downloadTextFile("index-main.html", null, initApplication);

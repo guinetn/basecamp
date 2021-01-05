@@ -6,11 +6,12 @@ Never open you're .md notes again, it's automatic and as fast as your fingers ca
 ![screenshoot](assets/img/bka_sreenshoot_01.png)
 
 # Features
+* Blog
+* You're notes in views+slides   
 * Navigate in views   
 * Navigate in view's slides 
 * Set alarms
-* Customize & enrich: add views, topics, links, slides to views
-* Fullscreen mode
+* Customize & enrich: add views, topics, links, slides to views, slideshow
 * Automatic repeat copy when mousedown > 3sec
 
 |Key|Action|  
@@ -47,6 +48,11 @@ Never open you're .md notes again, it's automatic and as fast as your fingers ca
 
 Refer to bka_config.png for a global view of the process.
 
+## Adding a blog item
+
+* Just create a .md file in /blog folder!
+* Blogs are requested with the github api. You won't show local changes. Publish!
+* Publish on github to view the blog's files (local server isn't the githup file api!)
 ## Adding a view
 
 * View contains topics (grouped links) or custom html  
