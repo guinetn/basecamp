@@ -1,6 +1,6 @@
 /* CUSTOMIZE VIEW */
 
-function view_tools_init() {
+function tools_init() {
   document.querySelector("#timestamp").value = Math.floor(
     new Date().getTime() / 1000.0
   );
