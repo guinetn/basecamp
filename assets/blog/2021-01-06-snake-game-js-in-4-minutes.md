@@ -30,5 +30,5 @@ window.onload=function() {
             
 download.iframe(assets/blog/assets/snake_in_4_min.html, 500, 500)
 
-download.code(assets/blog/assets/snake_in_4_min.html)
+download.raw(assets/blog/assets/snake_in_4_min.html)
 
