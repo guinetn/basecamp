@@ -161,16 +161,35 @@ Slide 2.
 [video_title]<span>(https://www.</span><span>youtube.com/watch?xyzabc)</span>
 
 ### Add a markdown file   
+<span>download</span>.md(assets/slides/code.md)
 download.md(assets/slides/code.md)
 
 ### Add html data: will be integrated as 'innerHTML' (interpreted html)   
+<span>download</span>.html(https://httpbin.org/ip)
 download.html(https://httpbin.org/ip)
 
 ### Add raw data: will be integrated as 'innerText' (NOT interpreted html/text)   
+<span>download</span>.raw(https://httpbin.org/ip)
 download.raw(https://httpbin.org/ip)
 
 ### Add a code file (will be prettyfied, not interpreted)
-download.code(https://raw.githubusercontent.com/mortennobel/cpp-cheatsheet/master/cheatsheet-as-sourcefile.cpp)
+
+- <span>download</span>.code(https://...myfile.js)  
+- <span>download</span>.code(https://...myfile.cpp)  
+- <span>download</span>.code(https://...myfile.html)  
+
+**Tips**
+Github's original links need to be changed, ie:
+
+❌ <span>download</span>.code(https://github.com/pms67/PID/blob/master/PID.h)  
+✔️ <span>download</span>.code(https://raw.githubusercontent.com/pms67/PID/master/PID.h)
+  
+https://<mark>github.com</mark>/pms67/PID/<mark>blob</mark>/master/PID.h
+Must be changed to
+https://<mark>raw.githubusercontent.com</mark>/pms67/PID/master/PID.h
+
+download.code(https://raw.githubusercontent.com/pms67/PID/master/PID.h)  
+
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
