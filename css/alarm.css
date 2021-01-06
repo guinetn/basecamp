@@ -16,22 +16,20 @@
 #alarm.alarm {
   left: 0;
 }
-#alarm h3 {
+#alarm>div:first-child {
   position: relative;
-  top:4px;
-  width: 3em;
+  width: 3.05em;
   font-size: xx-large;
-  margin: 0;
   text-align: center;
 }
 .alarmItem {
-    background: #000;
-    width: 5em;
-    border: solid 1px white;    
-    border-radius: 6px;
-    text-align: center;
-    margin: 3px;
-    padding: 5px;
+  background: #000;
+  width: 5em;
+  border: solid 1px white;    
+  border-radius: 6px;
+  text-align: center;
+  margin: 3px;
+  padding: 5px;
 }
 .alarmItem:hover {
   color: yellow;

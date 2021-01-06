@@ -355,6 +355,7 @@ export class Bka extends Blog {
           tagAnchor.title = jsonObject.error;
           tagAnchor.href = link;
           tagAnchor.target = "_blank";
+          tagAnchor.rel = "noopener";
           tag.appendChild(tagAnchor);
           return;
         }
@@ -381,6 +382,7 @@ export class Bka extends Blog {
                 tagAnchor.href = link;
                 tagAnchor.target = "_blank";
                 tagAnchor.className = "topicLink";
+                tagAnchor.rel = "noopener"; 
                 tag.title =
                   link + (cronInterval == null ? "" : `${cronInterval}`);
                 tag.appendChild(tagAnchor);
@@ -405,6 +407,7 @@ export class Bka extends Blog {
         tagAnchor.href = link;
         tagAnchor.target = "_blank";
         tagAnchor.className = "topicLink";
+        tagAnchor.rel = "noopener";
         tag.appendChild(tagAnchor);
       }
     );

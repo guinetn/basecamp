@@ -62,7 +62,7 @@
                   </tr>
                   <tr>
                     <td>
-                      <a href='${videotitle}' target='_blank'>${videotitle}</a>
+                      <a href='${videotitle}' rel='noopener' target='_blank'>${videotitle}</a>
                     </td>
                   </tr>
                 </table>`;
@@ -132,7 +132,7 @@
         var hash = getHash(link);
         downloadFile(link, hash, null, function (res, file) {
           const filExt = file.substring(file.length - 3, file.length);
-          let resCode = `<p><a title='download item' class='originOfLink' target='_blank' href='${file}'>${file}</a></p><?prettify ...?><pre><code id='${hash}' class='language-${filExt}'>${res}</code></pre>`;
+          let resCode = `<p><a title='download item' class='originOfLink' rel='noopener' target='_blank' href='${file}'>${file}</a></p><?prettify ...?><pre><code id='${hash}' class='language-${filExt}'>${res}</code></pre>`;
           document.getElementById(hash).innerHTML = resCode;
           PR.prettyPrint();
         });

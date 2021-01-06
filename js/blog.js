@@ -35,7 +35,7 @@ export class Blog {
         blogTitle = blogTitle.replace(date.source, "").toUpperCase();
       }
 
-      const preMarkdown = `<p><a href='${target.tag}' class='blogLinkEdit' title='edit blog' target='_blank'>${blogTitle}<sub class='fs-medium'>  ${blogDate}</sub></a></p>`;
+      const preMarkdown = `<p><a href='${target.tag}' class='blogLinkEdit' title='edit blog' rel='noopener' target='_blank'>${blogTitle}<sub class='fs-medium'>  ${blogDate}</sub></a></p>`;
       let html = this.markdownToHtml(`${preMarkdown}${markdown}`);
       this.currentBlog.innerHTML = html;
       this.currentBlog.setAttribute("data-blog_file", blogFile);

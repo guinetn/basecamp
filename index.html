@@ -12,7 +12,7 @@
     <!--   <link rel="stylesheet" type="text/css" href="css/from_others/codeskins/desert.css">           -->
     <!--   <link rel="stylesheet" type="text/css" href="css/from_others/codeskins/sons-of-obsidian.css"> -->
     <!--   <link rel="stylesheet" type="text/css" href="css/from_others/codeskins/doxy.css">             -->
-    <link rel="stylesheet" type="text/css" href="css/from_others/codeskins/sunburst.css">    
+    <link rel="stylesheet" rel="preload" type="text/css" href="css/from_others/codeskins/sunburst.css">    
 
     <link rel="stylesheet" type="text/css" href="css/slideshow.css">
     <link rel="stylesheet" type="text/css" href="css/blog.css">
@@ -69,7 +69,7 @@
 
 <!-- ALARMS POPUP -->
 <div id="alarm">
-  <h3 class="fa fa-business-time" title="Alarms set up"></h3>
+  <div class="fa fa-business-time" title="Alarms set up"></div>
   <div class="alarmItem" data-duration='5'>5 min</div>
   <div class="alarmItem" data-duration='10'>10 min</div>
   <div class="alarmItem" data-duration='15'>15 min</div>
@@ -84,8 +84,8 @@
 
 <!-- THIRD PARTS SCRIPTS -->
 <!-- GOOGLE CODE PRETTYFIER -->
-<script src="js/from_others/prettify.min.js"></script>
-<script src="js/from_others/run_prettify.min.js"></script>
+<script rel="preload" src="js/from_others/prettify.min.js"></script>
+<script rel="preload" src="js/from_others/run_prettify.min.js"></script>
 
 <!-- MARDOWN ENGINE -->
 <script src="js/from_others/showdown.min.js"></script>
@@ -102,11 +102,11 @@
 
 <!-- TEMPLATES -->
 <template id="inlineLinkTemplate">
-  <a class="topicLink" target="_blank"></a>
+  <a class="topicLink" rel="noopener" target="_blank"></a>
 </template>
 
 <template id="blockLinkTemplate">  
-   <div>★ <a class="topicLink" target="_blank"></a></div>  
+   <div>★ <a class="topicLink" rel="noopener" target="_blank"></a></div>  
 </template>
 
 </body>

@@ -1,7 +1,7 @@
  <div id="blog" class="view active">
     <h1>Blog<sub>
       <small>
-        <a id='blogRepoLink' class='topicLink' title='go to blog repo' target='_blank'>📂</a>
+        <a id='blogRepoLink' class='topicLink' title='go to blog repo' rel='noopener' target='_blank'>📂</a>
       </small>
     </sub></h1>     
         
@@ -264,7 +264,7 @@
         <input type="text" id="timestampDecode"><button class='bka-bt2' onclick="this.nextSibling.innerText=` ${(new Date(1000*this.previousSibling.value)).toISOString()}`">Decode unixtimestamp</button><cite></cite><br>
         <input type="text" id="timestampEncode"><button class='bka-bt2' onclick="this.nextSibling.innerText=` ${Date.parse(this.previousSibling.value)/1000}`">Encode to unixtimestamp</button><cite></cite><br>
         <small>&nbsp; &nbsp; &nbsp;└── Iso 8601 Date: 2020-11-29T14:09:25.333Z</small><br>
-        <small>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="https://www.epochconverter.com" target="_blank">epochconverter.com</a></small>
+        <small>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="https://www.epochconverter.com" rel="noopener" target="_blank">epochconverter.com</a></small>
       </div>
 
       <div class='box3d'>

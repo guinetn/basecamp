@@ -17,6 +17,7 @@
 
 ul#blog_items li {
   list-style-type: none;
+  min-height: 48px;
 }
 
 
