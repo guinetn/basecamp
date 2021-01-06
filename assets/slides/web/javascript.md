@@ -1,5 +1,9 @@
 # JAVASCRIPT
 
+https://github.com/ProgrammingHero1/oop-object-oriented-programming
+https://github.com/ProgrammingHero1/data-structure-algorithm-time-complexity
+https://github.com/microsoft/Web-Dev-For-Beginners
+
 Specifications: Standard ECMA-262
 ## PLAYGROUND
 - http://liveweave.com

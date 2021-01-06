@@ -274,6 +274,9 @@ Matrix operations: scale, skew, rotate, translate
     0 a 0     0 1 0      0 y 0        0 1 0           0 1 0           0 1 0          0  1   0   tany 1 0   tany 1   0   sinθ cosθ  0 
     0 0 1     0 0 1      0 0 1        x 0 1           0 y 1           x y 1          0  0   1    0   0 1    0   0   1     0    0   1
 
+.FlipUpsideDown     { transform: scaleY(-1) }
+.FlipLeftToRight    { transform: scaleX(-1) }
+.FlipBothDirections { transform: scale(-1)  }
 ### MEDIA QUERIES
 
                                             unités (px, em)

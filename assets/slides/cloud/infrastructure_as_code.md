@@ -1,5 +1,7 @@
 # INFRASTRUCTURE AS CODE = coded architecture 
 
+Enable teams to focus on provisioning rather than individual configuration management
+
 Managing/provisioning your IT infrastructure using configuration files instead of physical/manual hardware configuration  
 IaC is also used in DevOps practices and SRE specializations. DevOps and SRE (Site Reliability Engineer) are also popular methodologies.
 
@@ -53,6 +55,7 @@ Automate the deployment of servers and other infrastructure
 ||open-source infrastructure as code software tool created by HashiCorp. Users define and provision data center infrastructure using a declarative configuration language known as HashiCorp Configuration Language (HCL), or optionally JSON|
 |Azure Resource Manager|2014|Push|Declarative||
 ||To deploy and manage Azure services|
+|AWS Cloudformation|https://aws.amazon.com/fr/cloudformation|
 
 ## IaC Problems
 

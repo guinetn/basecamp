@@ -4,6 +4,8 @@ https://aws.amazon.com
 https://devopsmyway.com
 https://devopsmyway.com/list-of-aws-services/
 
+EC2, RDS, S3, ECS, ELB
+
 |Concepts| Meaning | |
 |---|---|
 |Image  | An image is a complete copy of a hard disk that includes the operating system and a lot of installed software. Server comes alive With this disk. |
@@ -69,9 +71,14 @@ https://aws.amazon.com/serverless/sam/
 ||Set Application Code to Upload your code<br/>Upload deployment package by hand: press 'Choose file', select .zip file|
 ||Create Application.<br/>wait a few minutes for the deployment to complete|
 
+
+## IaC
+https://aws.amazon.com/fr/cloudformation/
+
 ##### ARTICLES
 
 - https://www.freecodecamp.org/news/author/david/
 - [node-js-to-display-images-in-a-private-aws-s3-bucket](https://medium.com/javascript-in-plain-english/using-node-js-to-display-images-in-a-private-aws-s3-bucket-4c043ed5c5d0)
 - https://developer.okta.com/blog/2019/04/16/graphql-api-with-aspnetcore
 - https://developer.okta.com/blog/2019/03/21/build-secure-microservices-with-aspnet-core
+
