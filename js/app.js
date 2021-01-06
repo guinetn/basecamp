@@ -32,7 +32,7 @@ import { slideShow } from "./slideshow.js";
     if (slideShow) slideShow.showSlides();
 
     utils.fetchMasonry(".topics", config.masonryColumns);
-    utils.fetchGithubRepo(config.blogRepoApi, app.showBlogsTitle);
+    utils.fetchGithubFolder(config.blogRepoApi, app.listBlogArticles);
   }
   
   function onMouseDown(e) {
@@ -75,9 +75,8 @@ import { slideShow } from "./slideshow.js";
       // Click a blog link
       e.preventDefault();
 
-      if (e.target.parentNode.matches(".blogLink"))
-        app.ShowBlog(e.target.parentNode);
-      else app.ShowBlog(e.target);
+      const target = e.target.parentNode.matches(".blogLink") ? e.target.parentNode : e.target;
+      app.showBlog(target);      
     } else if (e.target.matches(".copy")) {
       utils.copyToClipboard(e.target.innerText);
     } else if (

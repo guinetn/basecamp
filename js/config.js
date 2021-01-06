@@ -5,7 +5,9 @@ export const config = {
   viewsCssSelector: ".view",
   slidesFolder: "assets/slides",
   topicsFile: "assets/topics.json",
+  // To open the blog folder on Github 
   blogRepo: "https://github.com/guinetn/braincache/blob/main/assets/blog",
+  // To get raw files from the folder with Gihub api
   blogRepoApi: "https://api.github.com/repos/guinetn/braincache/contents/assets/blog",
 };
 

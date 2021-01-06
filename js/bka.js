@@ -16,13 +16,12 @@ export class Bka extends Blog {
   slidesToc = null;
   slideMeter = null;
 
-  currentBlog = null;
-
   isMouseDown = false;
   mouseDownTime = null;
 
   constructor() {
-    super();
+    super("blogPlaceHolder");
+    
     document
       .querySelectorAll(config.viewsCssSelector)
       .forEach((v, i) =>
@@ -30,8 +29,7 @@ export class Bka extends Blog {
       );
     this.currentView = this.views[0];
 
-    document.getElementById("blogRepoLink").href = config.blogRepo;
-    this.currentBlog = document.getElementById("blogItem");
+    document.getElementById("blogRepoLink").href = config.blogRepo;    
     this.viewName = document.getElementById("viewName");
     this.slidesToc = document.querySelector(".slidesListBox");
     this.slideMeter = document.getElementById("slideMeter");

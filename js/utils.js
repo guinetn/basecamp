@@ -1,7 +1,6 @@
 import { config } from "./config.js";
 
 export let utils = {
-
   getTime: () => new Date().toLocaleTimeString(),
 
   clock: document.querySelector("#clock"),
@@ -35,13 +34,25 @@ export let utils = {
     }
   },
 
-   scrollTo: function(y=0, behaviour="smooth") {       
-      document.documentElement.scrollTo({ top: y, behavior: behaviour });
-    },
+  scrollTo: function (y = 0, behaviour = "smooth") {
+    document.documentElement.scrollTo({ top: y, behavior: behaviour });
+  },
 
   getHash: (str) => window.btoa(str),
 
   capitalize: (string) => string[0].toUpperCase() + string.slice(1),
+
+  parseDate: function (stringDate) {
+    let date = stringDate.match(/(?<year>\d{4})-?(?<month>\d{2})-?(?<day>\d{2})-?/);
+    return date
+      ? {
+          source: date[0],
+          day: date.groups["day"],
+          month: date.groups["month"],
+          year: date.groups["year"],
+        }
+      : null;
+  },
 
   copyToClipboard: async function (stringToCopy, show = null) {
     try {
@@ -198,7 +209,7 @@ export let utils = {
     });
   },
 
-  fetchGithubRepo: async function (repo, callback) {
+  fetchGithubFolder: async function (repo, callback) {
     this.downloadJsonFile(repo, null, function (options, filesList) {
       callback(filesList);
     });
