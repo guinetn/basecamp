@@ -39,16 +39,30 @@ const pi = 3.14;
 [Natural Language Processing With RNNs  H - TensorFlow 2.0 Course](https://www.youtube.com/watch?v=hEUiK7j9UI8&t=6s)
 
 # Iframe
+&lt;iframe src="//www.youtube.com/embed/I0eVwo1VCuU?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 <iframe src="//www.youtube.com/embed/I0eVwo1VCuU?rel=0" frameborder="0" allowfullscreen></iframe>
 
 # Download files...
 
 ## Render file as raw text or call api
+My ip from https://httpbin.org/ip: <span>download</span>.raw(https://httpbin.org/ip)
 My ip from https://httpbin.org/ip: download.raw(https://httpbin.org/ip)
 
 ## Render others markdown files
+<span>download</span>.md(assets/slides/toolbox_subpage_1.md)
 download.md(assets/slides/toolbox_subpage_1.md)
 
 ## Render file as code snippet (file extension is checked)
-download.code(https://raw.githubusercontent.com/mortennobel/cpp-cheatsheet/master/cheatsheet-as-sourcefile.cpp)
+
+**Tips**  
+Github's links need to be changed, ie:
+
+https://<mark>github.com</mark>/pms67/PID/<mark>blob</mark>/master/PID.h
+Must be changed to
+https://<mark>raw.githubusercontent.com</mark>/pms67/PID/master/PID.h
+
+❌ <span>download</span>.code(https://github.com/pms67/PID/blob/master/PID.h)  
+✔️ <span>download</span>.code(https://raw.githubusercontent.com/pms67/PID/master/PID.h)
+  
+download.code(https://raw.githubusercontent.com/pms67/PID/master/PID.h)  
 

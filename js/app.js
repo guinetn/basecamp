@@ -531,9 +531,10 @@ import { slideShow } from "./slideshow.js";
         let response = await fetch(target.href);
         let markdown = await response.text();
 
-        let blogTitle = target.innerText.replace(/(_|\.md)/g, " ");
+        let blogFile = target.getAttribute("blog_file");  
+        let blogTitle = blogFile.replace(/(_|\.md)/g, " ");
         let blogDate = "";
-        let date = target.innerText.match(
+        let date = blogFile.match(
           /(?<year>\d{4})-?(?<month>\d{2})-?(?<day>\d{2})-?/
         );
         if (date) {
@@ -559,10 +560,14 @@ import { slideShow } from "./slideshow.js";
       filesList.map((x) => {
         let liElement = document.createElement("li");
         let aElement = document.createElement("a");
-        aElement.innerText = x["name"];
-        aElement.classList = "blogLink";
+        aElement.innerText = x["name"]
+          .replace(".md", "")
+          .replace(/\d{4}-\d\d-\d\d-/, "");
+        aElement.classList = "blogLink"; // To drive the click to ShowBlog( clicked_link )
         aElement.href = x["download_url"];
         aElement.tag = x["html_url"];
+        aElement.setAttribute("blog_file", x["name"]);
+        
         liElement.appendChild(aElement);
         blogContainer.appendChild(liElement);
       });
