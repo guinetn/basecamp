@@ -10,33 +10,6 @@ import { slideShow } from "./slideshow.js";
     utils.downloadTextFile("index-main.html", null, initApplication);
   });
 
-  /*
-  observe(document, (e) =>  e.dataset.slide=='hash', app.domChanged);
-  function domChanged(e) { }
-  
-  function observe(target, filter, callback) {
-    
-    var observer = new MutationObserver(function (mutations) {
-      mutations.forEach(function (mutation) {
-        var nodes = Array.prototype.slice.call(mutation.addedNodes);
-        nodes.forEach(function (node) {
-          if (filter(node))
-            callback(node);          
-        });
-      });
-    });
-    
-    observer.observe(target, {
-      childList: true,
-      subtree: true,
-      attributes: false,
-      characterData: false,
-    });
-    
-    //window.addEventListener("hashchange", app.updateSlides);
-    //window.location.hash = window.location.hash=='' ? '#s' : '';
-  }*/
-
   // INIT CUSTOMIZED VIEWS
   function initApplication(options, mainContent) {
     document.getElementById("mainContent").innerHTML = mainContent;
@@ -118,6 +91,10 @@ import { slideShow } from "./slideshow.js";
       // Click on empty element => close opened windows (alarm, blog)
       app.hideBlog();
       if (utils.alarmVisible) utils.alarmOpenClose();
+    } 
+    else if (e.target.matches(".slideTocLink")) {
+      // Slides ToC clicked: navigate to clicked slide
+      app.showSlide(e.target.dataset.slideid);
     } else if (e.target.matches("#help")) {
       if (utils.isModalVisible()) utils.modalClose();
       else {

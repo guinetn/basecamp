@@ -40,22 +40,25 @@ export class Bka extends Blog {
     if (slideShow) slideShow.init();
   }
   
+  slidesChanged(e) {
+    if (e.data != "slides changed") 
+      return;    
+    this.updateSlides();
+  }
+
   updateSlides() {     
     this.slides = document.querySelectorAll(".slide");
+    this.slides.forEach((s,i)=>s.setAttribute('data-id', i+1));
+    
     // Configure slide meter [min-value-max]
-    this.slideMeter.value = 0;
+    this.slideMeter.value = 1;
     this.slideMeter.max = this.slideHasError ? 0 : this.slides.length;
     
     this.renderSlidesToc();
     this.renderViewName();    
   }
   
-  slidesChanged(e) {
-    if (e.data != "slides changed") 
-      return;    
-    this.updateSlides();
-  }
-    
+  
   renderViewsList() {
     let viewsListBox = document.querySelector(".viewsListBox");
 
@@ -70,15 +73,22 @@ export class Bka extends Blog {
 
   renderSlidesToc() {
     this.slidesToc.innerHTML = null;
-    [...document.querySelectorAll(".slide")].forEach((s, i) => {
+    
+    this.slides.forEach((s, i) => {
       [...s.querySelectorAll("h1")].map((x) => {
         let div = document.createElement("div");
+        div.className = 'slideTocLink';
+        div.setAttribute('data-slideid', i)
         div.innerText = `${("0" + (1 + i)).slice(-2)}. ${x.innerText}`;
         this.slidesToc.appendChild(div);
       });
     });
   }
 
+  showSlide(slideid) {    
+    this.changeSlide(slideid-this.currentSlideId);
+  }
+  
   tick() {
     if (!this.isMouseDown) return;
 
@@ -175,12 +185,13 @@ export class Bka extends Blog {
     // If view has change and dom has slides of another view, load the current view slides
     if (this.currentSlidesFile != this.currentView.name) {
       this.createSlidesInDom(config.slidesContainer);
+      // Restore slideId from a previous visit of the current view
       this.currentSlideId = this.currentView.slideId;
       return;
     }
 
     // Press [←] while on first slide: hide slides
-    if (this.currentSlideId == 0 && direction == -1) {
+    if (this.currentSlideId == 0 && direction<0) {
       this.toggleSlidesVisibility(false);
       return;
     }
@@ -188,7 +199,7 @@ export class Bka extends Blog {
     else if (
       !this.slidesVisible &&
       this.currentSlideId == 0 &&
-      direction == +1
+      direction>0
     ) {
       this.toggleSlidesVisibility(true);
       utils.scrollTo(0, "auto");
@@ -197,8 +208,7 @@ export class Bka extends Blog {
 
     this.currentSlideId += direction;
     if (this.slides.length <= this.currentSlideId) this.currentSlideId = 0;
-    else if (this.currentSlideId < 0) this.currentSlideId = 0;
-    console.log("this.currentSlideId:" + this.currentSlideId);
+    else if (this.currentSlideId < 0) this.currentSlideId = 0;    
     this.toggleSlidesVisibility(true);
     utils.scrollTo(0, "auto");
 
