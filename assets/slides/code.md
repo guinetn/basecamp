@@ -84,6 +84,7 @@ download.md(assets/slides/code/langs/rust.md)
 ::::
 download.md(assets/slides/code/langs/scala.md)
 ::::
+download.md(assets/slides/code/langs/basic.md)
 download.md(assets/slides/code/langs/vb.md)
 ::::
 download.md(assets/slides/code/scheduling.md)

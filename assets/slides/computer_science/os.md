@@ -58,13 +58,10 @@ https://beta.hackndo.com/rappels-d-architecture/
 
 ::::
 download.md(assets/slides/computer_science/os_posix.md)
-
 ::::
 download.md(assets/slides/computer_science/os_linux.md)
-
 ::::
 download.md(assets/slides/computer_science/os_windows.md)
-
 ::::
 download.md(assets/slides/computer_science/os_unix.md)
 ::::

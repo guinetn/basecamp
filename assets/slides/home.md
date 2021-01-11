@@ -1,6 +1,7 @@
 # Home
-ahomeb
 
+Welcome
+    
 ::::
 download.md(assets/slides/home/solving.md)
 ::::
