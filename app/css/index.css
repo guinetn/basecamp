@@ -44,7 +44,7 @@ body {
 .logobka {
   float: left;
   margin: 3px 0 0 10px;
-  background-image: url(../assets/img/bka.png);
+  background-image: url(../img/bka.png);
   width:65px;
   height: 38px;
 }

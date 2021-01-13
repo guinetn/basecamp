@@ -16,7 +16,7 @@ limit    | progress limit minutes | 5
 time     | progress start minutes | 0
  
 # Images
-![](assets/img/cloud.png)
+![](app/img/cloud.png)
 
 # Code snippets
 

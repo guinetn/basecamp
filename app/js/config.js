@@ -6,6 +6,7 @@ export const config = {
   snackbarDurationSec: 2500,
   viewsCssSelector: ".view",
   slidesContainer: "#main",
+  viewsContainer: "#viewsPlaceHolder",
   slidesSeparator: "::::",
   slidesFolder: "assets/slides",
   topicsFile: "assets/topics.json",

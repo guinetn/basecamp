@@ -9,21 +9,21 @@
     <meta name="keyword" content="my blog, my personal notes in one click">
     
     <!-- Skins for code-prettier: https://raw.githack.com/google/code-prettify/master/styles/index.html  -->
-    <!--   <link rel="stylesheet" type="text/css" href="css/from_others/codeskins/desert.css">           -->
-    <!--   <link rel="stylesheet" type="text/css" href="css/from_others/codeskins/sons-of-obsidian.css"> -->
-    <!--   <link rel="stylesheet" type="text/css" href="css/from_others/codeskins/doxy.css">             -->
-    <link rel="stylesheet" rel="preload" type="text/css" href="css/from_others/codeskins/sunburst.css">    
+    <!--   <link rel="stylesheet" type="text/css" href="app/css/from_others/codeskins/desert.css">           -->
+    <!--   <link rel="stylesheet" type="text/css" href="app/css/from_others/codeskins/sons-of-obsidian.css"> -->
+    <!--   <link rel="stylesheet" type="text/css" href="app/css/from_others/codeskins/doxy.css">             -->
+    <link rel="stylesheet" rel="preload" type="text/css" href="app/css/from_others/codeskins/sunburst.css">    
 
-    <link rel="stylesheet" type="text/css" href="css/slideshow.css">
-    <link rel="stylesheet" type="text/css" href="css/blog.css">
-    <link rel="stylesheet" type="text/css" href="css/snackbar.css">
-    <link rel="stylesheet" type="text/css" href="css/alarm.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/masonry.css">
-    <link rel="stylesheet" type="text/css" href="css/modalbox.css">
-    <link rel="stylesheet" type="text/css" href="css/view_toolbox.css">
-    <link rel="stylesheet" type="text/css" href="css/slides.css">    
-    <link rel="stylesheet" type="text/css" href="css/table_of_content.css">    
+    <link rel="stylesheet" type="text/css" href="app/css/slideshow.css">
+    <link rel="stylesheet" type="text/css" href="app/css/blog.css">
+    <link rel="stylesheet" type="text/css" href="app/css/snackbar.css">
+    <link rel="stylesheet" type="text/css" href="app/css/alarm.css">
+    <link rel="stylesheet" type="text/css" href="app/css/index.css">
+    <link rel="stylesheet" type="text/css" href="app/css/masonry.css">
+    <link rel="stylesheet" type="text/css" href="app/css/modalbox.css">
+    <link rel="stylesheet" type="text/css" href="app/css/view_toolbox.css">
+    <link rel="stylesheet" type="text/css" href="app/css/slides.css">    
+    <link rel="stylesheet" type="text/css" href="app/css/table_of_content.css">    
   </head>
 
 <body>
@@ -49,7 +49,7 @@
 </div>   
 
 <div id='main'>  
-  <div id='mainContent'></div>
+  <div id='viewsPlaceHolder'></div>
 </div>
 
 <aside id="blogPlaceHolder" class="stickyBlog"></aside>
@@ -86,20 +86,20 @@
 
 <!-- THIRD PARTS SCRIPTS -->
 <!-- GOOGLE CODE PRETTYFIER -->
-<script rel="preload" src="js/from_others/prettify.min.js"></script>
-<script rel="preload" src="js/from_others/run_prettify.min.js"></script>
+<script rel="preload" src="app/js/from_others/prettify.min.js"></script>
+<script rel="preload" src="app/js/from_others/run_prettify.min.js"></script>
 
 <!-- MARDOWN ENGINE -->
-<script src="js/from_others/showdown.min.js"></script>
+<script src="app/js/from_others/showdown.min.js"></script>
 
 <!-- BKA SCRIPTS -->
-<script type="module" src="js/showdown.extension.bka.js"></script>
-<script src="js/table_of_content.js"></script>
+<script type="module" src="app/js/showdown.extension.bka.js"></script>
+<script src="app/js/table_of_content.js"></script>
 <!-- CUSTOM SCRIPTS BY VIEWS -->
-<script src='js/views_scripts/tools_view.js'></script>
+<script src="app/js/views_scripts/tools_view.js"></script>
 
 <!-- MAIN SCRIPT -->
-<script type="module" src="js/app.js"></script>
+<script type="module" src="app/js/app.js"></script>
 
 
 <!-- TEMPLATES -->

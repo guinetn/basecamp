@@ -7,12 +7,12 @@ import { slideShow } from "./slideshow.js";
   let app = null;
 
   document.addEventListener("DOMContentLoaded", function () {
-    utils.downloadTextFile("index-main.html", null, initApplication);
+    utils.downloadTextFile(`${config.slidesFolder}/index-main.html`, null, initApplication);
   });
 
   // INIT CUSTOMIZED VIEWS
-  function initApplication(options, mainContent) {
-    document.getElementById("mainContent").innerHTML = mainContent;
+  function initApplication(options, viewsContent) {
+    document.querySelector(config.viewsContainer).innerHTML = viewsContent;
 
     app = new Bka();
     utils.init(app);
@@ -36,7 +36,7 @@ import { slideShow } from "./slideshow.js";
 
   function showHelp() {
     
-    utils.downloadTextFile("help.md", null, function (options, helpContent) {
+    utils.downloadTextFile("app/help.md", null, function (options, helpContent) {
       const helpContainer = document.createElement("div");
       helpContainer.classList = "bkahelp";
       let help = app.markdownToHtml(helpContent, false);

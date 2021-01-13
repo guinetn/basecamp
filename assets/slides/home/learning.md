@@ -38,6 +38,21 @@ FlashBulb memories: vividly imprinted in mind, easily remember (ex: 9/11)
 * Do a certification
 * Find a mentor or be a mentor
 
+## 70-20-10 Model
+1990. Morgan McCall, Robert Eichinger, Michael Lombardo
+
+Skill acquisition
+70%: at working on it
+20%: by interact with others
+10%: in training
+
+Technology fast pace effects:
+* Usable memorized knowledge is decreasing
+* In memory professional knowledge
+- 1986: 75%
+- 2006: 10%
+
+
 ## Budzinski
 
 <pre>

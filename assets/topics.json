@@ -342,5 +342,7 @@
   "https://app.code2flow.com(code flow)",
   "https://pastebin.com",
   "https://cloud.mongodb.com",
-  "https://dashboard.fauna.com(fauna DB)"]
+  "https://dashboard.fauna.com(fauna DB)"],
+  
+  "weather": ["https://www.spaceweatherlive.com/"]
 }

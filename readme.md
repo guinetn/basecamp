@@ -1,9 +1,9 @@
 # Brain cache
 
-![](assets/img/bka.png)  
+![](app/img/bka.png)  
 Never open you're .md notes again, it's automatic and as fast as your fingers can move.  
 
-![screenshoot](assets/img/bka_sreenshoot_01.png)
+![screenshoot](app/img/bka_sreenshoot_01.png)
 
 # Features
 * Blog
@@ -26,7 +26,7 @@ Never open you're .md notes again, it's automatic and as fast as your fingers ca
 
 # Configuration
 
-![configuration](assets/img/bka_config.png)
+![configuration](app/img/bka_config.png)
 
 ### Use from server side
 1. Clone-it on github  
@@ -99,7 +99,7 @@ an unique option:
     </div>    
 ```
 ***Result***  
-![view+topic](assets/img/bka_view-topic.png)      
+![view+topic](app/img/bka_view-topic.png)      
 
 > You can change colors in ```css/index.css```
 
@@ -154,7 +154,7 @@ Slide 1.
 lorem.........  
   
 How to add an image with the right path to:
-![](assets/img/cloud.png)
+![](app/img/cloud.png)
 
 ::::
 Slide 2.
@@ -248,7 +248,7 @@ Standard markdown + additional syntax to include…
 * Audio (speaker)
 * Visual message
 
-![](assets/img/bka_alarms.png)
+![](app/img/bka_alarms.png)
 
 * Click the clock  
 * Optionally enter a text in relation to the alarm  
