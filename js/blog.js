@@ -50,7 +50,11 @@ export class Blog {
   }
 
   listBlogArticles(filesList) {
+    
     const blogContainer = document.getElementById("blog_items");
+    // Clean blog items
+    blogContainer.querySelectorAll("*").forEach((s) => s.remove());
+    
     filesList.map((x) => {
       if (x["name"] != "assets") {
         let liElement = document.createElement("li");

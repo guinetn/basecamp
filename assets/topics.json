@@ -30,8 +30,7 @@
   ],
   "videos": ["https://youtube.com", "https://www.ted.com(TEDx)"],
 
-  "daily_routine":[
-  ],
+  "daily_routine": [],
   "online_tools": [
     "https://docs.w3cub.com",
     "https://vclock.com(countdown, alarms)",
@@ -143,7 +142,6 @@
   "internationalization": [],
   "depency_injection_ioc": [],
   "testing": [],
-  
 
   "javascript": [
     "https://github.com/you-dont-need/You-Dont-Need-JavaScript(You-Dont-Need-JavaScript)",
@@ -336,5 +334,13 @@
     "eFinancialCareers.fr",
     "https://www.expectra.fr",
     "https://fr.indeed.com"
-  ]
+  ],
+  "toolbox_online_tools":["https://docs.w3cub.com",
+  "https://vclock.com(countdown, alarms)",
+  "https://asciiflow.com",
+  "https://app.diagrams.net(draw.io)",
+  "https://app.code2flow.com(code flow)",
+  "https://pastebin.com",
+  "https://cloud.mongodb.com",
+  "https://dashboard.fauna.com(fauna DB)"]
 }

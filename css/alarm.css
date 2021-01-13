@@ -30,6 +30,7 @@
   text-align: center;
   margin: 3px;
   padding: 5px;
+  cursor: pointer;
 }
 .alarmItem:hover {
   color: #331212;

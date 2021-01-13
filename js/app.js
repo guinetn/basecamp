@@ -78,7 +78,12 @@ import { slideShow } from "./slideshow.js";
   }
 
   function onClick(e) {
-    if (e.target.matches(".slideShowSlidePrev") && slideShow) {
+    
+    // Refresh blog items list
+    if (e.target.matches(".blogRefresh")) {
+       utils.fetchGithubFolder(config.blogRepoApi, app.listBlogArticles);
+    }
+    else if (e.target.matches(".slideShowSlidePrev") && slideShow) {
       slideShow.plusSlides(e.target.parentNode.id, -1);
       return;
     } else if (e.target.matches(".slideShowSlideNext") && slideShow) {

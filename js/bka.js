@@ -30,7 +30,9 @@ export class Bka extends Blog {
       );
     this.currentView = this.views[0];
 
+    // Set the link to manually open the blog items folder on github
     document.getElementById("blogRepoLink").href = config.blogRepo;
+    
     this.viewName = document.getElementById("viewName");
     this.slidesToc = document.querySelector(".slidesToc");
     this.slideMeter = document.getElementById("slideMeter");
@@ -48,49 +50,59 @@ export class Bka extends Blog {
     // When a downloaded element has been added to the DOM
     const promiseMarker = document.getElementById(hash);
 
-    let div = document.createElement("div");
-    if (htmlData) div.innerHTML = htmlData;
-    else div.innerText = textData;
+    // For each separator (:::: = <p>::::</p>)
+    let slides = (htmlData ? htmlData : textData).split('<p>::::</p>'); 
+    
+    slides.reverse().forEach((s, i) => {
+      let div = document.createElement("div");
+      if (htmlData) div.innerHTML = s;
+      else div.innerText = s;
 
-    /* 
-        From the promiseMarker (<div data-type='promised_file'...)
-        If previous node is a separator (<p>::::</p>) then it must be a slide:
-          * insert after the first parent having a class='slides'
-          * removed the promiseMarker
-          * removed the <p>::::</p>
-        
-        <div id="s1" class="slides">
-        <div id="s2" class="slides">
-        <div id="s3" class="slides">
-          <div class="slide current" data-id="3">
-            <div data-type="promised_file" id="YXNz...ZbmcubWQ=">wanting for…/notetaking.md</div><div><h1 id="note-taking">NOTE TAKING</h1>
-            ....
-            <p>::::</p>
-            <div data-type="promised_file" id="YXN...JuaW5nLm1k">wanting for…/learning.md</div>
-            <div><h1 id="learning--repeat-review">Learning = repeat, review</h1>
-        */
-    let prevNode = promiseMarker.previousElementSibling;
-
-    if (
-      prevNode &&
-      prevNode.innerText.substring(0, 4) == config.slidesSeparator
-    ) {
-      // promiseMarker previous node is a separator (<p>::::</p>)
-      prevNode = prevNode.parentNode;
-      while (prevNode) {
-        // Look-up until finding a "slides"
-        if (prevNode.classList.contains("slides")) {
-          div.className = "slide";
-          prevNode.insertAdjacentElement("beforeEnd", div);
-          // Remove the separator <p>::::</p>
-          promiseMarker.previousElementSibling.remove();
-          break;
+      /* 
+          From the promiseMarker (<div data-type='promised_file'...)
+          If previous node is a separator (<p>::::</p>) then it must be a slide:
+            * insert after the first parent having a class='slides'
+            * removed the promiseMarker
+            * removed the <p>::::</p>
+          
+          <div id="s1" class="slides">
+          <div id="s2" class="slides">
+          <div id="s3" class="slides">
+            <div class="slide current" data-id="3">
+              <div data-type="promised_file" id="YXNz...ZbmcubWQ=">wanting for…/notetaking.md</div><div><h1 id="note-taking">NOTE TAKING</h1>
+              ....
+              <p>::::</p>
+              <div data-type="promised_file" id="YXN...JuaW5nLm1k">wanting for…/learning.md</div>
+              <div><h1 id="learning--repeat-review">Learning = repeat, review</h1>
+          */
+      let prevNode = promiseMarker.previousElementSibling;
+      const isolatedSeparatorMode = (slides.length > 1 && i < slides.length-1);
+      if (isolatedSeparatorMode ||
+        (prevNode &&
+          prevNode.innerText.substring(0, 4) == config.slidesSeparator)
+      ) {
+        // promiseMarker previous node is a separator (<p>::::</p>)
+        //if (prevnode) 
+          prevNode = prevNode.parentNode;
+        while (prevNode) {
+          // Look-up until finding a "slides"
+          if (prevNode.classList.contains("slides")) {
+            div.className = "slide";
+            prevNode.insertAdjacentElement("beforeEnd", div);
+            
+            // Remove the separator <p>::::</p>
+            let pmp = promiseMarker.previousElementSibling;
+            if (pmp.innerText==config.slidesSeparator)
+              promiseMarker.previousElementSibling.remove();
+            break;
+          }
+          prevNode = prevNode.parentNode;
         }
-        prevNode = prevNode.parentNode;
+      } else {
+        promiseMarker.insertAdjacentElement("afterEnd", div);
       }
-    } else {
-      promiseMarker.insertAdjacentElement("afterEnd", div);
-    }
+    });
+    
     // Remove the promise marker
     promiseMarker.remove();
 
@@ -268,7 +280,7 @@ export class Bka extends Blog {
     if (slideShow) slideShow.init();
   }
 
-  async downloadViewSlides(folder, slideFile) {
+  async downloadMainSlides(folder, slideFile) {
     try {
       let relativePath = `${folder}/${slideFile}.md`;
       let response = await fetch(relativePath);
@@ -288,7 +300,7 @@ export class Bka extends Blog {
 
       return htmlSlides;
     } catch (e) {
-      console.log(`Error in downloadViewSlides(${slideFile})`, e);
+      console.log(`Error in downloadMainSlides(${slideFile})`, e);
     }
   }
 
@@ -297,7 +309,7 @@ export class Bka extends Blog {
 
     this.currentSlidesFile = this.currentView.name;
 
-    this.downloadViewSlides(config.slidesFolder, this.currentSlidesFile).then(
+    this.downloadMainSlides(config.slidesMain, this.currentSlidesFile).then(
       (htmlSlides) => {
         this.appendSlides(htmlSlides, slidesContainer);
         this.updateSlides();

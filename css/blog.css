@@ -1,4 +1,15 @@
 
+.blogRefresh {
+  cursor: pointer;
+}
+
+.half {
+  transform: scale(0.6);
+  display: inline-block;
+  position: absolute;
+  left: 4em;
+  top: 2.23em;
+}
 
 .view .blogLink {
   font-size: larger;
