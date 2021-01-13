@@ -151,6 +151,10 @@ a {
  color: var(--otherLinksFg);
 }
 
+a.downloadError { 
+ color: #f70000;
+}
+
 .originOfLink, .originOfLink:visited  {
   color: var(--originOfLinkFg) !important;
   font-size: small;  

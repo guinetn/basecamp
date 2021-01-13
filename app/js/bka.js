@@ -444,9 +444,10 @@ export class Bka extends Blog {
         const tagAnchor = document.createElement("a");
 
         if (jsonObject.error) {
-          tagAnchor.innerHTML += " ❌";
+          tagAnchor.innerHTML += `❌ ${description.substring(1)}`;
           tagAnchor.title = jsonObject.error;
           tagAnchor.href = link;
+          tagAnchor.classList = "downloadError";
           tagAnchor.target = "_blank";
           tagAnchor.rel = "noopener";
           tag.appendChild(tagAnchor);
