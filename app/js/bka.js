@@ -4,9 +4,12 @@ import { Blog } from "./blog.js";
 import { slideShow } from "./slideshow.js";
 
 export class Bka extends Blog {
+  // Pointer to current view in views[]
   currentView = null;
+  // Contains DOM elements matching the config.viewsCssSelector '.view'
+  // Defined in config.viewsFile (assets/views.html)
   views = []; // [{ id:0, dom: null, name: '', slideId: 0 }, …]  slideId allow to retrieve the last slide viewed before leaving the view
-  viewName = null;
+  viewDetails = null;
 
   currentSlideId = 0;
   // When [→] is pressed we need to know if the current view slide have been loaded. Load the view slide if names are differents
@@ -23,23 +26,28 @@ export class Bka extends Blog {
   constructor() {
     super("blogPlaceHolder");
 
+    // Get views[]
     document
       .querySelectorAll(config.viewsCssSelector)
       .forEach((v, i) =>
         this.views.push({ id: i, name: v.id, dom: v, slideId: 0 })
       );
-    this.currentView = this.views[0];
+    if (this.views.length > 0) this.currentView = this.views[0];
+    else console.log("Views not found");
 
-    // Set the link to manually open the blog items folder on github
-    document.getElementById("blogRepoLink").href = config.blogRepo;
-    
-    this.viewName = document.getElementById("viewName");
+    this.viewDetails = document.getElementById("viewDetails");
     this.slidesToc = document.querySelector(".slidesToc");
     this.slideMeter = document.getElementById("slideMeter");
 
+    // RENDER topics in views
     utils.downloadJsonFile(config.topicsFile, null, this.extractTopics);
+    // RENDER views[]
     this.renderViewsList();
+
+    // Init components
     if (slideShow) slideShow.init();
+    // Set the link to manually open the blog items folder on github
+    document.getElementById("blogRepoLink").href = config.blogRepo;
   }
 
   slidesChanged(event) {
@@ -51,8 +59,8 @@ export class Bka extends Blog {
     const promiseMarker = document.getElementById(hash);
 
     // For each separator (:::: = <p>::::</p>)
-    let slides = (htmlData ? htmlData : textData).split('<p>::::</p>'); 
-    
+    let slides = (htmlData ? htmlData : textData).split("<p>::::</p>");
+
     slides.reverse().forEach((s, i) => {
       let div = document.createElement("div");
       if (htmlData) div.innerHTML = s;
@@ -76,23 +84,24 @@ export class Bka extends Blog {
               <div><h1 id="learning--repeat-review">Learning = repeat, review</h1>
           */
       let prevNode = promiseMarker.previousElementSibling;
-      const isolatedSeparatorMode = (slides.length > 1 && i < slides.length-1);
-      if (isolatedSeparatorMode ||
+      const isolatedSeparatorMode = slides.length > 1 && i < slides.length - 1;
+      if (
+        isolatedSeparatorMode ||
         (prevNode &&
           prevNode.innerText.substring(0, 4) == config.slidesSeparator)
       ) {
         // promiseMarker previous node is a separator (<p>::::</p>)
-        //if (prevnode) 
-          prevNode = prevNode.parentNode;
+        //if (prevnode)
+        prevNode = prevNode.parentNode;
         while (prevNode) {
           // Look-up until finding a "slides"
           if (prevNode.classList.contains("slides")) {
             div.className = "slide";
             prevNode.insertAdjacentElement("beforeEnd", div);
-            
+
             // Remove the separator <p>::::</p>
             let pmp = promiseMarker.previousElementSibling;
-            if (pmp.innerText==config.slidesSeparator)
+            if (pmp.innerText == config.slidesSeparator)
               promiseMarker.previousElementSibling.remove();
             break;
           }
@@ -102,7 +111,7 @@ export class Bka extends Blog {
         promiseMarker.insertAdjacentElement("afterEnd", div);
       }
     });
-    
+
     // Remove the promise marker
     promiseMarker.remove();
 
@@ -118,7 +127,7 @@ export class Bka extends Blog {
     this.slideMeter.max = this.slideHasError ? 0 : this.slides.length;
 
     this.renderSlidesToc();
-    this.renderViewName();
+    this.renderViewDetails();
   }
 
   /* Render views's list
@@ -182,35 +191,48 @@ export class Bka extends Blog {
           (view) => view.name.slice(0, key.length) == key
         );
         if (view.length == 0) return;
-        this.currentView = view[0];
+        this.selectView(view[0].id, e);
       } else if ("0" <= key && key <= "9") {
         // Numpad keys
-        this.currentView = this.views[e.key];
+        this.selectView(e.key, e);
       }
     }
 
     // Navigate in views by [+] or [CTRL + →]
     if (e.key == "+" || (e.ctrlKey && e.keyCode == 39) /*right*/) {
-      this.currentView = this.views[
-        this.views.length <= this.currentView.id + 1
-          ? 0
-          : this.currentView.id + 1
-      ];
+      this.selectView("next", e);
     }
     // Navigate in views by "-" or [CTRL + ←]
     else if (e.key == "-" || (e.ctrlKey && e.keyCode == 37) /*left*/) {
-      this.currentView = this.views[
-        this.currentView.id - 1 < 0
-          ? this.views.length - 1
-          : this.currentView.id - 1
-      ];
+      this.selectView("prev", e);
     } else if (
       e.ctrlKey ||
       ![...this.views].some((v) => v.name == this.currentView.name)
     )
       return; // no key match a view name
+  }
 
-    e.preventDefault();
+  scaleViewId(stepOrIndex) {
+    let viewId = parseInt(stepOrIndex, 10);
+    if (isNaN(viewId)) {
+      if (stepOrIndex == "next") stepOrIndex = 1;
+      if (stepOrIndex == "prev") stepOrIndex = -1;
+      viewId = this.currentView.id + stepOrIndex;
+    }
+    return viewId < 0
+      ? this.views.length - 1
+      : this.views.length <= viewId
+      ? 0
+      : viewId;
+  }
+
+  selectView(stepOrIndex, keyEvent = null) {
+    this.currentView = this.views[this.scaleViewId(stepOrIndex)];
+    this.showView(keyEvent);
+  }
+
+  showView(keyEvent = null) {
+    if (keyEvent) keyEvent.preventDefault();
     utils.scrollTo(0);
     // hide slides
     this.toggleSlidesVisibility(false);
@@ -249,7 +271,6 @@ export class Bka extends Blog {
       }
     }
   }
-
   async changeSlide(direction) {
     // If view has change and dom has slides of another view, load the current view slides
     if (this.currentSlidesFile != this.currentView.name) {
@@ -341,7 +362,7 @@ export class Bka extends Blog {
   }
   renderCurrentSlide() {
     this.slideMeter.value = this.currentSlideId + 1;
-    this.renderViewName();
+    this.renderViewDetails();
     this.slides.forEach((s, i) =>
       this.slidesVisible && i == this.currentSlideId
         ? s.classList.add("current")
@@ -350,12 +371,12 @@ export class Bka extends Blog {
     setTableOfContentVisibility(".slide.current", "#slide_toc");
   }
 
-  renderViewName() {
+  renderViewDetails() {
     const slideTitle = this.currentView.name.toUpperCase().replace("_", " ");
     const slideNav = this.slideHasError
       ? "⚠️"
       : ` <sup><small>${this.slideMeter.value}/${this.slides.length}</small></sup>`;
-    this.viewName.children[0].innerHTML = `${slideTitle} ${slideNav}`;
+    this.viewDetails.children[0].innerHTML = `${slideTitle} ${slideNav}`;
   }
 
   toggleSlidesVisibility(forceVisibility) {
@@ -365,8 +386,8 @@ export class Bka extends Blog {
     else this.slidesVisible = !this.slidesVisible;
 
     this.slidesVisible
-      ? this.viewName.classList.add("visible")
-      : this.viewName.classList.remove("visible");
+      ? this.viewDetails.classList.add("visible")
+      : this.viewDetails.classList.remove("visible");
 
     this.renderCurrentSlide();
   }
@@ -442,8 +463,7 @@ export class Bka extends Blog {
         }
         const tag = document.getElementById(hash);
         let tagAnchor = tag.querySelector("a");
-        if (!tagAnchor) 
-          tagAnchor = document.createElement("a");
+        if (!tagAnchor) tagAnchor = document.createElement("a");
 
         if (jsonObject.error) {
           tagAnchor.innerHTML = `❌ ${description.substring(1)}`;

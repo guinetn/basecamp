@@ -70,7 +70,7 @@ body {
   text-align: left;
 }
 
-#viewName:hover .slidesToc, .logobka:hover .viewsListBox {  
+#viewDetails:hover .slidesToc, .logobka:hover .viewsListBox {  
   display:block;
 }
 
@@ -222,19 +222,19 @@ a.downloadError {
   left: 6.5em;
   font-size: 1.5em;
 }
-#viewName {  
+#viewDetails {  
   display: none; 
   position: absolute;
   left: 0;
   top: 0.2em;
   font-size: 5.1em;
   color: var(--viewTitleFg);
-  animation: viewNameAnimation ease 0.25s;  
+  animation: viewDetailsAnimation ease 0.25s;  
   z-index: 15;
   opacity: 0;
   text-align: center;
 }
-#viewName.visible {    
+#viewDetails.visible {    
   display: block;
   left: 50%;
   top: 0;
@@ -249,12 +249,12 @@ a.downloadError {
   border-left: 1px solid #988585;
   border-right: 1px solid #cea0a0;
 }
-@keyframes viewNameAnimation {
+@keyframes viewDetailsAnimation {
   0% { left:0; top:2em;  border-radius: 0 8px 8px 0; border: solid 1px gray; }
   20% { left:20%; top:2em; opacity:0.4; font-size: large;  border: solid 1px gray; }
   100% { left:50%; top:0; font-size: x-large;  border: solid 1px gray;}
 }
-#viewName progress {
+#viewDetails progress {
   position:relative;
   top:-6px;  
 }

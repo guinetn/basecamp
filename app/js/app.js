@@ -154,4 +154,29 @@ import { slideShow } from "./slideshow.js";
       utils.alarmSet(alarmDurationMin, alarmReason);
     }
   }
+  
+  // TOUCH EVENTS
+  let touchStart = undefined;
+  addEventListener("touchstart",(event) => {
+      touchStart = {
+        x: event.changedTouches[0].clientX,
+        y: event.changedTouches[0].clientY,
+      };
+    },false);
+    
+  addEventListener( "touchend", (event) => { touchStart = undefined; }, false );
+
+  addEventListener( "touchmove", (event) => {
+      if (touchStart == undefined) return;
+      const vector = {
+        x: touchStart.x - event.changedTouches[0].clientX,
+        y: touchStart.y - event.changedTouches[0].clientY,
+      };
+      const horizontal = Math.abs(vector.x) > Math.abs(vector.y);
+      let back = horizontal ? vector.x < 0 : vector.y < 0;                        
+      if (horizontal
+        ) app.selectView(vector.x / Math.abs(vector.x));
+      touchStart = undefined;
+    }, false );
+      
 })();
