@@ -20,23 +20,23 @@
   font-family: Cabin;
 }
 
-.stickyBlog h1:before, .stickyBlog h2:before, .stickyBlog h3:before,  
+.stickyBlogArticle h1:before, .stickyBlogArticle h2:before, .stickyBlogArticle h3:before,  
 .slide h1:before, .slide h2:before, .slide h3:before 
 {
   content: ' ';
 }
 
-.stickyBlog h1, .stickyBlog h2, 
+.stickyBlogArticle h1, .stickyBlogArticle h2, 
 .slide h1, .slide h2
 {
     color:gold;    
 }
 
-.stickyBlog h3, .slide h3  {
+.stickyBlogArticle h3, .slide h3  {
     color:#00bcd4;    
 }
 
-.stickyBlog h4, .stickyBlog h5, .stickyBlog h6,
+.stickyBlogArticle h4, .stickyBlogArticle h5, .stickyBlogArticle h6,
 .slide h4, .slide h5, .slide h6
 {
   color: #90A4AE;
@@ -136,7 +136,7 @@
   margin-left: 3em; 
 }
 
-.slideTocLink {
+.slideCatalogLink {
   cursor: pointer;  
 }
     

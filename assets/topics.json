@@ -47,7 +47,7 @@
     "https://www.meetup.com",
     "https://zoom.us",
     "https://www.slack.com",
-    "https://trello.com/guinetn",
+    "https://trello.com/guinetn(Trello: project organ/management)",
     "https://web.whatsapp.com",
     "https://www.instagram.com",
     "https://discord.com/channels/@me"
@@ -320,6 +320,8 @@
   "plane": ["https://www.sia.aviation-civile.gouv.fr(aviation-civile.gouv.fr)"],
 
   "jobs": [
+    "https://www.malt.fr",
+    "https://www.codeur.com",
     "https://www.freelancer.com/jobs",
     "https://verduron.com",
     "http://www.viadeo.com",
@@ -331,7 +333,7 @@
     "https://www.cremedelacreme.io",
     "https://pasteque.io",
     "https://welovedevs.com",
-    "eFinancialCareers.fr",
+    "https://eFinancialCareers.fr",
     "https://www.expectra.fr",
     "https://fr.indeed.com"
   ],

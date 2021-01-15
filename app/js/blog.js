@@ -3,13 +3,13 @@ import { utils } from "./utils.js";
 export class Blog {
   currentBlog = null;
 
-  constructor(blogPlaceHolder) {
-    this.currentBlog = document.getElementById(blogPlaceHolder);
+  constructor(blogArticlePlaceHolder) {
+    this.currentBlog = document.getElementById(blogArticlePlaceHolder);
   }
 
   hideBlog() {
     this.currentBlog.classList.remove("active");
-    setTableOfContentVisibility(".stickyBlog.active", "#slide_toc");
+    setTableOfContentVisibility(".stickyBlogArticle.active", "#catalog");
   }
 
   async showBlog(target) {
@@ -40,8 +40,8 @@ export class Blog {
       this.currentBlog.innerHTML = html;
       this.currentBlog.setAttribute("data-blog_file", blogFile);
       setTableOfContentVisibility(
-        ".stickyBlog.active",
-        "#slide_toc",
+        ".stickyBlogArticle.active",
+        "#catalog",
         "h1, h2, h3"
       );
     } catch (e) {

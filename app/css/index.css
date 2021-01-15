@@ -41,7 +41,13 @@ body {
   margin:0;
 }
 
-.logobka {
+.hcenter {
+  text-align: center;
+}  
+  
+
+
+.appLogo {
   float: left;
   margin: 3px 0 0 10px;
   background-image: url(../img/bka.png);
@@ -49,29 +55,54 @@ body {
   height: 38px;
 }
 
-.viewsListBox {
-  top: 90%;
-  background-color: rgb(255 204 0);
-  color:black;
+.viewsCatalog {
+  top: 90%; 
+  color:white;
 }
-.slidesToc {
+.viewsCatalogLink {
+  display: block;
+  color:white !important;
+  cursor: pointer;      
+}
+.catalogContainer > div:first-child {
+  background-color: #191818;
+  margin: -5px -5px 5px -5px;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.slidesCatalog {
   top: 60%;
-  background-color: rgb(161, 47, 47);
   font-size:0.6em;
   height: 800%;
   overflow: scroll;
 }
-.viewsListBox, .slidesToc {
+.viewsCatalog, .slidesCatalogContainer {
   display:none;
   position: absolute;
-  border: solid 1px gray;
+  border: solid 2px #9e9e9e;
+  background-color: #c13737;
   border-radius: 8px;
   padding: 5px;  
   text-align: left;
+  min-width: 400px;
+}
+.viewsCatalog { 
+  top: -3px;
+  left: -100px;  
 }
 
-#viewDetails:hover .slidesToc, .logobka:hover .viewsListBox {  
-  display:block;
+#viewsCatalogContainer {
+  position: absolute;    
+  width: 40px;    
+  border-top: double;
+  height: 20px;
+  cursor: pointer;    
+  bottom: -22px;
+  left: 222px;
+}
+#viewDetails:hover .slidesCatalogContainer, #viewsCatalogContainer:hover #viewsCatalog {  
+  display:block;  
 }
 
 

@@ -195,7 +195,7 @@ a:link {
 ||:focuswithin  |div:focus-within {...}: any div when any of its descendants gets the focus|										
 ||:invalid||
 |STRUCTURED|||										
-|| :first-child		 ||
+|| :first-child		 | Apply if IT IS the first child of its parent |
 || :last-child		 |li:last-child { border-bottom: 0; }|
 || :first-of-type()	 ||
 || :nth-of-type()	 ||
@@ -248,6 +248,20 @@ article p:first-of-type:first-line {
   background: yellow;
   color: black;
 }
+
+How to change css of another element on hover
+/* If the cube is directly inside the container:*/
+#container:hover > #cube { background-color: yellow; }
+
+/* If cube is next to (after containers closing tag) the container:*/
+#container:hover + #cube { background-color: yellow; }
+
+/* If the cube is somewhere inside the container:*/
+#container:hover #cube { background-color: yellow; }
+
+/* If the cube is a sibling of the container:*/
+#container:hover ~ #cube { background-color: yellow; }
+
 ```
 
 

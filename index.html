@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     
     <title>bka - brain kache</title>    
-    <meta name="description" content="my personal brain helper"/>
-    <meta name="keyword" content="my blog, my personal notes in one click">
+    <meta name="description" content="my personal blog + brain helper"/>
+    <meta name="keyword" content="my blog, my personal notes at light speed">
     
     <!-- Skins for code-prettier: https://raw.githack.com/google/code-prettify/master/styles/index.html  -->
     <!--   <link rel="stylesheet" type="text/css" href="app/css/from_others/codeskins/desert.css">           -->
@@ -33,27 +33,40 @@
     <span id="clock" title="click to set up alarms">……:……:……</span> 
     <div id="alarmSign"></div>
   </div>
-  <div class="logobka">﹀
-    <div class='viewsListBox'>
-      <strong>VIEWS…<br/>&nbsp;▼ Numpad Key [0-9]</strong>
-    </div>
+  <div class="appLogo">    
   </div>
   <span id="navIcons" data-info='-t'></span>   
   <div id="help" class="far fa-question-circle"></div>
+  
+  <div id='viewsCatalogContainer' class='viewsCatalogContainer '>
+    <div id='viewsCatalog' class='viewsCatalog catalogContainer'>
+      <div>
+        <div class='hcenter'>VIEWS CATALOG</div><small>&nbsp;▼ Numpad Key [0-9]</small>
+      </div>
+    </div>
+  </div>
+  
 </header>
 
 <div id="viewDetails">
   <div></div>
   <progress id='slideMeter' min=0 max=10 value="7"></progress> ﹀
-  <div class='slidesToc'>Slides…</div>
+  <div class='slidesCatalogContainer catalogContainer'>
+     <div>
+        <div class='hcenter'><small>SLIDES CATALOG</small></div>
+      </div>
+    <div class='slidesCatalog'></div>
+  </div>  
 </div>   
 
 <div id='main'>  
-  <div id='viewsPlaceHolder'></div>
+  <div id='viewsPlaceHolder'></div> 
 </div>
 
-<aside id="blogPlaceHolder" class="stickyBlog"></aside>
-<aside id="slide_toc" class="stickytoc"></aside>
+<!-- blog article -->
+<aside id="blogArticlePlaceHolder" class="stickyBlogArticle"></aside>
+<!-- Table of content for blog articles or current slide -->
+<aside id="catalog" class="stickyCatalog"></aside>
 
 <div id="snackbar"></div>  
 

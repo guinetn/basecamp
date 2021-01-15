@@ -11,20 +11,20 @@ export class Bka extends Blog {
   views = []; // [{ id:0, dom: null, name: '', slideId: 0 }, …]  slideId allow to retrieve the last slide viewed before leaving the view
   viewDetails = null;
 
+  slides = [];
   currentSlideId = 0;
   // When [→] is pressed we need to know if the current view slide have been loaded. Load the view slide if names are differents
   currentSlidesFile = null;
   slideHasError = false;
   slidesVisible = null;
-  slides = [];
-  slidesToc = null;
   slideMeter = null;
 
+  // For automatic text copy
   isMouseDown = false;
   mouseDownTime = null;
 
   constructor() {
-    super("blogPlaceHolder");
+    super("blogArticlePlaceHolder");
 
     // Get views[]
     document
@@ -36,13 +36,12 @@ export class Bka extends Blog {
     else console.log("Views not found");
 
     this.viewDetails = document.getElementById("viewDetails");
-    this.slidesToc = document.querySelector(".slidesToc");
     this.slideMeter = document.getElementById("slideMeter");
 
     // RENDER topics in views
     utils.downloadJsonFile(config.topicsFile, null, this.extractTopics);
     // RENDER views[]
-    this.renderViewsList();
+    this.renderViewsCatalog();
 
     // Init components
     if (slideShow) slideShow.init();
@@ -126,40 +125,53 @@ export class Bka extends Blog {
     this.slideMeter.value = 1;
     this.slideMeter.max = this.slideHasError ? 0 : this.slides.length;
 
-    this.renderSlidesToc();
+    this.renderSlidesCatalog();
     this.renderViewDetails();
   }
 
   /* Render views's list
-  00. BLOG 📂
+  00. BLOG
   01. Home
   02. Computer Science
   ...*/
-  renderViewsList() {
-    let viewsListBox = document.querySelector(".viewsListBox");
-
-    [...document.querySelectorAll(".view")].forEach((v, i) => {
-      [...v.querySelectorAll("h1")].map((x) => {
-        let div = document.createElement("div");
-        let key = ("0" + i).slice(-2);
-        if (i < 10) key = `${key}`;
-        div.innerHTML = `${key}. ${x.innerText}`;
-
-        viewsListBox.appendChild(div);
-      });
-    });
+  renderViewsCatalog() {
+    const source = [...document.querySelectorAll(".view")];
+    this.renderCatalog(
+      source,
+      ".viewsCatalog",
+      "data-viewid",
+      "viewsCatalogLink"
+    );
   }
 
-  renderSlidesToc() {
-    this.slidesToc.innerHTML = null;
+  renderSlidesCatalog() {
+    // Called each time a view is changed (has a new fetched child )
+    this.renderCatalog(
+      this.slides,
+      ".slidesCatalog",
+      "data-slideid",
+      "slideCatalogLink",
+      true
+    );
+  }
 
-    this.slides.forEach((s, i) => {
+  renderCatalog(
+    source,
+    destination,
+    attributeToSet,
+    classToSet,
+    clearDestination = false
+  ) {
+    const catalog = document.querySelector(destination);
+    if (clearDestination) catalog.innerHTML = null;
+
+    source.forEach((s, i) => {
       [...s.querySelectorAll("h1")].map((x) => {
         let div = document.createElement("div");
-        div.className = "slideTocLink";
-        div.setAttribute("data-slideid", i);
         div.innerText = `${("0" + (1 + i)).slice(-2)}. ${x.innerText}`;
-        this.slidesToc.appendChild(div);
+        div.setAttribute(attributeToSet, i);
+        div.className = classToSet;
+        catalog.appendChild(div);
       });
     });
   }
@@ -226,6 +238,13 @@ export class Bka extends Blog {
       : viewId;
   }
 
+  selectViewAndOpenSlide(stepOrIndex, openSlide) {
+    this.selectView(stepOrIndex);
+    if (openSlide) 
+      this.changeSlide(+1);
+  }
+
+  // stepOrIndex: prev, next or viewId
   selectView(stepOrIndex, keyEvent = null) {
     this.currentView = this.views[this.scaleViewId(stepOrIndex)];
     this.showView(keyEvent);
@@ -368,7 +387,7 @@ export class Bka extends Blog {
         ? s.classList.add("current")
         : s.classList.remove("current")
     );
-    setTableOfContentVisibility(".slide.current", "#slide_toc");
+    setTableOfContentVisibility(".slide.current", "#catalog");
   }
 
   renderViewDetails() {

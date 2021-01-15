@@ -32,7 +32,7 @@ ul#blog_items li {
 }
 
 
-.stickyBlog {
+.stickyBlogArticle {
   display: none; 
   position: fixed;
   top: 3.2em;

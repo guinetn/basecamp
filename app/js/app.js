@@ -18,7 +18,7 @@ import { slideShow } from "./slideshow.js";
     utils.init(app);
 
     document.addEventListener("mousedown", onMouseDown);
-    document.addEventListener("mouseup", onMouseUp);
+    document.addEventListener("mouseup", onMouseUp);    
     document.addEventListener("keydown", onKeydown);
     document.addEventListener("click", onClick);
     window.addEventListener("message", dispatchEvents);
@@ -67,7 +67,7 @@ import { slideShow } from "./slideshow.js";
   function onMouseUp(e) {
     app.onMouseUp(e);
   }
-
+  
   function onKeydown(e) {
     if (
       utils.alarmVisible ||
@@ -119,7 +119,12 @@ import { slideShow } from "./slideshow.js";
       app.hideBlog();
       if (utils.alarmVisible) utils.alarmOpenClose();
     } 
-    else if (e.target.matches(".slideTocLink")) {
+    else if (e.target.matches(".viewsCatalogLink")) {     
+      const linkWidthAreaToOpenSlides = 35; 
+      app.selectViewAndOpenSlide(e.target.dataset.viewid, e.offsetX < linkWidthAreaToOpenSlides
+      );
+    } 
+    else if (e.target.matches(".slideCatalogLink")) {
       // Slides ToC clicked: navigate to clicked slide
       app.showSlide(e.target.dataset.slideid);
     } else if (e.target.matches("#help")) {
@@ -175,7 +180,7 @@ import { slideShow } from "./slideshow.js";
       const horizontal = Math.abs(vector.x) > Math.abs(vector.y);
       let back = horizontal ? vector.x < 0 : vector.y < 0;                        
       if (horizontal
-        ) app.selectView(vector.x / Math.abs(vector.x));
+        ) app.selectView( (vector.x / Math.abs(vector.x)) ==-1 ? 'prev' : 'next');
       touchStart = undefined;
     }, false );
       
