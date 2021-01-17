@@ -173,8 +173,7 @@ https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_o
 * ssh-add and ssh-agent, utilities to ease authentication by holding keys ready and avoid the need * to enter passphrases every time they are used.
 * ssh-keygen, a tool to inspect and generate the RSA, DSA and elliptic-curve keys that are used  for user and host authentication.
 * ssh-keyscan, which scans a list of hosts and collects their public keys.
-* sshd, the SSH server daemon.
-
+* sshd, the SSH server daemon (server for ssh connections)
 * sshd.exe            which is the SSH server component that must be running on the system being managed remotely
 * ssh.exe             which is the SSH client component that runs on the user's local system
 * ssh-keygen.exe      generates, manages and converts authentication keys for SSH
@@ -184,6 +183,7 @@ https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_o
 * sftp.exe            is the service that provides the Secure File Transfer Protocol, and runs over SSH
 * scp.exe             is a file copy utility that runs on SSH
 
+* stunnel             https://www.stunnel.org/ proxy designed to add TLS encryption functionality to existing clients and servers without any changes in the programs' code
 ## FORWARDING 
 
 * Local forwarding 

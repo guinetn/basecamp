@@ -78,6 +78,8 @@ download.md(assets/slides/computer_science/best_practices.md)
 ::::
 download.md(assets/slides/computer_science/design_patterns.md)
 ::::
+download.md(assets/slides/computer_science/messaging/_messaging.md)
+::::
 download.md(assets/slides/computer_science/antipatterns.md)
 ::::
 download.md(assets/slides/computer_science/hardware.md)

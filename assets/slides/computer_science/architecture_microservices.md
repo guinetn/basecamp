@@ -78,7 +78,7 @@ A service aggregating data from all other services and return desired results
 - maintain the eventual consistency of data without disturbing the microservices principals
 
 
-
+- https://github.com/AleksK1NG/Go-gRPC-RabbitMQ-microservice
 - https://medium.com/@muneeb.ahmed20/building-a-reporting-service-in-microservice-architecture-8d5bf3b90fb7
 - https://medium.com/@muneeb.ahmed20/6-questions-to-answer-before-moving-to-a-microservices-architecture-ad3cfd0e700f
 - https://medium.com/@muneeb.ahmed20/essentials-tools-for-microservices-architecture-f8a91c02909a

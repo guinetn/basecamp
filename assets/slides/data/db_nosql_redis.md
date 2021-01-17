@@ -2,8 +2,8 @@
 
 https://redis.io/
 
-key-value stores database: retrieved data if we know the exact key used to store it.
-Real time cache, simple
+Fast key/value database: retrieved data if we know the exact key used to store it.
+Real time cache, sessions storage 
 Data structure server
 
 Open source *in-memory data structure store*, used as a *database, cache, and message broker*

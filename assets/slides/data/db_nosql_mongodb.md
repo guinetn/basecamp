@@ -3,7 +3,7 @@
 http://www.mongodb.org/
 
 C++
-NoSQL - MongoDB (document-oriented database)
+NoSQL database (Document-oriented)
 Document Store (json): stores values (referred to as documents) in the form of encoded data. The choice of encoded format in MongoDB is JSON. This is powerful, because even if the data is nested inside JSON documents, it will still be queryable and indexable.
 Popular, powerful language, easy to integrate
 Schemaless (schema-free documents can have different structure) = no structure required

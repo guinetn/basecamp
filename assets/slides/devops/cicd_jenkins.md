@@ -11,7 +11,6 @@ Software build using build systems such as Gradle, Maven, and more.
 Automation testing using test frameworks such as Nose2, PyTest, Robot, Selenium, and more.  
 Execute test scripts (using Windows terminal, Linux shell...)
 Test automation with Selenium, etc.
-
 ### Jenkins Pipeline
 
 pipeline { 

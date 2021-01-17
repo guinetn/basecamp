@@ -4,13 +4,18 @@ Secure against an adversary with enormous amounts of computational power. Estima
 
 To protect against pirate, nation-state adversary ("NSA" for short..) 
 
+## PKI - Public key infrastructure 
+Umbrella term for all of the stuff we need in order to issue, distribute, store, use, verify, revoke, and otherwise manage and interact with certificates and keys. 
+
 ## ASYMMETRIC CRYPTOGRAPHY (public-key encryption)
-For authentication
+Uses key pairs for authentication (certificates and PKI)
+
+Security of a public key cryptosystem depends on keeping private keys private.
 
 |A pair of keys|||
 |---|---|---|
-|Public key|Distribute to anyone|To encrypt|
-|Private key|hidden from public. Don’t share it with anyone.|To decrypt|
+|Public key|Distributed and shared to anyone (the world)|To encrypt some data. The only way to decrypt that data is with the corresponding private key|
+|Private key|Hidden from public. Don’t share it with anyone.|To decrypt. Private key allow to sign some data. Anyone who knows the corresponding public key can verify the signature, proving which private key produced it.|
 
 Asymmetric: it's a one-way trip
 Alice can send messages encrypted with your public key to you, but neither of your keys will help you send an encrypted message to Alice.

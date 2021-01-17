@@ -132,4 +132,6 @@ download.md(assets/slides/cloud/azure.md)
 ::::
 download.md(assets/slides/cloud/google_cloud.md)
 ::::
+download.md(assets/slides/cloud/vps.md)
+::::
 

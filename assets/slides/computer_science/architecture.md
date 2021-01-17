@@ -8,6 +8,8 @@ download.md(assets/slides/computer_science/architecture_serverless.md)
 ::::
 download.md(assets/slides/computer_science/architecture_event_driven.md)
 ::::
+download.md(assets/slides/computer_science/architecture_hexagonal.md)
+::::
 download.md(assets/slides/computer_science/architecture_mvc_mvvm_mvp.md)
 ::::
 download.md(assets/slides/computer_science/architecture_client_server.md)
