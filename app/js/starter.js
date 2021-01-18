@@ -8,23 +8,23 @@ import { slideShow } from "./slideshow.js";
   let app = null;
   let touchStart = undefined;
 
-  // Get Views File (visual parts of the app)
+  // Get books file (visual parts of the app)
   document.addEventListener("DOMContentLoaded", function () {
-    utils.downloadTextFile(config.viewsFile, null, initApplication);
+    utils.downloadTextFile(config.booksFile, null, initApplication);
   });
 
   // INIT CUSTOMIZED VIEWS
-  function initApplication(options, viewsContent) {
-    document.querySelector(config.viewsContainer).innerHTML = viewsContent;
+  function initApplication(options, booksLoaded) {
+    document.querySelector(config.booksContainer).innerHTML = booksLoaded;
 
     app = new App();
     utils.init();
     utils.addHeartBeat(app);
 
-    listenForEvents();    
-    initViews();
+    listenForEvents();
+    initBooks();
     initComponents();
-    setTopicsLayout();    
+    setTopicsLayout();
   }
 
   // Manage app events (keyboard, mouse)
@@ -42,38 +42,34 @@ import { slideShow } from "./slideshow.js";
     if (slideShow) slideShow.showSlides();
   }
 
-  // Some views require an initialization
-  function initViews() {
+  // Some books require an initialization
+  function initBooks() {
     tools_init();
   }
 
-  // Init the layout of the 'topics' part of each view
+  // Init the layout of the 'topics' part of each book
   function setTopicsLayout() {
-    // Each view has a <div class="topics"> containing the topics
-    // Set the masonry layout to each view 'topics' element
+    // Each book has a <div class="topics"> containing the topics
+    // Set the masonry layout to each book's 'topics' element
     utils.setMasonryLaout(".topics", config.masonryColumns);
   }
 
   function showHelp() {
-    utils.downloadTextFile(
-      config.help,
-      null,
-      function (options, helpContent) {
-        const helpContainer = document.createElement("div");
+    utils.downloadTextFile(config.help, null, function (options, helpContent) {
+      const helpContainer = document.createElement("div");
 
-        let help = app.markdownToHtml(helpContent, false);
-        // Get help elements ##xxxxx## to replace with configuration values
-        const sharps = [...help.matchAll(/##(?<SHARP>[^#]*)##/gi)].map(
-          (x) => x.groups["SHARP"]
-        );
-        // Replace '##xxxxx##' by their values from 'config'
-        sharps.forEach(
-          (x) => (help = help.replace(`##${x}##`, `${x}: ${config[x]}`))
-        );
-        helpContainer.innerHTML = help;
-        utils.modalShow(`BKA help`, helpContainer);
-      }
-    );
+      let help = app.markdownToHtml(helpContent, false);
+      // Get help elements ##xxxxx## to replace with configuration values
+      const sharps = [...help.matchAll(/##(?<SHARP>[^#]*)##/gi)].map(
+        (x) => x.groups["SHARP"]
+      );
+      // Replace '##xxxxx##' by their values from 'config'
+      sharps.forEach(
+        (x) => (help = help.replace(`##${x}##`, `${x}: ${config[x]}`))
+      );
+      helpContainer.innerHTML = help;
+      utils.modalShow(`BKA help`, helpContainer);
+    });
   }
 
   function dispatchEvents(e) {
@@ -99,41 +95,35 @@ import { slideShow } from "./slideshow.js";
     )
       return;
 
-    // Send key events to the app view and slide
+    // Send key events to the app book and slide
     app.keydownEvent(e);
   }
 
   // Manage app's clicks events
   function onClick(e) {
-    if (helpClicked(e)) 
-      return;
-    else if (closeModal(e)) 
-      return;
-    else 
-      app.onClick(e);
+    if (helpClicked(e)) return;
+    else if (closeModal(e)) return;
+    else app.onClick(e);
   }
-  
-   function helpClicked(e) {
+
+  function helpClicked(e) {
     if (!e.target.matches("#help")) return false;
 
-    if (utils.isModalVisible()) 
-      utils.modalClose();
-    else 
-      showHelp();
+    if (utils.isModalVisible()) utils.modalClose();
+    else showHelp();
 
     return true;
   }
-  
-    // click on the modalContainer to close it
+
+  // click on the modalContainer to close it
   function closeModal(e) {
     if (e.target.className != "modalContainer visible") return false;
     utils.modalClose();
     return true;
   }
-  
+
   // start touch events
-  function startTouchEvents(e) {      
-    
+  function startTouchEvents(e) {
     addEventListener(
       "touchstart",
       (event) => {
@@ -164,11 +154,10 @@ import { slideShow } from "./slideshow.js";
         const horizontal = Math.abs(vector.x) > Math.abs(vector.y);
         let back = horizontal ? vector.x < 0 : vector.y < 0;
         if (horizontal)
-          app.selectView(vector.x / Math.abs(vector.x) == -1 ? "prev" : "next");
+          app.selectBook(vector.x / Math.abs(vector.x) == -1 ? "prev" : "next");
         touchStart = undefined;
       },
       false
     );
   }
-  
 })();

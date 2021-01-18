@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" rel="preload" href="app/css/index.css">
     <link rel="stylesheet" type="text/css" rel="preload" href="app/css/masonry.css">
     <link rel="stylesheet" type="text/css" rel="preload" href="app/css/modalbox.css">
-    <link rel="stylesheet" type="text/css" rel="preload" href="app/css/view_toolbox.css">
+    <link rel="stylesheet" type="text/css" rel="preload" href="app/css/books_css/toolbox.css">
     <link rel="stylesheet" type="text/css" rel="preload" href="app/css/slides.css">    
     <link rel="stylesheet" type="text/css" rel="preload" href="app/css/catalog.css">    
   </head>
@@ -37,19 +37,19 @@
   <span id="navIcons" data-info='-t'></span>   
   <div id="help" class="far fa-question-circle"></div>
   
-  <div class='viewsCatalogContainer'>
-    <div class='viewsCatalog catalogContainer'>
+  <div class='booksCatalogContainer'>
+    <div class='booksCatalog catalogContainer'>
       <div class='catalogTitleBgColor'>
-        <div class='hcenter'>VIEWS CATALOG</div><small>&nbsp;▼ Numpad Key [0-9]</small>
+        <div class='hcenter'>BOOKS CATALOG</div><small>&nbsp;▼ Numpad Key [0-9]</small>
       </div>
     </div>
   </div>
   
 </header>
 
-<div id="viewDetails">
-  <div class='viewDetailsHoverTrigger'></div>       
-  <div id='viewTitlePlaceholder'></div>
+<div id="bookDetails">
+  <div class='bookDetailsHoverTrigger'></div>       
+  <div id='bookTitlePlaceholder'></div>
   <progress id='slideMeter' min=0 max=10 value="7"></progress>
   <div class='slidesCatalogContainer catalogContainer'>
     <div class='catalogTitleBgColor'>
@@ -60,7 +60,7 @@
 </div>   
 
 <div id='main'>  
-  <div id='viewsPlaceHolder'></div> 
+  <div id='books'></div> 
 </div>
 
 <!-- blog article -->
@@ -109,7 +109,7 @@
 <script rel="preload" type="module" src="app/js/showdown.extension.bka.js"></script>
 <script src="app/js/catalog.js"></script>
 <!-- CUSTOM SCRIPTS BY VIEWS -->
-<script src="app/js/views_scripts/tools_view.js"></script>
+<script src="app/js/books_scripts/tools.js"></script>
 
 <!-- MAIN SCRIPT -->
 <script type="module" src="app/js/starter.js"></script>

@@ -1,4 +1,4 @@
-  // renderSlidesCatalog & renderViewsCatalog
+  // renderSlidesCatalog & renderBooksCatalog
   function renderCatalog(
     source,
     target,

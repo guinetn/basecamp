@@ -4,16 +4,16 @@ import { Blog } from "./blog.js";
 import { slideShow } from "./slideshow.js";
 
 export class App extends Blog {
-  // Pointer to current view in views[]
-  currentView = null;
-  // Contains DOM elements matching the config.viewsCssSelector '.view'
-  // Defined in config.viewsFile (assets/views.html)
-  views = []; // [{ id:0, dom: null, name: '', slideId: 0 }, …]  slideId allow to retrieve the last slide viewed before leaving the view
-  viewDetails = null;
+  // Pointer to current book in books[]
+  currentBook = null;
+  // Contains DOM elements matching the config.booksCssSelector '.book'
+  // Defined in config.booksFile (assets/books.html)
+  books = []; // [{ id:0, dom: null, name: '', slideId: 0 }, …]  slideId allow to retrieve the last slide viewed before leaving the book
+  bookDetails = null;
 
   slides = [];
   currentSlideId = 0;
-  // When [→] is pressed we need to know if the current view slide have been loaded. Load the view slide if names are differents
+  // When [→] is pressed we need to know if the current book slide have been loaded. Load the book's slide if names are differents
   currentSlidesFile = null;
   slideHasError = false;
   slidesVisible = null;
@@ -26,28 +26,29 @@ export class App extends Blog {
   constructor() {
     super(".blogArticleContainer");
 
-    // Get views[]
+    // Get books[]
     document
-      .querySelectorAll(config.viewsCssSelector)
+      .querySelectorAll(config.booksCssSelector)
       .forEach((v, i) =>
-        this.views.push({ id: i, name: v.id, dom: v, slideId: 0 })
+        this.books.push({ id: i, name: v.id, dom: v, slideId: 0 })
       );
-    if (this.views.length > 0) this.currentView = this.views[0];
-    else console.log("Views not found");
+    if (this.books.length > 0) this.currentBook = this.books[0];
+    else
+      console.log(`Books not found with selector ${config.booksCssSelector}`);
 
-    this.viewDetails = document.getElementById("viewDetails");
+    this.bookDetails = document.getElementById("bookDetails");
     this.slideMeter = document.getElementById("slideMeter");
 
-    // RENDER topics in views
+    // RENDER topics in books
     utils.downloadJsonFile(config.topicsFile, this, this.extractTopics);
-    // RENDER views[]
-    this.renderViewsCatalog();
+    // RENDER books[]
+    this.renderBooksCatalog();
 
     // Init components
     if (slideShow) slideShow.init();
     // Set the link to manually open the blog items folder on github
     document.getElementById("blogRepoLink").href = config.blogRepo;
-    
+
     this.loadBlogArticles();
   }
 
@@ -128,25 +129,29 @@ export class App extends Blog {
     this.slideMeter.max = this.slideHasError ? 0 : this.slides.length;
 
     this.renderSlidesCatalog();
-    this.renderViewDetails();
+    this.renderBookDetails();
   }
 
-  /* Render views's list
+  /* Render books's list
   00. BLOG
   01. Home
   02. Computer Science
   ...*/
-  renderViewsCatalog() {
-    const source = [...document.querySelectorAll(".view")];
-    renderCatalog( source, ".viewsCatalog", "data-viewid", "viewsCatalogLink" );
+  renderBooksCatalog() {
+    const source = [...document.querySelectorAll(".book")];
+    renderCatalog(source, ".booksCatalog", "data-bookid", "booksCatalogLink");
   }
 
   renderSlidesCatalog() {
-    // Called each time a view is changed (has a new fetched child )
-    renderCatalog( this.slides, ".slidesCatalog", "data-slideid", "slideCatalogLink", true );
+    // Called each time a book is changed (has a new fetched child )
+    renderCatalog(
+      this.slides,
+      ".slidesCatalog",
+      "data-slideid",
+      "slideCatalogLink",
+      true
+    );
   }
-
-
 
   showSlide(slideid) {
     this.changeSlide(slideid - this.currentSlideId);
@@ -170,80 +175,78 @@ export class App extends Blog {
 
   // Manage key events
   keydownEvent(e) {
-    this.onViewKeydown(e);
-    // if view has not used the event, try with slide
+    this.onBookKeydown(e);
+    // if book hasn't catched the event, try with slide
     if (!e.defaultPrevented) this.onSlideKeydown(e);
   }
 
-  onViewKeydown(e) {
+  onBookKeydown(e) {
     if (e.shiftKey) return;
 
-    // Keys = shortcuts to views
+    // Keys = shortcuts to books
     let key = e.key.toLowerCase();
     if (!e.ctrlKey && !e.altKey) {
-      // 1st Letter of the view
+      // 1st Letter of the book
       if ("a" <= key && key <= "z") {
-        // user press a key [a-z]: find first view having a name starting with that letter
-        let view = this.views.filter(
-          (view) => view.name.slice(0, key.length) == key
-        );
-        if (view.length == 0) return;
-        this.selectView(view[0].id, e);
+        // user press a key [a-z]: find first book having a name starting with that letter
+        let book = this.books.filter((aBook) => aBook.name.slice(0, key.length) == key);
+        if (book.length == 0) return;
+        this.selectBook(book[0].id, e);
       } else if ("0" <= key && key <= "9") {
         // Numpad keys
-        this.selectView(e.key, e);
+        this.selectBook(e.key, e);
       }
     }
 
-    // Navigate in views by [+] or [CTRL + →]
+    // Navigate in books by [+] or [CTRL + →]
     if (e.key == "+" || (e.ctrlKey && e.keyCode == 39) /*right*/) {
-      this.selectView("next", e);
+      this.selectBook("next", e);
     }
-    // Navigate in views by "-" or [CTRL + ←]
+    // Navigate in books by "-" or [CTRL + ←]
     else if (e.key == "-" || (e.ctrlKey && e.keyCode == 37) /*left*/) {
-      this.selectView("prev", e);
+      this.selectBook("prev", e);
     } else if (
       e.ctrlKey ||
-      ![...this.views].some((v) => v.name == this.currentView.name)
+      ![...this.books].some((v) => v.name == this.currentBook.name)
     )
-      return; // no key match a view name
+      return; // no key match a book name
   }
 
-  scaleViewId(stepOrIndex) {
-    let viewId = parseInt(stepOrIndex, 10);
-    if (isNaN(viewId)) {
+  scaleBookId(stepOrIndex) {
+    let bookId = parseInt(stepOrIndex, 10);
+    if (isNaN(bookId)) {
       if (stepOrIndex == "next") stepOrIndex = 1;
       if (stepOrIndex == "prev") stepOrIndex = -1;
-      viewId = this.currentView.id + stepOrIndex;
+      bookId = this.currentBook.id + stepOrIndex;
     }
-    return viewId < 0
-      ? this.views.length - 1
-      : this.views.length <= viewId
+    return bookId < 0
+      ? this.books.length - 1
+      : this.books.length <= bookId
       ? 0
-      : viewId;
+      : bookId;
   }
 
-  selectViewAndOpenSlide(stepOrIndex, openSlide) {
-    this.selectView(stepOrIndex);
+  selectBookAndOpenSlide(stepOrIndex, openSlide) {
+    this.selectBook(stepOrIndex);
     if (openSlide) this.changeSlide(+1);
   }
 
-  // stepOrIndex: prev, next or viewId
-  selectView(stepOrIndex, keyEvent = null) {
-    this.currentView = this.views[this.scaleViewId(stepOrIndex)];
-    this.showView(keyEvent);
+  // stepOrIndex: prev, next or bookId
+  selectBook(stepOrIndex, keyEvent = null) {
+    this.currentBook = this.books[this.scaleBookId(stepOrIndex)];
+    this.showBook(keyEvent);
   }
 
-  showView(keyEvent = null) {
+  showBook(keyEvent = null) {
     if (keyEvent) keyEvent.preventDefault();
     utils.scrollTo(0);
     // hide slides
     this.toggleSlidesVisibility(false);
-    // display view
-    this.views.forEach((view) =>
-      view.name == this.currentView.name
-        ? view.dom.classList.add("active")
-        : view.dom.classList.remove("active")
+    // display book
+    this.books.forEach((book) =>
+      book.name == this.currentBook.name
+        ? book.dom.classList.add("active")
+        : book.dom.classList.remove("active")
     );
   }
 
@@ -252,10 +255,10 @@ export class App extends Blog {
       // [ESC] or [shift]	key
       this.toggleSlidesVisibility(false);
       if (this.currentSlideId > 0) this.currentSlideId--; // to come back on the same slide after [esc]] (as we do [→] to show it again, we don't want slide+0)
-      this.currentView.slideId = Math.min(
+      this.currentBook.slideId = Math.min(
         this.currentSlideId + 1,
         this.slides.length - 1
-      ); // memo thz slide id to retrieve after anothers view navigation and come back
+      ); // memo thz slide id to retrieve after anothers book navigation and come back
     } else {
       switch (e.keyCode) {
         case 37: // [←] key
@@ -269,17 +272,17 @@ export class App extends Blog {
         case 70: // [F]ullscreen key
           if (this.slidesVisible)
             utils.fullScreen(this.slides[this.currentSlideId]);
-          else utils.fullScreen(this.currentView.dom);
+          else utils.fullScreen(this.currentBook.dom);
           break;
       }
     }
   }
   async changeSlide(direction) {
-    // If view has change and dom has slides of another view, load the current view slides
-    if (this.currentSlidesFile != this.currentView.name) {
+    // If book has change and dom has slides of another book, load the current book's slides
+    if (this.currentSlidesFile != this.currentBook.name) {
       this.createSlidesInDom(config.slidesContainer);
-      // Restore slideId from a previous visit of the current view
-      this.currentSlideId = this.currentView.slideId;
+      // Restore slideId from a previous visit of the current book
+      this.currentSlideId = this.currentBook.slideId;
       return;
     }
 
@@ -331,7 +334,7 @@ export class App extends Blog {
   createSlidesInDom(slidesContainer) {
     this.deleteExistingSlides();
 
-    this.currentSlidesFile = this.currentView.name;
+    this.currentSlidesFile = this.currentBook.name;
 
     this.downloadMainSlide(
       `${config.slidesFolder}/${this.currentSlidesFile}`,
@@ -365,7 +368,7 @@ export class App extends Blog {
   }
   renderCurrentSlide() {
     this.slideMeter.value = this.currentSlideId + 1;
-    this.renderViewDetails();
+    this.renderBookDetails();
     this.slides.forEach((s, i) =>
       this.slidesVisible && i == this.currentSlideId
         ? s.classList.add("current")
@@ -374,13 +377,15 @@ export class App extends Blog {
     renderScrollSyncCatalog(".slide.current", ".contentCatalog");
   }
 
-  renderViewDetails() {
-    const viewTitle = this.currentView.name.toUpperCase().replace("_", " ");
+  renderBookDetails() {
+    const bookTitle = this.currentBook.name.toUpperCase().replace("_", " ");
     const slideNav = this.slideHasError
       ? "⚠️"
       : ` <sup><small>${this.slideMeter.value}/${this.slides.length}</small></sup>`;
-    // Set View Title
-    this.viewDetails.querySelector("#viewTitlePlaceholder").innerHTML = `${viewTitle} ${slideNav}`;
+    // Set book title
+    this.bookDetails.querySelector(
+      "#bookTitlePlaceholder"
+    ).innerHTML = `${bookTitle} ${slideNav}`;
   }
 
   toggleSlidesVisibility(forceVisibility) {
@@ -390,8 +395,8 @@ export class App extends Blog {
     else this.slidesVisible = !this.slidesVisible;
 
     this.slidesVisible
-      ? this.viewDetails.classList.add("visible")
-      : this.viewDetails.classList.remove("visible");
+      ? this.bookDetails.classList.add("visible")
+      : this.bookDetails.classList.remove("visible");
 
     this.renderCurrentSlide();
   }
@@ -637,11 +642,7 @@ export class App extends Blog {
     this.isMouseDown = false;
     this.mouseDownStartTime = null;
   }
-  
-  
-  
-  
-  
+
   // Manage app's clicks events
   onClick(e) {
     if (this.reloadBlogArticles(e)) return;
@@ -649,8 +650,8 @@ export class App extends Blog {
     else if (this.showBlogArticle(e)) return;
     else if (this.copyAction(e)) return;
     else if (this.emptyClickToClose(e)) return;
-    else if (this.openView(e)) return;
-    else if (this.slideNavigation(e)) return;        
+    else if (this.openBook(e)) return;
+    else if (this.slideNavigation(e)) return;
     else if (this.showAlarmsPanel(e)) return;
     else this.alarmChosen(e);
   }
@@ -717,9 +718,9 @@ export class App extends Blog {
   emptyClickToClose(e) {
     if (
       !(
-        e.target.matches(`${config.viewsCssSelector}.active`) ||
+        e.target.matches(`${config.booksCssSelector}.active`) ||
         e.target.parentNode.matches(
-          `${config.viewsCssSelector}.active, .topics`
+          `${config.booksCssSelector}.active, .topics`
         )
       )
     )
@@ -730,12 +731,12 @@ export class App extends Blog {
     return true;
   }
 
-  openView(e) {
-    if (!e.target.matches(".viewsCatalogLink")) return false;
+  openBook(e) {
+    if (!e.target.matches(".booksCatalogLink")) return false;
 
     const linkWidthAreaToOpenSlides = 35;
-    this.selectViewAndOpenSlide(
-      e.target.dataset.viewid,
+    this.selectBookAndOpenSlide(
+      e.target.dataset.bookid,
       e.offsetX < linkWidthAreaToOpenSlides
     );
     return false;
@@ -753,7 +754,7 @@ export class App extends Blog {
       !(
         e.target.matches("#clock") ||
         e.target.matches("#alarm") ||
-        (utils.alarmVisible && e.target.className == "active view")
+        (utils.alarmVisible && e.target.className == "active book")
       )
     )
       return false;
@@ -783,9 +784,8 @@ export class App extends Blog {
 
     return true;
   }
-  
+
   loadBlogArticles() {
     utils.fetchGithubFolder(config.blogRepoApi, this.listBlogArticles);
   }
-
 }

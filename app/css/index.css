@@ -5,9 +5,9 @@
 :root {
   --headerBg: #272727;
   
-  --viewBg: #272727;  
-  --viewTitleFg: #fff;
-  --viewTitleBg: #c13737;
+  --bookBg: #272727;  
+  --bookTitleFg: #fff;
+  --bookTitleBg: #c13737;
 
   --topicTitleFg: aqua; /* #0ebeff*/
   --topicLinkFg: #FFF;
@@ -65,12 +65,12 @@ body {
 
 /* VIEWS */
 
-.view > * {
+.book > * {
    padding-left: 15px; 
 }
-.view {
+.book {
   display:none;
-  background-color: var(--viewBg);
+  background-color: var(--bookBg);
   width: 100%;
   min-height: 100%;
   display: none;
@@ -80,18 +80,18 @@ body {
   padding: 5px;
   margin:0;
 }
-.view h4,h5,h6 {
+.book h4,h5,h6 {
   text-align: left;
 }
-.view ul {
-  color: var(--viewTitleFg);
+.book ul {
+  color: var(--bookTitleFg);
   margin: 1.4em 0 0.3em 0;
 }
 
-.view > h1 {
-    color: var(--viewTitleFg);
+.book > h1 {
+    color: var(--bookTitleFg);
     margin: 1.4em 0 0.3em -6px;
-    background-color: var(--viewTitleBg);
+    background-color: var(--bookTitleBg);
     width: fit-content;   
     padding: 0 50px 7px 10px;
     border-radius: 0 8px 8px 0;
@@ -99,7 +99,7 @@ body {
     box-shadow: 10px 1px 70px rgb(169 169 169 / 63%);
 }
 
-.viewDetailsHoverTrigger {    
+.bookDetailsHoverTrigger {    
     width: 40px;
     border-top: double;        
     margin: 0 auto;        
@@ -160,7 +160,7 @@ a.downloadError {
 .topicLink:visited, .blogArticleLink:visited, .blogArticleLinkEdit:visited {
   color: var(--topicLinkFg);
 }    
-.view .topicLink {
+.book .topicLink {
   font-size: small;
 }
 
@@ -205,20 +205,20 @@ a.downloadError {
   left: 6.5em;
   font-size: 1.5em;
 }
-#viewDetails {  
+#bookDetails {  
   display: none; 
   position: absolute;
   left: 0;
   top: 0.2em;
   font-size: 5.1em;
-  color: var(--viewTitleFg);
-  animation: viewDetailsAnimation ease 0.25s;  
+  color: var(--bookTitleFg);
+  animation: bookDetailsAnimation ease 0.25s;  
   z-index: 15;
   opacity: 0;
   text-align: center;
   cursor: pointer;
 }
-#viewDetails.visible {    
+#bookDetails.visible {    
   display: block;
   left: 50%;
   top: 0;
@@ -226,7 +226,7 @@ a.downloadError {
   opacity: 1;  
   position: fixed;
   font-size: x-large;
-  background-color: var(--viewTitleBg);
+  background-color: var(--bookTitleBg);
   padding: 0 20px;
   border-bottom-left-radius: 18px;
   border-bottom-right-radius: 18px;
@@ -234,12 +234,12 @@ a.downloadError {
   border-left: 1px solid #988585;
   border-right: 1px solid #cea0a0;
 }
-@keyframes viewDetailsAnimation {
+@keyframes bookDetailsAnimation {
   0% { left:0; top:2em;  border-radius: 0 8px 8px 0; border: solid 1px gray; }
   20% { left:20%; top:2em; opacity:0.4; font-size: large;  border: solid 1px gray; }
   100% { left:50%; top:0; font-size: x-large;  border: solid 1px gray;}
 }
-#viewDetails progress {
+#bookDetails progress {
   position:relative;
   top:-17px;  
   height: 15px;
@@ -278,59 +278,59 @@ em {
 
 /* VIEWS */
 
-.view #home {
+.book #home {
   background-color: var(--homeBg);
 }
 
-.view #web {
+.book #web {
   background-color: var(--webBg);
 }
 
-.view #cloud {
+.book #cloud {
   background-color: var(--cloudBg);
 }
 
-.view #code {
+.book #code {
   background-color: var(--codeBg);
 }
 
-.view #mobiles {
+.book #mobiles {
   background-color: var(--mobilesBg);
 }
 
-.view #math {
+.book #math {
   background: var(--mathBg);  
 }
 
-.view #ia {
+.book #ia {
   background: var(--iaBg);  
 }
 
-.view #dataviz {
+.book #dataviz {
   background: var(--datavizBg);  
 }
 
-.view #sciences {
+.book #sciences {
   background: var(--sciencesBg);  
 }
 
-.view #aviation {
+.book #aviation {
   background: var(--aviationBg);  
 }
 
-.view #securisation {
+.book #securisation {
   background: var(--securisationBg);  
 }
 
-.view #money {
+.book #money {
   background: var(--moneyBg);  
 }
 
-.view #job {
+.book #job {
   background: var(--jobBg);  
 }
 
-.view #toolbox {
+.book #toolbox {
   background: var(--toolboxBg);  
 }
 

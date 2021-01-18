@@ -13,23 +13,23 @@
 
 /* VIEWS */
 
-/* .viewsCatalog {
+/* .booksCatalog {
   top: 90%; 
   color:white;
 } */
-.viewsCatalogLink {
+.booksCatalogLink {
   display: block;
   color:white !important;
   cursor: pointer;      
 }
 
 
-.viewsCatalog { 
+.booksCatalog { 
   top: -3px;
   left: -100px;  
 }
 
-.viewsCatalogContainer {
+.booksCatalogContainer {
   position: absolute;    
   width: 40px;    
   border-top: double;
@@ -39,7 +39,7 @@
   left: 222px;
 }
 
-.viewsCatalog, .slidesCatalogContainer {
+.booksCatalog, .slidesCatalogContainer {
   display:none;
   position: absolute;
   border: solid 2px #9e9e9e;
@@ -63,7 +63,7 @@
   left: -25px; 
 }
 
-#viewDetails:hover .slidesCatalogContainer, .viewsCatalogContainer:hover .viewsCatalog {  
+#bookDetails:hover .slidesCatalogContainer, .booksCatalogContainer:hover .booksCatalog {  
   display:block;  
 }
 

@@ -423,3 +423,12 @@ modifiers: out, in
 Number          Box<Number>           Box<Number>         Box<Number>
     ↑                 X                     ↑                   ↓
     int            Box<int>               Box<int>            Box<int>
+
+# Functor
+
+a data structure that you can map functions over with the purpose of lifting values into a wrapper, modifying them, and then putting them back into a wrapper. It’s a design pattern that defines semantics for how fmap should work. 
+
+purpose is to create a context or an abstraction that allows you to securely manipulate and apply operations to values without changing any original values
+
+To safely chain functions that are applied on a value.
+The Maybe monad enriches functors with the capability of handling errors.

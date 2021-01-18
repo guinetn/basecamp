@@ -7,19 +7,19 @@ Never open you're .md notes again, it's automatic and as fast as your fingers ca
 
 # Features
 * Blog
-* You're notes in views+slides   
-* Navigate in views   
-* Navigate in view's slides 
+* You're notes in books+slides   
+* Navigate in books   
+* Navigate in book's slides 
 * Set alarms
-* Customize & enrich: add views, topics, links, slides to views, slideshow
+* Customize & enrich: add books, topics, links, slides to books, slideshow
 * Automatic repeat copy when mousedown > 3sec
 
 |Key|Action|  
 |---|---|  
-|<kbd>CTRL</kbd><kbd>→</kbd> or <kbd>+</kbd><br/><kbd>CTRL</kbd><kbd>←</kbd> or <kbd>-</kbd>  | Navigate in views|   
-|<kbd>a…z</kbd> key | Go to view with a name starting by…|  
-|<kbd>→</kbd> | Start slides navigation for current view|  
-|<kbd>←</kbd> <kbd>→</kbd> | Navigate in slides of the current view|   
+|<kbd>CTRL</kbd><kbd>→</kbd> or <kbd>+</kbd><br/><kbd>CTRL</kbd><kbd>←</kbd> or <kbd>-</kbd>  | Navigate in books|   
+|<kbd>a…z</kbd> key | Go to book with a name starting by…|  
+|<kbd>→</kbd> | Start slides navigation for current book|  
+|<kbd>←</kbd> <kbd>→</kbd> | Navigate in slides of the current book|   
 |<kbd>SHIFT</kbd><br>or <kbd>←</kbd> on 1st slide | Exit slide navigation<br>Slide page is memorized: come back to it with <kbd>→</kbd> |  
 |<kbd>F</kbd> key | Fullscreen mode|  
 |<kbd>ESC</kbd> key | Exit Fullscreen mode|  
@@ -53,16 +53,16 @@ Refer to config.png for a global view of the process.
 * Just create a .md file in /blog folder!
 * Blogs are requested with the github api. You won't show local changes. Publish!
 * Publish on github to view the blog's files (local server isn't the githup file api!)
-## Adding a view
+## Adding a book
 
-* View contains topics (grouped links) or custom html  
-* Views are defined inside &lt;div id="main"&gt; in index.html
-* Each view can have a markdown file (.md) in assets/slides
+* A book contains topics (grouped links) and/or custom html  
+* Books are defined inside &lt;div id="main"&gt; in index.html
+* Each book can have a markdown file (.md) in assets/slides
 
-***Empty view***     
+***Empty book***     
 ```html
- <div id="Name_Of_My_View" class="view">  ← Change 'Name_Of_My_View'
-    <h1>Title_Of_My_View</h1>             ← Change (or remove the h1) 'Title_Of_My_View'
+ <div id="Name_Of_My_Book" class="book">  ← Change 'Name_Of_My_Book'
+    <h1>Title_Of_My_Book</h1>             ← Change (or remove the h1) 'Title_Of_My_Book'
     <div class="topics">                   
        ...add topics here     
     </div>
@@ -81,14 +81,14 @@ Topics are defined in assets/topics.json
         ], 
 …
 ```
-***Connect topic to view***
+***Connect topic to book***
 ```html
  index.html
 
- <div id="Name_Of_My_View" class="view">
-    <h1>Title_Of_My_View</h1>           
+ <div id="Name_Of_My_Book" class="book">
+    <h1>Title_Of_My_Book</h1>           
     <div class="topics">   
-       <div id="news"></div>   ← This is how to inject the topic 'news' in a view. In the topic title, char _ will be replaced by a space  
+       <div id="news"></div>   ← This is how to inject the topic 'news' in a book. In the topic title, char _ will be replaced by a space  
     </div>                        Ex: "Productivity_Tools" → "Productivity Tools"   
 </div>
 
@@ -99,7 +99,7 @@ an unique option:
     </div>    
 ```
 ***Result***  
-![view+topic](app/img/view-topic.png)      
+![book+topic](app/img/book-topic.png)      
 
 > You can change colors in ```css/index.css```
 
@@ -132,14 +132,14 @@ an unique option:
         ], 
 …	
 ```
-## Adding slides to a view...takes 10 sec
+## Adding slides to a book...takes 10 sec
 
 1. In ```assets/slides``` folder
-- Create a folder having the same name that the targeted view 
-- Create a file named _xxxx.md file having the same name that the targeted view but starting with a _
+- Create a folder having the same name that the targeted book 
+- Create a file named _xxxx.md file having the same name that the targeted book but starting with a _
 2. Write some markdown
 
-* Each view can have a markdown file (.md) 
+* Each book can have a markdown file (.md) 
 * This .md file is converted in html on the fly when you press <kbd>→</kbd>     
 * The sequence '::::' is the slide separator (any number of ':' superior to 3). Slides are not limited in size.  
 * Slides can contains youtube video (and kind of by extension)

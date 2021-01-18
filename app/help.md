@@ -1,12 +1,12 @@
 - ##version##
 - ##github##
 
-NAVIGATE IN VIEWS
+NAVIGATE IN BOOKS
 
 * <kbd>CTRL</kbd>+<kbd>→</kbd> or <kbd>+</kbd>
 * <kbd>CTRL</kbd>+<kbd>←</kbd> or <kbd>-</kbd>
-* <kbd>NUMPAD</kbd> <kbd>0</kbd>-<kbd>9</kbd>: go to the view number…pressed
-* <kbd>LETTERS</kbd> <kbd>A</kbd>-<kbd>Z</kbd>: go to view having a name starting by the letter pressed
+* <kbd>NUMPAD</kbd> <kbd>0</kbd>-<kbd>9</kbd>: go to the book number…pressed
+* <kbd>LETTERS</kbd> <kbd>A</kbd>-<kbd>Z</kbd>: go to book having a name starting by the letter pressed
 
 
 NAVIGATE IN SLIDES

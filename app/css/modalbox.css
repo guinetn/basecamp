@@ -2,7 +2,7 @@
   .modalContainer {
     position: absolute;
     z-index: 10000;
-    background-color: var(--viewBg);    
+    background-color: var(--bookBg);    
     display: flex;
     justify-content: center;
     align-items: center;
