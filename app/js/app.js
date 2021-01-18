@@ -351,7 +351,7 @@ export class App extends Blog {
       this.appendChapters(htmlChapters, chaptersContainer);
       this.updateChapters();
       this.toggleChaptersVisibility(true);
-      this.renderCurrentChapter();
+      this.renderCurrentChapter();      
       PR.prettyPrint();
     });
   }
@@ -377,6 +377,7 @@ export class App extends Blog {
   renderCurrentChapter() {
     this.chapterMeter.value = this.currentChapterId + 1;
     this.renderBookDetails();
+    if (slideShow) slideShow.init();
     this.chapters.forEach((s, i) =>
       this.chaptersVisible && i == this.currentChapterId
         ? s.classList.add("current")

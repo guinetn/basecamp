@@ -7,7 +7,7 @@
 /* Slides */
 .slideShowSlide {
   display: none;
-  padding: 5px 0 0 100px;  
+  padding: 15px 0 0 100px;  
 }
 
 /* Next & previous buttons */
@@ -39,8 +39,9 @@
 
 /* The dot/bullet/indicator container */
 .slideShowDotContainer {
-  text-align: center;
-  padding: 20px;  
+  position: relative;
+  left: 110px;
+  top: 6px;
 }
 
 /* The dots/bullets/indicators */

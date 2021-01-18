@@ -47,7 +47,7 @@ export let slideShow = {
         
         if (slideShowContainers.length==0)
             return;
-        
+        console.log("slideShowContainers");
         this.slideIndex = {};
         for (var i = 0; i <= slideShowContainers.length; i++) {
           this.slideIndex[`sshow${i + 1}`] = 1;
@@ -81,7 +81,7 @@ export let slideShow = {
             dotContainer.appendChild(dotSpan);
             })
             
-            kont.appendChild(dotContainer);
+            kont.insertAdjacentElement("afterBegin", dotContainer);
         })
        
         for (let sid = 0; sid <= slideShowContainers.length; sid++) 

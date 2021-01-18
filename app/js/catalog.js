@@ -13,7 +13,7 @@
       [...s.querySelectorAll("h1")].map((x,j) => {
         let div = document.createElement("div");
         if (j>0) // sub-chapter
-          div.innerHTML = `└─${'─'.repeat(j)} ${x.innerText}`;
+          div.innerHTML = `&nbsp; &nbsp; └─${"─".repeat(j)} ${x.innerText}`;
         else
           div.innerText = `${("0" + (1 + i)).slice(-2)} ${x.innerText}`;
         div.setAttribute(itemsAttribute, i);

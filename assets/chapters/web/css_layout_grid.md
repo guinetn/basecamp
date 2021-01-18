@@ -4,10 +4,10 @@ Solve 2D layouts (flexbox is one dimension)
 - non-flexible units: px
 - flexible units: fr
 
-<div class="chapterShowContainer">
+<div class="slideShowContainer">
 
- <!-- Full-width chapters/quotes -->
-<div class="chapterShowChapter">
+ <!-- Full-width slides/quotes -->
+<div class="slideShowSlide">
 1. Define a container element 
 <pre><code>
 .container {
@@ -16,7 +16,7 @@ Solve 2D layouts (flexbox is one dimension)
 </code></pre>
 </div>
 
-<div class="chapterShowChapter">
+<div class="slideShowSlide">
 2. Defines the columns and rows of the grid 
 <pre><code>
 .container {
@@ -71,7 +71,7 @@ Shorthand: grid-template
 
 </div>
 
-<div class="chapterShowChapter">
+<div class="slideShowSlide">
 
 POSITION GRID CHILDREN: use grid-column and grid-row to position your grid items 
 <pre><code>
@@ -142,7 +142,7 @@ Aligns a grid item inside a cell
 </div>
 
 
-<div class="chapterShowChapter">
+<div class="slideShowSlide">
 Width of the gutters between the columns/rows<br/>  
 only created between the columns/rows, not on the outer edges
 <pre><code>
@@ -167,7 +167,7 @@ SHORTHAND:
 
 </div>
 
-<div class="chapterShowChapter">
+<div class="slideShowSlide">
 Align items horizontally
 <pre><code>
 .container {
@@ -204,7 +204,7 @@ SHORTHAND: <strong>place-items</strong>
 </div>
 
 
-<div class="chapterShowChapter">
+<div class="slideShowSlide">
 non-flexible units (px) = total grid size < grid container size<br/>  
 justify-content: set the horizontal alignment of the grid within the grid container<br/>
 align-content: set the vertical alignment of the grid within the grid container<br/>
@@ -228,7 +228,7 @@ space-evenly  – places an even amount of space between each grid item, includi
 </div>
 
 
-<div class="chapterShowChapter">
+<div class="slideShowSlide">
 Items inside not defined col/row<br/>
 grid-auto-flow controls the auto-placement algorithm <br/>
 <pre><code>

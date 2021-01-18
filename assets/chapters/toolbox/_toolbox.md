@@ -34,6 +34,27 @@ const pi = 3.14;
 }
 ```
 
+# Horizontal Slide Show: a slideShowContainer that contains slideShowSlide items
+```html
+<div class="slideShowContainer">   
+   <div class="slideShowSlide">  
+      ...  content #1.0
+   </div>  
+   <div class="slideShowSlide">  
+      ...  content #2.0
+   </div>  
+</div>  
+```
+
+<div class="slideShowContainer">   
+<div class="slideShowSlide">  
+  ...  content #1
+</div>  
+<div class="slideShowSlide">  
+  ...  content #2
+</div>  
+</div>  
+
 # You tube extension
 [The Map of Physics](https://www.youtube.com/watch?v=ZihywtixUYo)
 [Natural Language Processing With RNNs  H - TensorFlow 2.0 Course](https://www.youtube.com/watch?v=hEUiK7j9UI8&t=6s)
@@ -42,13 +63,17 @@ const pi = 3.14;
 &lt;iframe src="//www.youtube.com/embed/I0eVwo1VCuU?rel=0" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
 <iframe src="//www.youtube.com/embed/I0eVwo1VCuU?rel=0" frameborder="0" allowfullscreen></iframe>
 
-# Download files...
+# Downloading files...
 
 ## Render file as raw text or call api
 My ip from https://httpbin.org/ip: <span>download</span>.raw(https://httpbin.org/ip)
 My ip from https://httpbin.org/ip: download.raw(https://httpbin.org/ip)
 
 ## Render others markdown files
+<span>download</span>.md(assets/chapters/toolbox/toolbox_subpage_1.md)
+download.md(assets/chapters/toolbox/toolbox_subpage_1.md)
+
+Use `download.chapter` to get ride of `assets/chapters/`
 <span>download</span>.chapter(toolbox/toolbox_subpage_1.md)
 download.chapter(toolbox/toolbox_subpage_1.md)
 

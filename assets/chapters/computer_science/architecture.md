@@ -17,6 +17,9 @@ download.chapter(computer_science/architecture_client_server.md)
 download.chapter(computer_science/architecture_layered.md)
 ::::
 download.chapter(computer_science/architecture_pipefilter.md)
+::::
+download.chapter(computer_science/architecture_driven_design.md)
+::::
 
 ## MESSAGING & QUEUING
 messaging-pubsub

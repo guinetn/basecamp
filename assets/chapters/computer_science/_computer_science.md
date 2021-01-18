@@ -70,15 +70,11 @@ download.chapter(computer_science/architecture.md)
 ::::
 download.chapter(computer_science/regex.md)
 ::::
-download.chapter(computer_science/architecture_driven_design.md)
-::::
 download.chapter(computer_science/depency_injection_ioc.md)
 ::::
 download.chapter(computer_science/best_practices.md)
 ::::
 download.chapter(computer_science/design_patterns.md)
-::::
-download.chapter(computer_science/messaging/_messaging.md)
 ::::
 download.chapter(computer_science/antipatterns.md)
 ::::
