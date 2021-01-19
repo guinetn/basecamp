@@ -77,8 +77,33 @@ A service aggregating data from all other services and return desired results
 - master listener: reads Kafka each topic and update the dedicated reporting database correctly.
 - maintain the eventual consistency of data without disturbing the microservices principals
 
+### Architecture
+
+![](assets/chapters/computer_science/microservices/microservices01.png)
+If you are running anything in production, it is most likely you are running many instances of any given service. In this case, we are making the following changes:
+Running three instances of our service on different ports
+We are using NGINX as a load balancer
+
+## Services Communication 
+
+synchronous (HTTP1.1 / gRPC) or asynchronous
+
+### Circuit breaker
+
+Once serviceA “knows” that serviceB is down, there is no need to make request to serviceB. serviceA should return cached data or timeout error as soon as it can. This is the OPEN state of the circuit
+Once serviceA “knows” that serviceB is up, we can CLOSE the circuit so that request can be made to serviceB again.
+Periodically make fresh calls to serviceB to see if it is successfully returning the result. This state is HALF-OPEN.
+
+- https://github.com/abhinavdhasmana/circuitBreaker
+- https://itnext.io/understand-circuitbreaker-design-pattern-with-simple-practical-example-92a752615b42
+
+### More
 
 - https://github.com/AleksK1NG/Go-gRPC-RabbitMQ-microservice
 - https://medium.com/@muneeb.ahmed20/building-a-reporting-service-in-microservice-architecture-8d5bf3b90fb7
 - https://medium.com/@muneeb.ahmed20/6-questions-to-answer-before-moving-to-a-microservices-architecture-ad3cfd0e700f
 - https://medium.com/@muneeb.ahmed20/essentials-tools-for-microservices-architecture-f8a91c02909a
+- https://medium.com/transferwise-engineering/learnings-from-migrating-legacy-to-microservices-2ef4c0f6a766
+- https://itnext.io/effectively-communicate-between-microservices-de7252ba2f3c
+- https://itnext.io/designing-microservices-with-expressjs-eb23e4f02192?source=post_internal_links---------6----------------------------
+- https://medium.com/transferwise-engineering/learnings-from-migrating-legacy-to-microservices-2ef4c0f6a766

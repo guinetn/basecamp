@@ -82,6 +82,8 @@ Each responsibility is an axis of change.
 Code becomes coupled if classes have more than one responsibility.
 - O = OPENED CLOSED PRINCIPLE
 "Software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification."
+[Strategy Pattern to the rescue](https://itnext.io/how-we-avoided-if-else-and-wrote-extendable-code-with-strategy-pattern-256e34b90caf)
+
 - L = LISKOV SUBSTITUTION PRINCIPLE
 "Subtypes must be substitutable for their base types."
 This is polymorphism. just a way of ensuring that inheritance is used correctly.

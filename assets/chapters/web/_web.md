@@ -32,6 +32,8 @@ download.chapter(web/json.md)
 :::: 
 download.chapter(web/back/aspnet.md)
 ::::
+download.chapter(web/back/nginx.md)
+::::
 download.chapter(web/back/aspnetcore.md)
 :::: 
 download.chapter(web/automation.md)

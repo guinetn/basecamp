@@ -2,14 +2,22 @@
 
 https://kubernetes.io/
 
-2015 Google open-source orchestration tool for automation: deployment, management and monitoring of containerized applications, workloads and services. All cloud providers are offering their own branded versions of Kubernetes, including Google, Microsoft, Amazon
+2015 Google 
+Open-source orchestration tool for automation: deployment, management and monitoring of containerized applications, workloads and services. All cloud providers are offering their own branded versions of Kubernetes, including Google, Microsoft, Amazon
 
 Automate deployments, management, networking, scaling and availability of containerized applications.
+
+More extensive than Docker Swarm and is meant to coordinate clusters of nodes at scale in production in an efficient manner
 
 - kubernetes master
     API server that communicates with kubelets to ensure that packages are running as it should. 
 - Kubelet 
     Primary node agent that runs on a node. It is responsible for the state of each node, ensuring that all containers on the node are up and running.
+- Pod
+    a group of one or more containers with shared storage and network. 
+- Sidecar 
+    Utility container in a pod that's loosely coupled to the main application container
+    It was only a nominal distinction, and sidecar containers were basically regular containers in a pod.
 
 open-source system for automation used to manage containerized workloads and services. All cloud providers are offering their own branded versions of Kubernetes, including Google, Microsoft, Amazon
 
@@ -51,3 +59,5 @@ OpenStack is dying down. Kubernetes is the winner, for now.
 
 ## More
 - https://github.com/priximmo/sommaire-xavki-devops-fr
+- https://blog.bitsrc.io/setting-up-a-logging-infrastructure-in-nodejs-ec34898e677e
+- https://www.fluentd.org/architecture

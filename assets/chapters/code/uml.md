@@ -129,6 +129,7 @@ class Apple : Fruit { // subclass… }
 #### COMPOSITION 
 is allowing properties of your classes to be filled, e.g. MyCompany.Person. 
 A own an instance of B. B cannot exists without A
+Gang of Four’s advice on this point: “Favor object composition over class inheritance”
 
 Composition denotes an ownership "is-a-part-of" relationship between objects
 using instance variables that are references to other objects
@@ -141,6 +142,10 @@ class Apple { // subclass…
 
 #### AGGREGATION
 A reference an instance of B. B survive if A is disposed
+
+A classes relation saying that one class instances are components of the other class
+Define objects made of others objects
+
 ```c++
 
 class Fruit  { // superclass… }

@@ -38,6 +38,28 @@ $ docker images
 $ docker rmi 50f7    remove image 50f7
 ```
 
+Elastic Search
+1. Get the ElasticSearch up and running
+docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" --name myES docker.elastic.co/elasticsearch/elasticsearch:7.4.1
+2. Check if our container is up and running
+curl -X GET "localhost:9200/_cat/nodes?v&pretty"
+
+### Github sample
+
+https://github.com/abhinavdhasmana/github-action-example-node
+
+```Dockerfile
+FROM node:10.16.0-alpine
+WORKDIR /source/github-action-example-node
+COPY package.json /source/github-action-example-node
+RUN cd /source/github-action-example-node && npm i --only=production
+COPY . .
+EXPOSE 3000
+CMD ["sh", "-c", "node server.js"]
+```
+
+It copies our package.json, runs npm install and starts the server. To make sure our file is correct, we can run docker build -t abhinavdhasmana/github-action-example-node . from the root folder. If we run docker images , we will see our latest image. We can also run our container with docker run -d -p 3000:3000 abhinavdhasmana/github-action-example-node. Point the browser to http://localhost:3000/ and text will appear.
+
 ## More
 - https://github.com/priximmo/sommaire-xavki-devops-fr
 - https://devopsmyway.com/install-docker-on-windows/
@@ -45,3 +67,6 @@ $ docker rmi 50f7    remove image 50f7
 - [install Docker on Ubuntu](https://www.liquidweb.com/kb/install-docker-ubuntu-16-04/)
 - https://www.padok.fr/technologies/kubernetes
 - https://blog.logrocket.com/node-js-docker-improve-dx/
+- https://blog.bitsrc.io/setting-up-a-logging-infrastructure-in-nodejs-ec34898e677e
+- https://blog.bitsrc.io/
+- https-medium-com-adhasmana-how-to-do-ci-and-cd-of-node-js-application-using-github-actions-860007bebae6

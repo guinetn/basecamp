@@ -59,7 +59,9 @@ download.chapter(computer_science/processors.md)
 ::::
 download.chapter(computer_science/os.md)
 ::::
-download.chapter(computer_science/ascii.md)
+download.chapter(computer_science/encoding.md)
+::::
+download.chapter(computer_science/software_life_cycle.md)
 ::::
 download.chapter(computer_science/programming_paradigms.md)
 

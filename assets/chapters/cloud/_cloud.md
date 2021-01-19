@@ -1,5 +1,7 @@
 # CLOUD
 
+https://www.cncf.io/
+
 Pool of configurable shared resources (vm, network, storage, applications, services) that can be quickly created with a minimal interaction with the cloud provider
 
 digital infrastructure: computing, storage, data management + cloud services (business enterprise systems )

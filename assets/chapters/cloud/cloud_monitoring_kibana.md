@@ -24,6 +24,11 @@ dashboard
 - Dev Tools
 - Management
 
+1. Get our Kibana up and running
+docker run —-link myES:elasticsearch -p 5601:5601 kibana:7.4.
+Note: linking our kibana and elastic search server using the --link
+2. http://localhost:5601/app/kibana
+
 ## More 
 
 - https://openclassrooms.com/fr/courses/4462426-maitrisez-les-bases-de-donnees-nosql/4686486-visualisez-et-prototypez-avec-kibana

@@ -11,6 +11,14 @@ Messages can be queued, ensuring delivery after a receiver has been down.
 In short, senders and receivers are decoupled from each other.
 When you build a system of microservices, you can end up with many, many services. Coordinating communications between all these services can be tricky.
 
+
+SNS - Amazon Simple Notification Service 
+https://aws.amazon.com/sns/
+
+SQS - Amazon Simple Queue Service
+https://aws.amazon.com/sqs/
+ 
+ 
 download.chapter(computer_science/architecture_event_driven/rabbitmq.md)
 
 download.chapter(computer_science/architecture_event_driven/kafka.md)

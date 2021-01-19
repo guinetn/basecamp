@@ -1,5 +1,7 @@
 # Chemistry
 
+download.chapter(sciences/chemistry/atoms.md)
+
 ## chemical bond
 
 #### 1. COVALENT BOND (STRONG)
@@ -20,3 +22,7 @@ More weak than the 2 previous
 All these bonds are stables but during a chemical reaction there are intermediate states while atoms are
 
 - https://www.futura-sciences.com/sciences/actualites/chimie-decouverte-nouveau-type-liaison-chimique-ultra-forte-85110/#xtor=EPR-57-[ALERTE]-20210116
+
+- https://x-engineer.org/undergraduate-engineering/chemistry/general-chemistry/the-mole-and-avogadros-number/
+
+- https://x-engineer.org/undergraduate-engineering/chemistry/general-chemistry/states-phases-matter-aggregation/

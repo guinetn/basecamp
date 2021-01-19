@@ -12,12 +12,24 @@ Abstraction (Interface)
     Wrapping up of data and functions in to a single unit is known as encapsulation.
     Methods/properties act as an interface.
 
+    L'encapsulation consiste à masquer les détails d'implémentation d'un objet, en définissant une interface. L'interface est la vue externe d'un objet, elle définit les services accessibles (offerts) aux utilisateurs de l'objet.
+
+    L'encapsulation facilite l'évolution d'une application, car elle stabilise l'utilisation des objets : on peut modifier l'implémentation des attributs d'un objet sans modifier son interface, et donc la façon dont l'objet est utilisé.
+
+    L'encapsulation garantit l'intégrité des données, car elle permet d'interdire, ou de restreindre, l'accès direct aux attributs des objets.
+
 - POLYMORPHISM
     Exhibiting different behaviors in different contexts.
     The ability to send a message to an object without knowing its specific class.
     Ex: virtual functions, function and operator overloading.
 
+    Le polymorphisme représente la faculté d'une méthode à pouvoir s'appliquer à des objets de classes différentes. Le polymorphisme augmente la généricité, et donc la qualité, du code.
+
 - INHERITANCE
+
+    L'héritage est un mécanisme de transmission des caractéristiques d'une classe (ses attributs et méthodes) vers une sous-classe. Une classe peut être spécialisée en d'autres classes, afin d'y ajouter des caractéristiques spécifiques ou d'en adapter certaines. Plusieurs classes peuvent être généralisées en une classe qui les factorise, afin de regrouper les caractéristiques communes d'un ensemble de classes.
+
+    Ainsi, la spécialisation et la généralisation permettent de construire des hiérarchies de classes. L'héritage peut être simple ou multiple. L'héritage évite la duplication et encourage la réutilisation.
 
     If you don’t have a feature but someone actually uses it
     To reuse/extend a class. If you just want to reuse a class I recommend going with composition.
@@ -34,6 +46,8 @@ Abstraction (Interface)
         https://ericleads.wordpress.com/2013/02/11/fluent-javascript-three-different-kinds-of-prototypal-oo/
 
         follow the Gang of Four’s advice on this point: “Favor object composition over class inheritance.”
+
+    * Prototypal inheritance
 
     * INHERITANCE FORMS
         

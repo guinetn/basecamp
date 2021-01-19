@@ -23,6 +23,14 @@ Splunk
 Sumo Logic
 OpenTelemetry
 
+## Logging
+- https://blog.bitsrc.io/setting-up-a-logging-infrastructure-in-nodejs-ec34898e677e
+### FluentD
+
+open-source data collector that we'll set up on our Kubernetes nodes to tail container log files, filter and transform the log data, and deliver it to the Elasticsearch cluster, where it will be indexed and stored.
+
+- https://www.fluentd.org/architecture
+- https://blog.bitsrc.io/setting-up-a-logging-infrastructure-in-nodejs-ec34898e677e
 
 ## links
 - https://blog.elmah.io

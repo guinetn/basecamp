@@ -64,3 +64,4 @@ int main() {
 - https://www.geeksforgeeks.org/higher-order-functions-in-c
 - https://h-deb.clg.qc.ca/Sujets/Divers--c/index.html#general
 - https://github.com/signalapp/libsignal-protocol-c/blob/master/src/curve.c
+- https://x-engineer.org/graduate-engineering/programming-languages/c/data-types-c-programming-language/

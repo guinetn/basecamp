@@ -82,3 +82,5 @@ https://aws.amazon.com/fr/cloudformation/
 - https://developer.okta.com/blog/2019/04/16/graphql-api-with-aspnetcore
 - https://developer.okta.com/blog/2019/03/21/build-secure-microservices-with-aspnet-core
 
+
+- https://medium.com/@adhasmana/how-to-quickly-deploy-react-and-node-app-on-aws-80e5dfe7d86e

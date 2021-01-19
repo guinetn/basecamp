@@ -29,3 +29,9 @@ Improving or streamlining the communication between disparate objects in a syste
 * Mediator
 * Observer
 * Command and Visitor
+
+
+
+https://itnext.io/how-we-avoided-if-else-and-wrote-extendable-code-with-strategy-pattern-256e34b90caf
+
+https://medium.com/@adhasmana/auth-token-management-with-node-js-observer-pattern-e51a63d945b2
