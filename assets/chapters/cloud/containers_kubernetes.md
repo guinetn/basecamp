@@ -2,6 +2,9 @@
 
 https://kubernetes.io/
 
+to add:
+https://developers.redhat.com/blog/2020/05/11/top-10-must-know-kubernetes-design-patterns/
+
 2015 Google 
 Open-source orchestration tool for automation: deployment, management and monitoring of containerized applications, workloads and services. All cloud providers are offering their own branded versions of Kubernetes, including Google, Microsoft, Amazon
 

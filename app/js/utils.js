@@ -162,7 +162,7 @@ export let utils = {
         error = `${file} FAILED - ${response.status} - ${response.statusText} / ${e}`;
       else error = `Error with ${file}: ${e}`;
 
-      console.log(`downloadJsonFile: ${error}`);
+      console.log(`utils-downloadJsonFile: ${error}`);
       jsonData = { error: error };
     } finally {
       callback(options, jsonData);
@@ -178,7 +178,7 @@ export let utils = {
           callback(options, text);
         });
     } catch (e) {
-      console.log(`downloadTextFile: error: ${file}`, e);
+      console.log(`utils-downloadTextFile: error: ${file}`, e);
     }
   },
 

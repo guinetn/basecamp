@@ -1,5 +1,18 @@
 # OOP (OBJECT ORIENTED PROGRAMMING) PRINCIPLES
 
+
+Abstraction
+Abstract class
+Classes
+Inheritance
+Encapsulation
+Interface
+Access modifiers
+Polymorphism
+Association
+Aggregation
+Composition
+
 metaphors about objects instead of writing lines of functional code
 Abstraction (Interface)
     representation of essential features without including background details or explanation

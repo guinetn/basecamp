@@ -1,5 +1,13 @@
 # SOFTWARE LIFECYCLE
  
+### Basic model
+
+Specifications/Requirements
+Design
+Implementation
+Testing
+Maintenance
+
 ### SDLC Phases
 planning, creating, developing, testing, deploying an application
  
@@ -51,7 +59,7 @@ chaque phase se termine à une date précise par la production de certains docum
 
 Le modèle original ne comportait pas de possibilité de retour en arrière. Celle-ci a été rajoutée ultérieurement sur la base qu'une étape ne remet en cause que l'étape précédente, ce qui, dans la pratique, s'avère insuffisant.    
 
-### V model
+### V-shaped model
 a simultaneous process (dev/deploy/test)
 modèle en cascade dans lequel le développement des tests et du logiciel sont effectués de manière synchrone
 Le principe de ce modèle est qu'avec toute décomposition doit être décrite la recomposition et que toute description d'un composant est accompagnée de tests qui permettront de s'assurer qu'il correspond à sa description.

@@ -47,7 +47,7 @@ export let slideShow = {
         
         if (slideShowContainers.length==0)
             return;
-        console.log("slideShowContainers");
+        
         this.slideIndex = {};
         for (var i = 0; i <= slideShowContainers.length; i++) {
           this.slideIndex[`sshow${i + 1}`] = 1;

@@ -87,3 +87,5 @@ download.chapter(computer_science/software_quality.md)
 download.chapter(computer_science/the_developer.md)
 ::::
 download.chapter(computer_science/cqrs.md)
+::::
+download.chapter(computer_science/licences.md)

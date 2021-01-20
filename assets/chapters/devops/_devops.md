@@ -21,6 +21,7 @@ Devops comes from agility to move fast in a stable infrastructure
 
 ![mvp_howto.jpg](assets/chapters/devops/assets/mvp_howto.01.jpg)
 ![mvp_howto.jpg](assets/chapters/devops/assets/mvp_howto.02.png)
+![mvp_howto.jpg](assets/chapters/devops/assets/mvp_03.jpg)
 ## DevOps Phases 
 * Planning          Better growth 
 * Code				Development and review, continuous integration tools
@@ -41,6 +42,8 @@ Improve speed+quality of the entire production process
 Cloud providers such as AWS, Google Cloud Platform (GCP), Azure... offer DevOps tools directly integrated into their services (source code managers, integration chains…)
 
 ![devops](assets/chapters/devops/assets/devops0.png)
+![devops](assets/chapters/devops/assets/devops2.jpg)
+![devops](assets/chapters/devops/assets/devops3.png)
 ![devops](assets/chapters/devops/assets/devops.png)
 
 ::::

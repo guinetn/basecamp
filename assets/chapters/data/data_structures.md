@@ -1,5 +1,45 @@
 # DATA STRUTURES
 
+## primitive data structure
+integer
+float
+double
+character
+string
+boolean
+pointer
+
+## Non primitive data structures
+
+record: group of primitive data
+
+Linear
+	list
+	sets
+	tuples
+	queues
+	stacks
+	heaps
+Non-Linear
+	tree
+	binarytree
+	tables
+	containers
+Homogeneus
+	2D arrays
+	MultiDArrays
+Heterogeneus
+	LinkedList
+	OrderedList
+	UnOrderedList
+Dynamic
+	Dictionaries (hash) O(1) = linkedlist
+	TreeSets
+	Sequences
+
+
+
+## Schema
 A schema is a collection of types, interfaces, enums, and unions that make up your API’s data model. 
 Accessing, inserting, deleting, finding, and sorting the data are some of the well-known operations that one can perform using data structures.
 
@@ -422,9 +462,4 @@ http://xbox.create.msdn.com/downloads/?id=123&filename=DataStructures_CheatSheet
 			So in short, a tree is just a type of graph.
 
 In a graph there are no rules. It has a set of nodes and edges. So if you think about it some more, a tree is a special kind of graph!
-
-
-
-
-
 

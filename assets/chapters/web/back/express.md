@@ -1,5 +1,7 @@
 # Express
 
+Incoming requests are intercepted by middlewares that processes the request and passes it onto the next middleware in chain or reject it (Chain of Responsability).
+
 Express generator
 >npx express-generator --view=pug --git <app-name>
 >npm install

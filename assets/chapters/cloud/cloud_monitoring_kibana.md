@@ -2,20 +2,20 @@
 
 https://www.elastic.co/products/kibana
 
-Real time data visualisation dashboard
+Real time `DATA VISUALISATION` dashboard
 Open source from Elastic company
 Elasticsearch project
 Need a ElasticSearch cluster to store data
 
-   Logs
-    ↓ unstructured data
-Logstash (ETL) / Beats (agents) 
-    ↓
-ElasticSearch index
-    ↓    
-Users can do search in index
-    ↓
-dashboard 
+    Logs
+        ↓ unstructured data
+    Logstash (ETL) / Beats (agents) 
+        ↓
+    ElasticSearch index
+        ↓    
+    Users can do search in index
+        ↓
+    dashboard 
 
 - Discover
 - Visualize
