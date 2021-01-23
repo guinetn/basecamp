@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>preact</title>
+</head>
+<body>
+
+<h1>PREACT</h1>   
+
+<div id='preact01'>
+
+<script type="module">
+  // NOTE: You literally don't need a build process with preact.
+  import { h, Component, render } from 'https://unpkg.com/preact?module';
+  const app = h('h1', null, 'Hello World! ' + new Date().getTime());
+  render(app, document.querySelector('#preact01'));
+</script>
+
+    
+</body>
+</html>    

@@ -1,16 +1,15 @@
 # C# 6 (.Net 4.6)
 
 
-Static imports
-Exception filters
-Auto-property initializers
-Expression bodied members
-Null propagator
-String interpolation
-nameof operator
-Index initializers
-Await in catch/finally blocks
-Default values for getter-only properties
+
+## Exception filters
+## Auto-property initializers
+## Expression bodied members
+## Null propagator
+## String interpolation
+## Index initializers
+## Await in catch/finally blocks
+## Default values for getter-only properties
 
 Roslyn the compiler as a service. The C# compiler is now written in C#, and you can use the compiler as part of your programming efforts.
 
@@ -29,7 +28,8 @@ https://quizlet.com/137612626/miscellaneous-development-flash-cards/
 * Extension methods
 * Expression-bodied members 
 * Indexer initializer 
-* Dictionary initializer							
+
+				
 * Await in catch/finally 
 * Exception filters 
 * Null propagation 
@@ -74,108 +74,149 @@ https://quizlet.com/137612626/miscellaneous-development-flash-cards/
 	assignment at declaration or ctor level		Y = 15											
 
 ## USING STATIC MEMBERS							
-	using System.Console; 	now just… Write(4);	  no Console.Write(...)					
-	using static System.Math;
-	double distance = Sqrt(x * x + y * y);  // and not Math.Sqrt !!
 
-    using ra = Microsoft.ML.Probabilistic.Models;  // Fix Le nom de type 'Range' n'existe pas dans le type 'Range'
-    var game = new ra.Range(winnerData.Length);
+```c#
+using System;
+Console.WriteLine("Hello TDN!");
+
+using System.Console;
+WriteLine("Hello TDN!");
+Write(4);
+
+using static System.Math;
+double distance = Sqrt(x * x + y * y);  // Not Math.Sqrt !!
+
+using ra = Microsoft.ML.Probabilistic.Models;  
+var game = new ra.Range(winnerData.Length);
+```
 
 ## Extension methods
-	using System.Linq.Enumerable; // Just the type, not the whole namespace
-	class Program
+
+```c#
+using System.Linq.Enumerable; // Just the type, not the whole namespace
+class Program
+{ 
+	static void Main() 
 	{ 
-		static void Main() 
-		{ 
-			var range = Range(5, 17); // Ok: not extension 
-			var odd = Where(range, i => i % 2 == 1); // Error, not in scope
-			var even = range.Where(i => i % 2 == 0); // Ok 
-		} 
-	}
+		var range = Range(5, 17); // Ok: not extension 
+		var odd = Where(range, i => i % 2 == 1); // Error, not in scope
+		var even = range.Where(i => i % 2 == 0); // Ok 
+	} 
+}
+```
 
 ## EXPRESSION-BODIED MEMBERS			
 
 ## If a method is short, define it without braces			
 
-		public double Dist => Sqrt(X * X + Y * Y);		
-		public int Double(int x) => Add(x,x);		
-		public Point Move(int dx, int dy) => new Point(X + dx, Y + dy);
-		Simplify methods/pties made of a single return
-
+```c#
+public double Dist => Sqrt(X * X + Y * Y);		
+public int Double(int x) => Add(x,x);		
+public Point Move(int dx, int dy) => new Point(X + dx, Y + dy);
+Simplify methods/pties made of a single return
+```
 ## INDEX INITIALIZERS
-	var numbers = new Dictionary<int, string> { [7] = "seven", [9] = "nine", [13] = "thirteen" }; // set values to keys through any indexer that the new object has:
+var numbers = new Dictionary<int, string> { [7] = "seven", [9] = "nine", [13] = "thirteen" }; // set values to keys through any indexer that the new object has
 
 ## DICTIONARY INITIALIZER
-	JObject { ["x"] = 3, ["y"] = 7 }				
-	Dictionary<string, string> newWay = new Dictionary<string, string>()
-	{
-	    // Look at this!
-	    ["Afghanistan"] = "Kabul", // and not like in c#3: { "Afghanistan", "Kabul" },
-	    ["Iran"] = "Tehran",
-	    ["India"] = "Delhi"
-	};
-	Works with any type having an indexer
+
+More readable
+Works with any type having an indexer
+
+JObject { ["x"] = 3, ["y"] = 7 }				
+var newWay = new Dictionary<string, string>()
+{	
+	["Afghanistan"] = "Kabul", // old way c#3: { "Afghanistan", "Kabul" },
+	["Iran"] = "Tehran",
+	["India"] = "Delhi"
+};
+
  
 ## AWAIT IN CATCH/FINALLY							
-	try … catch { await someCall } finally { await someCall }		
-	await (C# 5) permet d'interrompre l'exécution d'une méthode asynchrone en attendant la fin d'une tâche, et de reprendre plus tard là où on en était, 
-	quand la tâche attendue est terminée.
+try … catch { await someCall } finally { await someCall }		
+await (C# 5) permet d'interrompre l'exécution d'une méthode asynchrone en attendant la fin d'une tâche, et de reprendre plus tard là où on en était, 
+quand la tâche attendue est terminée.
 
 ## EXCEPTION FILTERS								
-	catch(E e) if (e.Count > 5) { … }			
-	lets you specify a condition for a catch block.
-	try
-	{
-	    throw new Exception("Me");
-	}
-	catch (Exception ex) if (ex.Message == "You")
-	{
-	    // this one will not execute.
-	}
-	catch (Exception ex) if (ex.Message == "Me")
-	{
-	    // this one will execute
-	}	
+
+Lets you specify a condition for a catch block.
+catch(E e) if (e.Count > 5) { WriteLine("This one will execute"); }			
+
+```c#
+try
+{
+	throw new Exception("Me");
+}
+catch (Exception ex) if (ex.Message == "You")
+{
+	WriteLine("This one will execute");
+}
+catch (Exception ex) if (ex.Message == "Me")
+{
+	WriteLine("This one will execute");
+}	
+```
 
 ## NULL CONDITIONAL
-	Safe members access in deep object graphs
-	parent.child?.ToString()								
-	customer?.Orders?[5]?.$price	
-	int? length = customers?.Length; // null if customers is null 
-	Customer first = customers?[0]; // null if customers is null
-	if (predicate?.Invoke(e) ?? false) { … }
-	PropertyChanged?.Invoke(this, args); // to check for null before you trigger an event
+Safe members access in deep object graphs
 
-	string city = order?.Customer?.Address?.City;
-	If one of these element is null, the result will be null
+```c#
+parent.child?.ToString()								
+customer?.Orders?[5]?.$price	
+int? length = customers?.Length; // null if customers is null 
+Customer first = customers?[0]; // null if customers is null
+if (predicate?.Invoke(e) ?? false) { … }
+PropertyChanged?.Invoke(this, args); // to check for null before you trigger an event
+
+string city = order?.Customer?.Address?.City;
+// If one of these element is null, the result will be null
+```
 
 ## STRING INTERPOLATION							
-	easily format strings
-	C#5:  var s = String.Format("{0} is {1} year{{s}} old", p.Name, p.Age);
-							↓
-	C#6:  var s = "\{p.Name} is \{p.Age} year{s} old";
-		  var s = $"{p.First} {p.Last} is {p.Age} years old."
-		  var s = $"{p.Name,20} is {p.Age:D3} year{{s}} old";	
+Easily format strings
 
-	Tip: use () to use quotes in string interpolation
-		 var s= $"Result = {p.Name} {(p.name.Length>0? "s" : "")}" 
+C#5
+```c#
+var s = String.Format("{0} is {1} year{{s}} old", p.Name, p.Age);
+```
+						
+C#6
+```c#
+var s = "\{p.Name} is \{p.Age} year{s} old";
+var s = $"{p.First} {p.Last} is {p.Age} years old."
+var s = $"{p.Name,20} is {p.Age:D3} year{{s}} old";	
+```
 
+Tip: use () to use quotes in string interpolation
+var s= $"Result = {p.Name} {(p.name.Length>0? "s" : "")}" 
 
 ## STRUCT WITH PARAMETERLESS CTORS
 
-	Before struct cannot have parameterles ctor (implicit to init fields)						
-	struct Person 
-	{ 
-		public string Name { get; } 
-		public int Age { get; } 
-		public Person(string name, int age) { Name = name; Age = age; } 
-	  	public Person() : this("Jane Doe", 37) { }  ← 
-	}
+Before struct cannot have parameterles ctor (implicit to init fields)						
+```c#
+struct Person 
+{ 
+	public string Name { get; } 
+	public int Age { get; } 
+	public Person(string name, int age) { Name = name; Age = age; } 
+	public Person() : this("Jane Doe", 37) { }  ← 
+}
+```
 
 ## NAMEOF OPERATOR		
-	To get the name of a member from code							
-	string s = nameof(Console.Write);	// s = Write. Evite chaines en dur, doit exister			
-	WriteLine(nameof(person.Address.ZipCode)); // prints "ZipCode"
+
+Retrieve the name of a member from code							
+```c#
+public static void DoSomething(string name)
+{	
+	if (name != null) 
+		// throw new Exception("name");  		// old way
+		throw new Exception(nameof(name));
+}
+
+string s = nameof(Console.Write);		   // "Write"
+WriteLine(nameof(person.Address.ZipCode)); // "ZipCode"
+```
 
 #pragma										    
 	#Disable Warning BC40008						
@@ -187,9 +228,27 @@ https://quizlet.com/137612626/miscellaneous-development-flash-cards/
 # Declaration expressions		 					if (!long.TryParse(Request.QureyString["Id"], out long id)) { … }															
 
 
-
-
-
+## Async in a Catch and Finally Block
+```c#
+public static async void DownloadAsync()
+{
+	try
+	{
+		throw new Exception("Error");
+	}
+	catch
+	{
+		// log exceptions to file/database without blocking current thread
+		await Task.Delay(2000);
+		WriteLine("Waiting 2 seconds");
+	}
+	finally
+	{
+		await Task.Delay(2000);
+		WriteLine("Waiting 2 seconds");
+	}
+}
+```
 
 
     http://www.csharpstar.com/top-10-new-features-of-csharp6/
@@ -276,3 +335,7 @@ https://quizlet.com/137612626/miscellaneous-development-flash-cards/
 
 
 
+## Visual Studio “Monaco” Editor
+new ubiquitous code editor–the browser.
+
+provide developers with a lightweight, frictionfree companion to the Visual Studio desktop IDE that is accessible from any device on any platform. Monaco is a rich, browser-based, code-focused development environment optimized for the Windows Azure platform, making it easy to start building and maintaining applications for the cloud.”

@@ -18,6 +18,22 @@ System.Diagnostics.Process.GetCurrentProcess().ProcessName
     w3wp/iisexpress (InProcess)
     dotnet/project_name (OutOfProcess)
 
+## Identity
+
+Configure Passwordless Authentication in ASP.NET Core Web App
+https://developer.okta.com/blog/2020/12/18/how-to-use-webauthn-csharp-dotnet
+
+https://docs.microsoft.com/en-us/aspnet/identity/
+
+## Servers
+
+- [Low level ASP.NET Core example web server](https://github.com/benaadams/Ben.Http)
+
+Kestrel
+- [KestrelHttpServer](https://github.com/benaadams/KestrelHttpServer)
+A development web server for ASP.NET vNext based on libuv
+
+## More
 - https://developer.okta.com/blog/2019/03/21/build-secure-microservices-with-aspnet-core
 - https://developer.okta.com/blog/2019/03/11/build-a-crud-app-with-aspnet-mvc-and-entity-framework
 - [InProcess hosting model in asp.net core](https://www.youtube.com/watch?v=LxnjX-ZjQ64)
@@ -27,3 +43,4 @@ System.Diagnostics.Process.GetCurrentProcess().ProcessName
 - https://blog.elmah.io/export-data-to-excel-with-asp-net-core
 - https://blog.elmah.io/the-asp-net-core-security-headers-guide
 - https://blog.elmah.io/oauth-authentication-with-facebook-and-aspnet-core
+- https://github.com/benaadams/practical-aspnetcore

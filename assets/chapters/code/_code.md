@@ -4,7 +4,7 @@
 ::::
 download.chapter(code/hello_worlds.md)
 ::::
-download.chapter(code/repos.md)
+download.chapter(code/repos/repos.md)
 ::::
 download.chapter(code/uml.md)
 ::::
@@ -18,7 +18,9 @@ download.chapter(code/rx.md)
 ::::
 download.chapter(code/internationalization.md)
 ::::
-download.chapter(code/testing.md)
+download.chapter(code/testing/_testing.md)
+::::
+download.chapter(code/testing/_mocking.md)
 ::::
 download.chapter(code/langs/assembler.md)
 ::::

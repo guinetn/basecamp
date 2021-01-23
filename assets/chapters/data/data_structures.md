@@ -37,12 +37,6 @@ Dynamic
 	TreeSets
 	Sequences
 
-
-
-## Schema
-A schema is a collection of types, interfaces, enums, and unions that make up your API’s data model. 
-Accessing, inserting, deleting, finding, and sorting the data are some of the well-known operations that one can perform using data structures.
-
 http://www.cs.otago.ac.nz/cosc242/lectures.php
 https://medium.com/@binyamin/data-structures-and-big-o-notation-ec7ac060f186
 # FUNDAMENTALS
@@ -115,8 +109,6 @@ http://www.infoq.com/presentations/Data-Structures
 https://github.com/wdi-sf-jan/notes/tree/master/ds_algorithms
 http://www.csharpstar.com/csharp-algorithms/
 https://www.toptal.com/algorithms/interview-questions
-
-# See also <algorithms.md>
 # See also <Coding_functional_programming.md>
 
 

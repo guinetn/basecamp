@@ -49,3 +49,6 @@ TTL resource:lock => 5
 SET resource:lock "Redis Demo 3" EX 5
 PERSIST resource:lock                   Cancel TTL
 TTL resource:lock => -1
+
+## more
+https://www.youtube.com/watch?v=UrQWii_kfIE&t=29s

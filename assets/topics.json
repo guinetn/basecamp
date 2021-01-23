@@ -30,7 +30,9 @@
   ],
   "videos": ["https://youtube.com", "https://www.ted.com(TEDx)"],
 
-  "daily_routine": [],
+  "daily_routine": [
+    "https://calendly.com/"
+  ],
   "online_tools": [
     "https://docs.w3cub.com",
     "https://vclock.com(countdown, alarms)",
@@ -41,7 +43,11 @@
     "https://cloud.mongodb.com",
     "https://dashboard.fauna.com(fauna DB)"
   ],
-  "blogs": ["https://medium.com", "https://guinetn.github.io"],
+  "blogs": [
+    "https://medium.com", 
+    "https://guinetn.github.io",
+    "https://medium.com/younited-tech-blog"
+  ],
   "communication": [
     "https://www.skype.com",
     "https://www.meetup.com",
@@ -339,7 +345,8 @@
     "https://eFinancialCareers.fr",
     "https://www.expectra.fr",
     "https://fr.indeed.com",
-    "https://mobiskill.fr/"
+    "https://mobiskill.fr/",
+    "https://sept-lieues.com/"
   ],
   "toolbox_online_tools":["https://docs.w3cub.com",
   "https://vclock.com(countdown, alarms)",

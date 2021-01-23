@@ -1,157 +1,201 @@
-# OOP (OBJECT ORIENTED PROGRAMMING) PRINCIPLES
+# OOP - OBJECT ORIENTED PROGRAMMING
 
+## OOP PRINCIPLES
 
-Abstraction
-Abstract class
-Classes
-Inheritance
-Encapsulation
-Interface
-Access modifiers
-Polymorphism
-Association
-Aggregation
-Composition
+The 3 OOP pillars: Encapsulation, Inheritance, Polymorphism
 
-metaphors about objects instead of writing lines of functional code
-Abstraction (Interface)
-    representation of essential features without including background details or explanation
-    Making a program progressively more general and less specific
+### Entities and relationship
 
-3 OOP pillars: Encapsulation, Inheritance, Polymorphism
+#### Entity
+A person, place, car, anything that `can be represented as an object `
 
-- ENCAPSULATION
-    Restrict access to some of the objects components: protect variables from unwanted change
-    Wrapping up of data and functions in to a single unit is known as encapsulation.
-    Methods/properties act as an interface.
+#### Entity Relationship
+Relationship defines the `dependency that entities share` amongst each other.
 
-    L'encapsulation consiste à masquer les détails d'implémentation d'un objet, en définissant une interface. L'interface est la vue externe d'un objet, elle définit les services accessibles (offerts) aux utilisateurs de l'objet.
+#### One-One Relationship
+#### One-Many Relationship
+a record in One object can be associated or related to Many objects
 
-    L'encapsulation facilite l'évolution d'une application, car elle stabilise l'utilisation des objets : on peut modifier l'implémentation des attributs d'un objet sans modifier son interface, et donc la façon dont l'objet est utilisé.
+#### Many-Many Relationship
+### OBJECT
+A specific entity or concept that has meaning in an application domain.
 
-    L'encapsulation garantit l'intégrité des données, car elle permet d'interdire, ou de restreindre, l'accès direct aux attributs des objets.
+### Abstraction / Interface: be general, not specific
+Showing only the functionality (hiding the internal details)
+'abstract' modifier indicates the incomplete implementation. 
 
-- POLYMORPHISM
-    Exhibiting different behaviors in different contexts.
-    The ability to send a message to an object without knowing its specific class.
-    Ex: virtual functions, function and operator overloading.
+Representation of essential features a class must have without including background details (code) or explanation
+To make a program progressively more general and less specific
+Metaphors about objects instead of writing lines of functional code
 
-    Le polymorphisme représente la faculté d'une méthode à pouvoir s'appliquer à des objets de classes différentes. Le polymorphisme augmente la généricité, et donc la qualité, du code.
+### CLASS
+A definition of a set of potential objects that have the same data, behavior, and relationships.
 
-- INHERITANCE
+* Is class antipattern ?       
+Inheritance is not the core of object oriented programming, and it is commonly overrated because it creates more harm than help and should only used in certain situations
+“Classical Inheritance is Obsolete: How to Think in Prototypal OO”
+https://medium.com/javascript-scene/common-misconceptions-about-inheritance-in-javascript-d5d9bab29b0a
+https://medium.com/javascript-scene/how-to-fix-the-es6-class-keyword-2d42bb3f4caf
+https://ericleads.wordpress.com/2013/02/11/fluent-javascript-three-different-kinds-of-prototypal-oo/
 
-    L'héritage est un mécanisme de transmission des caractéristiques d'une classe (ses attributs et méthodes) vers une sous-classe. Une classe peut être spécialisée en d'autres classes, afin d'y ajouter des caractéristiques spécifiques ou d'en adapter certaines. Plusieurs classes peuvent être généralisées en une classe qui les factorise, afin de regrouper les caractéristiques communes d'un ensemble de classes.
+Gang of Four’s advice: “Favor object composition over class inheritance”
 
-    Ainsi, la spécialisation et la généralisation permettent de construire des hiérarchies de classes. L'héritage peut être simple ou multiple. L'héritage évite la duplication et encourage la réutilisation.
+#### Access modifiers
+public
+private 
+protected
+internal
+protected internal
+    
+#### Sealed class
+Cannot be inherited
+They cannot inherit from any class except Object. 
 
-    If you don’t have a feature but someone actually uses it
-    To reuse/extend a class. If you just want to reuse a class I recommend going with composition.
-
-    * is class antipattern ?
-            
-        Inheritance is not the core of object oriented programming, and it is commonly overrated because 
-        it creates more harm than help and should only used in certain situations
+####  Static class
+Cannot contain an instance constructor
         
-        “Classical Inheritance is Obsolete: How to Think in Prototypal OO”
+####  Abstract class
+Abstraction: showing only the functionality (hiding the internal details)
+'abstract' modifier indicates the incomplete implementation 
+Incomplete class that contains at least one abstract methods (without body)
+		 
+* can have abstract methods
+* can have constructors/destructors		
+* cannot be inherited by structures
+* cannot support multiple inheritance
+* cannot be instantiated: if you have an abstract class with concrete methods then it can be subclassed and the subclass can then be instantiated.
 
-        https://medium.com/javascript-scene/common-misconceptions-about-inheritance-in-javascript-d5d9bab29b0a
-        https://medium.com/javascript-scene/how-to-fix-the-es6-class-keyword-2d42bb3f4caf
-        https://ericleads.wordpress.com/2013/02/11/fluent-javascript-three-different-kinds-of-prototypal-oo/
+Usage
+- cannot be instantiated. Need its child class(es) to fill out the tasks. 
+designed to be subclassed
+- provide common functionality across a set of related classes while also allowing default method implementations
 
-        follow the Gang of Four’s advice on this point: “Favor object composition over class inheritance.”
+wpf
+```c#    
+public abstract class BindableBase : INotifyPropertyChanged 
+{
+    implemented ...
+}
+public abstract class ViewModelBase : BindableBase
+{
 
-    * Prototypal inheritance
+}
+public class BookViewModel : ViewModelBase, IDisposable
+```
 
-    * INHERITANCE FORMS
+EF
+
+####  Abstract method 
+Declaration only
+Method that is declared, but not implemented in the code (no body)	
+### ATTRIBUTE
+A data value defined in a class and held within an object that has meaning within the application domain.
+
+### BEHAVIOR
+A service defined in a class and provided by an object.
+
+### METHOD
+The implementation of a behavior in an object-oriented programming language.
+
+### ASSOCIATION
+A --- B
+A and B can call each other    
+A "peer-to-peer" relationship between classes.
+
+### INHERITANCE
+B ---► A
+A "generalization ► specialization" relationship between classes.
+
+L'héritage est un mécanisme de transmission des caractéristiques d'une classe (ses attributs et méthodes) vers une sous-classe. Une classe peut être spécialisée en d'autres classes, afin d'y ajouter des caractéristiques spécifiques ou d'en adapter certaines. Plusieurs classes peuvent être généralisées en une classe qui les factorise, afin de regrouper les caractéristiques communes d'un ensemble de classes.
+
+Ainsi, la spécialisation et la généralisation permettent de construire des hiérarchies de classes. L'héritage peut être simple ou multiple. L'héritage évite la duplication et encourage la réutilisation.
+
+If you don’t have a feature but someone actually uses it
+To reuse/extend a class. If you just want to reuse a class, use composition (over inheritance)
+
+See Prototype design pattern
+### INHERITANCE FORMS
+    
+    feature of some object-oriented computer programming languages 
+    is inheriting from a base class 
+
+    * Single Inheritance
         
-        feature of some object-oriented computer programming languages 
-        is inheriting from a base class 
-
-        * Single Inheritance
-            
-            When a class extends another one class 
-            A is a parent class of B and B would be  a child class of A
-            
-            A ───▶ B				
-
-        * Multiple inheritance 
-
-            A ──┐			   	   
-                ├───▶ C
-            B ──┘
-
-            an object or class can inherit characteristics and features from more than one parent object or parent class.
-            Increased complexity
-            Semantic ambiguity often summarized as the diamond problem: confusion when two base classes implement a method with the same name.
-            Not being able to explicitly inherit multiple times from a single class.
-
-            Multiple Inheritance is very rarely used in software projects. Using Multiple inheritance often leads to problems in the hierarchy. This results in unwanted complexity when further extending the class.
-            Most of the new OO languages like Small Talk, Java, C# do not support Multiple inheritance. 
-            Multiple Inheritance is supported in C++
-
-        * Multilevel inheritance 
+        When a class extends another one class 
+        A is a parent class of B and B would be  a child class of A
         
-            A ───▶ B ───▶ C
+        A ───▶ B				
 
-            where one can inherit from a derived class, thereby making this derived class the base class for the new class.        	
-            C is subclass or child class of B and B is a child class of A
+    * Multiple inheritance 
 
-        * Hierarchical Inheritance
+        A ──┐			   	   
+            ├───▶ C
+        B ──┘
 
-                           ___ classes B,C D inherits the same class A
-                          /	
-                  ┌────▶ B
-            A ────├────▶ C
-            \	  └────▶ D				
-             \
-              A is parent class (or base class) of B,C & D
-              One class is inherited by many sub classes. 	    			    				 
+        an object or class can inherit characteristics and features from more than one parent object or parent class.
+        Increased complexity
+        Semantic ambiguity often summarized as the diamond problem: confusion when two base classes implement a method with the same name.
+        Not being able to explicitly inherit multiple times from a single class.
 
-        * Hybrid Inheritance
+        Multiple Inheritance is very rarely used in software projects. Using Multiple inheritance often leads to problems in the hierarchy. This results in unwanted complexity when further extending the class.
+        Most of the new OO languages like Small Talk, Java, C# do not support Multiple inheritance. 
+        Multiple Inheritance is supported in C++
 
-            a combination of Single and Multiple inheritance. Ex: diamond  
+    * Multilevel inheritance 
+    
+        A ───▶ B ───▶ C
+
+        where one can inherit from a derived class, thereby making this derived class the base class for the new class.        	
+        C is subclass or child class of B and B is a child class of A
+
+    * Hierarchical Inheritance
+
+                        ___ classes B,C D inherits the same class A
+                        /	
+                ┌────▶ B
+        A ────├────▶ C
+        \	  └────▶ D				
+            \
+            A is parent class (or base class) of B,C & D
+            One class is inherited by many sub classes. 	    			    				 
+
+    * Hybrid Inheritance
+
+        a combination of Single and Multiple inheritance. Ex: diamond  
 
 
 https://medium.com/@cscalfani/goodbye-object-oriented-programming-a59cda4c0e53
 The problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them. You wanted a banana but what you got was a gorilla holding the banana and the entire jungle.
 
 
-# Abstract class 
-    
-    Abstraction: showing only the functionality (hiding the internal details)
-    'abstract' modifier indicates the incomplete implementation. 
-    a class that contains at least one abstract method
-    incomplete class (contains abstract methods without body)
 
-    Abstract methods: declaration only
-        method that is declared, but not implemented in the code (no body)			 
-    
-    can have abstract methods
-    can have constructors/destructors		
-    cannot be inherited by structures
-    cannot support multiple inheritance
-    cannot be instantiated: if you have an abstract class with concrete methods then it can be subclassed and the subclass can then be instantiated.
-    
-    Usage
-        cannot be instantiated. Need its child class(es) to fill out the tasks. 
-        designed to be subclassed
-        provide common functionality across a set of related classes while also allowing default method implementations
+### COMPOSITION (OWN)
 
-        wpf: 
-        public abstract class BindableBase : INotifyPropertyChanged 
-        {
-            implemented ...
-        }
-        public abstract class ViewModelBase : BindableBase
-        {
+### AGGREGATION
+A ◊------> B
+Car ◊----> Wheel    
+A "whole/part" relationship between classes.
 
-        }
-        public class BookViewModel : ViewModelBase, IDisposable
+### CARDINALITY/MULTIPLICITY
+The minimum and maximum number of objects that participate in an association or aggregation. The common (interesting) ones are 0..*, 0..1, 1..*, and 1..1
 
-        EF
+### ENCAPSULATION    
+Restrict access to some of the objects components: protect variables from unwanted change
+Wrapping up of data and functions in to a single unit is known as encapsulation.
+Methods/properties act as an interface.
 
-# Static class
-    
-    sealed = cannot be inherited
-    They cannot inherit from any class except Object. 
-    Static classes cannot contain an instance constructor
+L'encapsulation consiste à masquer les détails d'implémentation d'un objet, en définissant une interface. L'interface est la vue externe d'un objet, elle définit les services accessibles (offerts) aux utilisateurs de l'objet.
+
+L'encapsulation facilite l'évolution d'une application, car elle stabilise l'utilisation des objets : on peut modifier l'implémentation des attributs d'un objet sans modifier son interface, et donc la façon dont l'objet est utilisé.
+
+L'encapsulation garantit l'intégrité des données, car elle permet d'interdire, ou de restreindre, l'accès direct aux attributs des objets.
+
+### POLYMORPHISM
+
+Exhibiting different behaviors in different contexts.
+The ability to send a message to an object without knowing its specific class.
+Ex: virtual functions, function and operator overloading.
+
+Le polymorphisme représente la faculté d'une méthode à pouvoir s'appliquer à des objets de classes différentes. Le polymorphisme augmente la généricité, et donc la qualité, du code.
+
+

@@ -163,3 +163,5 @@ Quartz.NET support a couple of integrations with other frameworks like ASP.NET C
 alternatives for scheduled tasks
 ASP.NET supports long-running tasks through the HostingEnvironment.QueueBackgroundWorkItem method.   
 The idea behind QueueBackgroundWorkItem is to have the webserver execute a long-running task in an async way that let a controller action return a response to the client before finishing the task. QueueBackgroundWorkItem is not suited for scheduling tasks.
+
+https://www.c-sharpcorner.com/article/background-tasks-made-easy-with-hangfire-and-net-5/

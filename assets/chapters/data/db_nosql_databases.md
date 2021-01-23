@@ -10,6 +10,8 @@ download.chapter(data/db_nosql_ravendb.md)
 download.chapter(data/db_nosql_couchdb.md)
 ::::
 download.chapter(data/db_nosql_redis.md)
+::::
+download.chapter(data/db_nosql_azure_cosmosdb.md)
 
 ::::
 # OrientDB (java)

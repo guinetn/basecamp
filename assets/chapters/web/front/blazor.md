@@ -37,3 +37,5 @@ IJSRuntime
 - https://developer.okta.com/blog/2019/10/16/csharp-blazor-authentication
 - [Deploy Blazor WebAssembly to GitHub Pages](https://www.youtube.com/watch?v=nNxII6jvPvQ&feature=youtu.be)
 - [](https://swimburger.net/blog/dotnetcore)
+- https://medium.com/younited-tech-blog/unit-test-a-blazor-component-729eec4eab01
+- https://medium.com/younited-tech-blog/localization-of-a-blazor-component-2178aa855ded

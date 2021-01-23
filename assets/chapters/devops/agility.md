@@ -39,5 +39,6 @@ Quick feedback loops beget rapid change and adjustments.
 * Regular adaptation to changing circumstances
 
 ## SCRUM
+Planifications, mêlées, revues, rétros…
 
 ## Kanban

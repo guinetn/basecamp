@@ -19,6 +19,7 @@ Big O is easy to read once we learn this table
 * Big O notation uses these functions to describe algorithm efficiency
 
 ![big_o](assets/chapters/computer_science/assets/big_o.png)     
+![big_o](assets/chapters/computer_science/assets/big-o-cheat-sheet-poster.png)     
   
 
 ## Best, Worst and Average Case

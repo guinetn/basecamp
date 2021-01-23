@@ -29,4 +29,6 @@ messaging-pubsub
 * Web
 package manager (npm or yarn), language (JavaScript or Typescript), linting and formatting rules (ESLint presets or Prettier), unit testing framework (jest or jasmine), CSS preprocessor (Sass or Less).
 
-*
+* ADR - ARCHITECTURE DECISION RECORD
+Document capturing an important architectural decision made along with its context and consequences.
+https://github.com/joelparkerhenderson/architecture_decision_record

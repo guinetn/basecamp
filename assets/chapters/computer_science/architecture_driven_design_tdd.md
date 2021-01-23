@@ -9,3 +9,6 @@ I don’t care much about the output. The only thing needed is to carry out the 
 * les renieurs, ceux qui se refusent carrément à utiliser le TDD 
 
 Projets = succès, avec et sans TDD
+
+
+fluent_assertions.md to add

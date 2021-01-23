@@ -3,6 +3,10 @@
 - hot topic in the industry
 - distributed architecture based
 
+building single-function modules that have well-defined interfaces and operations.
+Applications can be arranged as a collection of loosely coupled services
+Ex: Amazon. To reach the requirements of its rapidly growing customer base, Amazon developers had to break down the monolithic applications into smaller, independently-running, and service-specific applications. Hence, microservices.
+
 - What value it will add to the business?
 - Do we have enough resources?
 - Experience needed
@@ -88,16 +92,58 @@ We are using NGINX as a load balancer
 
 synchronous (HTTP1.1 / gRPC) or asynchronous
 
+### Retry pattern 
+
+Localized to a single request
+If a service is sending multiple requests to a single service, each one of them is handled independently of the others. 
+However, if a request to a service is failing, it’s very likely that other requests to the same service will be failing as well.
+This is where other patterns (circuit breaker...) are needed
 ### Circuit breaker
 
 Once serviceA “knows” that serviceB is down, there is no need to make request to serviceB. serviceA should return cached data or timeout error as soon as it can. This is the OPEN state of the circuit
 Once serviceA “knows” that serviceB is up, we can CLOSE the circuit so that request can be made to serviceB again.
 Periodically make fresh calls to serviceB to see if it is successfully returning the result. This state is HALF-OPEN.
 
+Common proxy monitoring for all requests to a particular service
+Failing requests (based on preconfigured rules) make it transitioning between three states:
+* CLOSED
+The called service is operating normally. All requests are passed to it.
+* OPEN
+The called service is currently failing. Any requests to it are not passed to the service and fail immediately.
+* HALF-OPEN
+After a certain period in the open state, the requests to the service are again passed to it.
+
+However, the tolerance for failure is reduced. If any requests fail, the state will switch back to open. 
+Only after the service seems to operate normally for some time, the circuit breaker returns into the closed state.
+
+A pattern like circuit breaker can significantly reduce the number of requests sent to a service with transient issues. 
+This can be helpful in its recovery as it isn’t overwhelmed with incoming requests which it can’t handle.
+As for the retry pattern, the Polly library includes an easy-to-use implementation of the circuit breaker 
+
+pattern:
+var circuitBreakerPolicy = Policy
+ .Handle<HttpRequestException>()
+ .CircuitBreaker(2, TimeSpan.FromMinutes(1));
+
+It makes perfect sense to combine both patterns: retry the requests as needed, but also track the failures
+and eventually switch the circuit breaker to open state. The library supports that as well:
+var combinedPolicy = Policy
+ .Wrap(retryPolicy, circuitBreakerPolicy);
+
+Using appropriate error handling mechanisms can noticeably contribute to the overall reliability of a
+distributed cloud application.
+
+
+![circuit breaker](assets/chapters/api/assets/circuit_breaker.png)
+
 - https://github.com/abhinavdhasmana/circuitBreaker
 - https://itnext.io/understand-circuitbreaker-design-pattern-with-simple-practical-example-92a752615b42
+- https://dncmagazine.blob.core.windows.net/edition49/DNCMag-Issue49.pdf
+- https://docs.microsoft.com/sl-si/azure/architecture/patterns/circuit-breaker
 
 ### More
+
+- https://dncmagazine.blob.core.windows.net/edition49/DNCMag-Issue49.pdf ***
 
 - https://github.com/AleksK1NG/Go-gRPC-RabbitMQ-microservice
 - https://medium.com/@muneeb.ahmed20/building-a-reporting-service-in-microservice-architecture-8d5bf3b90fb7
@@ -107,3 +153,5 @@ Periodically make fresh calls to serviceB to see if it is successfully returning
 - https://itnext.io/effectively-communicate-between-microservices-de7252ba2f3c
 - https://itnext.io/designing-microservices-with-expressjs-eb23e4f02192?source=post_internal_links---------6----------------------------
 - https://medium.com/transferwise-engineering/learnings-from-migrating-legacy-to-microservices-2ef4c0f6a766
+-https://medium.com/younited-tech-blog/a-pattern-for-smooth-and-live-microservice-migrations-25e01d5cc59b
+- https://blog.revdebug.com/top-issues-with-microservices

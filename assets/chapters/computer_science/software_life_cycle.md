@@ -82,6 +82,7 @@ Cependant, ce modèle souffre toujours du problème de la vérification trop tar
     
 ### Scrum
 Product focused, Business oriented.
+Planifications, mêlées, revues, rétros…
   
 ### Agile
 Flexible and allows to make changes in any phase. 

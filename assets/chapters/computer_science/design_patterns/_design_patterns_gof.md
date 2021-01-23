@@ -127,3 +127,7 @@ download.chapter(computer_science/design_patterns/template.md)
 ::::
 download.chapter(computer_science/design_patterns/visitor.md)
 ::::
+
+samples in c#: https://dotnettutorials.net/lesson/visitor-design-pattern/
+
+https://www.tutorialspoint.com/design_pattern/index.htm
