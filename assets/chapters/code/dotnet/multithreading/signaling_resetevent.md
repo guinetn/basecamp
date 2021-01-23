@@ -1,12 +1,30 @@
 ## WaitHandle
 
-AutoResetEvent, ManualResetEvent, Mutex classes, all of which derive from WaitHandle
+The handle can be in an
+* signaled/set state (free): handle.set() 
+* non-signaled/reset state (not free): handle.reset()
+handle ~ doors opened (signaled/set state) or closed (non-signaled/reset state)
 
-•	WaitAny() - wait for any of the handles in a set to be free/signaled
-•	WaitAll() - wait for all of the handles in a set to be free/signaled
+|Wait...||
+|---|---|
+|Handle.WaitOne() | waits for the door to be opened so the thread can "go through it"|
+|WaitHandle.WaitAny([handle]) | waits for any of the handles in a set to be free/signaled|
+|WaitHandle.WaitAll([handle]) | waits for all of the handles in a set to be free/signaled|
 
+WaitXXX() methods have overloads to specify 
+* a timeout 
+* whether or not to exit the "synchronization domain" (automatic thread handling)
 
-them like doors - when they're in the "signalled" (or "set") state they're open, and when they're in the "non-signalled" (or "reset") state, they're closed. A call to WaitOne() waits for the door to be opened so the thread can "go through it" in some sense. The difference between the two classes is that an AutoResetEvent will reset itself to the non-signalled state immediately after a call to WaitOne() - it's as if anyone going through the door closes it behind them. With a ManualResetEvent, you have to tell the thread to reset it (close the door) when you want to make calls to WaitOne() block again. Both classes can manually be set or reset at any time, by any thread, using the Set and Reset methods, and can be created in the signalled/set or non-signalled/reset state. (These methods return a boolean value saying whether or not they were successful, but the documentation doesn't state why they might fail.)
+Derived classes from WaitHandle: 
+- AutoResetEvent
+- ManualResetEvent
+- Mutex
+
+AutoResetEvent will reset (close) itself to the non-signalled state immediately after a call to WaitOne() - it's as if anyone going through the door closes it behind them. 
+
+ManualResetEvent: the thread had to reset it (close the door) when you want to make calls to WaitOne() block again. 
+
+Both classes can manually be set or reset at any time, by any thread, using the Set() and Reset() methods, and can be created in the signalled/set or non-signalled/reset state. (These methods return a boolean value saying whether or not they were successful)
 
 ## ManualResetEvent
 
@@ -68,9 +86,7 @@ class Runner
     }
 }
 ```
-if we'd used AutoResetEvent instead: call Set() on the winner event, as it would have been reset when we detected it being set with the call to WaitAny.
 
 ## AutoResetEvent 
 
-```C#
-```
+if we'd used AutoResetEvent instead: call Set() on the winner event, as it would have been reset when we detected it being set with the call to WaitAny.

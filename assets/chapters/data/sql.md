@@ -3,7 +3,24 @@
 Most widely used programming language for managing data in a relational database management system. 
 
 ### RDBMS - Relational Database Management Systems
-Oracle, MySQL, Microsoft SQL Server, PostgreSQL, MariaDB, SQLite
+
+Oracle
+Very stable and mature but can be costly
+https://www.oracle.com/uk/database/index.html
+
+MySQL
+Lightweight and fast to set up but not as mature as Oracle
+https://www.mysql.com/
+
+PostgreSQL
+Good for certain use cases but not super fast
+https://www.postgresql.org/
+
+Microsoft SQL Server
+
+MariaDB
+
+SQLite
 
 ### SQL COMMANDS
 
@@ -280,8 +297,8 @@ This type of index reorders the table based on the key values and physically sto
 Creates a clustered index on the “gender” and “total_score” columns. 
 An index that is created on more than one column is called the “composite index”.
     
-    CREATE CLUSTERED INDEX IX_tblStudent_Gender_Score
-    ON student(gender ASC, total_score DESC)
+CREATE CLUSTERED INDEX IX_tblStudent_Gender_Score
+ON student(gender ASC, total_score DESC)
 ## non-clustered indexes
 
 Doesn't have the physical ordering of the data in the table it has a logical order.
@@ -322,8 +339,11 @@ print'you can not insert,update and delete this table i'
 rollback;
 ```
 
-## De-normalization
+## NORMALIZATION - DENORMALIZATION
 
+Normalized: Optimizes for minimizing redundancy, not for read time.
+
+Denormalized: Optimizes for read time, not for minimizing redundancy.
 Technique sometimes used to improve performance so the table design allows redundant data to avoid complex joins. 
 If the application involves heavy read operations, then de-normalization is used at the expense of the write operations performance.
 

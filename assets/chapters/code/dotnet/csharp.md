@@ -262,6 +262,7 @@ Represents a delegate, which is a data structure that refers to a static method 
 
 CLR provides each delegate type with BeginInvoke() and EndInvoke() to enable asynchronous invocation of the delegate
 
+
 ```cs
 // 1. DELEGATE TYPE DECLARATION
 // Contract that specifies the signature of one or more methods
@@ -327,6 +328,39 @@ Del oneMethodDelegate = allMethodsDelegate - d2;
 
 // Number of methods in a delegate's invocation list:
 int invocationCount = d1.GetInvocationList().GetLength(0);
+
+## Asynchronous delegates
+
+Don’t confuse asynchronous delegates with asynchronous methods (starts with Begin or End, such as File.BeginRead/File.EndRead)
+
+Asynchronous delegates 
+* let you return data from the thread
+* allow any number of typed arguments to be passed in both directions.
+* marshal any exception back to the caller. Rethrown on the original thread (or more accurately, the thread that calls EndInvoke)
+
+EndInvoke()
+1. Waits for the asynchronous delegate to finish executing if it hasn’t already. 
+2. Receives the return value (as well as any ref or out parameters)
+3. Throws any unhandled worker exception back to the calling thread
+
+```c#
+static void Main()
+{
+  Func<string, int> method = Work;
+  method.BeginInvoke("test", Done, method);
+  // ...
+  //
+}
+ 
+static int Work (string s) { return s.Length; }
+ 
+static void Done (IAsyncResult cookie)
+{
+  var target = (Func<string, int>) cookie.AsyncState;
+  int result = target.EndInvoke(cookie);
+  Console.WriteLine ("String length is: " + result);
+}
+```
 
 ## Events
 https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/events/

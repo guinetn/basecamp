@@ -4,10 +4,19 @@
 
 Signaling between threads: a thread tells to another that something happens
 
-One thread calls Wait() which block it until another thread calls Pulse() orPulseAll()
-Pulse only wakes up a single waiting thread
-PulseAll wakes up all threads waiting on that monitor
-That doesn't mean they'll all instantly start running, however: in order to call any of these three methods, the thread has to own the monitor of the object reference it passes in as a parameter. When calling Wait, the monitor is released, but then needs to be reacquired before the thread will actually run. This means blocking again until the thread which calls Pulse or PulseAll releases the monitor (which it must have in order to pulse the monitor in the first place) - and if multiple threads are woken up, they'll all try to acquire the monitor, which only one can have at a time, of course. Just to repeat: calling Wait unlocks the monitor you're waiting on. This is an important point, because otherwise the code looks like it'll just deadlock!
+The lock is a monitor (a reference object)
+
+One thread calls ***Monitor.Wait(lock_ref_object)*** which 
+- Block it
+- Released (unlocks) the monitor you're waiting on but it needs to be reacquired before the thread will actually run (means blocking again until the thread which calls Pulse or PulseAll releases the monitor)
+***ONLY REACQUIRING IT AFTER BEING WOKEN UP BY A CALL TO Pulse()***
+
+...so the thread is blocked until another thread calls... 
+* Monitor.Pulse(lock_ref_object) only wakes up a single waiting thread
+* Monitor.PulseAll(lock_ref_object) wakes up all threads waiting on that monitor
+That doesn't mean they'll all instantly start running, if multiple threads are woken up, they'll all try to acquire the monitor, which only one can have at a time
+
+In order to call any of these three methods the thread has to own the monitor of the object reference it passes in as a parameter. 
 
 Use Case: producer/consumer relationships
 * producer pulses the lock when it adds an item to the list

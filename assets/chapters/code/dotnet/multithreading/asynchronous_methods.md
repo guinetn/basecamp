@@ -1,5 +1,0 @@
-# ASYNCHRONOUS METHODS
-
-```c#
-
-```

@@ -16,3 +16,5 @@ download.chapter(sciences/thermodynamic.md)
 download.chapter(sciences/chemistry.md)
 ::::
 download.chapter(sciences/space.md)
+::::
+download.chapter(sciences/dynamic_systems.md)
