@@ -17,7 +17,7 @@ function fib(n) { return n<2 ? n : fib(n-2) + fib(n-1); }
 ```python
 #Naive Fibonacci sequence
 def F(n):
-	if n == 0 or n == 1:
+	if n<2:
 		return n
 	else:
 		return F(n-1)+F(n-2)
@@ -41,6 +41,23 @@ def fibonacciVal(n):
 		memo[i] = memo[i-1] + memo[i-2]
 	return memo[n]
 ```
+
+Using dynamic programming we sacrifice recursive solution elegance and readability but gain a much better O(n) running time and O(1) space cost. Starting with 0 and 1
+```python
+const fib = (n) => {
+  let a = 0
+  let b = 1
+  for (let i = 0; i < n; i++) {
+    let temp = a
+    a = a + b
+    b = temp
+  }
+  return a
+}
+```
+
+
+https://bradfieldcs.com/algos/recursion/dynamic-programming/
                 
 ## Fizz-Buzz
 
@@ -150,7 +167,7 @@ else:
     
 print("\nEnter The Values in the matrix 1: ")
 
-# iterate through A rows
+#"# iterate through A rows
 for i in range(len(A)):
     # iterate through B columns
     for j in range(len(B[0])):
@@ -168,7 +185,9 @@ for r in result:
 ## PALINDROME
 	a word, phrase, number, or other sequence of characters which reads the same backward or forward
 	"A man, a plan, a canal, Panama"
-	Axa
+	Axa, radar, toot, madam
+    
+    use a deque: remove both last/first of them directly, we can compare them and continue only if they match. If we can keep matching first and the last items, we will eventually either run out of characters or be left with a deque of size 1 depending on whether the length of the original string was even or odd. In either case, the string must be a palindrome.
 
 	IsPalindrome Recursive public static bool IsPalindrome(string text)
 	{
@@ -182,10 +201,65 @@ for r in result:
 				return IsPalindrome( text.Substring( 1, text.Length-2 ) );
 		} 
 	}
+    
+    from collections import deque
+
+    def is_palindrome(characters):
+        character_deque = deque(characters)
+
+        while len(character_deque) > 1:
+            first = character_deque.popleft()
+            last = character_deque.pop()
+            if first != last:
+                return False
+
+        return True
+
+
+    is_palindrome('lsdkjfskf')   # => False
+    is_palindrome('radar')   # => True
+    
+    https://bradfieldcs.com/algos/deques/palindrome-checker/
 
 ## ANAGRAMS (PERMUTATIONS)
+
+O(n)    Sort and Compare
+        Count and Compare
+O(n²)   Checking Off
+n!      All possibilities 
+n=20 → 2,432,902,008,176,640,000
+function anagramCheckingOff (string1, string2) {
+  if (string1.length !== string2.length) return false
+
+  const string2ToCheckOff = string2.split('')
+
+  for (let i = 0; i < string1.length; i++) {
+    let letterFound = false
+    for (let j = 0; j < string2ToCheckOff.length; j++) {
+      if (string1[i] === string2ToCheckOff[j]) {
+        string2ToCheckOff[j] = null
+        letterFound = true
+        break
+      }
+    }
+    if (!letterFound) return false
+  }
+
+  return true
+}
+
+assert.equal(true, anagramCheckingOff('abcd', 'dcba'))
+assert.equal(false, anagramCheckingOff('abcd', 'abcc'))
+    
+- https://bradfieldcs.com/algos/analysis/an-anagram-detection-example/
     
 ## TOWERS OF HANOI
 
+French mathematician Edouard Lucas in 1883
+https://bradfieldcs.com/algos/recursion/tower-of-hanoi/
+
 download.code(assets/chapters/computer_science/assets/hanoi.cpp)
 
+## SHORTEST PATHS
+
+https://bradfieldcs.com/algos/recursion/dynamic-programming/

@@ -46,7 +46,6 @@ download.chapter(code/dotnet/multithreading/plinq.md)
 ::::
 download.chapter(code/dotnet/multithreading/tasks.md)
 ::::
-download.chapter(code/dotnet/multithreading/concurr_collections.md)
 
 ![](assets/chapters/code/dotnet/multithreading/threading.png)
 

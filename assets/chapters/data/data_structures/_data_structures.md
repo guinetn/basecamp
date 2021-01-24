@@ -39,44 +39,262 @@ Dynamic
 
 http://www.cs.otago.ac.nz/cosc242/lectures.php
 https://medium.com/@binyamin/data-structures-and-big-o-notation-ec7ac060f186
+
 # FUNDAMENTALS
 
-	most are position-oriented: i
-	But many simple tasks involve values, not positions; e.g. find Joe's phone number. Search trees are value-oriented, and so are hash tables.
+most are position-oriented: i
+But many simple tasks involve values, not positions; e.g. find Joe's phone number. Search trees are value-oriented, and so are hash tables.
 
-	Arrays 			indexed elements
-					A group of related and equal sized variables can be stored one after another in a contiguous portion of the computer’s memory is known as an array.
-					Reading and writing data in array takes constant time i.e O(1)					
-	Queues			FIFO	people waiting in line at the bank. 
-	Stacks 			LIFO 	pile of plates (Pringles tube of chips potatoes)
-					
-					Fundamental operations
-						push(element)	Adding new elements at the top of the stack
-						pop()			Removing/Returning element from the top of the stacks
-						peek()/top()	Returns a reference to the top element of the stack
-						is_empty()		Returns Boolean true is the stack has no elements
-						len(stack) 		Returns the number of elements in the stack.
-	Linked List
-	Hash Tables		collection of unique. typically used to implement a "dictionary" interface
-					Unfortunately, not every type of data is quite as easy to sort as a simple dictionary word, and this is where the "hash" comes into play. 
-					Hashing is the process of generating a key value (in this case, typically a 32 or 64 bit integer) from a piece of data. This hash value then becomes a basis for organizing and sorting the data.
-						The simplest hash function, called direct addressing, is h(k) = k. If you have the keys 5, 3, 8, 9, 6 then you could insert key i into position A[i] of an array A of length 10.
-						We want a hash function that generates few collisions and a strategy for resolving those collisions that can’t be avoided.
-						Division Hashing
-							h(k) = k % m where m is the size of the array, k the key, and k % m is the remainder after dividing k by m.
-							Is this a perfect hash function (no collisions)?
-							Rule of thumb: Choose the table size m to be a prime not too close to a power of 2 (e.g. 37 rather than 31).
-							We will still need a collision resolution strategy, because perfect hash functions are rare.
-
-	Trees 			Trees are a data structure consisting of one or more data nodes. The first node is called the "root", and each node has zero or more "child nodes"
-	 				ex: an XML document
+### Arrays/Lists	Indexed elements
+A group of related and equal sized variables can be stored one after another in a contiguous portion of the computer’s memory is known as an array.
+Reading/Writing data in array takes constant time O(1)	
+In most cases, the memory required to append a new value has already been allocated, which is strictly O(1)		
+Expansion rate is cleverly chosen to be three times the previous size of the array; when we spread the expansion cost over each additional append afforded by this extra space
+Inserting at an index is O(n): shift every subsequent element one position closer to the end. Deletion does the same.
+Iteration: O(n)
+slice [a:b] is O(k): iterate between indices a and b. k is the size of the slice
+Deleting a slice is O(n) for the same reason that deleting a single element is O(n)
+Sorting O(nlogn) 
 	
-	binary tree 	A tree is a data structure where each node has 0 or more children
-					binary tree: a type of tree with the addition of a few rules
-					one of the most efficient ways to store and read a set of records that can be indexed by a key value in some way. The idea behind a binary tree is that each node has, at most, two children. 
-					https://www.i-programmer.info/programming/javascript/1899.html
+|Operation|Big O Efficiency|
+|---|---|
+| index []			| O(1) |
+| index assignment	| O(1) |
+| append			| O(1) |
+| pop()				| O(1) |
+| pop(i)			| O(n) |
+| insert(i, item)	| O(n) |
+| del operator		| O(n) |
+| iteration			| O(n) |
+| contains (in)		| O(n) |
+| get slice [x:y]	| O(k) |
+| del slice			| O(n) |
+| reverse			| O(n) |
+| concatenate		| O(k) |
+| sort				| O(nlogn) |
+| multiply			| O(nk) |
 
-## Graphs 			We are connected on Twitter. Thank you, Graphs.
+Ordered List
+add  require the traversal process
+Unordered List
+Adding an item to an unordered list will be O(1)
+
+The members of a list are commonly refered to as nodes. 
+singly linked list: each node holds a reference to the next node in the list
+doubly linked list: each node holds a reference to both the next and previous nodes in the list
+
+### Queues			FIFO	people waiting in line at the bank. 
+
+Queue() creates a new queue that is empty. It needs no parameters and returns an empty queue.
+enqueue(item) adds a new item to the rear of the queue. It needs the item and returns nothing.
+dequeue() removes the front item from the queue. It needs no parameters and returns the item. The queue is modified.
+is_empty() tests to see whether the queue is empty. It needs no parameters and returns a boolean value.
+size() returns the number of items in the queue. It needs no parameters and returns an integer.
+
+#### Priority queue
+
+Logical order of items inside a queue is determined by their “priority”. Specifically, the highest priority items are retrieved from the queue ahead of lower priority items.
+A data structure for specific algorithms such as Dijkstra’s shortest path algorithm
+binary heap data structure implements a priority queue and allow to enqueue/dequeue items in O(logn)
+ 
+### Deques/Linked List
+double-ended queue, is an ordered collection of items similar to the queue. It has two ends, a front and a rear, and the items remain positioned in the collection. What makes a deque different is the unrestrictive nature of adding and removing items. New items can be added at either the front or the rear. Likewise, existing items can be removed from either end. In a sense, this hybrid linear structure provides all the capabilities of stacks and queues in a single data structure.
+Deque() creates a new deque that is empty. It needs no parameters and returns an empty deque.
+add_front(item) adds a new item to the front of the deque. It needs the item and returns nothing.
+add_rear(item) adds a new item to the rear of the deque. It needs the item and returns nothing.
+remove_front() removes the front item from the deque. It needs no parameters and returns the item. The deque is modified.
+remove_rear() removes the rear item from the deque. It needs no parameters and returns the item. The deque is modified.
+is_empty() tests to see whether the deque is empty. It needs no parameters and returns a boolean value.
+size() returns the number of items in the deque. It needs no parameters and returns an integer.
+
+Ex: Palindrome Checker
+radar, toot, madam
+remove both of them directly, we can compare them and continue only if they match. If we can keep matching first and the last items, we will eventually either run out of characters or be left with a deque of size 1 depending on whether the length of the original string was even or odd. In either case, the string must be a palindrome.
+
+### Stacks 			LIFO 	pile of plates (Pringles tube of chips potatoes)
+An ordered collection of items where the addition of new items and the removal of existing items always takes place at the same end. This end is commonly referred to as the “top”, and the opposite end is known as the “base”.
+Insertion order is the reverse of the removal order.
+
+Stacks, queues, deques, and lists are data collections with items ordered according to how they are added or removed. Once an item is added, it stays in the same position relative to its neighbors. Because of this characteristic, we call these collections linear data structures.
+
+Fundamental operations
+	push(element)	Adding new elements at the top of the stack
+	pop()			Removing/Returning element from the top of the stack
+	peek()/top()	Returns a reference to the top element of the stack
+	is_empty()		Returns Boolean true is the stack has no elements
+	len() 			Returns the number of elements in the stack
+	size()
+						
+Ex: Infix/Prefix/Postfix/ expression
+Parentheses gone
+Ooperators are no longer ambiguous with respect to the operands that they work on. Only infix notation requires the additional symbols. The order of operations within prefix and postfix expressions is completely determined by the position of the operator and nothing else. In many ways, this makes infix the least desirable notation to use.
+https://bradfieldcs.com/algos/stacks/infix-prefix-and-postfix-expressions/
+						
+| Infix expression | Prefix expression | Postfix expression|
+|---|---|
+| A + B	    |+ A B	     | A B +
+| A + B * C	| + A * B C	 | A B C * +
+
+Ex: Balanced Parentheses
+(5+6)×(7+8)/(4+3)
+```python
+PAIRINGS = { '(': ')', '{': '}', '[': ']' }
+
+def is_balanced(symbols):
+    stack = []
+    for s in symbols:
+        if s in PAIRINGS:
+            stack.append(s)
+            continue
+        try:
+            expected_opening_symbol = stack.pop()
+        except IndexError:  # too many closing symbols
+            return False
+        if s != PAIRINGS[expected_opening_symbol]:  # mismatch
+            return False
+    return len(stack) == 0  # false if too many opening symbols
+
+is_balanced('{{([][])}()}')  # => True
+is_balanced('{[])')  # => False
+is_balanced('((()))')  # => True
+is_balanced('(()')  # => False
+is_balanced('())')  # => False					
+```					
+					
+### Hash Tables/Dictionary
+Collection of unique. typically used to implement a "dictionary" interface
+Differs from a list in its ability ***to access items by key rather than position***
+Get/Set are O(1)
+***Dictionaries were created specifically to get and set values by key as fast as possible***
+
+Unfortunately, not every type of data is quite as easy to sort as a simple dictionary word, and this is where the "hash" comes into play. 
+Hashing is the process of generating a key value (in this case, typically a 32 or 64 bit integer) from a piece of data. This hash value then becomes a basis for organizing and sorting the data.
+The simplest hash function, called direct addressing, is h(k) = k. If you have the keys 5, 3, 8, 9, 6 then you could insert key i into position A[i] of an array A of length 10.
+We want a hash function that generates few collisions and a strategy for resolving those collisions that can’t be avoided.
+Division Hashing
+	h(k) = k % m where m is the size of the array, k the key, and k % m is the remainder after dividing k by m.
+	Is this a perfect hash function (no collisions)?
+	Rule of thumb: Choose the table size m to be a prime not too close to a power of 2 (e.g. 37 rather than 31).
+	We will still need a collision resolution strategy, because perfect hash functions are rare.
+
+|Operation |	Big O Efficiency|
+|---|---|
+| copy			| O(n) |
+| get item		| O(1) |
+| set item		| O(1) |
+| delete item	| O(1) |
+| contains (in)	| O(1) |
+| iteration		| O(n) |
+
+	
+### Tree
+Represent hierarchical relationships: directory/subdirectories, xml
+Trees are a data structure consisting of one or more data nodes. The first node is called the "root", and each node has zero or more "child nodes"
+	 				ex: an XML document
+A tree is a data structure where each node has 0 or more children
+					 
+* Root (top)
+Only node in the tree that has no incoming edges
+* Branches
+* Leaves
+* Node
+have a unique name (key)
+* Edge 
+Connects two nodes 
+Every node other than the root is connected by exactly one incoming edge from another node. 
+Each node may have several outgoing edges.
+* Path
+Ordered list of nodes connected by edges. 
+Ex: Mammal → Carnivora → Felidae → Felis → Domestica
+* Children
+Set of nodes that have incoming edges from the same node 
+* Parent
+A node is the parent of all the nodes to which it connects with outgoing edges
+* Sibling
+Nodes that are children of the same parent 
+* Subtree
+Set of nodes and edges comprised of a parent and all the descendants of that parent.
+* Leaf Node
+Node without children
+* Node Level
+Number of edges on the path from the root node
+* Tree Height
+Maximum level of any node in the tree
+
+1. A tree is a set of nodes + edges that connect pairs of nodes having some properties:
+- One node of the tree is designated as the root node.
+- Every node n, except the root node, is connected by an edge from exactly one other node p where p is the parent of n
+- A unique path traverses from the root to each node
+- If each node in the tree has a maximum of two children, we say that the tree is a ***binary tree***
+
+2. A tree is either empty or consists of a root and zero or more subtrees, each of which is also a tree. The root of each subtree is connected to the root of the parent tree by an edge.
+
+```python
+class Node(object):
+    def __init__(self, val):
+        self.val = val
+        self.left = None
+        self.right = None
+```
+
+https://bradfieldcs.com/algos/trees/introduction
+
+#### Binary tree
+
+a type of tree with the addition of a few rules
+Each node has, at most, two children
+One of the most efficient ways to store and read a set of records that can be indexed by a key value in some way. 
+
+https://www.i-programmer.info/programming/javascript/1899.html
+
+
+* Balanced binary tree
+Has roughly the same number of nodes in the left and right subtrees of the root
+* Complete binary tree 
+Each level has all of its nodes
+
+Degrade to O(n) for get/set when the tree becomes unbalanced
+
+#### Binary heap 
+
+* min heap
+smallest key is always at the front
+* max heap
+largest key value is always at the front
+
+#### Binary Search Trees
+
+BST property:
+* Keys less than the parent are found in the left subtree
+* keys that are greater than the parent are found in the right subtree
+ 
+#### AVL tree 
+
+A self-balancing binary search tree
+Automatically makes sure that the tree remains balanced at all times (so not degrade in O(n) for get/set when the tree becomes unbalanced)
+ 
+By G.M. Adelson-Velskii, E.M. Landi
+Like a regular binary search tree, the only difference is in how the tree perform
+
+
+balanceFactor = height(leftSubTree) − height(rightSubTree)  Each node has one
+|right heavy||perfectly in balance||left-heavy|
+|---|---|---|---|---|
+|procedure to bring the tree back into balance|-1|0|1|procedure to bring the tree back into balance|
+
+Unbalanced right-heavy tree with balance factors 
+![unbalanced tree](assets/chapters/data/assets/unbalanced_tree.png)
+ 
+https://bradfieldcs.com/algos/trees/avl-trees/
+ 
+#### Red-black tree
+
+Self-balancing binary search trees,
+
+## Graphs 			
+We are connected on Twitter. Thank you, Graphs.
+https://bradfieldcs.com/algos/graphs/introduction/
+
 
 
 # Core elements of scripting languages
@@ -186,11 +404,9 @@ http://xbox.create.msdn.com/downloads/?id=123&filename=DataStructures_CheatSheet
 # CHOOSING A DATA-STRUCTURES
  [Selecting a Collection Class][https://msdn.microsoft.com/en-us/library/6tc79sx1.aspx]
 
-# Selecting a Collection Class in .Net 
+### Selecting a Collection Class in .Net 
 [When to Use a Thread-Safe Collection][https://msdn.microsoft.com/en-us/library/dd997373.aspx]
 [Selecting a Collection Class for concurrent][https://msdn.microsoft.com/en-us/library/6tc79sx1.aspx]
-# ConcurrentQueue<T> 
-# ConcurrentStack<T>
 
  	you would need a justifiable reason to use any data structure
 

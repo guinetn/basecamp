@@ -5,6 +5,9 @@
 https://aka.ms/dotnet-cli
 https://apisof.net/catalog
 
+Tools: ildasm.exe, gacutil.exe, mage.exe, resgen.exe, sn.exe
+C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools
+
 download.chapter(code/dotnet/dotnet_standard.md)
 ::::
 download.chapter(code/dotnetcore/dotnetcore.md)

@@ -39,6 +39,54 @@ Eight bits is a byte, which is the basic unit of information that computers work
 13 (Base 10) → 1101 (Base 2)
 </pre>
 
+## Procedure to convert from base 10 to any base
+1. Divide the number by the base to get the remainder. ...
+2. Repeat the process by dividing the quotient of step 1, by the new base. ...
+3. Repeat this process until your quotient becomes less than the base.
+
+  6954¹⁰ = 15452⁸
+  8 | 6954
+  8 | 869 → → → 2
+  8 | 108 → → 5
+  8 | 13 → → 4
+  8 | 1 → → 5
+  0 → → 1
+
+  4823¹⁰ = 12D7¹⁶
+  16 | 4823
+  16 | 3017 → 7
+  16 | 18 → → 13 (= D)
+  16 | 1 → → 2
+  0 → → 1
+
+
+  49¹⁰ = 110001²
+  2 | 49
+  2 | 24 → → → → 1
+  2 | 12 → → → 0
+  2 | 6 → → 0
+  2 | 3 → 0
+  2 | 1 → 1
+  0 → 1
+
+## Convert to base 2
+
+![](assets/chapters/computer_science/assets/convert_to_base_2.png)
+## Convert to base 10
+
+  So C14A¹⁶ = 49482¹⁰
+  C14A¹⁶ = (12 x 16³) + (1 x 16²) + (4 x 16¹) + 10 x 16⁰)
+        = (12 x 4096) + (1 x 256) + (4 x 16) + (10 x 1) = 49482
+      
+  61732⁸ = 25562¹⁰
+  61732 = (6 x 4096) + (1 x 512) + (7 x 64) + (3 x 8) + (2 x 1)
+        = 24576 + 512 + 448 + 24 + 2
+
+  So 100111² = 39¹⁰
+  100111² = (1 x 2⁵) + (1 x 2²) + (1 x 2¹) + ( 1 x 2⁰) = 39
+
+
+
 JAVASCRIPT - DISPLAY BIN, HEXADECIMAL 
 ```js
 var i=19;
@@ -57,6 +105,42 @@ function toBinary(n)
     return toBinary(divisor) + '' + remainder;
 }
 toBinary(13);
+```
+
+Convert from base 10 to any base
+```js
+const sets='0123456789ABCDEF';
+function convert(input, base) {
+    if (input < base) return sets[input];
+    const divisor =  Math.trunc(input/base);
+    const remainder = input % base;
+    return convert(divisor, base) + '' + sets[remainder];
+}
+
+const data=[
+'769→10=769',
+'769→16=301',
+'769→2=1100000001',
+'10→16=A',
+'10→2=1010',
+'255→10=255',
+'255→2=11111111',
+'255→16=FF',
+'1453→16=5AD',
+'276→16=114',
+'276→8=424',
+'276→10=276',
+'276→2=100010100',
+'276→2=MUST_FAILED'
+]
+
+data.map((x) => { 
+	let z=x.split('→');
+	const input=z[0]; 
+	const baseTest=z[1].split('=');
+	const base = baseTest[0]; 
+	const result = convert(input*1,base*1);
+	console.log(`${input} in base ${base} = ${result} ${result==baseTest[1] ? '✔️' : '❌'}`) });
 ```
 
 C# - DISPLAY BIN, HEXADECIMAL 

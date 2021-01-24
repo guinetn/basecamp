@@ -23,6 +23,13 @@ HEADLESS WEBSITE TESTING 	Run functional tests with frameworks such as Jasmine, 
 
 ### https://www.lambdatest.com/blog/selenium-webdriver-with-python
 
+# CYPRESS
+
+https://github.com/cypress-io/cypress
+https://www.lambdatest.com/blog/cypress-vs-selenium-comparison
+
+open source automation testing and web app testing.
+
 # SELENIUM
 
 https://www.lambdatest.com/blog/selenium-with-python

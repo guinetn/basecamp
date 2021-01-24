@@ -1,5 +1,0 @@
-# CONCURRENT COLLECTIONS
-
-```c#
-
-```

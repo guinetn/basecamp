@@ -66,7 +66,7 @@ download.chapter(computer_science/software_life_cycle.md)
 download.chapter(computer_science/programming_paradigms.md)
 
 ::::
-download.chapter(computer_science/algorithms.md)
+download.chapter(computer_science/algorithms/_algorithms.md)
 ::::
 download.chapter(computer_science/architecture.md)
 ::::

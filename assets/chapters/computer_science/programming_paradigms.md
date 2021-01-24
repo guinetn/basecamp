@@ -236,7 +236,11 @@ Mastering dynamic programming is all about understanding the problem.
 - Identify whether the problem can be broken into subproblems
 - When subproblems are identified, Dynamic Programming can probably be used
 
+Dynamic programming is a powerful technique for solving a certain class of problems, typically in a more efficient manner than the corresponding recursive strategy. Specifically, when a problem consists of “overlapping subproblems,” a recursive strategy may lead to redundant computation. The corresponding dynamic programming strategy may avoid such waste by addressing and solving the subproblems one at a time in a manner without overlap.
+
+https://bradfieldcs.com/algos/recursion/dynamic-programming/
 https://medium.freecodecamp.org/demystifying-dynamic-programming-24fbdb831d3a
+
 *writes down "1+1+1+1+1+1+1+1 =" on a sheet of paper*
 "What's that equal to?"
 *counting* "Eight!"
@@ -266,12 +270,20 @@ bigger chunk? Dynamic Programming is the same kind of thing.  You solve the easy
 * Fibonacci sequence
 ```python
 def F(n):
-	if n == 0 or n == 1:
+	if n<2:
 		return n
 	else:
 		return F(n-1)+F(n-2)
 ```
-
+  F(4) calculation is
+          4     
+      ┌───┴───┐
+      3       2      F(2) is computed twice!
+    ┌─┴─┐   ┌─┴─┐    Need to retain a memory of the previous calculations
+    1   2   0   1  
+      ┌─┴─┐
+      1   0   
+	  
 ```python
 # Fibonacci sequence
 def fibonacciVal(n):

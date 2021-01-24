@@ -20,7 +20,8 @@
 .booksCatalogLink {
   display: block;
   color:white !important;
-  cursor: pointer;      
+  cursor: pointer;     
+  font-size: 0.9em; 
 }
 
 
