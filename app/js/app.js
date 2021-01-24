@@ -551,7 +551,6 @@ export class App extends Blog {
         ? document.createElement("div")
         : document.createElement("span");
     apiElement.id = hash;
-    apiElement.className = "topicLink";
 
     switch (typeOfCall) {
       case "json":
@@ -604,7 +603,7 @@ export class App extends Blog {
       (classes || "block").indexOf("inline") >= 0 ? "inline" : "block";
 
     // link[classes](description)
-    // "https://httpbin.org/ip[inline !getjson !tic3 =origin](my ip: $origin)",
+    // "https://httpbin.org/ip[inline !getjson !tic3 =origin](★ my ip: $origin)",
     // "https://www.ted.com(TEDx)"
 
     if (classes && classes.indexOf("!getjson") >= 0) {
@@ -635,7 +634,7 @@ export class App extends Blog {
       classes.split(" ").forEach((cl) => a.classList.add(cl)); // classlist doesn't accept spaces...
 
     if (prefix != "inline")
-      a.innerText = description || this.simplifyLink(link) || "???";
+      a.innerText += description || this.simplifyLink(link) || "???";
 
     return instance;
   }

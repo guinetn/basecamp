@@ -11,6 +11,7 @@
   ],
 
   "live": [
+    "http://192.168.0.1(Router 192.168.0.1)",
     "https://httpbin.org/ip[!getjson](★ my ip: $origin)",
     "http://ip-api.com/json/[!getjson](★ my lat/lon: $lat $lon)",
     "https://api.wheretheiss.at/v1/satellites/25544[!getjson300](⏳ iss: N $latitude $longitude)"
@@ -164,7 +165,7 @@
   "network": ["https://httpstat.us(httpstat.us APi: HTTP codes generator)"],
   "css": ["https://css-tricks.com"],
   "localhost": [
-    "http://192.168.0.1",
+    "http://192.168.0.1(Router 192.168.0.1)",
     "localhost:1234(:1234)",
     "localhost:1313(:1313)",
     "localhost:1337(:1337)",
@@ -207,6 +208,7 @@
   "webplayground": ["https://css-transform.moro.es(css-transformations)"],
   "maps": ["https://developers.google.com/maps"],
   "ui_automation": [
+    "https://github.com/cypress-io/cypress",
     "https://www.selenium.dev(selenium automate brwosers)",
     "https://github.com/puppeteer/puppeteer(puppeteer: Headless Chrome Node.js API)",
     "https://phantomjs.org(phantomjs - soon off?)",
