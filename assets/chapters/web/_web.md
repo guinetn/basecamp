@@ -10,9 +10,9 @@ download.chapter(web/dom.md)
 ::::
 download.chapter(web/css.md)
 ::::
-download.chapter(web/front/front.md)
+download.chapter(web/front/_front.md)
 ::::
-download.chapter(web/back/backend.md)
+download.chapter(web/back/_back.md)
 ::::
 download.chapter(web/javascript.md)
 ::::
@@ -37,14 +37,6 @@ download.chapter(web/back/nginx.md)
 download.chapter(web/back/aspnetcore.md)
 :::: 
 download.chapter(web/automation.md)
-:::: 
-download.chapter(web/front/react.md)
-:::: 
-download.chapter(web/front/vue.md)
-:::: 
-download.chapter(web/front/svelte.md)
-:::: 
-download.chapter(web/front/blazor.md)
 ::::
 download.chapter(web/testing.md)
 ::::

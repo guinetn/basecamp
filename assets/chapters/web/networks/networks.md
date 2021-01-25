@@ -1,5 +1,7 @@
 # NETWORKS
 
+https://www.submarinecablemap.com/
+
 download.chapter(web/networks/osi_model.md)
 ::::
 download.chapter(web/networks/url.md)

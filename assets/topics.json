@@ -328,8 +328,9 @@
     "https://www.kickstarter.com"
   ],
 
-  "plane": ["https://www.sia.aviation-civile.gouv.fr(aviation-civile.gouv.fr)"],
-
+  "plane": ["https://www.sia.aviation-civile.gouv.fr(aviation-civile.gouv.fr)",
+  "https://www.rotorandwing.com"
+  ],
   "jobs": [
     "https://www.malt.fr",
     "https://www.codeur.com",
