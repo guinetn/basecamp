@@ -80,7 +80,7 @@ Withdraw					Retirer
 Withdrawal					Retrait
 shortcomings				lacunes, défaut, imperfection
 strives						s'efforcer
-
+Fee                         frais, honoraires
 
 asset        					bien, avoir, capital, atout, avantage
 borrow 	emprunter

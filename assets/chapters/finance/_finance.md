@@ -250,8 +250,13 @@ download.chapter(finance/terms/_terms.md)
 ::::
 download.chapter(finance/economy.md)
 ::::
+download.chapter(finance/trading.md)
+::::
+download.chapter(finance/forex.md)
+::::
 download.chapter(finance/accounting.md)
 ::::
 download.chapter(finance/fintech.md)
+::::
 download.chapter(finance/startup.md)
 ::::

@@ -128,6 +128,7 @@ GitHub Personal Access Token.
 - https://www.thomasmaurer.ch/2020/12/how-to-learn-microsoft-azure-in-2021/
 - https://docs.microsoft.com/en-gb/learn/?WT.mc_id=modinfra-12190-thmaure
 - https://www.c-sharpcorner.com/article/how-to-integrate-application-insights-into-azure-functions/
+- https://2bcloud.io/8-simple-steps-to-create-pub-sub-on-your-azure-environment/
 
 ## API Management
 https://www.youtube.com/watch?v=k_1391989z0

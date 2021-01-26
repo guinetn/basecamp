@@ -1,52 +1,6 @@
 # T
 
 ## TICKER
-
-## TRADING
-
-Act of buying or selling an asset, which could be financial security, like stock, a bond or a tangible product, such as gold or oil.
-
-Date, Open, High, Low, Close, Adjusted Close, Volume
-
-Date:  missing when stock exchange closing days (weekends and holidays)
-Open:  price at which a security first trades on the opening of an exchange, 
-High:  highest price that the security achieved on a given trading day
-Low:   lowest price achieved on a given trading day
-Close: final price at which a security is traded that day
-Adjusted Close: closing price after adjustments for applicable splits and dividend distributions
-Volume: number of shares traded in the market during a given period of time.
-
-Finance data 
-- time series data (series of data points indexed in time, usually equally spaced  in time
-- a sequence of discrete-time data
- 
-Historical data
-- time series data from the past
--most important and most valuable parts for speculating about future prices
-online public datasets: not with a lot of features (1-day, 1-hour, 1-minute interval data)
-
-### Applications de passage d’ordre
-
-Logiciels connectés aux marchés, totalement customisés, permettant des prises de décision sensibles, sur lesquels on développe des features en permanence.
-    
-### Algorithmic trading 
-
-Method of using computers in order to make profits automatically using the rules that are inferred from machine learning models or handwritten rules.
-La programmation d’un modèle mathématique dans un robot connecté directement aux flux de bourse lui permet d’acheter ou bien de vendre par lui-même sans intervention humaine.
-    
-### THF - TRADING HAUTE FREQUENCE - Trading ultra-basse latence
-
-Ensemble des techniques permettant à un ordre de s’exécuter le plus vite possible sur le marché, gage de rentabilité, de très fortes volumétries et de limite de risque.
-
-- http://blog-finance.groupeonepoint.com/trading-haute-frequence-quelles-reglementations-applicables/
-
-### TRADING HEDGE FUNDS
-Financial Data and Datasets
-
-https://www.toptal.com/deep-learning/deep-learning-trading-hedge-funds
-
-
-
 ## TARGET BENCHMARK
 An index or similar factor that is part of a target a fund manager has set for a fund’s performance to match or exceed (including anything used for performance fee calculation).
 
