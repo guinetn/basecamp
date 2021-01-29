@@ -155,3 +155,4 @@ distributed cloud application.
 - https://medium.com/transferwise-engineering/learnings-from-migrating-legacy-to-microservices-2ef4c0f6a766
 -https://medium.com/younited-tech-blog/a-pattern-for-smooth-and-live-microservice-migrations-25e01d5cc59b
 - https://blog.revdebug.com/top-issues-with-microservices
+- [ Ambassador Pattern)](https://youtu.be/hrKUZ1jQCqI)

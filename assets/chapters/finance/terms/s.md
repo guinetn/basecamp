@@ -160,3 +160,9 @@ liquidated when a specified price is reached or passed.
 A technique used in technical analysis that indicates a specific price 
 ceiling and floor at which a given exchange rate will automatically 
 correct itself. Opposite of resistance. 
+
+## Stock lending
+
+Stock lending and borrowing (SLB)is a system in which traders borrow shares that they do not already own, or lend the stocks that they own but do not intend to sell immediately.
+
+Just like in a loan, SLB transaction happens at a rate of interest and tenure that is fixed by the two parties entering the transaction. However, there are some differences – crucially, the rate of interest is market-determined and free of control. Only stocks in the futures and option segment can be borrowed and lent.

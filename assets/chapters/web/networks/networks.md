@@ -255,6 +255,8 @@ Use datagram
 
 ## ROUTER: IPV4 addressing
 
+Host A ----> Router ----> Router ----> Host B
+
 * Has a public IP address of 183.23.100.34 to which all incoming and outgoing traffic is associated.
 * acts as a Dynamic Host Configuration Protocol (DHCP) server
 Assigning private IP addresses to all the PCs, laptops, smartphones, and servers in the house. The devices will use those addresses whenever they talk to each other.
@@ -343,9 +345,12 @@ Devices using any address from those ranges will
     * Not be able to access internet resources
 
 IPv4 addresses used exclusively in private networks:
-10.0.0.0    - 10.255.255.255
-172.16.0.0  - 172.31.255.255
-192.168.0.0 - 192.168.255.255
+||Private address range||
+|---|---|---|
+|Class|Start|End|
+|A|10.0.0.0|10.255.255.255|
+|B|172.16.0.0|172.31.255.255|
+|C|192.168.0.0|192.168.255.255|
 
 A NAT-enabled router will take the private IP addresses used in traffic requests between the LAN and the internet and "Translate" them to the router's own public address. The router, true to its name, will then route those requests to their appropriate destinations.
 

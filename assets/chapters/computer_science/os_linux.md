@@ -4,20 +4,23 @@
 
 |Folder||
 |---|---|
-|/bin | Les fichiers binaires, les 'exécutables'. Les commandes utilisable via la terminal.|
-|/boot | Contient tout ce qui est nécéssaire au démarrage du système (noyau, kernel), on retrouve souvent le logiciel Grub ou Lilo|
-|/dev | Ensemble de répertoires et de fichiers système décrivant les périphériques pour leur permettre de communiquer avec le système|
-|/etc | Ce répertoire contient les fichiers de configuration des différents logiciels installés|
-|/home | C'est le répertoire des données personnels et contient les fichiers de configuration de chaque compte utilisateurs|
-|/lib | Contient la librairies des programmes du système et des programmes|
+|/bin | User Binaries. Les commandes utilisable via la terminal.|
+|/boot | Boot loader files. Contient tout ce qui est nécéssaire au démarrage du système (noyau, kernel), on retrouve souvent le logiciel Grub ou Lilo|
+|/dev | Devices files. (dir+files system describing devices to allow them to communicate with the system|
+|/etc | Softwares configuration files|
+|/home |répertoire des données personnels et contient les fichiers de configuration de chaque compte utilisateurs|
+|/lib | System libraries. librairies des programmes du système et des programmes|
 |/lost-found | Résulat des scandisk. (n'existe pas sur tout les types de partitions)|
-|/mnt | C'est l'emplacement où ce fait le montage des périphériques temporairement, clé usb, cd, dvd, disque dur externe..|
-|/opt | Répertoire optionnel pour l'installation de logiciels, add-on..|
-|/proc | Contient des informations sur le système de fichiers du noyau. (pid)|
+|/media | Removable devices|
+|/mnt | Mount directory. Emplacement où ce fait le montage des périphériques temporairement, clé usb, cd, dvd, disque dur externe..|
+|/opt | Optional add-on apps. Répertoire optionnel pour l'installation de logiciels, add-on..|
+|/proc | Process information. info on système de fichiers du noyau. (pid)|
 |/root | Dossiers personnels du super utilisateur (root)|
-|/sbin | Le /bin/ du super utilisateur (root)|
-|/usr | Des fichiers systèmes destinés à l'utilisateur|
-|/var | Contient toutes les données variables du système|
+|/sbin | System Binaries. /bin/ du super utilisateur (root)|
+|/srv | Service Data|
+|/usr | User progeams. Des fichiers systèmes destinés à l'utilisateur|
+|/var | Variables Files. Variables du système|
+|/tmp | Temporary Files|
 
 
 ## Install

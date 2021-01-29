@@ -24,6 +24,8 @@
     "https://www.lefigaro.fr",
     "https://www.nasaspaceflight.com"
   ],
+  "photos": [    
+  ],
   "notebooks": [
     "https://wolframcloud.com",
     "https://observablehq.com/@guinetn",
@@ -31,8 +33,9 @@
   ],
   "videos": ["https://youtube.com", "https://www.ted.com(TEDx)"],
 
-  "daily_routine": [
-    "https://calendly.com/"
+  "daily_routine": ["https://calendly.com/", 
+    "https://monday.com/",
+    "https://skillvalue.com/"
   ],
   "online_tools": [
     "https://docs.w3cub.com",
@@ -47,7 +50,8 @@
   "blogs": [
     "https://medium.com", 
     "https://guinetn.github.io",
-    "https://medium.com/younited-tech-blog"
+    "https://medium.com/younited-tech-blog",
+    "https://news.efinancialcareers.com/uk-en/en/advice"
   ],
   "communication": [
     "https://www.skype.com",
@@ -349,7 +353,9 @@
     "https://www.expectra.fr",
     "https://fr.indeed.com",
     "https://mobiskill.fr/",
-    "https://sept-lieues.com/"
+    "https://sept-lieues.com/",
+    "https://ignition-program.com/",
+    "https://www.efinancialcareers.co.uk/"
   ],
   "toolbox_online_tools":["https://docs.w3cub.com",
   "https://vclock.com(countdown, alarms)",
@@ -360,5 +366,8 @@
   "https://cloud.mongodb.com",
   "https://dashboard.fauna.com(fauna DB)"],
   
-  "weather": ["https://www.spaceweatherlive.com/"]
+  "weather": [
+  "https://www.spaceweatherlive.com/",
+  "https://stormhour.com/(meteo+weather photo)"
+]
 }

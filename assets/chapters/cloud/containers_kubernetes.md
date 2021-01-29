@@ -3,9 +3,16 @@
 https://kubernetes.io/
 
 to add:
+https://www.c-sharpcorner.com/article/build-cicd-pipeline-for-azure-kubernetes/ ***
 https://developers.redhat.com/blog/2020/05/11/top-10-must-know-kubernetes-design-patterns/
 
+Course 70+videos
+https://www.youtube.com/playlist?list=PLn6POgpklwWqfzaosSgX2XEKpse5VY2v5
+https://www.youtube.com/watch?v=37VLg7mlHu8&list=PLn6POgpklwWqfzaosSgX2XEKpse5VY2v5&index=1
+
 2015 Google 
+orchestrateur. C'est à dire qu'il ne fait que gérer des conteneurs, leurs volumes, leurs dns, leurs réseaux... Docker reposant lui sur des principes d'isolation de processus.
+
 Open-source orchestration tool for automation: deployment, management and monitoring of containerized applications, workloads and services. All cloud providers are offering their own branded versions of Kubernetes, including Google, Microsoft, Amazon
 
 Automate deployments, management, networking, scaling and availability of containerized applications.

@@ -1,5 +1,7 @@
 # JAVASCRIPT
 
+https://www.freecodecamp.org/news/javascript-hacks/ to add
+
 https://github.com/ProgrammingHero1/oop-object-oriented-programming
 https://github.com/ProgrammingHero1/data-structure-algorithm-time-complexity
 https://github.com/microsoft/Web-Dev-For-Beginners
@@ -16,6 +18,14 @@ Specifications: Standard ECMA-262
 - https://jsbin.com
 - https://v8.dev : V8 = ECMAScript + WebAssembly: C++ application can expose its objects/functions to JS code
 
+## Tools
+
+### Minify JavaScript Files
+ - [Google Closure Compiler](https://developers.google.com/closure/compiler)
+ Parses JavaScript, analyzes it, removes dead code, rewrites and minimizes what's left
+ 
+ - [Microsoft Ajax Minifier](https://archive.codeplex.com/?p=ajaxmin)
+ Improve application’s performance by reducing the size of your JavaScript files.
 ## CORE JS 
 Interpreted scripting language conforms to ECMAScript specification
 Prototype-based language

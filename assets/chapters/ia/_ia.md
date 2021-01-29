@@ -56,3 +56,9 @@ download.chapter(ia/ml/cnn.md)
 ::::
 
 download.chapter(ia/no-code-apps.md)
+
+
+### protocol buffers
+https://developers.google.com/protocol-buffers/docs/overview 
+
+Ex: In IA, ONNX est écrit en protocol buffers (protobufs). Il existe un compilateur officiel protobufs pour Go. Cet outil permet de générer les fonctions de désérialisation, qui vont convertir le binaire ONNX en un objet Go. [onnx-go](https://github.com/owulveryck/onnx-go)

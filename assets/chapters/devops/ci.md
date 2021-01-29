@@ -1,5 +1,7 @@
 # CI - CONTINUOUS INTEGRATION
 
+CI Principle: every change should be immediately tested before integrating it with the rest of the code. This is performed in a dedicated testing environment, either locally/QA/UAT environment. 
+
 Practice of automatically testing each code revision before deploying it to production: speed up developments and releases into production.
 
 seamless integration with GitHub: Travis CI, CircleCI, Semaphore

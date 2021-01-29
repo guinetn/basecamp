@@ -45,18 +45,36 @@ Cloud services are popular because they reduce the cost and complexity of owning
     IaaS (Infrastructure as a Service) : hardware infrastructure location
     PaaS (Platform as a Service): hardware infrastructure + applications location
     SaaS (Software as a Service) : service Cloud all inclusive
+    DaaS (Desktop as a Service - bureau virtuel): Toute infrastructure du client est hébergée. Chaque utilisateur peut accéder à son bureau depuis n’importe quel terminal PC, Mac, tablette, smartphone, connecté à internet.
 
     ![saas-paas-iaas](assets/chapters/cloud/assets/saas-paas-iaas-diagram.svg)
 
 • Cloud Deployment Types    
   
     PUBLIC: your infrastructure is running by...
-        - Amazon AWS
+        - Amazon AWS (CUDA expérimentations..)
         - Microsoft Azure
         - Google Cloud Platform
         - Alibaba Cloud (China) 
         - Oracle
-        - IBM
+        - IBM      
+        
+        OVH Cloud
+        Microsoft Azure
+        Google Cloud Platform
+        Amazon Web Services
+        Oracle Cloud
+        ServiceNow
+        Workday
+        Adobe Creative Cloud
+        SAP
+        Technologies Dell/VMware
+        IBM Cloud
+        Alibaba Cloud
+        Tencent Cloud
+        Hewlett Packard Enterprise
+        Cisco Cloud
+        Salesforce / Customer 360
 
         Relying on massive data centers supplying the desired cloud capacity on demand.
         
@@ -65,10 +83,12 @@ Cloud services are popular because they reduce the cost and complexity of owning
     
     PRIVATE: you own your data center but resource request and allocation is done through software UI
     
-    HYBRID: taking the best parts of public and private cloud (+on premises).  Easier to share data and information amongst partners that follow different application and data standards and architectures.
+    HYBRID: taking the best parts of public and private cloud (+ on premises).  Easier to share data and information amongst partners that follow different application and data standards and architectures.
 
     MULTICLOUD: use several public clouds
     Businesses have started to move into multi-cloud hybrid environments. This ensure better interoperability of their digital assets with their larger network of partner/vendor systems that may be hosted on different cloud environments.
+    possibilité de faire évoluer en toute transparence les ressources depuis l’infrastructure privée sur site jusqu’au Cloud public pour répondre aux fluctuations de la demande de traitement informatique. Cela vous permet d’utiliser les ressources du Cloud public pour des tâches informatiques non sensibles tout en maintenant la sécurité des applications critiques de l’entreprise dans le cadre d’un déploiement de Cloud privé.
+    Utilisé efficacement, un déploiement de Cloud hybride vous permet de faire face à des pics de demande de ressources à court terme sans avoir à investir à long terme. L’informatique hybride est une plateforme qui offre le « meilleur des deux mondes », vous donnant accès à toute la gamme des avantages de Cloud Computing : flexibilité, évolutivité et rentabilité, associées à une exposition au risque la plus faible possible.
     
     EDGE COMPUTING: Puts storage and servers where the data is
 

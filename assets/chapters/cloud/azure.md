@@ -3,6 +3,8 @@
 https://azure.microsoft.com/
 https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
 
+200 produits et services cloud 
+
 ## Containerize Your Application With Docker
 
 Docker CLI or Visual Studio 

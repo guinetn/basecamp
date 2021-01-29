@@ -4,6 +4,21 @@ https://aws.amazon.com
 https://devopsmyway.com
 https://devopsmyway.com/list-of-aws-services/
 
+2006
+175 services complets issus de centres de données du monde entier. Des millions de clients dont certaines des startups les plus dynamiques au monde, de très grandes entreprises et des agences fédérales de premier plan utilisent AWS pour réduire leurs coûts, gagner en agilité et innover plus rapidement. »
+
+AWS regroupe une centaine de services répartis en diverses catégories telles que le 
+stockage cloud
+puissance de calcul
+analyse de données
+intelligence artificielle
+développement de jeux vidéo
+
+populaires
+Amazon Elastic Compute Cloud (EC2) - un service permettant à des tiers de louer des serveurs sur lesquels exécuter leurs propres applications web
+Amazon Simple Storage Service (S3) - un service d'hébergement de fichiers qui propose du stockage à travers des services Web (REST, SOAP et BitTorrent) -.
+
+
 EC2, RDS, S3, ECS, ELB
 
 |Concepts| Meaning | |
@@ -16,6 +31,12 @@ EC2, RDS, S3, ECS, ELB
 |Instance  | An instance on AWS is just a virtual machine. |
 
 https://medium.com/adamedelwiess/data-acquisition-7-an-introduction-to-the-amazon-web-services-e927c68132cb
+
+Amazon Services
+- S3: hosting for the React.JS application
+- CloudFront: content delivery network
+- Route53: domain management service
+- Amazon Certificate Manager (ACM): certification provision for our domains
 
 ## Free tier t2.micro instance
 Play with a micro instance for 12 months. Simply create a new account on http://aws.amazon.com/, and create a new t2.micro instance. 
@@ -75,9 +96,46 @@ https://aws.amazon.com/serverless/sam/
 ## IaC
 https://aws.amazon.com/fr/cloudformation/
 
+
+## Configuring AWS
+
+Required permissions: AWS S3
+s3:ListAllMyBuckets
+s3:GetObject
+s3:PutObject
+s3:PutObjectAcl
+s3:DeleteObject
+s3:ListBucket
+Required permissions: CloudFront
+cloudfront:ListDistributions
+cloudfront:CreateInvalidation
+
+https://buddy.works/guides/reactjs-to-aws
+
+A. AWS S3
+1. Create a bucket with desired names for your production and staging deployments.
+2. configure your S3 bucket for Static Website Hosting
+https://docs.aws.amazon.com/AmazonS3/latest/user-guide/static-website-hosting.html
+
+B. Route 53 and CloudFront
+1. Create and configure a Route 53 hosted zone with your domain name that we'll use to route DNS traffic to your website bucket (you can also do this on your DNS provider e.g. GoDaddy). 
+https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RoutingToS3Bucket.html
+2. Next step is setting up Amazon CloudFront to speed up the distribution of your static content (such as HTML, CSS, JS, and image files) to your users. There's a separate guide on distributing traffic from Amazon S3 with CloudFront, too.
+https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistS3AndCustomOrigins.html#adding-cloudfront-to-s3
+
+C. Creating Staging pipeline
+Log in to Buddy. Select GitHub repository. Click "Add a new pipeline"
+Force Buddy to trigger the execution on every change to the development code
+- Set trigger mode to 'On push'
+- Set branch to 'develop'. 
+- Build and Deploy Sample React Frontend to AWS S3 and CloudFront"
+
+Preparing environment
+
 ##### ARTICLES
 
 - https://www.freecodecamp.org/news/author/david/
+- [react on aws + buddy ci/cd](https://buddy.works/guides/reactjs-to-aws)
 - [node-js-to-display-images-in-a-private-aws-s3-bucket](https://medium.com/javascript-in-plain-english/using-node-js-to-display-images-in-a-private-aws-s3-bucket-4c043ed5c5d0)
 - https://developer.okta.com/blog/2019/04/16/graphql-api-with-aspnetcore
 - https://developer.okta.com/blog/2019/03/21/build-secure-microservices-with-aspnet-core

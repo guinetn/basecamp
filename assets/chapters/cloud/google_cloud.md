@@ -1,7 +1,26 @@
-# GOOGLE CLOUD
+# GCP - Google Cloud Platform
 
 https://cloud.google.com/
 https://cloud.google.com/sdk
+
+hébergement sur la même infrastructure que celle que Google utilise en interne pour des produits tels que son moteur de recherche
+
+Google App Engine
+une plateforme en tant que service pour tester des applications dans un bac à sable. App Engine offre du changement d'échelle automatique, augmentant les ressources pour faire face à la charge du serveur.
+
+Google Compute Engine
+le composant infrastructure en tant que service de la Google Cloud Platform permettant aux utilisateurs de lancer des machines virtuelles (VMs) à la demande.
+
+Google Kubernetes Engine
+une version commerciale de Kubernetes, un logiciel open source de gestion de conteneurs.
+
+Google Cloud Storage
+un système de stockage en ligne de fichiers.
+
+Google BigQuery
+un entrepôt de données à très grande échelle basé sur Dremel.
+
+Plusieurs API de haut niveau
 
 ## GCP - Google Cloud Platform
 

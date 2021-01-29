@@ -8,6 +8,8 @@ https://apisof.net/catalog
 Tools: ildasm.exe, gacutil.exe, mage.exe, resgen.exe, sn.exe
 C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools
 
+download.chapter(code/dotnet/gems.md)
+::::
 download.chapter(code/dotnet/dotnet_standard.md)
 ::::
 download.chapter(code/dotnetcore/dotnetcore.md)
@@ -52,10 +54,12 @@ download.chapter(code/dotnet/signal_r.md)
 ::::
 download.chapter(code/dotnet/services.md)
 ::::
-download.chapter(code/dotnet/collections/_collections.md)
-::::
 download.chapter(code/dotnet/diagnostics.md)
 ::::
 download.chapter(code/dotnet/csharp_all.md)
 ::::
 download.chapter(code/dotnet/roslyn.md)
+::::
+download.chapter(code/dotnet/collections/_collections.md)
+::::
+download.chapter(code/dotnet/linq.md)

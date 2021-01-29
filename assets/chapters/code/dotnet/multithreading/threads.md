@@ -11,6 +11,15 @@ Threads share (heap) memory with other threads running in the same application
 but it's not thread safe: one thread can be reading one as the other thread is writing... remedy is to obtain an exclusive lock while reading and writing to the common data... see 'locking/data races'
 Processes are fully isolated from each other; threads have just a limited degree of isolation (stack).
   
+## Threads vs Processes
+
+Each process provides the resources needed to execute a program. A process has a virtual address space, executable code, open handles to system objects, a security context, a unique process identifier, environment variables, a priority class, minimum and maximum working set sizes, and at least one thread of execution. Each process is started with a single thread, often called the primary thread, but can create additional threads from any of its threads.
+
+Processes run in parallel on a computer and are fully isolated from each other
+Threads run in parallel within a single process but have a limited degree of isolation
+Threads share heap-memory with other threads running in the same application so one thread can fetch data in the background, while another thread can display the data as they arrives.
+One or more threads run in the context of the process
+  
 ## Trading ways
 ***Thread: Long running tasks***
 ThreadStart delegates starts your own threads

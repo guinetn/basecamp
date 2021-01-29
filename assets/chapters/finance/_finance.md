@@ -1,5 +1,7 @@
 # FINANCE
 
+https://www.efinancialcareers.co.uk/jobs
+
  Computational Finance
  Economics
  General Finance
@@ -260,3 +262,51 @@ download.chapter(finance/fintech.md)
 ::::
 download.chapter(finance/startup.md)
 ::::
+
+
+## Sectors
+
+ * Accounting & Finance 
+ * Asset Management 
+ * Capital Markets 
+ * Commodities 
+ * Compliance/Legal 
+ * Consultancy 
+ * Corporate Banking 
+ * Credit 
+ * Debt/Fixed Income 
+ * Derivatives 
+ * Equities 
+ * FX & Money Markets 
+ * Global Custody 
+ * Graduates & Internships 
+ * Hedge Funds 
+ * HR & Recruitment 
+ * Industry & Commerce 
+ * Information Services 
+ * Insurance 
+ * Investment Banking/M&A 
+ * Investment Consulting 
+ * Investor Relations & PR 
+ * Operations 
+ * Private Banking & Wealth Management 
+ * Private Equity & Venture Capital 
+ * Public Sector 
+ * Quantitative Analytics 
+ * Real Estate 
+ * Research 
+ * Retail Banking 
+ * Risk Management 
+ * Sales & Marketing 
+ * Technology 
+ * Trading 
+ 
+ ## LANGUAGES
+ 
+ https://www.efinancialcareers.co.uk/news/2020/10/kdb-finance-jobs
+ https://code.kx.com/q/
+ https://github.com/psaris/funq
+ https://github.com/psaris/funq
+ 
+  to be assured of a job in finance, it will benefit you to learn the coding languages K and Q. K and Q underpin the Kdb+ database system which is used increasingly by banks, hedge funds and high frequency trading houses, and yet very few people are fully conversant in them.
+  
