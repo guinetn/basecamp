@@ -1,23 +1,21 @@
-# C++
+# Basic C++ program
 
-<div class="slideShowContainer">
-
- <!-- Full-width slides/quotes -->
-<div class="slideShowSlide">
-```c++
+```html
 #include <iostream>
 void main()
 {
     std::cout << "Hello World";    
 }
-```
-g++ cpp01.cpp && ./a.out  
-g++ cpp01.cpp -o cpp01.exe && ./cpp01.exe  
-</div>
 
-<div class="slideShowSlide">
-1. Define a container element 
-```js
+g++ cpp01.cpp && ./a.out   
+g++ cpp01.cpp -o cpp01.exe && ./cpp01.exe  
+```
+
+::::
+
+# Define a container element 
+
+```cpp
 #include <iostream>
 std::string name;
 int main() {
@@ -33,9 +31,11 @@ return 0;
 }
 
 ```
-</div>
 
-<div class="slideShowSlide">
+::::
+
+# noname
+
 ```js
      Mingwin tools, in path for cmd, not for ps             ($env:path.split(';')) | where {$_ -like '*mingw*'} | ls
         ↑                                                                        \____  Directory: C:\MinGW\mingw-w64\x86_64-8.1.0-win32-seh-rt_v6-rev0\mingw64\bin
@@ -62,11 +62,10 @@ return 0;
         gdb.exe
         cpp.exe
 ```
-</div>
 
-</div>
+::::
 
- * C++11 INHERITANCE
+C++11 INHERITANCE
 
  ```c++
 class GameObject

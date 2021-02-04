@@ -1,3 +1,4 @@
+import { config } from "./config.js";
 /*
 SHOWDOWN Extensions
 
@@ -11,13 +12,15 @@ USAGE:
   download.iframe(url,[w,h]) :
   download.iframe(assets/chapters/web/front/react_samples/react01/index.html)
   download.iframe(assets/chapters/web/front/react_samples/react01/index.html,500,200)
+  
+  download.slideshow('assets/chapters/code/langs/c++/c++01.md')
 
-[video title](https://www.youtube.com/watch?xyzabc)  --> <iframe src="//www.youtube.com/embed/xyzabc" frameborder="0" allowfullscreen=""></iframe>
-setup:[The Map of Physics](ZihywtixUYo)
-<script src="js/showdown.extension.bka.js"></script>
-var converter = new showdown.Converter({extensions: ["BkaShowDownExtension"])
+  [video title](https://www.youtube.com/watch?xyzabc)  --> <iframe src="//www.youtube.com/embed/xyzabc" frameborder="0" allowfullscreen=""></iframe>
+  setup:[The Map of Physics](ZihywtixUYo)
+  <script src="js/showdown.extension.bka.js"></script>
+  var converter = new showdown.Converter({extensions: ["BkaShowDownExtension"])
 
-Writing showdown extensions: https://github.com/showdownjs/showdown/wiki/Extensions
+  Writing showdown extensions: https://github.com/showdownjs/showdown/wiki/Extensions
 */
 
 (function (extension) {
@@ -41,10 +44,13 @@ Writing showdown extensions: https://github.com/showdownjs/showdown/wiki/Extensi
       ("use strict");
 
       let getHash = (str) => window.btoa(str);
-      
-      let promisedMarker = (hash, link) => `<div data-type='promised_file' id='${hash}'>waiting for…${link}</div>`;
-      
-        let replaceMarker = function (hash, htmlData, textData) {        
+
+      let promisedMarker = (hash, link) =>
+        `<div data-type='promised_file' id='${hash}'>waiting for…${link}</div>`;
+      let promisedSlideShowMarker = (hash, link) =>
+        `<div class='slideShowContainer' data-type='promised_slideshow' id='${hash}'></div>`;
+
+      let replaceMarker = function (hash, htmlData, textData) {
         // Warn bka that the DOM has changed
         window.postMessage(
           {
@@ -63,13 +69,18 @@ Writing showdown extensions: https://github.com/showdownjs/showdown/wiki/Extensi
           let res = await response.text();
           callback(res, file, converter);
         } catch (e) {
-          console.log(`Showdown extension bka: downloadTextFile: error: ${file}`, e);
+          console.log(`Showdown extension bka: downloadFile error: ${file}`, e);
         }
       };
 
+      function addAttribute(attributeName, value, suffix) {
+        return value == null ? "" : `${attributeName}='${value}${suffix}'`;
+      }
+
       // EXTENSIONS
-    
+
       var bkaRawRegex = /(?:download\.)(?<bkatype>raw)\((?<link>[^)]*)\)/gi,
+        bkaSlideShowRegex = /(?:download\.)(?<bkatype>slideshow)\((?<link>[^)]*)\)/gi,
         bkaHtmlRegex = /(?:download\.)(?<bkatype>html)\((?<link>[^)]*)\)/gi,
         bkaCodeRegex = /(?:download\.)(?<bkatype>code)\((?<link>[^)]*)\)/gi,
         bkaExecCodeRegex = /(?:download\.)(?<bkatype>exec)\((?<link>[^)]*)\)/gi,
@@ -79,6 +90,10 @@ Writing showdown extensions: https://github.com/showdownjs/showdown/wiki/Extensi
         bkaPrettyPrintRegex = /(<pre[^>]*>)?[\n\s]?<code([^>]*)>/gi,
         bkaYoutubeRegex = /<a href="(?:(?:https?:)?(?:\/\/)?)(?:(?:www)?\.)?youtube\.(?:.+?)\/(?:(?:watch\?v=)|(?:embed\/))(?<videoid>[a-zA-Z0-9_-]{11})(?:[^"'])*(?:"|')+\s*>(?<videotitle>[^<]*)/gi;
 
+      /*
+      in: <a href='……youtube……'> : any link containing 'youtube' 
+      out: <iframe src='//www.youtube.com/embed/...
+      */
       var bkaYoutubeExtension = {
         type: "output",
         regex: bkaYoutubeRegex,
@@ -98,6 +113,10 @@ Writing showdown extensions: https://github.com/showdownjs/showdown/wiki/Extensi
         },
       };
 
+      /*
+      in: download.md(assets/chapters/code.md)
+      out: target.innerHTML will receive the markdown source file converted in html
+      */
       var bkaDownloadMarkdownExtension = {
         type: "lang",
         filter: function (text, converter, options) {
@@ -107,7 +126,7 @@ Writing showdown extensions: https://github.com/showdownjs/showdown/wiki/Extensi
               link,
               hash,
               converter,
-              function (res, file, converter) {                
+              function (res, file, converter) {
                 replaceMarker(hash, converter.makeHtml(res));
               }
             );
@@ -115,7 +134,12 @@ Writing showdown extensions: https://github.com/showdownjs/showdown/wiki/Extensi
           });
         },
       };
-      
+
+      /*
+      idem  download.md() but looks for a file in 'assets/chapters'
+      in: download.chapter(/code.md). ~ bkaDownloadMarkdownExtension but looks for the file in 'assets/chapters'
+      out: out: target.innerHTML will receive the markdown source file converted in html
+      */
       var bkaDownloadMarkdownChapterExtension = {
         type: "lang",
         filter: function (text, converter, options) {
@@ -134,22 +158,30 @@ Writing showdown extensions: https://github.com/showdownjs/showdown/wiki/Extensi
         },
       };
 
-
-      function addAttribute(attributeName, value, suffix) {
-        return value == null ? "" : `${attributeName}='${value}${suffix}'`;
-      }
+      /*
+      in:download.iframe(url,[w,h]) :
+      out: <iframe src='${link}' [width=…, height=…]
+      */
       var bkaDownloadIframeExtension = {
         type: "lang",
         filter: function (text, converter, options) {
           return text.replace(
             bkaIFrameRegex,
             function (s, bkatype, link, width, height) {
-              return `<iframe src='${link}'  ${addAttribute( "width", width, "px" )} ${addAttribute("height", height, "px")}></iframe>`;
+              return `<iframe src='${link}'  ${addAttribute(
+                "width",
+                width,
+                "px"
+              )} ${addAttribute("height", height, "px")}></iframe>`;
             }
           );
         },
       };
 
+      /*
+      in: download.raw(https://...)
+      out:  target.innerText will receive the file contant as it is (raw, not prettified)
+      */
       var bkaDownloadRawExtension = {
         type: "lang",
         regex: bkaRawRegex,
@@ -162,6 +194,40 @@ Writing showdown extensions: https://github.com/showdownjs/showdown/wiki/Extensi
         },
       };
 
+      /* Create a slide show from a file. The slides separator is ::::
+      in: download.slideshow(assets/chapters/code/langs/cpp/cpp01.md)
+          Ex: slide 1 :::: slide 2 :::: slide 3....        
+      out:
+        <div class="slideShowContainer">
+          <div class="slideShowSlide">slide 1</div>
+          <div class="slideShowSlide">slide 2</div>
+          ...
+       */
+      var bkaDownloadSlideShowExtension = {
+        type: "lang",        
+        filter: function (text, converter, options) {
+          return text.replace(bkaSlideShowRegex, function (s, bkatype, link) {                  
+          var hash = getHash(link);
+          downloadFile(link, hash, converter, function (res, file, converter) {
+            var slideShow = document.getElementById(hash);
+
+            var slides = res.split(config.chaptersSeparator); // slides separator is ::::
+            slides.forEach((part) => {
+              var htmlPart = converter.makeHtml(part);
+              var slide = document.createElement("div");
+              slide.className = "slideShowSlide";
+              slide.innerHTML = htmlPart; //`<pre><code>${htmlPart}</code></pre>`;
+              slideShow.appendChild(slide);
+            });
+          });
+          return promisedSlideShowMarker(hash, link);
+          })      
+      }};
+      
+      /*
+      in: download.html(assets/code/code.html)
+      out: target.innerHTML will receive the file content as it is
+      */
       var bkaDownloadHtmlExtension = {
         type: "lang",
         regex: bkaHtmlRegex,
@@ -174,6 +240,10 @@ Writing showdown extensions: https://github.com/showdownjs/showdown/wiki/Extensi
         },
       };
 
+      /*
+      in: download.code(https://raw.githubusercontent.com/mortennobel/cpp-cheatsheet/master/cheatsheet-as-sourcefile.cpp)
+      out: target.innerHTML will receive the file content prettyfied according the file extension
+      */
       var bkaDownloadCodeExtension = {
         type: "lang",
         regex: bkaCodeRegex,
@@ -189,6 +259,10 @@ Writing showdown extensions: https://github.com/showdownjs/showdown/wiki/Extensi
         },
       };
 
+      /*
+      in: download.exec(assets/chapters/computer_science/assets/show_ascii_table.js)
+      out: will evaluate the file as a javascript code
+      */
       var bkaExecCodeRegexExtension = {
         type: "lang",
         regex: bkaExecCodeRegex,
@@ -203,6 +277,10 @@ Writing showdown extensions: https://github.com/showdownjs/showdown/wiki/Extensi
         },
       };
 
+      /* DRAFT
+      in: <pre><code>....</code></pre>
+      out: <pre class='prettyprint linenums'><code>...</code></pre>
+      */
       var bkaPrettyPrintExtension = {
         type: "output",
         regex: bkaPrettyPrintRegex,
@@ -217,6 +295,7 @@ Writing showdown extensions: https://github.com/showdownjs/showdown/wiki/Extensi
         bkaDownloadMarkdownExtension,
         bkaDownloadMarkdownChapterExtension,
         bkaDownloadRawExtension,
+        bkaDownloadSlideShowExtension,
         bkaDownloadCodeExtension,
         bkaDownloadIframeExtension,
         bkaDownloadHtmlExtension,

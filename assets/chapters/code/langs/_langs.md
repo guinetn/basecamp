@@ -34,7 +34,7 @@ download.chapter(code/langs/assembler.md)
 ::::
 download.chapter(code/langs/c.md)
 ::::
-download.chapter(code/langs/c++.md)
+download.chapter(code/langs/cpp/_cpp.md)
 ::::
 download.chapter(code/langs/elm.md)
 ::::
