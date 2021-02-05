@@ -1,17 +1,17 @@
-.chapter {
+.page {
     font-size: smaller;
     
 }
-.chapter   h1, h2, h3, h4,h5,h6 {
+.page   h1, h2, h3, h4,h5,h6 {
     color:gold;
 }
-.chapter   h1 {
+.page   h1 {
     border-bottom:inset 1px gold;
     width: fit-content;
     margin: 1em auto 7px auto;
 }
 
-.chapter p {
+.page p {
     text-align: left;
 }
 

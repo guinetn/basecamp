@@ -1,0 +1,48 @@
+# Security
+
+download.page(security/cryptography.md)
+::::
+download.page(security/terms.md)
+::::
+download.page(security/firewalls.md)
+::::
+download.page(security/https.md)
+::::
+download.page(security/authentification.md)
+::::
+download.page(security/ssh.md)
+::::
+download.page(security/ssl.md)
+::::
+download.page(security/tls.md)
+::::
+download.page(security/vpn.md)
+::::
+download.page(security/openssl.md)
+::::
+download.page(security/rdc.md)
+::::
+download.page(security/csr.md)
+::::
+download.page(security/jwt.md)
+::::
+download.page(security/attack_ddos.md)
+::::
+download.page(security/iam.md)
+download.page(security/attack_meltdown_spectre.md)
+download.page(security/attack_brute_force.md)
+download.page(security/attack_quantum-resistance.md)
+download.page(security/attack_social_engineering.md)
+download.page(security/attack_buffer_overflow.md)
+download.page(security/attack_webscraping.md)
+download.page(security/attack_xss.md)
+download.page(security/attack_sql_injection.md)
+download.page(security/attack_csrf.md)
+
+credential stuffing
+https://www.cloudflare.com/fr-fr/learning/bots/what-is-credential-stuffing
+
+
+## More
+
+- https://github.com/mbcrump
