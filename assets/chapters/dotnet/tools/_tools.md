@@ -2,7 +2,7 @@
 
 download.chapter(dotnet/tools/ildasm.md)
 ::::
-download.chapter(dotnet/msbuild.md)
+download.chapter(dotnet/tools/msbuild.md)
 ::::
 download.chapter(dotnet/tools/resgen.md)
 ::::

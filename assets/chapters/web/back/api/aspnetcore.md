@@ -55,6 +55,8 @@ Kestrel
 A development web server for ASP.NET vNext based on libuv
 
 ## More
+
+- [Good intro](https://www.youtube.com/watch?v=BfEjDD8mWYg)
 - https://www.ezzylearning.net/tutorial/how-to-consume-third-party-web-apis-in-asp-net-core
 - https://www.ezzylearning.net/tutorial/introduction-to-asp-net-core-middleware
 - https://www.ezzylearning.net/tutorial/a-step-by-step-guide-to-asp-net-core-dependency-injection

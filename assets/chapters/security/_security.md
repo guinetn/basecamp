@@ -41,3 +41,8 @@ download.chapter(security/attack_csrf.md)
 
 credential stuffing
 https://www.cloudflare.com/fr-fr/learning/bots/what-is-credential-stuffing
+
+
+## More
+
+- https://github.com/mbcrump

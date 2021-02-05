@@ -73,3 +73,4 @@ It copies our package.json, runs npm install and starts the server. To make sure
 - https://intellitect.com/docker-postgresql/
 - https://intellitect.com/docker-scaffold/
 - https://intellitect.com/asp-net-core-dynamic-routing-with-constraints/
+- https://dev.to/rinkiyakedad/cross-container-communication-and-networking-in-docker-39n0

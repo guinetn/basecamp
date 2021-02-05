@@ -12,7 +12,7 @@ CygWin1.dll
 provides substantial POSIX API functionality
 
 * MingWin
-Minimalistic GNU for Windows. a less POSIX-compliant fork of Cygwin. Toolsets: .h, .lib, gcc, gdb, make…
+Minimalistic GNU for Windows. A less POSIX-compliant fork of Cygwin. Toolsets: .h, .lib, gcc, gdb, make…
 
 * Asynch and Synch I/O
 * Bus Errors

@@ -12,6 +12,7 @@ download.chapter(computer_science/algorithms/mathematical/fibonacci.md)
 download.chapter(computer_science/algorithms/mathematical/hanoi.md)
 download.chapter(computer_science/algorithms/mathematical/matrix.md)
 download.chapter(computer_science/algorithms/mathematical/two_­sum.md)
+download.chapter(computer_science/algorithms/mathematical/symbolic_intgration.md)
 
 ## More
 

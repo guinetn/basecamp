@@ -1,10 +1,19 @@
 # DEPENCY INJECTION - IOC Inversion  Of Control
 
-Software application design rule: loosely coupled = greater reusability, maintainability,  testability. 
+A software design rule: ***loosely coupled objects*** = greater reusability, maintainability, testability
+The 'D' pillar in SOLID principles, which is "Dependency Inversion Principle":
+- High-level modules should not depend on low-level modules. Both should depend on abstractions
+- Abstractions should not depend on details. Details should depend on abstractions
 
-Dependency Injection (DI) reduces the coupling between classes and moves the binding of abstraction and concrete implementation out of the dependent class. 
+- Reduces the coupling between classes
+- Moves the binding of abstraction and concrete implementation out of the dependent class
+- DI pattern uses a builder object to initialize objects and provide the required dependencies to the object, meaning that it allows developers to "inject" a dependency from outside the class. 
+- There are four ways of achieving the Dependency Injection.
 
-DI creates loosely coupled classes. The Dependency Injection (DI) pattern uses a builder object to initialize objects and provide the required dependencies to the object, meaning that it allows developers to "inject" a dependency from outside the class. There are four ways of achieving the Dependency Injection.
+* Remove the dependency between two objects
+* Style of wiring objects together
+* DI containers improve the composition of whole object graphs
+* Ideal for mocking: common need for dependency injection is in unit tests 
 
 ![](assets/chapters/dotnet/assets/di/di.jpg)
 
@@ -20,63 +29,487 @@ Decoupling the Client/Library from the Specific Logging Implementation via Depen
 ![](assets/chapters/dotnet/assets/di/di-unit-tests-host.png)
 Unit Testing with Dependency Injection so a Mock Type Instance Can Be Used
  
- 
- 
- 
- 
-* Remove the dependency between two objects
-* Style of wiring objects together
-* DI containers improve the composition of whole object graphs
-* Ideal for mocking: common need for dependency injection is in unit tests 
+## What is dependency? 
 
-  ## What is dependency? 
-  public class Address { }
-  public class Customer
+There is a dependency when HighLevelModule depends directly on LowLevelModule and this does not follow the "D" of SOLID, this creates a direct and tightly coupled relationship between the two. 
+
+Inheritance creates a strongly coupled link:
+```cs
+public class Address { }                // The low-level module
+public class Customer: Address {}       // The high-level module
+```
+
+Object composition, using instance variables that are references to other objects,
+denotes an ownership "is-a-part-of" relationship between objects → strongly coupled
+```cs
+public class Address { }
+public class Customer
+{
+    Address address;
+    public Customer() { address = new Address(); }
+}
+```
+
+Objects aggregation is a bit less coupled and gives us a clue to be less coupled
+```cs
+public class Customer
+{
+    Address address;
+    public Customer(Address c) { this.address = c; }
+}
+```
+### How to remove dependency between two classes?
+
+"Dependency Inversion Principle":
+- High-level modules should not depend on low-level modules. Both should depend on abstractions
+- ***Abstractions*** should not depend on details. Details should depend on abstractions
+
+***Define an interface (=contract,abstraction) and share it*** with any object dependant of it
+
+Define a contract for Address and share this contract to 
+- both Address and Customer classes
+- and any other class which are dependent on Address.
+
+App now depend on the abstraction of Address rather than on concrete class Address
+
+```cs
+public interface IAddress { }
+
+// Share the contract
+public class Address : IAddress { }  // LowLevelModule needs to be abstracted. Done with IAddress
+
+public class Customer                // HighLevelModule will depends on the abstraction of LowLevelModule
+{
+    IAddress address;               // reference to IAddress interface not concrete class Address
+    public Customer()
+    {
+        address = new Address();   // Problem: still depends on Address in it's constructor as it is instantiated in the constructor
+    }
+}
+```
+
+* What is the solution?
+
+***Move the instantiation of class Address to some other class which will take care of creating the instance***. This way there is no dependency between Customer and Address. 
+***This process of moving LowLevelModule (IAddress) instantiation from inside to outside of the class is called inversion***.
+
+HighLevelModule will solely depend on IAddress abstraction so we can't have any ` new LowLevelModule() ` inside the HighLevelModule class. LowLevelModule has to be ` injected ` into HighLevelModule class from the caller context. 
+
+Using DI, we are inverting the control of object creation from a dependent object to an injector/caller which will take care of creating the instance.
+
+```cs
+public interface IAddress { }
+
+// Share the contract
+public class Address : IAddress { }
+
+public class Customer
+{
+    IAddress address;               // reference to IAddress interface not concrete class Address
+    public Customer(IAddress address)
+    {
+        this.address = address;
+    }
+}
+```
+
+In this program there is no dependency between Class Customer and Address: Instance of Address is created somewhere in main program and passed to the constructor as a parameter. This is called "constructor injection". There is another way called property injection or method injection.
+
+This can be better handled using dependency injection.
+
+## Dependency injection - DI
+
+DI allow to substitute different concrete class implementations at runtime. This allow testing easier
+
+* The DI 3 elements
+- Contract: IAddress
+- Consumer (class Customer here) that declares its dependencies (Address) as contracts 
+- Injector, which creates instances of concrete classes. There are lots of injectors available in the market like NInject, Microsoft unity, DoNetCore built-in…
+
+You can also use other design patterns to reduce the dependency between components
+- Factory
+- Publisher/Subscriber
+
+## Abstraction Methods
+
+1. Using an Interface: provide an abstraction
+2. Using an Abstract Class: provide some shared implementation details between two or more classes
+3. Using a Delegate: provides an abstraction for one particular method or function
+
+***Interface***
+```cs
+public interface IAction
+{
+  void Play();
+}
+
+public class LowLevelModule: IAction
+{
+  public LowLevelModule() { } 
+  public void Play() {  }
+}
+
+public class HighLevelModule
+{
+  private readonly IAction _action;
+  public HighLevelModule(IAction action)
   {
-      Address address;
-      public Customer() { address = new Address(); }
+    _action = action;
   }
 
- ## Remove dependency between two classes?
+  public void Run()
+  {
+    _action.Play();
+  }
+}
+```
 
-  Define an interface and share it with any object dependant of it
+***Abstract class***
+Change the interface into an abstract class
+Use abstract classes if there is a shared implementation detail. For example when HighLevelModule can use either LowLevelModule or AnotherLowLevelModule and these both classes share implementation detail then use an abstract class as a base class for both. 
+```cs
+public abstract class ActionBase
+{
+  public abstract void Play();
+}
 
-  1. Define a contract for Address and share this contract to both Address and 
-  
-  Customer classes
-     and any other class which are dependent on Address.
-     App now depend on the abstraction of Adresss rather than on concrete class.
+public class LowLevelModule: ActionBase
+{
+  protected LowLevelModule() { }  
+  public override void Play() { }
+}
 
-    // contract for Address
-    public interface IAddress  { }
+public class HighLevelModule
+{
+  private readonly ActionBase _action;
+  public HighLevelModule(ActionBase action)
+  {
+    _action = action;
+  }
 
-    public class Address : IAddress { }
+  public void Run()
+  {
+    _action.Play();
+  }
+}
+```
 
-    public class Customer
+***Delegate***
+You can abstract a method or a function using a delegate
+Generic delegates: Func<T>, Action<T>
+Not Generic delegates: Action
+
+With generic delegates there is no need to create a type (interface or class) for the dependencies
+Simply use any methods or functions from the caller context or from anywhere else
+
+```cs
+public class Caller
+{ 
+  public void CallerMethod()
+  {
+    var module = new HighLevelModule(PlaySong);
+    …    
+  }
+
+  // Method injected into HighLevelModule
+  public void PlaySong() { }
+}
+
+public class HighLevelModule
+{
+  private readonly Action _action;
+  public HighLevelModule(Action action)
+  {
+    _action = action;
+  }
+
+  public void Run()
+  {
+    _action();
+  }
+}
+```
+
+Using your own delegate:
+```cs
+public delegate void MyOperation();
+
+public class Caller
+{ 
+  public void CallerMethod()
+  {
+    var module = new HighLevelModule(PlaySong);
+    …
+  }
+
+  // Method injected into HighLevelModule
+  public void PlaySong() { }
+}
+
+public class HighLevelModule
+{
+  private readonly MyOperation _action;
+  public HighLevelModule(MyOperation action)
+  {
+    _action = action;
+  }
+
+  public void Run()
+  {
+    _action();
+  }
+}
+```
+
+## Dependency Inversion Methods
+
+### 1. Using Dependency Injection
+
+Dependency is injected to a class via its public members: 
+
+- Contructor Injection: Dependency is injected into the class's constructor
+
+```cs
+public interface IAddress { }
+
+// Share the contract
+public class Address : IAddress { }
+
+public class Customer
+{
+    IAddress address;               // reference to IAddress interface not concrete class Address
+    public Customer(IAddress address)
     {
-        IAddress address;               // reference to IAddress interface not concrete class Address
-        public Customer()
-        {
-            address = new Address();   // Problem: still depends on Address in it's constructor as it is instantiated in the constructor
-        }
+        this.address = address;
     }
+}
+```
 
+- Method Injection: Dependency is injected into a method
 
-In the above the program we can see there is no dependency between Class Customer and Address. Instance of Customer is created in main program and passed to the constructor as a parameter.  This is called constructor injection. There is another way called property injection.
+```cs
+public class Customer
+{
+    private readonly IOperation _operationOne;
+    private readonly IOperation _operationTwo;    
+    public Customer(IOperation operationOne, IOperation _operationTwo) { 
+       _operationOne = operationOne;
+       _operationTwo = operationTwo;        
+    }
+    public void Run()
+    {
+        _operationOne.Play();
+        _operationTwo.Play();
+    }
+}
+```
 
+- Setter Injection: Dependency is injected into a set property
 
-Then what is the solution?
-We will move the instantiation of class Address to some other class which will take care of creating the instance. By this way there is no dependency between Customer and Address.  This can be better handled using dependency injection.
+```cs
+public interface IAddress { }
+public class Customer
+{
+    IAddress address  { get; set; }; 
+    public Customer() { }
+    public void Run() { address.GetCity(); }
+}
+```
 
-What is dependency injection?
-With dependency injection, you can substitute different concrete class implementations at runtime.
+- Events Injection
 
-There should be 3 elements for DI(dependency injection).
-A dependent consumer (in our case class Customer)
-Declaration of dependencies as contractors (Address is dependency and IAddress is the contract)
-Injector, which creates instances of concrete classes ( in our explanation , we referred to this as  some other class ) . There are lots of injectors available in the market like Ninject, Microsoft unity ….
+Only for delegate type injection in a subscription/notificatin model
+The caller will subscribe a delegate to the class that implements the event, and there can be multiple subscribers. Injecting events via constructor not common. 
+The delegate must return void
 
-You can also use other design patterns, such as the Factory or Publisher/Subscriber patterns, to reduce the dependency between components.
+```cs
+public class Caller
+{ 
+  public void CallerMethod()
+  {
+    var module = new HighLevelModule();
+    module.SendEvent += ShowMessage; // event injection can be performed after the object construction
+    …
+  }
+
+  // Method injected into HighLevelModule
+  public void ShowMessage() { }
+}
+
+public class HighLevelModule
+{
+  public event Action SendEvent = delegate {};
+
+  public void Call()
+  {
+    SendEvent();
+  }
+}
+```
+
+- index properties, fields... any public member
+
+### 2. Using Global States
+
+Dependency is not injected but retrieved from a global state from inside the class
+The dependency itself can be injected into the global states and later accessed from inside the class
+Global states to invert dependencies is not recommended, as it makes dependencies less obvious, and hides them inside the class.
+
+```cs
+public class Helper
+{
+    // Global states can be properties, methods, fields. Underlying value has public setter and getter
+    // Setter and getter can be in the form of methods instead of properties
+    public static IOperation GlobalStateOperation { get; set;}
+}
+
+public class HighLevelModule
+{
+    public void Call()
+    {
+        Helper.GlobalStateOperation.Send();
+    }
+}
+
+public class Caller
+{
+    public void CallerMethod()
+    {
+        Helper.GlobalStateOperation = new LowLevelModule();
+
+        var highLevelModule = new HighLevelModule();
+        highLevelModule.Call();
+    }
+}
+```
+### 3. Using Indirection
+
+Dependency is not injected but you pass an object that is capable of creating the implementation of the abstraction for you. This means you create another dependency for the class.
+
+Use indirection sparingly. Service Locator Pattern, is seen as anti-pattern nowadays. However from time to time, you may need to use a factory object to create the dependencies. Try to stay clear from using Indirection, unless it is proven necessary.
+
+The type of object you pass into the class can be:
+
+- Registry/Container object
+
+Using a register/container, you need to register the implementation class before you can query it
+
+If you use a register (Service Locator Pattern) then you can query the register to return an implementation of an abstraction. Register the implementation first from outside the class
+
+IoC container frameworks use a container to wrap up the registry. Register all the dependencies first.
+
+In the early days IoC container frameworks was often implemented as a Global state or Singleton instead of explicitly passing it into a class, and this was now considered as anti-pattern
+
+Using a container
+
+```cs
+public interface IOperation
+{
+  void Play();
+}
+
+public class LowLevelModule: IOperation
+{
+  public LowLevelModule() { }
+  public void Play() { }
+}
+
+public class HighLevelModule
+{
+  private readonly Container _container;
+
+  public HighLevelModule(Container container)
+  {
+    _container = container;
+  }
+
+  public void Call()
+  {
+    IOperation operation = _container.Resolvel<IOperation>();
+    operation.Play();
+  }
+}
+
+public class Caller
+{
+  public void UsingContainerObject()
+  {
+     //registry the LowLevelModule as implementation of IOperation
+     var register  = new Registry();
+     registry.For<IOperation>.Use<LowLevelModule>();
+
+     //wrap-up registry in a container
+     var container = new Container(registry);
+      
+     //inject the container into HighLevelModule
+     var highLevelModule = new HighLevelModule(container);
+     highLevelModule.Call();     
+  }
+}
+```
+
+- Factory object
+
+ A normal class that returns an abstraction (interface)
+ Instantiations are hardcoded in the factory implementation
+  
+```cs
+public interface IOperation
+{
+  void Play();
+}
+
+public class LowLevelModule: IOperation
+{
+  public LowLevelModule() { }  
+  public void Play() { }
+}
+
+public interface IModuleFactory
+{
+   IOperation CreateModule();
+}
+
+// Factory object needs to implement the abstraction
+public class ModuleFactory: IModuleFactory
+{
+  public IOperation CreateModule()
+  {
+      //LowLevelModule is the implementation of the IOperation and it is hardcoded in the factory. 
+      return new LowLevelModule();
+  }
+}
+
+// HighLevelModule needs to depend on the factory abstraction
+public class HighLevelModule
+{
+  private readonly IModuleFactory _moduleFactory;
+
+  public HighLevelModule(IModuleFactory moduleFactory)
+  {
+    _moduleFactory = moduleFactory;
+  }
+
+  public void Run()
+  {
+    IOperation operation = _moduleFactory.CreateModule();
+    operation.Play();
+  }
+}
+
+public class Caller
+{
+  public void CallerMethod()
+  {
+     //create the factory as the implementation of abstract factory
+     IModuleFactory moduleFactory = new ModuleFactory();
+      
+     //inject the factory into HighLevelModule
+     var highLevelModule = new HighLevelModule(moduleFactory);   
+     highLevelModule.Run();  
+  }
+}
+```
 
 ## IOC - inversion of control
 

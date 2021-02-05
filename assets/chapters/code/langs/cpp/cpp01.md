@@ -37,30 +37,7 @@ return 0;
 # noname
 
 ```js
-     Mingwin tools, in path for cmd, not for ps             ($env:path.split(';')) | where {$_ -like '*mingw*'} | ls
-        ↑                                                                        \____  Directory: C:\MinGW\mingw-w64\x86_64-8.1.0-win32-seh-rt_v6-rev0\mingw64\bin
-  cmd> gcc hello.c -o hello.exe     
-       g++ hello.c -o hello.exe
-       gcc hello.c sqlite3.dll -o hello.exe     if a dll is needed
-       g++ -std=c++17 -O2 -Wall -pedantic -pthread hello.cpp && ./a.out
-               ↓        \   ---------------
-            Standard     \      \___ Warnings
-            c++98         \
-            c++11          \___ optimization level -O0  None
-            c++14                                  -O1  Moderate  
-            c++17                                  -O2  Full 
-                                                   -O3  Max  
 
-   ps> gcc hello.c -o hello.exe     
-       g++ not found
-
-       C:\MinGW\mingw-w64\x86_64-8.1.0-win32-seh-rt_v6-rev0\mingw64\bin
-        make.cmd
-        ld.exe
-        g++.exe
-        gcc.exe
-        gdb.exe
-        cpp.exe
 ```
 
 ::::
@@ -97,3 +74,43 @@ class Movable : public GameObject
         virtual void update() override { /* update position */ };
 };
  ```
+
+// "dynamic memory" 
+int main(){
+    int * myptr = new int;
+    * myptr = 1;
+    printf("myptr[0] is %i\n",*myptr);
+    return 0;
+}
+ 
+ 
+// C89 compatible file
+int main()
+{
+    int x[] = {0, 2};
+    return sizeof(x);
+}
+
+// C99 compatible file
+int main()
+{
+    int x[] = {[1]=2};
+    return sizeof(x);
+}
+
+// C++1998,2003 compatible file
+class X{};
+int main()
+{
+    X x;
+    return sizeof(x);
+}
+
+// C++11
+#include <vector>
+enum class Color : int{red,green,blue}; // scoped enum
+int main()
+{
+    std::vector<int> a {1,2,3}; // bracket initialization
+    return 0;
+}

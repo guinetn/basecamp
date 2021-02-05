@@ -310,3 +310,9 @@ download.chapter(finance/startup.md)
  
   to be assured of a job in finance, it will benefit you to learn the coding languages K and Q. K and Q underpin the Kdb+ database system which is used increasingly by banks, hedge funds and high frequency trading houses, and yet very few people are fully conversant in them.
   
+  
+  
+Pricing
+Black Scholes
+Sensitivities
+Monte Carlo Simulation

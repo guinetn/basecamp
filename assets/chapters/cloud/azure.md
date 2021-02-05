@@ -162,3 +162,11 @@ Azure Databricks = Databricks + Apache Spark + enterprise cloud
 easy, fast, and collaborative Apache spark-based analytics platform. It accelerates innovation by bringing data science data engineering and business together. Making the process of data analytics more productive more secure more scalable and optimized for Azure.
 
 https://k21academy.com/microsoft-azure/dp-200/azure-databricks
+
+
+## more
+
+
+- [Setting up an azure vm +  honeypot in Azure](https://www.youtube.com/watch?v=XDSar2i4s-s&t=1s)
+https://github.com/telekom-security/tpotce
+- https://github.com/microsoft/AzureTipsAndTricks

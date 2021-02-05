@@ -117,7 +117,7 @@ Favor composition over inheritance is a design principle that gives the design h
 Overuse of inheritance leads to thickly layered programs that destroy transparency
 >Some languages, notably Go, use type composition exclusively
 
-#### INHERITENCE 
+#### INHERITANCE 
 Is inheriting from a base class 
 Relationships between objects: "An apple is a Fruit"
 
@@ -136,7 +136,10 @@ using instance variables that are references to other objects
 ```c++
 class Fruit  { // superclass… }
 class Apple { // subclass… 
-    private Fruit fruit = new Fruit();
+    private Fruit;
+    public Apple()  { 
+        fruit = new Fruit();
+    }
 }
 ```
 
