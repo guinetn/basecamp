@@ -47,43 +47,34 @@
 
 ::::
 # Number Bases
-
 Decimal is the base number system we're most used to dealing with
 But computers usually work with 
 
 download.page(computer_science/numbers_binary.md)
 download.page(computer_science/numbers_hexadecimal.md)
-
 ::::
-download.page(computer_science/processors.md)
+download.page(computer_science/hardware/_hardware.md)
 ::::
-download.page(computer_science/os.md)
+download.page(computer_science/os/_os.md)
 ::::
 download.page(computer_science/encoding.md)
 ::::
-download.page(computer_science/software_life_cycle.md)
+download.page(computer_science/best_practices.md)
+::::
+download.page(computer_science/software_design_rules/design_patterns/_design_patterns.md)
+::::
+download.page(computer_science/software_design_rules/design_patterns/antipatterns.md)
 ::::
 download.page(computer_science/programming_paradigms.md)
-
 ::::
 download.page(computer_science/algorithms/_algorithms.md)
 ::::
-download.page(computer_science/architecture.md)
+download.page(computer_science/_architecture.md)
 ::::
 download.page(computer_science/regex.md)
 ::::
-download.page(computer_science/best_practices.md)
-::::
-download.page(computer_science/design_patterns.md)
-::::
-download.page(computer_science/antipatterns.md)
-::::
-download.page(computer_science/hardware.md)
-::::
-download.page(computer_science/software_quality.md)
-::::
 download.page(computer_science/the_developer.md)
 ::::
-download.page(computer_science/cqrs.md)
+download.page(computer_science/open_source.md)
 ::::
 download.page(computer_science/licences.md)

@@ -298,6 +298,6 @@ Inject the theme name in index.html  at highlight.js min css level:
 ```<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/[THEME CHOOSEN GO HERE].min.css">```. Add a '-' for themes with composed name, ex: stackoverflow-dark
 
 # License
-Released under the [MIT License][http://www.opensource.org/licenses/MIT]
+This software is distributed under the [MIT License][http://www.opensource.org/licenses/MIT]. Please see the Licence-xxx files for details, as well as third party notices for included open-source libraries.
 
 # Donate

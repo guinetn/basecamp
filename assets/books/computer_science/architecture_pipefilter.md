@@ -1,1 +1,0 @@
-# Pipe &amp; Filter Architecture

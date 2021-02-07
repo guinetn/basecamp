@@ -1,4 +1,4 @@
-## PROGRAMMING PARADIGMS
+# PROGRAMMING PARADIGMS
 
 Based on the concept of
 objects: which may contain data (fields, attributes)
@@ -38,7 +38,7 @@ Has a particular style of execution model coupled to a particular style of synta
 Programming which has a particular style of syntax and grammar
 
 
-# Static Languages vs Dynamic Languages
+## Static Languages vs Dynamic Languages
 
 * DYNAMIC LANGUAGES 
 
@@ -54,7 +54,7 @@ Historically, computer languages have been divided into two groups:
 static languages (e.g., Fortran or C, where variables are statically typed at compile time), and dynamic languages (e.g., Smalltalk or JavaScript, where the type of a variable can change at run time). Static languages were typically compiled to produce native machine code (or assembly code) programs for the target machine, which at run time were executed directly by the hardware. Dynamic languages were executed by an interpreter, without producing machine language code.
 https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
 
-# PROGRAMMING PARADIGM (PATTERN, EXAMPLE)
+## PROGRAMMING PARADIGM (PATTERN, EXAMPLE)
 
 The way you choose to code: functional, oo...
 

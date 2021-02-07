@@ -1,4 +1,6 @@
-# ACID (DataBases): Atomic Coherent Isolation Durable
+### ACID (DataBases)
+
+Atomic Coherent Isolation Durable
 
 The 4 ACID properties garantee a transaction execution reliability
 Transaction: operations modifying data

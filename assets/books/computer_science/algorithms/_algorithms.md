@@ -1,10 +1,10 @@
-# Algorithms
+# ALGORITHMS
 
 - Definition
 - Possible Follow­Up Questions
 - What watch for (what to check to validate the algorithm)
 
-
+::::
 download.page(computer_science/big-o.md)
 ::::
 download.page(computer_science/algorithms/mathematical/_mathematical.md)

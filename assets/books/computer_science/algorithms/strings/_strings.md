@@ -1,5 +1,4 @@
-## String algorithms
-
+# STRING ALGORITHMS
 
 download.page(computer_science/algorithms/strings/palindrome.md)
 download.page(computer_science/algorithms/strings/anagrams.md)

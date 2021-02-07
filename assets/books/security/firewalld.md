@@ -1,4 +1,4 @@
-# firewalld
+## firewalld
 
 firewalld on systemd systems is easier to manage and configure than iptables.
 

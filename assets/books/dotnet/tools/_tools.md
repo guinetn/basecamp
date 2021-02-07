@@ -1,10 +1,12 @@
 # TOOLS
 
-download.page(dotnet/tools/ildasm.md)
+download.page(dotnet/tools/decompilers/_decompilers.md)
 ::::
 download.page(dotnet/tools/msbuild.md)
 ::::
 download.page(dotnet/tools/resgen.md)
+::::
+download.page(dotnet/tools/mef.md)
 ::::
 download.page(dotnet/tools/nuget.md)
 ::::

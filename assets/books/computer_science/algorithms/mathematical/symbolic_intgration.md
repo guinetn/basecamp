@@ -1,6 +1,6 @@
-# SYMBOLIC INTGRATION
+## SYMBOLIC INTEGRATION
 
-Computer Algebra Systems (CAS
+Computer Algebra Systems (CAS)
 computer algorithms for manipulating the expressions in natural form
 
 

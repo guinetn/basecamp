@@ -1,4 +1,4 @@
-# Mathematical algorithms
+# MATHEMATICAL ALGORITHMS
 
 |||
 |---|---|

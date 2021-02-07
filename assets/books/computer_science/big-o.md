@@ -1,4 +1,6 @@
-# BIG O NOTATION: Algorithmic Complexity
+# BIG O NOTATION
+
+Measure algorithmic complexity
 
 The amount of time it takes to run an algorithm = its computational complexity
 Big O is used to analyze algorithms computational complexity (time or space used) to determine how fast an algorithm is

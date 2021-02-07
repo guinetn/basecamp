@@ -6,6 +6,14 @@
 
 We don't want to reauthenticate every time
 
+
+### Learn to dig
+- git blame   author name, last modified date, commit hash 
+- git log to look at the commit history of the overall repo.
+  git log | grep someFunction -C 3  (3 lines of context)
+- git log -p index.js   file history  
+
+
 ### SSH protocol
 connect and authenticate to remote servers and services
 
