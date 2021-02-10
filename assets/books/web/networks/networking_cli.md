@@ -1,4 +1,46 @@
 ## NETWORKING WITH CLI
+
+
+
+## ipconfig.exe 
+Details on the current TCP/IP network configuration and refresh DHCP and DNS settings
+ip, dns, gateway, hostname
+>ipconfig 
+>ipconfig /all  
+Adresse physique . . . . . . . . . . . : AC-2B-6E-68-6E-73    ← MAC address
+
+## nslookup
+DNS query to get ip address
+
+>nslookup google.com
+    Serveur :   ns1.numericable.net
+    Address:  89.2.0.1
+
+    Réponse ne faisant pas autorité :
+    Nom :    nc-ass-vip.sdv.fr
+    Address:  212.95.74.75
+    Aliases:  google.com.numericable.fr
+
+## ping
+Test the reachability of a host
+>ping google.com
+
+## tracert - tracerout
+Network diagnostic commands for displaying possible routes and measuring transit delays of packets
+>tracert facebook.com
+
+## netstat -  Network Statistics
+Identifies all the active connections
+>netstat
+ Proto  Adresse locale         Adresse distante       État
+  TCP    192.168.0.17:49884     par21s19-in-f10:https  CLOSE_WAIT
+  TCP    192.168.0.17:49988     a23-57-5-23:https      ESTABLISHED
+  TCP    192.168.0.17:49989     a23-57-5-23:https      ESTABLISHED
+  TCP    192.168.0.17:49990     a23-57-5-23:https      ESTABLISHED
+  TCP    192.168.0.17:49995     a23-40-113-188:http    ESTABLISHED
+  TCP    192.168.0.17:49996     a23-40-113-188:http    ESTABLISHED
+
+
 // check the DNS solution
 $ nslookup www.dgate.org
 // get the laptop's host name
@@ -50,3 +92,27 @@ $openssl s_client -connect stackoverflow.com:443
 import requests
 cnn = requests.get('http://www.cnn.com')
 print(cnn.text)
+
+## netstat
+
+>netstat
+>netstat -antp
+
+Windows
+>netstat -r
+>netsh interface ipv4 show route
+>netsh interface ipv6 show route
+
+Linux
+>ip route
+>netstat -r
+
+
+
+## wireshark
+Network sniffer 
+
+>apt-get install wireshark
+https://www.wireshark.org/
+
+

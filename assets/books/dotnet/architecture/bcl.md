@@ -1,7 +1,9 @@
-## Base Class Library (BCL)
+## BCL - Base Class Library 
 
-bibliothèque standard utilisée par tous les langages basés sur framework .NET.
-the base. It contains basic, fundamental types like System.String and System.DateTime.
+These class libraries have all the types existing in the .NET Framework
+They are used by all langages .NET Framework based
+Each class is wrapped in a namespace.
+It contains basic, fundamental types like System.String and System.DateTime.
 
 is the core library of the .NET framework. Besides operating directly with the CLR it exposes the primitive data types and essential functionality to build and run an application. Also known as mscorlib
 Pour faciliter le travail du programmeur, .NET utilise la BCL pour encapsuler un grand nombre de fonctions communes, telles que la lecture et l'écriture, le rendu graphique, l'interaction avec une base de données, la manipulation de documents Extensible Markup Language. Son but est beaucoup plus large que celui d'autres langages comme C++, et il serait plus comparable avec la bibliothèque standard de Java (Java Class Library).
@@ -9,7 +11,8 @@ Pour faciliter le travail du programmeur, .NET utilise la BCL pour encapsuler un
 Il ne faut pas faire de confusion entre la BCL et la FCL (Framework Class Library), qui est un sur-ensemble incluant l'espace de noms de Microsoft.
 BCL is a subcomponent of FCL
 
-BCL Espace de noms
+BCL namespaces
+--------------
 System.CodeDom
 System.Collections
 System.ComponentModel

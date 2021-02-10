@@ -159,13 +159,8 @@ Be Aware/Cautious of All Applications You Install
     Review Logs Regularly
 
 Searching for installed software
-    Debian
-    yum list installed
-    yum remove packageName
-
-    Ubuntu:
-    dpkg --list
-    apt-get remove packageName
+    Debian: yum list installed
+    Ubuntu: dpkg --list        
 
 - https://www.liquidweb.com/kb/security-for-your-linux-server/
 - https://www.freecodecamp.org/news/securing-your-linux-web-server/
@@ -189,3 +184,28 @@ start/stop containers:
 [root@apollo ~]# lxc start apollo
 
 https://connect.ed-diamond.com/Linux-Pratique/LPHS-045/La-mise-en-conteneur-d-une-application-ou-d-un-service-avec-LXD
+
+
+## LFS
+http://www.linuxfromscratch.org
+Linux From Scratch 
+Gerard Beekmans 
+Create a linux distribution Linux and understand how it works
+
+
+## scripts
+
+https://github.com/thoughtbot/rcm
+    curl -LO https://thoughtbot.github.io/rcm/dist/rcm-1.3.4.tar.gz &&
+    sha=$(sha256 rcm-1.3.4.tar.gz | cut -f1 -d' ') &&
+    [ "$sha" = "9b11ae37449cf4d234ec6d1348479bfed3253daba11f7e9e774059865b66c24a" ] &&
+    tar -xvf rcm-1.3.4.tar.gz &&
+    cd rcm-1.3.4 &&
+    ./configure &&
+    make &&
+    sudo make install
+
+## more
+
+- https://www.kernel.org/
+- https://opensource.com/article/20/1/inter-process-communication-linux

@@ -13,7 +13,11 @@ using System;
 Important types not defined in C#
 Contains the most .Net framework types (DateTime...)
 
-
+***DISCOVER PROPERTIES, METHODS...***
+'w32time' | Get-Member   
+$CustomObject = [pscustomobject]@{ Name = 'w32time' }
+$CustomObject | Get-Member
+ 
 int i = 5;
 string s = "Hello";
 double d = 1.0;

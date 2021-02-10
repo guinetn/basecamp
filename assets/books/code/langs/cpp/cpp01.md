@@ -34,10 +34,88 @@ return 0;
 
 ::::
 
-# noname
+# Static library
 
-```js
+MathLibrary.h
+```c++
+#pragma once
 
+namespace MathLibrary
+{
+    class Arithmetic
+    {
+        public:
+            // Returns a + b
+            static double Add(double a, double b);
+
+            // Returns a - b
+            static double Subtract(double a, double b);
+
+            // Returns a * b
+            static double Multiply(double a, double b);
+
+            // Returns a / b
+            static double Divide(double a, double b);
+    };
+}
+```
+
+MathLibrary.cpp
+```c++
+// compile with: cl /c /EHsc MathLibrary.cpp
+// post-build command: lib MathLibrary.obj
+#include "MathLibrary.h"
+
+namespace MathLibrary
+{
+    double Arithmetic::Add(double a, double b)
+    {
+        return a + b;
+    }
+
+    double Arithmetic::Subtract(double a, double b)
+    {
+        return a - b;
+    }
+
+    double Arithmetic::Multiply(double a, double b)
+    {
+        return a * b;
+    }
+
+    double Arithmetic::Divide(double a, double b)
+    {
+        return a / b;
+    }
+}
+```
+
+MathClient.cpp
+```c++
+// compile with: cl /EHsc MathClient.cpp /link MathLibrary.lib
+
+#include <iostream>
+#include "MathLibrary.h"
+
+int main()
+{
+    double a = 7.4;
+    int b = 99;
+
+    std::cout << "a + b = " << MathLibrary::Arithmetic::Add(a, b) << std::endl;
+    std::cout << "a - b = " << MathLibrary::Arithmetic::Subtract(a, b) << std::endl;
+    std::cout << "a * b = " << MathLibrary::Arithmetic::Multiply(a, b) << std::endl;
+    std::cout << "a / b = " << MathLibrary::Arithmetic::Divide(a, b) << std::endl;
+
+    return 0;
+}
+```
+# Dynamic liked library - DLL
+
+extern "C" MATHLIBRARY_API bool fibonacci_next();
+
+
+```c++
 ```
 
 ::::

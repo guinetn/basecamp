@@ -1,5 +1,10 @@
 # C
 
+add: - [Hash Table in C]https://www.yo utube.com/watch?v=2Ti5yvumFTU&t=1040s
+download.page(code/langs/c/sll.md)
+download.page(code/langs/c/dll.md)
+
+
 ### MOST USED HEADER FILES
 
 stdio.h	This is standard input/output header file in which Input/Output
@@ -17,6 +22,9 @@ locale.h	This file contains locale functions
 errno.h	Error handling functions are given in this file
 assert.h	This contains diagnostics functions
 https://fresh2refresh.com/c-programming/c-function/c-library-functions/
+
+
+
 
 ## DYNAMIC MEMORY ALLOCATION
 malloc ()	malloc (number *sizeof(int));
@@ -87,13 +95,17 @@ int main() {
 }
  ```
 
- 
+download.page(code/langs/c/crt.md)
+
+## More 
 - https://fresh2refresh.com/c-programming
 - https://www.geeksforgeeks.org/higher-order-functions-in-c
 - https://h-deb.clg.qc.ca/Sujets/Divers--c/index.html#general
 - https://github.com/signalapp/libsignal-protocol-c/blob/master/src/curve.c
 - https://x-engineer.org/graduate-engineering/programming-languages/c/data-types-c-programming-language/
 - https://dzone.com/articles/writing-a-linux-daemon-in-c
+- [Hash Table in C]https://www.youtube.com/watch?v=2Ti5yvumFTU&t=1040s
 
-	systemd
-	
+
+- https://opensource.com/article/21/2/linux-software-libraries
+- https://opensource.com/article/20/6/linux-libraries

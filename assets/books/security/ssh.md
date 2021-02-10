@@ -8,6 +8,8 @@ Windows 10 uses OpenSSH as its default SSH client and SSH server
 ssh nom_utilisateur@ip_ou_nom_machine -p numero_de_port
 ssh -i /path/my-key-pair.pem my-instance-user-name@my-instance-public-dns-name
                                                                              
+PS>Get-ChildItem -Path Cert:\LocalMachine\CA
+
 ## Have a SSH Directory
 
 mkdir -p $HOME/.ssh chmod 0700 $HOME/.ssh

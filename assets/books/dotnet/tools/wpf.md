@@ -1021,12 +1021,18 @@ Snoop
 Examining complex user interfaces
 to attach to any WPF application to view and modify the visual tree's elements and their properties
 
+SignTool
+C:\Program Files (x86)\Microsoft SDKs\ClickOnce\SignTool
+
 ## Prism framework
 Building modular WPF composite applications
 Part of Microsoft's patterns and practices suite of software
 Classes to create loosely coupled modules that are dynamically loaded and displayed inside of a main shell
 The shell is divided into regions, which you dynamically fill with user control views that are found in your modules
 
+
 ## More
 - https://intellitect.com/interfacing-multithreading-patterns/
 - https://github.com/Code52/Enhance
+
+

@@ -32,7 +32,7 @@ Strictly speaking, this is not a separate language but a dialect of PHP. However
 ::::
 download.page(code/langs/assembler.md)
 ::::
-download.page(code/langs/c.md)
+download.page(code/langs/c/_c.md)
 ::::
 download.page(code/langs/cpp/_cpp.md)
 ::::

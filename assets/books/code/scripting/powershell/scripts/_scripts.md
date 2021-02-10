@@ -1,0 +1,10 @@
+download.page(code/scripting/powershell/scripts/functions.md)
+download.page(code/scripting/powershell/scripts/files.md)
+download.page(code/scripting/powershell/scripts/comparison_operators.md)
+download.page(code/scripting/powershell/scripts/loops.md)
+download.page(code/scripting/powershell/scripts/objects.md)
+download.page(code/scripting/powershell/scripts/misc.md)
+download.page(code/scripting/powershell/scripts/screen.md)
+download.page(code/scripting/powershell/scripts/strings.md)
+download.page(code/scripting/powershell/scripts/services.md)
+

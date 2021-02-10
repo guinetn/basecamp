@@ -57,8 +57,18 @@ download.page(computer_science/os/os_posix.md)
 ::::
 download.page(computer_science/os/os_linux.md)
 ::::
+download.page(computer_science/os/os_linux_unbutu.md)
+::::
+download.page(computer_science/os/os_linux_debian.md)
+::::
+download.page(computer_science/os/os_linux_arch.md)
+::::
+download.page(computer_science/os/os_linux_centos.md)
+::::
 download.page(computer_science/os/os_windows.md)
 ::::
 download.page(computer_science/os/os_unix.md)
+::::
+download.page(computer_science/os/wsl.md)
 ::::
 

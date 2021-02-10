@@ -19,7 +19,7 @@ Linux est le noyau, c'est-à-dire le programme du système qui alloue les ressou
 Distributions
 - https://www.gnu.org/distros/free-distros.html
 - https://www.gnu.org/distros/common-distros.html 
-Has blobs (code without sources)
+These has blobs (code without sources) so not open
 Arch
 CentOS
 Debian GNU/Linux

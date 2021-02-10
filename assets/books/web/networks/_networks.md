@@ -22,6 +22,11 @@ https://www.submarinecablemap.com/
 |Cookies | An HT TP cookie is a small piece of data from a website stored on the user's computer by the browser. |
 |API | An Application Programming Interface is a computing interface to extract data from a website. |
 
+
+ 
+download.page(web/networks/ip.md)
+::::
+download.page(web/networks/subnet.md)
 ::::
 download.page(web/networks/ports.md)
 ::::
@@ -49,12 +54,14 @@ download.page(web/networks/lan.md)
 ::::
 download.page(web/networks/nat.md)
 ::::
-download.page(web/networks/subnet.md)
-::::
-download.page(web/networks/vpn.md)
+download.page(security\vpn.md)
 ::::
 download.page(web/networks/vpc.md)
 ::::
 download.page(web/networks/router_table.md)
 ::::
 download.page(web/networks/dhcp.md)
+::::
+download.page(web/networks/wol.md)
+
+- https://www.cbouba.fr/adresses-ip-masque-de-sous-reseau-passerelle-par-defaut-et-serveur-dns/

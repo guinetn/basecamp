@@ -1,17 +1,5 @@
-
-Net Framework has 2 major parts:
-• CLR - Common Language Runtime
-• FCL - Framework class library
-   
-download.page(dotnet/language/clr.md)
-download.page(dotnet/language/bcl.md)
-download.page(dotnet/language/fcl.md)
-
-.NET platform is language agnostic:
-download.page(dotnet/language/cts.md)
-download.page(dotnet/language/cls.md)
-
-
+download.page(dotnet/architecture/_architecture.md)
+::::
 download.page(dotnet/language/application_domain.md)
 ::::
 download.page(dotnet/language/garbage_collector.md)

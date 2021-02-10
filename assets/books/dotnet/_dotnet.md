@@ -1,4 +1,4 @@
-# Dotnet
+# DOTNET
 
 .NET is a cross-platform runtime and libraries, for cloud, IoT and desktop apps. It includes a garbage collector, JIT compiler, primitive data types and class libraries.
 

@@ -28,6 +28,7 @@ openssl help
     Cipher commands: aes-128-cbc  des3...
 man openssl
 
+PS>Get-ChildItem -Path Cert:\LocalMachine\CA
 ## More
 - https://github.com/openssl
 - https://www.liquidweb.com/kb/how-to-verify-a-connection-is-secure-using-openssl

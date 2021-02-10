@@ -1,5 +1,17 @@
 # SCRIPTING
 
-download.page(code/scripting/powershell.md)
+::::
+download.page(code/scripting/dos.md)
+::::
+download.page(code/scripting/powershell/remote_managt/wmf.md)
+::::
+download.page(code/scripting/powershell/_powershell.md)
+::::
+download.page(code/scripting/powershell/powershell_ise.md)
+::::
+download.page(code/scripting/powershell/powershell_dsc.md)
+::::
+download.page(code/scripting/powershell/winrm.md)
 ::::
 download.page(code/scripting/bash.md)
+
