@@ -42,6 +42,8 @@ download.page(dotnet/types/ref/span.md)
 ::::
 download.page(dotnet/types/ref/dynamic.md)
 ::::
+download.page(dotnet/types/ref/record.md)
+::::
 download.page(dotnet/language/covariance.md)
 ::::
 download.page(dotnet/types/val/structs.md)

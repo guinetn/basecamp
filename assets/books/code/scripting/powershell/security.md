@@ -23,5 +23,13 @@ To apply a group stategy: GPMC.msc
 
 ### Credentials
 
+Read from user for credential:
 >Get-Credential
 enter user/pwd
+Enter your credentials.
+User: Joe
+Password for user Joe: ········
+Joe, password received!
+
+$cred = Get-Credential
+"$($cred.UserName), password received!"

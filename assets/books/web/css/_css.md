@@ -131,6 +131,18 @@ position: static | relative | fixed | absolute | inherit
 Style priority is determined by position in site<br>
 More Specific = Greater Precedence
 
+Knowing what selectors have a higher level of specificity:
+
+1. The selector with the highest specificity wins
+2. When specificity is the same, the one defined later wins (the document is read top-down by browser)
+
+Priorities:
+- !important keyword (just overrides the whole process)
+- inline styles (1000 points)
+- ids (100 points)
+- attributes or classes (10 points)
+- element (1 point)
+
     1. Find all declarations for the target media type
     2. Sort according to importance (normal or important) and origin (author, user, or user agent)
         1. user agent styles declarations (will be overwritten by next styles)     |
@@ -289,6 +301,9 @@ div:hover {  animation: myAnim 5s linear 2s;  }
         }                                              cubic-bezier( p1, p2, p3, p4)                                            
 ```
 
+![](assets/books/web/css/assets/transitions.webp)
+
+- https://www.joshwcomeau.com/animation/css-transitions/
 ### TRANSFORMATIONS
 
 ||||

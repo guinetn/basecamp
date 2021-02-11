@@ -166,7 +166,9 @@ https://k21academy.com/microsoft-azure/dp-200/azure-databricks
 
 ## more
 
-
+- https://docs.microsoft.com/en-us/learn/azure/
 - [Setting up an azure vm +  honeypot in Azure](https://www.youtube.com/watch?v=XDSar2i4s-s&t=1s)
 https://github.com/telekom-security/tpotce
 - https://github.com/microsoft/AzureTipsAndTricks
+
+- https://hub-binder.mybinder.ovh/user/dotnet-interactive-cb9ukwlm/lab/tree/powershell/Samples/Managing-Azure.ipynb

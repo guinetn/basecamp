@@ -1,10 +1,13 @@
 # Web
 
 download.page(web/w3c.md)
+download.page(web/ietf.md)
 ::::
 download.page(web/networks/_networks.md)
 ::::
 download.page(web/html.md)
+::::
+download.page(web/favicon.md)
 ::::
 download.page(web/dom/_dom.md)
 ::::

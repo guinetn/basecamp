@@ -75,3 +75,5 @@ It copies our package.json, runs npm install and starts the server. To make sure
 - https://intellitect.com/docker-scaffold/
 - https://intellitect.com/asp-net-core-dynamic-routing-with-constraints/
 - https://dev.to/rinkiyakedad/cross-container-communication-and-networking-in-docker-39n0
+- https://docs.microsoft.com/fr-fr/windows/wsl/tutorials/wsl-containers
+- https://dev.to/nas5w/how-to-serve-a-vue-app-with-nginx-in-docker-4p54

@@ -1,19 +1,57 @@
 ## Ports
+
+Port = address = address of AN application on a machine
+Port = 2^16 = 65536 values
+
+MySQL 127.0.0.1 + port 3306
+To view ports: 
+>netstat
+
+
 |Port range|Group|
 |---|---|
 |0 - 1 023| System / Well known ports|
+||Above 1024, randomly attributed by the OS:|
 |1 024 - 49 151| User ports / Registered ports (iana)|
-|49 152 - 65 535|Private/ Dynamic  ports|
+|49 152 - 65 535| Private/ Dynamic  ports|
 
 Open ports are how services on a computer communicate with another server over a network
 
+### Port Forwarding - Port mapping
+
+Let Internet have an access to machines on private networks using public ip + port
+
+rediriger un port du routeur vers un port donné sur une machine locale.
+Ex: tout paquet arrivant sur le port 80 du routeur devra être redirigé vers la machine d'adresse 192.168.0.1 sur le port 80 = être joignable depuis l'extérieur (internet)
+
+Mapping router’s public address <----> private IP address for a device on that private network
+
+Alows computers or services in private networks to connect over the internet with other public or private computers or services.
+When? a machine on the Internet needs to initiate a connection to a machine that's behind a firewall or NAT router. ... Put another way: you need port forwarding if you want to run a server behind the NAT firewall/router, you don't need it if you're just running a client.
+- https://openclassrooms.com/fr/courses/857447-apprenez-le-fonctionnement-des-reseaux-tcp-ip/856345-la-nat-et-le-port-forwarding
+- https://learn.g2.com/port-forwarding
+
+- SSH port forwarding: https://opensource.com/sites/default/files/gated-content/6_surprising_ways_to_use_jupyter_0.pdf
+simple SSH command with port forwarding to forward a local port to a remote local connection. When you run an SSH port-forwarding command like
+-L 8111:127.0.0.1:8888, you are telling SSH to forward your
+local port 8111 to what the remote host thinks 127.0.0.1:8888
+is. The remote host thinks 127.0.0.1 is itself
+
+- https://www.youtube.com/watch?v=ZFp-FKPpUQc&t=162s
+
+![](https://learn.g2.com/hs-fs/hubfs/request-reply-path.png?width=666&name=request-reply-path.png)
+
 <br/>
 Common Ports to Remember
+- 53: DNS
 - 80: HTTP (web)
 - 443: HTTPS (web)
 - 110: POP (mail)
+- 143: IMAP
+- 20/21: FTP
 - 25: SMTP (mail)
 - 22: SSH (remote shell connections)
+- 8080: Proxy
 
 - 20: FTP
 - 21: FTP

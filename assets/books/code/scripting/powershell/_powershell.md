@@ -3,6 +3,10 @@
 https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1
 
 ## install
+
+$PSHOME     stores the installation directory for PowerShell
+$Home       current user's home directory
+
 https://github.com/PowerShell/PowerShell/releases
 - Prerequisites: C Runtime Library, WMF
 - ARM-based version of PowerShell on computers like the Microsoft Surface Pro X.
@@ -63,6 +67,7 @@ C:\Program Files\WindowsPowerShell\Modules
 C:\Program Files\WindowsPowerShell\Configuration
 C:\Program Files\WindowsPowerShell\Scripts
 
+>$PSHOME   # All is here
 C:\Program Files\PowerShell\7
 C:\Program Files\PowerShell\7\System.Linq.dll
 C:\Program Files\PowerShell\7\System.Net.HttpListener.dll
@@ -219,16 +224,75 @@ Get-Member -InputObject $array  | where {$_.MemberType -like '*Method*'}
 Get-Member -InputObject $array  | where {$_.MemberType -like '*Property*'} 
 
 
+## PowerShell "Profile" concept
 
-On startup, PowerShell will run any .ps1 files it finds in the "My Documents/PowerShell"
+Create a profile to 
+- customize your environment: add commands, aliases, functions, variables, snap-ins, modules, PowerShell drives
+- add session-specific elements to every PowerShell session that you start
+
+https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.1#the-profile-variable
+
+Scripts that run when a new instance of PowerShell is started. Inside of a profile, you can put any PowerShell script you'd like.
+>$profile   # To see the location of the profile
+
+On startup, PowerShell will run `any .ps1 files it finds in` the "My Documents/PowerShell"
 Typically a xxxx_profile.ps1
 $profile is an automatic variable that points at your user profile for all PowerShell hosts
 C:\Users\nguin\Documents\PowerShell\Microsoft.PowerShell_profile.ps1   
-!! The file is listed but can not exists, it's the default!
+!! The file is listed but can not really exists, it's the default!
 For me I just have a 'profile.ps1" 
 
-%USERPROFILE% 'C:\Users\nguin'
+### basic profiles
+$PSHOME     installation directory for PowerShell
+$Home       current user's home directory
+            %USERPROFILE% 'C:\Users\nguin'
+            $Home         'C:\Users\nguin'
 
+All Users, All Hosts	$PSHOME\Profile.ps1
+All Users, Current Host	$PSHOME\Microsoft.PowerShell_profile.ps1
+Current User, All Hosts	$Home\[My ]Documents\PowerShell\Profile.ps1
+Current user, Current Host	$Home\[My ]Documents\PowerShell\
+Microsoft.PowerShell_profile.ps1
+
+
+|$PROFILE Property Name	| Description|
+|---|---|
+|$PROFILE.CurrentUserCurrentHost |	The current user for the current host|
+|$PROFILE.AllUsersCurrentHost  |	All users for the current host|
+|$PROFILE.CurrentUserAllHosts  |	The current user for all hosts|
+|$PROFILE.AllUsersAllHost	   | All users for all hosts|
+
+$PROFILE is the same as $PROFILE.CurrentUserCurrentHost
+
+In addition, other programs that host PowerShell can support their own profiles. For example, Visual Studio Code supports the following host-specific profiles.
+All users       Current Host	$PSHOME\Microsoft.VSCode_profile.ps1
+Current user    Current Host	$Home\[My ]Documents\PowerShell\
+Microsoft.VSCode_profile.ps1
+
+### Examples
+* Custom prompt
+https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.core/about/about_prompts?view=powershell-7.1
+function Prompt
+{
+  $env:COMPUTERNAME + "\" + (Get-Location) + "> "
+}
+
+* Output foreground/background colors 
+$host.UI.RawUI.ForegroundColor = [System.ConsoleColor]::Blue
+
+* Add a global variable to our profile:
+>$global:SET_IN_PROFILE = $true' >> $PROFILE
+From a PS session:
+>$global:SET_IN_PROFILE
+
+## Host
+ Refers to a PowerShell Host application or a "PSHost". These are ***applications that host a PowerShell runtime***:
+
+- ConsoleHost (used by pwsh.exe/pwsh)
+- PowerShell Editor Services Host (used by the PowerShell extension for Visual Studio Code's PowerShell Integrated Console)
+- .NET Interactive Host (used by this experience in .NET Interactive)
+- VSCode
+- ...
 ## Windows PATH environment variable 
 *  is where applications look for executables -- meaning it can make or break a system or utility installation
 Admins can use PowerShell to manage the PATH variable -- a process that entails string manipulation.

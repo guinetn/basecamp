@@ -33,7 +33,7 @@ ex: glass, plastic, paper, wood...
 ## Coulomb’s Law: interaction force between electric charges
 
 Coulomb force (F): electrostatic force / Coulomb interaction
-![Coulomb's law - attraction and repulsion](assets/books/sciences/physic/coulomb-law.jpg)
+![Coulomb's law - attraction and repulsion](assets/books/sciences/physic/assets/coulomb-law.jpg)
 
 - Conditions
 the charges must have a spherically symmetric distribution

@@ -2,6 +2,9 @@
 
 Translate network addresses from Private IP ---→ Public IP for connections to public Internet
 
+Process in which your router changes your private IP Address into a public one so that it can send your traffic over the Internet, keeping track of the changes in the process.
+When the information comes back to your router, it reverses the change—from a real IP address into a private one—and forwards the traffic back to your computer.
+
 Organize devices within a private LAN
 Enables instances inside Private Subnet to get Internet access.
 Instances behind NAT Gateway cannot send outgoing traffic but can receive incoming traffic.
@@ -19,3 +22,6 @@ gateway translating network address to allow private subnet instances to connect
 
 **Internet gateway**
 Allow communication instances ←--→ Internet.
+
+- https://openclassrooms.com/fr/courses/857447-apprenez-le-fonctionnement-des-reseaux-tcp-ip/856345-la-nat-et-le-port-forwarding
+- https://learn.g2.com/port-forwarding

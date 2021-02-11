@@ -6,6 +6,7 @@ https://hyperpolyglot.org/
 download.page(code/hello_worlds.md)
 ::::
 download.page(code/editors/_editors.md)
+download.page(code/editors/dotfiles.md)
 ::::
 download.page(code/scripting/_scripting.md)
 ::::
@@ -36,3 +37,5 @@ download.page(code/bot.md)
 download.page(code/sdk.md)
 ::::
 download.page(code/mixed_reality.md)
+::::
+download.page(code/notebooks/_notebooks.md)

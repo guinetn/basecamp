@@ -34,7 +34,7 @@ download.page(code/langs/assembler.md)
 ::::
 download.page(code/langs/c/_c.md)
 ::::
-download.page(code/langs/cpp/_cpp.md)
+download.page(code/langs/c++/_c++.md)
 ::::
 download.page(code/langs/elm.md)
 ::::

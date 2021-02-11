@@ -5,6 +5,13 @@ VPN permit secure and invisible remote connections: bypassing censorship rules t
 Provides a *direct connection between remote clients and a server* in a way that hides data as it’s transferred across an insecure network
 Has a dedicated subnet and VLAN accessible only from VPC's client.
 
+Use a VPN to...
+- Security: have an extra-secure Internet connection. Hackers protection on public wi-fi and unsecured networks
+- Privacy: more online privacy and stop spying and tracking. Prevent gov/isp/advertisers from tracking me
+- Access: get around Internet restrictions, geo-location blocks and filters: netflix...
+
+Use a VPN service for high-speed bandwidth, usability, a secure connection, private access to blocked sites, and the ability to choose the country and city where you appear to be.
+
 ||| 
 |---|---| 
 |SSH and SCP|protect data transferred through remote connections |
@@ -17,6 +24,11 @@ Don't guarantee security
 once you’ve opened a tunnel, it’s possible to connect remote networks as though they’re all together locally
 2. Add encryption
 Choose one of a number of encryption standards
+
+https://cybershield.cc
+https://www.linkev.com
+https://nordvpn.net
+https://surfshark.net
 
 [OpenVPN](https://openvpn.net/)
 . the best known

@@ -25,6 +25,8 @@ https://developer.okta.com/blog/2020/12/18/how-to-use-webauthn-csharp-dotnet
 
 https://docs.microsoft.com/en-us/aspnet/identity/
 
+https://www.youtube.com/watch?v=Fhfvbl_KbWo&list=PLOeFnOV9YBa7dnrjpOG6lMpcyd7Wn7E8V&index=1
+
 ## Startup
 ASP.NET Core application must include Startup class. It is like Global.asax
 https://www.tutorialsteacher.com/core/aspnet-core-startup
@@ -53,6 +55,11 @@ public class Program
 Kestrel
 - [KestrelHttpServer](https://github.com/benaadams/KestrelHttpServer)
 A development web server for ASP.NET vNext based on libuv
+
+## Tutorial
+
+https://www.youtube.com/watch?v=BfEjDD8mWYg
+https://www.youtube.com/watch?v=C5cnZ-gZy2I&t=217s
 
 ## More
 

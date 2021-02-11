@@ -9,6 +9,10 @@ Code becomes coupled if classes have more than one responsibility.
 - [Strategy Pattern to the rescue](https://itnext.io/how-we-avoided-if-else-and-wrote-extendable-code-with-strategy-pattern-256e34b90caf)
 - Decorator design pattern
 
+This principle is to keep the existing code from breaking when you implement new features.
+* Open if you can extend it, and produce a subclass and do whatever you want with it—add new methods or fields, override base behavior, etc.
+* Closed if it's 100% ready to be used by other classes—its interface is clearly defined and won’t be changed in the future
+
 ***L - LISKOV SUBSTITUTION PRINCIPLE***
 "Subtypes must be substitutable for their base types."
 This is polymorphism. just a way of ensuring that inheritance is used correctly.

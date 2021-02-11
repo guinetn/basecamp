@@ -11,13 +11,13 @@
 De nombreux physiciens cherchent cependant à unifier ces deux théories pour embrasser les lois de l’Univers de manière plus simple et complète.
 
 ::::
-download.page(sciences/physic/boson_higgs.md)
-::::
-download.page(sciences/physic/mechanic.md)
+download.page(sciences/physic/mechanic/_mechanic.md)
 ::::
 download.page(sciences/physic/electricity.md)
 ::::
 download.page(sciences/physic/magnetism.md)
 ::::
 download.page(sciences/physic/fluid-mechanics.md)
+::::
+download.page(sciences//physic/physic_quantic/_physic_quantic.md)
 

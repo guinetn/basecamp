@@ -16,7 +16,7 @@ download.page(security/ssl.md)
 ::::
 download.page(security/tls.md)
 ::::
-download.page(security/vpn.md)
+download.page(security\vpn.md)
 ::::
 download.page(security/openssl.md)
 ::::
@@ -39,6 +39,9 @@ download.page(security/attack_xss.md)
 download.page(security/attack_sql_injection.md)
 download.page(security/attack_csrf.md)
 
+::::
+download.page(security/backdoor.md)
+
 credential stuffing
 https://www.cloudflare.com/fr-fr/learning/bots/what-is-credential-stuffing
 
@@ -46,3 +49,4 @@ https://www.cloudflare.com/fr-fr/learning/bots/what-is-credential-stuffing
 ## More
 
 - https://github.com/mbcrump
+- https://dev.to/kmistele/how-to-securely-hash-and-store-passwords-in-your-next-application-4e2f

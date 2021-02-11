@@ -12,6 +12,23 @@ Use the type parameter:
 - It is not required to use T as a type parameter
 
 ```cs
+static T[] Shuffle<T>(T[] array)
+{
+    Random rand = new Random();
+    for (int i = 0; i < array.Length; i++)
+    {
+        int r = i + rand.Next(array.Length - i);
+        T temp = array[r];
+        array[r] = array[i];
+        array[i] = temp;
+    }
+    return array;
+}
+
+int[] randomIndices = Shuffle(Enumerable.Range(0, (int)Rows.Count).ToArray());
+```
+
+```cs
 
 class DataStore<T>
 {

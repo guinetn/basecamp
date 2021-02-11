@@ -1,5 +1,12 @@
 ## Compil c++ file
 
+## Online Compilers 
+
+[Compiler explorer - godbolt.org](https://godbolt.org/)
+[cppinsights](https://cppinsights.io/)
+
+
+
 ```html
 #include <iostream>
 void main()
@@ -8,7 +15,7 @@ void main()
 }
 ```
 >g++ cpp01.cpp && ./a.out   
->g++ cpp01.cpp -o cpp01.exe && ./cpp01.exe  
+>g++ cpp01.cpp -o cpp01.exe && ./c++01.exe  
 
 * On Linux
 $ wget http://git.zx2c4.com/CVE-2012-0056/plain/mempodipper.c
@@ -24,7 +31,7 @@ On windows you have to compile GCC using cygwin, mingwin or visual c++ runtime
 * MS C++ build tool
 https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16
 open developer command prompt for VS 2019, then type this command: msbuild [Your Project Name].vcxproj
-https://docs.microsoft.com/en-us/cpp/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2019
+https://docs.microsoft.com/en-us/c++/build/walkthrough-compiling-a-native-cpp-program-on-the-command-line?view=vs-2019
 
 * MinGW (Minimalist GNU for windows)
 Download http://sourceforge.net/projects/mingw-w64/files/latest/download

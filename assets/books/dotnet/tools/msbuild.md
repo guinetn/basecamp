@@ -87,5 +87,5 @@ MSBuild creates a folder for the output files, compiles, links your project to g
  
  ## More
  
-- https://docs.microsoft.com/fr-fr/cpp/build/msbuild-visual-cpp?view=msvc-160
-- https://docs.microsoft.com/fr-fr/cpp/build/walkthrough-using-msbuild-to-create-a-visual-cpp-project?view=msvc-160
+- https://docs.microsoft.com/fr-fr/c++/build/msbuild-visual-cpp?view=msvc-160
+- https://docs.microsoft.com/fr-fr/c++/build/walkthrough-using-msbuild-to-create-a-visual-cpp-project?view=msvc-160

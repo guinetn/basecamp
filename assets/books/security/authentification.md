@@ -15,6 +15,8 @@ https://www.c-sharpcorner.com/article/basic-authentication-in-swagger-open-api-n
 - Azure Easy Auth
 - Any other authentication system
 
+ OpenID is the standard and everyone writing "real" applications expected to be used by "real" users should use an Identity Management service. Please stop teaching people it's ok to roll their own auth.
+ 
 ## OpenID 
 https://openid.net/
 

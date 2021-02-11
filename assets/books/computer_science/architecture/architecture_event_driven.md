@@ -40,3 +40,5 @@ download.page(computer_science/architecture_event_driven/rabbitmq.md)
 download.page(computer_science/architecture_event_driven/kafka.md)
 
 download.page(computer_science/architecture_event_driven/mqtt.md)
+
+download.page(computer_science/architecture_event_driven/ipc-on-linux.md)

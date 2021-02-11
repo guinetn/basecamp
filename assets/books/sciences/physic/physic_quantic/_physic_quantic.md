@@ -12,6 +12,8 @@ https://www.youtube.com/watch?v=gpEvv349Pyk
 ## https://www.cea.fr/comprendre/Pages/physique-chimie/essentiel-sur-mecanique-quantique.aspx
 
 
+download.page(sciences/physic/physic_quantic/boson_higgs.md)
+
 Les orbitales atomiques
 Les électrons entourent les noyaux des atomes. La mécanique quantique décrit le nuage électronique sous la forme d'orbitales dont la forme reflète la probabilité de présence de chaque électron dans l'espace. Cette description sous forme d'orbitales permet de décrire et comprendre la façon dont les atomes se rassemblent pour constituer molécules ou solides.
 
@@ -27,7 +29,7 @@ La supraconductivité voit des électrons de même charge électrique s’appari
 Le spin est une propriété quantique sans équivalent classique qui est déjà exploitée dans les têtes de lecture des disques durs des ordinateurs.
 
 L’effet tunnel permet à des électrons de franchir une « barrière » de potentiel ce qui est strictement interdit en physique classique.
-![effet tunnel](assets/books/sciences/physic/effet-tunnel.jpg)
+![effet tunnel](assets/books/sciences/physic/physic_quantic/assets/effet-tunnel.jpg)
 
 Le microscope à effet tunnel
 Une pointe métallique est placée très proche d'une surface conductrice avec une différence de potentiel de quelques volts. Bien que sans contact électrique direct entre pointe et surface, un courant tunnel s'établit. Lors d'un balayage de la surface par la pointe à courant constant, l'enregistrement de la distance pointe-surface donne une image de la surface à la résolution atomique.
