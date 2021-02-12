@@ -176,8 +176,6 @@ What you had to do previously was quite unappetizing: first you’d create an as
 static void Main(string[] args) => MainAsync().GetAwaiter().GetResult();
 Now you can just make your Main method async, and the compiler will rewrite it for you.
 
-
-
     static string Main()
     {
         await AsyncMethod1();   // Before, to put await for your async method, you need to use GetAwaiter() method

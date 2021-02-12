@@ -1,6 +1,7 @@
-# INFRASTRUCTURE AS CODE = coded architecture 
+# IAC - INFRASTRUCTURE AS CODE 
 
-Enable teams to focus on provisioning rather than individual configuration management
+IAC = coded architecture = IT automation
+The goal is to guarantee the same environment is created every time the code is executed. Enable teams to focus on provisioning rather than individual configuration management
 
 Managing/provisioning your IT infrastructure using configuration files instead of physical/manual hardware configuration  
 IaC is also used in DevOps practices and SRE specializations. DevOps and SRE (Site Reliability Engineer) are also popular methodologies.

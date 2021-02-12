@@ -163,6 +163,9 @@ easy, fast, and collaborative Apache spark-based analytics platform. It accelera
 
 https://k21academy.com/microsoft-azure/dp-200/azure-databricks
 
+## Azure Event Hubs
+https://azure.microsoft.com/services/event-hubs/
+Azure Event Hubs is a highly scalable publish-subscribe service that can ingest millions of events per second and stream them to multiple consumers. This lets you process and analyze the massive amounts of data produced by your connected devices and applications. Once Event Hubs has collected the data, you can retrieve, transform, and store it using any real-time analytics provider, such as Azure Stream Analytics, or with batching/storage adapters.
 
 ## more
 

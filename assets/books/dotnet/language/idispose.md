@@ -244,3 +244,8 @@ public class StreamReaderEnumerator : IEnumerator<string>
 //       Found: 2
 //       Memory Used Without Iterator =  206kb
 ```
+
+
+When you create an object that encapsulates an unmanaged resource, it's recommended that you provide the necessary code to clean up the unmanaged resource in a public Dispose method. By providing a Dispose method, you enable users of your object to explicitly free its memory when they are finished with the object. When you use an object that encapsulates an unmanaged resource, make sure to call Dispose as necessary.
+
+You must also provide a way for your unmanaged resources to be released in case a consumer of your type forgets to call Dispose. You can either use a safe handle to wrap the unmanaged resource, or override the Object.Finalize() method.

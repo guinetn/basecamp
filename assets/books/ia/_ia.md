@@ -65,3 +65,10 @@ Ex: In IA, ONNX est écrit en protocol buffers (protobufs). Il existe un compila
 
 
 download.page(ia/bigdata/_bigdata.md)
+
+::::
+download.page(ia/bigdata/articles.md)
+
+## More
+
+- https://intelligence-artificielle.developpez.com/actu/312174/Pourquoi-la-nouvelle-IA-liquide-de-MIT-est-elle-une-innovation-revolutionnaire-Elle-apprend-continuellement-de-son-experience-du-monde/

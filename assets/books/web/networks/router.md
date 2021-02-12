@@ -1,7 +1,10 @@
 ## ROUTER: IPV4 addressing
 
+Allow you to share a single IP address among multiple network devices
+
 A router is hardware—a small piece of computer/network-related equipment that connects you to the Internet. A gateway is often associated with a router. 
 A router can be connected to two or more networks at a time, but for home networks, that’s generally not the case
+Ethernet switch creates networks and the router allows for connections between networks.
  
 Host A ----> Router ----> Router ----> Host B
 
@@ -20,6 +23,21 @@ A router is connected to 2+ data lines from different IP networks. When a data p
 - gateway router
  
 ```txt
+
+   ------------         ---------------------
+   LAN                                WAN
+   ------------         ---------------------
+                ROUTER
+- IP       ←→  GATWEWAY    ☐☐☐ ←→ INTERNET
+- SWITCH        - NAT      ☐☐☐      
+- SUBNET                   ☐☐☐     
+                           ☐☐☐     
+                          Firewall
+                        - DMZ
+                        - Port forward
+```
+
+```txt
   
   Google, server...
       ↑ ↓ 
@@ -29,6 +47,8 @@ A router is connected to 2+ data lines from different IP networks. When a data p
       ↑ ↓
 PUBLIC IP: 82.10.250.19         
     ROUTER  
+      ↑ ↓
+      GATEWAY: ip address of the router
       ↑ ↓
       NAT: router changes private IP ---> public so it can send your traffic over Internet 
            When response comes back to the router, it reverses: real IP address → private one—and forwards the traffic back to your computer.      
@@ -42,13 +62,18 @@ PUBLIC IP: 82.10.250.19
                 |
             DHCP Server 
                 |
-                |____ Computers linked to a router share the same public IP address: you can join me on the +33 668xxxx
+                |____ Computers linked to a router share the same public IP address: you can join me on the 78.32.35.68
                 |
                 |    Local devices using NAT (Translate Private IP ←-→ Public IP)            
+                |
+              SWITCH
                 |
                 ├─── 192.168.1.24  PC #1 ......... Url in Browser http://www.google.com = Public IP address 75.25.6.7
                 ├─── 192.168.1.25  PC #2
                 ├─── 192.168.1.4   WebServer
+                |
+              SWITCH
+                |
                 ├─── 192.168.1.19  Printer
                 └─── 192.168.1.12  Smartphone                           
 
@@ -56,8 +81,33 @@ PUBLIC IP: 82.10.250.19
 
 Get my public IP: https://httpbin.org/ip
 Get my private IP: 
+
+## FIREWALL
+Set of passive rules to protect network from unhautorized access
+Allow only specific communications LAN ←→ WAN
+## 2 options to allow communications WAN →→→ LAN:
+* DMZ 
+Demilitarized zone: 
+A subnetwork containing & exposing a device to an untrusted network such as the Internet
+Router transmit WAN request to the DMZ
+
+* Port Forwarding
+Allow communications LAN ←→ WAN through router & firewall
+Just specify machine+port
+## Switch
+
+a network switch can connect multiple devices and networks to expand the LAN
+a switch is useful if your router doesn't have enough Ethernet ports
+
+Switches facilitate the sharing of resources by connecting together all the devices, including computers, printers, and servers, in a small business network. Thanks to the switch, these connected devices can share information and talk to each other, regardless of where they are in a building or on a campus.
+
+They connect multiple devices, such as computers, wireless access points, printers, and servers; on the same network within a building or campus. A switch enables connected devices to share information and talk to each other.
+
+networking hardware connecting network devices by using packet switching to receive and forward data to the destination
+
 ## Gateway - Passerelle
 
+Ip address of the router
 Allows data to flow from one discrete network to another (provides interoperability between networks)
 Usually also acts as a proxy server and a firewall.
 

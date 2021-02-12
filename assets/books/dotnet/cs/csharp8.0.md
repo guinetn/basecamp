@@ -69,61 +69,14 @@ Nullable reference types feature intends to warn you about null-unsafe behavior 
                                                 * avoids the dereference 
                                                 * produces a null if s is null (has nullable char?) 
 
-## ASYNC STREAMS (for continuous streams)
 
-The async/await feature of C# 5.0 lets you consume (and produce) asynchronous results in straightforward code, without callbacks:
-with C# 5.0 async and await were introduced into the language to simplify using the Task Parallel Library.
+download.page(assets/books/dotnet/threading/b_async_3/iasyncenumerable.md)
 
-    async Task<int> GetBigResultAsync()
-    {
-        var result = await GetResultAsync();
-        if (result > 20) return result; 
-        else return -1;
-    }
-It is not so helpful if you want to consume (or produce) continuous streams of results, such as you might get from an IoT device or a cloud service. 
-Async streams are there for that.
+download.page(assets/books/dotnet/threading/b_async_3/async_streams.md)
 
-## IAsyncEnumerable<T>
+download.page(assets/books/dotnet/types/val/range.md)
 
-Asynchronous version of IEnumerable<T>
-The language lets you await foreach over these to consume their elements, and yield return to them to produce elements.
 
-    async IAsyncEnumerable<int> GetBigResultsAsync()
-    {
-        await foreach (var result in GetResultsAsync())
-        {
-            if (result > 20) yield return result; 
-        }
-    }
-
-## NEW TYPE: RANGE [x..y] AND INDICES ^
-
-Index. Used for indexing
-An int that counts from the beginning
-An int that counts from the the end with a prefix ^
-
-    Index i1 = 3;  // number 3 from beginning
-    Index i2 = ^4; // number 4 from end
-    int[] a = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-    Console.WriteLine($"{a[i1]}, {a[i2]}); // "3, 6"
-
-Range
-2 Indexes (one for the start, one for the end)
-Written with a x..y range expression
-Index with a Range in order to produce a slice:
-
-    var slice = a[i1..i2]; // { 3, 4, 5 }
-    MyName.Substring(0, MyName.Length-2)  →  jsonChunk[0..^2]
-    foreach (var name in names[1..4])  iterating over names 1 to 4
-                                ↓
-                            a range expression: 
-    Range range = 1..4; 
-    foreach (var name in names[range])
-    foreach (var name in names[1..^1])
-    Range expressions can be open at either or both ends. 
-        ..^1 means the same as 0..^1
-        1..  means the same as 1..^0
-        ..   means the same as 0..^0: beginning to end
 
 ## DEFAULT METHODS IMPLEMENTATIONS OF INTERFACE MEMBERS
 
@@ -211,35 +164,6 @@ If p is a Student, has not graduated and has a non-null name, we yield return th
 When you’re creating a new object, the type is often already given from context, so omit the type:
 
     Point[] ps = { new (1, 4), new (3,-2), new (9, 5) }; // all Points
-
-# ASYNC STREAMS = ASYNC ENUMERABLE
-
-with C# 5.0 async and await were introduced into the language to simplify using the Task Parallel Library.
-
-async and await were added to C# to deal with results that are not necessarily ready when you ask for them. They can be asynchronously awaited, and the thread can go do other stuff until they become available. But that works only for single values, not sequences that are gradually and asynchronously produced over time, such as for instance measurements from an IoT sensor or streaming data from a service.
-
-
-using System.Threading.Tasks;
-await Task.Delay(1000);  // simulate that GetNames does some asynchronous work by adding an asynchronous delay before the name is yield returned:
-yield return name;       // Of course we get an error that you can only await in an async method. So let’s make it async:
-
-static async IEnumerable<string> GetNames()
-Now we’re told that we’re not returning the right type for an async method, which is fair. But there’s a new candidate on the list of types it can return besides the usual Task stuff: IAsyncEnumerable<T>. This is our async version of IEnumerable<T>! Let’s return that:
-
-static async IAsyncEnumerable<string> GetNames()
-Just like that we’ve produced an asynchronous stream of strings! In accordance with naming guidelines, let’s rename GetNames to GetNamesAsync.
-
-static async IAsyncEnumerable<string> GetNamesAsync()
-Now we get an error on this line in the Main method:
-
-foreach (var name in GetNamesAsync())
-Which doesn’t know how to foreach over an IAsyncEnumerable<T>. That’s because foreach’ing over asynchronous streams requires explicit use of the await keyword:
-
-await foreach (var name in GetNamesAsync())
-It’s the version of foreach that takes an async stream and awaits every element! Of course it can only do that in an async method, so we have to make our Main method async. Fortunately C# 7.2 added support for that:
-
-static async Task Main(string[] args)
-Now all the squiggles are gone, and the program is correct. But if you try compiling and running it, you get an embarassing number of errors. That’s because we messed up a bit, and didn’t get the previews of .NET Core 3.0 and Visual Studio 2019 perfectly aligned. Specifically, there’s an implementation type that async iterators leverage that’s different from what the compiler expects.    
 
 ## PLATFORM DEPENDENCIES
 

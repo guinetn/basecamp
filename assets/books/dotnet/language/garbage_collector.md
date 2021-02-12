@@ -1,5 +1,9 @@
 # GARBAGE COLLECTOR
 
+.NET’s Garbage Collector (GC) implements many performance optimizations. One of them, the generational model assumes that young objects die quickly, whereas old live longer. This is why managed heap is divided into three Generations. We call them Gen 0 (youngest), Gen 1 (short living) and Gen 2 (oldest). New objects are allocated in Gen 0. When GC tries to allocate a new object and Gen 0 is full, it performs the Gen 0 cleanup. So it performs a partial cleanup (Gen 0 only)! It is traversing the object’s graph, starting from the roots (local variables, static fields & more) and marks all of the referenced objects as living objects.
+
+
+
 GC will handle above situations: 
 - If program ends GC automatically reclaims all the memory occupied by the objects in the program.
 - GC keeps tracks of all the objects and ensures that each object gets destroyed once.
@@ -35,3 +39,5 @@ When GC is promoting objects to next generation it’s copying the memory. As yo
 
 ## More
 - https://adamsitnik.com/Array-Pool/
+- https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals
+- https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/large-object-heap

@@ -85,3 +85,4 @@ https://www.youtube.com/watch?v=C5cnZ-gZy2I&t=217s
 - https://andrewlock.net/avoiding-startup-service-injection-in-asp-net-core-3/
 - https://intellitect.com/quickly-configure-asp-net-core-api-to-work-with-vue-cli-3/
 - https://www.ezzylearning.net/tutorial/a-developers-guide-for-creating-web-apis-with-asp-net-core-5
+- https://medium.com/swlh/consuming-wsdl-services-using-asp-net-core-141fbc77924f

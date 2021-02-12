@@ -2,6 +2,8 @@
 
 Most widely used programming language for managing data in a relational database management system. 
 
+Relational database is a set of relations and tables, which are connected with each other through some defined relationships. The main purpose of relational database design is to preserve the information and MINIMIZE DATA REDUNDANCY. 
+
 ### RDBMS - Relational Database Management Systems
 
 Oracle
@@ -340,6 +342,8 @@ rollback;
 ```
 
 ## NORMALIZATION - DENORMALIZATION
+
+Data Redundancy: When the same set of data is present multiple times in the database (storage waste). Redundant data has an impact on performance
 
 Normalized: Optimizes for minimizing redundancy, not for read time.
 

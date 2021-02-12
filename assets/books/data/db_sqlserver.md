@@ -120,3 +120,64 @@ SELECT sid,
 FROM tmp
 GROUP BY sid
 ORDER BY sid;
+
+
+
+
+
+
+
+IF OBJECT_ID('Dept','U') IS NOT NULL
+	DROP TABLE dbo.Dept
+
+CREATE TABLE dbo.Dept
+(
+	DeptId INT PRIMARY KEY,
+	DeptName VARCHAR(10) NOT NULL,
+	DeptDesc VARCHAR(100)
+)
+INSERT INTO dbo.Dept (DeptId,DeptName,DeptDesc)
+VALUES 
+(201,'NS','Network Security'),
+(202,'FS','Financial Services'),
+(203,'HR','Human Resources')
+SELECT DeptId,DeptName,DeptDesc
+FROM dbo.Dept
+/*
+DeptId	DeptName	DeptDesc
+201	NS	Network Security
+202	FS	Financial Services
+203	HR	Human Resources
+*/
+IF OBJECT_ID('Emp','U') IS NOT NULL
+	DROP TABLE dbo.Emp
+
+CREATE TABLE dbo.Emp
+(
+	EmpId INT PRIMARY KEY,
+	EmpName VARCHAR(100) NOT NULL,
+	EmpAddr VARCHAR(100) NOT NULL,
+	DeptId INT NOT NULL,
+	CONSTRAINT FK_Emp_DeptId FOREIGN KEY (DeptId) REFERENCES dbo.Dept(DeptId) 
+)
+INSERT INTO dbo.Emp (EmpId,EmpName,EmpAddr,DeptId)
+VALUES 
+(101,'e1','e1addr1',201),
+(102,'e2','e2addr2',201),
+(103,'e3','e3addr3',202),
+(104,'e4','e4addr4',202),
+(105,'e5','e5addr5',203)
+SELECT EmpId,EmpName,EmpAddr,DeptId
+FROM dbo.Emp
+--Retrieve records by joining both the tables
+SELECT E.EmpId,E.EmpName,E.EmpAddr,D.DeptName,D.DeptDesc
+FROM dbo.Emp E
+INNER JOIN dbo.Dept D ON E.DeptId = D.DeptId
+/*
+EmpId	EmpName	EmpAddr	DeptName	DeptDesc
+101	e1	e1addr1	NS	Network Security
+102	e2	e2addr2	NS	Network Security
+103	e3	e3addr3	FS	Financial Services
+104	e4	e4addr4	FS	Financial Services
+105	e5	e5addr5	HR	Human Resources
+*/

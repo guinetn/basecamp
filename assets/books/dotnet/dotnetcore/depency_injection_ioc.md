@@ -796,6 +796,104 @@ An **instance of the service class is created each time they’re requested** (e
 
 ## .NET Core Dependency Injection Example
 
+https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection-usage
+
+```cs
+
+namespace ConsoleDI.Example
+{
+    public interface ITransientOperation : IOperation { }
+    public interface IScopedOperation  : IOperation { }
+    public interface ISingletonOperation  : IOperation { }
+}
+
+
+using static System.Guid;
+namespace ConsoleDI.Example
+{
+    public class DefaultOperation : ITransientOperation, IScopedOperation, ISingletonOperation
+    {
+        public string OperationId { get; } = NewGuid().ToString()[^4..];
+    }
+}
+
+
+using System;
+
+namespace ConsoleDI.Example
+{
+    public class OperationLogger
+    {
+        private readonly ITransientOperation _transientOperation;
+        private readonly IScopedOperation _scopedOperation;
+        private readonly ISingletonOperation _singletonOperation;
+
+        public OperationLogger(
+            ITransientOperation transientOperation,
+            IScopedOperation scopedOperation,
+            ISingletonOperation singletonOperation) =>
+            (_transientOperation, _scopedOperation, _singletonOperation) =
+                (transientOperation, scopedOperation, singletonOperation);
+
+        public void LogOperations(string scope)
+        {
+            LogOperation(_transientOperation, scope, "Always different");
+            LogOperation(_scopedOperation, scope, "Changes only with scope");
+            LogOperation(_singletonOperation, scope, "Always the same");
+        }            
+
+        private static void LogOperation<T>(T operation, string scope, string message)
+            where T : IOperation =>
+            Console.WriteLine(
+                $"{scope}: {typeof(T).Name,-19} [ {operation.OperationId}...{message,-23} ]");
+    }
+}
+
+using System;
+using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+namespace ConsoleDI.Example
+{
+    class Program
+    {
+        static Task Main(string[] args)
+        {
+            using IHost host = CreateHostBuilder(args).Build();
+
+            ExemplifyScoping(host.Services, "Scope 1");
+            ExemplifyScoping(host.Services, "Scope 2");
+
+            return host.RunAsync();
+        }
+
+        static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureServices((_, services) =>
+                    services.AddTransient<ITransientOperation, DefaultOperation>()
+                            .AddScoped<IScopedOperation, DefaultOperation>()
+                            .AddSingleton<ISingletonOperation, DefaultOperation>()
+                            .AddTransient<OperationLogger>());
+
+        static void ExemplifyScoping(IServiceProvider services, string scope)
+        {
+            using IServiceScope serviceScope = services.CreateScope();
+            IServiceProvider provider = serviceScope.ServiceProvider;
+
+            OperationLogger logger = provider.GetRequiredService<OperationLogger>();
+            logger.LogOperations($"{scope}-Call 1 .GetRequiredService<OperationLogger>()");
+
+            Console.WriteLine("...");
+
+            logger = provider.GetRequiredService<OperationLogger>();
+            logger.LogOperations($"{scope}-Call 2 .GetRequiredService<OperationLogger>()");
+
+            Console.WriteLine();
+        }
+    }
+}
+```
 
 ## Service Locator design pattern 
 Allows decoupling clients of services (described by a public interface) from the concrete class implementing those services. 
@@ -940,3 +1038,4 @@ namespace Client
 - https://www.ezzylearning.net/tutorial/a-step-by-step-guide-to-asp-net-core-dependency-injection
 - https://pradeeploganathan.com/dotnet/dependency-injection-in-net-core-console-application/
 - https://docs.microsoft.com/en-us/archive/msdn-magazine/2016/june/essential-net-dependency-injection-with-net-core
+- https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection-usage *

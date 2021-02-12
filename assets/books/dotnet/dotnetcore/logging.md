@@ -29,8 +29,13 @@ NLog.config file:
 <target name="Mail" xsi:type="Mail" smtpServer="smpt.myserver.com" smtpPort="587" ... />
 ```
 
+
+https://michaelscodingspot.com/logging-in-dotnet/
+
+
 ## More
 
 - https://intellitect.com/net-core-dependency-injection/
 - https://github.com/IntelliTect-Samples/2016.04.01-EssentialNetLoggingWithNetCore
 - https://intellitect.com/implementing-a-custom-ilogger-with-exception-handling-for-net-core/
+- https://michaelscodingspot.com/logging-in-dotnet/

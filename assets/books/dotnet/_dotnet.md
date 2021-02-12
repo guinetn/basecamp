@@ -41,9 +41,9 @@ download.page(dotnet/net/net5_replace_dotnetcore.md)
 ::::
 download.page(dotnet/cs/_cs.md)
 ::::
-download.page(dotnet/multithreading/_multithreading.md)
+download.page(dotnet/threading/_threading.md)
 ::::
-download.page(dotnet/fsharp.md)
+download.page(dotnet/fsharp/_fsharp.md)
 ::::
 download.page(dotnet/services.md)
 ::::

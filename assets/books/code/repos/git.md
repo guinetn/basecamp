@@ -46,7 +46,7 @@ The reason why your computer knows which SSH key to use, is because we defined t
 >touch ~/.ssh/config && code ~/.ssh/config
 >type config
 config
-```conf
+```yaml
 # personal account
 Host github.com
    HostName github.com

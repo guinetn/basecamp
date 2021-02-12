@@ -1,6 +1,7 @@
 # Dotnet - Powershell
 
 https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1
+https://www.educba.com/powershell-string-replace/?source=leftnav
 
 ## install
 
@@ -344,8 +345,15 @@ Call the static properties operator and methods of a .NET Framework class.
 ## Get Members
 $array = @(1,'hello')
 $array | Get-Member
+$array | gm
 Get-Member -InputObject $array
 
+[system.appdomain] | Get-Member -static
+[System.Threading.Tasks.Task] | Get-Member -static
+
+$a=${}
+$a.GetType()
+$a.GetType().GetMethods().Name|Sort
 $array = [int[]]::new(5)
 for ($index = 0; $index -lt 5; $index++) {
     $array[$index] = $index * 2
@@ -356,6 +364,7 @@ foreach ($value in 1..5) {
     $list.Add($value)
 }
 gm -InputObject $list
+
 
 
 

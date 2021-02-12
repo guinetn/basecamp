@@ -22,7 +22,7 @@ https://github.com/Microsoft/WPF-Samples
 
 ## start
 
-```dos
+```bash
 dotnet new wpf -o MyWPFApp
 cd MyWPFApp
 dotnet run

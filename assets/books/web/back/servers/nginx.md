@@ -10,7 +10,7 @@ sudo apt-get update
 sudo apt-get install nginx
 
 /etc/nginx/sites-available/default/nginx.conf
-```conf
+```yaml
 upstream httpservers {
    server ip_address:8001; 
    server ip_address:8002; 

@@ -1,11 +1,22 @@
 # DESIGN PATTERNS
 
 Modelised solutions of common problems
+- Contains expert knowledge about "best practices"
+- Avoid us to "reinventing the wheel"
+- Based on more general, underlying principles (oop, solid, modularity, loose coupling…)
+
+Design patterns template:
+* Pattern Name
+* Problem: What problem this pattern tries to solve?
+* Solution: How do we solve the problem?
+* Benefits: additionnal benefits besides solving above-mentioned problem?
+* Consequences: any potential drawbacks of applying this patterns?
 
 1. Gang of Four Patterns (Most Popular)
 2. Enterprise Patterns
 3. SOA and Messaging Patterns
 4. Model-View Patterns
+5. Performance Patterns
 
 
 |4 parts of a design pattern||

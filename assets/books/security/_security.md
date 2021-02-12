@@ -1,24 +1,24 @@
 # Security
 
-download.page(security/cryptography.md)
+download.page(security/cryptography/_cryptography.md)
 ::::
 download.page(security/terms.md)
 ::::
 download.page(security/firewalls.md)
 ::::
-download.page(security/https.md)
-::::
 download.page(security/authentification.md)
 ::::
-download.page(security/ssh.md)
+download.page(security/https.md)
 ::::
 download.page(security/ssl.md)
 ::::
+download.page(security/openssl.md)
+::::
 download.page(security/tls.md)
 ::::
-download.page(security\vpn.md)
+download.page(security/ssh.md)
 ::::
-download.page(security/openssl.md)
+download.page(security\vpn.md)
 ::::
 download.page(security/rdc.md)
 ::::

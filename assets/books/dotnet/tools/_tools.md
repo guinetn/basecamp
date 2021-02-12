@@ -29,7 +29,13 @@ download.page(dotnet/tools/linq.md)
 download.page(dotnet/tools/linq2sql.md)
 ::::
 download.page(dotnet/tools/wcf.md)
+download.page(dotnet/tools/wsdl_svcutil.md)
 ::::
 download.page(dotnet/tools/interop.md)
 ::::
 download.page(dotnet/tools/testing.md)
+::::
+download.page(dotnet/tools/etw_event_tracing.md)
+::::
+download.page(dotnet/tools/perfview.md)
+download.page(dotnet/tools/perfmon.md)

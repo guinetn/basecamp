@@ -25,3 +25,4 @@ interserviceCommunication: Sample code to compare performance of http/1.1, http/
 - https://github.com/abhinavdhasmana/interserviceCommunication
 - https://auth0.com/blog/implementing-microservices-grpc-dotnet-core-3/
 - https://medium.com/@waelkdouh/microfrontends-with-blazor-webassembly-b25e4ba3f325
+- https://michaelscodingspot.com/rest-vs-grpc-for-asp-net/

@@ -39,7 +39,7 @@ C:\Program Files\dotnet
 C:\Program Files\dotnet\sdk\5.0.102
 - dotnet.dll
 - dotnet.runtimeconfig.json
-```conf
+```yaml
 {
     "runtimeOptions": {
         "tfm": "net5.0",
@@ -60,7 +60,7 @@ C:\Program Files\dotnet\sdk\5.0.102\Roslyn\bincore\
 - csc.dll
 - vbc.dll
 - csc.runtimeconfig.json
-```conf
+```yaml
 {
     "runtimeOptions": {
         "tfm": "netcoreapp3.1",

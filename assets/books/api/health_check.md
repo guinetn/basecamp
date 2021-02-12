@@ -27,3 +27,9 @@ namespace Microsoft.Extensions.Diagnostics.HealthChecks
 }
 
 ```
+
+
+## More
+
+- https://medium.com/swlh/how-to-implement-healthcheck-api-in-microservices-architecture-with-net-core-a5882369b016
+- https://medium.com/@alm.ozdmr/signalr-core-heartbeat-and-redis-6ed351c2d6f7

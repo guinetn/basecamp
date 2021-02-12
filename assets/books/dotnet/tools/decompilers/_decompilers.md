@@ -56,7 +56,7 @@ Go to project folder
 
 ## F# snippet
 
-```f#
+```c#
 open System.Reflection
 
 [<EntryPoint>]

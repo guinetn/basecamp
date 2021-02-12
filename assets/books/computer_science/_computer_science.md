@@ -69,8 +69,6 @@ download.page(computer_science/programming_paradigms.md)
 ::::
 download.page(computer_science/algorithms/_algorithms.md)
 ::::
-download.page(computer_science/_architecture.md)
-::::
 download.page(computer_science/regex.md)
 ::::
 download.page(computer_science/the_developer.md)

@@ -10,3 +10,5 @@ download.page(dotnet/collections/specialized/hybriddictionary.md)
 download.page(dotnet/collections/specialized/ordereddictionary.md)
 download.page(dotnet/collections/specialized/namevaluecollection.md)
 
+download.page(dotnet/collections/specialized/blockingcollection.md)
+

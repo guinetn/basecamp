@@ -1,0 +1,24 @@
+## GENETIC ALGORITHM
+
+Genetic Algorithms imitate theory of evolution and natural selection. 
+Genetic Algorithm is a randomized search algorithm: it incorporates some kind of randomness or probability in its methodology
+
+5 steps 
+
+Initialize population 
+↓
+Evaluation 
+↓
+Selection 
+↓
+Crossover 
+↓
+Mutation 
+↓
+Terminate? → No: go to Evaluation
+↓
+Yes 
+↓
+Stop 
+
+- https://medium.com/@thebinaryrealm/genetic-algorithm-everything-you-need-to-know-60df46ccb911

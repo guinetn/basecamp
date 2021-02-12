@@ -1,5 +1,7 @@
 # CI - CONTINUOUS INTEGRATION
 
+Successful CI means app's new code are regularly built, tested, and merged to a shared repository. It’s a solution to the problem of having too many branches of an app in development at once that might conflict with each other.
+
 CI Principle: every change should be immediately tested before integrating it with the rest of the code. This is performed in a dedicated testing environment, either locally/QA/UAT environment. 
 
 Practice of automatically testing each code revision before deploying it to production: speed up developments and releases into production.
@@ -10,6 +12,8 @@ CI/CD tools that can be integrated with different cloud providers. Some of the C
 
 When opting for a CI/CD pipeline tool, it is essential to look at whether it offers on-premises and cloud-based options. As many CI/CD tools are open-source, you have to make a conscious decision whether to opt for an open-source tool or one with a commercial license.
 When working with websites and web-apps, it is essential to ensure that the optimal user experience is offered, independent of the browser (or its version) and platform that is used to access the same. CI/CD tools like Jenkins, CircleCI, Travis CI, GitLab CI, etc. that can be integrated with cross browser testing (CBT) tools like LambdaTest can accelerate the CBT activity.
+
+download.page(devops/cicd_aws.md)
 
 download.page(devops/cicd_jenkins.md)
 
@@ -48,9 +52,3 @@ UrbanCode – developed by IBM, UrbanCode is a continuous integration and builds
 
 - https://www.lambdatest.com/blog/27-best-ci-cd-tools
 
-### Automating in CI/CD pipelines
-
-- https://developer.okta.com/blog/2020/12/09/dotnet-cloud-host-publish
-- https://developer.okta.com/blog/2020/10/07/dotnet-container-azure-devops
-- https://developer.okta.com/blog/2020/06/22/deploy-dotnet-container-aws-fargate
-- https://cloud.google.com/solutions/deploy-dotnet-applications

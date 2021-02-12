@@ -15,5 +15,7 @@ download.page(dotnet/language/expression_tree.md)
 download.page(dotnet/language/random.md)
 ::::
 
+download.page(dotnet/language/ihost.md)
+download.page(dotnet/language/assembly.md)
 
 

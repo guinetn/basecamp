@@ -28,7 +28,9 @@ Dictionary<int,Order> orders = new Dictionary<int,Order>();
 
 Range(0, 6).Select(i => ...)
 
-           
+download.page(dotnet/types/default_values.md)
+
+          
 ::::
 download.page(dotnet/types/ref/interfaces.md)
 ::::
@@ -38,8 +40,6 @@ download.page(dotnet/types/ref/delegates.md)
 ::::
 download.page(dotnet/types/ref/class.md)
 ::::
-download.page(dotnet/types/ref/span.md)
-::::
 download.page(dotnet/types/ref/dynamic.md)
 ::::
 download.page(dotnet/types/ref/record.md)
@@ -48,3 +48,8 @@ download.page(dotnet/language/covariance.md)
 ::::
 download.page(dotnet/types/val/structs.md)
 ::::
+download.page(dotnet/types/val/range.md)
+::::
+download.page(dotnet/types/val/span.md)
+::::
+download.page(dotnet/types/val/memory.md)

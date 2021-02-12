@@ -319,7 +319,8 @@
     "https://eos.org",
     "https://www.newscientist.com",
     "https://newatlas.com",
-    "https://www.cea.fr/comprendre"
+    "https://www.cea.fr/comprendre",
+    "https://newatlas.com/"
   ],
   "physic": ["http://www.splung.com"],
   "geology": ["http://www.geologycafe.com"],
@@ -371,5 +372,6 @@
   "weather": [
   "https://www.spaceweatherlive.com/",
   "https://stormhour.com/(meteo+weather photo)"
-]
+],
+"presentations":["https://remarkjs.com/", "http://showdownjs.com/"]
 }

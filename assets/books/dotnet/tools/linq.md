@@ -27,6 +27,65 @@ System.Console.WriteLine(s2); // abccz
 s2 = String.Concat(s.OrderBy(c => c).Distinct());
 System.Console.WriteLine(s2); // abcz			
 
+## [Linq Methods](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.aggregate?view=net-5.0)
+
+- Aggregate
+- All
+- Any
+- Append
+- AsEnumerable
+- Average
+- Cast
+- Concat
+- Contains
+- Count
+- DefaultIfEmpty
+- Distinct
+- ElementAt
+- ElementAtOrDefault
+- Empty
+- Except
+- First
+- FirstOrDefault
+- GroupBy
+- GroupJoin
+- Intersect
+- Join
+- Last
+- LastOrDefault
+- LongCount
+- Max
+- Min
+- OfType
+- OrderBy
+- OrderByDescending
+- Prepend
+- Range
+- Repeat
+- Reverse
+- Select
+- SelectMany
+- SequenceEqual
+- Single
+- SingleOrDefault
+- Skip
+- SkipLast
+- SkipWhile
+- Sum
+- Take
+- TakeLast
+- TakeWhile
+- ThenBy
+- ThenByDescending
+- ToArray
+- ToDictionary
+- ToHashSet
+- ToList
+- ToLookup
+- Union
+- Where
+- Zip
+
 ## More
 
 - https://www.linqpad.net/

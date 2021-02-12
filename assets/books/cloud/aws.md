@@ -76,6 +76,11 @@ https://aws.amazon.com/dynamodb/
 set up serverless applications on AWS  
 https://aws.amazon.com/serverless/sam/
 
+## AWS FARGATE
+AWS Fargate est un moteur de calcul sans serveur pour les conteneurs. Il fonctionne avec Amazon Elastic Container Service (ECS) et Amazon Elastic Kubernetes Service (EKS). 
+Fargate vous aide à vous concentrer sur la création de vos applications. Ce service évite d’avoir à provisionner et gérer des serveurs, permet de spécifier et payer pour les ressources en fonction des applications et améliore la sécurité grâce à une isolation intégrée de l’application
+
+https://aws.amazon.com/fr/fargate
 
 ## microservices
 
