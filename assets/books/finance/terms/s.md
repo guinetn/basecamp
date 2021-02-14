@@ -8,6 +8,13 @@ Established the National Association of Securities Dealers (now Financial Indust
 Titres, valeurs
 let's say a house
 
+Securities are fungible and tradable financial instruments used to raise capital in public and private markets. There are primarily three types of securities: equity—which provides ownership rights to holders; debt—essentially loans repaid with periodic payments; and hybrids—which combine aspects of debt and equity
+
+debt securities (e.g., banknotes, bonds, and debentures)
+equity securities (e.g., common stocks)
+derivatives (e.g., forwards, futures, options, and swaps).
+
+
 ## share 
 see stock
 
@@ -28,6 +35,8 @@ an asset (thing that has potential or actual value to an organization)
 a bond or a tangible product, such as gold or oil.
 Stock is evidence of ownership in a corporation. 
 Stock,Shares,Option, actions, titres, securities
+
+Stocks and equity are same, as both represent the ownership in an entity (company) and are traded on the stock exchanges. Equity by definition means ownership of assets after the debt is paid off. Stock generally refers to traded equity. ... Equity can also mean stocks or shares
 
 La détention et/ou la vente d’actions peut générer deux types de revenus soumis à taxation
 - des dividendes (see Dividends)

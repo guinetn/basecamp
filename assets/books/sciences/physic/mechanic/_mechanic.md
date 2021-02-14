@@ -1,4 +1,14 @@
-# Solid mechanic
+# MECHANICAL ENGINEERING
+
+***Michel van Biezen***
+https://www.youtube.com/channel/UCiGxYawhEp4QyFcX0R60YdQ
+
+Pulleys
+- https://www.youtube.com/watch?v=QVbuGPEdNEo
+- [calculate tension in a multiple pulley system](https://www.youtube.com/watch?v=bCRWpw_qinY)
+
+
+
 
 ## Newton's laws (principle of motion)
 

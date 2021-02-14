@@ -203,4 +203,5 @@ https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_o
 
 * Remote forwarding 
 
-https://www.youtube.com/watch?v=ZFp-FKPpUQc&feature=youtu.be
+- https://www.youtube.com/watch?v=ZFp-FKPpUQc&feature=youtu.be
+- https://www.youtube.com/watch?v=M0eEwqUpKDc&t=698s

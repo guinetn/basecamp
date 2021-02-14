@@ -28,3 +28,5 @@ All these bonds are stables but during a chemical reaction there are intermediat
 - https://x-engineer.org/undergraduate-engineering/chemistry/general-chemistry/states-phases-matter-aggregation/
 
 - https://www.cea.fr/comprendre/Pages/physique-chimie/essentiel-sur-noyaux-des-atomes.aspx
+
+- https://www.youtube.com/c/MichelvanBiezen/playlists?view=50&sort=dd&shelf_id=10

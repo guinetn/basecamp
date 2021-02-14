@@ -7,4 +7,6 @@
 ## More
 
 - https://www.spaceweatherlive.com/fr/liens.html
+- https://www.youtube.com/c/MichelvanBiezen/playlists?view=50&sort=dd&shelf_id=9
 - https://spaceflightnewsapi.net/showcase/
+- https://www.youtube.com/watch?v=z3mZce5UU2c

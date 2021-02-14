@@ -12,6 +12,8 @@ Common terms include
 - Monthly
 - Other - such as quarterly or ad hoc.
 
+## Loan
+amount, interest rate, recovery date
 ## Lock-up period
 An interval during which an investment may not be sold.
 

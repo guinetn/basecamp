@@ -39,3 +39,4 @@ download.page(dotnet/tools/etw_event_tracing.md)
 ::::
 download.page(dotnet/tools/perfview.md)
 download.page(dotnet/tools/perfmon.md)
+download.page(dotnet/tools/gpedit.md)

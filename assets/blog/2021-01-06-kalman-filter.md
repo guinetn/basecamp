@@ -18,7 +18,8 @@ Its ability to extract accurate information seems almost magical
 
 ## More
 
-http://www.allaboutcircuits.com/technical-articles/how-sensor-fusion-works/
+- https://www.youtube.com/watch?v=CaCcOwJPytQ&list=PLX2gX-ftPVXU3oUFNATxGXY90AULiqnWT
+- http://www.allaboutcircuits.com/technical-articles/how-sensor-fusion-works/
 
 The Kalman Filter
 At its heart, the algorithm has a set of “belief” factors for each sensor. 
@@ -42,3 +43,5 @@ The Kalman filter is an application of the more general concepts of Markov Chain
 and Bayesian Inference, which are mathematical systems that iteratively refine their 
 guesses using evidence. These are tools designed to help science itself test ideas 
 (and are the basis of what we call “statistical significance”).
+
+

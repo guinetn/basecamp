@@ -12,7 +12,8 @@ download.page(computer_science/algorithms/mathematical/fibonacci.md)
 download.page(computer_science/algorithms/mathematical/hanoi.md)
 download.page(computer_science/algorithms/mathematical/matrix.md)
 download.page(computer_science/algorithms/mathematical/two_­sum.md)
-download.page(computer_science/algorithms/mathematical/symbolic_intgration.md)
+download.page(computer_science/algorithms/mathematical/symbolic_integration.md)
+download.page(computer_science/algorithms/mathematical/differentiation.md)
 
 ## More
 

@@ -1,4 +1,6 @@
 {
+  "gems":["https://www.youtube.com/channel/UCiGxYawhEp4QyFcX0R60YdQ(Pysics by Michel van Biezen)",
+  "https://www.youtube.com/channel/UCJ0yBou72Lz9fqeMXh9mkog(Physics Videos by Eugene Khutoryansky)"],
   "navIcons": [
     "https://gmail.com[inline fas fa-envelope]",
     "https://www.linkedin.com[inline fab fa-linkedin]",
@@ -23,7 +25,10 @@
     "https://www.nytimes.com",
     "https://www.washingtonpost.com",
     "https://www.lefigaro.fr",
-    "https://www.nasaspaceflight.com"
+    "https://www.nasaspaceflight.com",
+    "https://modis.gsfc.nasa.gov/gallery/",
+    "https://www.nasa.gov/",
+    "https://earthobservatory.nasa.gov/"
   ],
   "photos": [    
   ],
@@ -322,7 +327,8 @@
     "https://www.cea.fr/comprendre",
     "https://newatlas.com/"
   ],
-  "physic": ["http://www.splung.com"],
+  "physic": ["http://www.splung.com","https://www.youtube.com/channel/UCiGxYawhEp4QyFcX0R60YdQ(Pysics by Michel van Biezen)",
+  "https://www.youtube.com/channel/UCJ0yBou72Lz9fqeMXh9mkog(Physics Videos by Eugene Khutoryansky)"],
   "geology": ["http://www.geologycafe.com"],
   "biology": [],
   "mechanic": ["https://github.com/rajathkmp/BMC(BMC biomechanic ****)"],
@@ -338,6 +344,7 @@
   "plane": ["https://www.sia.aviation-civile.gouv.fr(aviation-civile.gouv.fr)",
   "https://www.rotorandwing.com"
   ],
+  "finances": ["https://tradingeconomics.com/", "https://fred.stlouisfed.org/"],
   "jobs": [
     "https://www.malt.fr",
     "https://www.codeur.com",

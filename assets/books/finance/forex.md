@@ -50,7 +50,7 @@ Trade 24H 5 days a week by banks, institutions, individual traders worldwide
 
 OTC: No centralized marketplace for forex, currencies trade over the counter in whatever market is open at that time.
 
-![forex hours](assets/books/finance/forex_hours.svg)
+![forex hours](assets/books/finance/assets/forex_market_hours.png)
 
 ## FORECAST = profit
 
