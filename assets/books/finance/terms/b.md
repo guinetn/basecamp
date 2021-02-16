@@ -10,20 +10,14 @@ Black–Scholes–Merton model is a mathematical model of a financial market con
 . From the model, one can deduce the Black–Scholes formula, which gives a theoretical estimate of the price of European-style options
 
 https://en.wikipedia.org/wiki/Black%E2%80%93Scholes_model
-
-
-
-
-
----
+http://www.fifrance.com/modele_black-scholes.php
+http://www.fifrance.com/mathematiques_financieres.php
 
 ## Back Office 	
-The departments and processes related to the settlement of financial 
-transactions (i.e. written confirmation and settlement of trades, record keeping). 
+The departments and processes related to the settlement of financial transactions (i.e. written confirmation and settlement of trades, record keeping). 
 
 ## Balance of Payments 
-A record of transactions With the rest of the world over a particular time 
-period. These include merchandise, services and capital flows. 
+A record of transactions With the rest of the world over a particular time period. These include merchandise, services and capital flows. 
 
 ## Balance of Trade 
 The value of a country´s exports minus its imports. 

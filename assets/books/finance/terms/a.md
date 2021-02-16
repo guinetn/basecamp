@@ -37,6 +37,16 @@ Plant, machinery, property, buildings, vehicles and other items (wider than phys
 - STOCK LENDING 
 - REPO
 
+CROSS ASSETS:
+FX and Money Markets
+Rates
+Credit
+Fixed Income
+Equities
+Commodities
+Structured Products
+Precious Metals
+
 ### Multi-Asset Class
 An investment that combines a number of asset classes, for example stocks and bonds.
 

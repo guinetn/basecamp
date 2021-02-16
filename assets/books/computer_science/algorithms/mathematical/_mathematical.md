@@ -14,6 +14,7 @@ download.page(computer_science/algorithms/mathematical/matrix.md)
 download.page(computer_science/algorithms/mathematical/two_­sum.md)
 download.page(computer_science/algorithms/mathematical/symbolic_integration.md)
 download.page(computer_science/algorithms/mathematical/differentiation.md)
+download.page(computer_science/algorithms/mathematical/root_finding.md)
 
 ## More
 

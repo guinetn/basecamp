@@ -94,3 +94,7 @@ deleveraging
 withdrawal
 burden
 valuable
+
+
+https://www.fimarkets.com/pages/glossaire_dictionnaire_financier.php#_header122
+http://www.fifrance.com/taux_d_interet.php

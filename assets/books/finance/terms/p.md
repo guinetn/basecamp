@@ -17,6 +17,8 @@ rapport entre le cours de Bourse et les bénéfices
 ## Price trend
 See Trend
 
+## Pricing Model
+
 ## Portfolio efficient frontier
 By plotting the intersection of risk and reward for different investments or weightings of assets, one can generate a risk/reward curve or 'frontier' for those investments. The efficient frontier is the point on such a curve where an investment combination delivers the most favorable balance of risk and reward.
 

@@ -1,7 +1,75 @@
+## Economic Theory
+
+
+
 # ECONOMY
 
 https://www.youtube.com/watch?v=PHe0bXAIuk0&feature=share
 http://www.economicprinciples.org/
+https://www.youtube.com/watch?v=r46bMHlgLxA
+https://www.universalis.fr/encyclopedie/finance-de-marche-marches-de-capitaux/
+
+download.page(finance/theory/var.md)
+
+
+
+Deux manières de gagner de l'argent en bourse
+* Revendre des titres 
+Plus-value en cas de performance globale positive (revente à un prix plus élevé que celui d'acquisition)
+Moins-value en cas de performance globale négative
+* Percevoir des revenus générés par les titres détenus 
+- dividendes des actions
+- coupons des obligations
+ 
+ 
+FINANCE DE MARCHÉ 
+    Marchés dérivés - FINANCE DE MARCHÉ
+    Marchés de valeurs mobilières - BOURSE
+TAUX D'INTÉRÊT
+    FED (Système fédéral deréserve américain)
+CHANGE - Les opérations de change
+BANQUE - Économie de la banque
+MACROÉCONOMIE - Systèmes financiers
+    CRISES FINANCIÈRES Instabilité financière
+    MONDIALISATION - Pour unerégulation économique internationale
+    ENTREPRISE - Financement
+    MONDIALISATION Globalisation financière
+
+Instruments financiers couverts
+    les instruments du marché interbancaire
+        prêts/emprunts
+        pensions livrées
+        repo et prêts de titres
+        TCN
+    les titres
+        obligations
+        actions
+        warrants
+        asset-backed securities
+        convertibles
+    les instruments dérivés de taux, change ou indice
+        swaps de taux
+        caps & floors
+        FRA
+        futures
+        options négociables ou de gré à gré
+    les opérations de change 
+        hange comptant
+        change à terme
+        swap de change
+        swap de devises
+
+
+#### Basics
+
+ 
+ 
+ 
+ 
+
+Diversify their portfolios of loans and other risky assets.
+
+
 
 
 Practical economy template: anticipate crisis...
@@ -89,7 +157,6 @@ credit
 								can buy 	. GOODS
 											. SERVICES
 								can redistribute to unemployed
-
 
 
 

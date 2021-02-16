@@ -4,6 +4,12 @@
 
 The amount of investment capital that can be comfortably absorbed by a manager or strategy without a diminishing of returns. One useful indication of whether or not a manager or strategy faces capacity constraints is to analyse the degree to which they experience slippage [see Slippage] in the execution of their strategy or trades.
 
+## capital markets = financial markets
+marchés financiers
+
+lieu géographique ou non où différents types d'acteurs s'échangent des capitaux au comptant ou à terme. Ce sont aussi les marchés où sont effectuées les transactions sur des actifs financiers et , de plus en plus, leurs produits dérivés.
+http://www.wiki-compta.com/marche_financier.php
+
 ## Cash Flows
 Ensemble des flux de liquidités générés par les activités d’une société. On peut évaluer la solvabilité et la pérennité d’une entreprise à partir de cet indicateur, mais aussi sa prédisposition à financer ses investissements à partir de son exploitation ou sa capacité à distribuer des dividendes à ses actionnaires.
 
@@ -21,7 +27,7 @@ http://en.wikipedia.org/wiki/Credit_default_swap
     
 ## collateral
 
-ML Collateral Management Scenario
+Machine Learning Collateral Management Scenario
 When collateral is a security (let's say a house) that needs to be priced:
 If we have 70K pieces of data about houses, we split data in 3 parts: 
 * Training set: Train model (60% training)
@@ -33,7 +39,8 @@ If this doesn't give you a satisfactory result, then adjust the model (known as 
 cash, spot (immédiat, liquide). Que l'on peut compter immédiatement ; disponible.
 
 
-
+## Corporate
+entreprises non financières
 
 ## Commodities
 
@@ -183,3 +190,10 @@ http://en.wikipedia.org/wiki/Greeks_(finance)#Greeks_for_multi-asset_options
 
 ## Currency Exchange Rate Exposure
 Describes the influence of exchange rate movements on the value of a trade, firm, or a sector of the economy.
+
+## Custodian
+
+D'où le développement de la fonction de "dépositaire global" ou "global custodian". Le global custodian est désigné par l'investisseur pour être son teneur de compte pour toutes ses opérations d'achat-vente de titres sur tous les marchés. Pour ce faire le global custodian se met en relation avec des dépositaires locaux sur tous les marchés de la terre, les dépositaires locaux ayant chacun en charge la relation avec le dépositaire central de leur pays.
+
+Pour être global ou local custodian, il faut être habilité à tenir non seulement des comptes titres mais aussi des comptes espèces au nom des investisseurs. Ces établissements sont donc généralement des banques.
+https://www.fimarkets.com/pages/marches_financiers.php

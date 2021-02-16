@@ -332,7 +332,7 @@ Set-PathVariable {
 To remove all " from paths in the PATH environment variable for your session: 
 $($Env:PATH).Split(';') | %{ $str += "$($_.Trim('"'));" }; $Env:PATH=$str
     
-download.page(code/scripting/ps_files_recursive_action.md)
+download.page(code/scripting/powershell/ps_files_recursive_action.md)
 
 
 ## :: Static member operator

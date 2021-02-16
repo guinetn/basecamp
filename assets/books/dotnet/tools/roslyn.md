@@ -7,10 +7,11 @@ Provide
 Open Source .NET Compiler Platform: 
 - https://docs.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/
 - https://github.com/dotnet/roslyn
+- https://github.com/dotnet/roslyn-sdk
 
 Known distinction between Visual Studio, msbuild, dotnet tool, C# compiler, runtime, SDKs...
  
-download.page(code/scripting/ps_files_recursive_action.md)
+download.page(code/scripting/powershell/ps_files_recursive_action.md)
  
 download.page(code/editors/st3_set_build_system.md)
  
