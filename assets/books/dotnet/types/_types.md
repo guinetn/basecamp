@@ -1,10 +1,36 @@
 # Types
 
-***VALUE TYPES***
-struct, enum, bool, int, char, float, double, decimal
+![](assets\books\dotnet\types\ref_vs_val.png)
+![](assets\books\dotnet\types\heap_vs_stack.png)
 
 ***REFERENCE TYPES***
-class, array, delegate, interface, object, string
+`class, array, delegate, interface, object, string`
+
+class keyword 
+Allocated on heap 
+A variable for a reference type is a reference to the thing on the heap 
+Passed around by reference 
+Assignment is a copy of the reference, not the object 
+
+***VALUE TYPES***
+`struct, enum, bool, int, char, float, double, decimal`
+
+struct keyword 
+Allocated on stack (or embedded into a object)
+A variable for a value type is the value itself, e.g. integer, 3D point. etc. 
+Passed around by value (i.e. copied) 
+Assignment is a copy of the whole value 
+
+
+***HEAP VS STACK***
+The heap is general purpose memory (Lasts for the life of the application) 
+The stack is a block of memory for data required by methods 
+Each method pushes space onto the stack for local variables 
+Pops the stack on method exit: stack allocation is for the lifetime of the method
+Value types are the whole data, so live directly on the stack 
+stackalloc keyword allows creating blocks of memory on the stack
+Allocation and cleanup is cheap. but limited space 
+
 
 ***PREDEFINED TYPES = BUILT-IN TYPES***
 int, char, float, double, decimal, bool, struct, enum, string, object

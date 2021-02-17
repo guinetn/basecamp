@@ -15,5 +15,7 @@ stopwatch.Start();
 Console.WriteLine("Creation: " + stopwatch.Elapsed);
 
 
-
+many to add:
+- https://speakerdeck.com/davidfowl/application-diagnostics-in-net-core-3-dot-1
++ code https://github.com/davidfowl/NdcLondon2020
 

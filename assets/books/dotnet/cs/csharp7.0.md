@@ -7,12 +7,10 @@ Pattern matching
 Local functions
 Expanded expression bodied members
 Ref locals and returns
-Other features included:
 
 Discards
 Binary Literals and Digit Separators
 Throw expressions
-
 
 ## 7.1
 async Main method. The entry point for an application can have the async modifier.

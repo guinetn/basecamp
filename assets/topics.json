@@ -297,7 +297,7 @@
     "https://developers.google.com/analytics"
   ],
 
-  "maths": [],
+  "maths": ["https://math.libretexts.org"],
   "latex": ["https://www.overleaf.com(overleaf: online .tex files)"],
 
   "ml": [

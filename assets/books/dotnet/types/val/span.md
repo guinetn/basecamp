@@ -1,10 +1,42 @@
 ## Span<T>
 
-System
-A new memory efficient type 
+System.Memory NuGet package
+using Systems
+A new memory efficient value type 
 Philosophy of no allocations and no data copies
 
-Ref struct: cannot be placed on the managed heap
+Span<T> runtime type to work with slices of existing memory
+- New type to unify working With any kind of contiguous memory 
+Arrays, array segments, strings and substrinqs, native mernoty, stackalloc.. 
+- Provides array-like API - indexer 
+ReadOnlySpan<T> provides getter indexer only 
+- Type safe - each element is of type T 
+- Array-like performance 
+Not quite, but newer runtimes have special suppo«t 
+- Slicing 
+Cteate a new Span<T> With a sub-section of existing Span - without allocations! 
+
+It contains a length and a *managed pointer*, it cannot appear on the Managed Heap
+
+```cs
+public ref struct Span<T>
+{
+   * internal ref T _pointer;
+   private int _length;
+   ...
+}
+```
+New API and overloads in the BCL
+String.AsSpan(), Stream.ReadAsync(), UTF8Parser.TryParse()
+Significant usage of ref semantics - allocation free
+
+![](assets/books/dotnet/types/val/span01.png)]
+![](assets/books/dotnet/types/val/span02.png)]
+![](assets/books/dotnet/types/val/span03.png)]
+Slicing is quite efficient because you don't need to allocate anything on the heap or copy any data when you're creating the new span.
+
+
+C# 7.2 Ref struct: cannot be placed on the managed heap
 
 There are some trade-offs to consider when determining where using span is beneficial. You should be using spans predominantly in synchronous, performance-sensitive code paths where you want to avoid excessive data copies and allocations. This includes any scenario that involves substantial string manipulation or buffer management, or where you previously had to rely on writing unsafe code to get pointer-like performance in your libraries and server applications. Due to its design as a ref-like type, span comes with the following set of restrictions that are enforced by the C# compiler and the core runtime:
 
@@ -31,22 +63,6 @@ Spans are only a view into the underlying memory and aren't a way to instantiate
 
 Span<T> gains certain benefits because of these restrictions. These limitations enable efficient buffer access, safe and concrete lifetime semantics that are tied to stack unwinding, and they circumvent concurrency issues like struct tearing. To support the developer scenarios that cannot be addressed by span due to its usage constraints, .NET Core 2.1 also provides another type called Memory<T>.
 
-
-It contains a length and a *managed pointer*, it cannot appear on the Managed Heap
-
-```cs
-public ref struct Span<T>
-{
-*  internal ref T _pointer;
-   private int _length;
-   ...
-}
-```
-
-![](assets/books/dotnet/types/val/span01.png)]
-![](assets/books/dotnet/types/val/span02.png)]
-![](assets/books/dotnet/types/val/span03.png)]
-Slicing is quite efficient because you don't need to allocate anything on the heap or copy any data when you're creating the new span.
 
 Span has a constructor that accepts an array and there's an extension method on the array itself to support fluent interface (method chaining)
 

@@ -5,6 +5,16 @@ Call him = call a function(s) that can be different
 ~ function pointer in C/C++ 
 Object-oriented, type safe, secure 
  
+```cs
+public delegate string show(string s, int i);
+
+public delegate double dg(double db);
+dg dlg1 = new dg(System.Math.Cos);
+double res = dlg1(2.3); // -0.666
+dg dlg2 = new dg(System.Math.Sin);
+double res2 = dlg2(2.3); // 0.745
+```
+
 A delegate is an instance of a delegate type that has references to:
 - An instance method of a type and a target object assignable to that type.
     Stores a reference to the method's entry point 

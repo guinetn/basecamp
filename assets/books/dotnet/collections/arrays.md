@@ -23,6 +23,14 @@ foreach (var n in numbers)
 Array.ForEach<int>(numbers, n => Console.WriteLine(n)); //[1,2,3,4]
 
 // Array Size
+int[,] arr = new int[4,5]; // two dimentional array
+int[,] arr = new int[,] {{2,3,4},{11,12,24}};
+int elem = arr[0,0]; //elem=2
+int elem2 = arr[1,1]; //elems=12
+int num = arr.Length; // Get the total number of the array: 6
+int dim = arr.Rank; // Get the dimension of the array: 2
+int len = arr.GetLength(1); // Get the length of a given dimension: 3
+
 var totalElements = numbers.Count(); // 5
 var totalEvenNums = numbers.Count(n => n%2==0);
 

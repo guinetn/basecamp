@@ -4,6 +4,7 @@ Lots of effort goes into reducing allocation, not because the act of allocating 
 
 download.page(dotnet/cs/high_perf/benchmarking.md)
 
+download.page(dotnet/cs/high_perf/memory_allocation.md)
 download.page(dotnet/cs/high_perf/frugal_object.md)
 download.page(dotnet/cs/high_perf/pooling.md)
 download.page(dotnet/cs/high_perf/zero_copy.md)

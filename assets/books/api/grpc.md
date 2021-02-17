@@ -31,6 +31,10 @@ Ex: In IA, ONNX est écrit en protocol buffers (protobufs). Il existe un compila
 https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md
 
 ## More
+
+
+- https://github.com/davidfowl/grpc-dotnet
+- https://github.com/davidfowl/gRPCSamples
 interserviceCommunication: Sample code to compare performance of http/1.1, http/2 and gRPC
 - https://itnext.io/effectively-communicate-between-microservices-de7252ba2f3c
 - https://github.com/abhinavdhasmana/interserviceCommunication

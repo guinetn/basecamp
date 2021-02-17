@@ -229,3 +229,4 @@ https://docs.nestjs.com/microservices/basics
 - [ Ambassador Pattern)](https://youtu.be/hrKUZ1jQCqI)
 - https://levelup.gitconnected.com/microservices-architecture-74c26df8688
 - https://martinfowler.com/articles/microservices.html
+- https://medium.com/@dustin.wilcock/asp-net-core-3-1-microservice-quick-start-c0c2f4d6c7fa

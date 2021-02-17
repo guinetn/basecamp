@@ -1,6 +1,8 @@
 # SignalR
 
+Real-time web functionality enables server-side code to push content to clients instantly
 Real-time update notification (chat, any refresh needed,...replace long polling) 
+Historically it was tied to ASP.NET Core but the protocol is open and implementable in any language.
 
 SignalR provides an API for creating server-to-client remote procedure calls (RPC). The RPCs call JavaScript functions on clients from server-side .NET Core code.
 
@@ -24,4 +26,13 @@ connects multiple servers
 
 ## More
 
+- https://speakerdeck.com/davidfowl/signalr-deep-dive
 - https://docs.microsoft.com/en-us/aspnet/core/signalr/introduction?view=aspnetcore-5.0
+- https://github.com/davidfowl/WorkersWithSignalR
+
+- https://github.com/davidfowl/signalr-ports 
+Simplifies adding real-time web functionality to apps
+- signalr-go-server
+- signalr-node-server
+
+- https://github.com/davidfowl/NdcLondon2020/tree/master/talk1

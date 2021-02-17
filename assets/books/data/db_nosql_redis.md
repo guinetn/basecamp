@@ -55,4 +55,6 @@ PERSIST resource:lock                   Cancel TTL
 TTL resource:lock => -1
 
 ## more
-https://www.youtube.com/watch?v=UrQWii_kfIE&t=29s
+
+- https://github.com/davidfowl/A-sync-RedisClient
+- https://www.youtube.com/watch?v=UrQWii_kfIE&t=29s
