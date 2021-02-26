@@ -102,9 +102,21 @@ During this code execution both the creation of the DOM and the rendering of the
 
 <!-- See ! -->
 <div id="someId"></div>
+<button id="button" type='button'>Get Joke</button>
+<!-- type=button tells the browser that this isnt a typical form submission button. -->
 <script>
     var divElement = document.getElementById('someId');
     divElement.innerText = 'Hello, world!'
+    
+    document.addEventListener("click", function (event) {
+    // Checking if the button was clicked
+    if (!event.target.matches("#button")) return;
+
+    fetch("https://official-joke-api.appspot.com/random_joke")
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch(() => renderError());
+    });
 </script>
 ```
 

@@ -64,3 +64,5 @@ download.page(code/langs/scala.md)
 ::::
 download.page(code/langs/basic.md)
 download.page(code/langs/vb.md)
+::::
+download.page(code/langs/clojure.md)

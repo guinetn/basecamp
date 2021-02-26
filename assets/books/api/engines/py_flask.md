@@ -69,3 +69,6 @@ def foo():
 
 app.run()
 ```
+
+
+- https://py.plainenglish.io/abandoning-flask-for-fastapi-20105948b062

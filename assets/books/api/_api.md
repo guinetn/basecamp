@@ -4,6 +4,23 @@
 X-MyGreatApi-Token : apiKey
 Rate Limits: 30... API calls/second. Else Status Code 429
 
+APIs provide you with an endpoint or a specific URL where the data or functions you want are exposed. 
+
+APIs provide a layer of abstraction for the user. Abstraction hides everything but what is relevant to the user, making it simple to use.
+It hides internals complexity
+
+- You're APIs
+- Web APIs are 'Web Browser APIs': Chrome, Firefox, Safari, etc., have them built-in so that we can use them to add features to our sites, speech, audio, gamepad, events. https://developer.mozilla.org/en-US/docs/Web/API/Event
+
+
+## Web resources
+First defined as documents/files identified by their URLs
+Today definition is much more generic and abstract, and includes every thing, entity, or action that can be identified, named, addressed, handled, or performed in any way on the Web. 
+
+
+
+![](assets/api/assets/api-diagram.webp)
+
 
 - https://github.com/public-apis/public-apis
 - https://public-apis.io/
@@ -27,17 +44,36 @@ Rate Limits: 30... API calls/second. Else Status Code 429
 - https://spaceflightnewsapi.net/
 
 * Fake api
+
+- https://official-joke-api.appspot.com/random_joke
+- https://source.unsplash.com/random
+- https://swapi.dev/api/people/5/   The Star Wars API
+
+
 - https://jsonplaceholder.typicode.com/
+
 ```js
-fetch('https://jsonplaceholder.typicode.com/todos/1')
-  .then(response => response.json())
-  .then(json => console.log(json))
-  
-async function fetchData() {
- const result = await fetch('http://reqres.in/api/users/2')
- const jsonResult = await result.json()
- console.log(jsonResult.first_name) // Lucille
-}
+	fetch('https://jsonplaceholder.typicode.com/todos/1')
+	.then(response => response.json())
+	.then(json => console.log(json))
+	
+	async function fetchData() {
+		const result = await fetch('http://reqres.in/api/users/2')
+	const jsonResult = await result.json()
+	console.log(jsonResult.first_name) // Lucille
+	}
+```
+
+```js
+    document.addEventListener("click", function (event) {
+    // Checking if the button was clicked
+    if (!event.target.matches("#button")) return;
+
+    fetch("https://official-joke-api.appspot.com/random_joke")
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch(() => renderError());
+    });
 ```
 
 * SEND GET REQUEST
@@ -180,3 +216,5 @@ URL shortening service like bit.ly or goo.gl
 - https://www.tutorialsteacher.com/webapi/consuming-web-api-in-dotnet-using-httpclient
 - https://www.ezzylearning.net/tutorial/a-developers-guide-for-creating-web-apis-with-asp-net-core-5
 - https://devblogs.microsoft.com/aspnet/creating-discoverable-http-apis-with-asp-net-core-5-web-api/
+- https://snipcart.com/blog/integrating-apis-introduction
+- [REST](https://en.wikipedia.org/wiki/Representational_state_transfer)

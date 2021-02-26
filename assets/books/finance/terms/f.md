@@ -82,6 +82,8 @@ determining future movements in a financial market.
 The underlying proposition of fundamental analysis is that there is a basic intrinsic value for the aggregate stock market, various industries or individual securities and that these depend on underlying economic factors. The identification and analysis of relevant variables combined with the ability to quantify the future value of these variables are key to achieving superior investment results. A wide range of financial information is evaluated in fundamental analysis, including such income statement data as sales, operating costs, pre-tax profit margin, net profit margin, return on equity, cash flow, and earnings per share.
 Fundamental analysis contrasts with technical analysis which contends that the prices for individual securities and the overall value of the market tend to move in trends that persist.
 
+## Fungible 
+able to replace or be replaced by another identical item; mutually interchangeable.
 
 ## Futures Contract - Futures
 

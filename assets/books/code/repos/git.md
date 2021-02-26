@@ -1,5 +1,9 @@
 # Git
 
+Version control system
+
+Example of event sourcing: each commit is stored as an event representing a change of state - files/lines to be added/removed.
+
 ![](assets/books/code/repos/git01.jpg)
 
 ## Connect

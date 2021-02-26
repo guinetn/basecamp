@@ -25,7 +25,7 @@ download.page(api/architecture/architecture_microservices.md)
 ::::
 download.page(api/architecture/architecture_serverless.md)
 ::::
-download.page(api/architecture/architecture_event_driven.md)
+download.page(api/architecture/architecture_event_driven/_architecture_event_driven.md)
 ::::
 download.page(api/architecture/architecture_hexagonal.md)
 ::::

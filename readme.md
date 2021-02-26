@@ -189,7 +189,7 @@ download.exec(https://...myfile.js)
 - <span>download</span>.code(https://...myfile.html)  
 
 **Tips**
-Github's original links need to be changed, ie:
+Github's original links need to be changed ('raw' link), ie:
 
 ❌ <span>download</span>.code(https://github.com/pms67/PID/blob/master/PID.h)  
 ✔️ <span>download</span>.code(https://raw.githubusercontent.com/pms67/PID/master/PID.h)

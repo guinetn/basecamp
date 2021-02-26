@@ -3,6 +3,8 @@
 download.page(code/editors/vscode.md)
 ::::
 download.page(code/editors/st3.md)
+::::
+download.page(code/editors/vi.md)
 
 
 ### CodeShare
@@ -16,3 +18,7 @@ http://brackets.io/
 
 Brackets is a text editor that comes from the folks at Adobe, in an attempt to offer a more modern, open-source solution for developers creating websites.
 It is a free text editor, with some appealing visual tools for previewing your work and allowing frontend developers to examine the changes
+
+### Monaco
+powers VS Code
+https://github.com/Microsoft/monaco-editor/

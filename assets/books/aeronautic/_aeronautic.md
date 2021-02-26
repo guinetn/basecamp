@@ -6,6 +6,7 @@ download.page(aeronautic/captain_joe.md)
 download.page(aeronautic/ate.md)
 download.page(aeronautic/finerpoints.md)
 download.page(aeronautic/tools.md)
+download.page(aeronautic/maths.md)
 
 ## Places
 

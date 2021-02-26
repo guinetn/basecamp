@@ -11,9 +11,12 @@ Leading cloud vendors: Amazon AWS, Microsoft Azure, Google Cloud
 
 ![what-is-the-cloud](assets/books/cloud/assets/what-is-the-cloud.png)
 
-- Scalable (unlimited capacity of processing/storage)
-- Reliabe (from everywhere, redondant)
-- Efficient (free up resources for innovation/development)
+***SCALABLE*** (unlimited capacity of processing/storage)
+- To scale up: means adding more RAM, more CPU — more resources, to the hardware in which your system runs; but you are still constrained to a single “box”
+- To scale “out”: means you can just add a brand new machine, generally to a “cluster” of some sort, that allows your system to much more easily add additional resources.
+With all the cloud services, containerization, and VMs readily available in today’s world, it can be extremely simple to spin up and down resources as necessary. Just add a new node to the cluster!
+***RELIABE*** (from everywhere, redondant)
+***EFFICIENT*** (free up resources for innovation/development)
 
 Systems (most distributed systems), with the hardware procurement and maintenance and many other things abstracted away from software developers.
 Evolution: bare metal → virtualized → containerized → cloud → serverless

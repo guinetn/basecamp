@@ -899,3 +899,4 @@ Orchestrators enable you to manage their images, containers, and hosts through a
 - https://docs.microsoft.com/fr-fr/windows/wsl/tutorials/wsl-containers
 - https://dev.to/nas5w/how-to-serve-a-vue-app-with-nginx-in-docker-4p54
 - https://hub.docker.com/r/clue/json-server/~/dockerfile/
+-https://levelup.gitconnected.com/asynchronous-tasks-in-python-with-celery-rabbitmq-redis-480f6e506d76

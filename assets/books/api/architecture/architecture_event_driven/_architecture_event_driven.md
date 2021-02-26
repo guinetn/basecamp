@@ -1,6 +1,7 @@
 ## EVENT DRIVEN ARCHITECTURE
 
 https://docs.nestjs.com/microservices/basics
+https://www.enterpriseintegrationpatterns.com/patterns/messaging/index.html
 
 connect devices using a publish/subscribe model
 
@@ -38,13 +39,25 @@ SQS - Amazon Simple Queue Service
 https://aws.amazon.com/sqs/
  
 download.page(data/db_nosql_redis.md)
+download.page(api/architecture/architecture_event_driven/event_sourcing.md)
 download.page(api/architecture/architecture_event_driven/mqtt.md)
 download.page(api/architecture/architecture_event_driven/nats.md)
 download.page(api/architecture/architecture_event_driven/kafka.md)
 download.page(api/architecture/architecture_event_driven/rabbitmq.md)
 download.page(api/grpc.md)
 download.page(api/architecture/architecture_event_driven/ipc-on-linux.md)
+download.page(api/architecture/architecture_event_driven/amazon-sqs.md)
+download.page(api/architecture/architecture_event_driven/distributed_task_queue.md)
 
 ## Azure Event Hubs
 https://azure.microsoft.com/services/event-hubs/
 Azure Event Hubs is a highly scalable publish-subscribe service that can ingest millions of events per second and stream them to multiple consumers. This lets you process and analyze the massive amounts of data produced by your connected devices and applications. Once Event Hubs has collected the data, you can retrieve, transform, and store it using any real-time analytics provider, such as Azure Stream Analytics, or with batching/storage adapters.
+
+
+## Message Broker 
+
+ ways to route messages to the proper destination without the originating application being aware of the ultimate destination of the message. 
+ 
+decouple the destination of a message from the sender and maintain central control over the flow of messages
+
+receive messages from multiple senders, determine the correct destination and route the message to the correct channel

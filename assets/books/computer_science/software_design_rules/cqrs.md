@@ -1,5 +1,10 @@
 ﻿## CQRS
 
+CQRS involves splitting an application into two parts internally — the command side: ordering the system to update state 
+- the query side: that gets information without changing state.
+The way event sourcing works with CQRS is to have part of the application that models updates as writes to an event log or Kafka topic.
+
+
 The flow of simple CRUD (Create, Read, Update and Delete) applications can be described using the following steps:
 - Controllers layer handles HTTP requests and delegates tasks to the services layer.
 - Services layer is where most of the business logic lives.

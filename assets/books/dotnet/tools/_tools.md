@@ -37,4 +37,8 @@ download.page(dotnet/tools/interop.md)
 ::::
 download.page(dotnet/tools/testing.md)
 ::::
+download.page(dotnet/tools/orleans.md)
+::::
+download.page(dotnet/tools/akka.net.md)
+::::
 
