@@ -18,6 +18,7 @@ gcc [-c|-S|-E] [-std=standard]
         [-o outfile] [@file] infile...
 ```
 
+
 |Flags|||
 |---|---|---|
 |--version||||
@@ -39,14 +40,33 @@ gcc [-c|-S|-E] [-std=standard]
 | -B <directory>| Add <directory> to the compiler's search paths ||
 | -time | Time the execution of each subprocess ||
 
-- Wall
-- Pedantic
-- Werror
+-wall       enables all the warnings 
+-pedantic   Issue all the warnings demanded by strict ISO C/C++; reject all programs that use forbidden extensions. Valid ISO C and ISO C++ programs should compile properly with or without this option (though a rare few require -ansi or a -std option specifying the required version of ISO C). However, without this option, certain GNU extensions and traditional C and C++ features are supported as well. With this option, they are rejected.
+-werror     Make all warnings into errors.
 
 gcc hello.c -o hello.exe     
 g++ hello.c -o hello.exe
 gcc hello.c sqlite3.dll -o hello.exe     if a dll is needed
 
+
+https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html
+Overall Options
+C Language Options
+C++ Language Options
+Diagnostic Message Formatting Options
+Warning Options
+Static Analyzer Options
+Debugging Options
+  -g 
+Optimization Options
+  -O  -O0  -O1  -O2  -O3  -Os  -Ofast  -Og
+Program Instrumentation Options
+Preprocessor Options
+  -C  -CC  
+Linker Options  
+Directory Options
+Developer Options
+x86 Windows Options
 
 
 ```c

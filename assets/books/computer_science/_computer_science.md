@@ -78,3 +78,5 @@ download.page(computer_science/the_developer.md)
 download.page(computer_science/open_source.md)
 ::::
 download.page(computer_science/licences.md)
+::::
+download.page(computer_science/_fsm.md)

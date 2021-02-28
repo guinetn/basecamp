@@ -56,11 +56,15 @@ g++ -std=c++17 -O2 -Wall -pedantic -pthread hello.cpp && ./a.out
     Standard      \      \___ Warnings
     c++98         \
     c++11          \___ -Ox: Optimization level 
-    c++14                   -O0  None
+    c++14                   -O0  None           Optimizations disabled
+                                                Reduce compilation time and make debugging produce the expected results. This is the default.
     c++17                   -O1  Moderate  
                             -O2  Full 
                             -O3  Max  
+                            -O   reduce code size and execution time   without performing any optimizations             
     
 https://www.gnu.org/software/gcc/
+https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html
+
 The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++,...). GCC was originally written as the compiler for the GNU operating system.
 

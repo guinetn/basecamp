@@ -70,7 +70,8 @@ Id  Name                        Interval  Min      Max
     Nuget package: https://www.nuget.org/packages/Microsoft.Diagnostics.Tracing.TraceEvent/
     Reference to Microsoft.Diagnostics.Tracing.TraceEvent 
 
-Logs all the kernel (clr and dynamic events) in an ETL (ETW Trace File) that perview.exe can read.
+Logs all the kernel (clr and dynamic events) in an ETL (ETW Trace File) 
+>%windir%\system32\perfmon.msc /s
 
 ```cs
 using Microsoft.Diagnostics.Tracing;

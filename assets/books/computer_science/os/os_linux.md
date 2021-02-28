@@ -205,6 +205,15 @@ https://github.com/thoughtbot/rcm
     make &&
     sudo make install
 
+## Tools
+
+[Valgrind: debug+profiler](https://valgrind.org/info/about.html)
+debugging and profiling tools that help you make your programs faster and more correct: Memcheck for c/c++ memory-related errors 
+
+Compile with -g to include debugging information, -O0 is also a good idea
+>myprog arg1 arg2
+>valgrind --leak-check=yes myprog arg1 arg2
+
 ## more
 
 - https://www.kernel.org/
