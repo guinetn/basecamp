@@ -4,6 +4,15 @@
 - distributed architecture based
 - Microservices are modular components that are developed and deployed individually.
 
+***Martin Fowler 2014 article:***
+<quote>
+In short, the microservice architectural style is an approach to <mark>developing a single application as a suite of small services</mark>, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies.</quote>
+
+It works on principle of componentization of services. This architecture decomposes the software into various components which can be defined as services. Each service holds a single responsibility and every service is isolated in nature. A change in one service should not affect the other services.
+
+![](assets/api/assets/monolith_vs_microservices.png)
+
+
 Classic Server-side enterprise application:
 - Variety of clients (desktop, browsers, mobile...)
 - Exposing APIs
@@ -26,6 +35,27 @@ However a microservice based architecture has a performance cost: it needs to se
 Unlike a Monolithic architecture wich have all parts of the code tightly coupled meaning the response to a call is very quick.
 
 
+Architecture consist of 5 component isolated ,concise and fine grained micro services capable of expanding independently:
+- Services
+- Service Bus
+- External configuration
+- API Gateway
+- Containers
+
+***Characteristics of Microservices***
+Microservice Architecture should comprise of the following characteristics
+Componentization via Services
+Organized around Business Capabilities
+Products not Projects
+Smart endpoints and dumb pipes
+Decentralized Governance
+Decentralized Data Management
+Infrastructure Automation
+Design for failure
+Evolutionary Design
+
+It is recommended to evolve different microservices separately with different teams and allow each microservice to evolve with time simultaneously just like various bubbles in the air. As the data communication is done on a standard protocol and data format , structure of one service wont affect the functionality in co-services
+
 ![](assets/books/api/architecture/microservices/microservices_03.png)
 
 download.page(api/architecture/api_gateway.md)
@@ -40,11 +70,28 @@ Benefits
 - no long-term commitment to a technology stack
 - simpler maintenance
 - increased failure tolerance
+- Offers low coupling due to high degree of isolation
+- Enhance modularity
+- Failure in one service does not impact whole system as they are isolated
+- Offers high flexibility
+- Offers very high degree of scalability
+- Ease of modification can result in faster evolutionary iterations
+- Better error handling can be implemented
+- Avoid Sinkhole Problem of layered architecture and data flows through concerned services only
+
 
 Drawbacks
 - increased complexity of development and deployment
 - increased memory consumption
 - Apply microservice architecture pattern in the later stages of development, when scaling becomes the most important issue.
+- Higher chance of failure during communication between different services.
+- Difficult to manage a large number of services.
+- Needs to solve the problem, such as network latency and load balancing and other issues similar to distributed architecture
+- Complex testing over a distributed environment
+- Implementation requires much more time
+
+
+
 
 
 
@@ -222,6 +269,7 @@ https://docs.nestjs.com/microservices/basics
 
 #### More
 
+- https://martinfowler.com/microservices/
 - https://dotnet.microsoft.com/learn/aspnet/microservices-architecture
 - https://dncmagazine.blob.core.windows.net/edition49/DNCMag-Issue49.pdf ***
 
@@ -240,3 +288,5 @@ https://docs.nestjs.com/microservices/basics
 - https://martinfowler.com/articles/microservices.html
 - https://medium.com/@dustin.wilcock/asp-net-core-3-1-microservice-quick-start-c0c2f4d6c7fa
 - https://towardsdatascience.com/a-data-scientists-introduction-to-microservices-7772d356fe4d
+- https://www.udemy.com/course/software-architecture-and-design-essentials/
+- https://divante.com/blog/monolithic-architecture-vs-microservices/

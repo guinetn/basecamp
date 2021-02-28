@@ -170,9 +170,7 @@ download.page(api/controllers.md)
 download.page(api/middleware.md)
 ::::
 download.page(api/rest.md)
-  
-download.page(api/soap.md)
-::::   
+::::
 download.page(api/graphql.md)
 ::::   
 download.page(api/json.md)

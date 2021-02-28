@@ -585,6 +585,7 @@ By default all files created inside a container are stored on a writable contain
 → difficult to get the data out of the container if another process needs it.
 
 Docker has options for containers to store files in the host machine, so that the files are persisted even after the container stops: 
+
 - volumes
 Stored in a part of the host filesystem which is managed by Docker (/var/lib/docker/volumes/)
 Stored within a directory on the Docker host
@@ -592,12 +593,20 @@ Are isolated from the core functionality of the host machine (bind mounts are no
 A given volume can be mounted into multiple containers simultaneously. When no running container is using a volume, the volume is still available to Docker and is not removed automatically. You can remove unused volumes using docker volume prune
 When you mount a volume, it may be named or anonymous
 Volumes also support the use of volume drivers, which allow you to store your data on remote hosts or cloud providers, among other possibilities.
+
 - bind mounts
 Stored anywhere on the host system
 The file or directory is referenced by its full path on the host machine. The file or directory does not need to exist on the Docker host already.
+
+Bind mount enables Docker to use the files directly in the local filesystem, without copying them into the container each time.
+
+This has the added benefits that if there are some auto-generated changes from your code, they will be reflected in the local filesystem.
+https://docs.docker.com/storage/bind-mounts/
+
 - tmpfs mount (Docker on Linux)
 Stored in the host system’s memory only
 Not persisted on disk
+
 - named pipe (Docker on Windows)
 Used for communication between the Docker host and a container
 

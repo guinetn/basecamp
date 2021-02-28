@@ -1,5 +1,18 @@
 # ARCHITECTURE
 
+The Need Software Architecture
+Evolutions in software design lead with few robust architectural approaches in order to avoid the issues of architecture less software design (known as "Big Ball of Mud"):
+- Layered Architecture
+- Tiered Architecture
+- Service Oriented Architecture (SOA)
+- Microservice Architecture
+
+![](assets/api/assets/mono-soa-micro.png)
+
+
+“ Though there is no perfect software architecture in existence but any architectural approach can be considered relatively perfect if it fulfils the functional and non functional needs of the project “
+
+
 Endpoints names =  name of your resources
     /dogs
 Endpoints Plural: Consistency is the key 
@@ -21,6 +34,12 @@ Documentation
 https://levelup.gitconnected.com/software-architecture-the-important-architectural-patterns-you-need-to-know-a1f5ea7e4e3d
 
 ::::
+download.page(api/architecture/architecture_layered.md)
+::::
+download.page(api/architecture/architecture_tiered.md)
+::::
+download.page(api/architecture/architecture_soa_services_oriented.md)
+::::
 download.page(api/architecture/architecture_microservices.md)
 ::::
 download.page(api/architecture/architecture_serverless.md)
@@ -32,8 +51,6 @@ download.page(api/architecture/architecture_hexagonal.md)
 download.page(api/architecture/architecture_mvc_mvvm_mvp.md)
 ::::
 download.page(api/architecture/architecture_client_server.md)
-::::
-download.page(api/architecture/architecture_layered.md)
 ::::
 download.page(api/architecture/architecture_pipefilter.md)
 ::::
