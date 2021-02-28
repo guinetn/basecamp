@@ -1014,6 +1014,12 @@ Control: The base class for familiar controls such as Button, ListBox, and Statu
 
 ## Tools
 
+xaml-controls-gallery ***
+https://www.microsoft.com/en-us/p/xaml-controls-gallery/9msvh128x2zt?activetab=pivot:overviewtab
+
+Fluent XAML Theme Editor
+https://www.microsoft.com/en-us/p/fluent-xaml-theme-editor/9n2xd3q8x57c?activetab=pivot%3Aoverviewtab
+
 Blend
 allows a designer to create extremely complex and stunning visual effects oriented to WPF XAML user interfaces
 
@@ -1034,5 +1040,5 @@ The shell is divided into regions, which you dynamically fill with user control 
 ## More
 - https://intellitect.com/interfacing-multithreading-patterns/
 - https://github.com/Code52/Enhance
-
+- https://www.codeproject.com/Tips/5294830/WPF-with-PRISM-View-and-ViewModel-First-Implementa
 

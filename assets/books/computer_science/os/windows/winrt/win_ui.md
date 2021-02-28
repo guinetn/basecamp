@@ -3,7 +3,9 @@
 Native Windows 10 UI layer: controls/styles for building Windows apps
 Embodies Fluent Design
 
+https://docs.microsoft.com/en-us/windows/winui/api/
 https://gallery.platform.uno/
+[Windows UI Library: the latest Windows 10 native controls and Fluent styles for your applications](https://github.com/microsoft/microsoft-ui-xaml)
 
 ### WinUI 3
 an entire framework but does not sit on top of UWP
@@ -29,5 +31,13 @@ app demonstrates the controls available in WinUI and the Fluent Design System.
 ## Fluent Design
 
 open-source, cross-platform design system that gives designers and developers the frameworks they need to create engaging product experiences—accessibility, internationalization, and performance included.
- 
+
+Ex: Windows App alarm icon
+
+
 - https://www.microsoft.com/design/fluent
+- https://www.microsoft.com/design/fluent/#/windows
+- https://docs.microsoft.com/fr-fr/windows/uwp/design/
+
+xaml-controls-gallery: demo ***
+https://www.microsoft.com/en-us/p/xaml-controls-gallery/9msvh128x2zt?activetab=pivot:overviewtab

@@ -8,6 +8,8 @@ https://apisof.net/catalog
 Tools: ildasm.exe, gacutil.exe, mage.exe, resgen.exe, sn.exe
 C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools
 
+[Source Code](https://github.com/dotnet/corefx/blob/master/src/)
+ 
 https://github.com/dotnet/aspnetcore                   
 https://github.com/dotnet/AspNetCore.Docs              
 https://github.com/dotnet/BenchmarkDotNet              
@@ -35,13 +37,15 @@ download.page(dotnet/gems.md)
 ::::
 download.page(dotnet/dotnet_standard.md)
 ::::
-download.page(dotnet/dotnetcore/_dotnetcore.md)
+download.page(dotnet/netcore/_dotnetcore.md)
 ::::
 download.page(dotnet/net/_.net.md)
 ::::
 download.page(dotnet/cs/_cs.md)
 ::::
 download.page(dotnet/threading/_threading.md)
+::::
+download.page(dotnet/high_perf/_high_perf.md)
 ::::
 download.page(dotnet/fsharp/_fsharp.md)
 ::::

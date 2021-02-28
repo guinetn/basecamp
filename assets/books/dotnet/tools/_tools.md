@@ -18,10 +18,6 @@ download.page(dotnet/tools/wpf.md)
 ::::
 download.page(dotnet/tools/winforms.md)
 ::::
-download.page(dotnet/tools/uwp.md)
-::::
-download.page(dotnet/tools/win_ui.md)
-::::
 download.page(dotnet/tools/signal_r.md)
 ::::
 download.page(dotnet/tools/roslyn.md)
@@ -37,8 +33,6 @@ download.page(dotnet/tools/interop.md)
 ::::
 download.page(dotnet/tools/testing.md)
 ::::
-download.page(dotnet/tools/orleans.md)
-::::
-download.page(dotnet/tools/akka.net.md)
+download.page(dotnet/tools/clickonce.md)
 ::::
 

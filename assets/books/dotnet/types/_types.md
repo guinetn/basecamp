@@ -22,15 +22,10 @@ Passed around by value (i.e. copied)
 Assignment is a copy of the whole value 
 
 
-***HEAP VS STACK***
-The heap is general purpose memory (Lasts for the life of the application) 
-The stack is a block of memory for data required by methods 
-Each method pushes space onto the stack for local variables 
-Pops the stack on method exit: stack allocation is for the lifetime of the method
-Value types are the whole data, so live directly on the stack 
-stackalloc keyword allows creating blocks of memory on the stack
-Allocation and cleanup is cheap. but limited space 
-
+***Boxing***
+Creates an object (on the heap) representing a value type. Boxing happens whenever a struct is cast either to object, or any other interface. There’s an explic it OpCode box in .NET IL
+ 
+download.page(dotnet/types/heap_stack.md)
 
 ***PREDEFINED TYPES = BUILT-IN TYPES***
 int, char, float, double, decimal, bool, struct, enum, string, object

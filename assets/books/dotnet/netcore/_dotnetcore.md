@@ -34,30 +34,32 @@ Set of files or features included with a Microsoft product. May be shipped with 
 
 
 ***.NET Core Platform is made up of several components:***
-- CoreFX  	.NET Core foundational libraries: https://github.com/dotnet/corefx
-- CoreCLR 	.NET Core runtime
-- CLI 			.NET Core command-line tools
-- Roslyn 		.NET Compiler Platform
+|||
+---|---
+|CoreFX   | .NET Core foundational libraries: https://github.com/dotnet/corefx |
+|CoreCLR  | .NET Core runtime |
+|CLI      | .NET Core command-line tools |
+|Roslyn   | .NET Compiler Platform |
 
 .NET Core is the modular, open source and cross-platform set of tools that allows you to build next-generation .NET applications, which run on Windows, Linux and macOS (microsoft.com/net/core/platform). It can also be installed on the Windows 10 for IoT distribution, and it runs on devices such as the Raspberry PI. .NET Core is a powerful platform that includes the runtime, libraries, and compilers, with full support for languages such as C#, F#, and Visual Basic. This means you can code in C# not only on Windows, but also on different OSes because the .NET Compiler Platform (github.com/dotnet/roslyn), also referred to as “Project Roslyn,” provides open source, cross-platform compilers with rich code analysis APIs. As an important implication, you can leverage the Roslyn APIs to perform many code-related operations on different OSes, such as code analysis, code generation and compilation. This article walks through the necessary steps to set up a C# project on .NET Core to use the Roslyn APIs and explains some interesting code-generation and compilation scenarios. It also discusses some basic Reflection techniques to invoke and run code compiled with Roslyn on .NET Core. 
 
 ::::
-download.page(dotnet/dotnetcore/dotnet_cli.md)
+download.page(dotnet/netcore/dotnet_cli.md)
 ::::
-download.page(dotnet/dotnetcore/project.json.md)
-download.page(dotnet/dotnetcore/env_vars.md)
+download.page(dotnet/netcore/project.json.md)
+download.page(dotnet/netcore/env_vars.md)
 ::::
-download.page(dotnet/dotnetcore/depency_injection_ioc.md)
+download.page(dotnet/netcore/depency_injection_ioc.md)
 ::::
-download.page(dotnet/dotnetcore/configuration.md)
+download.page(dotnet/netcore/configuration.md)
 ::::
-download.page(dotnet/dotnetcore/logging.md)
+download.page(dotnet/netcore/logging.md)
 ::::
-download.page(dotnet/dotnetcore/dotnetcore_on_linux.md)
+download.page(dotnet/netcore/dotnetcore_on_linux.md)
 ::::
-download.page(dotnet/dotnetcore/dotnetcore2.0.md)
+download.page(dotnet/netcore/dotnetcore2.0.md)
 ::::
-download.page(dotnet/dotnetcore/dotnetcore3.0.md)
+download.page(dotnet/netcore/dotnetcore3.0.md)
 
 
 ## PORTING A NET FRAMEWORK LIBRARY TO NET CORE

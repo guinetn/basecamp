@@ -2,6 +2,7 @@
 
 ::::
 download.page(sciences/biology/crispr.md)
+download.page(sciences/biology/proteins.md)
 
 ![](assets/books/sciences/biology/assets/taxonomy.png)
 

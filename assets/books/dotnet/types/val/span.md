@@ -36,6 +36,13 @@ Significant usage of ref semantics - allocation free
 Slicing is quite efficient because you don't need to allocate anything on the heap or copy any data when you're creating the new span.
 
 
+
+Span<T> - a fast synchronous accessor of a continuous chunk of memory. It’s not the memory, it’s just a really performance friendly view of it.
+Memory<T> - an actual memory chunk, that can be passed wherever needed and accessed using its fast synchronous accessor Span<T>.
+ReadOnlySpan<T> - a span but readonly
+ReadOnlyMemory<T> - a memory but readonly
+ReadOnlySequence<T> - a linked list of ReadOnlyMemory<T> elements. It provides a special case properties for its convenient usage where it contains a single element.
+
 C# 7.2 Ref struct: cannot be placed on the managed heap
 
 There are some trade-offs to consider when determining where using span is beneficial. You should be using spans predominantly in synchronous, performance-sensitive code paths where you want to avoid excessive data copies and allocations. This includes any scenario that involves substantial string manipulation or buffer management, or where you previously had to rely on writing unsafe code to get pointer-like performance in your libraries and server applications. Due to its design as a ref-like type, span comes with the following set of restrictions that are enforced by the C# compiler and the core runtime:
@@ -166,4 +173,4 @@ Search a string in a string and search a char in a string are different: https:/
 - https://docs.microsoft.com/en-us/dotnet/api/system.span-1?view=net-5.0
 - https://github.com/dotnet/corefxlab/blob/master/docs/specs/span.md
 - https://www.codemag.com/article/1807051/Introducing-.NET-Core-2.1-Flagship-Types-Span-T-and-Memory-T
- 
+- https://blog.scooletz.com/2021/02/03/spans-memory-mental-model

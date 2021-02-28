@@ -1,6 +1,5 @@
 # Synchronization
 
-
 Exclusive locking
 Demo: decompiling lock
 Demo: non-blocking usage of Monitor.TryEnter
@@ -14,6 +13,8 @@ Barrier
 Asynchronous primitives
 Demo: AsyncLock implementation
 
+[Samples](https://github.com/dotnet/corefx/blob/master/src/System.Threading.Tasks/tests/MethodCoverage.cs)
+ 
 download.page(dotnet/threading/d_synchronization/threads_synchronization.md)
 
 download.page(dotnet/threading/d_synchronization/threads_sync_data_race.md)

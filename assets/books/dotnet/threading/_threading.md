@@ -66,6 +66,11 @@ download.page(dotnet/threading/e_concurrent_structures/_concurrent_structures.md
 download.page(dotnet/threading/f_misc/_misc.md)
 ::::
 
+download.page(dotnet/threading/g_actor_model/orleans.md)
+::::
+download.page(dotnet/threading/g_actor_model/akka.net.md)
+::::
+
 ![](assets/books/dotnet/threading/a_threads/threading.png)
 
 
@@ -76,3 +81,4 @@ download.page(dotnet/threading/f_misc/_misc.md)
 - http://www.albahari.com/threading/part3.aspx#_Apartments_and_Windows
 - https://intellitect.com/legacy-system-threading/ ***
 - https://intellitect.com/interfacing-multithreading-patterns/ ***
+- https://www.codeproject.com/Articles/5278932/Synchronization-with-Visual-Cplusplus-and-the-Wind

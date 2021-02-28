@@ -3,8 +3,6 @@ download.page(dotnet/language/_language.md)
 ::::
 download.page(dotnet/cs/csharp_all.md)
 ::::
-download.page(dotnet/cs/high_perf/_high_perf.md)
-::::
 download.page(dotnet/cs/csharp.md)
 ::::
 download.page(dotnet/cs/csharp2.0.md)

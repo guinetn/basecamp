@@ -1,6 +1,8 @@
 # TLS - Transport Layer Security
 
-"Protocol" =  we've agreed to do things like this
+Replace the old SSL layer
+
+"Protocol" = we've agreed to do things like this
 Cryptographic protocol for providing secure Host-to-Host communication, ie client-server
 
 Can use for 

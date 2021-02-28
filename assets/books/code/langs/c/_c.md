@@ -28,6 +28,80 @@ https://fresh2refresh.com/c-programming/c-function/c-library-functions/
 
 
 
+## MEMORY
+
+
+C/C++ interact with your memory in a low-level way with stdlib (malloc, calloc, free). Sometimes this creates a lot of problems you didn’t get before: segfaults. 
+
+- Malloc (memory allocation) 
+requests the system for the amount of memory that was asked for, and returns a pointer to the starting address. 
+- Free 
+tells the system that the memory we asked for is no longer needed and can be used for other tasks.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+// static memory allocation for the life of the program
+int my_variable = 70;
+
+int main(int argc, char *argv[])
+{
+  	printf("Malloc - Calloc - Realloc - Free\n");
+
+	// Dynamic memory allocation: when you need more memory
+
+
+	// Malloc: ask for a pointer to a block of memory of a certain size. 
+	//         return null if not enough memory available (you can't have memory)
+	int *x = malloc(sizeof(int));  			// give me space for 1 'int' 
+	int *arr = malloc(sizeof(int)*100);  	// give me space for 100 'int'
+	*x = 120;
+
+	// R/W to the memory	
+	arr[90] = 0xFEEF8EEF;
+	arr[101] = 8;  // Out of bounds: This is bad
+
+	free(arr);	  // We don't need this memory anymore
+	arr = NULL; 	// Good practice to set the pointer to NULL after free()	
+
+
+
+	// Calloc = malloc + number of elements to allocate as argument + Set block elemnets to 0			
+	double *darr; 
+	darr = calloc(sizeof(double), 100); // same as malloc(sizeof(double)*100)
+
+
+	// Realloc: resize up/down an allocated block. pointer can change if not enough continuous memory (and elements are copied)
+	darr = realloc(darr, sizeof(double)*500); 
+}
+
+```
+accessing memory that has already been freed (released with free or memory that your program has automatically released, for example from the stack) will cause `segfault`
+
+***Memory Leak***
+is memory that was requested by the user that was never freed — when the program ended or pointers to its locations were lost. This makes the program use much more memory than what it was supposed to. To avoid this, every time we don’t need an heap allocated element anymore, we free it.
+
+after the memory is freed, accessing it or using it might cause you a segfault.
+
+Memory is divided in multiple segments
+![](assets/books/code/langs/cmemory_division.jpg)
+
+***STACK***
+Is an ordered insertion place 
+It’s where some of your processor’s registers information gets saved. 
+This memory is also managed by the program and not by the developer.
+LIFO (Last-In-First-Out) data structure: push/pop
+`Stack Pointer` is a processor register that keep track of the current memory place
+Every local variable and every function you call goes there. Every time you need to save something — like a variable or the return address from a function — it pushes and moves the stack pointer up. Every time you exit from a function, it pops everything from the stack pointer until the saved return address from the function.
+
+***HEAP***
+is all random — you allocate memory wherever you can
+used to allocate big amounts of memory that are supposed to exist as long as the developer wants.
+Developer’s job to control the usage of the memory on the heap.
+When building complex programs, you often need to allocate big chunks of memory, and that’s where you use the heap. We call this Dynamic Memory.
+You’re placing things on the heap every time you use malloc to allocate memory for something. Any other call that goes like int i; is stack memory.
+
 
 ## DYNAMIC MEMORY ALLOCATION
 malloc ()	malloc (number *sizeof(int));
@@ -98,7 +172,7 @@ int main() {
 }
  ```
 
-download.page(code/langs/c/crt.md)
+download.page(computer_science/os/windows/crt.md)
 
 ## More 
 - https://fresh2refresh.com/c-programming

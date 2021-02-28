@@ -66,5 +66,15 @@ public class Purchase
     }
 }
     
-    
+   
+   
+https://github.com/dotnet/corefx/blob/master/src/System.Threading.Tasks/tests/Helpers.cs    
+namespace System.Threading.Tasks.Tests
+{
+    internal class InvokeActionOnFinalization
+    {
+        public Action Action;
+        ~InvokeActionOnFinalization() => Action?.Invoke();
+    }
+}
 ```
