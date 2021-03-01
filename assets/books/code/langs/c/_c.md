@@ -85,7 +85,7 @@ is memory that was requested by the user that was never freed — when the progr
 after the memory is freed, accessing it or using it might cause you a segfault.
 
 Memory is divided in multiple segments
-![](assets/books/code/langs/cmemory_division.jpg)
+![](assets/books/code/langs/c/memory_division.jpg)
 
 ***STACK***
 Is an ordered insertion place 
@@ -172,7 +172,7 @@ int main() {
 }
  ```
 
-download.page(computer_science/os/windows/crt.md)
+download.page(computer_science/os/windows/winrt/crt.md)
 
 ## More 
 - https://fresh2refresh.com/c-programming

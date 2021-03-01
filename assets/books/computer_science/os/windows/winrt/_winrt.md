@@ -20,12 +20,12 @@ While often conflated with the Windows Runtime, WPF is merely a client of the te
 Another important point is, that the Windows Runtime does not mandate use of any particular UI library or framework. It works equally well in a classic desktop app (written in straight Win32, MFC, WTL, wxWidgets, ...) or a .NET application (Windows Forms, WPF) as it does in an application with a XAML/WPF UI.
 
 
-download.page(computer_science/os/windows/winrt.md/c++winrt.md)
-download.page(computer_science/os/windows/winrt.md/crt.md)
-download.page(computer_science/os/windows/winrt.md/ucrt.md)
-download.page(computer_science/os/windows/uwp.md)
-download.page(computer_science/os/windows/win_ui.md)
-download.page(computer_science/os/windows/com.md)
+download.page(computer_science/os/windows/winrt/c++winrt.md)
+download.page(computer_science/os/windows/winrt/crt.md)
+download.page(computer_science/os/windows/winrt/ucrt.md)
+download.page(computer_science/os/windows/winrt/uwp.md)
+download.page(computer_science/os/windows/winrt/win_ui.md)
+download.page(computer_science/os/windows/winrt/com.md)
 
 ## Windows Runtime components
 
