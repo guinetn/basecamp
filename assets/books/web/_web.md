@@ -17,6 +17,8 @@ download.page(web/css/_css.md)
 ::::
 download.page(web/front/_front.md)
 ::::
+download.page(web/tools/_tools.md)
+::::
 download.page(web/back/_back.md)
 ::::
 download.page(web/js/_javascript.md)

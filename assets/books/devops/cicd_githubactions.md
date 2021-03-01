@@ -123,3 +123,4 @@ Now, here is a list of some suggestions of operations we can perform in Android.
 - https://blog.bitsrc.io/
 - https-medium-com-adhasmana-how-to-do-ci-and-cd-of-node-js-application-using-github-actions-860007bebae6
 - https://medium.com/google-developer-experts/github-actions-for-android-developers-6b54c8a32f55
+- https://andrewlock.net/auto-assigning-issues-using-a-github-action

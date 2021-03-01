@@ -39,3 +39,4 @@ https://michaelscodingspot.com/logging-in-dotnet/
 - https://github.com/IntelliTect-Samples/2016.04.01-EssentialNetLoggingWithNetCore
 - https://intellitect.com/implementing-a-custom-ilogger-with-exception-handling-for-net-core/
 - https://michaelscodingspot.com/logging-in-dotnet/
+- https://www.ezzylearning.net/tutorial/logging-in-asp-net-core-5-using-serilog

@@ -76,3 +76,5 @@ destroy the resources/infrastructure
  - https://www.freecodecamp.org/news/build-a-screenshot-capture-api-using-terraform-aws-api-gateway-and-aws-lambda/
  - https://www.youtube.com/hashtag/terraform
 - https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFpFZ1A4REpuUmlrRnFuNnlDVzRQdXhaeU1yd3xBQ3Jtc0ttZm5aaTdhQll2czJDbjM2c0tCSmRyNDh1OEdGa3dhcUJJUzUxdHg4b3E1VEZ3QUdvMkJrZTdha0c3WWR2X2ZZVU9NamxyZ3J3M2JXZ1FkUy1scnJDTFQ2UmtzYUxyVWMxQ193bFZiSzFwWGdMRVZOQQ&q=https%3A%2F%2Fwww.terraform.io%2Fdocs%2Fproviders%2Findex.html 
+
+- https://medium.com/bb-tutorials-and-thoughts/how-to-create-a-static-website-on-azure-with-terraform-9971e55e2884
