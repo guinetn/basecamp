@@ -10,7 +10,7 @@ In short, the microservice architectural style is an approach to <mark>developin
 
 It works on principle of componentization of services. This architecture decomposes the software into various components which can be defined as services. Each service holds a single responsibility and every service is isolated in nature. A change in one service should not affect the other services.
 
-![](assets/api/assets/monolith_vs_microservices.png)
+![](assets/books/api/assets/monolith_vs_microservices.png)
 
 
 Classic Server-side enterprise application:

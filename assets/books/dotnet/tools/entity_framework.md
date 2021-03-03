@@ -340,4 +340,6 @@ public class HomeController : Controller
 ```
 
 ## More 
+-https://visualstudiomagazine.com/articles/2020/02/12/ef-migrations.aspx
 - https://www.ezzylearning.net/tutorial/data-access-in-asp-net-core-using-ef-core-code-first
+- https://medium.com/@andrevitorlopes/entities-relationship-with-entity-framework-core-ffdd8643ea4

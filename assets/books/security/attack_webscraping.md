@@ -20,3 +20,5 @@ emails, tel for massive spam, robotics calls, social engineering
 
 * Data indexation
 Googlebot...
+
+https://medium.com/@otavios.s/a-guide-to-storing-scraped-data-with-python-a275d849463e

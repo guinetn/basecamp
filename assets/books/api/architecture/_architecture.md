@@ -7,7 +7,7 @@ Evolutions in software design lead with few robust architectural approaches in o
 - Service Oriented Architecture (SOA)
 - Microservice Architecture
 
-![](assets/api/assets/mono-soa-micro.png)
+![](assets/books/api/assets/mono-soa-micro.png)
 
 
 “ Though there is no perfect software architecture in existence but any architectural approach can be considered relatively perfect if it fulfils the functional and non functional needs of the project “

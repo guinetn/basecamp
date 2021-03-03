@@ -30,10 +30,11 @@ IaC methods
 - Push    the management host sends configuration changes
 - Pull    the primary host itself initializes the receipt of its configuration
 
+
 ## Configuration Management: define tasks 
  
 |Tools|Year|Method|Approach|Lang|
-|---|---|---|---|
+|---|---|---|---|---|
 |Ansible|2012|Push|Dec & Imperative|Python|
 ||system for describing and managing configurations|
 |Chef|2009|Pull|Dec & Imperative|Ruby|
@@ -43,6 +44,17 @@ IaC methods
 |SaltStack|2011|Push & Pull|Dec & Imperative|Python|
 ||configuration management and remote execution system|
 
+Comparison of different lac tools 
+
+
+|       | Terraform   | Ansible | Chef | Puppet | SaltStack |
+|---|---|---|---|---|---|
+| code | Open Source   | Open Source | Open Source | Open Source | Open Source |
+| Cloud | All   | All | All | All | All |
+| Type | Orchestration   | Config Mgmt | Config Mgmt | Config Mgmt | Config Mgmt |
+| Infrastructure | Immutable   | Mutable | Mutable | Mutable | Mutable |
+| Language | Declarative   | Procedural | Procedural | Declarative | Declarative |
+| Architecture | Client Only   | Client Only | Client/Server | Client/Server | Client/Server |
 
 ## Configuration Orchestration: play tasks in order
 
@@ -70,3 +82,5 @@ To configure machines, environments, and processes. Using DSC allowed them to de
 - https://intellitect.com/powershell-dsc/
 
 ## More
+
+- https://medium.com/workfall/how-to-manage-infrastructure-as-code-iac-with-terraform-on-aws-1fa6cd6bccfe

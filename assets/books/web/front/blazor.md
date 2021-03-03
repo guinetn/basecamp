@@ -39,3 +39,4 @@ IJSRuntime
 - [](https://swimburger.net/blog/dotnetcore)
 - https://medium.com/younited-tech-blog/unit-test-a-blazor-component-729eec4eab01
 - https://medium.com/younited-tech-blog/localization-of-a-blazor-component-2178aa855ded
+- https://medium.com/@ankitsharmablog/how-to-perform-crud-operations-using-blazor-and-google-cloud-firestore-52890b06e2f8

@@ -317,7 +317,7 @@ to keep Docker login credentials safe by storing in platform keystores
     - Microsoft Hyper V
     - VMware Free ESXi
     - Lguest
-    - Oracle VirtualBox
+    - Oracle VirtualBox: https://connect.ed-diamond.com/Linux-Pratique/LPHS-045/Decouvrez-la-virtualisation-avec-VirtualBox
     - Xvisor
     - VMware Workstation Player
     - OpenVZ

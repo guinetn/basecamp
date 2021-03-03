@@ -68,3 +68,5 @@ https://gcc.gnu.org/onlinedocs/gcc/Option-Summary.html
 
 The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++,...). GCC was originally written as the compiler for the GNU operating system.
 
+* VSCODE
+https://medium.com/swlh/simple-vscode-setup-to-develop-c-7830182ee4d8

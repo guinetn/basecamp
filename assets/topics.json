@@ -148,7 +148,7 @@
     "https://login.microsoftonline.com(microsoftonline * office)",
     "https://developer.microsoft.com"
   ],
-  "dotnet": [
+  "dot_net": [
     "https://www.c-sharpcorner.com",
     "https://dotnet.microsoft.com",
     "https://docs.microsoft.com/en-us/dotnet/core/introduction",
