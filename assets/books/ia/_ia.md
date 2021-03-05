@@ -2,6 +2,17 @@
 
 Cloud → Proliferation of data and compute power → IA (computer vision...)
 
+The machine learning development workflow is still very iterative, and is challenging for developers to manage due to the relative immaturity of ML tooling.” The machine learning workflow — from data ingestion, feature engineering, and model selection to debugging, deployment, monitoring, and maintenance, along with all the steps in between — can be like trying to tame a wild animal.
+big tech companies challenge solved by their own ML and big data platforms for their data scientists to use: 
+- Uber: [Michelangelo](https://eng.uber.com/michelangelo-machine-learning-platform/)
+- Facebook, Instagram, WhatsApp: [FBLearner flow](https://engineering.fb.com/core-data/introducing-fblearner-flow-facebook-s-ai-backbone/)
+- Google: [TFX](https://www.tensorflow.org/tfx/guide)
+- Netflix: [Metaflow](https://metaflow.org/) and open sourced [Polynote](https://netflixtechblog.com/open-sourcing-polynote-an-ide-inspired-polyglot-notebook-7f929d3f447)
+- Amazon: [SageMaker](https://aws.amazon.com/blogs/aws/amazon-sagemaker-studio-the-first-fully-integrated-development-environment-for-machine-learning/)
+For smaller organizations, players have emerged, see by Gartner’s Magic Quadrant for Data Science and Machine Learning Platforms:
+
+![](assets/books/ia/assets/gartner_magic_quadrant_on_ml.png)
+
 * Takeaways
 
 AI Artificial intelligence: machine mimic human behavior
@@ -74,3 +85,4 @@ download.page(ia/articles.md)
 ## More
 
 - https://intelligence-artificielle.developpez.com/actu/312174/Pourquoi-la-nouvelle-IA-liquide-de-MIT-est-elle-une-innovation-revolutionnaire-Elle-apprend-continuellement-de-son-experience-du-monde/
+- https://venturebeat.com/2020/06/27/a-closer-look-at-sagemaker-studio-aws-machine-learning-ide

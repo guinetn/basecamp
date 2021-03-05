@@ -82,6 +82,13 @@ Fargate vous aide à vous concentrer sur la création de vos applications. Ce se
 
 https://aws.amazon.com/fr/fargate
 
+## SAGEMAKER
+
+https://venturebeat.com/2020/06/27/a-closer-look-at-sagemaker-studio-aws-machine-learning-ide
+
+for orchestrating robotics workflows (from perception to controls and optimization, and to create end-to-end solutions)
+
+
 ## microservices
 
 
