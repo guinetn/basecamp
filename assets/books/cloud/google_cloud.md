@@ -2,6 +2,7 @@
 
 https://cloud.google.com/
 https://cloud.google.com/sdk
+[Google Cloud Developer's Cheat Sheet](https://github.com/gregsramblings/google-cloud-4-words)
 
 hébergement sur la même infrastructure que celle que Google utilise en interne pour des produits tels que son moteur de recherche
 

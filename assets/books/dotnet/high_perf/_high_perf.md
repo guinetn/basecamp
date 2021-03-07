@@ -2,6 +2,11 @@
 
 Lots of effort goes into reducing allocation, not because the act of allocating is itself particularly expensive, but because of the follow-on costs in cleaning up after those allocations via the garbage collector (GC). No matter how much work goes into reducing allocations, however, the vast majority of workloads will incur them, and thus it’s important to continually push the boundaries of what the GC is able to accomplish, and how quickly.
 
+- Visual Studio 16 "allocation profiler" new tool (Alt+F2) 
+To optimize your .NET code: Help the .NET GC out by avoiding it when you can
+
+- Rider & resharper has dynamic program analysis (DPA) which will warn you at build time itself about unwanted and avoidable allocations
+
 download.page(dotnet/high_perf/benchmarking.md)
 
 download.page(dotnet/high_perf/memory_allocation.md)

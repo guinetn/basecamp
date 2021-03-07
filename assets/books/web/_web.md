@@ -23,6 +23,8 @@ download.page(web/back/_back.md)
 ::::
 download.page(web/js/_javascript.md)
 ::::
+download.page(web/wasm/_wasm.md)
+::::
 download.page(api/json.md)
 ::::
 download.page(web/automation.md)
