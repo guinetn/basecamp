@@ -13,8 +13,8 @@ Bundlers are designed to run through all of a package's dependencies and concate
 ![](assets/books/web/tools/build_tools/bundlers/minification.png)
 
 
-download.code(web/tools/bundlers/browserify.md)
-download.code(web/tools/bundlers/webpack.md)
+download.page(web/tools/build_tools/bundlers/browserify.md)
+download.page(web/tools/build_tools/bundlers/webpack.md)
 
 ## More
 - https://www.ezzylearning.net/tutorial/a-step-by-step-guide-to-bundling-and-minification-in-asp-net-core
