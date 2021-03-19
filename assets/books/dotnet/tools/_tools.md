@@ -1,5 +1,7 @@
 # TOOLS
 
+download.page(dotnet/tools/appsettings.json.md)
+::::
 download.page(dotnet/tools/regex.md)
 ::::
 download.page(dotnet/tools/decompilers/il.md)

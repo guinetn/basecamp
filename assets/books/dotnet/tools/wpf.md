@@ -1037,6 +1037,9 @@ Classes to create loosely coupled modules that are dynamically loaded and displa
 The shell is divided into regions, which you dynamically fill with user control views that are found in your modules
 
 
+## MODERN WPF UI
+
+
 ## More
 - https://intellitect.com/interfacing-multithreading-patterns/
 - https://github.com/Code52/Enhance

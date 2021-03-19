@@ -93,3 +93,46 @@ HTML element.insertAdjacentHTML() insert a node according to the position specif
     var index =
     
 ## DOM Manipulation    
+
+***Creating a new element*** 
+```js
+let div = document.createElement('div');
+let link = document.createElement('a');
+let article = document.createElement('article');
+
+let chicken = document.createElement('news'); // <news></news>
+let placeholder = document.createElement('_'); // <_></_>
+
+// Add classes, attributes, styles...
+let div = document.createElement('div');
+div.textContent = 'Hi the world!';
+div.className = 'new-div';
+div.id = 'new-div';
+div.setAttribute('data-div', 'new');
+div.style.color = '#F00';
+div.style.backgroundColor = 'darkorange';
+```
+
+
+***Injecting one element after another: Node.after(target, payload)***
+```js
+div id="app">Good morning</div>
+let p = document.createElement('p');
+p.textContent = 'Hello!';
+// Get the target node
+let app = document.querySelector('#app');
+app.after(p);                   // <div id="app">Good morning</div><p>Hello!</p>
+app.after(p, `What's poppin?`); // <div id="app">Good morning</div><p>Hello!</p>What's poppin'
+```
+
+***Injecting one element before another: Node.before(target, payload)***
+
+```js
+<div id="app">Good evening</div>
+let p = document.createElement('p');
+p.textContent = 'Hello!';
+// Get the target node
+let app = document.querySelector('#app');
+app.before(p);                    // <p>Hello!</p><div id="elem">Good evening</div>
+app.before(p, `What's poppin?`);  // <p>Hello!</p>What's poppin'<div id="elem">Good evening</div>
+```

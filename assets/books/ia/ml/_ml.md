@@ -25,10 +25,8 @@ Use more data — the more holistic a data set is, the more difficult to overfit
 Dropout — one of the popular methods to stop overfitting. Dropout periodically removes random nodes from the network, forcing the network to adjust to learn with different internal structures and become better equipped to handle any input.
 
 ::::
-
 download.page(ia/ml/activation_functions.md)
 download.page(ia/ml/embedded/_embedded.md)
-
 ::::
 
 # Classification 

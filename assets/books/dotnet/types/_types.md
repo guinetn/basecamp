@@ -74,3 +74,5 @@ download.page(dotnet/types/val/range.md)
 download.page(dotnet/types/val/span.md)
 ::::
 download.page(dotnet/types/val/memory.md)
+::::
+download.page(dotnet/types/val/json.md)

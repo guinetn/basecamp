@@ -58,9 +58,9 @@ DL Deep learning
 lorem   
 
 ::::
-
 download.page(ia/ml/_ml.md)
-
+::::
+download.page(ia/ml/ml_lifecycle.md)
 ::::
 
 # Convolutional Neural Networks
