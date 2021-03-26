@@ -1,5 +1,6 @@
 # DATA STRUTURES
 
+![](assets/books/data/data_structures/types_of_data_structures.png)
 
 download.page(data/data_structures/intervals.md)
 download.page(data/data_structures/types/array.md)
