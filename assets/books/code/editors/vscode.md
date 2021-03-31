@@ -3,7 +3,10 @@
 ### Extensions
 https://marketplace.visualstudio.com/items?itemName=Oracle.oracledevtools
 https://code.visualstudio.com/api/extension-guides/webview
+https://github.com/microsoft/codetour: record and playback guided tours of codebases, directly within the editor.
 
+### VS Code themes
+- https://themes.vscode.one/
 ### VS Code Remote Development
 process of attaching to a development environment sitting either in a 
 - Virtual Machine

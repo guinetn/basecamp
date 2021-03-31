@@ -54,7 +54,7 @@ download.page(code/langs/lua.md)
 ::::
 download.page(code/langs/php.md)
 ::::
-download.page(code/langs/python.md)
+download.page(code/langs/python/_python.md)
 ::::
 download.page(code/langs/ring.md)
 ::::

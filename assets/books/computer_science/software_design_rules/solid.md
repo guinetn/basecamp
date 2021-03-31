@@ -1,4 +1,12 @@
 ﻿### SOLID
+
+a guideline to write maintainable, expandable and easy to understand code
+- Single Responsibility Principle
+- Open/Closed Principle
+- Liskov Substitution Principle
+- Interface Segregation Principle
+- Dependency Inversion Principle
+
 ***S - SINGLE RESPONSIBILITY PRINCIPLE***
 "A class should have one and only one responsibility".
 Each responsibility is an axis of change.
@@ -48,3 +56,7 @@ High level modules should not depend upon low level modules
                     |___ Output method depend upon abstractions not concrete classes
                         The dependencies have been inverted. 
                         Now we can create new types of ways for Employee data to be written   
+
+## more
+
+- https://towardsdatascience.com/5-principles-to-write-solid-code-examples-in-python-9062272e6bdc

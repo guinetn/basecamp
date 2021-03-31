@@ -205,6 +205,11 @@ https://github.com/thoughtbot/rcm
     make &&
     sudo make install
 
+## cli
+
+[Nice rust alternatives to unix commands](https://zaiste.net/posts/shell-commands-rust/)
+
+
 ## Tools
 
 [Valgrind: debug+profiler](https://valgrind.org/info/about.html)
