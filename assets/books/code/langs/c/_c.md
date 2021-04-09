@@ -186,3 +186,11 @@ download.page(computer_science/os/windows/winrt/crt.md)
 
 - https://opensource.com/article/21/2/linux-software-libraries
 - https://opensource.com/article/20/6/linux-libraries
+
+- [networking in C](https://www.youtube.com/watch?v=daA-KBKfJ_o)
+- [Pipe System Call](https://www.youtube.com/watch?v=8AXEHrQTf3I)
+- []()
+- []()
+- []()
+- []()
+- []()

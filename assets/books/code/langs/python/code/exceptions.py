@@ -17,6 +17,40 @@ except ZeroDivisionError:
   print "cannot divide by zero"
 
 
+
+# Example 1
+try:  
+    a = int(input("Enter a:"))    
+    b = int(input("Enter b:"))    
+    c = a/b  
+    print(c)
+except:  
+    print("Can't divide with zero") 
+    
+# Example 2
+try:    
+    #this will throw an exception if the file doesn't exist.     
+    fileptr = open("file.txt","r")    
+except IOError:    
+    print("File not found")    
+else:    
+    print("The file opened successfully")    
+    fileptr.close()  
+
+# Example 3
+try:
+  fptr = open("data.txt",'r')
+  try:
+    fptr.write("Hello World!")
+  finally:
+    fptr.close()
+    print("File Closed")
+except:
+  print("Error")
+  
+  
+  
+
 class MyCustomError(Exception):
     """Example of MyCustomError exception."""
     def __init__(self, message):

@@ -11,6 +11,9 @@ Not a good idea: Defining lambda expressions directly in a list comprehension
   [ x for x in numbers ]
 
   new_list = [ x+2 for x in numbers ]
+  
+  # Filtering elements in list comprehension
+  new_list = [ x+2 for x in numbers if x in%2==0 ]
 
   MONTHS = ['January','February','March']
   YEARS = [2018,2019,2020]

@@ -35,6 +35,7 @@ IMPORTING
 ```
 
 ### TYPE OF ELEMENTS 
+
 * BLOCK 
 >boxes are laid out one after the other vertically.
 >Generate a line break before and after the content
@@ -125,6 +126,49 @@ position: static | relative | fixed | absolute | inherit
 >Elements will initially behave like position: relative elements, but if you keep scrolling, 
 > They will get taken out of the normal flow and behave like "position: fixed" wherever you have positioned them.
 >.another {position: sticky; top: 0px; }
+
+### CENTERING WITH CSS
+
+<pre>
+<article>
+    <div class="centered">....
+</pre>    
+```css
+.centered { 
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+```
+
+<pre>    
+<article class="flex>
+    <div>....
+</pre>    
+```css
+    
+.flex { 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+```
+
+<pre>    
+<article class="grid">
+    <div>....
+</pre>    
+```css
+    
+.grid { 
+    display:grid;
+    place-items:center;    
+}
+```
+
+...
+
 ### SELECTORS
 
 * SPECIFICITY

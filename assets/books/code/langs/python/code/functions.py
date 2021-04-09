@@ -37,6 +37,12 @@ def sum_sub(a,b) :
 
 x, y = sum_sub(20, 10)
 
+# Sum of Even Numbers In a List
+a = [1,2,3,4,5,6]
+s = sum([num for num in a if num%2 == 0])  # use the list indexing and sum function
+print(s)
+
+
 Keywords Arguments
 Def sub (a,b) :
 print(a-b)
@@ -84,6 +90,22 @@ magic(1, 2, key="word", key2="word2")
 
 
 
+
+# Chained function call
+
+def add(a,b):
+  return a+b
+
+def sub(a,b):
+  return a-b
+
+a,b = 9,6
+print((sub if a > b else add)(a, b))
+
+
+
+
+
 Functions can be passed as arguments to another function: map, filter, reduce
 Such functions that take other functions as arguments are also called higher order functions. 
 
@@ -95,6 +117,21 @@ def operate(func, x):
     return result
 >>> operate(inc,3)   4
 >>> operate(dec,3)   2
+
+# Calculator Without if-else
+import operator
+action = {
+  "+" : operator.add,
+  "-" : operator.sub,
+  "/" : operator.truediv,
+  "*" : operator.mul,
+  "**" : pow
+}
+
+print(action['*'](5, 5))    # 25
+
+
+
 
 
 Function can return another function
@@ -137,6 +174,24 @@ def doubler_correct(f):
 g = doubler_correct(f2)
 print g(1, 2) # 6
 
+
+def doOperation(operation, number1, number2):
+    return operation(number1, number2)
+
+def sumBothNumbers(number1, number2):
+    return number1 + number2
+
+doOperation(sumBothNumbers, 4, 5)
+
+
+## Returning a function
+def multiplyBy(multiplier):
+    def result(num):
+        return num * multiplier
+    return result
+
+multiplyByThree = multiplyBy(3)
+multiplyByThree(4)
 
 
 

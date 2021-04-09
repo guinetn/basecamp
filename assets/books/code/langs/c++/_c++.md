@@ -12,6 +12,10 @@ download.page(code/langs/c++/c++_14.md)
 download.page(code/langs/c++/c++_17.md)
 download.page(code/langs/c++/c++_20.md)
 ::::
+download.page(code/langs/c++/allocator.md)
+::::
+download.page(code/langs/c++/stl.md)
+::::
 
 
 ### Boost

@@ -1,5 +1,11 @@
 # MAP
 # apply a function on every item and generate new values. 
+
+# two parameters
+# - an array
+# - a transform function
+# It will return a new transformed array in which each item in an array is the result of transform function called over each element of the original array.
+
 from functools import partial
 
 memes = ["It's over 9000 !", "All your base are belong to us."]
@@ -35,3 +41,16 @@ products = map(multiply, [1, 2], [4, 5]) # [1 * 4, 2 * 5] = [4, 10]
 print(products)
 
 
+
+
+
+def mapping(arr, transform):
+    mapped = []
+    for element in arr:
+        mapped.append(transform(element))
+    return mapped
+
+def addTwo(num):
+    return num+2
+
+mapping([1, 2, 3], addTwo)  # [3,4,5]

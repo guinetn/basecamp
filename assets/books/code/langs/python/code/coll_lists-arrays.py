@@ -43,6 +43,15 @@ fruits = ['Apples', 'Oranges', 'Grapes', 'Pears']
 heterogeneous_list = ["string", 0.1, True]
 list_of_lists = [ integer_list, heterogeneous_list, [] ]
 
+lst = [i for i in range(0,10)]
+print(lst)  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+lst = list(range(0,10))
+print(lst)
+
+lst = [("Hello "+i) for i in ['Karl','Abhay','Zen']]
+print(lst) # ['Hello Karl', 'Hello Abhay', 'Hello Zen']
+
 # List Operations
 
 list_length = len(integer_list) # equals 3
@@ -77,6 +86,11 @@ print(nums[2:-1])
 nums_size = len(nums)
 print(nums_size)
 
+# check existence
+num = 5
+if num in [1,2,3,4,5]:
+     print('present')
+     
 # Append to list
 fruits = ['Apples', 'Oranges', 'Grapes', 'Pears']
 fruits.append('Mangos')
@@ -92,14 +106,24 @@ fruits=['Daffodil' if i=='Lily' else i for i in flowers]  # You can also use Lis
 my_list = [1, 2, 3, 4, 5]
 my_new_list = [i * 5 for i in my_list]
 
+def scale(lst, x): return [i*x for i in lst] 
+scale([2,3,4], 2) 
+
 (s * 5).tolist()
 [5, 10, 15, 20, 25]
+
+# Mapping Lists 
 
 k = 5
 my_list = [1,2,3,4]
 result = list(map(lambda x: x * k, my_list))
 
 list(map(lambda x: x*5,[5, 10, 15, 20, 25]))
+
+# TypeCasting Whole List
+list(map(int,['1','2','3']))  # [1, 2, 3]
+list(map(float,[1,2,3]))      # [1.0, 2.0, 3.0]
+[float(i) for i in [1,2,3]]   # [1.0, 2.0, 3.0]
 
 import numpy as np
 list(np.array(x) * 5)
@@ -126,6 +150,11 @@ y = x + [4, 5, 6] # y is [1, 2, 3, 4, 5, 6]; # ! x is unchanged !
 fruits.remove('Grapes')
 del fruits[1]            # del function deletes items based on Index
 fruits.pop(0)            # .pop() too deletes items based on Index
+
+# Deleting Multiple Elements from a List
+a = [1,2,3,4,5]
+del a[1::2]
+print(a) # [1, 3, 5]
 
 # Insert into position
 fruits.insert(2, 'Strawberries')
@@ -301,3 +330,56 @@ data = [['Albuquerque', '749'], ['Anaheim', '371'], ['Anchorage', '828'], ['Arli
 first_list = data[0]        # Returns the first list: ['Albuquerque', '749'].
 first_list_first_value = first_list[0]  # Returns the first list's first element: 'Albuquerque'.
 
+# Transpose of a matrix
+a=[[1,2,3],
+   [4,5,6],
+   [7,8,9]] 
+transpose = [list(i) for i in zip(*a)] 
+transpose
+# [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+
+# Generating Groups
+groups = [(a, b) for a in ['a', 'b'] for b in [1, 2, 3]] 
+groups  # [('a', 1), ('a', 2), ('a', 3), ('b', 1), ('b', 2), ('b', 3)]
+
+
+# Converting two lists into a dictionary
+list1 = ['karl','lary','keera']
+list2 = [28934,28935,28936]
+
+# Method 1: zip()
+dictt0 = dict(zip(list1,list2))
+
+# Method 2: dictionary comprehension
+dictt1 = {key:value for key,value in zip(list1,list2)}
+
+# Method 3: Using a For Loop (Not Recommended)
+tuples = zip(column_names, column_values) 
+dictt2 = {} 
+for key, value in tuples: 
+  if key in dictt2: 
+    pass
+  else: 
+    dictt2[key] = value
+    
+    
+    
+
+# Sorting a List of Strings
+list1 = ["Karl","Larry","Ana","Zack"]
+
+# Method 1: sort()
+list1.sort()
+
+# Method 2: sorted()
+sorted_list = sorted(list1)
+
+# Method 3: Brute Force Method 
+size = len(list1)
+for i in range(size): 
+  for j in range(size): 
+    if list1[i] < list1[j]: 
+       temp = list1[i] 
+       list1[i] = list1[j] 
+       list1[j] = temp
+print(list1)    

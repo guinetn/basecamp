@@ -9,3 +9,19 @@ abc1 = input("Only integer can be stored in in variable abc \t")
 print( type(abc1) ) # int
 
 # Note that type( ) returns the format or the type of a variable or a number
+
+
+# Space Separated integers to a List
+lis = list(map(int, input().split()))
+print(lis)
+# > 1 2 3 4 5 6 7 8    # [1, 2, 3, 4, 5, 6, 7, 8]
+
+
+## Taking Two Integers as input
+a,b = map(int,input().split())
+print("a:",a)
+print("b:",b)
+
+## Taking a List as input
+arr = list(map(int,input().split()))
+print("Input List:",arr)

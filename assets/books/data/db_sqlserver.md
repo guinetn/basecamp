@@ -1,5 +1,17 @@
 ## SQL Server
 
+
+https://www.codeproject.com/Tips/5298962/How-to-Create-SQL-Server-Database-Project-With-Vis
+
+Create New SQL Server Database Project
+Import database schema from an existing database, a .sql script file or a Data-tier application (.bacpac) the Project
+Publish to create new Database in SQL server
+
+Create SQL server database project in Visual Studio 
+Import the SQL database: development database and finally publish into UAT, production or another server from Visual Studio itself with this project template. 
+Imports/publishing options of the database: compare and identify the differences in two databases (development and production), then we can generate updated script or update directly from the project
+
+
 INSERT INTO students VALUES ('Nick', 'Economy', 12321, NULL);
 DELETE FROM students WHERE department = 'Economy' AND gid = 101;
 

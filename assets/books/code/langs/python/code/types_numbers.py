@@ -38,6 +38,9 @@ print(random.random())   # 0.0 - 1.0
 numbers=[1,2,3,4,5,6,7]
 print(random.choices(numbers))  # generate a random number from your choices 
 
+import random; 
+random.choice(['Head',"Tail"])
+
 # INT
 
 """Type casting to integer"""

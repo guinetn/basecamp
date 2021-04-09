@@ -1,5 +1,11 @@
 # FILTER
 
+#  return a new array with all elements that passes the test.
+
+# two parameters
+# - an array
+# - a test function
+
 ages = range(30)
 majeurs = filter(lambda x: x > 18, ages)
 print(majeurs)
@@ -22,3 +28,18 @@ print(l1)
 
 l1=list(filter(iseven, values))
 print(l1)
+
+
+
+
+def filtering(arr, test):
+    passed = []
+    for element in arr:
+        if (test(element)):
+            passed.append(element)
+    return passed
+
+def isSuperNumber(num):
+    return num >= 10
+
+filtering([1, 5, 11, 3, 22], isSuperNumber)  # 11,22

@@ -29,6 +29,9 @@ print('Is Closed : ', myFile.closed)
 print('Opening Mode: ', myFile.mode)
 
 # Write to file
+
+with open("data.txt",'a',newline='\n') as f: f.write("Python is awsome")
+
 myFile.write('I love Python')
 myFile.write(' and JavaScript')
 myFile.close()
@@ -50,6 +53,19 @@ num=[5, 10, 15, 20, 25]
 arr=bytearray(num)
 f.write(arr)
 f.close()
+
+
+# check File exists
+# Brute force Method
+import os.path
+from os import path
+
+def check_for_file():
+	print("File exists: ",path.exists("data.txt"))
+
+if __name__=="__main__":
+   check_for_file()
+    
 
 # Read from file
 # 	readline()    reads the characters starting from the current reading position up to a newline character.
@@ -102,6 +118,13 @@ text = fr.read()
 print(text)
 fr.close()
 
+# using list comprehension
+lst = [line.strip() for line in open('data.txt')]
+print(lst)
+lst(open('data.txt'))
+##Using with will also close the file after use
+with open("data.txt") as f: lst=[line.strip() for line in f]
+print(lst)
 
 
 # file.close()		Closes the file.

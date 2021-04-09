@@ -28,6 +28,8 @@ download.code(assets/books/code/langs/python/code/assert.py)
 download.code(assets/books/code/langs/python/code/asterisk_unpacking.py)
 ## ASYNC
 download.code(assets/books/code/langs/python/code/async.py)
+## BUILT-IN-FUNCTIONS
+download.code(assets/books/code/langs/python/code/built-in-functions.py)
 ## C SHARP WITH PYTHON
 download.code(assets/books/code/langs/python/code/csharp_with_python.py)
 ## CLASS
@@ -106,6 +108,8 @@ download.code(assets/books/code/langs/python/code/functional_programming_Python.
 download.code(assets/books/code/langs/python/code/functions-classic.py)
 ## FUNCTIONS
 download.code(assets/books/code/langs/python/code/functions.py)
+## FUNCTIONS - FUNCTOOLS
+download.code(assets/books/code/langs/python/code/functions_functools.py)
 ## FUNCTIONS CLOSURE
 download.code(assets/books/code/langs/python/code/functions_closure.py)
 ## FUNCTIONS DECORATORS
@@ -249,6 +253,8 @@ download.code(assets/books/code/langs/python/code/sounds-tts-speak.py)
 download.code(assets/books/code/langs/python/code/sounds.py)
 ## THREADING
 download.code(assets/books/code/langs/python/code/threading.py)
+## TYPES
+download.code(assets/books/code/langs/python/code/types.py)
 ## TYPES BOOL
 download.code(assets/books/code/langs/python/code/types_bool.py)
 ## TYPES DATES

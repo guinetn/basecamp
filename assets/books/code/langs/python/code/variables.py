@@ -9,8 +9,6 @@ VARIABLE RULES:
   - Case-sensitive (age, Age and AGE are three different variables)
 """
 
-"""
-
 # x = 1           # int
 # y = 2.5         # float
 # name = 'John'   # str
@@ -26,6 +24,10 @@ f = True
 g = False
 h = int("5.6")
 
+# Prints the Unique ID of a Variable
+# id() method allows you to find the unique id of a variable. You just need to pass the variable name in the method.
+print( id(a) )
+
 # Declared in the global context
 API_KEY = "ABCDEF1234"
 
@@ -38,8 +40,19 @@ def demo():
 # Doesn't work: error undefined variable: 'SECRET_STRING'
 print(SECRET_STRING)
 
-# Multiple assignment
+# Multiple Variable Assignments
 x, y, name, is_cool = (1, 2.5, 'John', True)
+a,b,c = 4,5.5,'Hello'
+print(a,b,c) 
+
+a,b,*c = [1,2,3,4,5]
+print(a,b,c) # 1 2 [3,4,5]
+
+# Swapping Two Variables
+a = 4
+b = 5
+a,b = b,a
+print(a,b) >> 5,4
 
 # Basic math
 a = x + y

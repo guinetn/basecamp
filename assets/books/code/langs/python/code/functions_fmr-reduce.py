@@ -3,6 +3,17 @@
 # import functools and then use fully-qualified names like functools.reduce()
 # from functools import reduce and then call reduce() directly
 '''
+
+three parameters
+- a reducer function
+- an initial value for accumulator
+- an array
+
+This will reduce the iterable down into its simplist form.
+For each item in the array, the reducer function is called and passing it to the accumulator, current array element.
+Then the return value is assigned to the accumulator. When reducing all the elements in the list gets finished, the accumulator value is returned.
+
+
 reduce() is roughly equivalent to the following Python function:
 
 def reduce(function, iterable, initializer=None):
@@ -18,6 +29,20 @@ def reduce(function, iterable, initializer=None):
 
 from functools import reduce 
 from functools import partial 
+
+
+def reducing(reducer, initial, arr):
+    acc = initial
+    for element in arr:
+        acc = reducer(acc, element)
+    return acc
+
+def accum(acc, curr):
+    return acc + curr
+
+reducing(accum, 0, [1, 2, 3])   # 6
+
+
 
 def afficher(a, b):
     print("Entrée :", a, b)

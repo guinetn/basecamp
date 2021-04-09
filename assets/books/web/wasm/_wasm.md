@@ -1,4 +1,6 @@
-# WASM - WebAssembly
+# WASM - Web Assembly
+
+A specification for a virtual machine that runs in the browser. Web Assembly is based on LLVM  (Low Level Virtual Machine), a stack based virtual machine that compilers can target
 
 JavaScript complement (not a replacement) to run bytecode on the web
 Runs on
@@ -9,16 +11,70 @@ Runs on
 Lucet
 Wasmer
 
+Let’s use already existing useful code that has been written for other environments.  
+Performance benefits over JavaScript.
+
 ## Langs for wasm
 https://docs.wasmtime.dev/lang.html
 
-Rust
-C
-Python
-.NET
-Go
-Bash
+- C/C++
+- C#/.NET
+- Python
+- Java
+- Go
+- Rust
+- Elixir
+- Bash
 
+## Sample
+
+- Setup  
+
+```bash
+git clone https://github.com/emscripten-core/emsdk.git
+cd emsdk
+git pull
+./emsdk install latest
+./emsdk activate latest
+```
+
+***Set some environment variables:***
+
+On Windows 10 run
+>emsdk_env.bat
+
+For the other operating systems run
+>source emsdk_env.sh
+
+Using Visual Studio Code:
+```c++
+#include 
+int main(int argc, char**argv) 
+{
+     printf("Hello World!\n");
+    return 0;
+}
+```
+
+Compile the code:
+>emcc hello.cpp -o hello.html
+
+After the compiler runs you will have three new files.
+- hello.wasm – the compiled version of your program
+- hello.html – an HTML page for hosting your web assembly
+- hello.js – JavaScript for loading your web assembly into the page
+
+the html page will have to be served through an HTTP server. 
+>npm install  http-server -g
+
+Start the server from the directory with your hello.html
+>http-server . -p 81
+
+Open a browser and navigate to http://localhost:81/hello.html. 
+
+Web Assembly Explorer
+>https://mbebenita.github.io/WasmExplorer/  
+Online tool for compiling C++ into Web Assembly and is an option if you don’t have the tools installed.
 
 ## https://bytecodealliance.org/
 
@@ -61,3 +117,4 @@ AOT compiler utilizing Cranelift. It is meant specifically for low-latency, high
 ### More
 - https://wasmbyexample.dev
 - https://github.com/torch2424
+- https://blog.j2i.net/2020/12/20/introduction-to-web-assembly-with-c-c-part-1/

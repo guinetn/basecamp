@@ -4,7 +4,7 @@ import re
 
 re.search("c", "dog") 		# contains
 
-re.match("a", "cat") 		# starts with
+re.match("a*", "cat") 		# starts with
 
 re.split("[ab]", "carbs"), 	# split on a or b to ['c','r','s']
 
@@ -155,3 +155,8 @@ def test_re():
     # When only simple capabilities are needed, string methods are preferred because they are
     # easier to read and debug:
     assert 'tea for too'.replace('too', 'two') == 'tea for two'
+
+
+# Counting occurrence of a pattern
+import re; 
+len(re.findall('python','python is a programming language. python is python.'))  # 3

@@ -104,6 +104,24 @@ classmates = {'Tony': ' cool but smells', 'Emma': ' sits behind me', 'Lucy': ' a
 for k, v in classmates.items():
     print(k + v)
 
+# Merging Two Dictionaries
+basic_information = {"name":['karl','Lary'],"mobile":["0134567894","0123456789"]}
+academic_information = {"grade":["A","B"]}
+details = dict() ## Combines Dict
+
+## Dictionary Comprehension Method
+details = {key: value for data in (basic_information, academic_information) for key,value in data.items()}
+print(details)
+
+## Dictionary unpacking
+details = {**basic_information ,**academic_information}
+print(details)
+
+## Copy and Update Method
+details = basic_information.copy()
+details.update(academic_information)
+print(details)
+
 
 # in
 groceries = {'cereal', 'milk', 'starcrunch', 'beer', 'duck tape', 'lotion', 'beer'}

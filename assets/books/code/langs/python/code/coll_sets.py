@@ -15,6 +15,9 @@ x = len(s) # equals 2
 y = 2 in s # equals True
 z = 3 in s # equals False
 
+# Square of all even numbers in an range
+{x**2 for x in range(10) if x%2==0} # {0, 4, 16, 36, 64}
+
 # 1. Fast check existing item
 stopwords_list = ["a","an","at"] + hundreds_of_other_words + ["yet", "you"]
 "joe" in stopwords_list # False, but have to check every element

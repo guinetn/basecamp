@@ -14,6 +14,9 @@ definitions, lambda functions can reference variables from the containing scope.
 # A lambda function is a small anonymous function.
 # A lambda function can take any number of arguments, but can only have one expression. Very similar to JS arrow functions
 
+sqr = lambda x: x * x  ##Function that returns square of any number
+sqr(10)
+
 getSum = lambda num1, num2: num1 + num2
 print(getSum(10, 3))
 
@@ -39,9 +42,14 @@ print(mydoubler(11))
 print(mytripler(11)))
 
 
+# Prime Number
+# A prime number is a number that is divisible only by itself and 1. eg: 2,3,5,7 etc. To generate prime numbers in a range we can use the list function with filter and lambda to generate prime numbers.
+list(filter(lambda x:all(x % y != 0 for y in range(2, x)), range(2, 13)))
+# [2, 3, 5, 7, 11]
 
-
-
+# Finding Max Number
+findmax = lambda x,y: x if x > y else y 
+findmax(5,14) # or max(5,14)
 
 
 

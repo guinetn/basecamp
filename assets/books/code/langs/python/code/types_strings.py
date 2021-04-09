@@ -84,6 +84,27 @@ xs = "{:3.2}".format(x)   # → 123.46
 
 
 
+name = "Abhay"
+age = 21
+
+## METHOD 1: Concatenation
+print("My name is "+name+", and I am "+str(age)+ " years old.")
+
+## METHOD 2: F-strings (Python 3+)
+print(f"My name is {name}, and I am {age} years old")
+
+## METHOD 3: Join
+print(''.join(["My name is ", name, ", and I am ", str(age), " years old"]))
+
+## METHOD 4: modulus operator
+print("My name is %s, and I am %d years old." % (name, age))
+
+## METHOD 5: format(Python 2 and 3)
+print("My name is {}, and I am {} years old".format(name, age))
+
+
+
+
 # immutable: can't change a part of it. s[1]='i' → Error xxxxxx
 
 age = 37
@@ -157,6 +178,7 @@ print(len(s))
 
 # Replace
 print(s.replace('world', 'everyone'))
+"python is a programming language.python is python".replace("python",'Java')
 
 # Count
 sub = 'h'
@@ -255,10 +277,10 @@ print(s2)
 
 # STRIP STRINGS
 # You can trim white spaces from a string using the strip method like this:
+# strip: remove all the unnecessary space
 s = "   This website is about programming    "
 print(s.strip())
 # You can strip from the right only or left only using rstrip() or lstrip() methods respectively.
-
 
 # CHANGE CASE
 # You can change the case of the characters if you want to compare them or something.
@@ -299,3 +321,13 @@ for i in range(len(s)):	# The len() function counts the length of objects.
 str="welcome to likegeeks website"
 str.encode('utf-8')
 print(s)
+
+# Printing Patterns
+n = 5
+print('\n'.join('😀' * i for i in range(1, n + 1)))
+😀
+😀😀
+😀😀😀
+😀😀😀😀
+😀😀😀😀😀
+

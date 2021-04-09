@@ -6,8 +6,9 @@ Une onde-corpuscule peut se trouver dans une superposition d'états qui est une 
 
 En mécanique quantique, matière et énergie sont de même nature mais temps et espace sont différenciés. Dans la théorie de la relativité, le temps et l’espace constituent une seule grandeur – l’espace temps - tandis que matière et énergie sont différenciées.
 
-https://www.youtube.com/watch?v=gpEvv349Pyk
+- https://www.youtube.com/watch?v=gpEvv349Pyk
 [2D quantum mechanics simulator](https://www.bzarg.com/projects/)
+- https://www.youtube.com/watch?v=82W5yrqYVsc&t=570s
 
 ## https://www.cea.fr/comprendre/Pages/physique-chimie/essentiel-sur-mecanique-quantique.aspx
 

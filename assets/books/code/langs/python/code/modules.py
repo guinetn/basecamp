@@ -26,4 +26,25 @@ app/mod1/appmodule.py
 import mod1.appmodule
 ---- or -----
 from mod1 import appmodule
-Python 3.3+ has Implicit Namespace Packages that allow it to create packages without an __init__.py file.
+Python 3.3+ has Implicit Namespace Packages that allow it to create packages without an __init__.py file
+
+
+## Unresolved reference issue in PyCharm
+https://stackoverflow.com/questions/21236824/unresolved-reference-issue-in-pycharm
+
+├── simulate.py
+├── src
+│   ├── networkAlgorithm.py
+│   ├── ...
+
+I can access the network module with sys.path.insert():
+import sys
+import os.path
+sys.path.insert(0, "./src")
+from networkAlgorithm import *
+
+However, pycharm complains that it cannot access the module: "unresolved reference 'xxxx'"
+To Fix:
+Right-click + Mark directory as...
+or
+File → Settings → Project:Python → Project Structure then "add Content root"

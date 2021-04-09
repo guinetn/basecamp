@@ -11,3 +11,5 @@ download.page(electronic/robotics/_robotics.md)
 - https://www.youtube.com/watch?v=ozeYaikI11g
 - https://www.allaboutcircuits.com/textbook/direct-current/chpt-9/thermocouples/
 - https://www.allaboutcircuits.com/news/powering-perseverance-how-nasa-provides-electricity-to-a-rover-on-mars/
+
+- https://learn.adafruit.com/circuit-playground-c-is-for-capacitor
