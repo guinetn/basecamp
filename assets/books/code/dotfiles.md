@@ -2,8 +2,12 @@
 
 Configurations for command line-based tools and shells.
 
+Dotfiles projects store configuration files such as .zshrc or .gitconfig and often also include complete machine setup scripts. A new machine setup takes 1 hour instead of days.
+
+https://dotfiles.github.io lists various approaches to excellent dotfiles.
+
 Plain text configuration files system floating around our machines used to customize system
-Named with a leading period . (or “dot”) indicating these are not regular documents and operating systems often hide them by default (`ls -a` to view all files).
+Named with a leading period . (or “dot”) indicating these are not regular documents and operating systems often hide them by default (`ls -a` to view all files)
 
 To list them: 
 ls -a 

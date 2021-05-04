@@ -1,6 +1,9 @@
 # NuGet
 
 C:\Users\[you]\AppData\Roaming\NuGet\NuGet.Config
+
+```xml
+
 <?xml version="1.0" encoding="utf-8"?>
 <configuration>
   <packageSources>
@@ -22,3 +25,5 @@ C:\Users\[you]\AppData\Roaming\NuGet\NuGet.Config
     <add key="disabled" value="False" />
   </packageManagement>
 </configuration>
+
+```
