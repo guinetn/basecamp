@@ -77,7 +77,23 @@ Document methods include:
 |previousElementChild     | element node before the current node|
 |children                 | child nodes of the current node|
 
-HTML element.insertAdjacentHTML() insert a node according to the position specified.
+HTML targetElement.insertAdjacentElement(position, element)    insert a node according to the position specified.  
+https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement  
+
+	<!-- beforebegin -->
+	<p>
+	<!-- afterbegin -->
+	foo
+	<!-- beforeend -->
+	</p>
+	<!-- afterend -->
+
+position
+A DOMString representing the position relative to the targetElement; must match (case-insensitively) one of the following strings:
+'beforebegin': Before the targetElement itself.
+'afterbegin': Just inside the targetElement, before its first child.
+'beforeend': Just inside the targetElement, after its last child.
+'afterend': After the targetElement itself.
    
 ## data-* custom attributes
 

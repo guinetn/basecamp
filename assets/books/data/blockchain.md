@@ -119,3 +119,8 @@ saveCoin.addBlock(new Block(1, "01/01/2021", { amount: 4 }));
 console.log('Mining block 2...');
 saveCoin.addBlock(new Block(2, "01/01/2021", { amount: 8 }));
 ```
+
+## More
+
+- https://python.plainenglish.io/create-your-own-cryptocurrency-blockchain-in-python-3-9-4-806f8825608e
+- https://gist.github.com/bryandijkhuizen/c681fe0f554e707ad846188d86a23366#file-fullcodeblock-chain-py

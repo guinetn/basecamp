@@ -39,6 +39,148 @@ print("%s" % joe)  # __str__ called
 
 
 
+
+
+
+# Getting the class name of an instance
+type(instance).__name__
+instance.__class__.__name__
+
+super().__getattr__(self, '__class__')
+def typename(x): return type(x).__name__
+
+# classmethod decorator:    
+class A:
+    @classmethod
+    def get_classname(cls):
+        return cls.__name__
+
+    def use_classname(self):
+        return self.get_classname()
+A.get_classname()  # 'A'
+a = A()  
+a.get_classname()  # 'A'
+a.use_classname()  # 'A'
+        
+class A:
+  def whoami(self):
+    print(type(self).__name__)
+class B(A):
+    pass
+
+o = B()
+o.whoami() # 'B'
+
+
+class Spam:
+  def meth(self):
+    pass
+class Bar:
+  pass
+
+s = Spam()
+type(s).__name__           # 'Spam'
+type(s).__qualname__       # 'Spam'
+type(s).Bar.__name__       # type not needed here   # 'Bar'
+type(s).Bar.__qualname__   # type not needed here    # 'Spam.Bar'
+type(s).meth.__name__      # 'meth'
+type(s).meth.__qualname__  # 'Spam.meth'
+
+
+
+
+## Access parent class instance attribute from child class instance
+class Parent():
+    def __init__(self):
+        self.myvar = 1
+class Child(Parent):
+    def __init__(self):
+        Parent.__init__(self)
+
+        # here you can access myvar like below.
+        print self.myvar
+
+child = Child()
+print child.myvar
+# super() method is preferred in the child class __init__ instead of the parent class name
+class Parent():
+      def __init__(self):
+      self.myvar = 1
+
+class Child(Parent):
+  def __init__(self):
+      super.__init__()
+
+
+child = Child()
+print child.myvar
+
+## Only Child
+## An alternative approach (and not the only one) is to pass the parent as an argument to the child to create a property that corresponds to the parent:
+
+class Parent(object):
+    def __init__(self, parent_value):
+        self.parent_value = parent_value
+        self.child = Child(self)
+
+
+class Child(object):
+    def __init__(self, _parent):
+        self.parent = _parent
+        self.child_value = 0
+
+
+new_parent = Parent(1)
+print(new_parent.parent_value)        # prints 1
+
+new_child = new_parent.child
+print(new_child.child_value)          # prints 0
+print(new_child.parent.parent_value)  # prints 1
+
+new_parent.parent_value = 100
+print(new_child.parent.parent_value)  # prints 100
+
+## Multiple Children
+## You could extend this so that you can create multiple instances of the Child class through the new_parent object. The code below is one simple way of doing this which replaces the child property with a children property and an add_child method.
+
+class Parent(object):
+    def __init__(self, parent_value):
+        self.parent_value = parent_value
+        self.children = []
+
+    def add_child(self, child_value):
+        new_child = Child(child_value, _parent=self)
+        self.children.append(new_child)
+        return new_child  # allows add_child to assign a variable
+
+
+class Child(object):
+    def __init__(self, child_value, _parent):
+        self.parent = _parent
+        self.child_value = child_value
+
+
+new_parent = Parent(1)
+
+# add 3 Child instances with child_values 2, 4, 8
+[new_parent.add_child(v) for v in [2, 4, 8]]
+
+# add another child that utilises the return statement
+extra_child = new_parent.add_child(16)
+
+for child in new_parent.children:
+    print(child.child_value)          # prints 2, 4, 8, 16
+    print(child.parent.parent_value)  # prints 1
+
+new_parent.parent_value = 32
+for child in new_parent.children:
+    print(child.parent.parent_value)  # prints 32
+
+# prove that extra_child is new_parent.children[3]
+extra_child.child_value = 64
+print(new_parent.children[3].child_value)  # prints 64
+
+
 # STATICS
 # https://radek.io/2011/07/21/static-variables-and-methods-in-python/
 

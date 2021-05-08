@@ -2,6 +2,17 @@
 
 Python package is a module that can contain other modules or recursively, other packages. Pip is one of the widely used package management system to install and manage software packages written in Python and found in Python Package Index (PyPI).
 
+default, standard package-management system on Python >= 3.4  
+Packages that are managed by pip are built using [Setuptools](https://pypi.org/project/setuptools/)
+a package-development-process library to facilitate packaging Python projects (GitHub Python projects have a `setup.py` at the root of the project 
+
+pip packages are usually hosted on a PyPI. This can be a private or public repository for open-source or private Python packages. For those not familiar with the Python package repository, when you think of PyPI, think of RubyGems for Ruby, Packagist for PHP, Maven for Java, CPAN for Perl, and npm for Node.js.
+
+## virtualenv
+http://www.virtualenv.org/
+pip has limitations, such as lack of package isolation. This means out of the box, you can’t run multiple Python versions in an isolated manner. This is where virtualenv solves this very specific problem by allowing multiple Python projects that have different (and often conflicting) requirements to coexist on the same computer.
+
+
 # PIP COMMANDS
 pip --version
 python -m pip install --upgrade pip

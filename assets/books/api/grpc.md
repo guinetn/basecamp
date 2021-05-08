@@ -1,9 +1,11 @@
 # GRPC - Remote Procedure Calls
 
 
-https://levelup.gitconnected.com/grpc-how-to-make-effective-unary-calls-4c9fa68cd9d5  to add
+- https://levelup.gitconnected.com/grpc-how-to-make-effective-unary-calls-4c9fa68cd9d5  to add
+- https://medium.com/pragmatic-programmers/what-is-grpc-9df7c8dd0f91
 
 A faster and more effective protocol for sending and receiving data over the wire.
+A gRPC service is essentially a group of related RPC endpoints (a group of endpoints needed to solve some problem). Creating a gRPC service involves defining it in protobuf and then compiling your protocol buffers into code comprising the client and server stubs that you then implement. 
 
 Google open source high performance RPC (remote procedure call) framework that can run in any environment (.NET…)
 It can efficiently connect services in and across data centers with pluggable support for load balancing, tracing, health checking and authentication.
@@ -11,10 +13,11 @@ It is based on HTTP/2, Protocol Buffers and other modern standard-based technolo
 
 Ability to make streaming calls from the client and server side, or Bi-directional streaming. It serializes and deserializes data using Protocol Buffers, and it also provides code generation through the gRPC compiler to currently 11 different languages.
  
-https://gRPC.io
-https://github.com/grpc/grpc-node
-https://developers.google.com/protocol-buffers/docs/overview 
-https://developers.google.com/protocol-buffers/docs/proto3
+- https://gRPC.io
+- https://github.com/grpc/grpc-node
+- https://developers.google.com/protocol-buffers/docs/overview 
+- https://developers.google.com/protocol-buffers/docs/proto3
+- https://medium.com/pragmatic-programmers/define-a-grpc-service-e8e20c5589d5
 
 Efficiently connect services 
 Pluggable support for load balancing, tracing, health checking, authentication. 

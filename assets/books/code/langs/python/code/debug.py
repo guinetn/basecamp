@@ -1,5 +1,7 @@
 # DEBUG
 
+See libs_pyinspect.py
+
 import os
 os?
 os??
@@ -21,6 +23,52 @@ print(dir(Student))
 '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 
 'age', 'name', 'rollNo']
 
+
+## python-traceback
+
+https://realpython.com/python-traceback/
+
+Prints a traceback when an exception is raised in your code.  information that help to diagnose and fix the reason for the exception.
+Traceback: report of functions calls at a specific point (known by many names "stack trace, stack traceback, backtrace..."
+
+# example.py
+def greet(someone):
+    print('Hello, ' + someon)
+greet('Chad')
+
+'''
+python example.py
+Traceback (most recent call last):
+  File "/path/to/example.py", line 4, in <module>
+    greet('Chad')
+  File "/path/to/example.py", line 2, in greet
+    print('Hello, ' + someon)
+NameError: name 'someon' is not defined
+'''
+
+
+# greetings.py
+def who_to_greet(person):
+    return person if person else input('Greet who? ')
+
+def greet(someone, greeting='Hello'):
+    print(greeting + ', ' + who_to_greet(someone))
+
+def greet_many(people):
+    for person in people:
+        try:
+            greet(person)
+        except Exception:
+            print('hi, ' + person)
+$ python example.py
+'''
+Traceback (most recent call last):
+  File "/path/to/greetings.py", line 19, in <module>
+    greet('Chad', greting='Yo')
+TypeError: greet() got an unexpected keyword argument 'greting'            
+'''
+            
+            
 
 import ipywidgets as widgets
 print(widgets.Button.on_click.__doc__)

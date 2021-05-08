@@ -11,6 +11,7 @@ The most popular Python implementation is in C.
 
 On top of that, a decent number of Python packages like NumPy are written with C and its younger brother C++ to address efficiency drawbacks because Python is dead slow in comparison.
 
+Cython creates C modules that speed up Python code execution, important for complex applications where an interpreted language isn't efficient.
 
 ## in vs code
 - [VSCode's Python Interactive mode (= notebook live) is AMAZING!](https://www.youtube.com/watch?v=lwN4-W1WR84&t=358s)
@@ -35,6 +36,10 @@ download.page(code/langs/python/pep.md)
 
 download.page(code/langs/python/pip.md)
 
+## PERFORMANCES: EXTEND PYTHON (C C++ C#)#
+
+download.code(assets/books/code/langs/python/perfs_extend_to_c_c++/_perfs_extend_to_c_c++.md)
+
 ## ASSERT
 download.code(assets/books/code/langs/python/code/assert.py)
 ## * (ASTERISK): UNPACKING
@@ -43,12 +48,7 @@ download.code(assets/books/code/langs/python/code/asterisk_unpacking.py)
 download.code(assets/books/code/langs/python/code/async.py)
 ## BUILT-IN-FUNCTIONS
 download.code(assets/books/code/langs/python/code/built-in-functions.py)
-## C SHARP WITH PYTHON
-download.code(assets/books/code/langs/python/code/csharp_with_python.py)
 
-## C WITH PYTHON
-- https://betterprogramming.pub/dont-start-coding-with-python-begin-with-c-8567ae65948d
-- https://github.com/python/cpython
 ## CLASS
 download.code(assets/books/code/langs/python/code/class.py)
 ## CLASS: MAGIC METHODS
@@ -87,8 +87,9 @@ download.code(assets/books/code/langs/python/code/coll_zip.py)
 download.code(assets/books/code/langs/python/code/comments.py)
 ## CONDITIONALS
 download.code(assets/books/code/langs/python/code/conditionals.py)
-## CONTROL FLOW
-download.code(assets/books/code/langs/python/code/control_flow.py)
+## CONTROL FLOW LOOPS
+download.code(assets/books/code/langs/python/code/control_flow_loops.py)
+download.code(assets/books/code/langs/python/code/control_flow_itertools.py)
 ## CONTROL FLOW SWITCH
 download.code(assets/books/code/langs/python/code/control_flow_switch.py)
 ## CSV
@@ -97,6 +98,8 @@ download.code(assets/books/code/langs/python/code/csv.py)
 download.code(assets/books/code/langs/python/code/db_sqlite3.py)
 ## DEBUG
 download.code(assets/books/code/langs/python/code/debug.py)
+## DEBUG - LOG
+download.code(assets/books/code/langs/python/code/debug-log.py)
 ## DEBUG VS CODE
 download.code(assets/books/code/langs/python/code/debug_vs_code.py)
 ## DOCSTRINGS
@@ -234,16 +237,12 @@ download.code(assets/books/code/langs/python/code/matrix.py)
 download.code(assets/books/code/langs/python/code/microservices.py)
 ## MODULES
 download.code(assets/books/code/langs/python/code/modules.py)
-##  TO EXTEND PYTHON
-download.code(assets/books/code/langs/python/code/modules_extension__in_c_c++_to_extend_python.py)
 ## MODULES IMPORTS
 download.code(assets/books/code/langs/python/code/modules_imports.py)
 ## MODULES PACKAGES
 download.code(assets/books/code/langs/python/code/modules_packages.py)
 ## TEXT
 download.code(assets/books/code/langs/python/code/pdf-extract-text.py)
-
-download.code(assets/books/code/langs/python/code/perfs)
 ## PIP VIRTUALENV
 download.code(assets/books/code/langs/python/code/pip_virtualenv.py)
 ## RASPBERRYPI

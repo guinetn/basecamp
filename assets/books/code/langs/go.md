@@ -50,3 +50,4 @@ $GOPATH/src/github.com/gobuffalo/flect
 ## More
 - https://github.com/twpayne
 - https://www.digitalocean.com/community/tutorials/importing-packages-in-go
+- [Distributed Services with Go](https://medium.com/pragmatic-programmers/table-of-contents-9cb9895df519)

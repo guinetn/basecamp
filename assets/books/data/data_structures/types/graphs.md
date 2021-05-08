@@ -1,5 +1,11 @@
 # Graphs
 
+Math structures that outlines the relationships between elements
+
+- Nodes (the numbered dots at the edges of the decagon below)
+- Edges (the lines that connect the nodes: their relationship)
+
+Perfect graph: a graph with all its nodes connected
 
 ## Graph search algorithms
 Common - Breadth-first Search, Depth-first Search
@@ -71,3 +77,6 @@ def bfs(matrix):
       traverse(i, j)
 ```      
       
+### more
+
+- https://pub.towardsai.net/graph-theory-creating-a-relationship-network-in-python-f7b6ecf7f50      
