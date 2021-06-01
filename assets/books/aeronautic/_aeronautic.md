@@ -7,6 +7,8 @@ download.page(aeronautic/ate.md)
 download.page(aeronautic/finerpoints.md)
 download.page(aeronautic/tools.md)
 download.page(aeronautic/maths.md)
+download.page(aeronautic/radio.md)
+download.page(aeronautic/instruments.md)
 
 ## Places
 

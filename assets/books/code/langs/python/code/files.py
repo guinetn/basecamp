@@ -303,3 +303,23 @@ def extract_info(filename):
     out.write(line1.replace(',','|') + "\n")
     out.write("---|"*line_1.count(',') + "---\n")
     out.write(line2.replace(',','|') + "\n")
+
+import glob  
+print('Named explicitly:')
+for name in glob.glob('/home/geeks/Desktop/gfg/data.txt'):
+    print(name)
+  
+# Using '*' pattern 
+print('\nNamed with wildcard *:')
+for name in glob.glob('/home/geeks/Desktop/gfg/*'):
+    print(name)
+  
+# Using '?' pattern
+print('\nNamed with wildcard ?:')
+for name in glob.glob('/home/geeks/Desktop/gfg/data?.txt'):
+    print(name)
+  
+# Using [0-9] pattern
+print('\nNamed with wildcard ranges:')
+for name in glob.glob('/home/geeks/Desktop/gfg/*[0-9].*'):
+    print(name)    

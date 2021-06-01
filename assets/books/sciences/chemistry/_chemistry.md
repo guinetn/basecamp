@@ -1,6 +1,7 @@
 # Chemistry
 
 download.page(sciences/chemistry/atoms.md)
+download.page(sciences/chemistry/rocket_fuel.md)
 
 ## chemical bond
 

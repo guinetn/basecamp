@@ -250,3 +250,11 @@ from OPENJSON(
   select *
 from superHero s
 CROSS APPLY OPENJSON(s.description)
+
+
+
+## SQL Server User Defined Type (UDT)
+https://www.codeproject.com/Articles/28626/Vector-A-Concept-Driven-Approach-to-SQL-UDT
+
+User Defined Type (UDT) is a SQL Server data type created using your favorite .NET language. It is one of the artifacts you can create with SQL Server CLR Integration (SQL-CLR for short). Let’s just say it’s the closest thing SQL Server can get to object-based programming.
+

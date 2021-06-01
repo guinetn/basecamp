@@ -1090,3 +1090,5 @@ The shell is divided into regions, which you dynamically fill with user control 
 - [WPF Introduction](https://www.youtube.com/watch?v=gSfMNjWNoX0&t=375s)
 - [Relative source + debug](https://www.youtube.com/watch?v=QLEvT0vMrdc)
 - https://www.youtube.com/channel/UCWo4JEf0ZBxU2qXtRMfs8Xw
+- https://www.youtube.com/watch?v=_3R_8mXqhnU&t=96s
+- https://www.youtube.com/watch?v=wWX4Dc3yD3Y

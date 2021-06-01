@@ -41,6 +41,7 @@ Alt+Shift+Plus      Vertical pane split of default profile
 
 ### more
 - https://docs.microsoft.com/fr-fr/windows/terminal/
+- https://docs.microsoft.com/fr-fr/windows/terminal/get-started
 - https://aka.ms/terminal
 - https://github.com/microsoft/terminal
 - https://docs.microsoft.com/windows/terminal/panes

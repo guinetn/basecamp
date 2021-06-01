@@ -35,7 +35,7 @@ print(beta(-10))
 x = lambda a : a + 10
 print(x(5))
 
-x = lambda a, b : a * b
+x = lambda a, b : a * b 
 print(x(5, 6))
 
 # lambda power is when you use them as an anonymous function inside another function.
