@@ -1,0 +1,26 @@
+# TESTING
+
+- Every good project has a lot of Tests that "assert" our assumptions. 
+- Every method you write should have a lot of Test Methods or "facts" that express how it SHOULD work
+
+download.page(dotnet/tools/testing_nunit.md)
+::::
+download.page(dotnet/tools/testing_mocking.md)
+::::
+download.page(dotnet/tools/testing_msunittest.md)
+::::
+download.page(dotnet/tools/testing_xunit.md)
+::::
+download.page(dotnet/tools/testing_fakeiteasy.md)
+
+
+## Unit Testing in .NET Core 
+
+MSTest
+Nunit Test
+XUnit Test
+
+
+## More 
+- https://intellitect.com/decoupling-csharp-testable/
+- [Unit Testing | .NET Core ](https://www.youtube.com/watch?v=QBiBZ8bsfcU&t=26s)

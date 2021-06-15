@@ -33,8 +33,6 @@ download.page(dotnet/tools/wsdl_svcutil.md)
 ::::
 download.page(dotnet/tools/interop.md)
 ::::
-download.page(dotnet/tools/testing.md)
-::::
 download.page(dotnet/tools/clickonce.md)
 ::::
 

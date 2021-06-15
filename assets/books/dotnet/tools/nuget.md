@@ -31,3 +31,4 @@ C:\Users\[you]\AppData\Roaming\NuGet\NuGet.Config
 ## more
 
 - https://www.ctrl-alt-suppr.dev/2021/03/31/tips-tricks-creer-un-package-nuget/
+- https://channel9.msdn.com/Series/NET-Core-101/NET-Using-a-Nuget-Package

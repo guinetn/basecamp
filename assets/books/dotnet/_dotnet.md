@@ -62,6 +62,8 @@ download.page(dotnet/collections/specialized/concurrent_collections.md)
 download.page(dotnet/tools/_tools.md)
 ::::
 download.page(dotnet/mono.md)
+::::
+download.page(dotnet/testing/_testing.md))
 
 
 - [YouTube DotNet](https://www.youtube.com/channel/UCvtT19MZW8dq5Wwfu6B0oxw)
