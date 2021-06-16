@@ -106,6 +106,14 @@ A "peer-to-peer" relationship between classes.
 B ---► A
 A "generalization ► specialization" relationship between classes.
 
+Is inheriting from a base class 
+Relationships between objects: "An apple is a Fruit"
+
+```c++
+class Fruit  { // superclass… }
+class Apple : Fruit { // subclass… }
+```
+
 L'héritage est un mécanisme de transmission des caractéristiques d'une classe (ses attributs et méthodes) vers une sous-classe. Une classe peut être spécialisée en d'autres classes, afin d'y ajouter des caractéristiques spécifiques ou d'en adapter certaines. Plusieurs classes peuvent être généralisées en une classe qui les factorise, afin de regrouper les caractéristiques communes d'un ensemble de classes.
 
 Ainsi, la spécialisation et la généralisation permettent de construire des hiérarchies de classes. L'héritage peut être simple ou multiple. L'héritage évite la duplication et encourage la réutilisation.
@@ -114,8 +122,10 @@ If you don’t have a feature but someone actually uses it
 To reuse/extend a class. If you just want to reuse a class, use composition (over inheritance)
 
 See Prototype design pattern
+
 ### INHERITANCE FORMS
     
+    see uml page
     feature of some object-oriented computer programming languages 
     is inheriting from a base class 
 
@@ -169,12 +179,92 @@ The problem with object-oriented languages is they’ve got all this implicit en
 
 
 
+
 ### COMPOSITION (OWN)
+
+is allowing properties of your classes to be filled, e.g. MyCompany.Person. 
+A own an instance of B. B cannot exists without A
+Gang of Four’s advice on this point: “Favor object composition over class inheritance”
+
+Composition denotes an ownership "is-a-part-of" relationship between objects
+using instance variables that are references to other objects
+```c++
+class Fruit  { // superclass… }
+class Apple { // subclass… 
+    private Fruit;
+    public Apple()  { 
+        fruit = new Fruit();
+    }
+}
+```
+
+well-known object-oriented design principle which is: 
+***favour object composition over class inheritance***
+
+Class inheritance is said to break encapsulation as the implementation of a parent class is been exposed to their subclasses. Class inheritance also creates a tied coupling between the classes and stablishes a dependency in the system. These dependencies can cause problems when the parent class gets an internal modification as it is impacting all its subclasses.
+Class decoupling in a system will give you flexibility when adding new functionality or existing code gets rewritten.
+
+Object composition is based on a “has a” relationship whereas Class inheritance is based on “is a” relation.
+object composition there are less dependencies in terms of implementation as the objects been reused keep their interfaces.
+
+Ideally you shouldn’t have to create new components to achieve code reusability. If objects are well-designed, you should be able to get all the functionality you need by assembling existing objects through object composition.
+http://treeindev.net/article/object-composition-class-inheritance
 
 ### AGGREGATION
 A ◊------> B
 Car ◊----> Wheel    
 A "whole/part" relationship between classes.
+
+A reference an instance of B. B survive if A is disposed
+
+A classes relation saying that one class instances are components of the other class
+Define objects made of others objects
+
+```c++
+
+class Fruit  { // superclass… }
+class Apple { // subclass… 
+    private Fruit fruit = null;
+    public Apple(Fruit fruit) 
+    {
+        this.Fruit = fruit;
+    }
+}
+Fruit f = new Fruit();
+Apple a = new Apple(f);
+```
+
+# Inheritence vs Composition vs aggregation
+
+Establishing relationships between classes: inheritance or composition
+Favor composition over inheritance is a design principle that gives the design higher flexibility
+>Most of the time you will use composition, and DI you get to use it via Setter injection, or constructor injection which then fill properties.
+Overuse of inheritance leads to thickly layered programs that destroy transparency
+>Some languages, notably Go, use type composition exclusively
+
+
+
+#### Class or not Class?
+
+Gang of Four’s advice on this point: “Favor object composition over class inheritance”
+
+Classes should achieve polymorphic behavior and code reuse by their composition (by containing instances of other classes that implement the desired functionality) rather than inheritance from a base or parent class
+1. Create interfaces representing the system's behaviors (Give OO Polymorphic behavior)
+2. Implement classes using interfaces 
+3. Add these classes to business domain classes as needed
+Business domain classes may all be base classes without any inheritance at all
+Any business domain class that contains a reference to the interface can easily support any implementation of that interface and the choice can even be delayed until run time
+
+##### PRO
+    Favor composition over inheritance is a design principle that gives the design higher flexibility
+    Overuse of inheritance leads to thickly layered programs that destroy transparency
+    Some languages, notably Go, use type composition exclusively
+
+##### CON
+    methods provided by individual components may have to be implemented in the derived type, even if they are only forwarding methods. In contrast, inheritance does not require all of the base class's methods to be re-implemented within the derived class. Rather, the derived class only need to implement (override) the methods having different behavior than the base class methods. This can require significantly less programming effort if the base class contains many methods providing default behavior and only a few of them need to be overridden within the derived class.
+
+
+
 
 ### CARDINALITY/MULTIPLICITY
 The minimum and maximum number of objects that participate in an association or aggregation. The common (interesting) ones are 0..*, 0..1, 1..*, and 1..1

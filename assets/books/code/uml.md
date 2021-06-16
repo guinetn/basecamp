@@ -105,84 +105,12 @@ A ------- B
 [Customer]-.-[note: DAO]          // Notes
 [Customer]^[Member]               // Inheritance
 [Customer|name;address|save()]    // Properties
-[≪IDisposable≫;Customer]          // Interface
+[≪IDisposable≫;Customer]         // Interface
 [Customer|var arr［］ ]            // Brackets
 [Customer {bg:green}]             // Colour
 
-# Inheritence vs Composition vs aggregation
 
-Establishing relationships between classes: inheritance or composition
-Favor composition over inheritance is a design principle that gives the design higher flexibility
->Most of the time you will use composition, and DI you get to use it via Setter injection, or constructor injection which then fill properties.
-Overuse of inheritance leads to thickly layered programs that destroy transparency
->Some languages, notably Go, use type composition exclusively
-
-#### INHERITANCE 
-Is inheriting from a base class 
-Relationships between objects: "An apple is a Fruit"
-
-```c++
-class Fruit  { // superclass… }
-class Apple : Fruit { // subclass… }
-```
-
-#### COMPOSITION 
-is allowing properties of your classes to be filled, e.g. MyCompany.Person. 
-A own an instance of B. B cannot exists without A
-Gang of Four’s advice on this point: “Favor object composition over class inheritance”
-
-Composition denotes an ownership "is-a-part-of" relationship between objects
-using instance variables that are references to other objects
-```c++
-class Fruit  { // superclass… }
-class Apple { // subclass… 
-    private Fruit;
-    public Apple()  { 
-        fruit = new Fruit();
-    }
-}
-```
-
-#### AGGREGATION
-A reference an instance of B. B survive if A is disposed
-
-A classes relation saying that one class instances are components of the other class
-Define objects made of others objects
-
-```c++
-
-class Fruit  { // superclass… }
-class Apple { // subclass… 
-    private Fruit fruit = null;
-    public Apple(Fruit fruit) 
-    {
-        this.Fruit = fruit;
-    }
-}
-Fruit f = new Fruit();
-Apple a = new Apple(f);
-```
-
-
-#### Class or not Class?
-
-Gang of Four’s advice on this point: “Favor object composition over class inheritance”
-
-Classes should achieve polymorphic behavior and code reuse by their composition (by containing instances of other classes that implement the desired functionality) rather than inheritance from a base or parent class
-1. Create interfaces representing the system's behaviors (Give OO Polymorphic behavior)
-2. Implement classes using interfaces 
-3. Add these classes to business domain classes as needed
-Business domain classes may all be base classes without any inheritance at all
-Any business domain class that contains a reference to the interface can easily support any implementation of that interface and the choice can even be delayed until run time
-
-##### PRO
-    Favor composition over inheritance is a design principle that gives the design higher flexibility
-    Overuse of inheritance leads to thickly layered programs that destroy transparency
-    Some languages, notably Go, use type composition exclusively
-
-##### CON
-    methods provided by individual components may have to be implemented in the derived type, even if they are only forwarding methods. In contrast, inheritance does not require all of the base class's methods to be re-implemented within the derived class. Rather, the derived class only need to implement (override) the methods having different behavior than the base class methods. This can require significantly less programming effort if the base class contains many methods providing default behavior and only a few of them need to be overridden within the derived class.
-
+see oop page
 
 
 

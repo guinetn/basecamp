@@ -1,7 +1,7 @@
 {
   "algorithms":["https://www.interviewbit.com/tutorial/sorting-algorithms/"],
   
-  "analytics":["https://www.tableau.com/(tableau: see/understand data)","https://developers.google.com/analytics"],
+  "analytics":["https://www.tableau.com/(tableau: see/understand data)","https://developers.google.com/analytics", "https://cube.dev(Cube.js)"],
   
   "android":["https://platform.appgyver.com(appgyver.com)","https://my.swiftic.com(swiftic.com, old como)","https://appsgeyser.com"],
   
@@ -21,7 +21,7 @@
   
   "code_sample":["https://docs.microsoft.com/fr-fr/samples(microsoft samples)"],
   
-  "codenews":["https://roadmap.sh(developer roadmap)","https://dev.to","https://www.liquidweb.com","https://www.sitepoint.com", "https://www.ctrl-alt-suppr.dev", "https://vas3k.com","https://anthonychu.ca","http://www.codeproject.com","https://neelbhatt.com","https://gunnarpeipman.com","http://www.johnpapa.net","http://www.hanselman.com/blog","https://martinfowler.com","https://tutorialzine.com","https://alligator.io/explore","https://dzone.com","https://www.toptal.com/developers/blog","https://www.blinkingcaret.com","https://blog.soat.fr","https://www.smashingmagazine.com","https://scotch.io","https://www.telerik.com/blogs","https://hackaday.com","https://www.dotnetcurry.com","https://freecodecamp.com","https://www.hackster.io","https://hackernoon.com","https://pioneercode.com","https://developpez.com","https://www.hongkiat.com"],
+  "codenews":["https://roadmap.sh(developer roadmap)", "http://treeindev.net/articles", "https://dev.to", "https://opensource.com", "https://www.liquidweb.com","https://www.sitepoint.com", "https://www.ctrl-alt-suppr.dev", "https://vas3k.com","https://anthonychu.ca","http://www.codeproject.com","https://neelbhatt.com","https://gunnarpeipman.com","http://www.johnpapa.net","http://www.hanselman.com/blog","https://martinfowler.com","https://tutorialzine.com","https://alligator.io/explore","https://dzone.com","https://www.toptal.com/developers/blog","https://www.blinkingcaret.com","https://blog.soat.fr","https://www.smashingmagazine.com","https://scotch.io","https://www.telerik.com/blogs","https://hackaday.com","https://www.dotnetcurry.com","https://freecodecamp.com","https://www.hackster.io","https://hackernoon.com","https://pioneercode.com","https://developpez.com","https://www.hongkiat.com"],
   
   "communication":["https://www.skype.com","https://www.meetup.com","https://zoom.us","https://www.slack.com","https://trello.com/guinetn(Trello: project organ/management)","https://www.instagram.com","https://discord.com/channels/@me","https://www.whatsapp.com/(Whatsapp: phone msg/video)","https://telegram.org/(Telegram: phone encrypted conversations+open api)","https://signal.org/(Signal: phone medias/call/videos)"],
   

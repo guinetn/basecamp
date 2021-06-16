@@ -22,3 +22,5 @@ download.page(dotnet/cs/csharp7.0.md)
 download.page(dotnet/cs/csharp8.0.md)
 ::::
 download.page(dotnet/cs/csharp9.0.md)
+::::
+download.page(dotnet/cs/csharp10.0.md)

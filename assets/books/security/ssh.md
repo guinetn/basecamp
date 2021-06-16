@@ -1,9 +1,18 @@
 # SSH - SECURE SHELL 
 
+Secure shell protocol (SSH) is the most common method for controlling remote machines over the command line in the Linux world. 
+
 Protect data transferred through remote connections
 A cryptographic network protocol for operating network services securely over an unsecured network. Typical applications include remote command-line, login, and remote command execution, but any network service can be secured with SSH.
 
+Use SSH to control almost any Linux machine (running as a virtual machine or as a physical device on your network). A common use case is the headless configuration of embedded devices, including the Raspberry Pi. SSH can also be used to tunnel other network services. Because SSH traffic is encrypted, you can use SSH as a transport layer for any protocol that does not provide encryption by default.
+
+Client-server architecture:  
+an SSH client establishes a connection to an SSH server usually running as a system daemon often called SSHD. 
+
+
 Windows 10 uses OpenSSH as its default SSH client and SSH server
+Windows documentation for SSH, which covers controlling Windows machines using OpenSSH: https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_overview
 
 ssh nom_utilisateur@ip_ou_nom_machine -p numero_de_port
 ssh -i /path/my-key-pair.pem my-instance-user-name@my-instance-public-dns-name
@@ -216,3 +225,35 @@ https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_o
 >docker scan 
 
 https://docs.docker.com/engine/scan/
+
+## SSH connection Windows- Linux using PuTTY
+
+1. how to configure the SSH daemon on the Linux side
+/etc/ssh/sshd_config
+systemctl status sshd
+systemctl start sshd
+
+2. how to set up a remote console connection
+
+Putty install: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+Host Name (or IP address)
+Port 22
+
+PuTTY Security Alert to prevent a man-in-the-middle attack: The fingerprint in the message should match the key on the Linux system at /etc/ssh/ssh_host_ed25519_key.pub  
+PuTTY prints the key as an MD5 hash. To check its authenticity, switch to the Linux system, open a command shell, and enter:
+>ssh-keygen -l -E md5 -f /etc/ssh/ssh_host_ed25519_key.pub
+
+The host system's fingerprint is now in PuTTYs trust list: HKEY_CURRENT_USER\SOFTWARE\SimonTatham\PuTTY\SshHostKeys
+Enter your correct login credentials
+
+3. how to copy files over the network
+C:\Program Files (x86)\PuTTY\pscp.exe to copy files to and from a Linux system
+pscp.exe <source> <target> 
+
+Copy Linux user home/MyFile.txt to your Windows home
+C:\"Program Files (x86)"\PuTTY\pscp.exe stephan@192.168.1.60:/home/stephan/MyFile.txt .
+Copy from Windows home to Linux user home
+C:\"Program Files (x86)"\PuTTY\pscp.exe MyFile.txt stephan@192.168.1.60:/home/stephan/
+
+4. how to tunnel a certain protocol over SSH
+

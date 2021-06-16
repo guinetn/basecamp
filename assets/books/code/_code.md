@@ -43,3 +43,5 @@ download.page(code/sdk.md)
 download.page(code/mixed_reality.md)
 ::::
 download.page(code/notebooks/_notebooks.md)
+::::
+download.page(code/package_managers/_package_managers.md)

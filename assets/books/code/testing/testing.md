@@ -1,7 +1,21 @@
 # TESTING
 
-
-# TESTING
+## Testing
+Executing the software with data to ensure that the software works correctly.
+## Unit testing
+Testing by the developer.
+## Integration testing
+Testing during the integration of the software.
+## System testing
+Testing software in an environment that matches the operational environment.
+## Alpha testing
+Testing by the customer at the developer’s site.
+## Beta testing
+Testing by the customer at the customer’s site.
+## Acceptance testing
+Testing to satisfy the purchaser.
+## Regression testing
+Saving tests from the previous version to ensure that the new version retains the previous capabilities
 
 
 https://www.maxcode.net/blog/how-to-reevaluate-the-testing-efficiency-by-understanding-what-a-testing-framework-can-offer/

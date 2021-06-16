@@ -269,6 +269,9 @@ The dotnet driver can invoke any command that follows the dotnet-[command] conve
 
 The custom binary tool can be pretty much anything that the operating system can execute. On Unix or OSX systems, this means any command script saved as dotnet-domything that has the execute bit set via chmod +x. On Windows, it means anything that Windows knows how to run.
 
+SAMPLE ADD VERB TO DOTNET CLI
+https://andrewlock.net/creating-a-simple-moving-average-calculator-in-csharp-1-a-simple-moving-average-calculator/
+>dotnet run sma 2, 4, 5, 3, 8, 6, 4 -k 3
 
    
 ## More

@@ -1,5 +1,8 @@
 # orleans
 
+Frameworks to build cloud native applications on dotnet. Any kind of distributed apps. Model "grains' to model app.
+
+
 Open source actor framework
 an actor framework? → popular .net actor framework is AKKA.net (event sourcing)
   
@@ -25,3 +28,4 @@ download.code(https://gist.githubusercontent.com/Kritner/dbba6369cf381ee5f3cae7f
 - https://dotnet.github.io/orleans/Documentation/index.html
 - https://getakka.net/ 
 - https://medium.com/swlh/getting-started-with-microsoft-orleans-882cdac4307f
+- https://channel9.msdn.com/Shows/On-NET/Setting-up-Observability-in-Orleans

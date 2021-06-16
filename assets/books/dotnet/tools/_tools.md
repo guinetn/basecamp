@@ -6,8 +6,6 @@ download.page(dotnet/tools/regex.md)
 ::::
 download.page(dotnet/tools/decompilers/il.md)
 ::::
-download.page(dotnet/tools/msbuild.md)
-::::
 download.page(dotnet/tools/resgen.md)
 ::::
 download.page(dotnet/tools/mef.md)
@@ -16,9 +14,11 @@ download.page(dotnet/tools/nuget.md)
 ::::
 download.page(dotnet/tools/entity_framework.md)
 ::::
-download.page(dotnet/tools/wpf.md)
+download.page(dotnet/tools/app_wpf.md)
 ::::
-download.page(dotnet/tools/winforms.md)
+download.page(dotnet/tools/app_console.md)
+::::
+download.page(dotnet/tools/app_winforms.md)
 ::::
 download.page(dotnet/tools/signal_r.md)
 ::::

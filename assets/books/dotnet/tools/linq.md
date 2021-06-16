@@ -1,5 +1,17 @@
 # Linq
 
+All LINQ methods, accept delegate as a parameter.
+LINQ is much easier to read and maintain 
+
+Simple LINQ queries have performance similar to 'For' loops but require much more allocations to operate and on a large scale, allocations will lead to more frequent GC calls and performance decrease across all application layers.
+LINQ is the best option for most cases. However, for performance-critical path usage of loops might be a better decision.
+
+Find Ids of all customers having at least two orders of more than 100€ in total.
+```c#
+var customersIds<IEnumerable> = customers.where(customer=>customer.Orders.Count(order=>order.TotalPrice >= 100m) > 2).Select(customer=>customer.Id);
+```
+
+
 Enumerable.Range(1, 5).Select(i => {})
 
 * Sort a string

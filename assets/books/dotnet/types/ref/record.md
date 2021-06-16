@@ -1,5 +1,21 @@
 ## RECORD - ENREGISTREMENTS - Value Objects
 
+In Short: 'class' avoiding lot of code when copying immutable objects
+
+Identical objects have same values in their properties (struct), not because they share a primary key or location in memory (class). In DDD copied value objects are spread and risk to drift apart when updated. So value objects are made immutable (requires more code to set up in .NET), that actually makes copying the data a bigger problem: You now have data that is guaranteed to be identical taking up twice as much space as necessary. C# 9 record are value object that does everything you want 
+
+
+```C#
+public record Person
+{
+   string LastName;        ←→ public string LastName { get; init; }
+   string FirstName;
+}
+
+Address addr = new Address {Street = "Kensignton", City = "London" }
+Address addr = new ( "Kensignton", "London") // target typing
+```
+
 Immutable référence type qui fournit des méthodes synthétisées pour FOURNIR UNE SÉMANTIQUE DE VALEUR → POUR L’ÉGALITÉ ←
 
 Records define an immutable reference type and behave like a value type. Once the record is defined, we can’t modify the values of any properties of the record instances.
@@ -24,6 +40,15 @@ The problem with creating a copy of a value object is that the two copies can ha
 
 Type référence qui fournit des méthodes synthétisées pour FOURNIR UNE SÉMANTIQUE DE VALEUR POUR L’ÉGALITÉ
 Members are implicitly public in records if you don’t precise it
+
+
+Why?
+In domain driven design one of the key concepts are "value objects": objects that are considered identical because they have the same values in their properties, not because they share a primary key or location in memory. An address is a good example of a value object: two addresses are the same if they have identical city/street/etc. even if they're from two different customers and one is a "Shipping" address while the other is a "Billing" address.
+
+Structs (and other value types) work that way when compared, but with structs, assigning a value from one struct to another copies the data (it's different with classes: assigning one variable to another just copies pointers around and both variables end up pointing to the same object in memory rather than getting their own copies of the data).
+
+The problem with creating a copy of a value object is that the two copies can have separate changes made to them -- what started off as two identical objects drift apart. As a result, value objects are often made to be immutable, something that requires a fair amount of code to set up in .NET. That actually makes copying the data a bigger problem: You now have data that is guaranteed to be identical taking up twice as much space as necessary.
+But, in C# 9, you can just create a record and get a value object that does everything you want
 
 ```C#
         class (check IL)
@@ -109,7 +134,13 @@ BUT when you compare the two record objects, they're compared like value types -
 ```c#
 (addr1 == addr2)    // True addresses are the same
 addr1.Equals(addr2) // True and same hashCode
-}
+```
+
+On the other hand, when you assign variables, records work like reference types: pointers are moved around but no data is copied. In this code, the addr1 and addr2 variables both point at the same object in memory:
+
+```c#
+Address addr1 = new Address("Ridout", "London");
+Address addr2 = addr1;
 ```
 
 # Controlling and Defining Properties in Records
@@ -128,6 +159,7 @@ Address addr = new ( "Kensignton", "London") // "TARGET TYPING": The same (reduc
 Address newAddress = addr1 with { City = "Liverpool" }
 
 // Deconstructing a record
+// A Deconstruct method accepts an out parameter for each individual variable that will be returned and then, in the method's body, assigns values to those parameters (typically from the properties in the record but you can do whatever you want).
 // Extract record's properties into individual variables:
 var (street, city) = addr;
 MessageBox.Show("The city is " + city);

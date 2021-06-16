@@ -7,6 +7,8 @@ MSBuild can run without Visual Studio (msbuild.exe can orchestrate and build pro
 
 https://docs.microsoft.com/visualstudio/msbuild/msbuild
 
+MS Build documentation
+https://docs.microsoft.com/fr-fr/visualstudio/msbuild/msbuild?view=vs-2019
 
 ## PS COMPILERS
 

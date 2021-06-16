@@ -28,6 +28,9 @@ WinUI 2 can be used in any Windows 10 UWP XAML app, or in a Xamarin.Forms app ru
 app demonstrates the controls available in WinUI and the Fluent Design System.
 - https://github.com/Microsoft/Xaml-Controls-Gallery
 
+### WinUI 3
+- https://docs.microsoft.com/en-gb/windows/apps/winui/winui3/
+
 ## Fluent Design
 
 open-source, cross-platform design system that gives designers and developers the frameworks they need to create engaging product experiences—accessibility, internationalization, and performance included.

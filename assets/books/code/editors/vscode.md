@@ -33,3 +33,10 @@ VS Code:  xxxx.py  # %%   → get a notebook
 
 Develop in remote containers using VS Code
 https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers
+
+## Remote Repositories 
+
+Browse, search, edit, and commit to any remote GitHub repository directly from within Visual Studio Code. 
+- https://www.youtube.com/watch?v=wHsmaXoGIXI
+
+Green indicator left/bottom → "Open remote repository"

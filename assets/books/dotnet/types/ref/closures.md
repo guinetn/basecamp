@@ -37,6 +37,7 @@ Calling each delegate in turn will displays 0,1,2... reflecting the value of i a
 j is out of scope when the loop ends so you can’t discover what its current value is – only the captured copies survive the loop
 
 ### Use #1 - No control
+
 ### Use #2 - Event pattern
 
 In an event oriented environment the linear flow of actions is often made unclear by the need to pause processing until an event occurs
@@ -94,6 +95,30 @@ class Program
 
 The "nonLocal" variable was captured, or "closed over", by the delegate code, causing it to remain in scope beyond the normal limits. In fact, it will remain available until the no further references to the delegate remain.				
 
+## JS CLOSURE
+
+```js
+function getEmployeeFactory() {
+  let employeeNumber = 1;
+  return function(name, country) {
+    return { employeeNumber: employeeNumber++, name, country };
+  };
+}
+ 
+const getEmployee = getEmployeeFactory();
+ 
+const employeeOne = getEmployee('Robin', 'Germany');
+const employeeTwo = getEmployee('Markus', 'Canada');
+ 
+const employees = [employeeOne, employeeTwo];
+ 
+console.log(employees);
+ 
+// [
+//   { employeeNumber: 1, name: 'Robin', country: 'Germany' },
+//   { employeeNumber: 2, name: 'Markus', country: 'Canada' },
+// ]
+```
 
 ## More
 
