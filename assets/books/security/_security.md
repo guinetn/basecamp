@@ -23,7 +23,9 @@ download.page(security/tls.md)
 ::::
 download.page(security/ssh.md)
 ::::
-download.page(security\vpn.md)
+download.page(security/known_hosts.md)
+::::
+download.page(security/vpn.md)
 ::::
 download.page(security/rdc.md)
 ::::

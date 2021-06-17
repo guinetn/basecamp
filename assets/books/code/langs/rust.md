@@ -160,6 +160,11 @@ IDE
 [warp](https://crates.io/crates/warp)
 [gotham](https://crates.io/crates/gotham)
 
+
+## Microservices
+- https://genekuo.medium.com/coding-a-simple-microservices-with-rust-3fbde8e32adc
+- https://medium.com/tenable-techblog/building-a-microservice-with-rust-23a4de6e5e14
+
 ## More
 
 - https://www.liquidweb.com/kb/how-to-install-and-configure-the-rust-programming-language

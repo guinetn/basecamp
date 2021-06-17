@@ -126,3 +126,4 @@ Express model with 	→ 	SERVICES
 
 - https://www.youtube.com/watch?v=Z_nmvQFc3Es
 - http://treeindev.net/article/domain-driven-design
+- https://dzone.com/refcardz/getting-started-domain-driven

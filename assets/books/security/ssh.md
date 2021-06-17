@@ -114,23 +114,8 @@ Each row has a public key to authorize this account access witha private key
 $ nano authorized_keys
 ssh-dss AAAAB3NzaC1kc3MAAACBAO0ZWeTNYwTkNuj ... CF7sro/Q== account@machine
 ssh-dss AAAAB3NzaC1kc3MAAACBAO0ZWeTNYwTkNuj ... CF7sro/Q== joe@pc-sport
- 
-## known_hosts file
 
-~/.ssh/known_hosts
-/home/&lt;user&gt;/.ssh/known_hosts
-
-Public keys of all ssh servers to which the user has been connected
-From the server folder /etc/ssh/ssh_host_dsa_key.pub
-
-Contains rows, each is a server public key the user connect to
-    github.com,192.30.253.112 ssh-rsa AAAA...AaQ=
-    192.30.253.113 ssh-rsa AAAA...Q=
-    140.82.118.3 ssh-rsa AAAA...Q=
-    140.82.118.4 ssh-rsa AAAA...aQ=
-    ec2-15-256-926-822.eu-west-3.compute.amazonaws.com,15.222.333.404 ecdsa-sha2-nistp256 AAAA...V0=
-    vps47217.inhosting.com,173.235.215.56 ecdsa-sha2-nistp256 AAAA...TBARs=
-    vps47217.inhosting.com,173.145.215.11 ecdsa-sha2-nistp256 AAAA...TDFbRs=
+download.page(security/known_hosts.md)
 
 ## SSH key fingerprint
 It is the fingerprint of a key that is verified when you try to login to a remote computer using SSH
@@ -257,3 +242,74 @@ C:\"Program Files (x86)"\PuTTY\pscp.exe MyFile.txt stephan@192.168.1.60:/home/st
 
 4. how to tunnel a certain protocol over SSH
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### SSH protocol
+connect and authenticate to remote servers and services
+
+
+### SSH keys
+connect to GitHub without supplying username/personal access token at each visit
+
+1. Create unique keys (SSH keys) on your local machine
+
+ssh-keygen -t rsa    Generate SSH keys. Prompted: folder/file targetted 
+Press ENTER to go with the default location and generate the ~/.ssh folder
+- ~/.ssh
+- C:\Users\nguin\.ssh
+Set Passphrase
+
+ssh-keygen -t rsa -C "email@githubworkemail.com" -f "id_rsa_workname"
+-C adds a comment/tag and 
+-f specifies the name of the file we want to save the key to
+
+[ssh-keygen](https://www.ssh.com/ssh/keygen/#command-and-option-summary)
+
+2. Setup the ssh config/known_hosts file to manage multiple keys
+
+The reason why your computer knows which SSH key to use, is because we defined the URL in our config/known_hosts file (contains url + public key):
+- C:\Users\nguin\.ssh\known_hosts
+- ~/.ssh/config 
+- $HOME/.ssh/known_hosts       user-specific file
+- /etc/ssh/ssh_known_hosts     system-wide file
+ 
+>touch ~/.ssh/config && code ~/.ssh/config
+>type config
+config
+```yaml
+# personal account
+Host github.com
+   HostName github.com
+   User git
+   IdentityFile ~/.ssh/id_rsa
+
+# work account 1
+Host github.com-workname
+   HostName github.com
+   User git
+   IdentityFile ~/.ssh/id_rsa_workname
+```
+
+* ssh-agent
+service that manage SSH keys and their configurations
+|||
+|---|---|
+|ssh-add -D            | Removes all currently registered ssh keys from the ssh-agent|
+|ssh-add -l            | Lists all currently in the ssh-agent registered ssh keys|
+|ssh-add ~/.ssh/id_rsa | Adds the specified key to the ssh-agent|
+
+Registering our keys with their ids
+>ssh-add ~/.ssh/id_rsa && ssh-add ~/.ssh/id_rsa_workname

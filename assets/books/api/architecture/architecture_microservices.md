@@ -4,6 +4,23 @@
 - distributed architecture based
 - Microservices are modular components that are developed and deployed individually.
 
+
+TYPICAL MICROSERVICE IS MADE OF:
+- HTTP API: most microservices will have to provide a REST API. At the very least a service should be able to respond to basic health check requests from a larger management service.
+- Code to work with the database: usually some form of an ORM.
+- Code to read messages from a queue, such as Kafka.
+- A Dockerfile to build the service so it could be deployed (e.g. to Kubernetes).
+
+ MICROSERVICES FUNCTIONALITIES
+ - logging
+ - configuration
+ - serialization and deserialization of data
+ - data persistence
+ - asynchronous operations
+ - ...
+https://genekuo.medium.com/coding-a-simple-microservices-with-rust-3fbde8e32adc
+https://medium.com/tenable-techblog/building-a-microservice-with-rust-23a4de6e5e14
+
 ***Martin Fowler 2014 article:***
 <quote>
 In short, the microservice architectural style is an approach to <mark>developing a single application as a suite of small services</mark>, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery. There is a bare minimum of centralized management of these services, which may be written in different programming languages and use different data storage technologies.</quote>

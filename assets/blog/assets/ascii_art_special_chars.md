@@ -3,7 +3,7 @@
 	💎 		Gem
 	📌
 	★ 		Important	
-	⚠  	Caution
+	⚠️ ⚠  	Caution 
 	[?] 	Unknown
 	[✔] 	Success
 	[✖] 	Failure

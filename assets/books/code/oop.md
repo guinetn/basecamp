@@ -178,22 +178,23 @@ https://medium.com/@cscalfani/goodbye-object-oriented-programming-a59cda4c0e53
 The problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them. You wanted a banana but what you got was a gorilla holding the banana and the entire jungle.
 
 
+Composition and aggregation are two types of association which is used to represent relationships between two classes
 
-
-### COMPOSITION (OWN)
+### COMPOSITION (OWN): "is-a-part-of"
 
 is allowing properties of your classes to be filled, e.g. MyCompany.Person. 
 A own an instance of B. B cannot exists without A
 Gang of Four’s advice on this point: “Favor object composition over class inheritance”
 
-Composition denotes an ownership "is-a-part-of" relationship between objects
-using instance variables that are references to other objects
+Composition denotes an ownership "is-a-part-of" relationship between objects using instance variables that are references to other objects
+Parent owns child entity so child entity can't exist without parent entity
+
 ```c++
 class Fruit  { // superclass… }
 class Apple { // subclass… 
     private Fruit;
     public Apple()  { 
-        fruit = new Fruit();
+        fruit = new Fruit(); // Parent owns child entity, child can't exist without parent
     }
 }
 ```
@@ -210,12 +211,13 @@ object composition there are less dependencies in terms of implementation as the
 Ideally you shouldn’t have to create new components to achieve code reusability. If objects are well-designed, you should be able to get all the functionality you need by assembling existing objects through object composition.
 http://treeindev.net/article/object-composition-class-inheritance
 
-### AGGREGATION
+### AGGREGATION: "Has-A"
 A ◊------> B
 Car ◊----> Wheel    
 A "whole/part" relationship between classes.
 
 A reference an instance of B. B survive if A is disposed
+Parent and child entity maintain "Has-A" relationship but both can also exist independently
 
 A classes relation saying that one class instances are components of the other class
 Define objects made of others objects
