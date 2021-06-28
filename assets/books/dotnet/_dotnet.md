@@ -61,7 +61,7 @@ download.page(dotnet/collections/specialized/concurrent_collections.md)
 ::::
 download.page(dotnet/tools/_tools.md)
 ::::
-download.page(dotnet/build/_build.md)
+download.page(code/build_systems/_build_systems.md)
 ::::
 download.page(dotnet/mono.md)
 ::::

@@ -103,6 +103,8 @@ Define functionnal tests strategy and tests automation
 Define integration systems automation and continuous deployement. Guide development teams and daily collaborate with operations for a better quality service
 
 ::::
+download.page(cloud/distributed_systems/_distributed_systems.md)
+::::
 download.page(cloud/infrastructure_as_code.md)
 ::::
 download.page(cloud/cloud_automation.md)

@@ -1,9 +1,14 @@
 ﻿## CQRS
 
-CQRS involves splitting an application into two parts internally — the command side: ordering the system to update state 
+Separates the read/write operations of a distributed system to increase scalability and security. This model uses commands to write data to persistent storage and queries to locate and fetch the data.
+CQRS is best for data-intensive applications like SQL or NoSQL database management systems. It’s also helpful for data-heavy microservice architectures. It’s great for handling stateful applications because the writer/reader distinction helps with immutable states.
+
+CQRS involves splitting an application into two parts internally 
+— the command side: ordering the system to update state 
 - the query side: that gets information without changing state.
 The way event sourcing works with CQRS is to have part of the application that models updates as writes to an event log or Kafka topic.
 
+A command center receives users requests and fetches the data and makes any necessary modifications, saves the data, and notifies the read service. The read service then updates the read model to show the change to the user.
 
 The flow of simple CRUD (Create, Read, Update and Delete) applications can be described using the following steps:
 - Controllers layer handles HTTP requests and delegates tasks to the services layer.
@@ -12,6 +17,17 @@ The flow of simple CRUD (Create, Read, Update and Delete) applications can be de
 - Entities act as containers for the values, with setters and getters.
 In most cases, for small and medium-sized applications, this pattern is sufficient. However, when our requirements become more complex, the CQRS model may be more appropriate and scalable. 
 
+
+PRO
+- Reduces system complexity by delegating tasks.
+- Enforces a clear separation between business logic and validation.
+- Helps categorize processes by their job.
+- Reduces the number of unexpected changes to shared data.
+- Reduces the number of entities that have modifying access to data.
+CONS
+- Requires constant back-and-forth communication between command and read models.
+- Can cause increased latency when sending high-throughput queries.
+- No means to communicate between service processes.
 
 COMMAND AND QUERY RESPONSIBILITY SEGREGATION
 

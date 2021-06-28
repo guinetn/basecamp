@@ -1,6 +1,5 @@
 # changing the RGB values of an image using NumPy and applying the RGB Filter to the image
 
-
 from PIL import Image
 import numpy as np
 img = np.array(Image.open('0.jpg'))

@@ -34,6 +34,52 @@ download.page(code/repos/git/clean.md)
 download.page(code/repos/git/revert.md)
 download.page(code/repos/git/reset.md)
 
+# GIT MISTAKES
+
+# Spelled last commit message wrong
+git commit --amend
+This will open up your editor and allow you to make a change to that last commit message. No one needs to know you spelled, “Initial commment” with three “m”s.
+
+# Spelling mistake on branch name
+rename this branch in a similar way to how we rename a file with the mv command: by moving it to a new location with the correct name.
+git branch -m feature-brunch feature-branch
+
+# If you have already pushed this branch, there are a couple of extra steps required. We need to delete the old branch from the remote and push up the new one:
+git push origin --delete feature-brunch
+git push origin feature-branch
+
+# Accidentally committed all changes to the master branch
+So we can roll back all those changes to a new branch with the following three commands:
+Note: Make sure you commit or stash your changes first, or all will be lost!
+git branch feature-branch
+git reset HEAD~ --hard
+git checkout feature-branch
+# This creates a new branch, then rolls back the master branch to where it was before you made changes, before finally checking out your new branch with all your previous changes intact.
+
+# Forgot to add a file to that last commit
+git add missed-file.txt
+git commit --amend
+
+# Added a wrong file in the repo
+If all you did was stage the file and you haven’t committed it yet, it’s as simple as resetting that staged file:
+git reset /assets/img/misty-and-pepper.jpg
+If you have gone as far as committing that change, no need to worry. You just need to run an extra step before:
+git reset --soft HEAD~1
+git reset /assets/img/misty-and-pepper.jpg
+rm /assets/img/misty-and-pepper.jpg
+git commit
+This will undo the commit, remove the image, then add a new commit in its place.
+
+#  git reflog 
+shows you a list of all the things you've done. It then allows you to use Git's magical time-traveling skills to go back to any point in the past. I should note, this is a last resort thing and should not be used lightly. To get this list, type:
+git reflog
+
+If you want to go back to any point in the history, run the below command, replacing {index} with that reference, e.g. dfa27a2.
+git reset HEAD@{index}
+
+
+
+
 
 ## UNDOING CHANGES
 

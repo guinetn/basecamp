@@ -8,6 +8,40 @@
 5) Final rebase on master
 6) Checkout master and merge branch (bow-shape)
 
+
+
+
+- A develop branch is created from master
+- A release branch is created from develop
+- Feature branches are created from develop
+- When a feature is complete it is merged into the develop branch
+- When the release branch is done it is merged into develop and master
+- If an issue in master is detected a hotfix branch is created from master
+- Once the hotfix is complete it is merged to both develop and master
+
+
+
+# Creating a feature branch
+	git checkout develop
+	git checkout -b feature_branch
+# Finishing a feature branch
+	When you’re done with the development work on the feature, the next step is to merge the feature_branch into develop.
+	git checkout develop
+	git merge feature_branch
+
+# Creating a hotfix branch
+	git checkout master
+	git checkout -b hotfix_branch
+	
+	Similar to finishing a release branch, a hotfix branch gets merged into both master and develop.
+	git checkout master
+	git merge hotfix_branch
+	git checkout develop
+	git merge hotfix_branch
+	git branch -D hotfix_branch
+
+
+
 Git Flow
 
 In the Git flow development model, you have one main development branch with strict access to it. It’s often called the develop branch.

@@ -1,11 +1,44 @@
-# Matter
+# MATTER
 
-A Bose-Einstein Condensate (BEC) is often said to be a "fifth state of matter"
-https://www.youtube.com/watch?v=lBpxQdikm0w
+Fundamental particles (no internal structure)
 
+Composite particles (have internal structure) called hadrons
+made of quarks, antiquarks, or both, bound by gluons
+* Baryons
+* Mesons
 
-Bosons 
-    named after Indian Physicist Satyendra Nath Bose
+Particles are divided into 
+
+    Fermions: building block of matter
+        wich form matter:
+            baryons
+                large-mass particules containing 3 quarks
+                - protons  2u 1d charge +1
+                - neutrons 1u 2d charge  0
+            leptons
+                don't feel the strong nuclear force
+                6 exists, only 2 are stable in ordinary matter:
+                    - electron, charge -1
+                    - neutrino, charge 0
+            quarks
+                feel the strong nuclear force
+                6 "flavours" exists, only 2 are stable in ordinary matter:
+                    - up
+                    - down
+                    Each can exist in any of 3 "colours"
+            
+    Bosons: force-carrier particles
+        gauge bosons: 
+            - gluon
+            - photon
+            - graviton ?
+            - W+ intermediate vector boson
+            - Higgs boson
+            - X-Boson ?
+        mesons
+            particules made of 1 quark + 1 antiquark
+            - pion: 1u + 1 anti-down  charge +1
+        named after Indian Physicist Satyendra Nath Bose
 
 
 # STANDARD MODEL OF PARTICLE PHYSICS
@@ -125,6 +158,11 @@ For the ultimate confirmation, this needs more data both from the Fermilab muon 
 ## FUNDAMENTALS FORCES
 
 ![](assets/books/sciences/physic/matter/fundamentals_forces.jpg)
+## FUNDAMENTALS STATES
+
+A Bose-Einstein Condensate (BEC) is often said to be a "fifth state of matter"
+- https://www.youtube.com/watch?v=lBpxQdikm0w
+
 
 # Articles
 

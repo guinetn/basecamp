@@ -59,6 +59,8 @@ information for how a document should be perceived, and rendered, by web technol
 </noscript>
 ```
 
+download(web/emmet.md)
+
 ## more
 - https://htmlhead.dev
 - https://www.w3schools.com/howto/howto_css_pricing_table.asp

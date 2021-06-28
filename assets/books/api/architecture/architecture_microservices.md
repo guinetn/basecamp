@@ -18,6 +18,8 @@ TYPICAL MICROSERVICE IS MADE OF:
  - data persistence
  - asynchronous operations
  - ...
+
+ https://itnext.io/how-to-build-an-event-driven-asp-net-core-microservice-architecture-e0ef2976f33f ***
 https://genekuo.medium.com/coding-a-simple-microservices-with-rust-3fbde8e32adc
 https://medium.com/tenable-techblog/building-a-microservice-with-rust-23a4de6e5e14
 

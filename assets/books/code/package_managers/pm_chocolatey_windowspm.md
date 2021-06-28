@@ -1,14 +1,16 @@
 # Chocolatey - automation on Windows
 
+Free Windows package manager allowing to create a software package and deploying it with the help of the tools you’ve already familiar with. This software management solution works with a wide range of Windows operating systems and cloud environments like Azure, and Amazon AWS.
+Chocolatey is empowered by NuGet and PowerShell technology. Created by Microsoft, NuGet is a framework developed for the purposes of bundling code into “packages.” Besides NuGet Chocolatey uses PowerShell (a cross-platform task automation and configuration management framework) to add some functionality that helps to install and update packages.
 
 chocolatey install packages here:
   C:\ProgramData\chocolatey\lib
 
 
-# Install chocolatey: https://chocolatey.org/install
-# Run PowerShell as admin
-# Get-ExecutionPolicy
-# Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+Install chocolatey: https://chocolatey.org/install
+Run PowerShell as admin
+Get-ExecutionPolicy
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 iwr https://chocolatey.org/install.ps1 -UseBasicParsing | iex
 
 https://chocolatey.org/install
@@ -19,24 +21,33 @@ https://chocolatey.org/install
    		Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
    Upgrade             → choco upgrade chocolatey
 http://chocolatey.org/packages
+https://en.wikipedia.org/wiki/Chocolatey
 
 a package manager for Windows
-# Decentralized framework for quickly installing applications and tools needed
-# Built on the NuGet infrastructure currently using PowerShell as its focus for
+Decentralized framework for quickly installing applications and tools needed
+Built on the NuGet infrastructure currently using PowerShell as its focus for
 delivering packages	from the distros to your door, err computer. It´s a fork of the NuGet gallery
 
-# A global PowerShell execution engine using the NuGet packaging infrastructure. Think of it as the
+A global PowerShell execution engine using the NuGet packaging infrastructure. Think of it as the
 ultimate automation tool for Windows.
-# A global silent installer for applications and tools. It can also do configuration tasks and anything
+A global silent installer for applications and tools. It can also do configuration tasks and anything
 that you can do with PowerShell. The power you hold with a tool like Chocolatey is only
 limited by your imagination!
 
-# You can develop your tools and applications with NuGet, and release them with Chocolatey! But Chocolatey
+You can develop your tools and applications with NuGet, and release them with Chocolatey! But Chocolatey
 is not just for .NET tools. It´s for nearly any Windows application/tool!
 
 install packages from?
 	By default it installs packages from both chocolatey.org and nuget.org.
 	That means you can install packages that don´t appear to exist on chocolatey.org
+
+
+ http://chocolatey.org/packages
+package manager for Windows. Decentralized framework for quickly INSTALLING APPLICATIONS AND TOOLS needed
+
+<CLI_command_line_interface.md>
+<PM__Package_Managers.md>
+<PM_Chocolatey_WindowsPM.md>
 
 
 # Difference Chocolatey / NuGet?
@@ -102,6 +113,7 @@ install packages from?
 	choco install console2
 	choco install phantomjs
 	choco install youtube-dl
+	choco install make
 	choco install cygwin
 	choco install mingw
 		MinGW ("Minimalistic GNU for Windows") is a collection of freely available and freely distributable Windows specific header files and import libraries combined with GNU toolsets that allow one to produce native Windows programs that do not rely on any 3rd-party C runtime DLLs. Gambit Scheme system, compiler and interpreter
@@ -174,3 +186,29 @@ Yeoman 1.1.2
 
 
 
+
+choco -?
+
+ * list - lists remote or local packages
+ * find - searches remote or local packages (alias for search)
+ * search - searches remote or local packages (alias for list)
+ * info - retrieves package information. Shorthand for choco search pkgname --exact --verbose
+ * install - installs packages from various sources
+ * pin - suppress upgrades for a package
+ * outdated - retrieves packages that are outdated. Similar to upgrade all --noop
+ * upgrade - upgrades packages from various sources
+ * uninstall - uninstalls a package
+ * pack - packages up a nuspec to a compiled nupkg
+ * push - pushes a compiled nupkg
+ * new - generates files necessary for a chocolatey package from a template
+ * sources - view and configure default sources (alias for source)
+ * source - view and configure default sources
+ * config - Retrieve and configure config file settings
+ * feature - view and configure choco features
+ * features - view and configure choco features (alias for feature)
+ * setapikey - retrieves, saves or deletes an apikey for a particular source (alias for apikey)
+ * apikey - retrieves, saves or deletes an apikey for a particular source
+ * unpackself - have chocolatey set itself up
+ * version - [DEPRECATED] will be removed in v1 - use `choco outdated` or `cup <pkg|all> -whatif` instead
+ * update - [DEPRECATED] RESERVED for future use (you are looking for upgrade, these are not the droids you are looking for)
+ 

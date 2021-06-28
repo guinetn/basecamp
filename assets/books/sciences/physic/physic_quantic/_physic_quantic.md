@@ -25,13 +25,13 @@ Niels Bohr a essayé de construire une interprétation physique rendant compte d
 Le cœur de la mécanique quantique repose sur l'utilisation d'amplitudes de probabilité pour caractériser tous les processus physiques possibles en mécanique quantique. Ce sont ces processus qui peuvent se propager sous forme d'onde, mais les grandeurs physiques associées à ces processus sont souvent quantifiées et donc discrètes. C'est le cas de l'énergie des électrons dans un atome.
 
 
+- https://www.quantamagazine.org/a-new-map-of-the-standard-model-of-particle-physics-20201022/
 - https://www.youtube.com/watch?v=gpEvv349Pyk
 [2D quantum mechanics simulator](https://www.bzarg.com/projects/)
 - https://www.youtube.com/watch?v=82W5yrqYVsc&t=570s
 - https://www.cea.fr/comprendre/Pages/physique-chimie/essentiel-sur-mecanique-quantique.aspx
 - https://www.futura-sciences.com/sciences/definitions/physique-mecanique-quantique-844/#xtor=EPR-58-[WE]-20210425-[DIV-Mecanique-quantique]
 - https://www.futura-sciences.com/sciences/actualites/physique-prix-wolf-recompense-alain-aspect-travaux-effet-epr-22551/
-
 
 download.page(sciences/physic/physic_quantic/boson_higgs.md)
 

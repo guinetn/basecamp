@@ -1,9 +1,9 @@
 from PIL import Image  #pip install pillow
-me = Image.open('images-me.png')   # use inpixio or remove.bg
-bg = Image.open('images-bg.jpg')
+me = Image.open('images-pillow-me.png')   # use inpixio or remove.bg
+bg = Image.open('images-pillow-bg.jpg')
 me.show()
 bg.paste(me, (0,0), me)
-bg.save('images_bg_added.jpg')
+bg.save('images-pillow_bg_added.jpg')
 
 
 # make a dark image a little beautiful by increasing its contrast

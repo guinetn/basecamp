@@ -17,6 +17,8 @@ WPF and WinForms applications
 - only run on Windows
 - are part of the Microsoft.NET.Sdk.WindowsDesktop 
 
+- https://docs.microsoft.com/en-us/windows/apps/
+- https://docs.microsoft.com/en-us/dotnet/desktop/wpf/overview/?view=netdesktop-5.0
 - https://github.com/dotnet/wpf
 - https://github.com/Microsoft/WPF-Samples
 - [good train](https://www.youtube.com/watch?v=oSeYvMEH7jc&t=1442s)

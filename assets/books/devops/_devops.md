@@ -3,6 +3,12 @@
 * Dev: people who create software
 * Ops: people who manage the software
 
+DevOps is all about:
+- culture
+- automation
+- monitoring metrics
+- sharing
+
 https://github.com/priximmo/sommaire-xavki-devops-fr
 
 Continually provide a high-value software product to the customer
@@ -101,6 +107,20 @@ Development Product
 Deployment
 Monitoring
 
+* Provisioning tools include:
+- Terraform - cloud agnostic
+- AWS Cloudformation AWS only
+- Pulumi - similar to Terraform but we can use Python, Go etc. instead of HCL DSL.
+
+* Configuration management tools include:
+- Chef - Ruby/Erlang, Knife, recipe, cookbook
+- Puppet - Ruby, Puppet manifests, Factor, catalog
+- Ansible - Python, Playbook, inventory
+- CFEngine
+- SaltStack - Python, YAML, Jinja2, salt master / salt minion
+- Fabric - Python
+
+
 ### 🔱 PROJECT MANAGEMENT = PLANNING/COLLABORATION
 
 Team ←→ company ←→ client communication, collaboration, planning.
@@ -186,4 +206,4 @@ Zendesk – Customer support software for better communication between end-users
 
 - https://dev.to/rahulku48837211/let-s-build-a-devops-project-4b65
 - https://roadmap.sh
- 
+- https://www.bogotobogo.com/DevOps/DevOps_Jenkins_Chef_Puppet_Graphite_Logstash.php

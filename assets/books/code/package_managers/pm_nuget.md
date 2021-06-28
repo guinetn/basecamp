@@ -1,5 +1,12 @@
 # NuGet
 
+Open platform for sharing finished code packages with .NET developers around the world.
+From DLLs to other content needed in the projects that consume these packages, the Microsoft-supported mechanism for sharing code is NuGet, which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles.
+
+Chocolatey is empowered by NuGet and PowerShell technology. Created by Microsoft, NuGet is a framework developed for the purposes of bundling code into “packages.” Besides NuGet Chocolatey uses PowerShell (a cross-platform task automation and configuration management framework) to add some functionality that helps to install and update packages.
+
+to include dev development libraries in apps. Chocolatey is a binary machine package manager.
+
 vs studio: Right-click solution → Manage Nuget packages
 
 C:\Users\[you]\AppData\Roaming\NuGet\NuGet.Config

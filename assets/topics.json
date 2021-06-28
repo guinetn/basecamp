@@ -13,7 +13,7 @@
   
   "biology":[], 
 
-  "blogs":["https://medium.com","https://guinetn.github.io","https://medium.com/younited-tech-blog","https://news.efinancialcareers.com/uk-en/en/advice"],
+  "blogs":["https://medium.com", "https://www.viget.com/", "https://guinetn.github.io","https://medium.com/younited-tech-blog","https://news.efinancialcareers.com/uk-en/en/advice"],
   
   "chrome":["chrome://bookmarks[copy]","chrome://flags[copy]","chrome://help[copy]","chrome://inspect[copy]","chrome://settings[copy]","chrome://version[copy]","chrome://extensions[copy]","chrome://gpu[copy]","chrome://histograms[copy]","chrome://indexeddb-internals[copy]","chrome://inspect[copy]","chrome://nacl[copy]","chrome://omnibox[copy]","chrome://tracing[copy]","https://www.chromestatus.com","https://www.chromestatus.com/samples","https://v8.dev","https://github.com/GoogleChrome","https://github.com/samdutton/samples","https://www.chromeexperiments.com","https://chrome.google.com/webstore/category/extensions(chrome web store)"],
   
@@ -44,7 +44,7 @@
   
   "documentation":["https://readthedocs.io"],
   
-  "dot_net":["https://www.c-sharpcorner.com","https://dotnet.microsoft.com","https://docs.microsoft.com/en-us/dotnet/core/introduction","https://dotnet.microsoft.com/learn","http://anthonygiretti.com", "https://www.youtube.com/channel/UCvtT19MZW8dq5Wwfu6B0oxw(YouTube DotNet)", "https://github.com/dotnet/maui"],
+  "dot_net":["https://docs.microsoft.com/en-us/windows/apps", "https://www.c-sharpcorner.com","https://dotnet.microsoft.com","https://docs.microsoft.com/en-us/dotnet/core/introduction","https://dotnet.microsoft.com/learn","http://anthonygiretti.com", "https://www.youtube.com/channel/UCvtT19MZW8dq5Wwfu6B0oxw(YouTube DotNet)", "https://github.com/dotnet/maui"],
   
   "electronic":["http://www.learningaboutelectronics.com"],
   
@@ -126,6 +126,8 @@
   
   "providers":["https://aws.amazon.com(Amazon Web Services AWS)","https://portal.azure.com(Microsoft Azure)","https://cloud.google.com(Google Cloud)","https://www.alibabacloud.com(Alibaba Cloud)","https://www.ibm.com/cloud(IBM Cloud)","https://www.oracle.com/cloud/(Oracle Cloud Infrastructure OCI)","https://www.salesforce.com(Salesforce)","https://www.sap.com(SAP)","https://www.rackspace.com/cloud(Rackspace Cloud)","https://www.vmware.com(VMWare)","https://www.confluent.io(Confluent)"],
   
+  "python":["https://www.bogotobogo.com/python/pytut.php"],
+  
   "react":["https://fireship.io/tags/react"  ],
 
   "regex":[],
@@ -152,6 +154,7 @@
   
   "web_online_tools":["https://fireship.io", "https://blog.webdevsimplified.com", "https://codepen.io/WebDevSimplified"],
   
-  "workflow":["https://www.pulumi.com(pulumi.com: Many clouds, one workflow)"]
+  "workflow":["https://www.pulumi.com(pulumi.com: Many clouds, one workflow)"],
+  "wpf": ["https://docs.microsoft.com/en-us/dotnet/desktop/wpf/overview/?view=netdesktop-5.0"]
   
   }

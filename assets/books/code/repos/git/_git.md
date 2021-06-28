@@ -150,6 +150,7 @@ download.page(code/repos/git/_git_submodules.md)
 download.page(code/repos/git/_git_lfs.md)
 
 download.page(code/repos/git/_git_internals.md)
+download.page(code/repos/git/_git_ops_.md)
 
 ## TOOLS
 
@@ -257,6 +258,8 @@ worktree
 - https://www.slideshare.net/slideshow/embed_code/39694335#
 - https://dzone.com/articles/reset-checkout-and-revert
 - https://www.mattjennings.net/git/revert-previous-commit-locally
+- https://medium.com/free-code-camp/how-to-use-git-efficiently-54320a236369
+- https://www.techwatching.dev/gitcheatsheet   to add
 
 ## SUBVERSION ←→ GIT
 

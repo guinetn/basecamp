@@ -4,7 +4,7 @@ https://redis.io/
 https://docs.nestjs.com/microservices/redis
 
 Fast key/value database: retrieved data if we know the exact key used to store it.
-Real time cache, sessions storage 
+Real time cache, sessions storage, ephemeral storage
 Data structure server
 
 Open source *in-memory data structure store*, used as a *database, cache, and message broker*

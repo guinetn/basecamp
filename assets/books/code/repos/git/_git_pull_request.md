@@ -1,4 +1,4 @@
-## PULL REQUEST	
+## PULL REQUEST	= Code Review
 
 Ask another developer to merge one of your branches into their repository.
 Makes it easier for project leads to keep track of changes

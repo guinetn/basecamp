@@ -13,3 +13,5 @@
 [H160 stab](https://www.youtube.com/watch?v=toCkrW2RlhA)
 ## Flights
 [Porte Versailles-CDG](https://www.youtube.com/watch?v=uCo25UwZ1gw&t=424s)
+
+[Helicopter Lessons In 10 Minutes or Less](https://www.youtube.com/channel/UCG13vqdYSapylJU53JD8yEQ)

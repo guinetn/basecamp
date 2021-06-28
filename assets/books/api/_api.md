@@ -17,6 +17,7 @@ It hides internals complexity
 First defined as documents/files identified by their URLs
 Today definition is much more generic and abstract, and includes every thing, entity, or action that can be identified, named, addressed, handled, or performed in any way on the Web. 
 
+curl https://api.openai.com/v1/engines/curie/completions
 
 
 ![](assets\books\api\assets\api-diagram.webp)
@@ -175,9 +176,7 @@ download.page(api/rest.md)
 ::::
 download.page(api/graphql.md)
 ::::   
-download.page(api/json.md)
-::::
-download.page(api/jsonp.md)
+download.page(api/serializing/_serializing.md)
 ::::
 download.page(api/grpc.md)
 ::::

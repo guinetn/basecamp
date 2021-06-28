@@ -1,7 +1,8 @@
 # GraphQL
 
-https://graphql.org/
-https://docs.nestjs.com/graphql/resolvers
+- https://graphql.org/
+- https://docs.nestjs.com/graphql/resolvers
+- https://blog.graphql.guide/the-graphql-spec-simplified-93005ce0671f
 
 powerful query language for APIs and a runtime for fulfilling those queries with your existing data. It's an elegant approach that solves many problems typically found with REST APIs. 
 

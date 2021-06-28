@@ -2,7 +2,48 @@
 # https://www.tutorialsteacher.com/python/python-read-write-file
 
 import os
-print(os.getcwd())
+print(os.getcwd())   # current working directory 
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
+print(dir_path)   # Full path to the directory a Python file is contained in
+
+img_path = os.path.join(dir_path, "park.jpg") 
+
+path = "/home"
+print(os.path.join(path, "User/Desktop", "file.txt"))  # Join various path components
+print(os.path.join(path, "Downloads", "file.txt", "/home")) # Join various path components
+# In above example '/User' and '/home' both represents an absolute path but '/home' is the last value 
+# # so all previous components before '/home' will be discarded and joining will continue from '/home'
+
+print(os.getcwd().split('\\')[-1])   
+
+'''
+The os and os.path modules.
+The __file__ constant
+os.path.realpath(path) (returns "the canonical path of the specified filename, eliminating any symbolic links encountered in the path")
+os.path.dirname(path) (returns "the directory name of pathname path")
+os.getcwd() (returns "a string representing the current working directory")
+os.chdir(path) ("change the current working directory to path")
+'''
+
+print("Path at terminal when executing this file")
+print(os.getcwd() + "\n")
+
+print("This file path, relative to os.getcwd()")
+print(__file__ + "\n")
+
+print("This file full path (following symlinks)")
+full_path = os.path.realpath(__file__)
+print(full_path + "\n")
+
+print("This file directory and name")
+path, filename = os.path.split(full_path)
+print(path + ' --> ' + filename + "\n")
+
+print("This file directory only")
+print(os.path.dirname(full_path))
+
+
 
 
 # Open a file
@@ -186,7 +227,7 @@ content = fd.write('YOUR CONTENT GOES HERE')
 # Creating Directories
 # You can create a new directory using mkdir function from os module like this:
 import os
- os.mkdir('./NewFolder)
+os.mkdir('./NewFolder')
 # This code will throw an error if the directory exists. Don’t worry, we will talk about exception handling in future posts so you can avoid such errors.
 
 
@@ -219,59 +260,59 @@ import os
 import time 
 st=os.stat(Filename) 
 Age=(time.time()-st.st_mtime) 
-print Age
+print(Age)
 
 import time, os, stat
 def file_age_in_seconds(pathname):
     return time.time() - os.stat(pathname)[stat.ST_MTIME]
 
 
-    from datetime import *
-    import time, os, stat
-    from os.path import join
-    from tkinter import *
+from datetime import *
+import time, os, stat
+from os.path import join
+from tkinter import *
 
 
-    def modification_date(filename):
-        t = os.path.getmtime(filename)
-        return t
+def modification_date(filename):
+    t = os.path.getmtime(filename)
+    return t
 
-    def creation_date(filename):
-        t = os.path.getctime(filename)
-        return t
+def creation_date(filename):
+    t = os.path.getctime(filename)
+    return t
 
-    def file_age_in_seconds(pathname):
-        age = time.time() - os.stat(pathname)[stat.ST_MTIME]
-        print(pathname + " age=" + str(age/60))
-        return age
+def file_age_in_seconds(pathname):
+    age = time.time() - os.stat(pathname)[stat.ST_MTIME]
+    print(pathname + " age=" + str(age/60))
+    return age
 
-    # -ctime n File's status was last changed n*24 hours ago.
-    # -mtime n File's data was last modified n*24 hours ago.    
-    # /path/to/device/ + /dcim/camera
-    src = r'Ce PC\Galaxy S5\Phone\DCIM\Camera'
-    src = r'C:\Users\guine\Pictures'
-
-
-    def files_before(root, files, min):        
-        return filter(lambda f: file_age_in_seconds(join(root, f)) < min*60, files)
-
-    #def files_after(files, min):
-    #    lower_time_bound = datetime.datetime.now() - timedelta(minutes=min)
-    #    return filter(lambda f: datetime.datetime.fromtimestamp(os.path.getmtime(f)) > lower_time_bound, files)
-
-    for root, dirs, files in os.walk(src):
-        for name in files_before(root, files, 60):
-            print(join(root, name), modification_date(join(root, name)), creation_date(join(root, name)))
-    #for root, dirs, files in os.walk(src):
-    #    for name in files:
+# -ctime n File's status was last changed n*24 hours ago.
+# -mtime n File's data was last modified n*24 hours ago.    
+# /path/to/device/ + /dcim/camera
+src = r'Ce PC\Galaxy S5\Phone\DCIM\Camera'
+src = r'C:\Users\guine\Pictures'
 
 
-    window = Tk()
-    window.title("Welcome to LikeGeeks app")
-    window.mainloop() # calls the endless loop of the window, so the window will wait for any user interaction till we close it.
-              # If you forget to call the mainloop function, nothing will appear to the user.
+def files_before(root, files, min):        
+    return filter(lambda f: file_age_in_seconds(join(root, f)) < min*60, files)
 
-    # https://stackoverflow.com/questions/11868148/getting-files-in-a-directory-modified-within-a-date-range-in-linux-using-python          
+#def files_after(files, min):
+#    lower_time_bound = datetime.datetime.now() - timedelta(minutes=min)
+#    return filter(lambda f: datetime.datetime.fromtimestamp(os.path.getmtime(f)) > lower_time_bound, files)
+
+for root, dirs, files in os.walk(src):
+    for name in files_before(root, files, 60):
+        print(join(root, name), modification_date(join(root, name)), creation_date(join(root, name)))
+#for root, dirs, files in os.walk(src):
+#    for name in files:
+
+
+window = Tk()
+window.title("Welcome to LikeGeeks app")
+window.mainloop() # calls the endless loop of the window, so the window will wait for any user interaction till we close it.
+            # If you forget to call the mainloop function, nothing will appear to the user.
+
+# https://stackoverflow.com/questions/11868148/getting-files-in-a-directory-modified-within-a-date-range-in-linux-using-python          
 
 https://stackoverflow.com/questions/11868148/getting-files-in-a-directory-modified-within-a-date-range-in-linux-using-python
 

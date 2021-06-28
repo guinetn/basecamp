@@ -73,7 +73,7 @@ xs = "{:3.2}".format(x)   # → 123.46
 		program ='python'
 		print('Hello %s! This is %s.'%(name,program))
 
-	Escaping percent sign
+	Escaping percent sign with %%
 	test = "have it break"
 	selectiveEscape = "Print percent %% in sentence and not %s" % test
 	print selectiveEscape

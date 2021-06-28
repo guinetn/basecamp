@@ -98,8 +98,14 @@ System.Console.WriteLine(s2); // abcz
 - Where
 - Zip
 
+## LINQPad
+
+- https://www.linqpad.net
+
+To query databases using LINQ modern programming language. LINQPad provides an opportunity to try out code lines and test snippets or programs. You can also take advantage of output formatting, optional autocompletion, and integrated debugging.
+LINQPad is a completely free tool. 
+
 ## More
 
-- https://www.linqpad.net/
 - https://www.ezzylearning.net/tutorial/introduction-to-language-integrated-query-linq
 - https://intellitect.com/notes-on-some-c-3-0-features-that-make-linq-possible/

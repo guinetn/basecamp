@@ -16,6 +16,8 @@
 - https://jupyter.org	
 
 
+📌 https://www.bogotobogo.com/python/pytut.php
+
 * Interpreted  
 Unlike native languages like C/C++, Python code gets interpreted at runtime instead of being compiled to native code at compile time.
 * Just In Time (JIT) Compiler
@@ -264,20 +266,20 @@ call with arguments
 
 # DEBUG
 
-	 
-	 http://sametmax.com/debugger-en-python-les-bases-de-pdb/
-	 import pdb; pdb.set_trace()
-	 relancez votre programme depuis une console.
-	 L’exécution du programme va alors se figer, et dans la console vous aurez accès à un shell special: Pdb
 
-	 COMMENT TRANSFÉRER DES FICHIERS TRÈS RAPIDEMENT ENTRE DEUX PCS DISTANTS ?
-		.Sans forcément partager le répertoire
-		. Lancez un serveur local Python qui servira les fichiers de manière statique :
-		Python 2 : python -m SimpleHTTPServer
-		Python 3 : python3 -m http.server
-		Et à distance, tapez l’URL du PC sur lequel tourne le serveur, et hop, vous pouvez récupérer ce que vous voulez !
+http://sametmax.com/debugger-en-python-les-bases-de-pdb/
+import pdb; pdb.set_trace()
+relancez votre programme depuis une console.
+L’exécution du programme va alors se figer, et dans la console vous aurez accès à un shell special: Pdb
 
-		
+COMMENT TRANSFÉRER DES FICHIERS TRÈS RAPIDEMENT ENTRE DEUX PCS DISTANTS ?
+.Sans forcément partager le répertoire
+. Lancez un serveur local Python qui servira les fichiers de manière statique :
+Python 2 : python -m SimpleHTTPServer
+Python 3 : python3 -m http.server
+Et à distance, tapez l’URL du PC sur lequel tourne le serveur, et hop, vous pouvez récupérer ce que vous voulez !
+
+
 
 
 # What is Python

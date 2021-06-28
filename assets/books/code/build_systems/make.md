@@ -1,4 +1,32 @@
 # Make
+
+## install
+
+build executable programs and libraries from source code.
+
+make is a GNU command so the only way you can get it on Windows is installing a Windows version like the one provided by GNUWin32. Anyway, there are several options for getting that:
+The most simple choice is using Chocolatey. First you need to install this package manager. Once installed you simlpy need to install make (you may need to run it in an elevated/admin command prompt) :
+>choco install make
+
+Other recommended option is installing a Windows Subsystem for Linux (WSL/WSL2), so you'll have a Linux distribution of your choice embedded in Windows 10 where you'll be able to install make, gccand all the tools you need to build C programs.
+
+## make vs cmake
+
+They take a bunch of C/C++ files and turn them into a binary.
+
+https://stackoverflow.com/questions/25789644/difference-between-using-makefile-and-cmake-to-compile-the-code
+Make (or rather a Makefile) is a buildsystem - it drives the compiler and other build tools to build your code.
+
+CMake is a generator of buildsystems. It can produce Makefiles, it can produce Ninja build files, it can produce KDEvelop or Xcode projects, it can produce Visual Studio solutions. From the same starting point, the same CMakeLists.txt file. So if you have a platform-independent project, CMake is a way to make it buildsystem-independent as well.
+
+
+
+Make is invoked with a list of target file names to build as command-line arguments:
+>make TARGET [TARGET ...]
+Without arguments, make builds the first target that appears in its makefile, traditionally named 'all'
+
+
+
 rules + dependencies
 
 targets: prerequisites (dependencies)

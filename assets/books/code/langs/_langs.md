@@ -34,6 +34,8 @@ download.page(code/langs/comments.md)
 ::::
 download.page(code/langs/assembler.md)
 ::::
+download.page(code/langs/b4j/_b4j.md)
+::::
 download.page(code/langs/c/_c.md)
 ::::
 download.page(code/langs/c++/_c++.md)
@@ -42,7 +44,7 @@ download.page(code/langs/elm.md)
 ::::
 download.page(code/langs/erlang.md)
 ::::
-download.page(code/langs/go.md)
+download.page(code/langs/go/_go.md)
 ::::
 download.page(code/langs/haskell.md)
 ::::
@@ -60,7 +62,7 @@ download.page(code/langs/ring.md)
 ::::
 download.page(code/langs/ruby.md)
 ::::
-download.page(code/langs/rust.md)
+download.page(code/langs/rust/_rust.md)
 ::::
 download.page(code/langs/scala.md)
 ::::

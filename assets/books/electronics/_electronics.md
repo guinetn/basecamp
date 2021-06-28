@@ -2,6 +2,7 @@
 
 download.page(electronics/components/_components.md)
 download.page(electronics/robotics/_robotics.md)
+download.page(electronics/numerical_electronic.md)
 
 - https://www.nextpcb.com
 - https://www.circuitstoday.com

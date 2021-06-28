@@ -70,6 +70,10 @@ Every time you will add a new migration using the Add-Migration command, a new f
 
 On the database server, EF creates a ***__EFMigrationsHistory table*** to keep track of all the migrations already ran against the database.
 
+## SAMPLES
+
+https://itnext.io/how-to-build-an-event-driven-asp-net-core-microservice-architecture-e0ef2976f33f
+
 ## CODE FIRST SAMPLE
 
 Entities: Product, Customer, Order, ProductOrders, Entities relationships 

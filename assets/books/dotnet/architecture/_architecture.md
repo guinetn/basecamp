@@ -5,6 +5,7 @@ Net Framework has 2 major parts:
 • FCL - Framework class library
    
 download.page(dotnet/architecture/clr.md)
+download.page(dotnet/architecture/cil.md)
 download.page(dotnet/architecture/bcl.md)
 download.page(dotnet/architecture/fcl.md)
 

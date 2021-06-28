@@ -1,15 +1,21 @@
 # C
 
-C is a low-level (high-level compared to assembly of course) language, which lets you have total control over MCUs and memory, leading to need for manual memory management. Also, C is not a type-safe language
+Low-level programming language (high-level compared to assembly) which lets you have total control over MCUs and memory, leading to need for manual memory management.  
 As it resides at the lowest level of abstraction C is largely used to code 
 - device firmware
 - device drivers
 - kernel
+Procedural language  
+C is not a type-safe language  
+Developed by Dennis Ritchie  
 
 # C SAMPLES
 download.slideshow(assets/books/code/langs/c/code_samples/c01.md)
 
 ***Keypoints***  
+
+Compiled languages: PREPROCESSED → COMPILED → ASSEMBLED → LINKED
+
 - Variable Declarations
 - Definitions and Scope
 - Data Types
@@ -22,9 +28,21 @@ download.slideshow(assets/books/code/langs/c/code_samples/c01.md)
 - Functions
 - Pointers
 
-Compiled languages: preprocessed → compiled → assembled → linked
+## C Tokens
+smallest individual units in a program  
+- identifiers: user defined names 
+- keywords: language instructions
+- constants: values wich don't change
+- strings: sequence of characters
+- operators
+   math. + - * / ++ --
+   logical  && || !
+   relational   == >= <=
+- special symbols: preprocessor directive (#)
 
-add: - [Hash Table in C]https://www.yo utube.com/watch?v=2Ti5yvumFTU&t=1040s
+
+
+add: - [Hash Table in C](https://www.yo utube.com/watch?v=2Ti5yvumFTU&t=1040s)
 
 download.page(code/langs/c/c_libs/_c_libs.md)
 download.page(code/langs/c/ccompilers/_ccompilers.md)
@@ -32,25 +50,58 @@ download.page(code/langs/c/ccompilers/_ccompilers.md)
 
 ### MOST USED HEADER FILES
 
-stdio.h	This is standard input/output header file in which Input/Output
-functions are declared
-conio.h	This is console input/output header file
-string.h	All string related functions are defined in this header file
-stdlib.h	This header file contains general functions used in C programs
-math.h	All maths related functions are defined in this header file
-time.h	This header file contains time and clock related functions
-ctype.h	All character handling functions are defined in this header file
-stdarg.h	Variable argument functions are declared in this header file
-signal.h	Signal handling functions are declared in this file
-setjmp.h	This file contains all jump functions
-locale.h	This file contains locale functions
-errno.h	Error handling functions are given in this file
-assert.h	This contains diagnostics functions
+| stdio.h | Standard input/output header file in which Input/Output functions are declared|
+|---|---|
+| conio.h | This is console input/output header file |
+| string.h | All string related functions are defined in this header file |
+| stdlib.h | This header file contains general functions used in C programs |
+| math.h | All maths related functions are defined in this header file |
+| time.h | This header file contains time and clock related functions |
+| ctype.h | All character handling functions are defined in this header file |
+| stdarg.h | Variable argument functions are declared in this header file |
+| signal.h | Signal handling functions are declared in this file |
+| setjmp.h | This file contains all jump functions |
+| locale.h | This file contains locale functions |
+| errno.h | Error handling functions are given in this file |
+| assert.h | This contains diagnostics functions |
+
 https://fresh2refresh.com/c-programming/c-function/c-library-functions/
 
 
-## MEMORY
+## User input/Output
+printf(), scanf(=
+getchar(), putchar()
+gets(), puts()
 
+Format strings
+Abrev. | Data type
+---|---
+%d | integer
+%f | floating point
+%c | character
+%s | string
+
+## DATA TYPES
+
+* Primitive Types
+void 
+int
+bool
+char
+floating point
+double
+
+* Derived Types
+Array
+References
+Pointer
+
+* Used defined Types
+Struct
+Union
+Enum
+
+## MEMORY
 
 C/C++ interact with your memory in a low-level way with stdlib (malloc, calloc, free). Sometimes this creates a lot of problems you didn’t get before: segfaults. 
 

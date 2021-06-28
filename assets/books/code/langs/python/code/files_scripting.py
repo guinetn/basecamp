@@ -1,5 +1,5 @@
 
-for filename in `.*`:
+for filename in '.*':
     print(filename)
         
     

@@ -7,6 +7,7 @@ git help config
 git <cmd> -h 							help
 
 download.page(code/repos/git/init.md)
+download.page(code/repos/git/flow.md)
 download.page(code/repos/git/clone.md)
 
 ## SAVE CHANGES

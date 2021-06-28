@@ -30,4 +30,7 @@ queues: Defines general settings for queues
     - qosPrefetchSize: Allows you to limit the number of unacknowledged messages on a channel (or connection) when consuming (aka “prefetch count”). Default count is 1.
 
 
+## more
+
+- https://itnext.io/how-to-build-an-event-driven-asp-net-core-microservice-architecture-e0ef2976f33f
 - https://paramore.readthedocs.io/en/latest/RabbitMQConfiguration.html

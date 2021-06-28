@@ -1,5 +1,6 @@
 # TESTING
 
+
 ## Testing
 Executing the software with data to ensure that the software works correctly.
 ## Unit testing
@@ -8,6 +9,11 @@ Testing by the developer.
 Testing during the integration of the software.
 ## System testing
 Testing software in an environment that matches the operational environment.
+
+## Behavior testing
+
+## E2E testing
+
 ## Alpha testing
 Testing by the customer at the developer’s site.
 ## Beta testing

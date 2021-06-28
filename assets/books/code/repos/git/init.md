@@ -23,4 +23,6 @@ git init --bare `directory`	Initialize an empty Git repository, but omit the wor
 							* edit files and commit changes in that repository.
 							* a storage facility and not a development environment
 
+See also
+>git flow init
 

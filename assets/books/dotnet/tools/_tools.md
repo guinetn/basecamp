@@ -8,6 +8,10 @@ download.page(dotnet/tools/decompilers/il.md)
 ::::
 download.page(dotnet/tools/resgen.md)
 ::::
+download.page(dotnet/tools/ndepend.md)
+::::
+download.page(dotnet/tools/ncrunch.md)
+::::
 download.page(dotnet/tools/mef.md)
 ::::
 download.page(dotnet/tools/nuget.md)
@@ -34,5 +38,7 @@ download.page(dotnet/tools/wsdl_svcutil.md)
 download.page(dotnet/tools/interop.md)
 ::::
 download.page(dotnet/tools/clickonce.md)
+::::
+download.page(dotnet/tools/resharper.md)
 ::::
 

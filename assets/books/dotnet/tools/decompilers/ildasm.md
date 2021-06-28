@@ -6,15 +6,28 @@ Available in Visual Studio and .NET SDK.
 C# compiler converts C# code to CIL code (common intermediate language) and not to machine code
 The processor can directly understand machine code, but CIL code needs to be converted before the processor can execute it.
 
+- showing the namespaces, types, members contained in a given assembly
+- view the CIL instructions 
+
+
+Intermediate Language Disassembler utility (ildasm.exe), which ships with the .NET Framework 3.5 SDK, allows us to load up any .NET assembly and investigate its contents including the associated manifest, CIL code, and any type metadata.
+
+To load (ildasm.exe): 
+- open a Visual Studio command prompt -> type ildasm -> Enter.
+- proceed to the File -> Open menu command -> Navigate to an assembly to explore
+- view the type metadata for the currently loaded assembly by pressing Ctrl+M
+
 ### use ildasm with a .NET Core project
 
-mkdir HelloWorld; cd HelloWorld
+mkdir HelloWorld
+cd HelloWorld
 dotnet new console
 Add a package reference to the project for dotnet-ildasm (the latest version)
 dotnet add package dotnet-ildasm -v "*"
 In HelloWorld.csproj, replace 'PackageReference' node with 'DotNetCliToolReference'
 (type .\HelloWorld.csproj) -replace '<PackageReference Include="dotnet-ildasm"','<DotNetCliToolReference Include="dotnet-ildasm"' | Set-Content -Path .\HelloWorld.csproj
 dotnet restore         Will download the package
+
 At this point, dotnet should have a new verb `ildasm`, that you can use to extract the CIL from your assembly as text
 
 >dotnet ildasm .\bin\Debug\netcoreapp2.0\HelloWorld.dll -t
@@ -50,6 +63,6 @@ Finalize() cil managed
 } // end of method Class1::Finalize
 
 
-
-
 ## more
+
+- https://www.bogotobogo.com/CSharp/.netframework.php

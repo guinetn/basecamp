@@ -254,3 +254,5 @@ download.page(web/js/javascript_ES2019_ES10.md)
 download.page(web/js/javascript_ES2020_ES11.md)            
 ::::
 download.page(web/js/typescript.md)            
+::::
+download.page(web/js/javascript_debugging.md)            

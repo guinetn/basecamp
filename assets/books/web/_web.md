@@ -32,4 +32,6 @@ download.page(web/automation.md)
 download.page(web/testing.md)
 ::::
 download.page(web/web-analytics.md)
+::::
+download.page(web/seo/_seo.md)
 

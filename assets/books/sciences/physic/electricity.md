@@ -66,3 +66,6 @@ r = 0.001 m
 F = =2.872426⋅10^−24 N
 
 ⁰¹²³⁴⁵⁶⁷⁸⁹   10─¹⁹
+
+
+https://www.cantorsparadise.com/unorthodox-lecture-the-electric-current-7fba50e3bc1a

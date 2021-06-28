@@ -28,6 +28,8 @@ download.page(code/testing/_testing.md)
 ::::
 download.page(code/testing/_mocking.md)
 ::::
+download.page(code/debuggers/_debuggers.md)
+::::
 download.page(code/langs/_langs.md)
 ::::
 download.page(code/scheduling.md)

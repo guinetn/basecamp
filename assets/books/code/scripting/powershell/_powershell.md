@@ -1,4 +1,6 @@
 # Dotnet - Powershell
+ 
+Cross-platform task automation and configuration management framework
 
 https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1
 https://www.educba.com/powershell-string-replace/?source=leftnav

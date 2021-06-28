@@ -9,6 +9,9 @@
 
 Get the latest version of Rust: rustup update
 
+# RUST SAMPLES
+download.slideshow(assets/books/code/langs/rust/code_samples/rust01.md)
+
 ```rust
 fn main() {
     let v = vec![1,2,3,4,5];    

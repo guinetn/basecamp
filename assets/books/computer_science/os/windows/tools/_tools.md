@@ -1,7 +1,5 @@
 ## Windows Tools
 
-download.page(computer_science/os/windows/tools/package_managers.md)
-::::
 download.page(computer_science/os/windows/tools/controlpanel.md)
 download.page(computer_science/os/windows/tools/mmc.md)
 download.page(computer_science/os/windows/tools/eventlog/_eventlog.md)

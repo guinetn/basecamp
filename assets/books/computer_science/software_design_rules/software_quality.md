@@ -2,9 +2,13 @@
 
 Series of practices for our teams to follow in order to assure a high-quality process and, in the end, a high-qualityâ€¯product.
 
+1.Clear Requirements
+2.Regular Code Reviews
 ### Key Ingredients
 
-
+Code Quality Metrics 
+Qualitative Code Quality Metrics
+Quantitative Code Quality Metrics
 #### strong quality assurance process = quality
 
 This save both money and time and to create a stable and competitive product
@@ -20,7 +24,7 @@ reliable documentation
 
 * Make client aware of all the efforts made for assuring the quality of the production
 
-#### Developmentâ€¯ 
+#### Development
 
 * security 
    constantly have in mind
@@ -31,7 +35,7 @@ reliable documentation
     code analyzing tools (Sonar)
     repositories: well-established workflows
         
-#### TESTINGâ€¯ 
+#### TESTING
 
 Performed for every level in the development cycle: 
 - unit
@@ -47,7 +51,7 @@ Automation testing
     increase the efficiency of the testing process
     reduce the time spent on regression
 
-#### Operabilityâ€¯ 
+#### Operability
     
     assures a high quality of the product and services after the development has finished and the application is used in real life.
 
@@ -55,7 +59,7 @@ Automation testing
     well-structured logging systems to investigate issues
     monitoring system sending signals whenever a problem appears (Apache Airflow to schedule and monitor workflows)
     
-#### Data securityâ€¯ 
+#### Data security
 
     care about privacy and confidentiality = rules to follow when it comes to data
     - use dummy data on the development environments
@@ -65,3 +69,10 @@ Automation testing
 
 #### RESULTS
 Gain client recommendations
+
+
+How to Improve Code Quality
+1. Use a Coding Standard
+2. Analyze Code — Before Code Reviews
+3. Follow Code Review Best Practices
+4. Refactor Legacy Code
