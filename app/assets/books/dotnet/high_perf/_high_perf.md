@@ -16,6 +16,8 @@ download.page(dotnet/high_perf/zero_copy.md)
 download.page(dotnet/high_perf/struct_of_arrays.md)
 download.page(dotnet/high_perf/stack_based_data.md)
 download.page(dotnet/high_perf/buffered_builder.md)
+download.page(dotnet/high_perf/threadpool_starvation.md)
+download.page(dotnet/high_perf/perf_best_practices.md)
 
 download.page(dotnet/high_perf/io.pipelines.md)
 

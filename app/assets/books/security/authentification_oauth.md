@@ -24,3 +24,5 @@ OAuth (authentication and authorization) is a common API security solution becau
 5. The OAuth provider validates the token and returns it to the API service.
 6. The API service, having determined this is a valid token for this request, returns the requested resource response that the client application asked for in Step 3.
 
+
+- https://aqueduct.io/docs/auth/what_is_oauth/

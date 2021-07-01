@@ -41,3 +41,4 @@ IJSRuntime
 - https://medium.com/younited-tech-blog/localization-of-a-blazor-component-2178aa855ded
 - https://medium.com/@ankitsharmablog/how-to-perform-crud-operations-using-blazor-and-google-cloud-firestore-52890b06e2f8
 - https://andrewlock.net/using-source-generators-to-generate-a-nav-component-in-a-blazor-app/
+- https://devblogs.microsoft.com/aspnet/building-contextual-experiences-w-blazor/

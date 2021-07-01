@@ -1,0 +1,3 @@
+## MATLAB 
+
+a numerical computing environment that was developed by MathWorks in 1984. It contains the Computer Vision Toolbox which provides various algorithms and functions for computer vision. These include object detection, object tracking, feature detection, feature matching, camera calibration in 3-D, 3D reconstruction, etc. You can also create and train custom object detectors in MATLAB using machine learning algorithms such as YOLO v2, ACF, Faster R-CNN, etc. These algorithms can also be run on multicore processors and GPUs to make them much faster. The MATLAB toolbox algorithms support code generation in C and C++

@@ -7,6 +7,8 @@ download.page(code/editors/vscode.md)
 download.page(code/editors/st3.md)
 ::::
 download.page(code/editors/vi.md)
+::::
+download.page(code/editors/rider.md)
 
 
 ### CodeShare

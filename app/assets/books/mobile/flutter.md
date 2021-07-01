@@ -1,37 +1,162 @@
-# Flutter
+# Flutter framework
+
+https://flutter.dev
+https://flutter.dev/docs/development/ui/widgets
+
+- Single Codebase = cross-platform
+- Brilliant Code and App Testing
+- ‘Hot’ Features enhance productivity and fix the problems on time.
+- Suitable for MVP (Minimum Viable Product)
+- All is Widgets (build() + state): fonts, navigation, scrolling...
+- Google Dart easy Programing Language (web, desktop, server applications)
+- 
 
 # Quick
+
+>flutter --version
+Flutter 2.2.0 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision b22742018b (7 weeks ago) • 2021-05-14 19:12:57 -0700
+Engine • revision a9d88a4d18
+Tools • Dart 2.13.0
+
+>TRY SAMPLES IN BROWSER at https://flutter.dev/
+>EASY CREATION
+	>flutter create --sample=material.TabBar.1 mysample     Tabs app...
+
+
+
 >flutter create app01    Your application code is in app01\lib\main.dart
 >cd app01
->flutter run 			 Have your phone connected
+>flutter run 			 Have your phone connected...else it will ask you to choose one: chrome..edge
 Launching lib\main.dart on SM A105FN in debug mode...
 Running Gradle task 'assembleDebug'... Done                       211,3s
 √  Built build\app\outputs\flutter-apk\app-debug.apk
 Installing build\app\outputs\flutter-apk\app.apk...
-
-View on 
-- phone
-- Flutter dev tools
-	http://127.0.0.1:9101?uri=http%3A%2F%2F127.0.0.1%3A56486%2FOJgOrCe-DB0%3D%2F
-
-Syncing files to device SM A105FN...                               577ms
-
-Flutter run key commands.
-r Hot reload.
-R Hot restart.
-h Repeat this help message.
-d Detach (terminate "flutter run" but leave application running).
-c Clear the screen
-q Quit (terminate the application on the device).
-
- Running with sound null safety
-
+	Flutter run key commands.
+		r Hot reload.
+		R Hot restart.
+		h Repeat this help message.
+		d Detach (terminate "flutter run" but leave application running).
+		c Clear the screen
+		q Quit (terminate the application on the device).
+	
+Flutter dev tools
 An Observatory debugger and profiler on SM A105FN is available at: http://127.0.0.1:56486/OJgOrCe-DB0=/
+http://127.0.0.1:9101?uri=http%3A%2F%2F127.0.0.1%3A56486%2FOJgOrCe-DB0%3D%2F
 Lost connection to device
 
 
 
 
+
+
+
+https://flutter.dev/
+
+Google's UI toolkit for building beautiful, natively compiled applications for mobile, web, desktop, and embedded devices from a single codebase.
+Flutter's built-in 
+- rich motion APIs
+- smooth natural scrolling11
+- platform awareness
+- Widgets: beautiful Material Design and Cupertino (iOS-flavor). 
+	[Browse widgets](https://flutter.dev/docs/development/ui/widgets)
+	* Accessibility
+	* Animation and Motion
+	* Assets, Images, and Icons
+	* Async
+	* Basics
+	* Cupertino (iOS-style widgets)
+	* Input
+	* Interaction Models
+		InteractiveViewer: pan & zoom (when img too big...)
+		https://flutter.dev/docs/development/ui/widgets/interaction
+	* Layout
+	* Material Components      Docs → Widget catalog → material components
+
+		Widgets:build() + [state]
+			https://codelabs.developers.google.com/codelabs/first-flutter-app-pt1#4
+			Dans Flutter, pratiquement tout est un widget, y compris l'alignement, la marge intérieure et la mise en page.
+			Un widget = fournir une méthode build() qui décrit comment afficher le widget en fonction d'autres widgets de niveau inférieur.
+			Les widgets sans état sont immuables
+			Les widgets avec état conservent leur état (state) pendant leur durée de vie
+			StatefulWidget 
+				- immuable, peut être supprimé et généré à nouveau mais l'objet State persiste pendant la durée de vie du widget.
+				- crée à son tour une instance d'une classe State
+
+	 	Material Design 
+		 	https://material.io/design/
+			https://material.io/design/introduction
+		 	Langage visuel standard sur mobile et sur le Web. Flutter offre une large gamme de widgets Material Design.
+			Design system created by Google to help teams build high-quality digital experiences for Android, iOS, Flutter, and the web.
+			
+			* Material Theming 
+				makes it easy to customize Material Design to match the look and feel of your brand
+			* Material Components 
+			are interactive building blocks for creating a user interface, and include a built-in states system to communicate focus, selection, activation, error, hover, press, drag, and disabled states. Component libraries are available for Android, iOS, Flutter, and the web.
+			- Display
+			- Navigation
+			- Actions
+			- Input
+			- Communication: snackbars, banners, dialogs
+
+		https://flutter.dev/docs/development/ui/widgets/material
+		- Appbar
+		- BottomNavigationBar
+		- Drawer
+		- MaterialApp
+		- Scaffold
+		- SliverAppBar
+		- TabBar                flutter create --sample=material.TabBar.1 mysample
+		- TabBarView
+		- TabController
+		- TabPageSelector
+		- WidgetsApp
+		- DropdownButton
+		- ElevatedButton
+		- FloatingActionButton
+		- IconButton
+		- OutlinedButton
+		- PopupMenuButton
+		- TextButton
+		- Checkbox
+		- Date & Time Pickers
+		- Radio
+		- Slider
+		- Switch
+		- TextField
+		- AlertDialog
+		- BottomSheet
+		- ExpansionPanel
+		- SimpleDialog
+		- SnackBar
+		- Card
+		- Chip
+		- CircularProgressIndicator
+		- DataTable
+		- GridView
+		- Icon
+		- Image
+		- LinearProgressIndicator
+		- Tooltip
+		- Divider
+		- ListTile
+		- Stepper
+	* Painting and effects
+	* Scrolling
+	* Styling
+	* Text
+	[Widgets you absolutely need to know before building your first Flutter app](https://flutter.dev/docs/development/ui/widgets/basics)
+
+* Flutter 
+is a framework for cross-platform (Android and iOS) mobile development which uses Dart programming language 
+Flutter solves a specific problem, it’s a UI framework. 
+* Kotlin 
+is a programming language that compiles to JVM, JavaScript and native code
+Kotlin is a general purpose programming language. Based on that, learning Kotlin will give you more benefits.
+
+
+
+Flutter is a great cross-platform framework from Google that can be used to build applications for mobile, desktop, and web platforms. Officially released in December of 2018, it took barely a year to gain more popularity than React Native on both GitHub and Stack Overflow
 
 Compiles to machine code while coming with its own render engine. This promises a consistent cross-platform user experience as well as good performance. Neither Ionic nor React Native can compete with this.
 Flutter projects are written in Dart, a language more or less unique to Flutter development. Dart is a pretty modern language, too, and it fits mobile development quite well.
@@ -135,6 +260,7 @@ https://medium.com/swlh/flutter-and-fuchsia-the-death-of-react-android-a34f6d12b
 		is a programming language that compiles to JVM, JavaScript and native code
 		Kotlin is a general purpose programming language. Based on that, learning Kotlin will give you more benefits.
 
+
 	You can design and develop Native Looking Apps using Flutter SDK using Dart Programming language.
 	You can develop server side apps in Kotlin also.
 	Kotlin team is also working on iOS app development using Kotlin/Native.
@@ -163,11 +289,11 @@ https://morioh.com/p/d94ec1c92875   Flutter Tutorial for Beginners 2020 - Build 
 
 # install
 
-	https://flutter.dev/docs/get-started/install/windows
-	* Extract the zip Flutter SDK in, for example, C:\src\flutter (do not install in C:\Program Files\ that requires elevated privileges)
-	* Set your Flutter Path environment variable, preferably permanently.
-		For Windows, you can enter the following command 	setx path "%path%;c:\flutter\bin\"
-		For MacOS and Linux, you will want to open or create $HOME/.bash_profile and add this line export PATH=/usr/local/flutter/bin:$PATH
+https://flutter.dev/docs/get-started/install/windows
+* Extract the zip Flutter SDK in, for example, C:\src\flutter (do not install in C:\Program Files\ that requires elevated privileges)
+* Set your Flutter Path environment variable, preferably permanently.
+	For Windows, you can enter the following command 	setx path "%path%;c:\flutter\bin\"
+	For MacOS and Linux, you will want to open or create $HOME/.bash_profile and add this line export PATH=/usr/local/flutter/bin:$PATH
 
 # You are now ready to run Flutter commands in the Flutter Console!
 
@@ -285,6 +411,7 @@ Open pubspec.yaml
 Add the url_launcher dependency: ...
 shared_preferences: 2.0.5
 >flutter pub get
+>flutter packages get
 
 
 * shared_preferences
@@ -309,6 +436,8 @@ shared_preferences: 2.0.5
 ## MORE
 
 - https://www.didierboelens.com/
+- https://www.didierboelens.com/2018/06/web-sockets-build-a-real-time-game/
+
 - https://levelup.gitconnected.com/writing-a-flutter-starter-application-for-beginners-f3e2ce591e3e
 - https://raphaelstaebler.medium.com/from-zero-to-mvp-in-3-months-with-flutter-d6adcc1db9a7
 - with REST APIs, retrofit is a great package that generates a lot of the code you would otherwise have to write yourself: https://pub.dev/packages/retrofit

@@ -1,5 +1,13 @@
 # Visual studio
 
+Edition | Cost | Main Features
+---|---|---
+Community    | Free    | All workloads, no direct support
+Professional    | $1999    | Live support, Azure DevOps Resource
+Enterprise    |  $3000    | Lives Support, Architect Tools, Azure DevOps Resource
+
+Many third party tools assume they can find MSBuild in the default location
+
 ## Visual studio SDK
 
 [Visual Studio SDK](https://docs.microsoft.com/en-us/visualstudio/extensibility/visual-studio-sdk?view=vs-2019)
