@@ -262,8 +262,3 @@ download.page(computer_science/os/windows/winrt/crt.md)
 
 - [networking in C](https://www.youtube.com/watch?v=daA-KBKfJ_o)
 - [Pipe System Call](https://www.youtube.com/watch?v=8AXEHrQTf3I)
-- []()
-- []()
-- []()
-- []()
-- []()

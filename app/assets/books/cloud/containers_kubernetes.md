@@ -1,11 +1,90 @@
-# KUBERNETES (K8s) 
+# KUBERNETES (K8s or "kube") 
 
 https://kubernetes.io/
 
+Help to deliver and manage containerized, legacy, and cloud-native apps
+Rapidly build new applications and services. Cloud-native development starts with microservices in containers, which enables faster development and makes it easier to transform and optimize existing applications. 
+Production apps span multiple containers, and those containers must be deployed across multiple server hosts. Kubernetes gives you the orchestration and management capabilities required to deploy containers, at scale, for these workloads.
+
+Configuring Kubernetes, defining nodes, pods, containers within them. Kubernetes handles orchestrating the containers.
+
+Kubernetes orchestration allows you to build application services that span multiple containers, schedule those containers across a cluster, scale those containers, and manage the health of those containers over time. With Kubernetes you can take effective steps toward better IT security.
+
+Kubernetes also needs to integrate with networking, storage, security, telemetry, and other services to provide a comprehensive container infrastructure.
+
+
+Containers are a fruitful business, and they have the habit of multiplying rapidly. That's by design. Containers are meant to scale, and they scale by spawning clones. Stick the containers into groups (call them pods), and automate how pod lifecycles are managed. That's all Kubernetes really is, and it's changing how servers can run.
+
+
+Docker can be used as a container runtime that Kubernetes orchestrates. When Kubernetes schedules a pod to a node, the kubelet on that node will instruct Docker to launch the specified containers.
+The kubelet then continuously collects the status of those containers from Docker and aggregates that information in the control plane. Docker pulls containers onto that node and starts and stops those containers.
+The difference when using Kubernetes with Docker is that an automated system asks Docker to do those things instead of the admin doing so manually on all nodes for all containers.
+
+* SPEAK KUBERNETES
+
+- CONTROL PLANE
+The collection of processes that control Kubernetes nodes. This is where all task assignments originate.
+
+- NODES
+These machines perform the requested tasks assigned by the control plane.
+
+- POD
+A group of one or more containers deployed to a single node. All containers in a pod share an IP address, IPC, hostname, and other resources. Pods abstract network and storage from the underlying container. This lets you move containers around the cluster more easily.
+
+- REPLICATION CONTROLLER
+ This controls how many identical copies of a pod should be running somewhere on the cluster.
+
+- SERVICE
+This decouples work definitions from the pods. Kubernetes service proxies automatically get service requests to the right pod—no matter where it moves in the cluster or even if it’s been replaced.
+
+- KUBELET
+This service runs on nodes, reads the container manifests, and ensures the defined containers are started and running.
+
+- KUBECTL
+The command line configuration tool for Kubernetes.
+
+
+A working Kubernetes deployment is called a cluster. You can visualize a Kubernetes cluster as two parts: the control plane and the compute machines, or nodes.
+
+Each node is its own Linux® environment, and could be either a physical or virtual machine. Each node runs pods, which are made up of containers.
+
+The control plane is responsible for maintaining the desired state of the cluster, such as which applications are running and which container images they use. Compute machines actually run the applications and workloads.
+
+Kubernetes runs on top of an operating system (Red Hat® Enterprise Linux®, for example) and interacts with pods of containers running on the nodes.
+
+The Kubernetes control plane takes the commands from an administrator (or DevOps team) and relays those instructions to the compute machines.
+
+This handoff works with a multitude of services to automatically decide which node is best suited for the task. It then allocates resources and assigns the pods in that node to fulfill the requested work.
+
+The desired state of a Kubernetes cluster defines which applications or other workloads should be running, along with which images they use, which resources should be made available to them, and other such configuration details.
+
+From an infrastructure point of view, there is little change to how you manage containers. Your control over containers just happens at a higher level, giving you better control without the need to micromanage each separate container or node.
+
+Your work involves configuring Kubernetes and defining nodes, pods, and the containers within them. Kubernetes handles orchestrating the containers.
+
+Where you run Kubernetes is up to you. This can be on bare metal servers, virtual machines, public cloud providers, private clouds, and hybrid cloud environments. One of Kubernetes’ key advantages is it works on many different kinds of infrastructure.
+
+![assets/books/cloud/assets/kubernetes.svg]
+
+* EXPLORE KUBERNETES
+Kubernetes might seem out of reach at first. It's new, a little scary, and worst yet, it apparently requires a cloud. However, there are a few ways to get started.
+
+Run a local instance of Kubernetes on your personal computer: install Minikube or Minishift. It's not quite as satisfying as building a cluster and opening it up to your friends, but it's a great, safe way to get familiar with the landscape, commands, and toolkit.
+
+Minikube
+https://opensource.com/article/18/10/getting-started-minikube
+
+Minishift
+https://opensource.com/article/18/10/getting-started-minikube
+
 to add:
-https://www.c-sharpcorner.com/article/build-cicd-pipeline-for-azure-kubernetes/ ***
+https://www.redhat.com/en/topics/containers/what-is-kubernetes ★★★
+https://www.c-sharpcorner.com/article/build-cicd-pipeline-for-azure-kubernetes/ ★★★
 https://developers.redhat.com/blog/2020/05/11/top-10-must-know-kubernetes-design-patterns/
 https://andrewlock.net/running-kubernetes-and-the-dashboard-with-docker-desktop
+https://opensource.com/downloads/kubernetes-raspberry-pi
+https://opensource.com/article/20/6/kubernetes-raspberry-pi
+
 
 Course 70+videos
 https://www.youtube.com/playlist?list=PLn6POgpklwWqfzaosSgX2XEKpse5VY2v5
@@ -13,6 +92,10 @@ https://www.youtube.com/watch?v=37VLg7mlHu8&list=PLn6POgpklwWqfzaosSgX2XEKpse5VY
 
 2015 Google 
 orchestrateur. C'est à dire qu'il ne fait que gérer des conteneurs, leurs volumes, leurs dns, leurs réseaux... Docker reposant lui sur des principes d'isolation de processus.
+
+open source container orchestration platform that automates many of the manual processes involved in deploying, managing, and scaling containerized applications
+In other words, you can cluster together groups of hosts running Linux® containers, and Kubernetes helps you easily and efficiently manage those clusters.
+Kubernetes clusters can span hosts across on-premise, public, private, or hybrid clouds. For this reason, Kubernetes is an ideal platform for hosting cloud-native applications that require rapid scaling, like real-time data streaming through Apache Kafka.
 
 Open-source orchestration tool for automation: deployment, management and monitoring of containerized applications, workloads and services. All cloud providers are offering their own branded versions of Kubernetes, including Google, Microsoft, Amazon
 
@@ -52,13 +135,13 @@ rolling update: progressive deployment: deploy pods, keep old pods sometimes to 
 *Stateless applications
 trivial to scale, with no coordination. These can take advantage of Kubernetes deployments directly and work great behind Kubernetes Services or Ingress Services.
 
-* Stateful applications
+* STATEFUL APPLICATIONS
 postgres, mysql, etc which generally exist as single processes and persist to disks. These systems generally should be pinned to a single machine and use a single Kubernetes persistent disk. These systems can be served by static configuration of pods, persistent disks, etc or utilize StatefulSets.
 
-* Static distributed applications
+* STATIC DISTRIBUTED APPLICATIONS
 zookeeper, cassandra, etc which are hard to reconfigure at runtime but do replicate data around for data safety. These systems have configuration files that are hard to update consistently and are well-served by StatefulSets.
 
-* Clustered applications
+* CLUSTERED APPLICATIONS
 etcd, redis, prometheus, vitess, rethinkdb, etc are built for dynamic reconfiguration and modern infrastructure where things are often changing. They have APIs to reconfigure members in the cluster and just need glue to be operated natively seemlessly on Kubernetes, and thus the Kubernetes Operator concept
 
 ### Kubernetes vs OpenStack

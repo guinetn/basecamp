@@ -1,8 +1,8 @@
-# DotFiles
+# DotFiles - storing configuration 
 
 Configurations for command line-based tools and shells.
 
-Dotfiles projects store configuration files such as .zshrc or .gitconfig and often also include complete machine setup scripts. A new machine setup takes 1 hour instead of days.
+Dotfiles projects store configuration files such as `.zshrc` or `.gitconfig` and often also include complete machine setup scripts. A new machine setup takes 1 hour instead of days.
 
 https://dotfiles.github.io lists various approaches to excellent dotfiles.
 
@@ -27,7 +27,7 @@ On Unix-y systems:
 
 ## Why sharing dotfiles?
 
-You have customized files on your system, foe example: 
+You have customized files on your system, for example: 
 
 ~/.bashrc
 >find / -type f | grep '.bashrc'                 
@@ -44,7 +44,7 @@ You have customized files on your system, foe example:
     ....
     
 Over time, these configuration files become highly customized with many lines and managing them becomes increasingly more challenging, keeping them synchronized between multiple computers is critical for large organizations.
-I have no interest in rewriting them on every new computer or system I use. So sharing dotfiles on GitHub/Gilab to back-up/sync your configurations across your systems with myself and others is time saving.
+No interest in rewriting them on every new computer or system used. So sharing dotfiles on GitHub/Gilab to back-up/sync your configurations across your systems with myself and others is time saving.
 You can then set up a new system using these dotfiles with an installation script or tool like rcm in minutes. 
 
 ⚠: Don't push your .ssh folder to github
@@ -75,7 +75,7 @@ RCM is a tool that can helps for the whole process, see below
 
 ### rcm - symlink manager
 
-Mac, Linux, and Windows (WSL)
+Mac, Linux, Windows (WSL)
 
 rcm is a "rc" file management tool providing commands to manage and list files it tracks. 
 - mkrc – convert a file into a dotfile managed by rcm
@@ -125,15 +125,12 @@ Keeping dotfiles synchronized between those computers must not be a challenge!
 >git clone https://github.com/webpro/dotfiles.git
 >cd dotfiles
 
-
-
 // create a symlink from here to the directory where they are expected
 ln -sv “~/.dotfiles/runcom/.bash_profile” ~
 ln -sv “~/.dotfiles/runcom/.inputrc” ~
 ln -sv “~/.dotfiles/git/.gitconfig” ~
 
-an installation script can automate symlinking: 
-
+an installation script can automate symlinking
 
 ## DotFiles Repo
 .

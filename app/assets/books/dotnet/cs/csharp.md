@@ -7,3 +7,4 @@
 - [Train: hackerrank.com](https://www.hackerrank.com/)
 - [Nick Chapsas](https://www.youtube.com/channel/UCrkPsvLGln62OMZRO6K-llg)
 
+download.page(dotnet/cs/csharp_script_file-csx.md)

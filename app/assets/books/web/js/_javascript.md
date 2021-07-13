@@ -45,7 +45,7 @@ JS is everywhere: on server-side with Node.js
 
 #### Node JS: SHEBANG
     
-```
+```js
 my.js
     #!/usr/bin/js
     console.log("hi node");
@@ -57,12 +57,14 @@ sudo chmod +x my.js
     
 All `<script>` in  `<head>` are loaded before loading and rendering body html. 
 #### INLINE SCRIPT
-```
+
+```js
 <script type="text/javascript"> HTML 4 </script>
 <script> HTML 5	</script>
 ```
 #### EXTERNAL SCRIPT
-```  
+
+```js  
 <script src="test.js"></script>
 </body>    Put scripts before </body> because web page are loaded in linear steps
 ```
@@ -123,7 +125,8 @@ During this code execution both the creation of the DOM and the rendering of the
 FIX 1: place your code at the end of the page or at least execute it after page is loaded.
 FIX 2: “async” and “defer” attributes of the script element to handle JS file loading                
 #### DYNAMIC SCRIPT
-```
+
+```js
 setTimeout(function () {
             var a = document.createElement("script");
             var b = document.getElementsByTagName("script")[0];
@@ -135,7 +138,8 @@ setTimeout(function () {
 ```
 
 #### IIFE (keep it out of the global scope)
-```
+
+```js
 ;(function () {
   // Some amazing code...
 })();
@@ -198,47 +202,49 @@ JAVASCRIPT CODE IS SINGLE-THREADED IN THE SAME CONTEXT, BUT ALL OTHER STUFF WHIC
 
 ## Object
 
-### Using the Object.create method approach, the above translates to:
+### Using the Object.create method approach
 
-		Object.setPrototypeOf() takes two arguments. it replace __proto__ 
-			- the object (first argument) 
-			- the desired prototype (second argument)
-			https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf 
-			Avoid setting the [[Prototype]] of an object. Instead, create a new object with the desired [[Prototype]] using Object.create().
+```js
+Object.setPrototypeOf() takes two arguments. it replace __proto__ 
+- the object (first argument) 
+- the desired prototype (second argument)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf 
+Avoid setting the [[Prototype]] of an object. Instead, create a new object with the desired [[Prototype]] using Object.create()
 
-			function Animals(name, age) {
-			    let newAnimal = Object.create(animalConstructor);
-			    newAnimal.name = name;
-			    newAnimal.age = age;
-			    return newAnimal;
-			}
-			let animalConstructor = {
-			    sing: function() {
-			        return `${this.name} can sing`;
-			    },
-			    dance: function() {
-			        return `${this.name} can dance`;
-			    }
-			}
+function Animals(name, age) {
+    let newAnimal = Object.create(animalConstructor);
+    newAnimal.name = name;
+    newAnimal.age = age;
+    return newAnimal;
+}
+let animalConstructor = {
+    sing: function() {
+        return `${this.name} can sing`;
+    },
+    dance: function() {
+        return `${this.name} can dance`;
+    }
+}
 
 
-			function Cats(name, age, whiskerColor) {
-			    let newCat = Animals(name, age);
-			    Object.setPrototypeOf(newCat, catConstructor);
-			    newCat.whiskerColor = whiskerColor;
-			    return newCat;
-			}
-			let catConstructor = {
-			    whiskers() {
-			        return `I have ${this.whiskerColor} whiskers`;
-			    }
-			}
-			Object.setPrototypeOf(catConstructor, animalConstructor);
-			const clara = Cats("Clara", 33, "purple");
-			clara.sing();
-			clara.whiskers();
-			// Expected Output
-			// "Clara can sing"
+function Cats(name, age, whiskerColor) {
+    let newCat = Animals(name, age);
+    Object.setPrototypeOf(newCat, catConstructor);
+    newCat.whiskerColor = whiskerColor;
+    return newCat;
+}
+let catConstructor = {
+    whiskers() {
+        return `I have ${this.whiskerColor} whiskers`;
+    }
+}
+Object.setPrototypeOf(catConstructor, animalConstructor);
+const clara = Cats("Clara", 33, "purple");
+clara.sing();
+clara.whiskers();
+// Expected Output
+// "Clara can sing"
+```
             
 ::::
 download.page(web/js/javascript_ES2009_ES5.md)
@@ -252,6 +258,8 @@ download.page(web/js/javascript_ES2017_ES8.md)
 download.page(web/js/javascript_ES2019_ES10.md)
 ::::
 download.page(web/js/javascript_ES2020_ES11.md)            
+::::
+download.page(web/js/javascript_ES2021_ES21.md)            
 ::::
 download.page(web/js/typescript.md)            
 ::::

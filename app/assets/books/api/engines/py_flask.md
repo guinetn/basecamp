@@ -4,6 +4,7 @@ Provides annotations mapping URL paths to Python function
 Every URL for which you want the server to respond requires an annotation/function combination.
 
 $ python flaskpage.py  →  http://127.0.0.1:5000/ 
+
 ```python
 from flask import Flask
 app = Flask(__name__)
@@ -72,3 +73,142 @@ app.run()
 
 
 - https://py.plainenglish.io/abandoning-flask-for-fastapi-20105948b062
+
+
+
+
+# Flask
+
+http://flask.pocoo.org/
+Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intentions.
+
+Flask is a microframework for developing web applications with the Python programming language. Flask lets us separate major sections of our application into "blueprints". Each blue box in the sketch represents a blueprint that will exist in our application. Let's elaborate on the function of each blueprint.
+
+https://www.analyticsvidhya.com/blog/2020/09/integrating-machine-learning-into-web-applications-with-flask/
+https://www.youtube.com/watch?v=MwZwr5Tvyxo&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH
+
+
+https://www.palletsprojects.com/p/werkzeug/
+	HTTP header parsing and dumping
+	Easy to use request and response objects
+	Interactive JavaScript based in-browser debugger
+	100% WSGI 1.0 compatible
+	Supports Python 2.6, 2.7, 3.3, 3.4 and 3.5.
+	Unicode support
+	Basic session and signed cookie support
+	URI and IRI utilities with unicode awareness
+	builtin library of fixes for buggy WSGI servers and browsers
+	integrated routing system for matching URLs to endpoints and vice versa
+
+# WSGI utility library for Python.
+  \___ Web Server Gateway Interface
+		https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface
+  		WSGI was thus created as an implementation-agnostic interface between web servers and web applications or frameworks to promote common ground for portable web application development
+	Werkzeug is Simple
+		from werkzeug.wrappers import Request, Response
+
+		@Request.application
+		def application(request):
+		    return Response('Hello World!')
+
+		if __name__ == '__main__':
+		    from werkzeug.serving import run_simple
+		    run_simple('localhost', 4000, application)
+
+# Jinja 2 - templating language for Python, modelled after Django’s templates.
+	http://jinja.pocoo.org/docs/2.10/  
+	<title>{% block title %}{% endblock %}</title>
+	<ul>
+	{% for user in users %}
+	  <li><a href="{{ user.url }}">{{ user.username }}</a></li>
+	{% endfor %}
+	</ul>
+
+
+# FLASK SETUP
+> pip install Flask
+> conda install flask
+
+# FLASK APP
+
+app.py
+```py
+    from flask import Flask
+    app = Flask(__name__)
+
+    @app.route("/")
+    def hello():
+        return "Hello World!"
+```
+
+>flask run 						look for app.py or wsgi.py
+
+>FLASK_APP=hello.py flask run
+* Running on http://localhost:5000/
+
+> set FLASK_APP=hello.py
+> set FLASK_ENV=development
+> flask run
+
+>set FLASK_APP=C:\api\hello.py	    
+>flask run
+ * Serving Flask app "hello"
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+127.0.0.1 - - [16/Mar/2018 08:58:01] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [16/Mar/2018 08:58:01] "GET /favicon.ico HTTP/1.1" 404 -
+
+
+# SAMPLES
+
+env FLASK_APP=app.py FLASK_ENV=development flask run
+```py
+@app.route('/')
+def home():
+    return render_template("home.html")
+
+	<!DOCTYPE html>
+	<html>
+	<head>
+	  <meta charset="UTF-8">
+	  <title>Predict Covid</title>
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+	</head>
+	<body>
+	 <div class="page">
+	     <form if="form" action="{{ url_for('predict')}}"method="POST">
+	         <input type="text" name="country" placeholder="Country" required="required" /><br>
+	         <h3 class='res'>{{pred}}</h3>
+	         <button id="button" type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+	        </form>
+	 </div>
+	</body>
+	</html>    
+
+@app.route('/predict',methods=['POST'])
+def predict():
+    input_val = [x for x in request.form.values()][0]
+    rf = load_model(BUCKET_NAME, MODEL_FILE_NAME, MODEL_LOCAL_PATH)
+    if input_val not in available_countries:
+        return f'Country {input_val} is not in available list. Try one from the list! Go back in your browser', 400
+    to_pred = get_prediction_params(input_val, url_to_covid)
+    prediction = rf.predict(to_pred)[0]
+    return render_template('home.html',pred=f'New cases will be {prediction}')
+```
+
+
+# CORS
+
+```py
+	from flask import Flask, request
+	from flask_cors import CORS   # pip install flask-cors
+	from typing import List 
+
+	if __name__ == '__main__"
+		app = Flask(__name__)
+		CORS(app)
+
+	@app.route("/")
+
+	def hello():
+	  return "Hello World!"
+```

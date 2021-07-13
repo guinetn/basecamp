@@ -19,6 +19,9 @@ Ability to make streaming calls from the client and server side, or Bi-direction
 - https://developers.google.com/protocol-buffers/docs/proto3
 - https://medium.com/pragmatic-programmers/define-a-grpc-service-e8e20c5589d5
 
+RPC MECHANISM:
+![mechanism](assets/rpc-mechanism.png)
+
 Efficiently connect services 
 Pluggable support for load balancing, tracing, health checking, authentication. 
 To connect devices, mobile apps/browsers to backend services
@@ -74,3 +77,5 @@ interserviceCommunication: Sample code to compare performance of http/1.1, http/
 - https://medium.com/@waelkdouh/microfrontends-with-blazor-webassembly-b25e4ba3f325
 - https://michaelscodingspot.com/rest-vs-grpc-for-asp-net/
 - [gRPC in GO](https://levelup.gitconnected.com/grpc-how-to-make-client-streaming-calls-5c731197585)
+- [ RESTful HTTP APIs for gRPC](https://github.com/Vake93/AspNetExperiments/tree/main/GrpcHttpApi)
+- 

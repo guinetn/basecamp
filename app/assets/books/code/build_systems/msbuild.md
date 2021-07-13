@@ -5,6 +5,7 @@ Provides an XML schema for a project file that controls how the build platform p
 Visual Studio uses MSBuild
 MSBuild can run without Visual Studio (msbuild.exe can orchestrate and build products in environments where Visual Studio isn't installed)
 
+https://github.com/microsoft/msbuild
 https://docs.microsoft.com/visualstudio/msbuild/msbuild
 
 MS Build documentation

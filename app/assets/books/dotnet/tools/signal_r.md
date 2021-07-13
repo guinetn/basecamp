@@ -1,5 +1,7 @@
 # SignalR
 
+- https://docs.microsoft.com/fr-fr/aspnet/core/tutorials/signalr-blazor?view=aspnetcore-5.0&tabs=visual-studio&pivots=server
+
 Real-time web functionality enables server-side code to push content to clients instantly
 Real-time update notification (chat, any refresh needed,...replace long polling) 
 Historically it was tied to ASP.NET Core but the protocol is open and implementable in any language.
@@ -10,6 +12,7 @@ SignalR uses Websockets to push messages between the clients and the server for 
 
 WebSocket: HTML5 API for bi-directional communication between the browser and server. 
 A stateful protocol 
+- https://itnext.io/differences-between-websockets-and-socket-io-a9e5fa29d3dc
 
 ![](assets/books/dotnet/tools/assets/websockets.png)
 SignalR uses encryption + digital signature to protect the connection token. 

@@ -7,7 +7,6 @@
 2. interactive window: View > Other Windows > C# Interactive 
 3. https://dotnetfiddle.net/
 
-
 C# scripting language, traditionally saved into a CSX file
 for testing out your C# and .NET snippets without the effort of creating multiple unit testing or console projects.
   

@@ -19,7 +19,7 @@ for x in [1,2,3]:
   print(x)
 
 for x in range(4): 
-  print(x)      0 1 2 3
+  print(x)      # 0 1 2 3
 
 for x in ["big","foot","feet"]:
   print(x)
@@ -28,17 +28,17 @@ cities = ["Austin", "Dallas", "Houston"]
 for city in cities:
     print(city)
     
-for c in "MyName"
+for c in "MyName":
   print(c)
 
 s = "hello"
 for idx, c in enumerate(s):
-  print(idx, c)         0  h    1  e  ....
+  print(idx, c)         # 0  h    1  e  ....
 
 for key,value in params.items():
   print("%s = %s" % (key,value))
 
-for key in params
+for key in params:
   print(key)
 
 # LIST COMPREHENSION: see list
@@ -47,7 +47,7 @@ for key in params
   new_list = [ x+2 for x in numbers ]
 
   l= [x**2 for x in range(0,5)]
-  print(l)    0 1 4 9 16
+  print(l)   # 0 1 4 9 16
 
  while i<5:
   print(i)
@@ -58,6 +58,14 @@ for key in params
 
 # A for loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string).
 
+a = [1,2,3,4,5]
+for i in a:
+    if i%2 == 0:
+        break
+for j in a:
+    if j%2 == 0:
+        continue
+      
 people = ['John', 'Paul', 'Sara', 'Susan']
 
 # Simple for loop

@@ -2,126 +2,26 @@
 
 A new way to store and request data with non-relational databases
 
+- Relational database cannot manage big data: Volume, Velocity, Variety
+- NoSql relaxes some ACID constrainsts of RDBMS to allow data distribution
+- Response to the scale and agility challenges that face modern applications. 
+- Wide database technologies
+- More data is being collected and more users are accessing this data concurrently: the way web applications deal with data has changed significantly. Scalability and performance are more of a challenge than ever for relational databases that are schema-based and therefore can be harder to scale.
+
+
+## NoSQL Families
+
 - Key-Value
 - Graph
 - Column
 - Document
 - Blob stores
 
-Relational database cannot manage big data: Volume, Velocity, Variety
-NoSql relaxes some ACID constrainsts of RDBMS to allow data distribution
-Response to the scale and agility challenges that face modern applications. 
-Wide database technologies
-More data is being collected and more users are accessing this data concurrently: the way web applications deal with data has changed significantly. Scalability and performance are more of a challenge than ever for relational databases that are schema-based and therefore can be harder to scale.
-
-## NoSQL Families
-
-### KEY-VALUE STORES 
-Hash table on the network
-Simple, efficient
-Key 	→ Hash function → index
-Value	→ anyhing
-
-Data is stored in an array of key-value pairs. The ‘key’ is an attribute name that is linked to a ‘value’.
-Well-known key-value stores include Redis, Voldemort, and Dynamo.
-
-No language possible → CRUD only: 
-- Create (key,value)
-- Read (key)
-- Update (key,value)
-- Delete (key) 
-
-**Applications**
-Realtime fraud detection
-IoT
-E-commerce
-Cache
-Fast transactions
-Logs
-Chat
-
-**Who?**
-- Redis (VMWare) : Vodafone, Trip Advisor, Nokia, Samsung, Docker
-- Memcached (Danga) : LiveJournal, Wikipédia, Flickr, Wordpress
-- Azure Cosmos DB (Microsoft) : Real Madrid, Orange tribes, MSN, LG, Schneider Electric
-- SimpleDB (Amazon)
-
-### COLUMNS ORIENTED
-Attribut (column) focus: ignore others columns
-
-Instead of ‘tables,’ in columnar databases we have column families, which are containers for rows. Unlike relational databases, we don’t need to know all the columns upfront and each row doesn’t have to have the same number of columns.
-Columnar databases are best suited for analyzing large datasets, big names include Cassandra and HBase.
-
-**Applications**
-Analytics
-Aggregations
-Not for found a single value
-Counter (online voting)
-Journalisation
-Categorie search
-Large reporting 
-
-**Who?**
-BigTable (Google)
-HBase (Apache, Hadoop)
-Spark SQL (Apache)
-Elasticsearch (elastic) -> moteur de recherche
-
-### DOCUMENTS DATABASES
-
-Data is stored in documents (instead of rows and columns in a table) and these documents are grouped together in collections. Each document can have an entirely different structure.
-Document databases include the CouchDB and MongoDB
-
-Handle documents containing information with a complex structure (types, lists, nestings). It is based on the key/value principle, but with an extension on the fields that make up this document
-Structured approach to each value, thus forming a document
-Rich query languages allowing complex manipulations on each attribute of the document (and sub-documents) like in relational but in a distributed fashion.
-
-**Applications**
-Content management (digital libraries, product collections, software repositories, multimedia collections, etc.)
-Framework for storing objects
-Collection of complex events
-Management of user histories on social networks.
-
-**Who?**
-MongoDB (MongoDB) : ADP, Adobe, Bosch, Cisco, eBay, Electronic Arts, Expedia, Foursquare
-CouchBase (Apache, Hadoop) : AOL, AT&T, Comcast, Disney, PayPal, Ryanair
-DynamoDB (Amazon) : BMW, Dropcam, Duolingo, Supercell, Zynga
-Cassandra (Facebook -> Apache) : NY Times, eBay, Sky, Pearson Education
-Cassandra is "wide-column store" = document oriented
-
-### GRAPH DATABASES
-Store nodes: links, attributs
-Requests: distance, paths, recommandations
-
-These databases are used to store data whose relations are best represented in a graph. Data is saved in graph structures with nodes (entities), properties (information about the entities), and lines (connections between the entities).
-Examples of graph databases include Neo4J and InfiniteGraph.
-
-**Applications**
-Social networks (recommendation, shortest path, cluster ...)
-GIS networks (roads, electricity network, freight ...)
-Social web (Linked Data).
-
-**Who?**
-Neo4j : eBay, Cisco, UBS, HP, TomTom, The National Geographic Society
-OrientDB (Apache) : Comcast, Warner Music Group, Cisco, Sky, United Nations, VErisign
-FlockDB (Twitter) : Twitter
-
-
-
-### BLOB DATABASES
-
-Blobs are more like a key/value store for files and are accessed through APIs like Amazon S3, Windows Azure Blob Storage, Google Cloud Storage, Rackspace Cloud Files, or OpenStack Swift.
-
-
-
-
-
-https://www.toptal.com/database/the-definitive-guide-to-nosql-databases
-
-* Elasticity
-* Sharding
-
-download.page(data/base.md)
+download.page(data/nosql/db_nosql__model_keyvalue.md)
+download.page(data/nosql/db_nosql__model_columns.md)
+download.page(data/nosql/db_nosql__model_document.md)
+download.page(data/nosql/db_nosql__model_graph.md)
+download.page(data/nosql/db_nosql__model_blob.md)
 
 ## NoSQL candidates
  
@@ -233,89 +133,6 @@ http://www.infoq.com/vendorcontent/show.action;jsessionid=B85B21FC3FC98657E9C6ED
 |DataStorage| 		Optimized for huge data|		Medium sized to large|
 |Scalability| 		High|						High (but more expensive)|
 
-
-
-## NoSQL STOCKAGE MODELS (Data Store Types)
-
-
-### KEY/VALUE MODEL
-
-A hash table is used in which a unique key points to an item.
-Data is stored in a form of a string, JSON, or BLOB (Binary Large OBject).
-
-Keys can be organized into logical groups of keys, only requiring keys to be unique within their own group. This allows for identical keys in different logical groups
-Some implementations provide caching mechanisms for enhancing performance
-
-	id <---> Value (simple or object)
-	Only 4 operations: CRUD
-	DataSmart is at client level
-
-biggest flaws in this form of database is the lack of consistency at the database level. This can be added by the developers with their own code
-
-. Amazon’s DynamoDB
-
-
-### DOCUMENTARY BASE MODEL (Document Store)
-
-Document stores are similar to key value stores in that they are schema-less and based on a key-value model. 
-Values (documents) provide encoding for the data stored. Those encodings can be XML, JSON, or BSON (Binary encoded JSON).
-Querying based on data can be done.
-
-. MongoDB
-
-	Collection: group of documents
-		|
-		|
-		| ______	each entry is a document (a group of fields + id added by the sgbd)
-															|
-															|_____ each field could be a document
-     -------|	doc#1	{id:"1", name:"john", age:"22" }													
-	|		|	doc#2	{id:"1", name:"john", age:"22", city:"London" }   <--- structure dont have to be identical				
-	|
-	 ------> could be in the same collection (no strict structure to respect) 
-
-
-###	COLUMNS ORIENTED MODEL (Column Store)
-
-data is stored in columns, as opposed to being stored in rows as is done in most relational database management systems.
-A Column Store is comprised of one or more Column Families that logically group certain columns in the database. A key is used to identify and point to a number of columns in the database, with a keyspace attribute that defines the scope of this key. Each column contains tuples of names and values, ordered and comma separated.
-
-Column Stores have fast read/write access to the data stored. In a column store, rows that correspond to a single column are stored as a single disk entry. This makes for faster access during read/write operations.
-
-. Google’s BigTable
-. HBase
-. Cassandra
-
-	Add data is easy
-	null are limited
-
-	relational model: data in rows 		1. guitar, flamenco
-										2. piano, classic
-										3. flute, irlandais	
-	in a columns oriented model:
-										1,2,3
-										guitar, piano, flute
-										flamenco, classic, irlandais	
-
-### GRAPH MODEL (Graph Base)
-
-	From the "Graph Theory"
-	Data are nodes with a document structure (see above)
-	Arcs oriented and named links the nodes
-
-Typically used in social networking applications: allow developers to focus more on relations between objects rather than on the objects themselves. 
-
-A graph base database uses edges and nodes to represent and store data. These nodes are organized by some relationships with one another, which is represented by edges between the nodes. Both the nodes and the relationships have some defined properties.
-
-A graph structure (a set of objects connected by links) comprising edges ans nodes
-The interconnected objects are represented by mathematical abstractions, called vertices, and the links that connect some pairs of vertices are called edges. A set of vertices and the edges that connect them is said to be a graph.
-
-Point = sommet = vertex. (vertices if ++)
-
-nodes are organized by some relationships with one another, which is represented by edges between the nodes. Both the nodes and the relationships have some defined properties.
-
-.InfoGrid
-.InfiniteGraph
 
 
 

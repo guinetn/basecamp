@@ -91,7 +91,7 @@ public void ConfigureServices(IServiceCollection services)
 ```
 
 - [](https://itnext.io/how-to-use-database-sharding-and-scale-an-asp-net-core-microservice-architecture-22c24916590f)
-
+- https://docs.microsoft.com/fr-fr/aspnet/core/tutorials/first-web-api?view=aspnetcore-5.0&tabs=visual-studio-code
 
 ## CODE FIRST SAMPLE
 

@@ -10,12 +10,12 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
         print(os.path.join(dirname, filename))
         
 # To iterate through all files / folders
-os.listdir(“path/to/folder”) 
+os.listdir("path/to/folder") 
 
 # To build paths to a subdirectory
 os.path.combine 
 
 # search through all text files in a folder while excluding all other file types
-For file in os.listdir(os.getcwd()):
+for file in os.listdir(os.getcwd()):
     if '.txt' in file:
         doStuff()

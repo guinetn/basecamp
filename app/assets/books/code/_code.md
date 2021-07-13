@@ -7,6 +7,8 @@ download.page(code/hello_worlds.md)
 ::::
 download.page(code/editors/_editors.md)
 ::::
+download.page(code/generators/_generators.md)
+::::
 download.page(code/dotfiles.md)
 download.page(code/filestypes.md)
 ::::

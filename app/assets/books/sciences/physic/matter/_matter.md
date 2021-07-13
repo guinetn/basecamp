@@ -1,5 +1,9 @@
 # MATTER
 
+add: https://www.youtube.com/watch?v=gkHmXhhAF2Y
+
+Particles are excitations in quantum fields
+
 Fundamental particles (no internal structure)
 * leptons
 * quarks
@@ -47,8 +51,9 @@ Particles are divided into
             
     Bosons: force-carrier particles
         gauge bosons: 
-            - gluon
-            - photon
+            - gluon: strong force
+            - photon: electromagnetism
+            - Z, W Boson: weak force
             - graviton ? tought to carry force of gravity
             - W+ intermediate vector boson
             - Higgs boson
@@ -231,3 +236,4 @@ A Bose-Einstein Condensate (BEC) is often said to be a "fifth state of matter"
 # Articles
 
 - https://coggle.it/diagram/WuNBDQPHy2ekdGHL/t/quantum-particles
+- https://www.youtube.com/watch?v=gkHmXhhAF2Y

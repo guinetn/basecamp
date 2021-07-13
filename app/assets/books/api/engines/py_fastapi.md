@@ -13,8 +13,15 @@ Requests makes it easy to interact with APIs and other HTML sources in simple, o
 
 Similar to the Flask app structure. You need to create endpoints where our client service can make requests and obtain the required data.
 
+- https://fastapi.tiangolo.com/
+
 >pip install fastapi
 
+You will also need an ASGI server, for production such as 
+- Uvicorn    https://www.uvicorn.org/      ASGI server implementation, using uvloop and httptools.
+- Hypercorn
+
+main.py
 ```py
 import uvicorn   # Uvicorn is used for implementing the server and handling all the calls in Python
 from fastapi import FastAPI
@@ -42,6 +49,8 @@ def api2(name: str):
 if __name__ == '__main__':
     uvicorn.run(app, host='127.0.0.1', port=4000, debug=True)
 ```
+>uvicorn main:app --reload
+Browse http://127.0.0.1:8000/items/5?q=somequery
 
 ### Request Body Approach
 Pass the data from the client to our API
@@ -71,4 +80,5 @@ download.code(assets/books/code/langs/python/code/web_fastapi.py)
 - https://py.plainenglish.io/abandoning-flask-for-fastapi-20105948b062
 - https://www.analyticsvidhya.com/blog/2021/06/deploying-ml-models-as-api-using-fastapi-and-heroku
 - https://realpython.com/python-requests/
+- https://www.youtube.com/watch?v=La1HAYI1j30&t=1s
 

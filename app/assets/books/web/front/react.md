@@ -23,6 +23,13 @@ $ npm run preinstall
 $ npm install
 $ npm start
 
+## STARTERS
+- https://github.com/facebook/create-react-app
+>npx create-react-app my-app  
+cd my-app  
+npm start  
+open http://localhost:3000/ 
+
 ## More
 
 - https://github.com/facebook/react

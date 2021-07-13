@@ -1,9 +1,11 @@
 # Statuses
 	
-	💎 		Gem
-	📌
 	★ 		Important	
+	📁 📄 📝 
+	❌ ✔️ ⚠️
+	📌
 	⚠️ ⚠  	Caution 
+	💎 		Gem
 	[?] 	Unknown
 	[✔] 	Success
 	[✖] 	Failure
@@ -13,7 +15,6 @@
 	☐ 		Unchecked			
 	♯
 	
-	Colors: ❌ ✔️
 
 	Check mark	
 	☑	✓	✔	✅	√
@@ -56,6 +57,9 @@
 	corner 		┌ ┐ └ ┘   ╔ ╗ ╚ ╝ 
 
 	Segments 	│ ─  		║ ═  └───
+				
+				│
+				└───
 
 	Join		├ ┤ ┬ ┴ ┼
 	

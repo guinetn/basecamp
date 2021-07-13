@@ -15,11 +15,9 @@ print(s.upper() for s in memes)
 def squareIt(n):
   return n*n
 
-values=[0, 1, 2, 3, 4, 5, 6, 7,8,9,10]
-
+values=[0, 1, 2, 3, 4, 5]
 squared=list(map(squareIt, values))
-print(values)
-print(squared)
+print(values, squared)
 
 
 def double(x):

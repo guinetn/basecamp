@@ -1,7 +1,7 @@
 # authentification
 
-Authentication is the process of determining who you are
-Authorisation revolves around what you are allowed to do, i.e. permissions
+Authentication: process of determining who you are  
+Authorisation: what you are allowed to do, i.e. permissions
 
 
 https://medium.com/@adhasmana/auth-token-management-with-node-js-observer-pattern-e51a63d945b2
@@ -21,7 +21,7 @@ https://www.c-sharpcorner.com/article/basic-authentication-in-swagger-open-api-n
 
 download.page(security/authentification_openid.md)
 
-download.page(security/authentification_oauth.md)
+download.page(security/authentification_oauth_tokens.md)
 
 ## WebAuthn - Web Authentication 
 
@@ -50,3 +50,6 @@ When the authenticator generates a new private-public key pair for a website, th
 ## Okta
 https://developer.okta.com/
 https://developer.okta.com/blog/2020/12/18/how-to-use-webauthn-csharp-dotnet
+
+## more
+- https://www.alexedwards.net/blog/basic-authentication-in-go

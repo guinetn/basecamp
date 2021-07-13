@@ -30,7 +30,7 @@ download.page(code/package_managers/pm_chocolatey_windowspm.md)
 ::::
 download.page(code/package_managers/pm_npm.md)
 ::::
-download.page(code/package_managers/pm_npm.md)
+download.page(code/package_managers/pm_npx.md)
 ::::
 download.page(code/package_managers/pm_npm_lodash.md)
 ::::

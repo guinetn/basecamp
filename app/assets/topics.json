@@ -13,7 +13,7 @@
   
   "biology":[], 
 
-  "blogs":["https://medium.com", "https://www.viget.com/", "https://guinetn.github.io","https://medium.com/younited-tech-blog","https://news.efinancialcareers.com/uk-en/en/advice"],
+  "blogs":["https://medium.com", "https://www.viget.com/", "https://levelup.gitconnected.com",  "https://guinetn.github.io","https://medium.com/younited-tech-blog","https://news.efinancialcareers.com/uk-en/en/advice"],
   
   "chrome":["chrome://bookmarks[copy]","chrome://flags[copy]","chrome://help[copy]","chrome://inspect[copy]","chrome://settings[copy]","chrome://version[copy]","chrome://extensions[copy]","chrome://gpu[copy]","chrome://histograms[copy]","chrome://indexeddb-internals[copy]","chrome://inspect[copy]","chrome://nacl[copy]","chrome://omnibox[copy]","chrome://tracing[copy]","https://www.chromestatus.com","https://www.chromestatus.com/samples","https://v8.dev","https://github.com/GoogleChrome","https://github.com/samdutton/samples","https://www.chromeexperiments.com","https://chrome.google.com/webstore/category/extensions(chrome web store)"],
   

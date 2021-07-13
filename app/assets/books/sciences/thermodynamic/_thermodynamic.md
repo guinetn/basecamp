@@ -11,3 +11,6 @@ Energy is how much work you could do. But another form of energy is thermal ener
 Entropy is a measure of disorder, or more accurately, the information required to describe the micro states of a system. 
 
 The 2nd law of thermodynamics states that entropy of an isolated system can never decrease. Energy at lower entropy can do more work than energy at high entropy.  The one way flow of Entropy seems to be the only reason we have a forward flow of time. 
+
+
+- https://www.youtube.com/watch?v=3QCXVKUi7K8&t=377s

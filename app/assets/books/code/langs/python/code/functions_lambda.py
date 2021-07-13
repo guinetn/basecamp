@@ -22,6 +22,9 @@ To define a complicated function, it is better to define a function using def.
 sqr = lambda x: x * x  ##Function that returns square of any number
 sqr(10)
 
+f = lambda x:x**2
+f(5)
+
 getSum = lambda num1, num2: num1 + num2
 print(getSum(10, 3))
 

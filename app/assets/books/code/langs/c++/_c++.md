@@ -46,8 +46,7 @@ download.page(code/langs/c++/stl.md)
 
 
 ## Libraries
-###
- Boost
+### Boost
 
 Portable C++ source libraries:
 JSON, LEAF, PFR. Updated Libraries: Asio, Atomic, Beast, Container, Endian, Filesystem, GIL, Histogram, Interprocess, Intrusive, Log, Move, Mp11, Optional, Outcome, Polygon, Preprocessor, Rational, Signal2, System, uBLAS, VMD, Wave...

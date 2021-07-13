@@ -1,4 +1,23 @@
-# DATA STRUTURES
+# DATA STRUCTURES
+
+Code structures for storing and organizing data that make it easier to modify, navigate, and access information. Data structures determine how data is collected, the functionality we can implement, and the relationships between data.
+
+Operations: Accessing, inserting, deleting, finding, sorting 
+
+Data structures help to:
+- Manage and use large datasets
+- Quickly search for particular data 
+- Build clear hierarchical/relational connections between data points
+- Simplify and speed up data processing
+
+Most important data structures:  
+- Linked List (Singly, Circular, Doubly)
+- Stack
+- Queue
+- Heap
+- Tree
+- Binary Tree
+
 
 ![](assets/books/data/data_structures/types_of_data_structures.png)
 

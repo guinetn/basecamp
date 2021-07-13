@@ -78,8 +78,6 @@ download.page(computer_science/regex.md)
 download.page(computer_science/the_developer.md)
 download.page(computer_science/the_architect.md)
 ::::
-download.page(computer_science/realtime/_realtime.md)
-::::
 download.page(computer_science/open_source.md)
 ::::
 download.page(computer_science/licences.md)

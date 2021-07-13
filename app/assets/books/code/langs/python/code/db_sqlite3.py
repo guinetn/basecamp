@@ -3,7 +3,8 @@
 
 import sqlite3
 conn = sqlite3.connect("space.db", isolation_level=None)
-cur = conn.cursor()cur.execute('''
+cur = conn.cursor()
+cur.execute('''
     CREATE TABLE sunspots (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     date DATE,
@@ -13,7 +14,8 @@ cur = conn.cursor()cur.execute('''
     );
     ''')
 
-import urllib.requestfileobject = urllib.request.urlopen("http://www.sidc.be/silso/DATA/SN_d_tot_V2.0.txt")
+import urllib.request
+fileobject = urllib.request.urlopen("http://www.sidc.be/silso/DATA/SN_d_tot_V2.0.txt")
 
 for line in fileobject:
     row_bytes = line.split()

@@ -36,6 +36,11 @@ Maximum sum sublist
 Print products of all elements
 """
 # TAKE AWAY
+
+lst = ['one', 'two', 'three', 'four']
+lst.append('five')
+lst
+
 nums = [1, 2, 3, 4, 5]
 nums = [1, 2, 3, 4, 5] + [6]
 for x in nums:
@@ -46,7 +51,9 @@ print(nums[2:3])
 print(nums[2:-1])
 len(nums)
 sum(nums)
+
 nums.append(7)
+
 nums.pop(1)
 nums.insert(3, 100)      # .insert(index,value) 
 nums.extend([200,201])   # .extend() adds multiple items to the list

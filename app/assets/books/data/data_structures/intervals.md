@@ -1,6 +1,5 @@
 # intervals
 
-
 Single interval
 Non-overlapping intervals
 An interval totally consumed within another interval

@@ -55,6 +55,7 @@ IPC (interprocess communication): Kernels methods for synchronization and commun
 ### KERNEL MODE
 Processor execute code having limited access to components/memory
 For basic and safe operations
+
 ### USER MODE
 Executed code have not access to components/memory
 Delegate it to system API
@@ -75,6 +76,8 @@ download.page(computer_science/os/os_posix_cygwin.md)
 download.page(computer_science/os/os_posix_mingw.md)
 ::::
 download.page(computer_science/os/os_linux.md)
+download.page(computer_science/os/os_linux_pm.md)
+download.page(computer_science/os/os_linux_commands.md)
 ::::
 download.page(computer_science/os/os_linux_unbutu.md)
 ::::

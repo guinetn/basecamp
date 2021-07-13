@@ -949,5 +949,28 @@ The same but in a tuple
 
 
 
+class Car:
+    """A class used to represent a car"""
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        #This should be auto-incrementing.
+        self.plate = str(time.strftime("%Y-%m-%d"))
+
+    def __str__(self):
+        return f'{self.make} {self.model} of {self.year}'
+
+    def __repr__(self):
+        return str(self)
+
+    def save(self, full_save=True):
+        """Saves this car with the given make, model, and year"""
+        if full_save:
+            with open('car_data.txt', 'w') as write_file:
+                write_file.write(str(self))
+                write_file.close()
+
+                
 ## more
 # https://medium.com/@dr-bruce-cottman/twelve-dataclass-examples-for-better-python-code-d1318f362d93?source=email-d34df8fefae2-1619917329596-digest.reader------2-71------------------18bf3841_cdb9_4fb3_8abe_774bacfcfdbe-27-62736a19_0aef_4828_ad07_c7a217634093----&sectionName=icymi

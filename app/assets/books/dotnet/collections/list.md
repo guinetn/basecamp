@@ -13,6 +13,11 @@ Elements can be added using the Add(), AddRange() methods or collection-initiali
 Elements can be accessed by passing an index e.g. myList[0]. Indexes start from zero.
 List<T> performs faster and less error-prone than the ArrayList.
 
+Prefer IEnumerable<T> to IList<T>  
+Methods iterating on IEnumerable<T> sequences use either foreach() or System.Linq.Enumerable extension methods.  
+* Use IList<T> only when sequence modification is required  
+* Use IEnumerable<T> instead of IList<T> as method parameters if there is no need to add/remove elements to the sequence so no need to call .ToList()
+Return types should be IEnumerable<T> rather than IList<T> because most of the time, the sequence will simply be iterated via a foreach statement.
 
 ```cs
 List<string> myCollection = new List<string>() { "Bob", "Alex", "Joe" } ;

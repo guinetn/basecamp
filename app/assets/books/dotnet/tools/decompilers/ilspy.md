@@ -13,6 +13,7 @@ Extensible via plugins (MEF)
 Check out the language support status
 
 https://github.com/icsharpcode/ILSpy
+https://www.microsoft.com/en-us/p/ilspy/9mxfbkfvsq13?activetab=pivot:overviewtab
 
 # dnSpy (ILSpy fork)
 

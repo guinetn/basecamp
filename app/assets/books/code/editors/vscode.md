@@ -1,127 +1,96 @@
 # VSCode
 
-VS Code is significantly lightweight than Visual Studio, and you fell it because it runs applications in the background and independent from the IDE, making sure the IDE doesn't slow down.
-No matter what type of project, VS Code easily helps you set up the IDE. It can also run Azure and Docker and can deploy with confidence and ease when it comes to deploying applications. It supports Git and easy debugging, and it has IntelliSense that helps improve error-free and clean coding.
+- https://code.visualstudio.com
+- https://code.visualstudio.com/docs      Docs
+- https://github.com/microsoft/vscode     Source
 
-https://code.visualstudio.com
-
-tasks.json (build instructions, tell VS Code how to build (compile) a program)
-launch.json (debugger settings)
-Starting VS Code in a folder 
-→ that folder becomes your "workspace"
-→ that workspace settings are in .vscode/settings.json (separate from user settings stored globally)
-
-### Extensions
-https://marketplace.visualstudio.com/items?itemName=Oracle.oracledevtools
-https://code.visualstudio.com/api/extension-guides/webview
-https://github.com/microsoft/codetour: record and playback guided tours of codebases, directly within the editor.
-https://code.visualstudio.com/docs/remote/remote-overview
-
-Ex: https://marketplace.visualstudio.com/items?itemName=rfukuma.background-image  
-Download it → rfukuma.background-image-1.0.0.vsix  
-Is a ".zip" file  
-Rename to .zip to view inside
-- extension.vsixmanifest
-- [Content_Types].xml
-- extension  
--> README.md  
--> package.json  
--> CHANGELOG.md  
--> out/  
-    . main.js   
-    . config.js  
-    . ...
-
-### VS Code themes
-- https://themes.vscode.one/
-
-### VS Code Remote Development
-https://code.visualstudio.com/docs/remote/remote-overview
-
-process of attaching to a development environment sitting either in a 
-- Virtual Machine
-- WSL
-- on a Docker container
-
-- https://code.visualstudio.com/docs/remote/remote-overview
-- https://cloudblogs.microsoft.com/industry-blog/en-gb/cross-industry/2020/12/15/run-blazor-in-a-docker-container-with-visual-studio-code-remote-development/
-
-Remote - SSH 
-    Connect to any location by opening folders on a remote machine/VM using SSH.
-Remote - Containers
-    Work with a separate toolchain or container-based application inside (or mounted into) a container.
-Remote - WSL
-    Get a Linux-powered development experience in the Windows Subsystem for Linux.
+- Microsoft open source Code Editor for Windows, Linux, macOS
+- Powerful Edition: (multi-curseur, refactoring, parameters, navigation...)
+- Light Visual Studio running applications in the background independently from the IDE (so it doesn't slow down)
+- Supports C++, C#, Java, Python, TypeScript…
+- Source Control (Git, Devops)
+- Can run and deploy on Azure / Docker
+- Debugging tools (breakpoints, terminal)
+- Intellisense : Code-completion intelligente (variables, méthodes, modules)
+- Set up the IDE for any type of project
+    >tasks.json: build instructions, tell VSCode how to build (compile) a program
+    >launch.json: debugger settings
+- Starting VS Code in a folder 
+    → that folder becomes your "workspace"
+    → that workspace settings are in .vscode/settings.json (separate from user settings stored globally)
+- Electron app  https://electron.atom.io/
+http://www.dotnetcurry.com/visualstudio/1340/visual-studio-code-tutorial
 
 
-- [VSCode's Python Interactive mode is AMAZING!](https://www.youtube.com/watch?v=lwN4-W1WR84&t=358s)
-VS Code:  xxxx.py  # %%   → get a notebook	
-
-Develop in remote containers using VS Code
-https://docs.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers
-
-## Remote Repositories 
-
-Browse, search, edit, and commit to any remote GitHub repository directly from within Visual Studio Code. 
-- https://www.youtube.com/watch?v=wHsmaXoGIXI
-
-Green indicator left/bottom → "Open remote repository"
+download_page(code/editors/vscode_configuration.md)
+download_page(code/editors/vscode_tasks.md)
+download_page(code/editors/vscode_launch.md)
+download_page(code/editors/vscode_remote.md)
 
 ## Productivity tips
 
 https://www.youtube.com/watch?v=ifTF3ags0XI
 
+* RELEASE THE MOUSE
+    Check shortcuts
 
-1. VS CODE CLI
-code .          # open current directory (Command Palette, Shell command: install 'code' cmd in path)
-code file.js    # open file
+* ZOOM
+    CTRL + +
+    CTRL + -
 
-2. RELEASE THE MOUSE
-Check shortcuts
+* Pane Show/Hide
 
-3. COMMAND PALETTE: CTRL+P
-files by default
+    CTRL+B
 
-4. RUN COMMANDS
-Add '>' to have commands
 
-5. QUOKKA
-JavaScript and TypeScript playground in your editor.
->quokka
+* VS CODE CLI
 
-6. FIND SYMBOLS WITH @
-@ show page symbols to quickly navigate to
-CTRL+F or.... @searched_symbol
+    code .                                              # open current folder in a new Visual Studio Code window
+    code . -reuse                                       # open current folder in existing Visual Studio Code window
+    code file.js                                        # open file
+    code readme.md .gitignore package.json              # open the listed files in a new Visual Studio Code window
+    code project1 project2                              # open the listed folders, each one in its own VSCode window
 
-7. FIND SYMBOLS WITH #
-># global_symbol_search
-Type just the first char of words
+* REGEX    
+    use $1 to replace
+    Find       (zaa.*jpg)
+    Replace    .pimg1{   background-image:url('../img/$1');   min-height:100%; }
 
-8. MOVE AROUND QUICKLY
+* COMMAND PALETTE
+
+    release the mouse → shortcut
+    CTRL+P              show files
+    CTRL+SHIFT+P        command palette
+        │
+		└───  Add '>' to show commands
+		└───  Add '@' to show code symbols to quickly navigate to
+		└───  Add '#' to find words with the first char you type
+
+* MOVE AROUND QUICKLY
 >:23
 Hightlight: Shift + ←/→ 
 Hightlight: Ctrl + ←/→      by words
 
-9. MULTILINE EDITING
+* MULTILINE EDITING
 Find matches: CTRL + D
 Set multiple cursors: Alt + click    or    ALT + SHIFT + ↑ / ↓ 
 
-10. AUTO RENAME TAG
+* AUTO RENAME TAG
 Extension to rename tag start/end
 
-11. DELETE OR MOVE A LINE
+* DELETE OR MOVE A LINE
 Alt + X 
-Alt + ↑ / ↓
+Alt + ↑ / ↓         Move a line up and down
 
-12. HIGHLIGHT & COMMENT LINES
+* HIGHLIGHT & COMMENT LINES
 Highlight line: CTRL + L
 Comment Lines: CTRL + /
 
-13. JS DOC EXTENSION
+* JS DOC EXTENSION
 
-14. BETTER COMMENTS
+* BETTER COMMENTS
 
-15. INTEGRATED TERMINAL
+* INTEGRATED TERMINAL
 
 CTRL + ù
 CTRL + `
@@ -155,32 +124,50 @@ SETTINGS - Change Default Terminal
         "command": "workbench.action.terminal.focusPrevious" 
     }`
 
-16. VS CODE TASKS
+[Add a terminal](https://code.visualstudio.com/docs/editor/integrated-terminal#_configuration)
+    C:\WINDOWS\System32\cmd.exe     default
+    C:\WINDOWS\System32\bash.exe    bash
+
+    Left Menu Bottom → Settings (gear) → type 'Terminal'
+        "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe"
+        "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\git-cmd.exe", "terminal.integrated.shellArgs.windows": ["--command=usr/bin/bash.exe", "-l", "-i"]
+
+* VS CODE TASKS
 json configuration files having command to run in the terminal or from command palette (>run)
 
-17. GIT SOURCE CONTROL
+* GIT SOURCE CONTROL
+https://www.sqlservercentral.com/articles/basic-git-for-dbas-managing-powershell-scripts
 
-18. GIT LENS EXTENSION
+* GIT LENS EXTENSION
 
-19. REMOTE REPOSITORIES
-Normally to work on  a repo on github you need to clone it to your local system
+* REMOTE REPOSITORIES
+Normally to work on a repo on github you need to clone it to your local system
 Install the extension then click the bottom left corner to open up a remote repo (log in)
 
-20. REMOTE SSH & CONTAINERS
+* REMOTE SSH & CONTAINERS
 Open any folder or repository inside a Docker container and take advantage of Visual Studio Code's. Deveop in containers instead of your local system
 
-21. CUSTOM SNIPPETS
+* CUSTOM SNIPPETS
 your own or...
 flutter snippet extensions
 
-22. COMMUNITY SNIPPETS
+* COMMUNITY SNIPPETS
 
-23. AUTO-CREATE DIRECTORIES
+* AUTO-CREATE DIRECTORIES
 
-24. PASTE AS JSON EXTENSION
+* PASTE AS JSON EXTENSION
 infer type with quicktype tool
 
-25. RENAME SYMBOL
+* RENAME SYMBOL
+
+                ___ F2 / Right-Click → 'Rename Symbol' function
+               / 
+    function foo(){
+      // ...
+    }
+    foo();
+    foo();
+    foo();
 
 CODE FOLDING
 Ctrl+Shift+[ to fold
@@ -210,7 +197,32 @@ CTRL+TAB    switch between files
 Extension advanced new file → ctrl+p then 'advanced..." then paths propositions
 
 
-vscode:extension/mushan.vscode-paste-image
 
-https://marketplace.visualstudio.com/items?itemName=mushan.vscode-paste-image
+# COMPARE FILES
+
+    http://dailydotnettips.com/2015/06/04/how-to-compare-files-in-visual-studio-code/
+    Right click, Select for Compare” from the context menu.
+    Right click, in the context menu, “Compare with <Previously Selected File for Compare>”
+# Editing Text
+
+    The Monaco Editor is the code editor that powers VS Code. 
+    https://microsoft.github.io/monaco-editor/
+    npm install monaco-editor@0.8.3
+
+    Bracket matching (Ctrl+Shift+\)
+    Code block commenting (Ctrl+K Ctrl+C) and uncommenting (Ctrl+K Ctrl+U)
+    Smart selection growing (Shift+Alt+right) and shrinking (Shift+Alt+left)
+    Code folding (Ctrl+Shift+[) and unfolding (Ctrl+Shift+]), including folding the full file to a specific level (Ctrl+K Ctrl+0 to Ctrl+K Ctrl+5) and unfolding the full file (Ctrl+K Ctrl+J)
+    Zooming the editor in (Ctrl++) and out (Ctrl+-)
+    Find (Ctrl+F in file, Ctrl+Shift+F in workspace) and replace (Ctrl+H in file, Ctrl+Shift+H in workspace) with regular expression support (including referencing matched groups with $1, $2… when replacing) and filtering files by filename when searching in workspace (Ctrl+Shift+J when Search side bar is opened)
+    Multi cursor editing with block selection (Ctrl+Shift+Alt+cursor or Shift+Alt+click), custom adding of cursors (Alt+click) and adding find results to selection (Ctrl+D)
+    For programming languages with language server support (built-in or extension-based), there are additional functionalities:
+
+    IntelliSense code suggestions (automatically as you type and manually invoked with Ctrl+Space)
+    Method parameter hints (automatically when you open parenthesis and manually invoked with Ctrl+Shift+Space)
+    Go to symbol definition (F12, opens a new file or moves cursor in same file) and peek symbol definition (Alt+F12, opens inline view with full editing support, Esc closes it)
+    Find all references (Shift+F12 opens inline view with full editing support, Esc closes it)
+    Rename symbol (F2)
+    Code formatting (Shift+Alt+F to format the full file, Ctrl+K Ctrl+F to format the current selection only)
+
 

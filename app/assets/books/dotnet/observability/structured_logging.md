@@ -1,8 +1,15 @@
 # STRUCTURED LOGGING
 
+Logs are often
+- non-existent
+- everywhere (and most are useless)
+- unstructured (difficult to find specific things)
+- too verbose
+
 Using structured logging, you can add serialized objects to the logs that are efficiently queryable by log monitoring systems. For e.g., you can query the entire transaction log based on a customerID or a transactionID. In ASP.NET Core apps, you can use Serilog, which provides structured logging. 
 
-
+- [Creating a Log Analytics workspace](https://docs.microsoft.com/en-us/azure/azure-monitor/logs/quick-create-workspace)
+- https://levelup.gitconnected.com/structured-logging-and-azure-log-analytics-416feda20970
 - https://stackify.com/what-is-structured-logging-and-why-developers-need-it/
 - https://dzone.com/articles/what-is-structured-logging
 

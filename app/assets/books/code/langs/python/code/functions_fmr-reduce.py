@@ -27,6 +27,12 @@ def reduce(function, iterable, initializer=None):
     return value
 '''
 
+from functools import reduce
+a = [1, 2, 3, 4, 5]
+product = reduce(lambda x, y: x*y, a)
+print(product)
+
+
 from functools import reduce 
 from functools import partial 
 

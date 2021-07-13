@@ -19,9 +19,10 @@ TYPICAL MICROSERVICE IS MADE OF:
  - asynchronous operations
  - ...
 
- https://itnext.io/how-to-build-an-event-driven-asp-net-core-microservice-architecture-e0ef2976f33f ***
-https://genekuo.medium.com/coding-a-simple-microservices-with-rust-3fbde8e32adc
-https://medium.com/tenable-techblog/building-a-microservice-with-rust-23a4de6e5e14
+- https://itnext.io/how-to-build-an-event-driven-asp-net-core-microservice-architecture-e0ef2976f33f ***
+- https://docs.ksqldb.io/en/latest/tutorials/event-driven-microservice
+- https://genekuo.medium.com/coding-a-simple-microservices-with-rust-3fbde8e32adc
+- https://medium.com/tenable-techblog/building-a-microservice-with-rust-23a4de6e5e14
 
 ***Martin Fowler 2014 article:***
 <quote>
@@ -173,7 +174,7 @@ Microservice communicate via Rest protocol.
 To communicate more over: publisher-subscriber model that fulfills our need data to send and read asynchronously without thread blocked on network calls. Based on company-wide skillsets, needs and requirements we can use Kafka, Rabbitmq e.t.c.
 
 
-download.page(data/theorem_cap.md)
+download.page(data/cap_theorem.md)
 
 
 

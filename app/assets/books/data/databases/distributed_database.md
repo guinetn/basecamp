@@ -24,9 +24,9 @@ Distribute chunks (file part) on servers
 Be elastic (servers/data)
 Be fault tolerant
 
-download.page(data/theorem_cap.md)
 download.page(data/acid.md)
 download.page(data/base.md)
+download.page(data/cap_theorem.md)
 
 ## DISTRIBUTED DATABASE SAMPLES
 

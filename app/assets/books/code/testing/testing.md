@@ -1,5 +1,14 @@
 # TESTING
 
+Software development life cycle (SDLC) implies two types of Testing
+
+- MANUAL TESTING
+Physical execution of test case scenarios against the applications to detect errors and bugs.
+Challenges and heavy manual effort
+
+- AUTOMATION TESTING
+A way to automate the testing processes and increased the demand
+
 
 ## Testing
 Executing the software with data to ensure that the software works correctly.
@@ -64,23 +73,23 @@ https://www.geeksforgeeks.org/software-engineering-seven-principles-of-software-
 # The use of special software (separate from the software being tested) to control the execution of tests and the comparison of actual outcomes with predicted outcomes
 
 # MODEL-BASED TESTING 
-# A software testing technique in which the test cases are derived from a model that describes the functional aspects of the System Under Test (SUT). Visual models can be used to represent the desired behavior of a SUT, or to represent testing strategies and a test environment. From that model manual tests, test data, and automated tests can be generated automatically.
+A software testing technique in which the test cases are derived from a model that describes the functional aspects of the System Under Test (SUT). Visual models can be used to represent the desired behavior of a SUT, or to represent testing strategies and a test environment. From that model manual tests, test data, and automated tests can be generated automatically.
 
 
 # STAGING ENVIRONMENT 
-# Used to test the newer version of your software before it’s moved to live production. Staging is meant to replicate as much of your live production environment as possible, giving you the best chance to catch any bugs before you release your software.
+Used to test the newer version of your software before it’s moved to live production. Staging is meant to replicate as much of your live production environment as possible, giving you the best chance to catch any bugs before you release your software.
 
 # PRODUCTION 
-# The final stage in a deployment pipeline where the software will be used by the intended audience.
+The final stage in a deployment pipeline where the software will be used by the intended audience.
 
 # CONTINUOUS TESTING 
-# The process of executing unattended automated tests as part of the software delivery pipeline across all environments to obtain immediate feedback on the quality of a code build.
+The process of executing unattended automated tests as part of the software delivery pipeline across all environments to obtain immediate feedback on the quality of a code build.
 
-# Ex: https://github.com/reddit/reddit-mobile/issues/247
-# Test setup: 2013 Moto X. On 4G (HSPA+). Chrome Dev Channel.
-# Load reddit.com
-# Tap on the big blue link to load the mobile site.
-# Wait until the site feels loaded.
+Ex: https://github.com/reddit/reddit-mobile/issues/247
+Test setup: 2013 Moto X. On 4G (HSPA+). Chrome Dev Channel.
+Load reddit.com
+Tap on the big blue link to load the mobile site.
+Wait until the site feels loaded.
 • Expectation: Site should load and give me the frontpage items and images in < 5 seconds.
 • Result: Site came up with items and image placeholders within 3 seconds. It took 45 seconds to show images.
 • First impression
@@ -428,6 +437,8 @@ http://jstest.jcoglan.com/
 ### See sample ANGULAR-SEED PROJECT
 
 # SELENIUM
+
+	https://www.mygreatlearning.com/blog/selenium-interview-questions
 
 		seleniumhq.org
 		Browser automation framework

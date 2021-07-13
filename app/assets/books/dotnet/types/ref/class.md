@@ -194,3 +194,57 @@ public static T DeepCopy<T>(this T value)
     return JsonConvert.DeserializeObject<T>(json);
 }
 
+## Implicit Operator
+
+Mapping process between different classes is tedious
+C# class can accepts convertible data type without type casting
+«access specifier» static implicit operator «converting type» («convertible type» rhs)
+
+A transparent “automatic” cast between two classes
+“implicit” operator in the source class (Customer), in a static field
+
+```cs
+namespace ImplictExplicitOperator {
+    internal class Customer 
+    {
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string LastName { get; set; }
+        public DateTime Birthday { get; set; }
+
+        //  NOT a normal static field
+        // returns an instance of CustomerDTO, populating with a customer object
+        public static implicit operator CustomerDTO(Customer customer)
+        {
+            return new CustomerDTO
+            {
+                Id = customer.Id,
+                FullName = $"{customer.FirstName} {customer.MiddleName} {customer.LastName} "
+            };
+        }        
+    }
+}
+
+internal class CustomerDTO
+{
+    public int Id { get; set; }
+    public string FullName { get; set; }    
+     public DateTime Birthday { get; set; }
+}
+
+class Program 
+{
+    static void Main(string[] args)
+    {
+        Customer customer = new Customer();
+        customer.FirstName = "Joe";
+        customer.LastName = "Black";
+        
+        // To cast a Customer object to CustomerDTO: Automatic conversion
+        // It recognizes automatically what needs to be done, transparently.
+        CustomerDTO customerDTO = customer;
+        Console.WriteLine(customerDTO.FullName);        
+    }
+}
+```

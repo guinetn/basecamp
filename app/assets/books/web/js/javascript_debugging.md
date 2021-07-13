@@ -1,5 +1,53 @@
 # JAVASCRIPT DEBUGGING
 
+# console
+
+console.assert(bool, "log this if false");
+console.assert(false, "user not loged in");
+
+console.log(console);
+    .assert()
+    .clear()
+    .context()
+    .count()
+    .countReset()
+    .debug()
+    .dir()
+    .dirxml()
+    .error()
+    .group()
+    .groupCollapsed()
+    .groupEnd()
+    .info()
+    .log()
+    memory: (...)
+    .profile()
+    .profileEnd()
+    .table()
+    .time()
+    .timeEnd()
+    .timeLog()
+    .timeStamp()
+    .trace()
+    .warn()
+
+console.log( {foo} );
+console.log( {foo, bar} );
+
+console.table( obj );
+console.group( "label");
+console.groupCollapsed( "label");
+console.dir(screen);   for large objects
+
+console.count("click"); 
+doSomeStuff();
+console.count("click");  // add 1 on each call, no need var click=0; ...clicks++
+
+console.timeLog();
+
+console.trace("who call me");
+
+console.log('%c some colors', 'color:yellow; font-weight:bold; background-color:black;');
 
 ## Chrome DevTools
 

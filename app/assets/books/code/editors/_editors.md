@@ -10,6 +10,9 @@ download.page(code/editors/vi.md)
 ::::
 download.page(code/editors/rider.md)
 
+::::
+download.page(code/editors/lsp.md)
+
 
 ### CodeShare
 https://codeshare.io/

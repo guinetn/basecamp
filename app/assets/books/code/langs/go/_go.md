@@ -14,6 +14,31 @@ use a github command
 
 Golang: This language is by Google and its code is extremely easy to write and maintain. Go programmers are among the highest paid programmers in the marker as per stackoverflow. The development of web, desktop and mobile apps all are supported in Go.
 
+## SETUP
+- https://www.rust-lang.org/tools/install
+>rustc --version
+>cargo --version       rust’s package manager
+
+VSCode extension
+- https://marketplace.visualstudio.com/items?itemName=rust-lang.rust
+
+# QUICKSTART
+> mkdir -p ~/coding/rust
+> cd ~/coding/rust
+> cargo new HelloWorld
+Created binary (application) `HelloWorld` package
+> cd HelloWorld
+> code .
+
+main.rs
+```rs
+fn main() {
+  let somevalue = 123;
+  println!("Hello, world! {}", somevalue);
+}
+```
+>cargo build
+>cargo run
 # GO SAMPLES
 download.slideshow(assets/books/code/langs/go/code_samples/go01.md)
 
@@ -40,7 +65,7 @@ func main() {
 }
 ```
 >go run random.go
-
+ 
 ***Installing Packages***
 >go get github.com/gobuffalo/flect
 Find the package on GitHub in this case, and install it into your $GOPATH
@@ -66,3 +91,10 @@ download.page(assets/books/code/langs/go/concurrency_parallelism.md)
 - https://betterprogramming.pub/how-to-become-a-golang-developer-a-6-step-career-guide-ce8274dd0eb3
 - https://pro.academind.com/p/golang-the-practical-guide
 - https://www.bogotobogo.com/GoLang/GoLang_Closures_Anonymous_Functions.php
+
+- https://www.alexedwards.net/blog/basic-authentication-in-go
+- https://www.alexedwards.net/blog/how-to-rate-limit-http-requests
+- https://www.alexedwards.net/blog/understanding-mutexes
+- https://levelup.gitconnected.com/rust-with-visual-studio-code-46404befed8
+
+- [Go app with dokku](https://lnkd.in/dYbrwxk)

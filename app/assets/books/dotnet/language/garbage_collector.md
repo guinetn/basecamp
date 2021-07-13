@@ -1,7 +1,22 @@
 # GARBAGE COLLECTOR
 
+automatically clean up all the allocated objects which are not referenced by anything (have no so-called root reference)
+
+Heap keeps static variables which are never garbage collected because these never have root references. Keep in mind that Garbage Collector runs on a separate thread and collects the unused objects, and free up memory. It runs automatically and periodically, and when an application begins to run out of memory.
+
+See also memory_allocation.md, idisposable.md
+
 .NET’s Garbage Collector (GC) implements many performance optimizations. One of them, the generational model assumes that young objects die quickly, whereas old live longer. This is why managed heap is divided into three Generations. We call them Gen 0 (youngest), Gen 1 (short living) and Gen 2 (oldest). New objects are allocated in Gen 0. When GC tries to allocate a new object and Gen 0 is full, it performs the Gen 0 cleanup. So it performs a partial cleanup (Gen 0 only)! It is traversing the object’s graph, starting from the roots (local variables, static fields & more) and marks all of the referenced objects as living objects.
 
+
+## GARBAGE COLLECTOR GENERATIONS
+based on an object’s life cycle, there are three generations (categories):
+* Generation 0
+newly created object is put in Generation 0 and has not been checked by Garbage Collector yet.
+* Generation 1
+object inspected by Garbage Collector once but kept in Generation 1 because having a root reference.
+* Generation 2
+if the object passes two or more inspections and is not terminated by Garbage Collector because of having a root reference are in Generation 2.
 
 
 GC will handle above situations: 
@@ -28,7 +43,9 @@ GC.GetTotalMemory(true);
 long memoryAfter = GC.GetTotalMemory(false);
 Console.WriteLine("Memory Used With Iterator = \t" + string.Format(((memoryAfter - memoryBefore) / 1000).ToString(), "n") + "kb");
 
-.NET’s Garbage Collector (GC) implements many performance optimizations. One of them, the generational model assumes that young objects die quickly, whereas old live longer. This is why managed heap is divided into three Generations. We call them Gen 0 (youngest), Gen 1 (short living) and Gen 2 (oldest). New objects are allocated in Gen 0. When GC tries to allocate a new object and Gen 0 is full, it performs the Gen 0 cleanup. So it performs a partial cleanup (Gen 0 only)! It is traversing the object’s graph, starting from the roots (local variables, static fields & more) and marks all of the referenced objects as living objects.
+
+Garbage Collector does not collect objects of unmanaged resources like files or databases for that matter. For that, the developer have to call Dispose(); explicitly (when inheriting from IDisposable) or to use the concerned class object within using keyword (again, make sure IDiposable is inherited in the type you want to use dispose of for).
+Important note: do not call Dispose(); method or use using a keyword on an object that is injected (it is already handled when using Dependency Injection).
 
 This is the first phase, called “mark”. This phase can be nonblocking, everything else that GC does is fully blocking. GC suspends all of the application threads to perform next steps!
 

@@ -39,10 +39,11 @@ SQS - Amazon Simple Queue Service
 https://aws.amazon.com/sqs/
  
 download.page(data/db_nosql_redis.md)
-download.page(api/architecture/architecture_event_driven/event_sourcing.md)
+download.page(api/architecture/architecture_event_driven/event_sourcing_streaming.md)
 download.page(api/architecture/architecture_event_driven/mqtt.md)
 download.page(api/architecture/architecture_event_driven/nats.md)
 download.page(api/architecture/architecture_event_driven/kafka.md)
+download.page(assets/books/data/db_streaming_ksqldb.md)
 download.page(api/architecture/architecture_event_driven/rabbitmq.md)
 download.page(api/grpc.md)
 download.page(api/architecture/architecture_event_driven/ipc-on-linux.md)
@@ -87,3 +88,4 @@ https://developer.lightbend.com/docs/akka-platform-guide/concepts/message-driven
 
 - https://itnext.io/how-to-build-an-event-driven-asp-net-core-microservice-architecture-e0ef2976f33f
 - https://itnext.io/how-to-use-database-sharding-and-scale-an-asp-net-core-microservice-architecture-22c24916590f
+- https://docs.ksqldb.io/en/latest/tutorials/event-driven-microservice

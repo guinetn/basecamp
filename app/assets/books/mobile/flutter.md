@@ -449,3 +449,4 @@ shared_preferences: 2.0.5
 - [Dashboard](https://www.youtube.com/watch?v=_uOgXpEHNbc&t=205s)
 - [Flutter way](https://www.youtube.com/channel/UCJm7i4g4z7ZGcJA_HKHLCVw)
 - [firebase+Flutter](https://www.youtube.com/watch?v=niJ4wNee_Eo)
+- https://levelup.gitconnected.com/flutters-communication-flow-with-native-1672495e239f

@@ -1,4 +1,5 @@
 ## IDisposable
+
 To release unmanaged resources. The garbage collector automatically releases the memory allocated to a managed object when that object is no longer used. However, it is not possible to predict when garbage collection will occur. Furthermore, the garbage collector has no knowledge of unmanaged resources such as window handles, or open files and streams.
 
 You can release your resources before the garbage collector frees the object
@@ -249,3 +250,6 @@ public class StreamReaderEnumerator : IEnumerator<string>
 When you create an object that encapsulates an unmanaged resource, it's recommended that you provide the necessary code to clean up the unmanaged resource in a public Dispose method. By providing a Dispose method, you enable users of your object to explicitly free its memory when they are finished with the object. When you use an object that encapsulates an unmanaged resource, make sure to call Dispose as necessary.
 
 You must also provide a way for your unmanaged resources to be released in case a consumer of your type forgets to call Dispose. You can either use a safe handle to wrap the unmanaged resource, or override the Object.Finalize() method.
+
+Garbage Collector does not collect objects of unmanaged resources like files or databases for that matter. For that, the developer have to call Dispose(); explicitly (when inheriting from IDisposable) or to use the concerned class object within using keyword (again, make sure IDiposable is inherited in the type you want to use dispose of for).
+Important note: do not call Dispose(); method or use using a keyword on an object that is injected (it is already handled when using Dependency Injection).

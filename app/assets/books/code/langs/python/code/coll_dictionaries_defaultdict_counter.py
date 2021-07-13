@@ -9,6 +9,19 @@ Unordered, Mutable collections of data, where the data is stored in the form of 
 Use Case: Dictionaries are useful when you need instant access to data, without having to iterate over all the values. For example, employee data can be stored in dictionaries.
 """
 
+# Dictionary with integer keys
+my_dict = {1: 'A', 2: 'B'}
+print(my_dict)
+
+# Dictionary with string keys
+my_dict = {'name': 'X', 'age': 10}
+print(my_dict)
+
+# Dictionary with mixed keys
+my_dict = {'name': 'X', 1: ['A', 'B']}
+print(my_dict)
+
+
 # Create dict
 
 empty_dict = {} # Pythonic

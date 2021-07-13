@@ -35,3 +35,5 @@ See also IValueTaskSource
 
 
 - https://levelup.gitconnected.com/5-ways-to-improve-the-performance-of-c-code-for-free-c89188eba5da
+
+- https://chnasarre.medium.com/memory-anti-patterns-in-c-7bb613d55cf0

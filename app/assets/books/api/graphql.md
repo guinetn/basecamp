@@ -8,6 +8,7 @@ powerful query language for APIs and a runtime for fulfilling those queries with
 
 [comparison between GraphQL and REST](https://dev-blog.apollodata.com/graphql-vs-rest-5d425123e34b)
 
+![](assets/graphql.png)
 
 ## more
 - https://www.contentful.com/blog/2021/01/14/GraphQL-via-HTTP-in-five-ways/

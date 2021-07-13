@@ -1,5 +1,6 @@
 # Kubeflow 
 
+The Machine Learning Toolkit for Kubernetes
 Google Open source platform designed to work on top of kubernetes 
 Set of tools addressing ML life cycle stages
 - Data exploration
@@ -11,6 +12,8 @@ Set of tools addressing ML life cycle stages
 - Model tuning
 - Model serving
 - Model versioning
+
+https://www.kubeflow.org/
 
 kubeflow takes advantage of the benefits that a kubernetes cluster provides such as container orchestration and auto-scaling.
 interacting with kubeflow from the UI

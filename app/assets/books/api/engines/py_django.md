@@ -7,6 +7,7 @@ Focus on writing your app without needing to reinvent the wheel
  in-built templates that offer performance
  
   - https://www.djangoproject.com
+  - https://code.visualstudio.com/docs/python/tutorial-django
   
   >pip install Django
   >python -m django --version

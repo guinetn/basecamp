@@ -1,16 +1,17 @@
-# MAVEN
+# Apache Maven
 
-https://maven.apache.org/
-http://linsolas.developpez.com/articles/java/outils/builds/
-http://maven.apache.org/guides/getting-started/index.html
+- https://maven.apache.org/
+- http://linsolas.developpez.com/articles/java/outils/builds/
+- http://maven.apache.org/guides/getting-started/index.html
 
-## Apache Maven is a build tool for Java and other JVM-based projects
+Java/JVM-based project manger: build, reporting, documentation based on a primary source of information
+Yiddish word meaning "accumulator of knowledge"
 
 Software project manager
 Manage a project´s build, reporting and documentation from a central piece of information
 Automatic build tool
 . Compilation
-. Deployment du livrable on a "repository" 						
+. Deployment du livrable on a "repository" 					
 . Code Quality Report (Sonar)
 
 POM.xml (PROJECT OBJECT MODEL): project description
@@ -21,7 +22,6 @@ POM.xml (PROJECT OBJECT MODEL): project description
 . les rapports techniques demandés
 ...
 
-
 Maven breaks an application into many smaller components to 
 . bring in third party components 
 . share your own components
@@ -31,6 +31,14 @@ component repositories and the dependency mechanism
 Convention over Configuration 		
 . source files are in src/main/cpp
 . compiled classes were placed in ${basedir}/target/classes
+
+
+Advantages of Maven:
+Eases the building process for any project.
+It maintains a uniformity along the entire build process.
+It’s very important to understand the project that we are working on. It provides Comprehensive information about the project.
+To ensure quality in a project, it’s necessary to develop it in the best possible manner and It provides the guidelines to do just that.
+Often in a project, it’s required to migrate to new features and with Maven, the migration is simplified.
 
 ### MAVEN PROJECT STRUCTURE
 

@@ -4,6 +4,10 @@ For verifying the identity of other systems.
 The file contains a list of public keys for all the hosts which the user has connected to.  
 SSH can automatically add keys to the user's file, but they can be added manually as well. 
 
+C:\Users\nguin\.ssh
+    📝 known_hosts
+    13.92.183.89 ecdsa-sha2-nistp256 AAA5446...dU8=
+    
 ~/.ssh/known_hosts
 /home/&lt;user&gt;/.ssh/known_hosts
 

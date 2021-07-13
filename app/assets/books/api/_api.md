@@ -167,6 +167,8 @@ module.exports = (req, res, next) => {
 ::::
 download.page(api/doc/_doc.md)
 ::::
+download.page(api/doc/api_create.md)
+::::
 download.page(api/architecture/_architecture.md)
 ::::
 download.page(api/controllers.md)
@@ -176,9 +178,9 @@ download.page(api/rest.md)
 ::::
 download.page(api/graphql.md)
 ::::   
-download.page(api/serializing/_serializing.md)
-::::
 download.page(api/grpc.md)
+::::
+download.page(api/serializing/_serializing.md)
 ::::
 download.page(api/performances.md)
 ::::
@@ -200,6 +202,9 @@ download.page(api/communication_ways.md)
 ::::
 download.page(api/security.md)
 
+# samples
+
+- https://github.com/Vake93/AspNetExperiments/tree/main/GrpcHttpApi
 
 - [Low level ASP.NET Core example web server](https://github.com/benaadams/Ben.Http)
 - https://www.ezzylearning.net/tutorial/a-developers-guide-for-creating-web-apis-with-asp-net-core-5

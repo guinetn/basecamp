@@ -10,20 +10,25 @@ Trend: improving performance by reducing the amount of memory that you allocate
 
 Reference and value types in relation to memory allocation to explain the performance issues 
 
+![](assets/books/dotnet/high_perf/assets/memory_alloc.png)
+
 ***REFERENCE TYPES***
 class keyword 
-Allocated on heap 
+Allocated on heap (used to store objects, global variables, static global variables, types used with `new`)
 A variable for a reference type is a reference to the thing on the heap 
-Passed around by reference 
+PASSED AROUND BY REFERENCE 
 Assignment is a copy of the reference, not the object 
+Shared among all the threads: multi-threading application must be aware of thread safeness to avoid race condition.
+Inheritance: child class is a single object in Heap and it stores all state-related data of classes, including the parent class
 
 ***VALUE TYPES***
 struct keyword 
-Allocated on stack (or embedded into a object)
+Allocated on stack (local variables, or embedded into a object)
+Function call = push its address on the stack, pop when finished
 A variable for a value type is the value itself, e.g. integer, 3D point. etc. 
-Passed around by value (i.e. copied) 
+PASSED AROUND BY VALUE (I.E. COPIED) 
 Assignment is a copy of the whole value 
-
+Each thread has its own Stack
 
 ***Object reuse***
 Reuse of same object instead of new initialization allocation
@@ -73,6 +78,7 @@ More allocations for Task & Task<T>, cannot be reused
 Can use TaskValue for common uses cases
 ValueTask: a value type which represents the task and it's it's great then for some of these use cases where you want to be able to reuse items where you also want to be able to return synchronously without having to allocate something 
 
+download.page(dotnet/high_perf/memory_allocation _best_practices.md)
 
 ### Reference semantics with value types (C# 7.2)
 

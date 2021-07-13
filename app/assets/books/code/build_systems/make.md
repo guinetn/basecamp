@@ -1,5 +1,8 @@
 # Make
 
+https://www.gnu.org/software/make/
+https://en.wikipedia.org/wiki/Make_software
+
 ## install
 
 build executable programs and libraries from source code.

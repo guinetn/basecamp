@@ -26,4 +26,6 @@ Knative: open source, based on Kubernetes
 https://github.com/anaibol/awesome-serverless
 
 ## More
-- https://www.serverless.com/
+- Serverless Framework: https://www.serverless.com/
+- GitHub Actions: https://github.com/features/actions
+- https://www.youtube.com/watch?v=mWtnd-0Sm18

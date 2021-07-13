@@ -9,6 +9,8 @@ https://www.nuget.org/packages/runtime.ubuntu.18.04-x64.Microsoft.NETCore.ILAsm/
 - JustDecompile
 https://www.telerik.com/products/decompiler.aspx
 C:\Program Files (x86)\Progress
+JustDecompile is a free Telerik tool for . NET assembly browsing and decompiling. It enables you to take an existing compiled assembly (. dll or.exe) and easily browse the symbols it contains. Then just as easily, decompile the assembly language back to readable C#, VB and IL.
+
 
 - https://github.com/TomSmartBishop/facile-api
 
@@ -56,7 +58,7 @@ Go to project folder
 
 ## F# snippet
 
-```c#
+```f#
 open System.Reflection
 
 [<EntryPoint>]
@@ -106,6 +108,6 @@ private PipelineProcessor BuildRedirectionPipeline(string path, ExecutionContext
         commandProcessorBase.AddParameter("-append", true);
     }
     commandProcessorBase.AddParameter("-filepath", path);
-    ...
-So, it looks pretty hardcoded to me.
+}
+
 

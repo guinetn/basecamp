@@ -20,3 +20,13 @@ image processing library
  manipulate images like resizing, adding filters...
  https://pillow.readthedocs.io/en/3.1.x/index.html
 """
+
+
+# Importing the required libraries
+import numpy as np
+from PIL import Image
+import PIL# Opening and analyzing an image
+image1 = Image.open('dark.png')
+print(image1.format)
+print(image1.size)
+print(image1.mode)

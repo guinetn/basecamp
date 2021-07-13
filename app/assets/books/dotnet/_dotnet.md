@@ -1,6 +1,7 @@
 # DOTNET
 
-.NET is a cross-platform runtime and libraries, for cloud, IoT and desktop apps. It includes a garbage collector, JIT compiler, primitive data types and class libraries.
+.NET is a cross-platform runtime and libraries, for cloud, IoT and desktop apps. 
+It includes a garbage collector, JIT compiler, primitive data types and class libraries.
 
 https://aka.ms/dotnet-cli
 https://apisof.net/catalog

@@ -9,6 +9,11 @@ import re
 re.split("[ab]", "carbs"), 	    # split on a or b to ['c','r','s']
 re.sub("[0-9]", "-", "R2D2") 	# Replace digits with dashes. R-D-
 
+import re
+capital = re.findall("[A-Z]\w+", sentence)
+re.split("\.", sentence)
+re.sub("[.?]", '!', sentence)
+x = re.search("fun.", sentence)
 
 # Matching Versus Searching: all checks for a match…
 #   match    …only at the beginning of the string

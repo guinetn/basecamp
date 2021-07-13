@@ -5,6 +5,9 @@
 
 Nullable reference types feature intends to warn you about null-unsafe behavior in the code. 
 
+The new nullable context can be enabled by <Nullable>enable</Nullable>     
+It gives you a full null-state static analysis at compile-time and promises to eliminate every single NullReferenceException once and for all.
+
 myproject.csproj
 ```cs
 <Project Sdk="Microsoft.NET.Sdk">
@@ -15,7 +18,7 @@ myproject.csproj
   </PropertyGroup>
 
   <PropertyGroup>
-    <Nullable>enable</Nullable>
+    <Nullable>enable</Nullable>    ← 
     or
     <NullableReferenceTypes>true</NullableReferenceTypes>     turn them on
   </PropertyGroup>

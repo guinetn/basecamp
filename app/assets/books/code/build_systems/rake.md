@@ -4,8 +4,10 @@ A make-like build utility for Ruby.
 
 a build tool for automating tasks in Ruby. It provides a simple syntax to generate tasks and resolve tasks’ dependencies.
 a simple ruby build program with capabilities similar to make
-https://github.com/ruby/rake
-gem install rake
+- https://github.com/ruby/rake
+- https://ruby.github.io/rake/
+
+>gem install rake
 
 Rakefile
 ```rake
@@ -26,7 +28,7 @@ task "before_task" do
 end
 ```
 
-$> rake third_task
+> rake third_task
 before
 first task
 second task

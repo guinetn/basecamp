@@ -6,6 +6,126 @@ https://devopsmyway.com/list-of-aws-services/
 https://static.coggle.it/diagram/XhbybXDSoKh9k_fr/t/amazon-web-services
 
 
+
+- https://aws.amazon.com/fr/products/
+
+- Tutorials by https://github.com/jacksonyuan-yt
+- [AWS + lambda + ci/cd](https://www.youtube.com/watch?v=mWtnd-0Sm18)
+ A lambda handler that uploads a file to an S3 bucket based on an API Gateway trigger.
+    * Setting up the IAM User
+    * Setting up the CI/CD pipeline w/ GitHub Actions
+    * Setting up & Deploying the AWS S3 Bucket
+    * Verifying the bucket deployment
+
+    - Serverless Framework: https://www.serverless.com/
+    - GitHub Actions: https://github.com/features/actions
+    - src: https://github.com/jacksonyuan-yt/s3-file-upload-api
+
+- [AWS SERVICES - fireship ★★★](https://www.youtube.com/watch?v=JIbIYCM48to&t=174s)
+ calcul
+ stockage
+ bases de données
+ analyse
+ mise en réseau
+ services mobiles
+ outils de développement
+ outils de gestion
+ Internet des Objets
+ sécurité
+ applications d'entreprise
+
+* AWS Origin: 2006 STORATE, GOMPUTE, MESSAGING
+* RoboMaker: simulate robots
+* IoT Core: get data
+* Ground Station: connect to your satellites
+
+GOMPUTE
+* Braket: interact with Quantum Computing
+* EC2: Elastic Compute Cloud, virtual computer in the cloud, typically instance = web app
+* Load Balancer: zpp grows, distribute traffic to multiples instances automatically
+* Cloud Watch: collect logs and metrics from instances
+* Auto Scale: polcies that from logs can create new instances needed based on the traffic
+* Beanstalk: easier that above, ec2+autoscale, paas
+* Lightsail: more easier that above
+* Lambda: even need a server? FAAS, serverless. upload your code and choose an event that code should run
+* Serverless Repos: templates for lambda, pre-built function
+* Outposts: run aws on your own infrastructure without throwing your old servers
+* Snow: interact with aws from remote extreme environments (arctic...). snow devices = mini data centers working without internet in hotile environments
+
+* ECR: elastic container registry. Many app are standardized with docker containers to run on multiple clouds/env. Create a docker image and store it somewhere
+* ECS: elastic  container service will use image from ECR; starting, stopping, allocating vm to ypur containers and connect to products like load balancers
+* EKS: kubernetes service. more control on how apps scale
+* Fargate: containers behave in a more automated way. make containers ~ serverless functions removing ec2 instances need
+* App Runner: point to a containerized image and it handle all the orchestration and scaling behind the scene
+
+STORAGE
+* S3: Simple sotrage service: store data in the cloud. store any file (img, video), objects
+* Glacier: s3 with low latency, for files not often used, lower cost
+* Block Storage: fast storage, lot of throughput. apps with intensive data process requirements (but need more manual config)
+* EFS: Elastic File System, high perf, fully managed (no config), moez expensive
+
+DATABASE - store structured data
+* SimpleDB: nosql database
+* DynamoDB: nosql document database that scale horizontally easily. fast read, inexpensive but limited in modeling relational data. 
+* DocumentDB: ~mongodb
+* ElasticSearch: full text search engine
+* RDS: Relational Database Service. Traditional sql. Support sql flavors (mysql, sqlserver, mariadb, oracle...). Backups, patching, scale
+* Aurora: amazon 'mysql', great perf at lower cost. serverless (pay as use)
+* Neptune: graph database for highly connected datasets (social graphs, recommendations)
+* ElasticCache: to be fast, this use a fully managed redis (in memory db). fast read
+* TimeStream: for time series data (stock market). A time serie db + buil-in function for time-based queries and analytics features
+* QLDB: Quantum ledger db, to make immutable set of cryptographically signed transactions ~ decentralized blockchain
+
+ANALYTICS: to analyze data
+* Redshift: store data in warehouse
+* Lake Formation: store large amount of unstructured data
+* Kinesis: capture real-time streams to analyze real time data
+* EMR: Elastic map reduce service that operate on massive datasets, parallel distributed algorithm (spark: stream processing framework)
+kafka
+flume           → Spark streaming → HDFS, Database, Dashboard
+hdfss3
+Kinesistwitter
+* MSK: kafka (open source)
+
+AUTOMATIC
+* Glue:  serverless ETL, automatic connect to aurora, s3, redshift... Glue Studio = create jobs
+
+MACHINE LEARNING
+* Data Exchange: 3rd party data sources
+* Sagemaker: build ml model with TF, pi torch
+* Rekognition: image recognition, classify objects
+* Lex : conversational bot (idem alexa)
+I'd like to book a hotel
+  sure, wich city
+New york
+    What date are you leaving?
+November 20th, 2021
+    Are you sure to book the hotel in NYC?
+Yes
+    Thank you, The reservation went through successfully
+* Deep Racer: actual race car you can drive with your own ML code
+
+DEVELOPER ESSENTIALS
+* IAM: identity and access management: create rules on who can access what
+* Cognito: to have few users logged, it manages auth methods, user sessions for our web, mobile app
+
+Notifications
+* SNS: simple notification service, send oush notifications
+* SES: simple email service, to send emails to your users 
+
+* CloudFormation: create yaml/json template of our infrastructure to enable services by a click
+* Amplify: connect services above with your frontend sks (react, vue, js...)
+* Budget: costs explorer
+
+
+
+
+
+
+
+
+
+
 ## AWS TRAINING
 
 https://www.youtube.com/watch?v=yPHt0slwMVQ

@@ -3,6 +3,8 @@
 https://www.fastify.io/
 
 inspired by Hapi and Express
+High performance and low overhead framework highly focused on providing maximum efficiency and speed
+
 >npm install fastify
 server.json
 ```js
