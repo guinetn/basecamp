@@ -4,6 +4,27 @@ Incoming requests are intercepted by middlewares that processes the request and 
 
 a routing system
 
+```js
+const express = require('express');
+
+const app = express();
+
+app.use(express.static(process.cwd()+"/WebApp/dist/webapp/"));
+
+const port = 3070;
+
+app.get('/', (req, res) => {
+  res.sendFile(process.cwd()+"/WebApp/dist/WebApp/index.html")
+});
+
+app.listen(port, (err) => {
+  if (err) {
+    logger.error('Error::', err);
+  }
+  console.log(`running server on from port:::::::${port}`);
+});
+```
+
 Express generator
 >npx express-generator --view=pug --git <app-name>
 >npm install
@@ -24,15 +45,15 @@ Dockerize the app: https://blog.logrocket.com/node-js-docker-improve-dx/
 
 ## Why stop ?
 
-Express has not been updated for years,
+Express has not been updated for years
 When you are building an application, you need more features than a routing system.
 
 You need to:
 
-access a database;
-validate your data;
-create an authentication layer;
-create an authorization system;
+- Access a database
+- Validate your data
+- Create an authentication layer
+- Create an authorization system
 etc.
 All of those features are not inside Express and should be glued by yourself.
 

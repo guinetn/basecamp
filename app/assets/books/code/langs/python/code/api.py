@@ -1,8 +1,12 @@
 # API
 
+## FASTAPI
+
 ## TRANQUILIZER
 Deploy a REST API with one line by decorating your functions.
+
 https://github.com/ContinuumIO/tranquilizer
+
 The tranquilized API is documented with Swagger and is accessible in your web browser at http://localhost:8086.
 Tranquilizer can be used with either Jupyter Notebooks (.ipynb) or Python script files (.py).
 

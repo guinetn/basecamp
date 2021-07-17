@@ -29,9 +29,9 @@ expose our port
 start the server
 
 ```conf
-FROM node:6.11-alpine  
+FROM node:6.11-alpine     # pull official base image
 RUN mkdir -p /app  
-WORKDIR /app  
+WORKDIR /app              # set working directory
 COPY package.json .  
 RUN npm install  
 COPY index.js .  

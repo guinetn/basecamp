@@ -12,11 +12,11 @@ Docker images can be automatically built from text files, named Dockerfiles. A D
 
 📄 DOCKERFILE
 ```conf
-FROM node:12-alpine                    pull the base image from which you are building the new image
-WORKDIR /app                   
+FROM node:12-alpine                     # pull official base image from which you are building the new image
+WORKDIR /app                            # set working directory
 COPY . .
-RUN yarn install --production          Runs any commands after a Docker image has been created. Many Run...can exists
-CMD ["node", "/app/src/index.js"]      Run a command when the Docker image is started. Only one CMD can exists
+RUN yarn install --production           Runs any commands after a Docker image has been created. Many Run...can exists
+CMD ["node", "/app/src/index.js"]       Run a command when the Docker image is started. Only one CMD can exists
 ```
 Creating the image
 >docker build -t node .
@@ -54,10 +54,27 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y ...
 RUN ["c:\\windows\\system32\\tasklist.exe"]
 RUN /bin/bash -c 'source $HOME/.bashrc; echo $HOME'
 RUN ["/bin/bash", "-c", "echo hello"]    use a shell,other than '/bin/sh'
+
+    Using multiple RUN commands for installing packages will affect the performance and efficiency of the build process. Using one RUN command to apply all dependency packages will help create a single cacheable unit without creating multiple:
+    RUN apt-get update && apt-get install -y \
+    aufs-tools \
+    automake \
+    build-essential \
+    curl \
+    dpkg-sig \
+    libcap-dev \
+    libsqlite3-dev \
+    mercurial \
+    reprepro \
+    ruby1.9.1 \
+    ruby1.9.1-dev \
+    s3cmd=1.1.*
+
 CMD ["executable","param1","param2"] (exec form, this is the preferred form)
 CMD ["param1","param2"] (as default parameters to ENTRYPOINT)
 CMD command param1 param2 (shell form)
 CMD ["npm", "start"]
+
 
 ARG
     defines a variable that users can pass at build-time to the builder 
@@ -248,3 +265,43 @@ Builds an image from
 - a build’s context: set of files at a specified location PATH or URL
 The PATH is a directory on your local filesystem
 The URL is a Git repository location
+
+
+## TIPS
+
+* Reduce Image Size ✂
+smaller images will result in faster deployments and less attack surface  
+Avoid installing any unnecessary tools, such as debugging tools in your image.
+RUN apt-get update && apt-get -y install --no-install-recommends
+
+* Image Maintainability 🛠
+# pull official base image
+FROM node
+FROM node:13.12.0-alpine
+Use Specific Tags, avoid using "latest" tag for the image, it can have breaking changes over time.
+>docker image ls | grep node   → 950M node letest, 200M alpine
+
+# set working directory
+WORKDIR /app
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+* Use Multi Staged Builds to remove Build Dependencies in the running Container
+We can build the application using a unique build image that has the dev dependencies and move the compiled binaries to a separate Container image for it to run.  
+
+- https://blog.bitsrc.io/a-guide-to-docker-multi-stage-builds-206e8f31aeb8
+
+Dockerfile has two separate stages. 
+- Stage 0 use to build the node application from the source node image
+- Stage 1 is used to copy the build binaries from the build image to the webserver(Nginx) image that ultimately serves the application.
+
+    # Stage 0, "build-stage", based on Node.js, to build and compile the frontend
+    FROM node:13.12.0 as build-stage
+    WORKDIR /app
+    COPY package*.json /app/
+    RUN npm install
+    COPY ./ /app/
+    RUN npm run build
+    # Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
+    FROM nginx:1.15
+    COPY --from=build-stage /app/build/ /usr/share/nginx/html

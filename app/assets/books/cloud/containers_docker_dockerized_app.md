@@ -122,6 +122,41 @@ RUN python -m test
 ```
 
 
+📄 DOCKERFILE
+build the image, tag it as v1
+>docker build -t nodewebapp:v1 .
+running a container with the interactive and detached mode and also exposing the port 3070 to the outside world
+>docker run -it -d -p 3070:3070 nodewebapp:v1
+
+```conf
+FROM node:10
+
+# set the work directory
+WORKDIR /usr/src/app
+
+# copy package.json
+COPY package*.json ./
+
+# copy webapp folder
+COPY WebApp/package*.json ./WebApp/
+
+# RUN npm install for node js dependencies
+RUN npm install \
+   && cd WebApp \
+   && npm install @angular/cli \
+   && npm install
+
+# Bundle app source
+COPY . .
+
+# builing Angular UI
+RUN cd WebApp && npm run build
+
+EXPOSE 3070
+
+ENTRYPOINT ["node"]
+CMD ["index.js"]
+```
 
 
 

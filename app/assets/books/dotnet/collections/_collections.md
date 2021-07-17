@@ -56,3 +56,5 @@ download.page(dotnet/collections/sortedlist.md)
 
 download.page(dotnet/collections/lookup.md)
 
+download.page(dotnet/collections/IReadOnlyCollections.md)
+

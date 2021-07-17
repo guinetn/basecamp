@@ -16,7 +16,7 @@
     >tasks.json: build instructions, tell VSCode how to build (compile) a program
     >launch.json: debugger settings
 - Starting VS Code in a folder 
-    → that folder becomes your "workspace"
+    → that folder becomes your "workspace" ⚠️
     → that workspace settings are in .vscode/settings.json (separate from user settings stored globally)
 - Electron app  https://electron.atom.io/
 http://www.dotnetcurry.com/visualstudio/1340/visual-studio-code-tutorial
@@ -26,6 +26,7 @@ download_page(code/editors/vscode_configuration.md)
 download_page(code/editors/vscode_tasks.md)
 download_page(code/editors/vscode_launch.md)
 download_page(code/editors/vscode_remote.md)
+download_page(code/editors/vscode_interactive.md)
 
 ## Productivity tips
 

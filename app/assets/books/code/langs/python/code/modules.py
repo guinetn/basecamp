@@ -2,8 +2,7 @@
 A module is a file consisting of Python code. 
 Any Python file can be referenced as a module, for example: file_name.py, is called a module, and its name would be file_name
 
-#
-to use the functionality present in any module, you have to import it. When Python interpreter comes across a import statement, it imports the module to your current program. You can use the functions inside a module by using a dot(.) operator along with the module name.
+# to use the functionality present in any module, you have to import it. When Python interpreter comes across a import statement, it imports the module to your current program. You can use the functions inside a module by using a dot(.) operator along with the module name.
 import configparser
 import sqlite3
 import requests

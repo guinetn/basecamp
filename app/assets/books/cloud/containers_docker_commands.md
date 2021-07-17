@@ -1,14 +1,9 @@
 ## DOCKER COMMANDS
 
-
 >docker -v 
 Docker allows you to use $PWD as a placeholder for the current directory.
 
 >docker help run
-
-
-
-
 
 >mkdir -p /var/docker/ubuntu/apache
 >touch /var/docker/ubuntu/apache/Dockerfile
@@ -92,19 +87,19 @@ Start the container
 - docker search redis
 
 * FINDING RUNNING CONTAINERS
-docker ps 		  view running instance
-docker ps -a 		view all instances (running or not)
-docker ps --format "{{.Names}}"
+>docker ps 		  view running instance
+>docker ps -a 		view all instances (running or not)
+>docker ps --format "{{.Names}}"
 
-docker volume ls
+>docker volume ls
 
 Check the logs of the container for any errors:
-docker logs your_container_id 
-docker logs 670e58bd
+>docker logs your_container_id 
+>docker logs 670e58bd
 
 
-docker build --tag hi .
-docker build -t johnpapa/success .  
+>docker build --tag hi .
+>docker build -t johnpapa/success .  
   -t, --tag list: Name and optionally a tag in the 'name:tag' format
 
 docker images
@@ -112,12 +107,12 @@ docker images
     hi                  latest              50f7b9cc7d25        4 minutes ago       99.2MB
     ubuntu              latest              f643c72bc252        5 weeks ago         72.9MB
 
-docker run <options> <image-name> .
-docker run -d redis                       -d, --detach: Run container in background and print container ID
-docker run -d redis:3.2
-docker run 50f7
-docker run -it ubuntu bash      allows  to get access to a bash shell inside of a container (-i = interactive,  -t, --tty  = Allocate a pseudo-TTY)
-docker run ubuntu ps            launches an Ubuntu container and executes the command ps to view all the processes running in a container.
+>docker run <options> <image-name> .
+>docker run -d redis                       -d, --detach: Run container in background and print container ID
+>docker run -d redis:3.2
+>docker run 50f7
+>docker run -it ubuntu bash      allows  to get access to a bash shell inside of a container (-i = interactive,  -t, --tty  = Allocate a pseudo-TTY)
+>docker run ubuntu ps            launches an Ubuntu container and executes the command ps to view all the processes running in a container.
 
 running Redis in the background, with a name of redisHostPort on port 6379
 docker run -d --name redisHostPort -p 6379:6379 redis:latest

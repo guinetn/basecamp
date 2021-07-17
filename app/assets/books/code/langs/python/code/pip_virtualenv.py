@@ -5,6 +5,8 @@ Solve dilemna "Project X depend on version 1.x of this library but projet Y need
 site-packages clean and maintainable. 
 Fix conflicting packages 
 
+It is recommended to create separate environment for each project to avoid version conflicts and keep packages for each project separate.
+
 - https://medium.com/pankajmathur/what-is-anaconda-and-why-should-i-bother-about-it-4744915bf3e6	
 
 # virtualenv 

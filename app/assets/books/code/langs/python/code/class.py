@@ -87,6 +87,25 @@ type(s).meth.__name__      # 'meth'
 type(s).meth.__qualname__  # 'Spam.meth'
 
 
+# Inheritance:  super().__init__(...)
+
+class Employee:
+  def __init__(self,name,age,exp,salary):
+    self.name = name
+    self.age = age
+    self.exp = exp
+    self.salary = salary
+    
+class Developers(Employee):
+  def __init__(self,name,age,exp,salary,level):      
+      super().__init__(name,age,exp,salary)                        
+      self.level = level
+ 
+class Deginers(Employee):
+  def __init__(self,name,age,exp,salary,level):      
+    super().__init__(name,age,exp,salary)                        
+    self.level = level
+
 
 
 ## Access parent class instance attribute from child class instance
@@ -101,7 +120,8 @@ class Child(Parent):
         print self.myvar
 
 child = Child()
-print child.myvar
+print(child.myvar)
+
 # super() method is preferred in the child class __init__ instead of the parent class name
 class Parent():
       def __init__(self):
@@ -111,9 +131,8 @@ class Child(Parent):
   def __init__(self):
       super.__init__()
 
-
 child = Child()
-print child.myvar
+print(child.myvar)
 
 ## Only Child
 ## An alternative approach (and not the only one) is to pass the parent as an argument to the child to create a property that corresponds to the parent:
@@ -212,13 +231,41 @@ print Example.staticVariable # now 7
 
 
 '''
+Class vs Static vs Instance Method 
+three kinds of methods. Static, Class, Instance
+
+Class Methods
+    They are bound to the class, not with the object of the class.
+    These methods can access and modify the state of the class
+    To access or update attributes related to the class
+    @classmethod
+
+Instance Methods 
+    methods that you create while creating classes
+    def do_something(self):    self refers to the instance object that calls the method.
+
 Static Method: 
 called by an instance of a class or by the class itself
 Static methods don't refer to any instance of the class and can be called outside of it. 
 They also cannot access any non-static data members of the class
+They can not access or modify the state of the class
 
 with @staticmethod or @classmethod (class method recieves one mandatory argument - a class it was called from)
 '''
+
+class A(object):
+    def foo(self, x):
+        print(f"executing foo({self}, {x})")
+
+    @classmethod
+    def class_foo(cls, x):
+        print(f"executing class_foo({cls}, {x})")
+
+    @staticmethod
+    def static_foo(x):
+        print(f"executing static_foo({x})")
+a = A()
+
 
 class person:
   @staticmethod
@@ -469,12 +516,13 @@ coldest_thing = Celsius(-300)
 @classmethod decorator
 Call method using class name instead of the object
 The class method can be called both by the class and its object.
+These methods can access and modify the state of the class
 @classmethod
 def func(cls, args...)
 
 method bounded to a class rather than its object (don't require creation of a class instance, much like staticmethod)
 * Static method knows nothing about the class and just deals with the parameters
-* Class method works with the class since its parameter is always the class itself.
+* Class method works with the class since its parameter is always the class itself. These methods can access and modify the state of the class
 
 '''
 
