@@ -43,9 +43,28 @@ configure:
 C:\Program Files\CMake\bin\cmake.exe
 C:\Program Files\CMake\bin\cmake-gui.exe
 
+
 ## generators
 cmake --help     list generators available (kind of buildsystem to generate)
 
+	Generators
+
+	The following generators are available on this platform (* marks default):
+	* Visual Studio 16 2019        = Generates Visual Studio 2019 project files. Use -A option to specify architecture.
+	Visual Studio 15 2017 [arch] = Generates Visual Studio 2017 project files.
+									Optional [arch] can be "Win64" or "ARM". Visual Studio 14 2015 [arch] = Generates Visual Studio 2015 project files.
+									Optional [arch] can be "Win64" or "ARM". Visual Studio 12 2013 [arch] = Generates Visual Studio 2013 project files.
+									Optional [arch] can be "Win64" or "ARM". Visual Studio 11 2012 [arch] = Generates Visual Studio 2012 project files.
+									Optional [arch] can be "Win64" or "ARM". Visual Studio 10 2010 [arch] = Generates Visual Studio 2010 project files.
+									Optional [arch] can be "Win64" or "IA64". Visual Studio 9 2008 [arch]  = Generates Visual Studio 2008 project files.
+									Optional [arch] can be "Win64" or "IA64". Borland Makefiles            = Generates Borland makefiles.
+	NMake Makefiles              = Generates NMake makefiles.
+	NMake Makefiles JOM          = Generates JOM makefiles.
+	MSYS Makefiles               = Generates MSYS makefiles.
+	MinGW Makefiles              = Generates a make file for use with mingw32-make.
+	Green Hills MULTI            = Generates Green Hills MULTI files (experimental, work-in-progress).
+	Unix Makefiles               = Generates standard UNIX makefiles.
+	...
 ## 
 mkdir build ; cd build
 cmake ../src                 source tree must contain a CMakeLists.txt

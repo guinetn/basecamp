@@ -1,9 +1,16 @@
 ## Covariance / Contravariance
 
 .NET 4.0 feature
-Covariance and contravariance allow us to be flexible when dealing with class hierarchy.
+Covariance and contravariance = class hierarchy flexibility
 
-```cs
+co and contra-variances refer to how an object is handled.
+“variance”: property of operators that act on specified types (ordering of operators)
+"co prefix": “along with” and indicates that the operator retains the ordering of types. 
+"contra prefix": “against" something and indicates that the operator reverses the ordering of types.
+
+added to the C# language so that polymorphism features could be added to arrays, delegate types, and generic types. You can use a less derived type than you initially specified with contravariance, and you can use a more derived type with covariance.
+
+```c#
 // Contravariance (applied to parameters): Enables to use a more generic (less derived) type than originally specified
 Action<object> broadAction = (object data) => { Console.WriteLine(data); };
 Action<string> narrowAction = broadAction;
@@ -11,6 +18,12 @@ Action<string> narrowAction = broadAction;
 // Covariance: use a more derived type than originally specified
 Func<string> narrowFunction = () => Console.ReadLine();
 Func<object> broadFunction = narrowFunction;
+
+void PrintAnimals(IEnumerabLe<Animal> animals) { 
+    for (var animal in animals)
+        Console.WriteLine(animal.Name);
+}
+
 
 // Contravariance and covariance combined
 Func<object, string?> func1 = (object data) => data.ToString();
@@ -35,31 +48,35 @@ You cannot assign an instance of List<Base> to a variable of type List<Derived> 
 Covariance permits a method to have a return type that is more derived than that defined in the delegate. 
 Enables you to use a more derived type than originally specified.
 You can assign an instance of IEnumerable<Derived> to a variable of type IEnumerable<Base>
+```c#
 IEnumerable<Derived> d = new List<Derived>();
 IEnumerable<Base> b = d;
+```
 
 * Contravariance
 permits a method that has parameter types that are less derived than those in the delegate type.
 Enables you to use a more generic (less derived) type than originally specified.
 You can assign an instance of Action<Base> to a variable of type Action<Derived>
 
+```c#
 Action<Base> b = (target) => { Console.WriteLine(target.GetType().Name); };
 Action<Derived> d = b;
 d(new Derived());
+```
 
 
 
+MIX COVARIANCE / CONTRAVARIANCE
+```c#
+public delegate TResult Func<in T, out TResult>(T args);
+// 'out' specifies that the IEnumerable interface is covariant
 
- 	MIX COVARIANCE / CONTRAVARIANCE
-
- 		public delegate TResult Func<in T, out TResult>(T args);
-
- 		Func<object, string> f1 = s=>s.ToString();
- 		Func<string, object> f2 = s=>s.ToString();
-
+Func<object, string> f1 = s=>s.ToString();
+Func<string, object> f2 = s=>s.ToString();
+```
 
 ## Sample 
-
+XMLFile1.xml
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <root>
@@ -118,7 +135,7 @@ XDocument doc2 = new XDocument(
 |                |                    |      T<A> ← T<B>    |      T<A> → T<B>  |   
 |                |    class Box<T>    |    class Box<out T> |   class Box<in T> |   
 |    Number      |    Box<Number>     |      Box<Number>    |     Box<Number>   |
-|      ↑         |       ↑✘↓          |          ↑          |         ↓         |  
+|      ↑         |       ↑❌↓         |          ↑ ✔️         |         ↓ ✔️       |  
 |     int        |    Box<int>        |       Box<int>      |      Box<int>     | 
 
 Number is derived from int

@@ -53,6 +53,9 @@ blah.c:
     echo "int main() { return 0; }" > blah.c # Runs first
 ```
 
+>make
+make: *** No targets specified and no makefile found.  Stop.
+
 
 
 makefile                         ← describe how your program should be built
