@@ -1,6 +1,8 @@
 # DEPENCY INJECTION - IOC Inversion  Of Control
 
-A software design rule: ***loosely coupled objects*** = greater reusability, maintainability, testability
+A software design rule: ***loosely coupled objects*** = greater reusability, maintainability, testability.  
+Remove objets dependencies = decoupled application = more maintenable-testable
+
 The 'D' pillar in SOLID principles, which is "Dependency Inversion Principle":
 - High-level modules should not depend on low-level modules. Both should depend on abstractions
 - Abstractions should not depend on details. Details should depend on abstractions
@@ -58,6 +60,9 @@ public class Customer
     public Customer(Address c) { this.address = c; }
 }
 ```
+
+Favor object composition over class inheritance
+
 ### How to remove dependency between two classes?
 
 "Dependency Inversion Principle":
@@ -160,6 +165,7 @@ public class HighLevelModule
   public void Run()
   {
     _action.Play();
+    _action?.Invoke();
   }
 }
 ```
@@ -628,7 +634,8 @@ Normal control sequence would be the object finds the objects it depends on by i
 Implementations are passed into an object through constructors/setters/service lookups
 
 Program delegates control to someone else who will drive the flow IOC (Inversion of control) is a general parent term while DI (Dependency injection) is a subset of IOC
- 
+
+
 ## C# Dependency Injection containers
 
 In the past, we were using libraries and frameworks (Autofac,Unity...) to implement Dependency Injection in our projects but Dependency injection is now part of .NET Core.

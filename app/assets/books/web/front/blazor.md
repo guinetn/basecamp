@@ -39,6 +39,8 @@ https://www.ezzylearning.net/tutorial/a-beginners-guide-to-blazor-components
 
 
 #### Articles
+
+- https://www.ctrl-alt-suppr.dev/page/3/
 - https://developer.okta.com/blog/2019/10/16/csharp-blazor-authentication
 - [Deploy Blazor WebAssembly to GitHub Pages](https://www.youtube.com/watch?v=nNxII6jvPvQ&feature=youtu.be)
 - [](https://swimburger.net/blog/dotnetcore)

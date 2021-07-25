@@ -8,6 +8,8 @@
 - https://github.com/microsoft/windows-rs/tree/master/examples
 - [Microsoft rust course](https://www.i-programmer.info/news/98/14704.html)
 - https://github.com/microsoft/beginners-series-rust
+-[web applications with Rust, WebAssembly, and Node js](https://www.youtube.com/watch?v=0MyCj17xaQQ)
+- [Get started with Rust functions in Node.js:](https://www.secondstate.io/articles/getting-started-with-rust-function/)
 
 Get the latest version of Rust: rustup update
 

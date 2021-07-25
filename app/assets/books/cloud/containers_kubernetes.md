@@ -20,6 +20,12 @@ Docker can be used as a container runtime that Kubernetes orchestrates. When Kub
 The kubelet then continuously collects the status of those containers from Docker and aggregates that information in the control plane. Docker pulls containers onto that node and starts and stops those containers.
 The difference when using Kubernetes with Docker is that an automated system asks Docker to do those things instead of the admin doing so manually on all nodes for all containers.
 
+
+
+https://itnext.io/kubernetes-essential-tools-2021-def12e84c572
+Kubernetes has been build with the idea of control loops from the ground up, this means that Kubernetes is always watching the state of the cluster to make sure it matches the desired state, for example, that the number of replicas running matches the desired number of replicas. The idea of GitOps is to extend this to applications, so you can define your services as code, for example, by defining Helm Charts, and use a tool that leverages K8s capabilities to monitor the state of your App and adjust the cluster accordingly. That is, if update your code repo, or your helm chart the production cluster is also updated. This is true continuous deployment. The core principle is that application deployment and lifecycle management should be automated, auditable, and easy to understand.
+
+
 * SPEAK KUBERNETES
 
 - CONTROL PLANE
@@ -67,6 +73,7 @@ Where you run Kubernetes is up to you. This can be on bare metal servers, virtua
 ![assets/books/cloud/assets/kubernetes.svg]
 
 * EXPLORE KUBERNETES
+
 Kubernetes might seem out of reach at first. It's new, a little scary, and worst yet, it apparently requires a cloud. However, there are a few ways to get started.
 
 Run a local instance of Kubernetes on your personal computer: install Minikube or Minishift. It's not quite as satisfying as building a cluster and opening it up to your friends, but it's a great, safe way to get familiar with the landscape, commands, and toolkit.
@@ -76,6 +83,9 @@ https://opensource.com/article/18/10/getting-started-minikube
 
 Minishift
 https://opensource.com/article/18/10/getting-started-minikube
+
+K8s tools
+https://itnext.io/kubernetes-essential-tools-2021-def12e84c572
 
 to add:
 https://www.redhat.com/en/topics/containers/what-is-kubernetes ★★★

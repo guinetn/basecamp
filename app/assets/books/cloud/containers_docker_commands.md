@@ -97,6 +97,7 @@ Check the logs of the container for any errors:
 >docker logs your_container_id 
 >docker logs 670e58bd
 
+## BUILD IMAGE
 
 >docker build --tag hi .
 >docker build -t johnpapa/success .  
@@ -146,6 +147,32 @@ Any data which needs to be saved on the Docker Host, and not inside containers, 
 docker run -d --name redisMapped -v /opt/docker/data/redis:/data redis
 
 
+## MULTI-STAGE BUILD
+Is a feature, since Docker 17.05 or higher, that helps to reduce the size of the final images. In a few sentences, with multi-stage build you can use, for example, a large base image, containing the SDK, for compiling and publishing the application and then using the publishing folder with a small runtime-only base image, to produce a much smaller final image.
+
+Creating efficient docker images using Dockerfile is very important when pushing out images into production. We need images as small as possible in production for faster downloads, lesser surface attacks.
+Go through the below articles to understand it better.
+
+- https://blog.bitsrc.io/a-guide-to-docker-multi-stage-builds-206e8f31aeb8
+- https://medium.com/bb-tutorials-and-thoughts/dockerizing-angular-app-with-nodejs-backend-85e9d332335d
+
+```conf
+FROM node:10 AS ui-build
+WORKDIR /usr/src/app
+COPY my-app/ ./my-app/
+RUN cd my-app && npm install @angular/cli && npm install && npm run build
+
+FROM node:10 AS server-build
+WORKDIR /root/
+COPY --from=ui-build /usr/src/app/my-app/dist ./my-app/dist
+COPY package*.json ./
+RUN npm install
+COPY server.js .
+
+EXPOSE 3080
+
+CMD ["node", "server.js"]
+```
 
 
 
@@ -191,11 +218,7 @@ hello-world             latest              690ed74de00f        5 months ago    
 
 # RUN CONTAINER
 
-docker run       command is used to run a container from an image
-If the image does not exist on the host machine, Docker will pull that from [Docker Hub](https://hub.docker.com/)
-Once downloaded on your local machine, Docker uses the same image for consecutive container creation. 
 
-docker run alpine ls -l
 docker pull ubuntu:12.04
 docker pull ubuntu                  will pull an image named ubuntu:latest
   The Docker client contacts the Docker daemon
@@ -203,6 +226,16 @@ docker pull ubuntu                  will pull an image named ubuntu:latest
   The Docker daemon creates the container and then runs a command in that container.
   The Docker daemon streams the output of the command to the Docker client
 
+  docker pull debian // pulling from docker hub by default
+  docker pull myregistry.local:5000/testing/test-image // pulling from other repositories
+
+
+
+docker run       command is used to run a container from an image
+If the image does not exist on the host machine, Docker will pull that from [Docker Hub](https://hub.docker.com/)
+Once downloaded on your local machine, Docker uses the same image for consecutive container creation. 
+
+docker run alpine ls -l
 docker run -d -p 80:80 docker/getting-started
 docker run -dp 80:80 docker/getting-started
 -d          run the container in detached mode (in the background)
@@ -286,6 +319,7 @@ docker rmi joe/success
 
 docker {container,image,volume,network} prune
 docker container prune
+docker image prune         Remove unused images
 docker system prune        Remove (for images) only dangling images, or images without a tag:
 docker system prune -a     Delete ALL unused data (containers stopped, volumes without containers and images with no containers):
 

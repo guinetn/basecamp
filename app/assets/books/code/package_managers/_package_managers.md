@@ -55,6 +55,12 @@ download.page(code/package_managers/pm_vsix.md)
 download.page(code/package_managers/pm_composer.md)
 ::::
 download.page(code/package_managers/pm_wheel.md)
+::::
+download.page(code/package_managers/pm_cake.md)
+::::
+download.page(code/package_managers/pm_paket.md)
+::::
+download.page(code/package_managers/pm_vcpkg.md)
 
 
 

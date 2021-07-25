@@ -41,6 +41,11 @@ lst = ['one', 'two', 'three', 'four']
 lst.append('five')
 lst
 
+
+w="The sun shine"
+l1=list(w)
+print(l1)	 # ['T','h','e'...]
+
 nums = [1, 2, 3, 4, 5]
 nums = [1, 2, 3, 4, 5] + [6]
 for x in nums:

@@ -27,6 +27,7 @@ download_page(code/editors/vscode_tasks.md)
 download_page(code/editors/vscode_launch.md)
 download_page(code/editors/vscode_remote.md)
 download_page(code/editors/vscode_interactive.md)
+download_page(code/editors/vscode_liveshare.md)
 
 ## Productivity tips
 

@@ -8,7 +8,7 @@ Lets you consume (and produce) asynchronous results in straightforward code, wit
 
 We need to `Task-ify` our methods: put a keyword 'await' before every method call
 
-async and await were added to C# to deal with results that are not necessarily ready when you ask for them. They can be asynchronously awaited, and the thread can go do other stuff until they become available. But that works only for single values, not sequences that are gradually and asynchronously produced over time
+async and await were added to C# to deal with results that are not necessarily ready when you ask for them. They can be asynchronously awaited, and the thread can go do other stuff until they become available. But that works only for single values, not sequences that are gradually and asynchronously produced over time. For sequence, see books\dotnet\threading\b_async_3\async_streams.md
 
 ```cs
 using System.Threading.Tasks;

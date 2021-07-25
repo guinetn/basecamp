@@ -1,5 +1,21 @@
 # DotNet cli
 
+- https://docs.microsoft.com/en-us/dotnet/core/tools/
+
+>mkdir benchmark
+>cd benchmark	                      
+>dotnet new console -o benchmarking 
+>cd benchmarking                    
+>dotnet add package benchmarkdotnet 
+>dotnet run
+  Hello World!
+>code .
+
+>dotnet build
+>dotnet build --configuration Release
+>dotnet run
+
+
 dotnet CLI tooling comes with several built-in cmds such as build, run, test... but it turns out it’s possible to add your own verb to that list.
 
 To start building .NET apps, download and install the .NET SDK (Software Development Kit).
@@ -47,11 +63,40 @@ cd ...
 code .
 dotnet add [package]
 dotnet restore
+
+La configuration de build par défaut est Debug
+
 dotnet build
+dotnet build --configuration Release
 dotnet run
+dotnet run --project ./projects/proj1/proj1.csproj
 dotnet test
 dotnet pack
+
+https://docs.microsoft.com/fr-fr/dotnet/core/tutorials/publishing-with-visual-studio-code
 dotnet publish
+dotnet publish --configuration Release
+
+  * HelloWorld.deps.json
+
+  Il s’agit du fichier de dépendances d’exécution de l’application. Il définit les composants .NET et les bibliothèques (y compris la bibliothèque de liens dynamiques qui contient votre application) nécessaires pour exécuter l’application. Pour plus d’informations, consultez fichiers de configurationde l’exécution.
+
+  * HelloWorld.dll
+
+  Il s’agit de la version de déploiement dépendante du Framework de l’application. Pour exécuter cette bibliothèque de liens dynamiques, entrez dotnet HelloWorld.dll à l’invite de commandes. Cette méthode d’exécution de l’application fonctionne sur toutes les plateformes sur lesquelles le Runtime .NET est installé.
+
+  * HelloWorld.exe (HelloWorld sur Linux, non créé sur MacOS.)
+
+  Il s’agit de la version exécutable dépendante du Framework de l’application. Le fichier est spécifique au système d’exploitation.
+
+  * HelloWorld.pdb (facultatif pour le déploiement)
+
+  Il s’agit du fichier de symboles de débogage. Vous n’êtes pas obligé de déployer ce fichier avec votre application, même si vous devez l’enregistrer au cas où vous auriez à déboguer la version publiée de votre application.
+
+  * HelloWorld.runtimeconfig.json
+
+  Il s’agit du fichier de configuration au moment de l’exécution de l’application. Il identifie la version de .NET sur laquelle votre application a été conçue pour s’exécuter. Vous pouvez également y ajouter des options de configuration. Pour plus d’informations, consultez paramètres de configuration du Runtime .net.
+
 
 dotnet new razor -n frontend
 dotnet new webapi -n backend

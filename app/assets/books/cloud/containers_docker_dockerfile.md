@@ -70,10 +70,6 @@ RUN ["/bin/bash", "-c", "echo hello"]    use a shell,other than '/bin/sh'
     ruby1.9.1-dev \
     s3cmd=1.1.*
 
-CMD ["executable","param1","param2"] (exec form, this is the preferred form)
-CMD ["param1","param2"] (as default parameters to ENTRYPOINT)
-CMD command param1 param2 (shell form)
-CMD ["npm", "start"]
 
 
 ARG
@@ -99,7 +95,7 @@ ARG
 
 ADD
     copies new files, directories or remote file URLs from <src> 
-    and adds them to the filesystem of the image at the path <dest>
+    and adds them to the filesystem OF THE IMAGE at the path <dest>
     ADD [--chown=<user>:<group>] <src>... <dest>
     ADD [--chown=<user>:<group>] ["<src>",... "<dest>"]
     <dest> is an absolute path, or a path relative to WORKDIR
@@ -111,16 +107,31 @@ ADD
     ADD --chown=1 files* /somedir/
     ADD --chown=10:11 files* /somedir/
 
+    ! COPY add files/dirs to the container
+
 CMD
-    Run any command when the Docker image is started. Use only one CMD instruction in a Dockerfile.
+
+    Run any command when the Docker image is started. 
+    Use only one CMD instruction in a Dockerfile.
+
+    provide defaults for an executing container. These defaults can include an executable, or they can omit the executable, in which case you must specify an ENTRYPOINT instruction as well.
+
+    Forms of CMD instruction 
+        CMD ["executable","param1","param2"] (exec form, this is the preferred form)
+        CMD ["param1","param2"] (as default parameters to ENTRYPOINT)
+        CMD command param1 param2 (shell form)
+        CMD ["npm", "start"]
+
 
 COPY
     copies new files or directories from <src> 
-    and adds them to the filesystem of the container at the path <dest>
+    and adds them to the filesystem of THE CONTAINER at the path <dest>
     COPY [--chown=<user>:<group>] <src>... <dest>   
     COPY [--chown=<user>:<group>] ["<src>",... "<dest>"]
     COPY hom?.txt /mydir/
     COPY hom* /mydir/
+
+    ! Add add files/dirs to the image
 
 ENV <key>=<value> ...
     Set container environment variables. Persist if container is run from the resulting image
@@ -154,7 +165,7 @@ FROM
     Instructs Docker to pull the base image from which you are building the new image
 
 LABEL
-    key-value pair that adds metadata to an image
+    key-value pair that adds metadata to the image
     LABEL version="1.0"
     docker image inspect --format='' myimage
 

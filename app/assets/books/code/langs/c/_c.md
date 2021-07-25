@@ -9,6 +9,9 @@ Procedural language
 C is not a type-safe language  
 Developed by Dennis Ritchie  
 
+- [J. Sorber](https://www.youtube.com/channel/UCwd5VFu4KoJNjkWJZMFJGHQ)
+
+
 # C SAMPLES
 download.slideshow(assets/books/code/langs/c/code_samples/c01.md)
 
@@ -247,7 +250,8 @@ int main() {
 download.page(computer_science/os/windows/winrt/crt.md)
 
 ## More 
-- [J. Sorber Progress Bars]-https://www.youtube.com/watch?v=t_vM_8TLjFE)
+- [J. Sorber](https://www.youtube.com/channel/UCwd5VFu4KoJNjkWJZMFJGHQ)
+- [J. Sorber Progress Bars](https://www.youtube.com/watch?v=t_vM_8TLjFE)
 - https://fresh2refresh.com/c-programming
 - https://www.geeksforgeeks.org/higher-order-functions-in-c
 - https://h-deb.clg.qc.ca/Sujets/Divers--c/index.html#general

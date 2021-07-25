@@ -3,7 +3,8 @@
 Container runtime 
 A container is a virtualization on top of the operating system layer. Containers do not need to boot up another operating system to run an application. All you need is your application code and its dependent libraries packaged into a single image. The important advantage of containers is that you do not need to boot up another operating system with all the software packages needed for your application on top of the host machine.
 
-https://www.katacoda.com/courses/docker
+- https://www.katacoda.com/courses/docker
+- https://medium.com/bb-tutorials-and-thoughts/docker-interview-question-part-1-52ce6386b591
 
 VSCode: green indicator at left/bottom → "remote containers...open, attach, clone in..." ★★★
 
@@ -29,8 +30,8 @@ expose our port
 start the server
 
 ```conf
-FROM node:6.11-alpine     # pull official base image
-RUN mkdir -p /app  
+FROM node:6.11-alpine     # pull official base image. sets the base image for the subsequent builds
+RUN mkdir -p /app         # RUN execute commands in a new layer on top of the current image and commit the results
 WORKDIR /app              # set working directory
 COPY package.json .  
 RUN npm install  
@@ -202,6 +203,11 @@ to keep Docker login credentials safe by storing in platform keystores
 ## Docker Desktop
 
 a MINGW64 environment
+
+## CREDENTIALS
+
+Where do you configure any credential helpers or credentials for the registry to prevent passing every time you log in?
+/etc/docker/daemon.json
 
 ## More
 - [Running your first container](https://github.com/docker/labs/blob/master/beginner/chapters/alpine.md)

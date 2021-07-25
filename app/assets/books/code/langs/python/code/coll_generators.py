@@ -41,6 +41,10 @@ while True:
     except StopIteration:
         break
 
+def chunks(data, rows=10000):
+    """ Divides the data into 10000 rows each """
+    for i in range(0, len(data), rows):
+        yield data[i:i+rows]
 
 def count(a,b):
     x = a

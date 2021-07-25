@@ -4,6 +4,23 @@ In .NET, depending on the data type, the variable is either assigned on the stac
 
 ![](./dotnet_types.png)
 
+## Access modifier
+
+public
+private
+protected
+private protected       enables access for derived classes in the same assembly
+protected internal      allows access by derived classes or classes that are in the same assembly
+private protected       member access is limited to derived classes declared in the same assembly
+
+
+Write unit tests for non-public methods
+Allow internal assemblies to be made visible to other assemblies: AssemblyInfo.cs:
+// Make a specific assembly visible
+[assembly: InternalsVisibleTo("MyTestAssembly")]
+
+
+
 ## REFERENCE TYPES
 class keyword 
 Allocated on heap 

@@ -4,6 +4,11 @@
 - Every method you write should have a lot of Test Methods or "facts" that express how it SHOULD work
 - A pull request that contains a code change to fix a bug but does not contain a change in unit tests is a smell.
 
+* Write unit tests for non-public methods
+Allow internal assemblies to be made visible to other assemblies: AssemblyInfo.cs:
+// Make a specific assembly visible
+[assembly: InternalsVisibleTo("MyTestAssembly")]
+
 download.page(dotnet/testing/testing_nunit.md)
 ::::
 download.page(dotnet/testing/testing_mocking.md)

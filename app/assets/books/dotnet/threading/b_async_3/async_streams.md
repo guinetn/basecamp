@@ -1,12 +1,16 @@
 ## ASYNC STREAMS = ASYNC ENUMERABLE
 
+C# 8.0: async foreach (IAsyncEnumerable)
 For continuous streams  
 To process a stream of data ... asynchronously
 
 The async/await is not so helpful if you want to consume (or produce) continuous streams of results, such as you might get from an IoT device or a cloud service.  
 Async streams are there for that.
 
-async and await were added to C# to deal with results that are not necessarily ready when you ask for them. They can be asynchronously awaited, and the thread can go do other stuff until they become available. But that works only for single values, not sequences that are gradually and asynchronously produced over time, such as for instance measurements from an IoT sensor or streaming data from a service.
+Async and await were added to C# to deal with results that are not necessarily ready when you ask for them.  
+They can be asynchronously awaited, and the thread can go do other stuff until they become available. 
+But that works only for single values, not sequences that are gradually and asynchronously produced over time, such as for instance measurements 
+from an IoT sensor or streaming data from a service.
 
 ```c#
 // retrieving a set of numbers of type IAsyncEnumerable (a C# 8 interface) 
@@ -31,9 +35,16 @@ Foreach’ing over asynchronous streams requires explicit use of the await keywo
 ❌ foreach (var name in GetNamesAsync()) {...}
 ✔️ await foreach (var name in GetNamesAsync()) {
     // Foreach's version taking an async stream and awaits every element
-    // it can only do that in an async method
+    // It can only do that in an async method
     // Note: C# 7.2 makes our Main method async: static async Task Main(string[] args)
 }
 
+
+
+## more
+
 - [processing data without it touching the disk](https://github.com/lprichar/DisklessAsyncStreams)
 - https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/tutorials/generate-consume-asynchronous-stream
+- https://medium.com/@alex.puiu/parallel-foreach-async-in-c-36756f8ebe62
+- https://houseofcat.io/tutorials/csharp/async/parallelforeachasync
+- https://stackoverflow.com/questions/14673728/run-async-method-8-times-in-parallel

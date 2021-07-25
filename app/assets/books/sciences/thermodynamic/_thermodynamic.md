@@ -14,3 +14,4 @@ The 2nd law of thermodynamics states that entropy of an isolated system can neve
 
 
 - https://www.youtube.com/watch?v=3QCXVKUi7K8&t=377s
+- https://www.youtube.com/watch?v=1kzsLGq3-14&t=61s

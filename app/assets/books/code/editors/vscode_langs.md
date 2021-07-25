@@ -1,5 +1,7 @@
 # C
 
+    https://code.visualstudio.com/docs/cpp/config-msvc
+
     hello.c
         #include <stdio.h>
         #include <stdlib.h>

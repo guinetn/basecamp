@@ -19,12 +19,19 @@ multiline_string = ("this is a very"
       "which will NOT INCLUDE ANY EXTRA BLANKS OR NEWLINES..."
      ) 
 
+w="The sun shine"
+l1=list(w)
+print(l1)	 # ['T','h','e'...]
+
 # SUBSTRINGS
 s = "hello joe"
 s[6:]   # joe
 s[:-3]  # joe
 
 # Contains
+s="Paris, France"
+print("France" in s)
+
 if 'r' not in s: 
     passed
 	
@@ -176,7 +183,7 @@ s[0-7]  		entre 0 et 7 (exclus)
 s[:7] 			7 first
 s[8:] 			from 8 to end
 s[-10:] 		last 10 		
-print(len(s)
+print(len(s))
 
 s="ababababab"
 s[0::2] "aaaaa"      slicing, step 2
@@ -232,6 +239,9 @@ sample = "john,plastic,joe"
 split_list = sample.split(",")
 print(split_list)
 
+t="Germany is the capital of Germany. n London is the capital of UK. n Paris is the capital of France."
+t.splitlines()
+
 string_two = "How much wood\ncan a woodchuck chuck\nif a woodchuck\ncould chuck wood?"
 split_string_two = string_two.split('\n')
 print(split_string_two)		
@@ -252,17 +262,18 @@ if 'r' not in s:
     pass
 
 # Is all alphanumeric
+# checks if a string has either numeric characters or alphabets. If special characters are present, False will be returned.
 print(s.isalnum())
 
-# Is all alphabetic
+# Is all alphabetic. characters in a string are all alphabets
 print(s.isalpha())
 
-# Is all numeric
-print(s.isnumeric())
+# Is all numeric. Checks if all the characters in a string are numbers.
+print(s.isnumeric())  
 
 
-
-
+s="2021"
+print(s.isdigit())
 
 
 #%%
@@ -330,6 +341,11 @@ s = "Welcome to likegeeks"
 print(s.upper())
 print(s.lower())
 
+s.isupper()   # checks if all the characters in a string are in upper case or not
+s.islower()   # checks if all the characters in a string are in lower case or not
+
+s.istitle()   # returns if a particular text is in title format. For example, “United States”. 
+              # all the first letters of all words must be capital for it to be in title format
 
 # CONVERT STRINGS TO NUMBERS
 # str() function which casts the value to a string, but this is not the only cast function in Python programming.

@@ -1,6 +1,8 @@
 # NuGet
 
-Open platform for sharing finished code packages with .NET developers around the world.
+- https://www.nuget.org/
+
+Open platform for sharing .Net packages with the world.
 From DLLs to other content needed in the projects that consume these packages, the Microsoft-supported mechanism for sharing code is NuGet, which defines how packages for .NET are created, hosted, and consumed, and provides the tools for each of those roles.
 
 Chocolatey is empowered by NuGet and PowerShell technology. Created by Microsoft, NuGet is a framework developed for the purposes of bundling code into “packages.” Besides NuGet Chocolatey uses PowerShell (a cross-platform task automation and configuration management framework) to add some functionality that helps to install and update packages.
@@ -10,6 +12,12 @@ to include dev development libraries in apps. Chocolatey is a binary machine pac
 vs studio: Right-click solution → Manage Nuget packages
 
 C:\Users\[you]\AppData\Roaming\NuGet\NuGet.Config
+
+PM>Install-Package FanLib -Version 1.0.0
+PM>dotnet add package FanLib --version 1.0.0
+Script & Interactive>#r "nuget: FanLib, 1.0.0"
+
+<PackageReference Include="FanLib" Version="1.0.0" />
 
 ```xml
 
@@ -38,11 +46,9 @@ C:\Users\[you]\AppData\Roaming\NuGet\NuGet.Config
 ```
 
 ## more
-
+- https://www.nuget.org/
 - https://www.ctrl-alt-suppr.dev/2021/03/31/tips-tricks-creer-un-package-nuget/
 - https://channel9.msdn.com/Series/NET-Core-101/NET-Using-a-Nuget-Package
-
-
 
 
 ## NuGet: A way of adding/updating assemblies references to a project
@@ -206,7 +212,8 @@ http://nuget.codeplex.com/wikipage?title=Package%20Manager%20Console%20Command%2
 
 # CREATING A NUGET PACKAGE #1
 
-	http://ebooks.syncfusion.com/downloads/azure-devops-succinctly/azure-devops-succinctly.pdf
+	- http://ebooks.syncfusion.com/downloads/azure-devops-succinctly/azure-devops-succinctly.pdf
+	- https://www.ctrl-alt-suppr.dev/2021/03/31/tips-tricks-creer-un-package-nuget/
 
 	Open Visual Studio
 	Create a new Class Library (.NET Standard) project. 

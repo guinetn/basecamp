@@ -4,6 +4,7 @@ Compiler saying “Do you have anything to add to what I have done so far?”
 ~ C/C++ "#include xxxxx" plugged directly into the normal compiler workflow
 A C# generator is just a bit of code runned at compile time producing C# code from its inputs
 It could download information from a website (not a good idea). But the three inputs below are the most logical ones as they are part of the project. It is the recommended way to do it.
+
 Program Parse Tree → Additional Files → File Specific Options → C# Code
 
 ```cs
@@ -59,3 +60,4 @@ options for each additional file
 - https://devblogs.microsoft.com/dotnet/new-c-source-generator-samples/
 - https://devblogs.microsoft.com/dotnet/using-c-source-generators-to-create-an-external-dsl/
 - https://andrewlock.net/using-source-generators-to-generate-a-nav-component-in-a-blazor-app/
+- https://devblogs.microsoft.com/dotnet/try-the-new-system-text-json-source-generator/

@@ -55,5 +55,11 @@ const fib = (n) => {
 ```
 
 
-https://bradfieldcs.com/algos/recursion/dynamic-programming/
-            
+- https://bradfieldcs.com/algos/recursion/dynamic-programming/
+- https://www.cantorsparadise.com/how-fibonacci-can-help-us-convert-between-miles-and-kilometers-6b5344782bbb
+
+0,1,1, 2, 3, 5, 8, 13, 21, 34, 55,…      
+multiplying a Fibonacci number by φ, is roughly the same thing as finding the next Fibonacci numbers.      
+F(n+1) = F(n) * phi
+to convert 5 miles to kilometers, we would find the next Fibonacci number, which is 8, so our approximation is that 5 miles = 8 kilometers. In reality, 5 miles is 8.04672 km.
+to convert 10 miles to kilometers. 10 isn’t a Fibonacci number, so we have to rewrite 10 as the sum of Fibonacci numbers (8+2). Then, we get (8+2) mi = (13+3) km = 16km. If we used the actual conversion factor, we get 10 mi = 16.0934 km.

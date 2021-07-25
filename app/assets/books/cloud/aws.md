@@ -117,10 +117,63 @@ Notifications
 * Amplify: connect services above with your frontend sks (react, vue, js...)
 * Budget: costs explorer
 
+Misc
+* Polly
+service is responsable to convert text into lifelike speech helping us to delivery a accessable application to our users allowing us to adjust the language, the gender type, even some accent like british or american one.
+- https://demetrius-p.medium.com/net-core-aws-polly-eaf3837f3e67
 
+Nuget:
+>Install-Package AWSSDK.Polly -Version 3.5.1.29
 
+AWS Console Manager: setup a different user from your root user
+Add user
+*  Accès par programmation   ← choose
+    Active une ID de clé d'accès et clé d'accès secrète pour AWS API, CLI, SDK et d'autres outils de développement.
+* Accès à AWS Management Console
+    Active un mot de passe qui permet aux utilisateurs de vous connecter à l'AWS Management Console.
 
+store the credentials by initialising a BasicAWSCredentials, then we must assign the credentials to the aws client like below:
 
+```cs
+var credentials = new BasicAWSCredentials("accessKey", "secreatKey");
+
+var polly = new AmazonPollyClient(credentials, RegionEndpoint.USWest2);
+
+Console.WriteLine("Digite um texto para ser transformado em audio: ");
+var text = Console.ReadLine();
+
+var req = polly.SynthesizeSpeechAsync(new SynthesizeSpeechRequest
+{
+    LanguageCode = "pt-BR",
+    OutputFormat = "mp3",
+    SampleRate = "8000",
+    Text = text,
+    TextType = "text",
+    VoiceId = "Ricardo",
+    Engine = "Standard",
+    LexiconNames = lexicons
+}).Result;
+
+ public class AudioHelper
+    {
+        public async void SalvarMp3(SynthesizeSpeechResponse response, string path)
+        {
+            Stream audioStream = response.AudioStream;
+                        
+            using(MemoryStream ms = new MemoryStream())
+            using (FileStream fs = new FileStream(path,
+                   FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite))
+            {
+                audioStream.CopyTo(ms);
+                byte[] buffer = ms.ToArray();
+                await audioStream.ReadAsync(buffer);
+                await fs.WriteAsync(buffer);
+                fs.Flush();
+            }
+
+        }
+    }
+```
 
 
 

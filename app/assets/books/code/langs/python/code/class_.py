@@ -557,21 +557,21 @@ from datetime import date
 
 # random Person
 class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
 
-    @classmethod
-    def fromBirthYear(cls, name, birthYear):
-        return cls(name, date.today().year - birthYear)
+  @classmethod
+  def fromBirthYear(cls, name, birthYear):
+    return cls(name, date.today().year - birthYear)
 
-    def display(self):
-        print(self.name + "'s age is: " + str(self.age))
+  def display(self):
+    print(self.name + "'s age is: " + str(self.age))
 
 person = Person('Adam', 19)
 person.display()
 
-person1 = Person.fromBirthYear('John',  1985)
+person1 = Person.fromBirthYear('John', 1985)
 person1.display()
 
 '''
@@ -707,6 +707,9 @@ class Car(object):
 
 
 ## Type Annotations (PEP 526)
+
+year: int
+
 https://www.python.org/dev/peps/pep-0526
 
 Python has dynamic types: don’t have to specify the type of a variable, you just use 
@@ -784,98 +787,6 @@ pos2 = Position(42.1238762, 9.1649964)
 def get_distance(p1: Position, p2: Position) -> float:
     pass      
   
-  
-## dataclasses 
-https://www.youtube.com/watch?v=vBH6GRJ1REM&t=328s
-  
-import dataclasses
-import inspect
-from dataclasses import dataclass, field
-from pprint import pprint
-
-import attr
-
-
-## 1. MANUAL
-
-class ManualComment:
-    def __init__(self, id: int, text: str):
-        self.id: int = id
-        self.text: str = text
-
-    def __repr__(self):
-        return "{}(id={}, text={})".format(self.__class__.__name__, self.id, self.text)
-
-    def __eq__(self, other):
-        if other.__class__ is self.__class__:
-            return (self.id, self.text) == (other.id, other.text)
-        else:
-            return NotImplemented
-
-    def __ne__(self, other):
-        result = self.__eq__(other)
-        if result is NotImplemented:
-            return NotImplemented
-        else:
-            return not result
-
-    def __hash__(self):
-        return hash((self.__class__, self.id, self.text))
-
-    def __lt__(self, other):
-        if other.__class__ is self.__class__:
-            return (self.id, self.text) < (other.id, other.text)
-        else:
-            return NotImplemented
-
-    def __le__(self, other):
-        if other.__class__ is self.__class__:
-            return (self.id, self.text) <= (other.id, other.text)
-        else:
-            return NotImplemented
-
-    def __gt__(self, other):
-        if other.__class__ is self.__class__:
-            return (self.id, self.text) > (other.id, other.text)
-        else:
-            return NotImplemented
-
-    def __ge__(self, other):
-        if other.__class__ is self.__class__:
-            return (self.id, self.text) >= (other.id, other.text)
-        else:
-            return NotImplemented
-
-## 2. WITH DATACLASS: create le, ge,gt...
-@dataclass(frozen=True, order=True)
-class Comment:
-    id: int
-    text: str = ""
-    replies: list[int] = field(default_factory=list, repr=False, compare=False)
-
-
-@attr.s(frozen=True, order=True, slots=True)
-class AttrComment:
-    id: int = 0
-    text: str = ""
-
-
-def main():
-    comment = Comment(1, "I just subscribed!")
-    # comment.id = 3  # can't immutable
-    print(comment)
-    print(dataclasses.astuple(comment))
-    print(dataclasses.asdict(comment))
-    copy = dataclasses.replace(comment, id=3)
-    print(copy)
-
-    pprint(inspect.getmembers(Comment, inspect.isfunction))
-
-
-
-
-
-
 
 
 
@@ -1020,5 +931,3 @@ class Car:
                 write_file.close()
 
                 
-## more
-# https://medium.com/@dr-bruce-cottman/twelve-dataclass-examples-for-better-python-code-d1318f362d93?source=email-d34df8fefae2-1619917329596-digest.reader------2-71------------------18bf3841_cdb9_4fb3_8abe_774bacfcfdbe-27-62736a19_0aef_4828_ad07_c7a217634093----&sectionName=icymi

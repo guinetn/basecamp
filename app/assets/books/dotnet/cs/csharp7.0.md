@@ -266,14 +266,6 @@ Hex and binary numeric literals for may now begin with an _
 int binaryValue = 0b_0101_0101;
 ```
 
-private protected access modifier
-A member may be accessed by derived classes that are declared in the same assembly. 
-
-private protected       enables access for derived classes in the same assembly
-protected internal      allows access by derived classes or classes that are in the same assembly
-private protected       limits access to derived types declared in the same assembly
-
-
 ## Tuples 
 
 ## Tuples were available before C# 7 as an API, but had many limitations. Most importantly, the members of these tuples were named Item1, Item2 and so on. The language support enables semantic names for the fields of a Tuple.

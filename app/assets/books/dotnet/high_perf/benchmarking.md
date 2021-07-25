@@ -3,7 +3,7 @@
 ***Benchmark***
 Measurement or set of measurements relating to the execution of some code.Benchmarks have a mechanism to compare proposed changes against the original code which then guide your optimisation work.
 
-### Stopwatch
+### Benchmarking with Stopwatch
 
 ```cs
 using System;
@@ -34,7 +34,38 @@ class Program
 }
 ```
 
-### BenchmarkDotNet
+### Benchmarking with BenchmarkDotNet library
+
+>mkdir Benchmarks
+>cd Benchmarks
+>dotnet new console -o myapp
+>cd myapp
+References the Benchmark.NET NuGet package 
+    >dotnet add package BenchmarkDotNet 
+    >dotnet add package BenchmarkDotNet --version 1.0.0
+    PM>Install-Package Benchmark -Version 1.0.0
+>dotnet run
+>code .
+
+>dotnet build --configuration Release
+>dotnet run --configuration Release 
+
+
+[benchmark]  // 1.005 ms
+public int[] NormalLoop() {
+    var arr = new int[1_000_000]
+    for(var i=0; i<1_000_000; i++) 
+        ar[i] = i;
+    return ar;
+}
+
+[benchmark] // 1.364 ms...depends on cpu, how many threads, overhead due to the aggregation of the segmented buckets created
+public int[] ParallelLoop() {
+    var arr = new int[1_000_000]
+    Parallel.For(0, 1_000_000, i => { ar[i] = i; });
+    return ar;
+}
+
 
 - https://benchmarkdotnet.org/
 - https://github.com/dotnet/BenchmarkDotNet

@@ -3,7 +3,10 @@
 Nicknamed “the God particle”
 Discovered in 2012 at CERN after 50 years of looking for it
 Final elementary particle predicted by the Standard Model of particle physics
+
+None of the fondamental particles have a mass
 It gives mass to other elementary particles
+Higgs field ~ cosmic molasses trapping particles as they travel through space and giving them a mass
 
 1960: Standard Model problem: it predicts bosons elementary particles shouldn't have mass – but observations show they do
 1964: mechanisms for how they gain mass
